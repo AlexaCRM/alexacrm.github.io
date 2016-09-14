@@ -19,6 +19,41 @@
             "location": "/#project-layout", 
             "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
             "title": "Project layout"
+        }, 
+        {
+            "location": "/wpcrm/", 
+            "text": "Integration for Dynamics CRM\n is a free WordPress plugin that integrates Microsoft Dynamics CRM. It allows submitting data from WordPress to your Dynamics CRM organization and retrieving it back into WordPress.\n\n\n\n\n\n\nFeatures\n\n\nInstallation", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/wpcrm/features/", 
+            "text": "", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/wpcrm/installation/", 
+            "text": "Using the WordPress Admin to install plugins is the most straightforward option, as it handles the file transfer without you needing to leave the Web browser.\n\n\nInstall WordPress CRM (The easy way)\n\n\n\n\nDownload\n the plugin (.zip file)\n\n\nLog in\n to your WordPress Admin panel\n\n\nIn your Admin, go to menu \nPlugins \n Add New\n\n\nSelect\n the tab \"Upload plugin\"\n\n\nUpload\n the WordPress CRM Plugin.zip file you just downloaded\n\n\nActivate\n the plugin\n\n\nA new \nsetting item\n \"Dynamics CRM\" will appear in Settings tab\n\n\n\n\nFTP Setup (The old way)\n\n\nIt\u2019s possible at this stage that you\u2019ll be taken to a page requesting FTP details of your webserver. This happens if you\u2019ve not installed a plugin on this particular installation of WordPress. If that\u2019s the case, fill in your details to complete installation.\n\n\n\n\nDownload\n the plugin (.zip file)\n\n\nUnzip\n the folder and Upload \nwordpress-crm\n folder to the \n/wp-content/plugins/\n directory\n\n\nActivate\n the plugin through the \u2018Plugins\u2019 menu in WordPress\n\n\nA new \nsettings item\n \"Dynamics CRM\" will appear in the navigation bar", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/wpcrm/installation/#install-wordpress-crm-the-easy-way", 
+            "text": "Download  the plugin (.zip file)  Log in  to your WordPress Admin panel  In your Admin, go to menu  Plugins   Add New  Select  the tab \"Upload plugin\"  Upload  the WordPress CRM Plugin.zip file you just downloaded  Activate  the plugin  A new  setting item  \"Dynamics CRM\" will appear in Settings tab", 
+            "title": "Install WordPress CRM (The easy way)"
+        }, 
+        {
+            "location": "/wpcrm/installation/#ftp-setup-the-old-way", 
+            "text": "It\u2019s possible at this stage that you\u2019ll be taken to a page requesting FTP details of your webserver. This happens if you\u2019ve not installed a plugin on this particular installation of WordPress. If that\u2019s the case, fill in your details to complete installation.   Download  the plugin (.zip file)  Unzip  the folder and Upload  wordpress-crm  folder to the  /wp-content/plugins/  directory  Activate  the plugin through the \u2018Plugins\u2019 menu in WordPress  A new  settings item  \"Dynamics CRM\" will appear in the navigation bar", 
+            "title": "FTP Setup (The old way)"
+        }, 
+        {
+            "location": "/wpcrm/settings/", 
+            "text": "On this page we're going to walk through all the settings available to you in Integration for Dynamics CRM Plugin. You'll find information about general CRM Plugin settings as well as Connection, Login, Roles Mapping and Forms settings. Please note this documentation is relevant for version 0.9.13 and later.\n\n\nTo configure the plugin go to \nWordPress Admin \n Dynamics CRM.\n Then walk through the documentation below in each section to get information on every setting.\n\n\nConnection settings\n\n\nOn this tab you have some simple and basic settings for establishing connection to Dynamics CRM.\n\n\nMicrosoft Dynamics CRM supports two security models for authentication: claims-based authentication and Active Directory authentication. The type of authentication used depends on the type of deployment your application is accessing: \nMicrosoft Dynamics CRM Online\n or \nMicrosoft Dynamics CRM 2015.\n CRM Plugin supports both CRM Online (Deployment type: Office 365) and CRM on-premises deployment.\n\n\n\n\n\n\nDeployment type\n\n\nInternet Facing (On-premises) or CRM Online (Office 365). Type of deployment if your CRM hosted on Microsoft services (contoso.crm5.dynamics.com) it's includes word \"dynamics\" then your deployment type will be \"Office 365\". If CRM hosts on your domain then choose \"On-premises\".\n\n\nCRM Server Url\n\n\nAbsolute url to your Microsoft Dynamics CRM, https://contoso.crm.dynamics.com for Dynamics CRM online or https://contoso.crm2015.net for on-premises deployment.\n\n\nUser Name\n\n\nCRM systemuser login name, this user will be used to authenticate and access the CRM data, be sure that user have permissions to access Dynamics CRM.\n\n\nPassword\n\n\nCRM systemuser password, required to authenticate to CRM.\n\n\n\n\nFill the settings fields and press the \nSave Changes\n button, after connection settings are saved, plugin will notify you that connection has been established or it\u2019s failed to connect to Dynamics CRM with error details.", 
+            "title": "Settings"
+        }, 
+        {
+            "location": "/wpcrm/settings/#connection-settings", 
+            "text": "On this tab you have some simple and basic settings for establishing connection to Dynamics CRM.  Microsoft Dynamics CRM supports two security models for authentication: claims-based authentication and Active Directory authentication. The type of authentication used depends on the type of deployment your application is accessing:  Microsoft Dynamics CRM Online  or  Microsoft Dynamics CRM 2015.  CRM Plugin supports both CRM Online (Deployment type: Office 365) and CRM on-premises deployment.    Deployment type  Internet Facing (On-premises) or CRM Online (Office 365). Type of deployment if your CRM hosted on Microsoft services (contoso.crm5.dynamics.com) it's includes word \"dynamics\" then your deployment type will be \"Office 365\". If CRM hosts on your domain then choose \"On-premises\".  CRM Server Url  Absolute url to your Microsoft Dynamics CRM, https://contoso.crm.dynamics.com for Dynamics CRM online or https://contoso.crm2015.net for on-premises deployment.  User Name  CRM systemuser login name, this user will be used to authenticate and access the CRM data, be sure that user have permissions to access Dynamics CRM.  Password  CRM systemuser password, required to authenticate to CRM.   Fill the settings fields and press the  Save Changes  button, after connection settings are saved, plugin will notify you that connection has been established or it\u2019s failed to connect to Dynamics CRM with error details.", 
+            "title": "Connection settings"
         }
     ]
 }
