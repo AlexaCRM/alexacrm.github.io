@@ -45,6 +45,15 @@ defaults:
       jumbo_title: "Integration for Dynamics CRM"
       jumbo_lead: "A WordPress plugin that brings in the world of Microsoft Dynamics CRM."
   - scope:
+      path: "toolkit"
+      type: "pages"
+    values:
+      layout: documentation
+      group: toolkit
+      navigation: toolkit
+      jumbo_title: "PHP CRM Toolkit"
+      jumbo_lead: "Integration with Microsoft Dynamics CRM in PHP applications."
+  - scope:
       path: ""
       type: "pages"
     values:
@@ -55,3 +64,5 @@ navigation:
     Introduction: "/wpcrm/"
     Installation: "/wpcrm/installation/"
     Configuration: "/wpcrm/configuration/"
+  toolkit:
+    Introduction: "/toolkit/"
