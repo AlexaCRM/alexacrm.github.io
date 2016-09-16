@@ -54,3 +54,4 @@ navigation:
   wpcrm:
     Introduction: "/wpcrm/"
     Installation: "/wpcrm/installation/"
+    Configuration: "/wpcrm/configuration/"

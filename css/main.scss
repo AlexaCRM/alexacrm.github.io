@@ -97,3 +97,44 @@ h6:hover .header-link {
 
   background: #eceeef;
 }
+
+.navbar {
+  border-bottom: 1px solid #d4d6d7;
+  border-radius: 0;
+}
+
+.documentation-content {
+  dl {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  dt, dd {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  dt {
+    float: left;
+    width: 25%;
+  }
+
+  dd {
+    float: left;
+    width: 75%;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}

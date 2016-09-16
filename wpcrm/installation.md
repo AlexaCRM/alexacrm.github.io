@@ -23,4 +23,4 @@ It is possible at this stage that you'll be taken to a page requesting FTP detai
 2. Unzip the folder and Upload `wordpress-crm` folder to the `/wp-content/plugins/` directory.
 3. Activate the plugin through the "Plugin" menu in WordPress.
 
-A new settingss section called "Dynamics CRM" will appear in the Admin panel.
+A new settings section called "Dynamics CRM" will appear in the Admin panel.
