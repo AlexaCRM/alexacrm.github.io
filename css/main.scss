@@ -6,9 +6,11 @@
 .highlight {
   background: #fff;
   padding-left: 1rem;
-  border-left: .5rem solid #eceeef
+  border-left: .5rem solid #eceeef;
+  font-size: .75rem;
 }
 .highlighter-rouge, .highlight { background: #eef; }
+.highlighter-rouge pre { white-space: pre-wrap; word-wrap: break-word; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
@@ -136,5 +138,16 @@ h6:hover .header-link {
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+  blockquote {
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    border-left: .25rem solid #eceeef;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 }
