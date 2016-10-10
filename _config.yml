@@ -42,7 +42,7 @@ defaults:
       layout: documentation
       group: wpcrm
       navigation: wpcrm
-      jumbo_title: "Dynamics & Dynamics Premium"
+      jumbo_title: "Dynamics CRM Integration"
       jumbo_lead: "The easiest way to connect Dynamics CRM with WordPress."
   - scope:
       path: "toolkit"
