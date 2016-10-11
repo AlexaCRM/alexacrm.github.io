@@ -146,8 +146,8 @@ h6:hover .header-link {
     font-size: 1.25rem;
     border-left: .25rem solid #eceeef;
 
-    p:last-child {
-      margin-bottom: 0;
+    p:last-child, div:last-child {
+      margin-bottom: .5rem;
     }
   }
 }
