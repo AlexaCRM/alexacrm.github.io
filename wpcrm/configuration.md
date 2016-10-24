@@ -22,23 +22,11 @@ User Name
 Password
 : CRM *systemuser* password, required to authenticate in Dynamics CRM.
 
-## Portal
-{% include wpcrm_premium.html %}
-
-## Registration
-{% include wpcrm_premium.html %}
-
-## Roles
-{% include wpcrm_premium.html %}
-
 ## Forms
 
 ## Views
 
 ## Images
-
-## Search
-{% include wpcrm_premium.html %}
 
 ## Messages
 
