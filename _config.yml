@@ -65,6 +65,7 @@ navigation:
     Installation: "/wpcrm/installation/"
     Configuration: "/wpcrm/configuration/"
     Views: "/wpcrm/views/"
+    Forms: "/wpcrm/forms/"
     Filters and Actions: "/wpcrm/hooks/"
     Premium Features: "/wpcrm/premium/"
   toolkit:
