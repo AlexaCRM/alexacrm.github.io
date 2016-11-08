@@ -6,7 +6,7 @@ Configuration of the plugin is performed in the WordPress Administration panel. 
  
 ## Connection
 
-Microsoft Dynamics CRM supports two security models for authentication: claims-based authentication and Active Directory authentication. The type of authentication used depends on the type of deployment your application is accessing: Microsoft Dynamics CRM Online or Microsoft Dynamics CRM 2015. CRM Plugin supports both CRM Online (Deployment type: Office 365) and CRM on-premises deployment.
+Microsoft Dynamics CRM supports two security models for authentication: claims-based authentication and Active Directory authentication. The type of authentication used depends on the type of deployment your application is accessing: Microsoft Dynamics 365 or Microsoft Dynamics CRM. CRM Plugin supports both CRM Online (Deployment type: Office 365) and CRM on-premises deployment (Internet-Facing Deployment).
 
 ![Connection settings screen](/img/wpcrm/configuration_fig1.png)
 
@@ -25,11 +25,7 @@ Password
 ## Portal
 {% include wpcrm_premium.html %}
 
-## Registration
-{% include wpcrm_premium.html %}
-
-## Roles
-{% include wpcrm_premium.html %}
+Check **Authenticate new users against Dynamics CRM by default** if you want newly created WordPress users to be automatically authenticated against Dynamics CRM.
 
 ## Forms
 
