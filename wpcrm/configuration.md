@@ -33,9 +33,6 @@ Check **Authenticate new users against Dynamics CRM by default** if you want new
 
 ## Images
 
-## Search
-{% include wpcrm_premium.html %}
-
 ## Messages
 
 In the Messages section you can configure various messages that the plugin prints out on the web site.
