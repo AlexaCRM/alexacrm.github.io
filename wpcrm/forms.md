@@ -46,4 +46,22 @@ Example: `default="{firstname:John}{lastname:querystring.lastname}"`
 
 default_mode
 : **String**{:.tag.tag-primary} Constrain `default` fields substitution to the specified modes.<br><br>
-Example: `default_mode="{upsert},{create}"` inserts a default value for `firstname` only in *upsert* mode, and `lastname` only in *create* mode.
+Example: `default_mode="{upsert},{create}"` allows a default value for `firstname` to be set only in *upsert* mode, and `lastname` only in *create* mode.
+
+required
+: **String**{:.tag.tag-primary} Set required fields. Allows overriding Dynamics CRM form settings for the field.
+
+optional
+: **String**{:.tag.tag-primary} Set optional fields. Allows overriding Dynamics CRM form settings for the field.
+
+lookuptypes
+: **String**{:.tag.tag-primary} Restrict lookup controls to specified entities.
+
+lookupviews
+: **String**{:.tag.tag-primary} Display records in the lookup dialog via the specified view.
+
+validation_error
+: **String**{:.tag.tag-primary} Error message displayed if the form contains invalid data.
+
+submit_error
+: **String**{:.tag.tag-primary} Error message displayed if data could not be submitted to Dynamics CRM.
