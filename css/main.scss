@@ -110,28 +110,30 @@ h6:hover .header-link {
     margin-left: -15px;
     margin-right: -15px;
 
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+    display: flex;
+    flex-wrap: wrap;
   }
 
   dt, dd {
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+
+    border-bottom: 1px solid #eceeef;
+    margin: 0;
+
+    padding: .5rem 15px;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 
   dt {
-    float: left;
-    width: 25%;
+    flex: 0 0 25%;
   }
 
   dd {
-    float: left;
-    width: 75%;
+    flex: 0 0 75%;
   }
 
   img {

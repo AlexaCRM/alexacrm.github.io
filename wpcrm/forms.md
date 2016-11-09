@@ -20,7 +20,7 @@ entity
 : **Required**{:.tag .tag-danger} **String**{:.tag.tag-primary} Entity name, e.g. `contact` or `lead`.
 
 name
-: **Required**{:.tag .tag-danger} **String**{:.tag.tag-primary} Form name of the given entity, e.g. `Contact Quick Form` or `Lead Quick Create`.
+: **Required**{:.tag .tag-danger} **String**{:.tag.tag-primary} Form name of the specified entity, e.g. `Contact Quick Form` or `Lead Quick Create`.
 
 mode
 : **Required**{:.tag .tag-danger} **String**{:.tag.tag-primary} Form mode. Can be one of the following: `readonly`, `create`, `edit`, `upsert`.
@@ -36,3 +36,14 @@ message
 
 hide_form
 : **Boolean**{:.tag.tag-primary} Hide the form after the form is submitted successfully.
+
+redirect_url
+: **String**{:.tag.tag-primary} URL to redirect to after the form is submitted successfully. If set, `message` and `hide_form` arguments are ignored. Should be a relative or absolute URL.
+
+default
+: **String**{:.tag.tag-primary} Set default values for form fields.<br><br>
+Example: `default="{firstname:John}{lastname:querystring.lastname}"`
+
+default_mode
+: **String**{:.tag.tag-primary} Constrain `default` fields substitution to the specified modes.<br><br>
+Example: `default_mode="{upsert},{create}"` inserts a default value for `firstname` only in *upsert* mode, and `lastname` only in *create* mode.
