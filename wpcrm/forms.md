@@ -65,3 +65,29 @@ validation_error
 
 submit_error
 : **String**{:.tag.tag-primary} Error message displayed if data could not be submitted to Dynamics CRM.
+
+## Using default values
+
+`default` argument receives a list of fields using a following notation: `{fieldname:fieldvalue}{fieldname:fieldvalue}`{:.text-nowrap}. Key and value are separated using a colon, and every field-value pair is enclosed in curly brackets.
+
+For `fieldname` you can use any field name that is present in the form. `fieldvalue` may be of several different flavours which are covered below.
+
+### Simple value
+
+You can set a static default value for a given field, e.g. `{topic:Contact form submission}`.
+
+### Query string parameter value
+
+You can fill a field with a value from the query string. For instance, if you have a URL like `http://example.com/?score=42`, then `{score:querystring.score}` will fill the field `score` with value "42" right from the query string. As you can see, query string values follow the next notation: `querystring.parameterName`.
+
+### Currentuser value
+
+{% include wpcrm_premium.html %}
+
+When a user marked as CRM user logs in to WordPress, they're mapped to a linked record in Dynamics CRM -- usually a contact or an account. By using `currentuser` as a value you can put that record's ID into the field. E.g. `{parentcustomerid:currentuser}` will put the current user's record ID into `parentcustomerid`.
+
+### Currentuser field value
+
+{% include wpcrm_premium.html %}
+
+Similar to `currentuser`, you can put any record field value into the form field by using dot notation. E.g., `{firstname:currentuser.firstname}{lastname:currentuser.lastname}` will set `firstname` and `lastname` in the form to the values of the current user record's `firstname` and `lastname`.
