@@ -9,7 +9,7 @@ You can insert views from Dynamics CRM into your posts and pages using shortcode
 Shortcode syntax:
 
 ```
-[msdyncrm_view entity="invoices" name="Show Invoices" parameters="{querystring.id}" lookups="{contact:}" allfields="true"]
+[msdyncrm_view entity="invoice" name="Show Invoices" parameters="{querystring.id}" lookups="{contact:}" allfields="true"]
 ```
 
 The output of this shortcode is a table populated with record columns retrieved from Dynamics CRM based on view settings.
@@ -17,10 +17,10 @@ The output of this shortcode is a table populated with record columns retrieved 
 ## Shortcode attributes
 
 name
-: **Required**{:.tag .tag-danger} **String**{:.tag.tag-primary} Name of the view (saved query) to display records, e. g. "Active Invoices".
+: **Required**{:.tag .tag-danger} **String**{:.tag.tag-primary} Name of the view (saved query) to display records, e.g. `Active Invoices`.
 
 entity
-: **Required**{:.tag .tag-danger} **String**{:.tag.tag-primary} Logical name of the entity that contains the view.
+: **Required**{:.tag .tag-danger} **String**{:.tag.tag-primary} Logical name of the entity that contains the view, e.g. `invoice`.
 
 parameters
 : **String**{:.tag.tag-primary} See [Parameters](#parameters)
