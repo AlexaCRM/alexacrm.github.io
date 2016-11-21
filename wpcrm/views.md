@@ -28,6 +28,9 @@ parameters
 lookups
 : **String**{:.tag.tag-primary} See [Lookups](#lookups)
 
+count
+: **Integer**{:.tag.tag-primary} Records per page. Enables pagination if value is larger than zero.
+
 ### Parameters
 
 TODO.
