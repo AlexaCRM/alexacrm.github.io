@@ -58,7 +58,8 @@ lookuptypes
 : **String**{:.tag.tag-primary} Restrict lookup controls to specified entities.
 
 lookupviews
-: **String**{:.tag.tag-primary} Display records in the lookup dialog via the specified view.
+: **String**{:.tag.tag-primary} Display a dropdown instead of a lookup dialog for the specified field with records from the specified view.<br><br>
+ Example: `lookupviews="{parentcustomerid:Active Contacts}"`
 
 validation_error
 : **String**{:.tag.tag-primary} Error message displayed if the form contains invalid data.
