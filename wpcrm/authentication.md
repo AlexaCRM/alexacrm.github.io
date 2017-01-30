@@ -2,6 +2,8 @@
 title: Authentication
 ---
 
+{% include wpcrm_premium.html %}
+
 **Dynamics CRM Integration Premium** lets you create a membership system with Microsoft Dynamics CRM and WordPress.
 
 With Dynamics CRM Integration, an authenticated WordPress user can be associated with a CRM entity record. The plugin allows to choose any type of entity to associate users with.
