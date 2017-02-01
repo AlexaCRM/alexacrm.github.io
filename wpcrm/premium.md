@@ -13,6 +13,5 @@ Our premium plugin will enable you to fully grasp the power of both WordPress an
 
 - **[Inline view templates](/wpcrm/views/#inline-views).** Create your own views directly in WordPress using the powerful FetchXML query language.
 - **Extensions for *Contact Form 7* and *Gravity Forms.*** Create beautiful forms and connect them to Dynamics CRM with our plugin.
-- **Registration, login and role management.** Control your users right in Dynamics CRM. Use custom workflow actions to cover countless cases.
-- **Login via CRM.** Authentication in WordPress in just one click!
+- **[Registration, login and role management](/wpcrm/authentication/).** Control your users right in Dynamics CRM. Use custom workflow actions to cover countless cases.
 - **Support.** We will listen to you and provide you help if you meet any obstacles.
