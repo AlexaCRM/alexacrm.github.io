@@ -84,6 +84,7 @@ Password recovery shortcode allows users to change password of their identity us
 
 ##### Attributes
 
+newpassword
 : **Boolean**{:.tag.tag-primary} Can be *true* of *false*. Attribute defines how the form will work. If `newpassword` is true then the user doesn't need to enter the old password. Default is *false*. 
 
 ## WordPress-managed users
