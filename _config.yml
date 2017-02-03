@@ -66,6 +66,7 @@ navigation:
     Configuration: "/wpcrm/configuration/"
     Views: "/wpcrm/views/"
     Forms: "/wpcrm/forms/"
+    Templates: "/wpcrm/templates/"
     Filters and Actions: "/wpcrm/hooks/"
     Premium Features: "/wpcrm/premium/"
     Twig Templates: "/wpcrm/twig/"
