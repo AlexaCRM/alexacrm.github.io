@@ -101,8 +101,8 @@ You can switch authentication method (WordPress or CRM) individually for each us
 
 ![User authentication mode selection](/img/wpcrm/authentication_fig1.png)
 
-- *Login via CRM* -- authenticate the user by their username and password, and additionally match the user against an Identity record in Dynamics CRM. `currentuser` object in view, form and template shortcodes will contain the entity record specified in the aforementioned Identity record.
-- *Login via WordPress* -- authenticate the user by their username and password only. No identity record matching is performed and `currentuser` object is not available. 
+- *Link to CRM* -- authenticate the user by their username and password, and additionally match the user against an Identity record in Dynamics CRM. `currentuser` object in view, form and template shortcodes will contain the entity record specified in the aforementioned Identity record.
+- *Unlink from CRM* -- authenticate the user by their username and password only. No identity record matching is performed and `currentuser` object is not available.
 
 > You can choose the default value for this setting for newly created users. It may be changed in Admin / Dynamics CRM / Portal, section *Authentication for new users*.
 
