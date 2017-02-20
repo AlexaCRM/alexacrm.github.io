@@ -62,6 +62,7 @@ defaults:
 navigation:
   wpcrm:
     Introduction: "/wpcrm/"
+    Quickstart: "/wpcrm/quickstart/"
     Installation: "/wpcrm/installation/"
     Configuration: "/wpcrm/configuration/"
     Views: "/wpcrm/views/"
