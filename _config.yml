@@ -61,7 +61,7 @@ defaults:
       group: sms
       navigation: sms
       jumbo_title: "AlexaCRM SMS"
-      jumbo_lead: "Two-way smart SMS messaging solution for Dynamics 365 and Dynamics CRM."
+      jumbo_lead: "Two-way smart SMS messaging solution for Dynamics 365 and Dynamics CRM"
   - scope:
       path: ""
       type: "pages"
@@ -89,3 +89,4 @@ navigation:
     Settings: "/sms/settings/"
     Sending: "/sms/sending/"
     Receiving: "/sms/receiving/"
+    Automation: "/sms/automation/"
