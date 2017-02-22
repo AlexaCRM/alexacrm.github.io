@@ -60,8 +60,8 @@ defaults:
       layout: documentation
       group: sms
       navigation: sms
-      jumbo_title: "Dynamics 365 SMS"
-      jumbo_lead: "Dynamics 365 SMS 2-way Messaging."
+      jumbo_title: "AlexaCRM SMS"
+      jumbo_lead: "Two-way smart SMS messaging solution for Dynamics 365 and Dynamics CRM."
   - scope:
       path: ""
       type: "pages"
