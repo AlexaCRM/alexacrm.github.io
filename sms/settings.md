@@ -1,8 +1,1 @@
----
-title: Settings
----
-
-Settings for the AlexaCRM SMS Messaging solution
- 
-## Connection
-
+---title: Settings---To access settings for the AlexaCRM SMS solution:1. In your Dynamics 365 or Dynamics CRM instance, click **Settings > Solutions**.1. Click on the Display Name **AlexaCRM SMS Integration** to open the solution.1. If configuration page is not loaded automatically, click **Configuration** link1. Account Settings window is displayed:![AlexaCRM SMS Settings](/img/sms/account-settings.png "AlexaCRM SMS Account Settings") 
