@@ -54,6 +54,15 @@ defaults:
       jumbo_title: "PHP CRM Toolkit"
       jumbo_lead: "Integration with Microsoft Dynamics CRM in PHP applications."
   - scope:
+      path: "sms"
+      type: "pages"
+    values:
+      layout: documentation
+      group: sms
+      navigation: sms
+      jumbo_title: "Dynamics 365 SMS"
+      jumbo_lead: "Dynamics 365 SMS 2-way Messaging."
+  - scope:
       path: ""
       type: "pages"
     values:
@@ -74,3 +83,9 @@ navigation:
     Authentication: "/wpcrm/authentication/"
   toolkit:
     Introduction: "/toolkit/"
+  sms:
+    Introduction: "/sms/"
+    Installation: "/sms/installation/"
+    Settings: "/sms/settings/"
+    Sending: "/sms/sending/"
+    Receiving: "/sms/receiving/"
