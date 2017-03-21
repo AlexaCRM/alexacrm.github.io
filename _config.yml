@@ -76,6 +76,7 @@ navigation:
     Configuration: "/wpcrm/configuration/"
     Views: "/wpcrm/views/"
     Forms: "/wpcrm/forms/"
+    Entity Binding: "/wpcrm/binding/"
     Templates: "/wpcrm/templates/"
     Filters and Actions: "/wpcrm/hooks/"
     Premium Features: "/wpcrm/premium/"
