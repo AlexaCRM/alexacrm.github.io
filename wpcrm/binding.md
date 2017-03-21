@@ -8,7 +8,7 @@ title: Entity Binding
 
 You can configure entity data binding for the page at the page editing screen. All available controls can be accessed in the *"Dynamics CRM Data Binding"* box.
 
-![Data binding settings](/img/wpcrm/test.png)
+![Data binding settings](/img/wpcrm/binding_fig1.png)
 
 Entity
 : Entity name that you want to bind the page to. Lists all available entities in the CRM, default and custom ones.
