@@ -70,6 +70,9 @@ submit_error
 force_https
 : **Boolean**{:.tag.tag-primary} When set to true, https protocol is used during the form submission. If undefined, form submission follows the page protocol.
 
+enable_layout
+: **Boolean**{:.tag.tag-primary} When set to `true`,  columns and label alignment and position will follow the form definition. Default value is `false`, i.e. simplified form layout with a single column and labels on the left.
+
 ## Using default values
 
 `default` argument receives a list of fields using a following notation: `{fieldname:fieldvalue}{fieldname:fieldvalue}`{:.text-nowrap}. Key and value are separated using a colon, and every field-value pair is enclosed in curly brackets.
