@@ -26,6 +26,9 @@ github_username:  alexacrm
 
 repository: AlexaCRM/alexacrm.github.io
 
+gems:
+  - jekyll-redirect-from
+
 # Build settings
 markdown: kramdown
 theme: minima
