@@ -1,5 +1,12 @@
 ---
 title: Configuration
+redirect_from:
+ - /wpcrm/configuration/connection/
+ - /wpcrm/configuration/portal/
+ - /wpcrm/configuration/registration/
+ - /wpcrm/configuration/roles/
+ - /wpcrm/configuration/forms/
+ - /wpcrm/configuration/images/
 ---
 
 Configuration of the plugin is performed in the WordPress Administration panel. The plugin provides a separate section for that, which is called "Dynamics CRM". You can locate it in the main navigation menu on the left side of the screen.
