@@ -120,4 +120,8 @@ Enter the username (email address) in "Name", "User Name" and "Email Address" fi
 
 *Dynamics CRM Integration* notifies the connected Dynamics CRM instance about new users, removed users and updated users. All that allows you act accordingly, e.g. send an email to the new user.
 
+The plugin calls three specific custom actions to notify the CRM about events:
 
+- `alex_WPUserCreated(UserId, Email, Roles)`
+- `alex_WPUserUpdated(UserId, Email, Roles)`
+- `alex_WPUserDeleted(UserId)`
