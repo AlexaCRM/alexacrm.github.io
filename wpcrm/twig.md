@@ -18,6 +18,38 @@ Twig syntax is explained in [Twig documentation](http://twig.sensiolabs.org/doc/
 - *access any record by ID*
 - *extensibility* -- add new tags, functions and filters to the engine with WordPress actions and filters
 
+## Examples
+
+### Entity binding
+
+Configure entity binding for the page as described in [Entity binding](/wpcrm/binding). If the page is bound to an entity, and the respective entity record is found in the CRM, that record will be available as a global `currentrecord` object in Twig templates.
+
+{% raw %}
+```
+{{ currentrecord.name }}
+```
+{% endraw %}
+
+### User binding
+
+{% include wpcrm_premium.html %}
+
+Configure authentication for the site as described in [Authentication](/wpcrm/authentication/). If the current user is an identity user, then the global `user` object will be available in Twig templates.
+
+{% raw %}
+```
+{{ user.emailaddress1 }}
+```
+{% endraw %}
+
+### Views
+
+### FetchXML queries
+
+### Forms
+
+### Access to records by ID
+
 ## Deprecated shortcode
 
 {% include wpcrm_premium.html %}

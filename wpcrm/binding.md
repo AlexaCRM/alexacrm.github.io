@@ -43,8 +43,6 @@ You can use attribute values from the current entity record to set up `parameter
 
 ## Using bound entities with Twig templates
 
-{% include wpcrm_premium.html %}
-
 To surface a value for the currently visited entity record, use the `currentrecord` object. More details are available in the [Twig templates documentation](/wpcrm/twig/).
 
 {% raw %}
