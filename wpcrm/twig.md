@@ -46,6 +46,15 @@ Configure authentication for the site as described in [Authentication](/wpcrm/au
 
 The `view` tag allows you to fetch structured data from CRM and display it as a table. You can customize the template or write your own one and create a unique experience.
 
+The tag has a number of arguments:
+
+- `entity` -- *(required)* logical name of the entity which the view belongs to
+- `name` -- *(required)* name of the entity view
+- `cache` -- specifies expiration time for the fetched **data**. The format is based on the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations)
+- `parameters` -- an array of values to substitute placeholders in the view FetchXML
+- `lookups` -- a key-value map to substitute lookup conditions in the view FetchXML
+- `count` -- number of items per page. If specified, pagination is enabled
+
 Inside the template the tag exposes `entityview` object with a collection of fields:
 
 - `columns` -- collection of fetched columns (key: logical name, value: field label)
@@ -67,6 +76,14 @@ Inside the template the tag exposes `entityview` object with a collection of fie
   - `properties` -- field metadata
 - `total_pages` -- total number of pages in the view
 - `total_records` -- total record count as reported by the CRM
+
+#### Simple view
+
+{% raw %}
+```
+{% view entity="contact" name="Active Contacts" count="10" cache="PT30M" %}{% endview %}
+```
+{% endraw %}
 
 ### FetchXML queries
 
