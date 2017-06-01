@@ -44,6 +44,30 @@ Configure authentication for the site as described in [Authentication](/wpcrm/au
 
 ### Views
 
+The `view` tag allows you to fetch structured data from CRM and display it as a table. You can customize the template or write your own one and create a unique experience.
+
+Inside the template the tag exposes `entityview` object with a collection of fields:
+
+- `columns` -- collection of fetched columns (key: logical name, value: field label)
+- `entity_logical_name` -- logical name of the entity
+- `first_page` -- page number of the first page. Set to `1` if the result is not empty, `null` otherwise
+- `last_page` -- page number of the last page. `null` if the result is empty)
+- `name` -- name of the fetched CRM view
+- `next_page` -- page number of the next page. `null` if pagination is not enabled or the last page has been reached
+- `page` -- the current page number
+- `pages` -- array of all available page numbers
+- `page_size` -- number of items per page
+- `previous_page` -- page number of the previous page. `null` if pagination is not enabled or the first page is reached
+- `primary_key_logical_name` -- logical name of the primary field
+- `records` -- collection of retrieved records, accessible by record ID
+- `rows` -- collection of retrieved records with prepared values, accessible by record ID. Individual item fields are:
+  - `head` -- label of the current column
+  - `formatted_value` -- formatted value of the current column. May be a HTML link referring to a data-bound page if the column field is a lookup
+  - `value` -- raw value of the field as reported by the CRM
+  - `properties` -- field metadata
+- `total_pages` -- total number of pages in the view
+- `total_records` -- total record count as reported by the CRM
+
 ### FetchXML queries
 
 ### Forms
