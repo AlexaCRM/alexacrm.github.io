@@ -11,7 +11,7 @@ Annotation images are exposed via a crafted URL, which includes GUID of the anno
 Original image is downloaded, and you may request a downsized copy (a thumbnail) by specifying the optional `width` argument -- the image will be scaled proportionally.
 
 ```
-/wp-admin/admin-ajax.php?action=msdyncrm_image&id=dfa55463-a9b1-4180-a8ff-e2967c6bc3a4&size=300
+/wp-admin/admin-ajax.php?action=msdyncrm_image&id=dfa55463-a9b1-4180-a8ff-e2967c6bc3a4&width=300
 ```
 
 ## Images from custom entities
