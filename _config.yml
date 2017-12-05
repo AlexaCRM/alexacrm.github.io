@@ -81,7 +81,7 @@ navigation:
     Forms: "/wpcrm/forms/"
     Entity Binding: "/wpcrm/binding/"
     Templates: "/wpcrm/templates/"
-    Images: "/wpcrm/images/"
+    Annotations & Images: "/wpcrm/images/"
     Filters and Actions: "/wpcrm/hooks/"
     Premium Features: "/wpcrm/premium/"
     Twig Templates: "/wpcrm/twig/"
