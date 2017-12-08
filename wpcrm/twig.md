@@ -14,8 +14,9 @@ Twig syntax is explained in [Twig documentation](http://twig.sensiolabs.org/doc/
 - *user binding* -- access record data of the the current [CRM identity](/wpcrm/authentication/)
 - *views* -- render CRM views in WordPress, with customizable templates
 - *inline FetchXML queries* -- query CRM data and render it in WordPress
-- *forms* -- render CRM forms in WordPress, capture submissions and send data back to CRM
+- *forms* -- render CRM forms or custom HTML forms in WordPress, capture submissions and send data back to CRM
 - *access any record by ID*
+- *access entity metadata*
 - *extensibility* -- add new tags, functions and filters to the engine with WordPress actions and filters
 
 ## Examples
@@ -50,7 +51,7 @@ The tag has a number of arguments:
 
 - `entity` -- *(required)* logical name of the entity which the view belongs to
 - `name` -- *(required)* name of the entity view
-- `cache` -- specifies expiration time for the fetched **data**. The format is based on the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations)
+- `cache` -- specifies expiration time for the fetched **records**. The format is based on the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations)
 - `parameters` -- an array of values to substitute placeholders in the view FetchXML
 - `lookups` -- a key-value map to substitute lookup conditions in the view FetchXML
 - `count` -- number of items per page. If specified, pagination is enabled
@@ -86,6 +87,54 @@ Inside the template the tag exposes `entityview` object with a collection of fie
 {% endraw %}
 
 ### FetchXML queries
+
+The `fetchxml` tag allows you to query the CRM using the powerful FetchXML query language. Please refer to [MSDN documentation](https://msdn.microsoft.com/en-us/library/gg328332.aspx) regarding the technology.
+
+The tag supports the following attributes:
+
+- `collection` -- the name of the variable that would contain query results object
+- `cache` -- specifies expiration time for the fetched records. The format is based on the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations)
+
+The FetchXML query is contained between the `fetchxml` and `endfetchxml` tags.
+
+{% raw %}
+```twig
+{% fetchxml collection="contacts" cache="PT30M" %}
+```
+```xml
+<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+  <entity name="contact">
+    <attribute name="fullname" />
+    <attribute name="emailaddress1" />
+    <attribute name="contactid" />
+    <order attribute="lastname" descending="false" />
+  </entity>
+</fetch>
+```
+```twig
+{% endfetchxml %}
+```
+{% endraw %}
+
+Variable `contacts` would contain an object with the following fields:
+
+- `xml` - the original FetchXML query
+- `results`
+  - `entities` - collection of fetched entity records
+  - `total_record_count` - the total record count in case pagination is enabled. Add `returntotalrecordcount="true"` to the `entity` element in order to access this value
+  - `more_records` - (boolean) tells whether more records are available if pagination is enabled
+  - `paging_cookie` - paging cookie value
+- `error` - contains an error message if there's any
+
+{% raw %}
+```
+<ul>
+{% for contact in contacts.results.entities %}
+  <li><a href="{{ entityUrl( "contact", contact.id ) }}">{{contact.fullname ?? "[noname]" }}</a> &lt;{{contact.emailaddress1}}&gt;</li>
+{% endfor %}
+</ul>
+```
+{% endraw %}
 
 ### Forms
 
