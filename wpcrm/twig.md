@@ -126,15 +126,13 @@ Variable `contacts` would contain an object with the following fields:
   - `paging_cookie` - paging cookie value
 - `error` - contains an error message if there's any
 
-{% raw %}
-```
+```twig
 <ul>
 {% for contact in contacts.results.entities %}
   <li><a href="{{ entityUrl( "contact", contact.id ) }}">{{contact.fullname ?? "[noname]" }}</a> &lt;{{contact.emailaddress1}}&gt;</li>
 {% endfor %}
 </ul>
 ```
-{% endraw %}
 
 ### Forms
 
