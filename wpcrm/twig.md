@@ -138,7 +138,89 @@ Variable `contacts` would contain an object with the following fields:
 
 ### Forms
 
+`form` tag allows you to display CRM forms and custom forms on your WordPress site.
+
+This tag supports the following attributes:
+
+- `entity` *(required)* -- entity name of the form (contact, account, lead, etc.)
+- `name` -- name of the form. If specified, a CRM form will be rendered
+- `optional` -- array of optional entity attributes (i.e. override CRM constraints)
+- `required` -- array of required entity attributes. If the submitted field is empty, the form will emit an error message
+- `default` -- map of attribute names and their default values
+- `lookupviews` -- map of lookups that need to be displayed as a dropdown list of existing records per specified view. The value is as follows: `{ "EntityName": "ViewName" }`
+- `redirect` -- URL to redirect to after successful form submission
+- `record` -- entity record object to fill form fields from, can be retrieved via `currentrecord` or `entities` objects, or a GUID
+
+If the `name` attribute is specified, the plugin will render a CRM form, and expose a `form` object to the inner template. This object has the following structure:
+
+- `id` -- unique one-time form ID
+- `name` -- form name
+- `tabs` -- [FormXML](https://msdn.microsoft.com/en-us/library/gg327975.aspx) representation of the form. Each CRM form is comprised of a number of tabs
+  - `expanded` -- *(boolean)* whether the tab is not collapsed by default
+  - `showLabel` -- *(boolean)* whether to display the tab label
+  - `label` -- label value
+  - `columns` -- collection of columns inside a tab. Tabs are comprised of a number of columns in Dynamics 365
+    - `width` -- column width in percentage, with the percent sign appended
+    - `sections` -- collection of sections inside a column. Columns are comprised of a number of sections in Dynamics 365
+      - `showLabel` -- *(boolean)* whether to display the section label
+      - `label` -- label value
+      - `cellLabelAlignment` -- control label alignment (left/center/right)
+      - `cellLabelPosition` -- control label position relative to the input control (top/left)
+      - `rows` -- collection of rows. Each section in CRM is comprised of a number of rows. Each row in its turn is a collection of cells, the latter each containing a single control (label + input)
+        - `showLabel` -- *(boolean)* whether to display the control label
+        - `label` -- control label value
+        - `colspan` -- number of cell columns in the row used to display the control
+        - `rowspan` -- number of rows used to display the control
+        - `isSpacer` -- *(boolean)* whether the cell contains a spacer
+        - `control` -- control settings
+          - `id` -- control ID
+          - `classId` -- control class ID (see [MSDN](https://msdn.microsoft.com/en-us/library/gg334472.aspx))
+          - `disabled` -- *(boolean)* whether the control is disabled
+          - `required` -- *(boolean)* whether the control is required, defined by entity attribute metadata, form settings and `optional`/`required` attributes for the Twig tag (the latter values take priority)
+          - `parameters` -- map of control parameters (see [MSDN](https://msdn.microsoft.com/en-us/library/gg328411.aspx))
+          - `options` -- map of entity records. Available if the entity attribute is specified in the `lookupviews` attribute for the Twig tag
+- `options`
+  - `dateformat` -- date format to use with the `date` Twig filter
+  - `datetimeformat` -- date/time format to use with the `date Twig filter
+- `metadata` -- metadata of the form entity (attributes, relationships, etc.)
+- `entities` -- map of all entities in the CRM (logical name -> display name)
+- `parameters` -- map of attributes supplied to the form tag
+- `record` -- record object
+
+The default form template is located in `templates/twig/form.twig`. If you need to create a new form template, please refer to it.
+
+#### Displaying custom forms
+
+You don't need a form defined in CRM to capture data from WordPress. You can design your own form, and data received from it will be sent to Dynamics 365 the same way if you had a CRM form.
+
+To capture data this way, you need to define a custom template inside the {%raw%}`{% form %}{% endform %}`{%endraw%} tags. You need to specify the entity name, and you can omit the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your custom form with the `required` attribute.
+
+{% raw %}
+```twig
+{% form entity="lead" mode="create" required=["lastname", "emailaddress1", "description"] %}
+<form method="POST">
+<input name="firstname" required placeholder="First Name">
+<input name="lastname" required placeholder="Last Name">
+<input name="mobilephone" type="tel" placeholder="Phone Number">
+
+<textarea name="description" rows="4" placeholder="Share Your Story"></textarea>
+
+<button type="submit">Submit</button>
+</form>
+{% endform %}
+```
+{% endraw %}
+
 ### Access to records by ID
+
+You can access any entity record by its ID.
+
+{% raw %}
+```
+{% set fooContact = entities.contact["36049e71-8132-e711-8102-5065f38b2601"] %}
+{% set barAccount = entities.account["ce039e71-8132-e711-8102-5065f38b2601"] %}
+```
+{% endraw %}
 
 ## Deprecated shortcode
 
