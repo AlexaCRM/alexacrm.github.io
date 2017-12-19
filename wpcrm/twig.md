@@ -183,7 +183,7 @@ If the `name` attribute is specified, the plugin will render a CRM form, and exp
   - `dateformat` -- date format to use with the `date` Twig filter
   - `datetimeformat` -- date/time format to use with the `date Twig filter
 - `metadata` -- metadata of the form entity (attributes, relationships, etc.)
-- `entities` -- map of all entities in the CRM (logical name -> display name)
+- `entities` -- *(deprecated, use the global `entities_list` object)* map of all entities in the CRM (logical name -> display name).
 - `parameters` -- map of attributes supplied to the form tag
 - `record` -- record object
 
