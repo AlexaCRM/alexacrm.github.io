@@ -86,6 +86,7 @@ navigation:
     Premium Features: "/wpcrm/premium/"
     Twig Templates: "/wpcrm/twig/"
     Authentication: "/wpcrm/authentication/"
+    3rd-party Plugins: "/wpcrm/3rd-party/"
   toolkit:
     Introduction: "/toolkit/"
   sms:
