@@ -19,6 +19,32 @@ Twig syntax is explained in [Twig documentation](http://twig.sensiolabs.org/doc/
 - *access entity metadata*
 - *extensibility* -- add new tags, functions and filters to the engine with WordPress actions and filters
 
+## Global objects
+
+- `entities` -- access to any entity record by ID. See [Access to records by ID](#access-to-records-by-id)
+- `entities_list` -- map of all entities in the CRM (logical name -> display name)
+- `metadata` -- access to entity metadata
+- `currentrecord` -- access to the bound entity record. See [Entity binding](#entity-binding)
+- `now` -- time in unixtime format (integer) when Twig was initialized
+- `request` -- stores request-related data
+  - `params` -- map of cookies, POST and GET values. The latter values override the former
+  - `path` -- raw path to the page
+  - `path_and_query` -- raw URI of the page
+  - `query` -- query string prepended with `?` character or empty if no query string
+- `params` -- see `request.params`
+- `crm` -- CRM-related parameters
+  - `connected` -- *(boolean)* tells whether the site is connected to CRM
+
+## Functions
+
+- `entityUrl(entityName, entityId)` -- builds an URL leading to the page marked as "Default for views"
+- `attachmentUrl(attachmentId)` -- builds an URL leading to the attachment download page. File download is triggered and a "Save As" dialog is displayed after visiting the link
+
+## Filters
+
+- `url|add_query(argName, argValue)` -- adds a query argument to the given URL
+- `content|wpautop` -- filters the given content through the [`wpautop()`](https://codex.wordpress.org/Function_Reference/wpautop) WordPress function
+
 ## Examples
 
 ### Entity binding
@@ -183,7 +209,7 @@ If the `name` attribute is specified, the plugin will render a CRM form, and exp
   - `dateformat` -- date format to use with the `date` Twig filter
   - `datetimeformat` -- date/time format to use with the `date Twig filter
 - `metadata` -- metadata of the form entity (attributes, relationships, etc.)
-- `entities` -- *(deprecated, use the global `entities_list` object)* map of all entities in the CRM (logical name -> display name).
+- `entities` -- *(deprecated, use the global `entities_list` object)* map of all entities in the CRM (logical name -> display name)
 - `parameters` -- map of attributes supplied to the form tag
 - `record` -- record object
 
