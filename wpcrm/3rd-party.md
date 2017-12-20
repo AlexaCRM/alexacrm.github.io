@@ -124,3 +124,17 @@ Example: `commonfield: description`
 fields_map
 : Allows to map non-CRM CF7 tags to CRM attributes.<br><br> 
 Example: `fields_map: {your-name:firstname1}{your-email:emailaddress1}`
+
+## Gravity Forms
+
+[Gravity Forms](https://www.gravityforms.com/) plugin provides custom forms with a robust UI. **Dynamics 365 Integration Premium** enables Gravity Forms to create new records in CRM easily.
+
+### Usage
+
+1. Create a new Gravity Form or choose an existing one.
+1. Navigate to the form editor.
+1. Point to **Form Settings** and click **Dynamics 365 Plugin**
+1. Click **Add New** to create a new feed to Dynamics 365.
+1. Enter the **Feed Name**, select an action (create or update), and choose the entity.
+1. In the next section, you need to map CRM fields (on the left) to corresponding form fields (on the right).
+1. Click **Update Settings**.
