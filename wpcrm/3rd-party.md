@@ -134,7 +134,19 @@ Example: `fields_map: {your-name:firstname1}{your-email:emailaddress1}`
 1. Create a new Gravity Form or choose an existing one.
 1. Navigate to the form editor.
 1. Point to **Form Settings** and click **Dynamics 365 Plugin**
+
+   ![Dynamics 365 Integration in the Gravity Forms settings menu](/img/wpcrm/3rd-party_gf-menu.png)
+
 1. Click **Add New** to create a new feed to Dynamics 365.
+
+   ![List of feeds in the Gravity Forms settings](/img/wpcrm/3rd-party_gf-new-feed.png)
+
 1. Enter the **Feed Name**, select an action (create or update), and choose the entity.
+
+   ![Dynamics 365 Integration settings for a Gravity Forms form](/img/wpcrm/3rd-party_gf-feed-settings1.png)
+
 1. In the next section, you need to map CRM fields (on the left) to corresponding form fields (on the right).
+
+   ![Dynamics 365 field mapping for a Gravity Forms form](/img/wpcrm/3rd-party_gf-feed-settings2.png)
+
 1. Click **Update Settings**.
