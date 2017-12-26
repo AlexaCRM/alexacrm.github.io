@@ -47,6 +47,16 @@ Twig syntax is explained in [Twig documentation](http://twig.sensiolabs.org/doc/
 
 ## Examples
 
+### Basic shortcode
+
+All Twig templates must be enclosed into the special Twig shortcode -- `[msdyncrm_twig]`.
+
+```
+[msdyncrm_twig]
+Twig templates go here...
+[/msdyncrm_twig]
+```
+
 ### Entity binding
 
 Configure entity binding for the page as described in [Entity binding](/wpcrm/binding). If the page is bound to an entity, and the respective entity record is found in the CRM, that record will be available as a global `currentrecord` object in Twig templates.
