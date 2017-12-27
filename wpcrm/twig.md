@@ -114,11 +114,27 @@ Inside the template the tag exposes `entityview` object with a collection of fie
 - `total_pages` -- total number of pages in the view
 - `total_records` -- total record count as reported by the CRM
 
+#### Parameters substitution
+
+In order to use `parameters` attribute, you need to create a view with placeholders. A placeholder is an integer value (0, 1, 2...) enclosed in the curly braces: `{0}`. When you construct a view, enter these placeholders into field values you want to filter. See the example below.
+
+![Dynamics 365 Advanced Find window.](/img/wpcrm/twig_view-parameters.png)
+
+`parameters` receives a Twig array: `[ "value 0", "value 1", "value 2" ]`.
+
+Alternatively, you can specify a placeholder label in the view instead of a number, e.g. `{email}`. To substitute that placeholder later, please use a map as `parameters` value: `{ "email": "contoso.com" }`.
+
+#### Lookups substitution
+
+You can substitute lookup conditions in the view. Please use a map `{ attribute => GUID }` for that. For example, `{ "parentcustomerid": params.account "}`.
+
 #### Simple view
+
+The following snippet will insert a Contact view "Active Contacts" with pagination enabled with 10 records per page. The result of the view query will be fetched for 30 minutes. It will substitute placeholder `{0}` with raw value `contoso.com` and substitute `parentcustomerid` lookup with `account` query argument (i.e. `?account=GUID` in the URL).
 
 {% raw %}
 ```
-{% view entity="contact" name="Active Contacts" count="10" cache="PT30M" %}{% endview %}
+{% view entity="contact" name="Active Contacts" parameters=[ "contoso.com" ] lookups={ "parentcustomerid": params.account "} count="10" cache="PT30M" %}{% endview %}
 ```
 {% endraw %}
 
