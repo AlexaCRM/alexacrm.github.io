@@ -35,11 +35,15 @@ count
 
 ### Parameters
 
-TODO.
+Allows to substitute `{n}` (`{0}`, `{1}`, etc.) placeholders with values. Example:
+
+`{value1}{querystring.id}{currentrecord.lastname}`
 
 ### Lookups
 
-TODO.
+Allows to customize lookup conditions. Example:
+
+`{parentcustomerid:GUID}{transactioncurrencyid:querystring.currency}{a_customid:currentrecord.custom_field}`
 
 ## Inline views
 {% include wpcrm_premium.html %}
