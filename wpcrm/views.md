@@ -14,6 +14,8 @@ Shortcode syntax:
 
 The output of this shortcode is a table populated with record columns retrieved from Dynamics CRM based on view settings.
 
+{% include consider_twig.html %}
+
 ## Shortcode attributes
 
 name
