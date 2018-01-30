@@ -126,7 +126,7 @@ Alternatively, you can specify a placeholder label in the view instead of a numb
 
 #### Lookups substitution
 
-You can substitute lookup conditions in the view. Please use a map `{ attribute => GUID }` for that. For example, `{ "parentcustomerid": params.account "}`.
+You can substitute lookup conditions in the view. Please use a map `{ attribute => GUID }` for that. For example, `{ "parentcustomerid": params.account "}` or `{ "ownerid": user.id }`.
 
 #### Simple view
 
