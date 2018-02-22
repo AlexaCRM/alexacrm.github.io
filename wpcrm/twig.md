@@ -245,7 +245,7 @@ The default form template is located in `templates/twig/form.twig`. If you need 
 
 You don't need a form defined in CRM to capture data from WordPress. You can design your own form, and data received from it will be sent to Dynamics 365 the same way if you had a CRM form.
 
-To capture data this way, you need to define a custom template inside the {%raw%}`{% form %}{% endform %}`{%endraw%} tags. You need to specify the entity name, and you can omit the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your custom form with the `required` attribute.
+To capture data this way, you need to define a custom template inside the {%raw%}`{% form %}{% endform %}`{%endraw%} tags. You need to specify the entity name, and you must not include the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your custom form with the `required` attribute.
 
 {% raw %}
 ```twig
