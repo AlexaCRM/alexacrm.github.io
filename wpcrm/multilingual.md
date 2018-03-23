@@ -12,23 +12,29 @@ The plugin allows to specify a custom language to render forms and views in. To 
 
 Language is specified in the `form` tag via language code in the `language` parameter.
 
+{% raw %}
 ```twig
 {% form entity="contact" name="Contact Form" language=3082 %}{% endform %}
 ```
+{% endraw %}
 
 Translations come from entity attribute metadata, and form control labels are replaced by default. If you want to keep the original form labels (e.g. different forms per language are used) please specify additional parameter `keep_labels`:
 
+{% raw %}
 ```twig
 {% form entity="contact" name="Contact Form" language=3082 keep_labels=true %}{% endform %}
 ```
+{% endraw %}
 
 ### Views
 
 You can translate table headers by specifying the `language` parameter in the `view` tag.
 
+{% raw %}
 ```twig
 {% view entity="contact" name="Active Contacts" language=3082 %}{% endview %}
 ```
+{% endraw %}
 
 ## In shortcodes
 
