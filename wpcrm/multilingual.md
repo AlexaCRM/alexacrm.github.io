@@ -4,9 +4,9 @@ title: Multilingual Support
 
 **Dynamics 365 Integration** provides limited support for multiple languages in Dynamics 365 and Dynamics CRM. Display forms and views in different CRM languages.
 
-## In Twig
+The plugin allows to specify a custom language to render forms and views in. To render a form or a view in a certain language, [Dynamics 365 Language Pack](https://technet.microsoft.com/en-us/library/hh699736.aspx) must be installed and the language must be [enabled](https://technet.microsoft.com/en-us/library/dn832148.aspx).
 
-The plugin allows to specify a custom language to render forms and views in. To render the form of view in a certain language, [Dynamics 365 Language Pack](https://technet.microsoft.com/en-us/library/hh699736.aspx) must be installed and the language must be [enabled](https://technet.microsoft.com/en-us/library/dn832148.aspx).
+## In Twig
 
 ### Forms
 
