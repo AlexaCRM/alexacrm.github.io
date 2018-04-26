@@ -37,7 +37,7 @@ This shortcode renders a form with login and password inputs, remember me checkb
 #### Attributes
 
 newpassword_url
-: **String**{:.tag.tag-primary} URL to the page that contains `[msdyncrm_reset_password]` shortcode. If the *change password on next login* flag is set to true in CRM, user will be navigated to the page that contains password change shortcode in order to change old password to the new one.
+: **String**{:.tag.tag-primary} URL to the page that contains `[msdyncrm_change_password]` shortcode. If the *change password on next login* flag is set to true in CRM, user will be navigated to the page that contains password change shortcode in order to change old password to the new one.
 
 redirect_url
 : **String**{:.tag.tag-primary} URL of the page to redirect to after the user logs in.
