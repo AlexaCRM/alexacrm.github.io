@@ -29,15 +29,18 @@ An identity user is comprised of:
 Login is facilitated by the shortcode `[msdyncrm_login]`.
 
 ```
-[msdyncrm_login newpassword_url="" redirect_url=""]
+[msdyncrm_login reset_url="" newpassword_url="" redirect_url=""]
 ```
 
 This shortcode renders a form with login and password inputs, remember me checkbox and a link to recover forgotten password.
 
 #### Attributes
 
+reset_url
+: **String**{:.tag.tag-primary} URL to the password recovery page. It points to the login page with `?reset` query argument by default, as the `[msdyncrm_login]` shortcode switches to password recovery mode if the `?reset` query argument is present.
+
 newpassword_url
-: **String**{:.tag.tag-primary} URL to the page that contains `[msdyncrm_reset_password]` shortcode. If the *change password on next login* flag is set to true in CRM, user will be navigated to the page that contains password change shortcode in order to change old password to the new one.
+: **String**{:.tag.tag-primary} URL to the page that contains `[msdyncrm_change_password]` shortcode. If the *change password on next login* flag is set to true in CRM, user will be navigated to the page that contains password change shortcode in order to change old password to the new one.
 
 redirect_url
 : **String**{:.tag.tag-primary} URL of the page to redirect to after the user logs in.

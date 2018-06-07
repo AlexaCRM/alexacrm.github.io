@@ -85,6 +85,7 @@ navigation:
     Filters and Actions: "/wpcrm/hooks/"
     Premium Features: "/wpcrm/premium/"
     Twig Templates: "/wpcrm/twig/"
+    Multilingual Support: "/wpcrm/multilingual/"
     Authentication: "/wpcrm/authentication/"
     3rd-party Plugins: "/wpcrm/3rd-party/"
   toolkit:
