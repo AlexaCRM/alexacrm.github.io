@@ -10,6 +10,12 @@ redirect_from:
 ---
 
 Configuration of the plugin is performed in the WordPress Administration panel. The plugin provides a separate section for that, which is called "Dynamics CRM". You can locate it in the main navigation menu on the left side of the screen.
+
+## Initial configuration
+
+The plugins encrypts stored Dynamics 365 credentials. You must specify a PHP constant `WPCRM_KEY` in `wp-config.php` in order for the plugin to work correctly.
+
+The `WPCRM_KEY` value must be a base64-encoded AES-256 key. You can generate one yourself, or use one of the online services, e.g. [http://www.digitalsanctuary.com/aes-key-generator.php].
  
 ## Connection
 
