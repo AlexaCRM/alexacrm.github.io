@@ -150,3 +150,10 @@ Example: `fields_map: {your-name:firstname1}{your-email:emailaddress1}`
    ![Dynamics 365 field mapping for a Gravity Forms form](/img/wpcrm/3rd-party_gf-feed-settings2.png)
 
 1. Click **Update Settings**.
+
+### Capture attachments
+
+If you would like to capture files submitted via Gravity Forms into record notes follow the steps.
+
+1. Add a **File Upload** control to the form. (Placed in the "Advanced Fields" tab.)
+1. In the Dynamics 365 Feed settings, add a new row to the **Map Fields** section, in the dropdown on the left pick the last item, **Add Custom Key**. The key must start with `_attachment` (e.g. `_attachment1`) and must be unique among other attachment fields. Hence the possibility to upload multiple files to CRM simultaneously.
