@@ -157,3 +157,5 @@ If you would like to capture files submitted via Gravity Forms into record notes
 
 1. Add a **File Upload** control to the form. (Placed in the "Advanced Fields" tab.)
 1. In the Dynamics 365 Feed settings, add a new row to the **Map Fields** section, in the dropdown on the left pick the last item, **Add Custom Key**. The key must start with `_attachment` (e.g. `_attachment1`) and must be unique among other attachment fields. Hence the possibility to upload multiple files to CRM simultaneously.
+
+The attachments will be uploaded to CRM as notes for the newly created record.
