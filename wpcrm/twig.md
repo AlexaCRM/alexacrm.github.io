@@ -203,6 +203,8 @@ This tag supports the following attributes:
 - `redirect` -- URL to redirect to after successful form submission
 - `record` -- entity record object to fill form fields from, can be retrieved via `currentrecord` or `entities` objects, or a GUID
 
+To specify a default lookup value, please adhere to the following format: `{ "LogicalName": "contact", "Id": "00000000-0000-0000-0000-000000000000", "DisplayName": "CRM record" }`.
+
 If the `name` attribute is specified, the plugin will render a CRM form, and expose a `form` object to the inner template. This object has the following structure:
 
 - `id` -- unique one-time form ID
