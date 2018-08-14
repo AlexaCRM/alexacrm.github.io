@@ -198,7 +198,7 @@ This tag supports the following attributes:
 - `name` -- name of the form. If specified, a CRM form will be rendered
 - `optional` -- array of optional entity attributes (i.e. override CRM constraints)
 - `required` -- array of required entity attributes. If the submitted field is empty, the form will emit an error message
-- `default` -- map of attribute names and their default values
+- `default` -- map of attribute names and their default values. For lookup fields, the default value format is as follows: `{ "LookupAttributeName": [ "ViewEntityName": "ViewName" ] }`
 - `lookupviews` -- map of lookups that need to be displayed as a dropdown list of existing records per specified view. The value is as follows: `{ "LookupAttributeName": [ "ViewEntityName": "ViewName" ] }`
 - `redirect` -- URL to redirect to after successful form submission
 - `record` -- entity record object to fill form fields from, can be retrieved via `currentrecord` or `entities` objects, or a GUID
