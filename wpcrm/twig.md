@@ -31,6 +31,8 @@ Twig syntax is explained in [Twig documentation](http://twig.sensiolabs.org/doc/
   - `path` -- raw path to the page
   - `path_and_query` -- raw URI of the page
   - `query` -- query string prepended with `?` character or empty if no query string
+  - `url` -- url of current page
+  - `referer` -- url of page that linked to the current one
 - `params` -- see `request.params`
 - `crm` -- CRM-related parameters
   - `connected` -- *(boolean)* tells whether the site is connected to CRM
