@@ -79,6 +79,9 @@ attachment
 attachment_label
 : **String**{:.tag.tag-primary} Label text for the attachment upload control. Note: top label placement is not currently supported but css can be used to achieve the same effect.
 
+ignore_nonce
+: **Boolean**{:.tag.tag-primary} When set to `true`, nonce check is disabled during form submitting.
+
 ## Using default values
 
 `default` argument receives a list of fields using a following notation: `{fieldname:fieldvalue}{fieldname:fieldvalue}`{:.text-nowrap}. Key and value are separated using a colon, and every field-value pair is enclosed in curly brackets.
