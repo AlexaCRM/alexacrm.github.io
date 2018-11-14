@@ -21,7 +21,22 @@ You can find more information about connection settings at the [Configuration do
 
 ## Creating a form in Dynamics 365
 
-TBD.
+Let's display some form from your Dynamics 365 application using Dynamics 365 Integration plugin.
+
+You can create a new custom form in your Dynamics 365 application or use an existed one. If you want to use an existing form you can skip this section.
+
+To create a new form first open Solution Explorer window with you desired solution or default solution.
+For more information about solutions please see [Solutions documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/solutions-overview).
+
+![Create new form using Solution explorer](/img/wpcrm/createform-solutionexplorer.png)
+
+In Solution Explorer navigate to **Components &gt; Entities section** and select desired entity, for example, *Contacts*. Expand selected enttity node and select *Forms*. Above forms list click *New* button and select desired form type.
+For more information about form type please see [Create and design forms](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/create-design-forms).
+
+![Form editor](/img/wpcrm/createform-editor.png)
+
+Now you can create and save new form using form editor.
+For more information about form editor please see [Form editor documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/form-editor-user-interface-legacy).
 
 ## Putting a form on the page
 
