@@ -21,22 +21,24 @@ You can find more information about connection settings at the [Configuration do
 
 ## Creating a form in Dynamics 365
 
-Let's display some form from your Dynamics 365 application using Dynamics 365 Integration plugin.
+Let's surface a form from your Dynamics 365 organization using the Dynamics 365 Integration plugin.
 
-You can create a new custom form in your Dynamics 365 application or use an existed one. If you want to use an existing form you can skip this section.
+You can create a new custom form in Dynamics 365 or use an existing one. If you want to use an existing form you can skip this section.
 
-To create a new form first open Solution Explorer window with you desired solution or default solution.
-For more information about solutions please see [Solutions documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/solutions-overview).
+To create a new form first open the Solution Explorer window with you desired solution or the default solution.
+For more information about solutions please refer to [Dynamics 365 Solutions documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/solutions-overview).
 
-![Create new form using Solution explorer](/img/wpcrm/createform-solutionexplorer.png)
+![Create a new form using Solution Explorer](/img/wpcrm/createform-solutionexplorer.png)
 
-In Solution Explorer navigate to **Components &gt; Entities section** and select desired entity, for example, *Contacts*. Expand selected enttity node and select *Forms*. Above forms list click *New* button and select desired form type.
-For more information about form type please see [Create and design forms](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/create-design-forms).
+In Solution Explorer navigate to **Components > Entities** section and choose the desired entity, for example, *Contacts*. Expand the selected entity node and select *Forms*. Click the *New* button and select the desired form type.
+For more information about form types please see [Create and design forms](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/create-design-forms).
 
 ![Form editor](/img/wpcrm/createform-editor.png)
 
-Now you can create and save new form using form editor.
-For more information about form editor please see [Form editor documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/form-editor-user-interface-legacy).
+Now you can create and save the new form using the form editor.
+For more information about the form editor please see [Form editor documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/form-editor-user-interface-legacy).
+
+Please don't forget to publish your form.
 
 ## Putting a form on the page
 
