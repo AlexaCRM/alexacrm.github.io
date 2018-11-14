@@ -18,10 +18,11 @@ After connecting to Dynamics 365 you should see the message "Connected to &lt;Yo
 
 You can find more information about connection settings at the [Configuration documentation page](/wpcrm/configuration/#connection)
 
-
-## Creating a form in Dynamics 365
+## Surface a Dynamics 365 form in WordPress
 
 Let's surface a form from your Dynamics 365 organization using the Dynamics 365 Integration plugin.
+
+### Creating a form in Dynamics 365
 
 You can create a new custom form in Dynamics 365 or use an existing one. If you want to use an existing form you can skip this section.
 
@@ -40,6 +41,22 @@ For more information about the form editor please see [Form editor documentation
 
 Please don't forget to publish your form.
 
-## Putting a form on the page
+### Putting a form on the page
+
+TBD.
+
+## Surface Dynamics 365 records in WordPress
+
+TBD.
+
+### Views
+
+TBD.
+
+### FetchXML
+
+TBD.
+
+### Entity Binding
 
 TBD.
