@@ -64,7 +64,7 @@ Where
 
 Click *Publish* button on the right sidebar to publish your new page or *Update* button if you are editing an existing page.
 
-Now you should see your form on site page and should be able to add new contacts to Dynamics 365 by submitting this form.
+Now you should see your form on a website page. This form will submit new contacts directly to Dynamics 365.
 
 ![Dynamics 365 Advanced Find window.](/img/wpcrm/quickstart-form-show.png)
 
