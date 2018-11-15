@@ -45,7 +45,7 @@ Please don't forget to specify the name of your custom form and publish it.
 
 Create a new page in your WordPress administration panel by navigating to **Pages &gt; Add new** or open an existing one from **Pages &gt; All pages** menu section. Don't forget to enter page title if it's a new page.
 
-Switch content editor mode to plain text by clicking on the *Text* tab to be able to insert code in content field. Finally insert this code to *Content* text field:
+Switch the content editor mode to plain text by clicking on the *Text* tab. Finally insert the following code into the editor:
 
 {% raw %}
 ```twig
