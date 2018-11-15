@@ -55,10 +55,7 @@ Switch the content editor mode to plain text by clicking on the *Text* tab. Fina
 ```
 {% endraw %}
 
-Where
-- `entity` - the entity name (in this case it is *contact*)
-- `name` - the name of the form associated with the entity
-- `mode` - form operation mode (in this case we want to add new contact record so mode set to *create*)
+In `create` mode the form will create a new record in CRM.
 
 ![Dynamics 365 Advanced Find window.](/img/wpcrm/quickstart-form-add.png)
 
