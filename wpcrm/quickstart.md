@@ -39,7 +39,7 @@ For more information about form types please see [Create and design forms](https
 Now you can create and save the new form using the form editor.
 For more information about the form editor please see [Form editor documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/form-editor-user-interface-legacy).
 
-Please don't forget to specify name for your custom form and publish it.
+Please don't forget to specify the name of your custom form and publish it.
 
 ### Adding a form to a page
 
