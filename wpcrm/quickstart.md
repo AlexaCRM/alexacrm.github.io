@@ -66,19 +66,3 @@ Now you should see your form on a website page. This form will submit new contac
 ![Dynamics 365 Advanced Find window.](/img/wpcrm/quickstart-form-show.png)
 
 You can find more information about creating forms at the [Twig Templates documentation page](/wpcrm/twig/#forms)
-
-## Surface Dynamics 365 records in WordPress
-
-TBD.
-
-### Views
-
-TBD.
-
-### FetchXML
-
-TBD.
-
-### Entity Binding
-
-TBD.
