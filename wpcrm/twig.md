@@ -116,6 +116,10 @@ Inside the template the tag exposes `entityview` object with a collection of fie
 - `total_pages` -- total number of pages in the view
 - `total_records` -- total record count as reported by the CRM
 
+Please note that Personal Views created via *Create Personal View* or *Advanced Find* menu items must be shared before they can be used outside the Dynamics 365 application. For example, if you use special user to get access to Dynamics 365 application from your website you must share your Personal View with that user and grant at least a *read* access level to be allowed to publish it.
+
+![Dynamics 365 Share Personal View window.](/img/wpcrm/twig_view-share.png)
+
 #### Parameters substitution
 
 In order to use `parameters` attribute, you need to create a view with placeholders. A placeholder is an integer value (0, 1, 2...) enclosed in the curly braces: `{0}`. When you construct a view, enter these placeholders into field values you want to filter. See the example below.
