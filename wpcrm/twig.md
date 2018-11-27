@@ -136,7 +136,7 @@ The following snippet will insert a Contact view "Active Contacts" with paginati
 
 {% raw %}
 ```
-{% view entity="contact" name="Active Contacts" parameters=[ "contoso.com" ] lookups={ "parentcustomerid": params.account "} count="10" cache="PT30M" %}{% endview %}
+{% view entity="contact" name="Active Contacts" parameters=[ "contoso.com" ] lookups={ "parentcustomerid": params.account } count="10" cache="PT30M" %}{% endview %}
 ```
 {% endraw %}
 
