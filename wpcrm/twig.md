@@ -116,7 +116,7 @@ Inside the template the tag exposes `entityview` object with a collection of fie
 - `total_pages` -- total number of pages in the view
 - `total_records` -- total record count as reported by the CRM
 
-Please note that in some cases Personal Views must be shared before they can be used outside the Dynamics 365 application. For example, if you use special user to connect to Dynamics 365 application from your website you have to share your Personal View with that user and grant at least a *read* access level to be allowed to publish it.
+Please note that personal views must be shared with the user you use to connect WordPress to Dynamics 365 before you start surfacing them with Twig. The user must have *read* access to that view in order to surface it in WordPress.
 
 ![Dynamics 365 Share Personal View window.](/img/wpcrm/twig_view-share.png)
 
