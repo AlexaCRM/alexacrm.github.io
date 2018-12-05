@@ -100,4 +100,40 @@ Now return to the page of the site where we placed a list of contacts, you shoul
 
 You can also specify your own custom template for view to customize the displaying of records and provide links to related pages manually.
 
-You can find more information about Entity data binding at the [Entity Binding documentation page](wpcrm/binding/)
+For example, let's change default table view to more flexible one using this template:
+
+{% raw %}
+```twig
+[msdyncrm_twig]
+{% view entity="contact" name="Filtered Contacts" count="10" cache="PT60M" %}
+<div class="contacts-list">
+  {% for recordId, record in entityview.rows %}
+    <div class="contacts-row" style="margin: 2em 0;">
+      <h4>
+        <a href="{{ entityUrl( 'contact', recordId ) }}">{{ record['fullname'].value }}</a>
+      </h4>
+      {% if record['emailaddress1'].value is not empty %}
+        <div>email: {{ record['emailaddress1'].value }}</div>
+      {% endif %}
+      {% if record['telephone1'].value is not empty %}
+        <div>phone: {{ record['telephone1'].value }}</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+{% endview %}
+[/msdyncrm_twig]
+```
+{% endraw %}
+
+![Set custom template for Entity binded view](/img/wpcrm/quickstart-binding-view-custom.png)
+
+Here we use `entityview.rows` variable to loop through all records of *Contact* entity. To build correct links for each record we use the `entityUrl(entityName, recordId)` function. More information about aviable variables, filters and functions you can find at the [Twig Templates documentation page](/wpcrm/twig/#global-objects)
+
+Now you can see that layout of contacts list page has been changed according custom template.
+
+![Show custom view template on page](/img/wpcrm/quickstart-binding-view-custom-show.png)
+
+Default built-in template for views is located in `templates/twig/view.twig` within **Dynamics 365 Integration** installation directory.
+
+You can find more information about Entity data binding at the [Entity Binding documentation page](/wpcrm/binding/)
