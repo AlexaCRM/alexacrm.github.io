@@ -66,3 +66,38 @@ Now you should see your form on a website page. This form will submit new contac
 ![Dynamics 365 Advanced Find window.](/img/wpcrm/quickstart-form-show.png)
 
 You can find more information about creating forms at the [Twig Templates documentation page](/wpcrm/twig/#forms)
+
+
+
+### Entity Binding
+
+You can also bind CRM entities to WordPress pages dynamically by using Entity data binding functionality.. These bindings can be set automatically with default Twig-templates, by using the **Set default for views** option, or you can override the default template to create links between pages manually.
+First, we will create an automatically binding between the two previously created pages, with a list of contacts and a new cotact form.
+
+## Surfacing record using default page binding
+
+Open the page where the contact form is located and setup a binding to the *Contact* entity, as shown in the screenshot below. Select the *Contact* entity from the drop-down list and select checkbox **Set default for views**. After that change the *form* tag in *Content* text field as follows:
+
+{% raw %}
+```twig
+[msdyncrm_twig]
+{% form entity="contact" name="WordPress Example Form" mode="edit" record=currentrecord %}{% endform %}
+[/msdyncrm_twig]
+```
+{% endraw %}
+
+![Set default page for Entity binded view](/img/wpcrm/quickstart-binding-form-set-default.png)
+
+Thereby, we just linked the form on this page with the *Contact* entity from Dynamics 365 instance and specify that this page should be used as the default page for displaying *Contact* entity records for the entire site. Note that for each entity only one default page can be set, i.e. if we checked the **Set default for views** checkbox on the current page, then for all other pages with the *Contact* entity binding it will be deactivated.
+
+Also, we specify that form on this page should display the fields of the record of the binded entity (in this case it is *Contact*) and the id of the selected record is passed by the url-parameter *id*.
+
+Now return to the page of the site where we placed a list of contacts, you should see that each entry now has a link that way you you to a page with a contact form, where the fields are already filled with data of the selected record. If you edit the form and submit it, selected record's data will be sent to Dynamics 365 application. All this will be done automatically, only with the use of the pre-defined tags.
+
+![Entity data binding to WordPress page](/img/wpcrm/quickstart-binding-form-show.png)
+
+## Surfacing record using custom view template
+
+You can also specify your own custom template for view to customize the displaying of records and provide links to related pages manually.
+
+You can find more information about Entity data binding at the [Entity Binding documentation page](wpcrm/binding/)
