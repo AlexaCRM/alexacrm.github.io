@@ -38,14 +38,44 @@ Password
 ## Portal
 {% include wpcrm_premium.html %}
 
+**Delete Unlinked Users** removes all CRM-managed WordPress users which do not have a corresponding WP Identity record in CRM. Useful if you have deleted a lot of WP Identity records or user names were changed.  
+
+In the **Login Settings** section, you can configure the entity to bind users to. *Contact* is the default entity.
+
 Check **Authenticate new users against Dynamics CRM by default** if you want newly created WordPress users to be automatically authenticated against Dynamics CRM.
+
+## Registration
+{% include wpcrm_premium.html %}
+
+This tab provides extra options for the `[msdyncrm_registration]` shortcode.
+
+Configure these options to show a CRM form instead of the default registration form. 
+
+![Registration settings screen](/img/wpcrm/registration-options.png)
+
+Pick the entity -- it should be the same entity chosen on the Portal tab in the Login Settings section. Specify the form you want to use in the **Form name** field, enter the name of the attribute to use as user name in **Email field.** Additional form parameters may be configured in the **Additional form shortcode attributes** field -- see [Forms](/wpcrm/forms/).
+
+Check **Match records during registration** if you want to reuse existing records (e.g. contacts) with matching email addresses. It will create new records every time if unchecked. 
+
+## Roles
+{% include wpcrm_premium.html %}
+
+The plugin will ask you to install default identity roles in CRM to provide role management for CRM-managed users. Click **Install Default Roles** to do that.
+
+After identity roles are in place, you can configure mapping of identity roles to WordPress roles. Map unused identity roles to *None*.
 
 ## Forms
 
-## Views
-
-## Images
+Enable and configure reCAPTCHA in forms using the Forms tab.
 
 ## Messages
 
 In the Messages section you can configure various messages that the plugin prints out on the web site.
+
+## About
+
+You can configure the logging verbosity on the About tab.
+
+{% include wpcrm_premium.html %}
+
+To install the license for the premium add-on, pick your edition (Pro, Business, Enterprise) and enter the license key. Click the **Activate** button.
