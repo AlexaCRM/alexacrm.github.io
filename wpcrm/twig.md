@@ -207,6 +207,7 @@ This tag supports the following attributes:
 - `default` -- map of attribute names and their default values. For lookup fields, the default value format is as follows: `{ "LookupAttributeName": [ "ViewEntityName": "ViewName" ] }`
 - `lookupviews` -- map of lookups that need to be displayed as a dropdown list of existing records per specified view. The value is as follows: `{ "LookupAttributeName": [ "ViewEntityName": "ViewName" ] }`
 - `redirect` -- URL to redirect to after successful form submission
+- `key` -- an identifier that helps to distinguish one form from another if two or more forms are present on one page. The key is calculated automatically based on attributes listed above. If there are two identical forms present on one page, please specify a custom key
 - `record` -- entity record object to fill form fields from, can be retrieved via `currentrecord` or `entities` objects, or a GUID
 
 To specify a default lookup value, please adhere to the following format: `{ "LogicalName": "contact", "Id": "00000000-0000-0000-0000-000000000000", "DisplayName": "CRM record" }`.
@@ -255,6 +256,8 @@ You don't need a form defined in CRM to capture data from WordPress. You can des
 
 To capture data this way, you need to define a custom template inside the {%raw%}`{% form %}{% endform %}`{%endraw%} tags. You need to specify the entity name, and you must not include the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your custom form with the `required` attribute.
 
+If you have more than one Twig form on the page, you need to add the hidden `_key` input and specify `form.id` as its value. This will help to distinguish submissions from different forms. If you omit the key, every form present on the page will try to process the submission which is likely undesired.
+
 {% raw %}
 ```twig
 {% form entity="lead" mode="create" required=["lastname", "emailaddress1", "description"] %}
@@ -266,6 +269,7 @@ To capture data this way, you need to define a custom template inside the {%raw%
 <textarea name="description" rows="4" placeholder="Share Your Story"></textarea>
 
 <button type="submit">Submit</button>
+<input type="hidden" name="_key" value="{{form.id}}">
 </form>
 {% endform %}
 ```
