@@ -215,6 +215,7 @@ To specify a default lookup value, please adhere to the following format: `{ "Lo
 If the `name` attribute is specified, the plugin will render a CRM form, and expose a `form` object to the inner template. This object has the following structure:
 
 - `id` -- unique one-time form ID
+- `key` -- an automatically generated identifier used to distinguish submissions from different forms on one page. May be overridden with the `key` attribute
 - `name` -- form name
 - `tabs` -- [FormXML](https://msdn.microsoft.com/en-us/library/gg327975.aspx) representation of the form. Each CRM form is comprised of a number of tabs
   - `expanded` -- *(boolean)* whether the tab is not collapsed by default
@@ -256,7 +257,7 @@ You don't need a form defined in CRM to capture data from WordPress. You can des
 
 To capture data this way, you need to define a custom template inside the {%raw%}`{% form %}{% endform %}`{%endraw%} tags. You need to specify the entity name, and you must not include the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your custom form with the `required` attribute.
 
-If you have more than one Twig form on the page, you need to add the hidden `_key` input and specify `form.id` as its value. This will help to distinguish submissions from different forms. If you omit the key, every form present on the page will try to process the submission which is likely undesired.
+If you have more than one Twig form on the page, you need to add the hidden `_key` input and specify `form.key` as its value. This will help to distinguish submissions from different forms. If you omit the key, every form present on the page will try to process the submission which is likely undesired.
 
 {% raw %}
 ```twig
@@ -269,7 +270,7 @@ If you have more than one Twig form on the page, you need to add the hidden `_ke
 <textarea name="description" rows="4" placeholder="Share Your Story"></textarea>
 
 <button type="submit">Submit</button>
-<input type="hidden" name="_key" value="{{form.id}}">
+<input type="hidden" name="_key" value="{{form.key}}">
 </form>
 {% endform %}
 ```
