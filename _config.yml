@@ -26,7 +26,17 @@ github_username:  alexacrm
 
 repository: AlexaCRM/alexacrm.github.io
 
-gems:
+exclude:
+  - .idea
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+plugins:
   - jekyll-redirect-from
 
 # Build settings
@@ -38,6 +48,15 @@ kramdown:
   syntax_highlighter: rouge
 
 defaults:
+  - scope:
+      path: "integration-dynamics"
+      type: "pages"
+    values:
+      layout: documentation
+      group: "integration-dynamics"
+      navigation: "integration-dynamics"
+      jumbo_title: "Dynamics 365 Integration"
+      jumbo_lead: "The easiest way to connect Dynamics 365 and Dynamics CRM with WordPress."
   - scope:
       path: "wpcrm"
       type: "pages"
@@ -72,6 +91,9 @@ defaults:
       permalink: /:path/:basename/
 
 navigation:
+  integration-dynamics:
+    Introduction: "/integration-dynamics/"
+    Getting Started: "/integration-dynamics/getting-started/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
