@@ -109,6 +109,15 @@ h6:hover .header-link {
   background: #eceeef;
 }
 
+.nav-item-nested {
+  margin-left: 1rem;
+  font-size: .875rem;
+
+  .nav-link {
+    padding: .25rem 1rem;
+  }
+}
+
 .navbar {
   border-bottom: 1px solid #d4d6d7;
   border-radius: 0;

@@ -54,8 +54,10 @@
 
 <script>"use strict";
 (function($) {
+    var $body = $('body');
     $('h2, h3, h4, h5, h6').each(function(i, el) {
         var $el = $(el),
+            isSection = (el.nodeName.toLowerCase() === 'h2'), isSubsection = (el.nodeName.toLowerCase() === 'h3'),
             anchorId = $el.attr('id'),
             $faLink, $tocLink;
 
@@ -64,15 +66,20 @@
                 .attr('href', '#' + anchorId)
                 .addClass('header-link');
 
-            $tocLink = $('<li class="nav-item"><a href="#' + anchorId + '" class="nav-link">' + $el.text() + '</a></li>');
-
             $el.append($faLink);
-            $('.documentation-page-toc').append($tocLink);
+            if(isSection || isSubsection) {
+                $tocLink = $('<li class="nav-item"><a href="#' + anchorId + '" class="nav-link">' + $el.text() + '</a></li>');
+                if(isSubsection) {
+                    $tocLink.addClass('nav-item-nested');
+                }
+
+                $('.documentation-page-toc').append($tocLink);
+            }
         }
     });
 
-    $('body').addClass('position-relative');
-    $('body').scrollspy({ target: '#docPageTocContainer' });
+    $body.addClass('position-relative');
+    $body.scrollspy({ target: '#docPageTocContainer' });
 })(jQuery);
 </script>
 
