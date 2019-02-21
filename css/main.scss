@@ -3,7 +3,7 @@
 ---
 @charset "utf-8";
 
-.highlight {
+pre.highlight {
   background: #fff;
   padding-left: 1rem;
   border-left: .5rem solid #eceeef;
@@ -13,6 +13,7 @@
 .highlighter-rouge pre { white-space: pre-wrap; word-wrap: break-word; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.language-twig .highlight .err { color: inherit; background-color: inherit; }
 .highlight .k { font-weight: bold } /* Keyword */
 .highlight .o { font-weight: bold } /* Operator */
 .highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
