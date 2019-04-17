@@ -3,7 +3,7 @@ title: Getting Started
 permalink: /integration-dynamics/getting-started/
 ---
 
-On this page, you can get acquainted with the plugin, learn how to install and configure it properly and learn about its features and capabilities.
+<p class="lead">Get acquainted with the plugin, learn how to install and configure it properly and learn about its features and capabilities.</p>
 
 ## Get your Dynamics 365 organization ready
 
