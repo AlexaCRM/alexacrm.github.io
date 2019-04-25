@@ -49,14 +49,14 @@ kramdown:
 
 defaults:
   - scope:
-      path: "integration-dynamics"
+      path: "integration-cds"
       type: "pages"
     values:
       layout: documentation
-      group: "integration-dynamics"
-      navigation: "integration-dynamics"
-      jumbo_title: "Dynamics 365 Integration"
-      jumbo_lead: "The easiest way to connect Dynamics 365 and Dynamics CRM with WordPress."
+      group: "integration-cds"
+      navigation: "integration-cds"
+      jumbo_title: "CDS Integration"
+      jumbo_lead: "The easiest way to connect Common Data Service and Dynamics 365 with WordPress."
   - scope:
       path: "wpcrm"
       type: "pages"
@@ -91,9 +91,9 @@ defaults:
       permalink: /:path/:basename/
 
 navigation:
-  integration-dynamics:
-    Introduction: "/integration-dynamics/"
-    Getting Started: "/integration-dynamics/getting-started/"
+  integration-cds:
+    Introduction: "/integration-cds/"
+    Getting Started: "/integration-cds/getting-started/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"

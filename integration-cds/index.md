@@ -1,7 +1,9 @@
 ---
 title: Dynamics 365 Integration
-permalink: /integration-dynamics/
+permalink: /integration-cds/
 omit_title: true
+redirect_from:
+ - /integration-dynamics/
 ---
 
 <p class="lead">Nothing gets between your web site and your CRM. No more iframes, no more third-party services, no more moving parts. Built with the <a href="https://github.com/AlexaCRM/dynamics-webapi-toolkit">Dynamics Web API Toolkit</a>, the plugin connects directly to Dynamics 365 without the need to add anything else.</p>
@@ -11,10 +13,10 @@ omit_title: true
 
 <div class="row mb-4">
     <div class="col">
-        <a href="/integration-dynamics/getting-started/" class="btn btn-outline-success btn-lg btn-block">Get started</a>
+        <a href="/integration-cds/getting-started/" class="btn btn-outline-success btn-lg btn-block">Get started</a>
     </div>
     <div class="col">
-        <a href="https://wordpress.org/plugins/integration-dynamics/" class="btn btn-outline-primary btn-lg btn-block" target="_blank">Download on WordPress.org</a>
+        <a href="https://wordpress.org/plugins/integration-cds/" class="btn btn-outline-primary btn-lg btn-block" target="_blank">Download on WordPress.org</a>
     </div>
 </div>
 

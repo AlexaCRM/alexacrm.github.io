@@ -1,6 +1,8 @@
 ---
 title: Getting Started
-permalink: /integration-dynamics/getting-started/
+permalink: /integration-cds/getting-started/
+redirect_from:
+ - /integration-dynamics/getting-started/
 ---
 
 <p class="lead">Get acquainted with the plugin, learn how to install and configure it properly and learn about its features and capabilities.</p>
@@ -13,7 +15,7 @@ If you don't have a Dynamics 365 organization yet, you can sign up for a free tr
 
 ## Get the plugin
 
-Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dynamics 365 Integration"* into the search box, hit Enter. Locate the plugin, click *Install Now*, then *Activate*. Alternatively, go to [WordPress.org](https://wordpress.org/plugins/integration-dynamics/) and download the latest version of the plugin and install it manually.
+Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dynamics 365 Integration"* into the search box, hit Enter. Locate the plugin, click *Install Now*, then *Activate*. Alternatively, go to [WordPress.org](https://wordpress.org/plugins/integration-cds/) and download the latest version of the plugin and install it manually.
 
 ## Get credentials
 
@@ -62,11 +64,11 @@ The plugin introduces a concept of *"form registrations"*, a proxy layer between
 
 Browse to the Dynamics 365 Integration settings and switch to the *Forms* tab. Click *Create new* to create a new form registration. Fill in the **Form Name**, click the looking glass button in the **CRM Form** field, pick the entity and corresponding form. Select **Create a new record** to create new a Lead record every time someone submits your form.
 
-![CRM form designer with the custom Lead form.](/img/integration-dynamics/getting-started/crm-form.png)
+![CRM form designer with the custom Lead form.](/img/integration-cds/getting-started/crm-form.png)
 
 We picked a custom form for the Lead entity. It has the **Topic** field marked as required. But we want to require users to fill **Email** too. To accomplish that, you've got the section that reads "Make some fields required or optional". In the first column you have all attributes of the given entity. Pick the field you want to make required and click **Required &rarr;** to add it to the Required column. The same technique allows you to make some required fields optional.
 
-![Form registration screen with the new form registration.](/img/integration-dynamics/getting-started/form-registration.png)
+![Form registration screen with the new form registration.](/img/integration-cds/getting-started/form-registration.png)
 
 Scroll down to the end of the form and click **Create**. You've got a form registration. You will see the newly created form registration is now displayed on the left. You will also see that it has been assigned an ID which you will use to reference it in Twig templates to add the form to pages on your website.
 
@@ -80,7 +82,7 @@ Create a new page, add a "Custom HTML" block to it, write a Twig template inside
 
 Publish the page and check it out! Now your website can generate leads into your CRM.
 
-![Registration settings screen](/img/integration-dynamics/getting-started/contact-us.png)
+![Registration settings screen](/img/integration-cds/getting-started/contact-us.png)
 
 ### A table with contacts
 
@@ -92,7 +94,7 @@ Views are how you retrieve data in a table from Dynamics 365. With a piece of Tw
 {% endraw %}
 ```
 
-![A paged table with active contacts.](/img/integration-dynamics/getting-started/view.png)
+![A paged table with active contacts.](/img/integration-cds/getting-started/view.png)
 
 ### Company information
 
@@ -109,12 +111,12 @@ Create a third page. Twig has a number of objects, `record` is one of them -- it
 
 Save the new page, then go to the list of all pages and locate it. Hover your mouse over the row and click **Configure Binding**, then **Setup Binding**. Choose the Contact entity from the dropdown, and select the method to bind **Via GUID in query string**. Hit Save. You can now see a small Dynamics 365 icon next to the page title. This icon indicates that the page is bound to a certain Dynamics 365 entity.
 
-![Entity binding configuration.](/img/integration-dynamics/getting-started/page-binding.png)
+![Entity binding configuration.](/img/integration-cds/getting-started/page-binding.png)
 
 If you look at the screenshot with the table, you can see that each account name is a link. To achieve that, you need to go to the plugin settings and choose the default page for Contact entity on the **Binding** tab.
 
-![Binding configuration screen.](/img/integration-dynamics/getting-started/binding-settings.png)
+![Binding configuration screen.](/img/integration-cds/getting-started/binding-settings.png)
 
 Click **Save settings** and go to the page with the table of contacts to see all accounts being linked to the company information page.
 
-![A page with information about a specific account.](/img/integration-dynamics/getting-started/bound-page.png)
+![A page with information about a specific account.](/img/integration-cds/getting-started/bound-page.png)
