@@ -151,6 +151,16 @@ Example: `fields_map: {your-name:firstname1}{your-email:emailaddress1}`
 
 1. Click **Update Settings**.
 
+### Lookup Selects
+
+Lookup Select controls allow to capture and surface lookup attributes on your form.
+
+1. Drag&drop a **Lookup Select** control from the **Advanced** collection of Gravity Forms controls onto the form.
+1. Reveal the **Advanced** tab of the control settings, select the entity name of the corresponding CRM lookup attribute, enter the view name which will be used to populate the select options.
+1. Go to the Dynamics 365 feed settings to map the added control to the corresponding CRM attribute. (See *Usage* section above.)
+
+![Configuring a lookup select control in Gravity Forms.](/img/wpcrm/3rd-party_gf-lookup.png)
+
 ### Capture attachments
 
 If you would like to capture files submitted via Gravity Forms into record notes follow the steps.
