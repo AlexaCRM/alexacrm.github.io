@@ -159,6 +159,8 @@ Lookup Select controls allow to capture and surface lookup attributes on your fo
 1. Reveal the **Advanced** tab of the control settings, select the entity name of the corresponding CRM lookup attribute, enter the view name which will be used to populate the select options.
 1. Go to the Dynamics 365 feed settings to map the added control to the corresponding CRM attribute. (See *Usage* section above.)
 
+To specify a default value, enter the GUID of the desired record into the **Default Value** field on the Advanced tab.
+
 ![Configuring a lookup select control in Gravity Forms.](/img/wpcrm/3rd-party_gf-lookup.png)
 
 ### Capture attachments

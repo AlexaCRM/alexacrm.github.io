@@ -35,6 +35,16 @@ User Name
 Password
 : CRM *systemuser* password, required to authenticate in Dynamics CRM.
 
+### Using the exact specified STS URL
+
+**TL;DR:** Check this box if you are using federated authentication and running into connection problems.
+
+For Online deployments you may notice another setting, **Federated login only: use the exact specified STS URL.** In scenarios with federated authentication, the plugin first makes a request to Azure AD to determine the federated STS URL. Most commonly it points to the UsernameMixed endpoint in ADFS. 
+
+However, in some cases an unsupported ADFS endpoint may be specified by Azure AD, or non-ADFS integration may be employed. The default behavior for the plugin is to use the specified domain and the hard-coded endpoint, `/adfs/services/trust/13/usernamemixed`.
+
+When a non-ADFS solution is employed, or ADFS is being used in a non-supported way, such behavior may actually make things worse. For that reason, please check this box to make the plugin use the exact STS URL as reported by Azure Active Directory.
+
 ## Portal
 {% include wpcrm_premium.html %}
 
