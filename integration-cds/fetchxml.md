@@ -15,6 +15,8 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 
 *Integration CDS* provides a new Twig tag, `{% fetchxml %}`, which is accompanied by the required closing `{% endfetchxml %}` tag. You must specify the collection Twig variable name in the `collection` attribute inside the opening tag -- you will access retrieved records via this variable. FetchXML query body is put between these tags.
 
+{% raw %}
+
 ``` twig
 {% fetchxml collection="customers" %}
 <fetch mapping='logical'>  
@@ -25,6 +27,8 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 </fetch>
 {% endfetchxml %}
 ```
+
+{% endraw %}
 
 ### Collection structure
 
@@ -39,6 +43,8 @@ The returned collection contains several members:
 
 Use the `entities` member of the returned collection to access the fetched records. You can use a `for` loop to display a list of records.
 
+{% raw %}
+
 ``` twig
 <ul>
 {% for customer in customers %}
@@ -47,9 +53,11 @@ Use the `entities` member of the returned collection to access the fetched recor
 </ul>
 ```
 
+{% endraw %}
+
 ## Joined entities and aliased attributes
 
 FetchXML provides SQL JOIN operations via `<link-entity />` tag. Common Data Service / Dynamics 365 may provide an unreliable access name for the linked entity. To mitigate that, two options are available:
 
-- Alias the `link-entity`. You will be able to access linked entity attributes via dot-notation: `{{record["aliasedEntity.attributeName"]}}`.
-- Alias the attributes inside `link-entity`. You will be able to access the aliased attributes directly: `{{record["aliasedLinkedAttributeName"]}}`. Keep in mind that naming collisions may occur between alias names and main entity attribute names.
+- Alias the `link-entity`. You will be able to access linked entity attributes via dot-notation: {% raw %}`{{record["aliasedEntity.attributeName"]}}`{% endraw %}.
+- Alias the attributes inside `link-entity`. You will be able to access the aliased attributes directly: {% raw %}`{{record["aliasedLinkedAttributeName"]}}`{% endraw %}. Keep in mind that naming collisions may occur between alias names and main entity attribute names.
