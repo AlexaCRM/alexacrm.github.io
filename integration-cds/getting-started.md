@@ -3,31 +3,33 @@ title: Getting Started
 permalink: /integration-cds/getting-started/
 redirect_from:
  - /integration-dynamics/getting-started/
+typora-root-url: ../
 ---
 
 <p class="lead">Get acquainted with the plugin, learn how to install and configure it properly and learn about its features and capabilities.</p>
+## Get your CDS / Dynamics 365 organization ready
 
-## Get your Dynamics 365 organization ready
+CDS Integration is a WordPress plugin that makes WordPress and CDS / Dynamics 365 work together. It is not a stand-alone CRM solution.
 
-Dynamics 365 Integration is a WordPress plugin that lets WordPress and Dynamics 365 work together. It is not a stand-alone CRM solution.
-
-If you don't have a Dynamics 365 organization yet, you can sign up for a free trial at [trials.dynamics.com](https://trials.dynamics.com/).
+If you don't have a CDS / Dynamics 365 organization yet, you can sign up for a free trial at [trials.dynamics.com](https://trials.dynamics.com/).
 
 ## Get the plugin
 
-Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dynamics 365 Integration"* into the search box, hit Enter. Locate the plugin, click *Install Now*, then *Activate*. Alternatively, go to [WordPress.org](https://wordpress.org/plugins/integration-cds/) and download the latest version of the plugin and install it manually.
+Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"CDS Integration"* into the search box, hit Enter. Locate the plugin, click *Install Now*, then *Activate*. Alternatively, go to [WordPress.org](https://wordpress.org/plugins/integration-cds/) and download the latest version of the plugin and install it manually.
+
+Install the AlexaCRM solution for WordPress integration, as well as the premium add-on, *CDS Integration Premium,* to access features described in this walkthrough.
 
 ## Get credentials
 
 > Dynamics 365 supports several deployment and authentication scenarios. This tutorial assumes Dynamics 365 Online and Server-to-Server authentication with an application user.
 
-Connecting to Dynamics 365 Online Web API means several things:
+Connecting to CDS or Dynamics 365 Online Web API means several things:
 
 1. Creating an app registration in Azure Active Directory and client secret (application password), granting it permissions
 2. Creating an application user in CRM and associating it with the newly created app registration
 3. Using app registration ID and client secret to get a token from Azure Active Directory
 
-Create a new app registration in Azure Active Directory, go to app registration *Settings / Required permissions.* Add a new permission, *Dynamics 365 Online / Access Dynamics 365 as organization users.* Then go to *Settings / Keys* and create a new password (client secret, or application password). **On Save, copy the displayed key for further use -- it will only be shown once.**
+Create a new app registration in Azure Active Directory, go to app registration *API permissions.* Add a new permission, *Access Common Data Service as organization users.* Then go to *Certificates & secrets* and create a new client secret. **On Save, copy the displayed key for further use -- it will only be shown once.**
 
 Copy the Application ID as well. This, and the password created moments before, comprise the credentials required for successful authentication
 
@@ -37,7 +39,7 @@ Next step is to create an application user in CRM. Go to the [Admin center](http
 
 Once you got required credentials, it's time to connect the plugin to CRM.
 
-Go to your WordPress Admin  Area and access the *Dynamics 365* menu. Switch to the *Connection* tab. Then follow these steps:
+Go to your WordPress Admin  Area and access the *Integration CDS* menu. Switch to the *Connection* tab. Then follow these steps:
 
 1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
 2. Select the *Deployment Type* -- **Online**
@@ -62,7 +64,7 @@ To kickstart your integration, let's arrange a Contact Us form, a table with a l
 
 The plugin introduces a concept of *"form registrations"*, a proxy layer between WordPress and a CRM form. It specifies among other things which CRM form to work with, how to handle submissions, which fields to make required or optional. With the power of Twig you can also define default values for fields.
 
-Browse to the Dynamics 365 Integration settings and switch to the *Forms* tab. Click *Create new* to create a new form registration. Fill in the **Form Name**, click the looking glass button in the **CRM Form** field, pick the entity and corresponding form. Select **Create a new record** to create new a Lead record every time someone submits your form.
+Browse to the CDS Integration settings and switch to the *Forms* tab. Click *Create new* to create a new form registration. Fill in the **Form Name**, click the looking glass button in the **CRM Form** field, pick the entity and corresponding form. Select **Create a new record** to create new a Lead record every time someone submits your form.
 
 ![CRM form designer with the custom Lead form.](/img/integration-cds/getting-started/crm-form.png)
 
@@ -86,7 +88,7 @@ Publish the page and check it out! Now your website can generate leads into your
 
 ### A table with contacts
 
-Views are how you retrieve data in a table from Dynamics 365. With a piece of Twig code you can add a table with the list of contacts on your website. Most of organizations have lots of contacts -- that is why pagination matters.
+Views are how you retrieve data in a table from the Common Data service. With a piece of Twig code you can add a table with the list of contacts on your website. Most of organizations have lots of contacts -- that is why pagination matters.
 
 ```twig
 {% raw %}
@@ -109,7 +111,7 @@ Create a third page. Twig has a number of objects, `record` is one of them -- it
 {% endraw %}
 ```
 
-Save the new page, then go to the list of all pages and locate it. Hover your mouse over the row and click **Configure Binding**, then **Setup Binding**. Choose the Contact entity from the dropdown, and select the method to bind **Via GUID in query string**. Hit Save. You can now see a small Dynamics 365 icon next to the page title. This icon indicates that the page is bound to a certain Dynamics 365 entity.
+Save the new page, then go to the list of all pages and locate it. Hover your mouse over the row and click **Configure Binding**, then **Setup Binding**. Choose the Contact entity from the dropdown, and select the method to bind **Via GUID in query string**. Hit Save. You can now see a small Dynamics 365 icon next to the page title. This icon indicates that the page is bound to a certain CDS entity.
 
 ![Entity binding configuration.](/img/integration-cds/getting-started/page-binding.png)
 

@@ -94,6 +94,8 @@ navigation:
   integration-cds:
     Introduction: "/integration-cds/"
     Getting Started: "/integration-cds/getting-started/"
+    FetchXML: "/integration-cds/fetchxml/"
+    Forms: "/integration-cds/forms/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
