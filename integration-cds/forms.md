@@ -71,7 +71,7 @@ Form registration provides several options to override global form settings, suc
 
 ## Add the form to a page
 
-CDS Integration provides a custom Twig tag, `{% form %}`, to add CRM forms to WordPress pages. When you add a CRM form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
+CDS Integration provides a custom Twig tag, {% raw %}`{% form %}`{% endraw %}, to add CRM forms to WordPress pages. When you add a CRM form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
 
 {% raw %}
 ``` twig
