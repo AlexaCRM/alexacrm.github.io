@@ -202,6 +202,7 @@ This tag supports the following attributes:
 
 - `entity` *(required)* -- entity name of the form (contact, account, lead, etc.)
 - `name` -- name of the form. If specified, a CRM form will be rendered
+- `mode` -- mode of operation. `create`, `edit` and `upsert` are supported. Use the `record` attribute in `edit`/`upsert` modes to specify the edited record
 - `optional` -- array of optional entity attributes (i.e. override CRM constraints)
 - `required` -- array of required entity attributes. If the submitted field is empty, the form will emit an error message
 - `default` -- map of attribute names and their default values. For lookup fields, the default value format is as follows: `{ "LookupAttributeName": [ "ViewEntityName": "ViewName" ] }`
