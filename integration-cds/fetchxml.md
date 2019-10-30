@@ -13,10 +13,9 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 
 ## Query data using FetchXML in Twig templates
 
-*Integration CDS* provides a new Twig tag, `{% fetchxml %}`, which is accompanied by the required closing `{% endfetchxml %}` tag. You must specify the collection Twig variable name in the `collection` attribute inside the opening tag -- you will access retrieved records via this variable. FetchXML query body is put between these tags.
+*Integration CDS* provides a new Twig tag, {% raw %}`{% fetchxml %}`{% endraw %}, which is accompanied by the required closing {% raw %}`{% endfetchxml %}`{% endraw %} tag. You must specify the collection Twig variable name in the `collection` attribute inside the opening tag -- you will access retrieved records via this variable. FetchXML query body is put between these tags.
 
 {% raw %}
-
 ``` twig
 {% fetchxml collection="customers" %}
 <fetch mapping='logical'>  
@@ -27,7 +26,6 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 </fetch>
 {% endfetchxml %}
 ```
-
 {% endraw %}
 
 ### Collection structure
@@ -44,7 +42,6 @@ The returned collection contains several members:
 Use the `entities` member of the returned collection to access the fetched records. You can use a `for` loop to display a list of records.
 
 {% raw %}
-
 ``` twig
 <ul>
 {% for customer in customers %}
@@ -52,7 +49,6 @@ Use the `entities` member of the returned collection to access the fetched recor
 {% endfor %}
 </ul>
 ```
-
 {% endraw %}
 
 ## Joined entities and aliased attributes

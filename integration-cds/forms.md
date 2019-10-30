@@ -74,11 +74,9 @@ Form registration provides several options to override global form settings, suc
 CDS Integration provides a custom Twig tag, `{% form %}`, to add CRM forms to WordPress pages. When you add a CRM form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
 
 {% raw %}
-
 ``` twig
 {% form id=42 %}
 ```
-
 {% endraw %}
 
 This code is sufficient to display a CRM form on a WordPress page and start accepting submissions.
@@ -88,9 +86,7 @@ This code is sufficient to display a CRM form on a WordPress page and start acce
 You can provide default values to pre-populate specific form fields using the `defaults` attribute in the {% raw %}`{% form %}`{% endraw %} tag.
 
 {% raw %}
-
 ``` twig
 {% form id=42 defaults={ "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" } %}
 ```
-
 {% endraw %}
