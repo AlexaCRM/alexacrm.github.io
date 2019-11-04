@@ -51,6 +51,9 @@ Example: `field:emailaddress1`
 placeholder
 : [Placeholder text](https://contactform7.com/setting-placeholder-text/) of the form control.
 
+wpcrm-boolean
+: Type of control for boolean CRM attributes. `radio` (default) and `checkbox` are supported as values.
+
 default
 : Default value of the form control.<br><br>
 Examples:<br>
@@ -62,6 +65,8 @@ The full example would look like this:
 
 ```
 [msdyncrm* msdyncrm-77 id:emailaddress1 class:email field:emailaddress1 placeholder "test@example.com"]
+
+[msdyncrm* msdyncrm-78 field:donotemail wpcrm-boolean:checkbox]
 ```
 
 #### CRM Lookup Field
