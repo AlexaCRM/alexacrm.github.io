@@ -97,6 +97,7 @@ navigation:
     Using Twig: "/integration-cds/twig/"
     FetchXML: "/integration-cds/fetchxml/"
     Forms: "/integration-cds/forms/"
+    Views: "/integration-cds/views/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
