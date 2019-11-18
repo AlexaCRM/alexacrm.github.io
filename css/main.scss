@@ -72,6 +72,16 @@ pre.highlight {
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
+/* Highlighting for <code> */
+:not(a):not(pre) > code.highlighter-rouge {
+  background: #eceeef;
+  color: #555;
+  font-size: 14px;
+  padding: 2px 3px;
+  border-radius: 3px;
+}
+
+
 .nav-item .active {
   font-weight: bold;
 }

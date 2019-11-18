@@ -107,7 +107,7 @@ By default, CDS Integration uses `view.twig` as a template. (See `/integration-c
 - `columns` -- map of view column definitions. Logical names of column attributes are used as a key. Each object includes several fields:
   - `logical_name` -- logical name of the attribute.
   - `attribute_type` -- attribute type name, e.g. `String`, `Money`, `Customer`. Corresponds to [AttributeTypeName](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/web-api/attributemetadata?view=dynamics-ce-odata-9#properties).
-  - `name` -- column label. Corresponds to `[UserLocalizedLabel](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/web-api/label?view=dynamics-ce-odata-9#properties)` () of `DisplayName`. `LocalizedLabels` item with the corresponding language code is used if the `language` parameter has been specified.
+  - `name` -- column label. Corresponds to [`UserLocalizedLabel`](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/web-api/label?view=dynamics-ce-odata-9#properties) of `DisplayName`. `LocalizedLabels` item with the corresponding language code is used if the `language` parameter has been specified.
   - `width` -- column width as set in [Dynamics 365](https://docs.microsoft.com/en-us/dynamics365/sales-professional/customize-views#set-column-width) 
 - `records` -- map of Entity objects. Record GUID serves as map key.
 - `total_records` -- total count of records in the view.
