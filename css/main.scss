@@ -73,12 +73,14 @@ pre.highlight {
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 /* Highlighting for <code> */
-:not(a):not(pre) > code.highlighter-rouge {
+:not(pre) > code.highlighter-rouge {
   background: #eceeef;
-  color: #555;
   font-size: 14px;
   padding: 2px 3px;
   border-radius: 3px;
+}
+:not(a):not(pre) > code.highlighter-rouge {
+  color: #555;
 }
 
 
