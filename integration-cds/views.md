@@ -117,7 +117,7 @@ By default, CDS Integration uses `view.twig` as a template. (See `/integration-c
 - `first_page` -- number of the first page, starting with `1`. `NULL` if no results on the current page.
 - `last_page` -- number of the last page. `NULL` if no results on the current page.
 - `next_page` -- number of the next page. `NULL` if pagination is not enabled or no pages left.
-- `previous_page` -- number of the previous page. `NULL if pagination is not enabled or no pages left.
+- `previous_page` -- number of the previous page. `NULL` if pagination is not enabled or no pages left.
 - `page` -- current page number.
 - `pages` -- array of all page numbers. Always returns an array, at least `[ 1 ]`.
 - `page_size` -- number of records per page.
