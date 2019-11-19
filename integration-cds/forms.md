@@ -1,9 +1,9 @@
 ---
-title: Forms
+title: PowerApps Forms
 permalink: /integration-cds/forms/
 ---
 
-<p class="lead">Capture leads, feedback and other information from your website using forms designed in Dynamics 365.</p>
+<p class="lead">Capture leads, feedback and other information from your website using forms designed in PowerApps and Dynamics 365.</p>
 
 ## Introduction
 

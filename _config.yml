@@ -96,8 +96,9 @@ navigation:
     Getting Started: "/integration-cds/getting-started/"
     Using Twig: "/integration-cds/twig/"
     FetchXML: "/integration-cds/fetchxml/"
+    Custom Forms: "/integration-cds/custom-forms/"
     Entity Binding: "/integration-cds/entity-binding/"
-    Forms: "/integration-cds/forms/"
+    PowerApps Forms: "/integration-cds/forms/"
     Views: "/integration-cds/views/"
     User Binding: "/integration-cds/user-binding/"
   wpcrm:
