@@ -3,6 +3,8 @@ title: Entity Binding
 permalink: /integration-cds/entity-binding/
 ---
 
+<p class="lead">Link WordPress pages to CDS entities to provide direct access to your organization data.</p>
+
 ## Introduction
 
 Entity binding is a feature of CDS Integration that allows linking specific CDS entities to WordPress posts and pages. When binding is set up, Twig, forms and other services get access to the "current" bound record and its fields.
