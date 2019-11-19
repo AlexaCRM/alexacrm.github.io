@@ -18,7 +18,7 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 {% raw %}
 ``` twig
 {% fetchxml collection="customers" %}
-<fetch mapping='logical'>  
+<fetch mapping='logical' returntotalrecordcount='true'>  
    <entity name='account'>
       <attribute name='accountid'/>
       <attribute name='name'/>
@@ -32,19 +32,21 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 
 The returned collection contains several members:
 
-- `entities` -- array of returned Entity objects
-- `total_record_count` -- total count of records that much the conditions, i.e. without imposed pagination limits
-- `more_records` -- whether more records are available while paginating
-- `paging_cookie` -- paging cookie for pagination, see [Microsoft Docs](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/org-service/page-large-result-sets-with-fetchxml)
+- `xml` -- FetchXML query that was sent to CDS.
+- `results` -- an object that contains results of the query.
+  - `entities` -- array of returned Entity objects
+  - `total_record_count` -- total count of records that much the conditions, i.e. without imposed pagination limits. You must set `returntotalrecordcount="true"` to receive the record count. See [sample FetchXML](https://crmtipoftheday.com/1207/check-applied-entity-permissions-in-portals/) with this parameter set.
+  - `more_records` -- whether more records are available while paginating.
+  - `paging_cookie` -- paging cookie for pagination, see [Microsoft Docs](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/org-service/page-large-result-sets-with-fetchxml).
 
 ## Display FetchXML query results on a page
 
-Use the `entities` member of the returned collection to access the fetched records. You can use a `for` loop to display a list of records.
+Use `results.entities` to access the fetched records. You can use a `for` loop to display a list of records.
 
 {% raw %}
 ``` twig
 <ul>
-{% for customer in customers %}
+{% for customer in customers.results.entities %}
   <li>{{customer["name"]}}</li>
 {% endfor %}
 </ul>

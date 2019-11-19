@@ -15,7 +15,7 @@ Data in Common Data Service is organized in records of various entity types (ent
 
 In most integration scenarios, one WordPress page is used to display data records of one entity type. For example, "Invoice View" page displays an invoice and its details -- the system decides which invoice to show via GUID in the URL query string.
 
-Such binding may be achieved with a [FetchXML query](fetchxml/). However, it requires a certain amount of scaffolding on each bound page. Entity binding lets you avoid this, and also enables tighter integration with other plugin features and services.
+Such binding may be achieved with a [FetchXML query](../fetchxml/). However, it requires a certain amount of scaffolding on each bound page. Entity binding lets you avoid this, and also enables tighter integration with other plugin features and services.
 
 When entity binding is enabled for a WordPress post, a new object called "current record" is established. It contains an Entity object with the field values of the bound entity record. In Twig the current record is exposed via the global object `record`. The type of entity binding determines how to pick the right record for a request.
 
@@ -39,13 +39,13 @@ WordPress has several built-in post types, including posts and pages. 3rd-party 
 
 ### Choose default posts for bound CDS entities
 
-Several features, including [views](views/) and `entity_url()` Twig filter, may link entity references to the bound WordPress. In WordPress, entity binding is a many-to-many association. In global settings you can choose the default post of each bound entity. You need to bind a post to an entity before it is shown in the dropdown.
+Several features, including [views](../views/) and `entity_url()` Twig filter, may link entity references to the bound WordPress. In WordPress, entity binding is a many-to-many association. In global settings you can choose the default post of each bound entity. You need to bind a post to an entity before it is shown in the dropdown.
 
 ## Configure post binding
 
 Go to the list of posts. Depending on the post type, that could be *All Posts*, *All Pages*, etc. When you hover over the post row, the actions list is revealed.  Click *Configure Binding*, then *Setup binding*.
 
-Choose the entity from the dropdown. Then choose how the plugin should determine which exact record to bind to. Configure the binding as described in the section "[Types of entity binding](#types-of-entity-binding)". Hit **Save** afterwards.
+Choose the entity from the dropdown. Then choose how the plugin should determine which exact record to bind to. Configure the binding as described in the section ["Types of entity binding"](#types-of-entity-binding). Hit **Save** afterwards.
 
 All bound posts display a small Dynamics 365 logo beside the post title.
 
@@ -59,6 +59,6 @@ If you choose binding via custom code, you must implement two filter hooks.
 
 ## Use entity binding on your website
 
-Information retrieved via entity binding is used to update a certain record with a form. See [Forms documentation](forms/#create-a-form-registration).
+Information retrieved via entity binding is used to update a certain record with a form. See [Forms documentation](../forms/#create-a-form-registration).
 
 In Twig, the current record on a page is exposed via the global object `record`. It contains an Entity object of the current record, and you can access any field, e.g. {% raw %}`{{ record["fullname"] }}`{% endraw %}.

@@ -83,6 +83,11 @@ pre.highlight {
   color: #555;
 }
 
+/* Support default markdown blockquotes */
+blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem
+}
 
 .nav-item .active {
   font-weight: bold;

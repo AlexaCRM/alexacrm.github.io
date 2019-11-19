@@ -4,6 +4,7 @@ permalink: /integration-cds/forms/
 ---
 
 <p class="lead">Capture leads, feedback and other information from your website using forms designed in Dynamics 365.</p>
+
 ## Introduction
 
 Forms along with grid tables are corner stones of user interaction in PowerApps and Dynamics 365. Integration CDS brings the comparable experience to your WordPress website. It makes writing data back to CDS / Dynamics 365 a priority, and to achieve the goal it provides support for rendering Dynamics 365 forms and processing the input by converting it into new CRM records or updates to the existing records.
@@ -54,7 +55,7 @@ In the plugin dashboard, go to the *Forms* tab and click **Create new** to start
 Enter the *Form Name*, select the *CRM Form* and choose the mode of operation. Three modes are available:
 
 - Create a new record -- submissions always create a new record.
-- Update or create a record -- form uses [entity binding](entity-binding/) to acquire a record and put its values into form, and submission updates the record with changed values. If entity binding hasn't yielded an existing record, a new record will be created instead.
+- Update or create a record -- form uses [entity binding](../entity-binding/) to acquire a record and put its values into form, and submission updates the record with changed values. If entity binding hasn't yielded an existing record, a new record will be created instead.
 - Read-only -- entity binding is used to acquire a record, its values are displayed, but nothing can be changed on the form.
 
 Finally, click **Create** to save the new form registration.
