@@ -99,6 +99,7 @@ navigation:
     Entity Binding: "/integration-cds/entity-binding/"
     Forms: "/integration-cds/forms/"
     Views: "/integration-cds/views/"
+    User Binding: "/integration-cds/user-binding/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
