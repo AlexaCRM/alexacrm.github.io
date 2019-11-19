@@ -32,6 +32,23 @@ Use the `record` object to access values of the current record. See [entity bind
 ```
 {% endraw %}
 
+### Access the current user record
+
+Use the `user` object to check whether the current user is bound, and to access the bound CDS record values. See [user binding](../user-binding/).
+
+The following object members are available:
+
+- `is_bound` -- *(boolean)* whether the current user is bound.
+- `record` -- *(Entity)* bound record object.
+
+{% raw %}
+``` twig
+{% if user.is_bound %}
+  {{ user.record["fullname"] }}
+{% endif %}
+```
+{% endraw %}
+
 ### Access any record in your CDS organization
 
 Use the `entities` object to access any record in your CDS organization by its entity logical name and GUID. All record fields are available at once.
