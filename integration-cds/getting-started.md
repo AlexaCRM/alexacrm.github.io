@@ -111,7 +111,7 @@ Create a third page. Twig has a number of objects, `record` is one of them -- it
 {% endraw %}
 ```
 
-Save the new page, then go to the list of all pages and locate it. Hover your mouse over the row and click **Configure Binding**, then **Setup Binding**. Choose the Contact entity from the dropdown, and select the method to bind **Via GUID in query string**. Hit Save. You can now see a small Dynamics 365 icon next to the page title. This icon indicates that the page is bound to a certain CDS entity.
+Save the new page, then go to the list of all pages and locate it. Hover your mouse over the row and click **Configure Binding**, then **Setup Binding**. Choose the Contact entity from the dropdown, and select the method to bind **Via GUID in query string**. Hit Save. You can now see a small Dynamics 365 icon next to the page title. This icon indicates that the page is bound to a certain CDS entity. Read [entity binding documentation](entity-binding/).
 
 ![Entity binding configuration.](/img/integration-cds/getting-started/page-binding.png)
 

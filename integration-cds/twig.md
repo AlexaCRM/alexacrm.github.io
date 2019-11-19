@@ -22,6 +22,16 @@ Twig in Integration CDS supports debug mode and template caching.
 
 Integration CDS makes several new global objects available in the Twig environment.
 
+### Access the current bound record
+
+Use the `record` object to access values of the current record. See [entity binding](entity-binding/).
+
+{% raw %}
+``` twig
+{{ record["fullname"] }}
+```
+{% endraw %}
+
 ### Access any record in your CDS organization
 
 Use the `entities` object to access any record in your CDS organization by its entity logical name and GUID. All record fields are available at once.
@@ -82,4 +92,4 @@ Integration CDS provides several CDS-specific and general purpose Twig filters.
 
 ## Functions
 
-- `entityUrl( record[, postId] )` -- returns URL to the website page with the given entity record bound to it. Uses Entity Binding feature. If more than one WordPress post is bound to the entity, you can pass post ID to link to a different page instead.
+- `entity_url( record[, postId] )` -- returns URL to the website page with the given entity record bound to it. Uses [Entity Binding](entity-binding/) feature. If more than one WordPress post is bound to the entity, you can pass post ID to link to a different page instead.

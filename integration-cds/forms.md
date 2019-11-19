@@ -54,7 +54,7 @@ In the plugin dashboard, go to the *Forms* tab and click **Create new** to start
 Enter the *Form Name*, select the *CRM Form* and choose the mode of operation. Three modes are available:
 
 - Create a new record -- submissions always create a new record.
-- Update or create a record -- form uses entity binding to acquire a record and put its values into form, and submission updates the record with changed values. If entity binding hasn't yielded an existing record, a new record will be created instead.
+- Update or create a record -- form uses [entity binding](entity-binding/) to acquire a record and put its values into form, and submission updates the record with changed values. If entity binding hasn't yielded an existing record, a new record will be created instead.
 - Read-only -- entity binding is used to acquire a record, its values are displayed, but nothing can be changed on the form.
 
 Finally, click **Create** to save the new form registration.
