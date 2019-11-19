@@ -75,8 +75,8 @@ pre.highlight {
 /* Highlighting for <code> */
 :not(pre) > code.highlighter-rouge {
   background: #eceeef;
-  font-size: 14px;
-  padding: 2px 3px;
+  font-size: 12px;
+  padding: 4px 4px 2px;
   border-radius: 3px;
 }
 :not(a):not(pre) > code.highlighter-rouge {
