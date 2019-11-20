@@ -7,7 +7,7 @@ permalink: /integration-cds/forms/
 
 ## Introduction
 
-Forms along with grid tables are corner stones of user interaction in PowerApps and Dynamics 365. Integration CDS brings the comparable experience to your WordPress website. It makes writing data back to CDS / Dynamics 365 a priority, and to achieve the goal it provides support for rendering Dynamics 365 forms and processing the input by converting it into new CRM records or updates to the existing records.
+Forms are an essential component of PowerApps and Dynamics 365 which enables interaction with your data. Integration CDS brings the comparable experience to your WordPress website. It makes writing data back to CDS / Dynamics 365 a priority, and to achieve the goal it provides support for rendering Dynamics 365 forms and processing the input by converting it into new CRM records or updates to the existing records.
 
 The plugin introduces a concept of *"form registrations"*, a proxy layer between WordPress and a CRM form. It specifies among other things which CRM form to show, how to handle submissions, which fields to make required or optional.
 
@@ -59,6 +59,16 @@ Enter the *Form Name*, select the *CRM Form* and choose the mode of operation. T
 - Read-only -- entity binding is used to acquire a record, its values are displayed, but nothing can be changed on the form.
 
 Finally, click **Create** to save the new form registration.
+
+### Allow deleting records
+
+When you choose the *update* or *read-only* mode, you can enable record deletion by checking *Allow deleting the record.*
+
+You are advised to implement the `integration-cds/forms/authorize-delete` filter hook to guard against unauthorized use. When deletion request is submitted, three parameters are passed into the hook:
+
+- `$isAuthorized` -- *(boolean)* whether to authorize deletion of the record.
+- `$reg` -- *(FormRegistration)* form registration which initiated deletion. Contains form ID, target entity and other form registration settings.
+- `$target` -- *([EntityReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php)|null)* record that is being deleted. The hook should return `false` if `NULL` has been passed.
 
 ### Required and optional fields
 
