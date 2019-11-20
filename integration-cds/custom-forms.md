@@ -19,7 +19,7 @@ CDS Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endform %}`
 - `mode` -- *(string, required)* `create` for creation forms. `update` for update forms.
 - `record` -- *(EntityReference)* record GUID, or EntityReference, or Entity to update. Used in `update` mode.
 
-*Note:* when the premium add-on is installed, the {% raw %}`{% form %}`{% endraw %} acts as a PowerApps form tag if the `id` parameter is specified.
+*Note:* when the premium add-on is installed, the {% raw %}`{% form %}`{% endraw %} acts as a PowerApps form tag if the `id` parameter is specified. See [PowerApps forms documentation](../forms/).
 
 {% raw %}
 ``` twig
@@ -58,3 +58,5 @@ CDS Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endform %}`
 {% endraw %}
 
 Make sure to define your form between the `<form></form>` tags. The form submission will be handled on the [`submit` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event).
+
+To link a form control to a corresponding entity attribute, specify the logical name of the attribute in the HTML attribute `name`, e.g. `emailaddress1` for Email.
