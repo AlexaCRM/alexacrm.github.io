@@ -18,6 +18,10 @@ CDS Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endform %}`
 - `entity` -- *(string, required)* logical name of the target entity.
 - `mode` -- *(string, required)* `create` for creation forms. `update` for update forms.
 - `record` -- *(EntityReference)* record GUID, or EntityReference, or Entity to update. Used in `update` mode.
+- `recaptcha` -- *(boolean)* whether reCAPTCHA validation is required.
+- `redirect` -- *(string)* URL to redirect to after a successful submission.
+- `message` -- *(string)* custom message to show after a successful submission.
+- `messages` -- *(object)* custom messages to show after a form submission. For example, `{ "success": "Thanks for a submission!", "failure": "Failed to submit the form. Try again later, please." }`
 
 *Note:* when the premium add-on is installed, the {% raw %}`{% form %}`{% endraw %} acts as a PowerApps form tag if the `id` parameter is specified. See [PowerApps forms documentation](../forms/).
 
