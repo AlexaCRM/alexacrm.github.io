@@ -206,7 +206,7 @@ This tag supports the following attributes:
 - `optional` -- array of optional entity attributes (i.e. override CRM constraints)
 - `required` -- array of required entity attributes. If the submitted field is empty, the form will emit an error message
 - `default` -- map of attribute names and their default values. For lookup fields, the default value format is as follows: `{ "LookupAttributeName": { "LogicalName": "contact", "Id": user.id, "DisplayName": user.fullname } }`
-- `lookupviews` -- map of lookups that need to be displayed as a dropdown list of existing records per specified view. The value is as follows: `{ "LookupAttributeName": [ "ViewEntityName": "ViewName" ] }`
+- `lookupviews` -- map of lookups that need to be displayed as a dropdown list of existing records per specified view. The value is as follows: `{ "LookupAttributeName": [ "ViewEntityName", "ViewName" ] }`
 - `redirect` -- URL to redirect to after a successful form submission
 - `messages` -- a map with messages for the form. `success` and `error` keys are supported by default: `{ "success": "Form submitted.", "error": "Submission failed." }`
 - `key` -- an identifier that helps to distinguish one form from another if two or more forms are present on one page. The key is calculated automatically based on attributes listed above. If there are two identical forms present on one page, please specify a custom key
