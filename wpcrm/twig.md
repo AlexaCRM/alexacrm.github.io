@@ -179,7 +179,7 @@ Variable `contacts` would contain an object with the following fields:
 - `xml` - the original FetchXML query
 - `results`
   - `entities` - collection of fetched entity records
-  - `total_record_count` - the total record count in case pagination is enabled. Add `returntotalrecordcount="true"` to the `entity` element in order to access this value
+  - `total_record_count` - the total record count in case pagination is enabled. Add `returntotalrecordcount="true"` to the `fetchxml` element in order to access this value
   - `more_records` - (boolean) tells whether more records are available if pagination is enabled
   - `paging_cookie` - paging cookie value
 - `error` - contains an error message if there's any
