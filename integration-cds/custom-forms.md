@@ -22,6 +22,8 @@ CDS Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endform %}`
 - `redirect` -- *(string)* URL to redirect to after a successful submission.
 - `message` -- *(string)* custom message to show after a successful submission.
 - `messages` -- *(object)* custom messages to show after a form submission. For example, `{ "success": "Thanks for a submission!", "failure": "Failed to submit the form. Try again later, please." }`
+- `keep` -- *(boolean)* whether to keep the form visible after a successful submission. `false` is the default value and the form is collapsed.
+- `keep_data` -- *(boolean)* whether to keep values entered into form inputs after a successful submission. `false` is the default value and all values are removed.
 
 *Note:* when the premium add-on is installed, the {% raw %}`{% form %}`{% endraw %} acts as a PowerApps form tag if the `id` parameter is specified. See [PowerApps forms documentation](../forms/).
 
