@@ -176,3 +176,46 @@ If you would like to capture files submitted via Gravity Forms into record notes
 1. In the Dynamics 365 Feed settings, add a new row to the **Map Fields** section, in the dropdown on the left pick the last item, **Add Custom Key**. The key must start with `_attachment` (e.g. `_attachment1`) and must be unique among other attachment fields. Hence the possibility to upload multiple files to CRM simultaneously.
 
 The attachments will be uploaded to CRM as notes for the newly created record.
+
+## Ninja Forms
+
+Ninja Forms integration is provided with Dynamics 365 Premium.
+
+1. Add Ninja Forms controls to the form.
+   - *Lookup Select* control allows to add a dropdown with Dynamics 365 records. Default value is set via the *Default record ID* field, e.g. `contact,1900bd7a-c6b8-e711-8112-5065f38a1b01`.
+   - Hidden field may be used to preset a CRM field. 
+1. Add the *Send to Dynamics 365* action. Pick the entity and the action (create / update).
+   - If you choose the *update* action, [Entity Binding](/wpcrm/binding/) record is chosen for update. Existing record field values are pulled into mapped fields. 
+1. Configure the field map in the action. Ninja Forms fields are in the left column. Dynamics 365 fields are in the right column.
+
+### Lookup Select records source
+
+Two options exist for the Lookup Select records source: View and Twig.
+
+View is simple -- pick the entity and corresponding view to populate the dropdown.
+
+Choose the Twig option for more advanced scenarios. For example, you could parameterize the dropdown. For example:
+
+{% raw %}
+```twig
+{% fetchxml collection="records" %}
+<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true" >
+  <entity name="account" >
+    <attribute name="name" ></attribute>
+    <attribute name="accountid" ></attribute>
+    <order attribute="name" ></order>
+    <filter>
+      <condition attribute="address1_city" operator="eq" value="{{params.city}}" ></condition>
+    </filter>
+  </entity>
+</fetch>
+{% endfetchxml %}
+{% set result = [] %}
+{% for account in records.results.entities %}
+{% set result = result|merge( [ { LogicalName: "account", Id: account.id, DisplayName: account.name } ] ) %}
+{% endfor %}
+{{ result|json_encode|raw }}
+```
+{% endraw %}
+
+The *for-in* loop populates the `result` collection with entity references, and then a JSON is returned. You can use a different FetchXML query or even construct a JSON manually with hard-coded references.
