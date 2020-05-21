@@ -51,75 +51,45 @@ Go to your WordPress Admin  Area and access the *Integration CDS* menu. Switch t
 
 Now the plugin is connected to CRM and you can start building the integration.
 
-## Design your first integration
+## Create a Contact Us form
 
-To kickstart your integration, let's arrange a Contact Us form, a table with a list of contacts, and a page with information about a company (Account entity). These three items correspond to three basic things the plugin can do:
+The plugin provides a Gutenberg block, "ICDS Plain". It accepts Twig code and renders it as HTML at front-end. To create your first form, you can use the [custom form syntax](/integration-cds/custom-forms/). It allows creating HTML forms and capturing submissions into your CDS or Dynamics 365 organization.
 
-- rendering CRM forms in WordPress and capturing submissions back to CRM to create new records and update existing ones,
-- displaying CRM views in WordPress,
-- and, last but not least, displaying data from CRM records in WordPress.
+Custom forms allow creating new CDS / Dynamics 365 records, as well as updating existing records. reCAPTCHA is supported to protect your forms from spam.
 
-"Records" are your leads, cases, contacts, accounts and virtually any OOB or custom entity. You are not restricted to only leads or contacts by any means.
-
-### Contact Us form
-
-The plugin introduces a concept of *"form registrations"*, a proxy layer between WordPress and a CRM form. It specifies among other things which CRM form to work with, how to handle submissions, which fields to make required or optional. With the power of Twig you can also define default values for fields.
-
-Browse to the CDS Integration settings and switch to the *Forms* tab. Click *Create new* to create a new form registration. Fill in the **Form Name**, click the looking glass button in the **CRM Form** field, pick the entity and corresponding form. Select **Create a new record** to create new a Lead record every time someone submits your form.
-
-![CRM form designer with the custom Lead form.](/img/integration-cds/getting-started/crm-form.png)
-
-We picked a custom form for the Lead entity. It has the **Topic** field marked as required. But we want to require users to fill **Email** too. To accomplish that, you've got the section that reads "Make some fields required or optional". In the first column you have all attributes of the given entity. Pick the field you want to make required and click **Required &rarr;** to add it to the Required column. The same technique allows you to make some required fields optional.
-
-![Form registration screen with the new form registration.](/img/integration-cds/getting-started/form-registration.png)
-
-Scroll down to the end of the form and click **Create**. You've got a form registration. You will see the newly created form registration is now displayed on the left. You will also see that it has been assigned an ID which you will use to reference it in Twig templates to add the form to pages on your website.
-
-Create a new page, add a "Custom HTML" block to it, write a Twig template inside the `[ngd_twig][/ngd_twig]` shortcode.
-
-```twig
 {% raw %}
-{% form id=3 %} {# Number 3 is the ID of your form registration we mentioned before. #}
-{% endraw %}
+``` twig
+{% form entity="lead" mode="create" recaptcha=true %}
+<form>
+    <div class="form-group">
+        <label>
+            First Name:
+            <input class="form-control" name="firstname">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Last Name:
+            <input class="form-control" name="lastname">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Email:
+            <input class="form-control" name="emailaddress1">
+        </label>
+    </div>
+    <div class="form-group">
+        <recaptcha>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
 ```
-
-Publish the page and check it out! Now your website can generate leads into your CRM.
-
-![Registration settings screen](/img/integration-cds/getting-started/contact-us.png)
-
-### A table with contacts
-
-Views are how you retrieve data in a table from the Common Data service. With a piece of Twig code you can add a table with the list of contacts on your website. Most of organizations have lots of contacts -- that is why pagination matters.
-
-```twig
-{% raw %}
-{% view entity="contact" name="Active Contacts" count=5 %}{% endview %}
 {% endraw %}
-```
 
-![A paged table with active contacts.](/img/integration-cds/getting-started/view.png)
+The {% form %} Twig tag lets you configure the form settings, such as target entity, submission mode (create or update), etc. See [custom forms documentation](/integration-cds/custom-forms/).
 
-### Company information
-
-Create a third page. Twig has a number of objects, `record` is one of them -- it provides access to the record bound to the page at the moment.
-
-```twig
-{% raw %}
-<h3>{{record.name}}</h3>
-<p>Primary contact: {{record|formatted_value("primarycontactid")}}</p>
-<p>Address:</p>
-<address>{{record.address1_composite|nl2br}}</address>
-{% endraw %}
-```
-
-Save the new page, then go to the list of all pages and locate it. Hover your mouse over the row and click **Configure Binding**, then **Setup Binding**. Choose the Contact entity from the dropdown, and select the method to bind **Via GUID in query string**. Hit Save. You can now see a small Dynamics 365 icon next to the page title. This icon indicates that the page is bound to a certain CDS entity. Read [entity binding documentation](../entity-binding/).
-
-![Entity binding configuration.](/img/integration-cds/getting-started/page-binding.png)
-
-If you look at the screenshot with the table, you can see that each account name is a link. To achieve that, you need to go to the plugin settings and choose the default page for Contact entity on the **Binding** tab.
-
-![Binding configuration screen.](/img/integration-cds/getting-started/binding-settings.png)
-
-Click **Save settings** and go to the page with the table of contacts to see all accounts being linked to the company information page.
-
-![A page with information about a specific account.](/img/integration-cds/getting-started/bound-page.png)
+Form control `name` attributes refer to the corresponding entity attributes, such as `firstname`, `lastname` and `emailaddress1`. Put the `<recaptcha>` placeholder where you want to put reCAPTCHA control if you enable reCAPTCHA on your form. Before you use reCAPTCHA, please configure it in plugin settings.
