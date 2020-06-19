@@ -38,6 +38,8 @@ You can translate table headers by specifying the `language` parameter in the `v
 
 ## In shortcodes
 
+{% include deprecated_twig.html %}
+
 ### Forms
 
 Language is specified in the `form` shortcode via language code in the `language` parameter.

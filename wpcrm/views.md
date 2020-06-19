@@ -2,6 +2,8 @@
 title: Views
 ---
 
+{% include deprecated_twig.html %}
+
 A view is a grid with records listed under selected column headings. It is a type of [saved query](https://msdn.microsoft.com/en-us/library/gg328457.aspx). Users can select different views to look at a subset of records of the same entity that fit into pre-specified filter conditions. There are 3 main types of views: public, system, and personal.
 
 You can insert views from Dynamics CRM into your posts and pages using shortcode `[msdyncrm_view]`.
@@ -13,8 +15,6 @@ Shortcode syntax:
 ```
 
 The output of this shortcode is a table populated with record columns retrieved from Dynamics CRM based on view settings.
-
-{% include consider_twig.html %}
 
 ## Shortcode attributes
 

@@ -2,6 +2,8 @@
 title: Forms
 ---
 
+{% include deprecated_twig.html %}
+
 *Dynamics CRM Integration* allows you to work with Dynamics CRM data using forms. Forms perform basic operations such as Create, Update, and Read.
 
 Form shortcode uses entity forms that are defined in Dynamics CRM. Records that define the forms bear `systemform` as entity type.
