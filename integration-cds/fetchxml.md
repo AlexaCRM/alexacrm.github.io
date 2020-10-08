@@ -13,11 +13,11 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 
 ## Query data using FetchXML in Twig templates
 
-*Integration CDS* provides a new Twig tag, {% raw %}`{% fetchxml %}`{% endraw %}, which is accompanied by the required closing {% raw %}`{% endfetchxml %}`{% endraw %} tag. You must specify the collection Twig variable name in the `collection` attribute inside the opening tag -- you will access retrieved records via this variable. FetchXML query body is put between these tags.
+*Integration CDS* provides a new Twig tag, {% raw %}`{% fetchxml %}`{% endraw %}, which is accompanied by the required closing {% raw %}`{% endfetchxml %}`{% endraw %} tag. Use the required `collection` attribute to specify the variable you will use to access retrieved records. Write your FetchXML query inside these tags. Use the optional `cache` attribute to enable query cache -- please adhere to the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations).
 
 {% raw %}
 ``` twig
-{% fetchxml collection="customers" %}
+{% fetchxml collection="customers" cache="PT30M" %}
 <fetch mapping='logical' returntotalrecordcount='true'>  
    <entity name='account'>
       <attribute name='accountid'/>
@@ -33,8 +33,9 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 The returned collection contains several members:
 
 - `xml` -- FetchXML query that was sent to CDS.
+- `error` -- error message, null if no errors.
 - `results` -- an object that contains results of the query.
-  - `entities` -- array of returned Entity objects
+  - `entities` -- array of retrieved Entity objects
   - `total_record_count` -- total count of records that much the conditions, i.e. without imposed pagination limits. You must set `returntotalrecordcount="true"` to receive the record count. See [sample FetchXML](https://crmtipoftheday.com/1207/check-applied-entity-permissions-in-portals/) with this parameter set.
   - `more_records` -- whether more records are available while paginating.
   - `paging_cookie` -- paging cookie for pagination, see [Microsoft Docs](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/org-service/page-large-result-sets-with-fetchxml).
@@ -45,15 +46,19 @@ Use `results.entities` to access the fetched records. You can use a `for` loop t
 
 {% raw %}
 ``` twig
-<ul>
-{% for customer in customers.results.entities %}
-  <li>{{customer["name"]}}</li>
-{% endfor %}
-</ul>
+{% if customers.results.entities|length > 0 %}
+    <ul>
+    {% for customer in customers.results.entities %}
+      <li>{{customer["name"]}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No customers found.</p>
+{% endif %}
 ```
 {% endraw %}
 
-## Joined entities and aliased attributes
+## Linked entities and aliased attributes
 
 FetchXML provides SQL JOIN operations via `<link-entity />` tag. Common Data Service / Dynamics 365 may provide an unreliable access name for the linked entity. To mitigate that, two options are available:
 
