@@ -7,7 +7,7 @@ permalink: /integration-cds/twig/
 
 ## Introduction
 
-*Integration CDS* employs [Twig](https://twig.symfony.com/) to make most data-intensive layout jobs effortless.
+*Integration CDS* employs [Twig](https://twig.symfony.com/) to make most data-rich layout jobs effortless.
 
 On this page you can find information about custom Twig features that Integration CDS brings. Please refer to [Twig documentation](https://twig.symfony.com/doc/2.x/templates.html) to learn about its templating capabilities.
 
@@ -16,13 +16,13 @@ On this page you can find information about custom Twig features that Integratio
 Twig in Integration CDS supports debug mode and template caching.
 
 - Debug mode allows using `dump()` to print information about Twig objects using PHP `var_dump()`. It is enabled in [WordPress debug mode](https://wordpress.org/support/article/debugging-in-wordpress/) (`WP_DEBUG`) or if `ICDS_TWIG_DEBUG` is *true*.
-- Template caching allows to speed up page rendering. Enabled if `ICDS_TWIG_CACHE` is *true*.
+- Template caching enhances page rendering performance. Enabled if `ICDS_TWIG_CACHE` is *true*.
 
 ## Global objects
 
 Integration CDS makes several new global objects available in the Twig environment.
 
-### Access the current bound record
+### Access the current bound record {% include icds_premium.html %}
 
 Use the `record` object to access values of the current record. See [entity binding](../entity-binding/).
 

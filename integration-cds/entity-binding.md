@@ -1,6 +1,7 @@
 ---
 title: Entity Binding
 permalink: /integration-cds/entity-binding/
+premium: true
 ---
 
 <p class="lead">Link WordPress pages to CDS entities to provide direct access to your organization data.</p>

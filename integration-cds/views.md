@@ -1,6 +1,7 @@
 ---
 title: Views
 permalink: /integration-cds/views/
+premium: true
 ---
 
 <p class="lead">Add views to your WordPress pages to display tabular data from CDS and Dynamics 365.</p>

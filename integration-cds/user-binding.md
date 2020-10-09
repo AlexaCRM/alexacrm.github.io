@@ -1,6 +1,7 @@
 ---
 title: User Binding
 permalink: /integration-cds/user-binding/
+premium: true
 ---
 
 <p class="lead">Link your WordPress users to CDS records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>
