@@ -30,6 +30,12 @@ You can choose from several options how to bind the post.
 
 **Via custom code.** Add handlers for two WordPress filters, `integration-cds/binding/custom/target-{$postId}` and `integration-cds/binding/custom/url-{$postId}`, where `{$postId}` is the WordPress post ID of the bound page.
 
+### Conditional access
+
+In certain integration scenarios, it may be desirable to limit the number of table rows exposed to a user. In a self-service portal, you may want to allow a user access to their invoices, but keep them from seeing invoices for your other clients.
+
+CDS Integration provides capability of restricting access by executing a provided FetchXML query before access to the page is granted. The query allows determining relations between the requested table row and the visitor. Access is granted if Dataverse returns any rows.
+
 ## Configure global binding settings
 
 Go to **Settings UI > Binding** to configure global binding settings.
@@ -57,6 +63,52 @@ If you choose binding via custom code, you must implement two filter hooks.
 `integration-cds/binding/custom/target-{$postId}` expects an [Entity](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/Entity.php) object or `NULL`. One additional parameter, `$target`, is passed -- it is a *string* that contains the logical name of the target entity.
 
 `integration-cds/binding/custom/url-{$postId}` expects a *string* that contains a URL to the bound post or `NULL`. Two additional parameters are passed: [WP_Post](https://developer.wordpress.org/reference/classes/wp_post/) `$post` and [EntityReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php) `$ref`. Based on `$ref`, you are expected to provide a URL which allows to display the given record on the requested bound page.
+
+### Implement conditional access
+
+Enable conditional access by selecting the checkbox. Add a FetchXML query in the text area.
+
+The query is virtually a [Twig template](../twig/), and all the same Twig constructs, objects, filters and functions are available. Members of the `binding` object will reference the current record, and `user` object members will reference to the current user if [User Binding](../user-binding/) is implemented.
+
+Sample FetchXML query that grants access only to users which are bound to contacts which in turn belong to the requested Account.
+
+{% raw %}
+```xml
+<fetch version="1.0" output-format="xml-platform" mapping="logical" >
+  <entity name="contact" >
+    <attribute name="emailaddress1" />
+    <attribute name="contactid" />
+    <filter>
+      <condition attribute="contactid" operator="eq" value="{{user.reference.Id}}" />
+    </filter>
+    <link-entity name="account" from="accountid" to="parentcustomerid" >
+      <filter>
+        <condition attribute="accountid" operator="eq" value="{{binding.reference.Id}}" />
+      </filter>
+    </link-entity>
+  </entity>
+</fetch>
+```
+{% endraw %}
+
+Access to the post is allowed if:
+
+- Binding is not configured, **OR**
+- Binding is configured, **AND**
+  - Conditional access is not enabled, **OR**
+  - Conditional access is enabled, **AND**
+    - Query template is empty (i.e. not configured properly), **OR**
+    - Evaluated query returns a non-empty collection
+
+Access to the post is not allowed if:
+
+- Binding is configured, **AND**
+  - Conditional access is enabled, **AND**
+    - Query template is not empty, **AND**
+      - The evaluated query is empty, **OR**
+      - Dataverse connection is not configured, **OR**
+      - The evaluated query returns an empty collection, **OR**
+      - Query failed
 
 ## Use entity binding on your website
 

@@ -51,7 +51,12 @@ Use the `user` object to check whether the current user is bound, and to access 
 The following object members are available:
 
 - `is_bound` -- *(boolean)* whether the current user is bound.
+- `reference` -- *(EntityReference)* reference to the bound record.
 - `record` -- *(Entity)* bound record object.
+- `wp_user` -- *(WP_User)* information about the current WordPress user.
+
+Notice that `user.record` is more expensive performance-wise -- it retrieves data from CDS. `user.reference` only
+reads the local database and request parameters to calculate the entity reference.
 
 {% raw %}
 ``` twig
