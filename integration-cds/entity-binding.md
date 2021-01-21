@@ -98,14 +98,14 @@ Access to the post is allowed if:
   - Conditional access is not enabled, **OR**
   - Conditional access is enabled, **AND**
     - Query template is empty (i.e. not configured properly), **OR**
-    - Evaluated query returns a non-empty collection
+    - The evaluated query (after Twig expansion) is empty, **OR**
+    - The evaluated query returns a non-empty collection
 
 Access to the post is not allowed if:
 
 - Binding is configured, **AND**
   - Conditional access is enabled, **AND**
     - Query template is not empty, **AND**
-      - The evaluated query is empty, **OR**
       - Dataverse connection is not configured, **OR**
       - The evaluated query returns an empty collection, **OR**
       - Query failed
