@@ -36,6 +36,19 @@ Copy the Application ID as well. This, and the password created moments before, 
 
 Next step is to create an application user in CRM. Go to the [Admin center](https://admin.powerplatform.microsoft.com/), navigate to your environment's Settings / Users. Switch to the *Application Users* view, hit **New**, switch to the *"Application User"* form, as can be seen [here](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/use-multi-tenant-server-server-authentication#manually-create-a--application-user). Fill in the *Application ID* which you saved before, as well as *Full Name* and *Primary Email* fields, then save the user. Associate the user with relevant security roles, for example "System Administrator" and "Delegate". Feel free to create custom security roles which suit your use case best.
 
+## Set authentication keys
+
+By default, Integration CDS use a Wordpress `AUTH_KEY` constant for encryption purposes. To ensure maximum security you may want to create specific authentication constants to use by the plugin:
+- `ICDS_AUTH_KEY` - Used to encrypt sensitive data such as application secret.
+- `ICDS_FORM_AUTH_KEY` - Used for safe forms processing.
+
+These constants can be defined in your `wp-config.php` file, for example
+```
+define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o;6U{#;;n+R');
+define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3 XIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
+```
+To generate a suitable keys you may use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/
+
 ## Connect the plugin
 
 Once you got required credentials, it's time to connect the plugin to CRM.
@@ -49,7 +62,7 @@ Go to your WordPress Admin  Area and access the *Integration CDS* menu. Switch t
 5. Check whether the credentials are OK by hitting the **Verify Connection** button
 6. Upon successful test, click **Save settings** to establish a connection to CRM
 
-Now the plugin is connected to CRM and you can start building the integration.
+Now the plugin is connected to CRM, and you can start building the integration.
 
 ## Create a Contact Us form
 
