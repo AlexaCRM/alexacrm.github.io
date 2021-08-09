@@ -114,4 +114,4 @@ Access to the post is not allowed if:
 
 Information retrieved via entity binding is used to update a certain record with a form. See [Forms documentation](../forms/#create-a-form-registration).
 
-In Twig, the current record on a page is exposed via the global object `record`. It contains an Entity object of the current record, and you can access any field, e.g. {% raw %}`{{ record["fullname"] }}`{% endraw %}.
+In Twig, the current record on a page is exposed via the global object `binding.record`. It contains an Entity object of the current record, and you can access any field, e.g. {% raw %}`{{ binding.record["fullname"] }}`{% endraw %}. For more information see [Twig documentation](../twig/#global-objects)

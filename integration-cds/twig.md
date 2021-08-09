@@ -44,6 +44,16 @@ reads the local database and request parameters to calculate the entity referenc
 ```
 {% endraw %}
 
+If `ICDS_COMPATIBLE_BINDING` flag is set to *true* you can use the `currentrecord` variable that refers to the `binding.record`. This is intended mostly for backward compatibility with previous versions of the plugin and should not be used in general.
+
+{% raw %}
+``` twig
+{% if binding.is_bound %}
+  {{ currentrecord["fullname"] }} <{{ currentrecord["emailaddress1"] }}>
+{% endif %}
+```
+{% endraw %}
+
 ### Access the current user record {% include icds_premium.html %}
 
 Use the `user` object to check whether the current user is bound, and to access the bound CDS record values. See [user binding](../user-binding/).
