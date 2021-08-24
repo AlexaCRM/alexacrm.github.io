@@ -4,9 +4,9 @@ title: Twig Templates
 
 **Twig templates** give you a powerful tool to create a custom experience for your users.
 
-With [Twig](http://twig.sensiolabs.org/), a flexible, fast, and secure template engine, implemented in **Dynamics 365 Integration** you can display CRM data in WordPress using CRM views, FetchXML queries, as well as sending data back to CRM via forms.
+With [Twig](https://twig.symfony.com/), a flexible, fast, and secure template engine, implemented in **Dynamics 365 Integration** you can display CRM data in WordPress using CRM views, FetchXML queries, as well as sending data back to CRM via forms.
 
-Twig syntax is explained in [Twig documentation](http://twig.sensiolabs.org/doc/2.x/templates.html).
+Twig syntax is explained in [Twig documentation](https://twig.symfony.com/doc/2.x/templates.html).
 
 ## Features
 
