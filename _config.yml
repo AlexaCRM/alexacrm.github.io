@@ -101,6 +101,7 @@ navigation:
     PowerApps Forms: "/integration-cds/forms/"
     Views: "/integration-cds/views/"
     User Binding: "/integration-cds/user-binding/"
+    Hooks Reference: "/integration-cds/api-hooks/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
