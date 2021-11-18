@@ -102,6 +102,7 @@ navigation:
     Views: "/integration-cds/views/"
     User Binding: "/integration-cds/user-binding/"
     Hooks Reference: "/integration-cds/api-hooks/"
+    Webhooks: "/integration-cds/webhooks/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
