@@ -119,7 +119,7 @@ navigation:
     Filters and Actions: "/wpcrm/hooks/"
     Views: "/wpcrm/views/"
     Forms: "/wpcrm/forms/"
-    For Developers: "/wpcrm/for_developers/"
+    For Developers: "/wpcrm/for-developers/"
   toolkit:
     Introduction: "/toolkit/"
   sms:
