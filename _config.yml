@@ -103,6 +103,7 @@ navigation:
     User Binding: "/integration-cds/user-binding/"
     Hooks Reference: "/integration-cds/api-hooks/"
     Webhooks: "/integration-cds/webhooks/"
+    Multilingual: "/integration-cds/multilingual/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
