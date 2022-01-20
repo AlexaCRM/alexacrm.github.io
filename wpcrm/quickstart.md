@@ -12,7 +12,11 @@ Go to **Plugins > Add New** in your WordPress administration panel. Type *"Dynam
 
 ![Dynamics 365 Installation](/img/wpcrm/quickstart-install.png)
 
-Once the plugin is activated, go to **Dynamics 365 > Connection** and configure the connection to your Dynamics 365 instance. Choose the appropriate deployment type, *CRM Online* or *On-premises.* Enter the URL of your Dynamics 365 organization, and specify user name and password to access your Dynamics 365 instance.
+Once the plugin is activated, go to **Dynamics 365 > Connection** and configure the connection to your Dynamics 365 instance. Choose the *CRM Online* deployment type. Enter the URL of your Dynamics 365 organization, and specify application id and client secret to access your Dynamics 365 instance.
+
+![Dynamics 365 Connection settings](/img/wpcrm/new-auth.png)
+
+`Deprecated` Once the plugin is activated, go to **Dynamics 365 > Connection** and configure the connection to your Dynamics 365 instance. Choose the appropriate deployment type, *CRM Online* or *On-premises.* Enter the URL of your Dynamics 365 organization, and specify user name and password to access your Dynamics 365 instance.
 
 ![Dynamics 365 Connection settings](/img/wpcrm/quickstart-connect.png)
 

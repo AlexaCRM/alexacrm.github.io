@@ -53,14 +53,26 @@ To generate a suitable keys you may use an online generator provided by Wordpres
 
 Once you got required credentials, it's time to connect the plugin to CRM.
 
-Go to your WordPress Admin  Area and access the *Integration CDS* menu. Switch to the *Connection* tab. Then follow these steps:
+Go to your WordPress Admin  Area and access the *Integration CDS* menu. Switch to the *Connection* tab and choose the authentication method. Then follow these steps:
 
+`For OAuth 2.0 / Shared Secret authentication method`
 1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
 2. Select the *Deployment Type* -- **Online**
 3. Select the *Authentication Method* -- **OAuth 2.0 / Shared Secret**
 4. Enter the *Application ID* and *Client Secret* which you retrieved before
 5. Check whether the credentials are OK by hitting the **Verify Connection** button
 6. Upon successful test, click **Save settings** to establish a connection to CRM
+
+`For OAuth 2.0 / Certificate authentication method`
+1. Create a certificate (.cer) and its password protected copy (.pfx)
+2. Upload the certificate (.cer) to [portal.azure](https://portal.azure.com/)
+3. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
+4. Select the *Authentication Method* -- **OAuth 2.0 / Certificate**
+5. Enter the *Application ID* and *Client Secret* which you retrieved before
+6. Upload or manually specify the path to the `.pfx` certificate
+7. Enter the passphrase of the certificate .
+8. Check whether the credentials are OK by hitting the **Verify Connection** button
+9. Upon successful test, click **Save settings** to establish a connection to CRM
 
 Now the plugin is connected to CRM, and you can start building the integration.
 
