@@ -22,19 +22,13 @@ To access premium features you will need AlexaCRM Dataverse solution for WordPre
 
 ## Get credentials
 
-> Dynamics 365 supports several deployment and authentication scenarios. This tutorial assumes Dynamics 365 Online and Server-to-Server authentication with an application user.
+> Dataverse / Dynamics 365 supports several deployment and authentication scenarios. This tutorial assumes Dataverse / Dynamics 365 Online and Server-to-Server authentication with an application user.
 
-Connecting to Dataverse or Dynamics 365 Online Web API means several things:
+To create application id and client secret or certificate you need to complete the following steps:
 
-1. Creating an app registration in Azure Active Directory and client secret (application password), granting it permissions
-2. Creating an application user in CRM and associating it with the newly created app registration
-3. Using app registration ID and client secret to get a token from Azure Active Directory
-
-Create a new app registration in Azure Active Directory, go to app registration *API permissions.* Add a new permission, *Access Common Data Service as organization users.* Then go to *Certificates & secrets* and create a new client secret. **On Save, copy the displayed key for further use -- it will only be shown once.**
-
-Copy the Application ID as well. This, and the password created moments before, comprise the credentials required for successful authentication
-
-Next step is to create an application user in CRM. Go to the [Admin center](https://admin.powerplatform.microsoft.com/), navigate to your environment's Settings / Users. Switch to the *Application Users* view, hit **New**, switch to the *"Application User"* form, as can be seen [here](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/developer/use-multi-tenant-server-server-authentication#manually-create-a--application-user). Fill in the *Application ID* which you saved before, as well as *Full Name* and *Primary Email* fields, then save the user. Associate the user with relevant security roles, for example "System Administrator" and "Delegate". Feel free to create custom security roles which suit your use case best.
+1. [Register an app](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-an-application) in Azure Active Directory. During the registration select **Accounts in this organizational directory only** as Supported account types. Stop the walkthrough after the step when the app is registered, do not add redirect URI or change platform settings. Copy Application (client) ID and set it aside.
+2. [Add client secret credentials](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials). You can use either client secret or certificate. If using the secret make sure to copy and set it aside. If using certificate, make sure you have a certificate file (.cer) and its password protected copy (.pfx).
+3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user.
 
 ## Set authentication keys
 
@@ -59,20 +53,18 @@ Go to your WordPress Admin  Area and access the *Integration Dataverse* menu. Sw
 1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
 2. Select the *Deployment Type* -- **Online**
 3. Select the *Authentication Method* -- **OAuth 2.0 / Shared Secret**
-4. Enter the *Application ID* and *Client Secret* which you retrieved before
+4. Enter the *Application ID* and *Client Secret* which you set aside previously
 5. Check whether the credentials are OK by hitting the **Verify Connection** button
 6. Upon successful test, click **Save settings** to establish a connection to CRM
 
 `For OAuth 2.0 / Certificate authentication method`
-1. Create a certificate (.cer) and its password protected copy (.pfx)
-2. Upload the certificate (.cer) to [portal.azure](https://portal.azure.com/)
-3. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
-4. Select the *Authentication Method* -- **OAuth 2.0 / Certificate**
-5. Enter the *Application ID* and *Client Secret* which you retrieved before
-6. Upload or manually specify the path to the `.pfx` certificate
-7. Enter the passphrase of the certificate .
-8. Check whether the credentials are OK by hitting the **Verify Connection** button
-9. Upon successful test, click **Save settings** to establish a connection to CRM
+1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
+2. Select the *Authentication Method* -- **OAuth 2.0 / Certificate**
+3. Enter the *Application ID* and *Client Secret* which you set aside before
+4. Upload or manually specify the path to the `.pfx` certificate on your hosting server
+5. Enter the passphrase of the certificate
+6. Check whether the credentials are OK by hitting the **Verify Connection** button
+7. Upon successful test, click **Save settings** to establish a connection to CRM
 
 Now the plugin is connected to CRM, and you can start building the integration.
 
