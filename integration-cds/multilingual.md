@@ -2,7 +2,7 @@
 title: Multilingual
 ---
 
-The page describes the possibilities of multilingual support
+The page describes multilingual support in Dataverse plugin
 
 ## WPML support {% include icds_premium.html %}
 
