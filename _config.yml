@@ -104,6 +104,7 @@ navigation:
     Hooks Reference: "/integration-cds/api-hooks/"
     Webhooks: "/integration-cds/webhooks/"
     Multilingual: "/integration-cds/multilingual/"
+    Gravity Forms: "/integration-cds/gravity-forms/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"

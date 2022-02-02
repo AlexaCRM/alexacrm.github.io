@@ -4,13 +4,30 @@ title: Quickstart
 
 This quickstart guide tells in brief how to install the plugin and start capturing leads from you site directly into Dynamics 365.
 
-
-
 ## Installation
 
 Go to **Plugins > Add New** in your WordPress administration panel. Type *"Dynamics 365 Integration"* into the "Search Plugins..." text field. After the plugin is found, click "Install Now", then click "Activate" after the plugin is installed.
 
 ![Dynamics 365 Installation](/img/wpcrm/quickstart-install.png)
+
+Once the plugin is activated, go to **Dynamics 365 > Connection** and configure the connection to your Dynamics 365 instance. Plugin supports two authentication methods: App Id/Client Secret (Online only) and Username/Password (Online and On-Premises). 
+
+**Note**: Username/Password authentication has been deprecated for Online deployments and will be removed in April 2022.
+
+### App Id / Client Secret authentication
+
+Choose the *CRM Online* deployment type. Enter the URL of your Dynamics 365 organization, and specify app id and client secret to access your Dynamics 365 instance.
+
+![Dynamics 365 Connection settings](/img/wpcrm/new-auth.png)
+
+If you do not have app id/secret ready then you need to complete the following steps:
+
+1. [Register an app](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-an-application) in Azure Active Directory. During the registration select **Accounts in this organizational directory only** as Supported account types. Stop the walkthrough after the step when the app is registered, do not add redirect URI or change platform settings. Copy Application (client) ID and set aside.
+2. [Add client secret credentials](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials). Copy client secret and set aside.
+3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user.
+4. Use application id and client secret in the plugin configuration dialog.
+
+### Username / Password authentication 
 
 Once the plugin is activated, go to **Dynamics 365 > Connection** and configure the connection to your Dynamics 365 instance. Choose the appropriate deployment type, *CRM Online* or *On-premises.* Enter the URL of your Dynamics 365 organization, and specify user name and password to access your Dynamics 365 instance.
 
@@ -19,8 +36,6 @@ Once the plugin is activated, go to **Dynamics 365 > Connection** and configure 
 After connecting to Dynamics 365 you should see the message "Connected to &lt;Your Organization Name&gt;".
 
 You can find more information about connection settings at the [Configuration documentation page](/wpcrm/configuration/#connection)
-
-
 
 ## Surface a Dynamics 365 form in WordPress
 
