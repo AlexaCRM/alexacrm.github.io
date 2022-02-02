@@ -8,20 +8,26 @@ premium: true
 
 ## Introduction
 
-Our plugin supports Gravity Forms. So you can use it instead of our Custom or PowerApps forms
+Our plugin supports Gravity Forms. So you can use it instead of our Custom or Power Apps forms
 
 ## Dynamic field population
 
-If you want to populate fields using the form's field_values attribute, you must follow the instructions below.
+If you want to set default values for fields using the form's field_values attribute (see [Dynamically Populating a Field](https://docs.gravityforms.com/using-dynamic-population/), you can follow the following instructions.
 
 1. Add a new field and check the `Allow field to be populated dynamically` checkbox.
 2. Specify a parameter name just below the `Allow field to be populated dynamically` checkbox.
 3. Map the field to one of the Dataverse fields in the `Dataverse feed` settings.
 
-<strong>Note: </strong> The parameter name in the `field_values` attribute must be the same as specified in the `2nd` point.
+**Note:** The parameter name in the `field_values` attribute must be the same as specified in the `2nd` point.
 
-<strong>Note: </strong> When populate a lookup parameter, use the following syntax: parameter_name=`entity_name`:`record_id`. 
+**Note:** When populate a lookup parameter, use the following syntax: parameter_name=`entity_name`:`record_id`. 
 
-Example for `companyid` parameter name (actual is `parentcustomerid` attribute of the `contact` Dataverse table): 
-<br/>
+Example for `companyid` parameter name (actual column name is `parentcustomerid` in the `contact` Dataverse table): 
+
+1. Fixed value:
+
+`field_values="companyid=account:f5aaed4c-654c-4730-bd4f-38bc19a330bd"`
+
+2. Using twig expressions to get dynamic value:
+
 `field_values="companyid=account:{{account.accountid}}"`
