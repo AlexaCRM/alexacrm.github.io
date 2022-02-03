@@ -4,11 +4,11 @@ permalink: /integration-cds/entity-binding/
 premium: true
 ---
 
-<p class="lead">Link WordPress pages to CDS entities to provide direct access to your organization data.</p>
+<p class="lead">Link WordPress pages to Dataverse Integration entities to provide direct access to your organization data.</p>
 
 ## Introduction
 
-Entity binding is a feature of CDS Integration that allows linking specific CDS entities to WordPress posts and pages. When binding is set up, Twig, forms and other services get access to the "current" bound record and its fields.
+Entity binding is a feature of Dataverse Integration that allows linking specific Dataverse Integration entities to WordPress posts and pages. When binding is set up, Twig, forms and other services get access to the "current" bound record and its fields.
 
 ## Understand entity binding
 
@@ -34,7 +34,7 @@ You can choose from several options how to bind the post.
 
 In certain integration scenarios, it may be desirable to limit the number of table rows exposed to a user. In a self-service portal, you may want to allow a user access to their invoices, but keep them from seeing invoices for your other clients.
 
-CDS Integration provides capability of restricting access by executing a provided FetchXML query before access to the page is granted. The query allows determining relations between the requested table row and the visitor. Access is granted if Dataverse returns any rows.
+Dataverse Integration provides capability of restricting access by executing a provided FetchXML query before access to the page is granted. The query allows determining relations between the requested table row and the visitor. Access is granted if Dataverse returns any rows.
 
 ## Configure global binding settings
 
@@ -44,7 +44,7 @@ Go to **Settings UI > Binding** to configure global binding settings.
 
 WordPress has several built-in post types, including posts and pages. 3rd-party plugins can add custom post types. You can choose which post types should be exposed to Entity Binding. 
 
-### Choose default posts for bound CDS entities
+### Choose default posts for bound Dataverse Integration entities
 
 Several features, including [views](../views/) and `entity_url()` Twig filter, may link entity references to the bound WordPress. In WordPress, entity binding is a many-to-many association. In global settings you can choose the default post of each bound entity. You need to bind a post to an entity before it is shown in the dropdown.
 

@@ -4,11 +4,11 @@ permalink: /integration-cds/views/
 premium: true
 ---
 
-<p class="lead">Add views to your WordPress pages to display tabular data from CDS and Dynamics 365.</p>
+<p class="lead">Add views to your WordPress pages to display tabular data from Dataverse Integration and Dynamics 365.</p>
 
 ## Introduction
 
-Views are a concept in PowerApps and Dynamics 365 that allows listing entity records in tables. A view defines what data to show and in which order. **CDS Integration** allows to surface personal, system and public views on your WordPress website.
+Views are a concept in PowerApps and Dynamics 365 that allows listing entity records in tables. A view defines what data to show and in which order. **Dataverse Integration** allows to surface personal, system and public views on your WordPress website.
 
 See [PowerApps documentation on views](https://docs.microsoft.com/en-us/powerapps/maker/model-driven-apps/create-edit-views).
 
@@ -16,7 +16,7 @@ See [PowerApps documentation on views](https://docs.microsoft.com/en-us/powerapp
 
 To add a view to the WordPress page, use the `view` tag in a Twig template. The two required parameters are `entity` for the logical name of the entity, e.g. `contact` or `account`, and `name` for the name of the view, e.g. `Active Contacts`. The plugin looks up both personal and system views. `vew` tag requires a closing tag, `endview`.
 
-*Note:* you need to share personal views with the Application User that is used to connect WordPress to your CDS / Dynamics 365 organization.
+*Note:* you need to share personal views with the Application User that is used to connect WordPress to your Dataverse Integration / Dynamics 365 organization.
 
 {% raw %}
 ```twig
@@ -46,11 +46,11 @@ If you have several languages installed in your organization, you can choose the
 
 ### Enable data caching
 
-CDS Integration always caches the view definition. That includes the underlying FetchXML query and the list of columns. To further boost performance, you can enable caching for the records displayed in the view.
+Dataverse Integration always caches the view definition. That includes the underlying FetchXML query and the list of columns. To further boost performance, you can enable caching for the records displayed in the view.
 
 To cache the data in the view, specify the cache duration in the `cache` parameter. ISO 8601 duration format is accepted as a valid duration value.
 
-*Note:* the plugin caches view data based on the resulting FetchXML on-demand. Two pages of the otherwise identical FetchXML query may be cached at different moments of time and get out of sync if data in the view is changed, e.g. records added or removed. Choose the cache duration value based on how frequently the data in CDS is updated. This behavior is subject to change in future versions.
+*Note:* the plugin caches view data based on the resulting FetchXML on-demand. Two pages of the otherwise identical FetchXML query may be cached at different moments of time and get out of sync if data in the view is changed, e.g. records added or removed. Choose the cache duration value based on how frequently the data in Dataverse Integration is updated. This behavior is subject to change in future versions.
 
 {% raw %}
 ```twig
@@ -101,9 +101,9 @@ You have to substitute lookup and optionset conditions separately because you ca
 
 ## Display data using a custom template
 
-By default, CDS Integration uses `view.twig` as a template. (See `/integration-cds/templates/twig/view.twig`.) You can define your own template inside between {% raw %}`{% view %}` and `{% endview %}`{% endraw %}.
+By default, Dataverse Integration uses `view.twig` as a template. (See `/integration-cds/templates/twig/view.twig`.) You can define your own template inside between {% raw %}`{% view %}` and `{% endview %}`{% endraw %}.
 
-`entityview` is the object exposed inside the template. It contains view data, configuration options and essential metadata required to render the template with CDS records. Following items are included in `entityview`:
+`entityview` is the object exposed inside the template. It contains view data, configuration options and essential metadata required to render the template with Dataverse Integration records. Following items are included in `entityview`:
 
 - `columns` -- map of view column definitions. Logical names of column attributes are used as a key. Each object includes several fields:
   - `logical_name` -- logical name of the attribute.

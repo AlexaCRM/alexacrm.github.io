@@ -3,17 +3,17 @@ title: Custom Forms
 permalink: /integration-cds/custom-forms/
 ---
 
-<p class="lead">Design forms with Twig and HTML and capture submissions into your CDS organization.</p>
+<p class="lead">Design forms with Twig and HTML and capture submissions into your Dataverse Integration organization.</p>
 
 ## Introduction
 
 Using PowerApps or Dynamics 365 forms is not the only way to capture submissions from your WordPress website. You can use Twig and HTML forms syntax to create custom form layouts.
 
-Custom forms are a feature provided in the free CDS Integration plugin at [wordpress.org](https://wordpress.org/plugins/integration-cds/). 
+Custom forms are a feature provided in the free Dataverse Integration plugin at [wordpress.org](https://wordpress.org/plugins/integration-cds/). 
 
 ## Use Twig to design a form
 
-CDS Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endform %}`{% endraw %}, to define a form. {% raw %}`{% form %}`{% endraw %} tag accepts the following parameters:
+Dataverse Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endform %}`{% endraw %}, to define a form. {% raw %}`{% form %}`{% endraw %} tag accepts the following parameters:
 
 - `entity` -- *(string, required)* logical name of the target entity.
 - `mode` -- *(string, required)* `create` for creation forms. `update` for update forms.
