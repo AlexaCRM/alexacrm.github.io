@@ -8,17 +8,17 @@ premium: true
 
 ## Introduction
 
-Forms are an essential component of PowerApps and Dynamics 365 which enables interaction with your data. Integration Dataverse Integration brings the comparable experience to your WordPress website. It makes writing data back to Dataverse Integration / Dynamics 365 a priority, and to achieve the goal it provides support for rendering Dynamics 365 forms and processing the input by converting it into new CRM records or updates to the existing records.
+Forms are an essential component of Power Apps and Dynamics 365 which enables interaction with your data. Dataverse Integration brings the comparable experience to your WordPress website. It makes writing data back to Dataverse / Dynamics 365 a priority, and to achieve the goal it provides support for rendering Dataverse / Dynamics 365 forms and processing the input by converting it into new Dataverse records or updates to the existing records.
 
-The plugin introduces a concept of *"form registrations"*, a proxy layer between WordPress and a CRM form. It specifies among other things which CRM form to show, how to handle submissions, which fields to make required or optional.
+The plugin introduces a concept of *"form registrations"*, a proxy layer between WordPress and a Dataverse form. It specifies among other things which Dataverse form to show, how to handle submissions, which fields to make required or optional.
 
 Forms are fully integrated into the Twig templating engine, and Twig templates are the way to place forms on your website pages.
 
 ## Features and limitations
 
-Dataverse Integration renders forms close to what they are defined in CRM, layout-wise. Most control types are supported too, including lookups, radio buttons and checkboxes, date & time pickers, as well as simple text (e.g. single-line and multi-line text, email) and number (e.g. integers, money) inputs.
+Dataverse Integration renders forms close to what they are defined in Dataverse, layout-wise. Most control types are supported too, including lookups, radio buttons and checkboxes, date & time pickers, as well as simple text (e.g. single-line and multi-line text, email) and number (e.g. integers, money) inputs.
 
-Dataverse Integration provides a lookup dialog very similar to one included in PowerApps and Dynamics 365. It allows picking records as values for lookup and customer fields. The lookup dialog included in the plugin does not support selecting multiple records for one field. Multi-select picklists are not supported yet.
+Dataverse Integration provides a lookup dialog very similar to one included in Power Apps and Dynamics 365. It allows picking records as values for lookup and customer fields. The lookup dialog included in the plugin does not support selecting multiple records for one field. Multi-select picklists are not supported yet.
 
 Several composite controls are not supported yet. Those include subgrids, maps, nested forms (quick forms), notes (Posts, Assistant, Activities, Notes).
 
@@ -26,7 +26,7 @@ There are no plans for support of web resources, such as custom JavaScript libra
 
 ### Composite fields
 
-Default Common Data service entities, such as Contact and Lead, include several composite read-only fields.
+Default Dataverse tables (entities), such as Contact and Lead, include several composite read-only fields.
 
 `fullname` is a calculated field which by default represents First Name and Last Name. Dataverse Integration and Dynamics 365 provide several options to generate the Full Name, [see the article](https://www.magnetismsolutions.com/blog/colinmaitland/2014/02/03/how-to-change-the-full-name-format-for-contacts-in-microsoft-dynamics-crm-2013). The plugin does not show a pop-up to specify each name component separately. It instead decomposes the `fullname` field, if one is present on the form, into separate controls on the form as if the form contained `firstname` and `lastname` instead.
 
@@ -36,7 +36,7 @@ Dataverse Integration allows customizing the list of underlying attributes for F
 
 ### reCAPTCHA support
 
-Dataverse Integration forms are fully integrated with reCAPTCHA. Version 2 with checkbox challenge, version 2 invisible and version 3 are supported.
+Dataverse forms are fully integrated with reCAPTCHA. Version 2 with checkbox challenge, version 2 invisible and version 3 are supported.
 
 Dataverse Integration supports 3rd party plugins to retrieve reCAPTCHA credentials and settings:
 
@@ -45,7 +45,7 @@ Dataverse Integration supports 3rd party plugins to retrieve reCAPTCHA credentia
 
 ### Front-end dependencies
 
-Dataverse Integration forms require [Bootstrap 4](https://getbootstrap.com/) and [Font Awesome 5](https://fontawesome.com/) to work properly. We provide custom builds of these libraries that do not interfere with the existing layout of pages. You can opt out of including these libraries onto your website if your WordPress theme provides these dependencies.
+Dataverse forms require [Bootstrap 4](https://getbootstrap.com/) and [Font Awesome 5](https://fontawesome.com/) to work properly. We provide custom builds of these libraries that do not interfere with the existing layout of pages. You can opt out of including these libraries onto your website if your WordPress theme provides these dependencies.
 
 ## Create a form registration
 
@@ -73,7 +73,7 @@ You are advised to implement the `integration-cds/forms/authorize-delete` filter
 
 ### Required and optional fields
 
-CRM forms can require some fields to be filled before a form can be submitted. Sometimes you want to make more fields required, or, instead, make some fields optional, without actually customizing the CRM form.
+Dataverse forms can require some fields to be filled before a form can be submitted. Sometimes you want to make more fields required, or, instead, make some fields optional, without actually customizing the Dataverse form.
 
 To do that, select the fields from the Attributes column and move them to the Required or Optional column by clicking **Required &rarr;** or **Optional &rarr;** respectively. Select fields and click **Remove selected**, or double-click the fields, to remove them from the list.
 
@@ -83,7 +83,7 @@ Form registration provides several options to override global form settings, suc
 
 ## Add the form to a page
 
-Dataverse Integration provides a custom Twig tag, {% raw %}`{% form %}`{% endraw %}, to add CRM forms to WordPress pages. When you add a CRM form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
+Dataverse Integration provides a custom Twig tag, {% raw %}`{% form %}`{% endraw %}, to add Dataverse forms to WordPress pages. When you add a Dataverse form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
 
 {% raw %}
 ``` twig
@@ -91,7 +91,7 @@ Dataverse Integration provides a custom Twig tag, {% raw %}`{% form %}`{% endraw
 ```
 {% endraw %}
 
-This code is sufficient to display a CRM form on a WordPress page and start accepting submissions.
+This code is sufficient to display a Dataverse form on a WordPress page and start accepting submissions.
 
 ### Default values
 
