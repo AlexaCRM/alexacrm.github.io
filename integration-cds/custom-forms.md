@@ -3,7 +3,7 @@ title: Custom Forms
 permalink: /integration-cds/custom-forms/
 ---
 
-<p class="lead">Design forms with Twig and HTML and capture submissions into your Dataverse Integration organization.</p>
+<p class="lead">Design forms with Twig and HTML and capture submissions into your Dataverse instance.</p>
 
 ## Introduction
 
