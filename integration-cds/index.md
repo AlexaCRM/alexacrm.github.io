@@ -6,9 +6,9 @@ redirect_from:
  - /integration-dynamics/
 ---
 
-<p class="lead">Nothing gets between your web site and your CRM. No more iframes, no more third-party services, no more moving parts. Built with the <a href="https://github.com/AlexaCRM/dynamics-webapi-toolkit">Dynamics Web API Toolkit</a>, the plugin connects directly to Dynamics 365 without the need to add anything else.</p>
+<p class="lead">Nothing gets between your web site and your Dataverse / Dynamics 365 / CRM. No more iframes, no more third-party services, no more moving parts. Built with the <a href="https://github.com/AlexaCRM/dynamics-webapi-toolkit">Dynamics Web API Toolkit</a>, the plugin connects directly to Dataverse / Dynamics 365 without the need to add anything else.</p>
 <p class="lead">
-    Capture form submissions to CRM, surface CRM data on your website, and create a self-service portal for your customers. All that and even more &ndash; with the Dataverse Integration plugin for WordPress.
+    Capture form submissions to Dataverse, surface Dataverse data on your website, and create a self-service portal for your customers. All that and even more &ndash; with the Dataverse Integration plugin for WordPress.
 </p>
 
 <div class="row mb-4">
