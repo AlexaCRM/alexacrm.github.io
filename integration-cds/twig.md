@@ -3,24 +3,24 @@ title: Using Twig
 permalink: /integration-cds/twig/
 ---
 
-<p class="lead">Use Twig templates to create custom layouts. Access your CDS organization data and metadata in Twig to share your data with your users.</p>
+<p class="lead">Use Twig templates to create custom layouts. Access your Dataverse data and metadata in Twig to share your data with your users.</p>
 
 ## Introduction
 
-*Integration CDS* employs [Twig](https://twig.symfony.com/) to make most data-rich layout jobs effortless.
+*Dataverse Integration* employs [Twig](https://twig.symfony.com/) to make most data-rich layout jobs effortless.
 
-On this page you can find information about custom Twig features that Integration CDS brings. Please refer to [Twig documentation](https://twig.symfony.com/doc/2.x/templates.html) to learn about its templating capabilities.
+On this page you can find information about custom Twig features that Integration Dataverse Integration brings. Please refer to [Twig documentation](https://twig.symfony.com/doc/2.x/templates.html) to learn about its templating capabilities.
 
 ## Runtime settings
 
-Twig in Integration CDS supports debug mode and template caching.
+Twig in Dataverse Integration supports debug mode and template caching.
 
 - Debug mode allows using `dump()` to print information about Twig objects using PHP `var_dump()`. It is enabled in [WordPress debug mode](https://wordpress.org/support/article/debugging-in-wordpress/) (`WP_DEBUG`) or if `ICDS_TWIG_DEBUG` is *true*.
 - Template caching enhances page rendering performance. Enabled if `ICDS_TWIG_CACHE` is *true*.
 
 ## Global objects
 
-Integration CDS makes several new global objects available in the Twig environment.
+Dataverse Integration makes several new global objects available in the Twig environment.
 
 ### Access the current bound record {% include icds_premium.html %}
 
@@ -32,7 +32,7 @@ Use the `binding` object to access entity binding on the current page. See [enti
 - `reference` -- *(EntityReference)* reference to the bound record.
 - `record` -- *(Entity)* bound record object.
 
-Notice that `binding.record` is more expensive performance-wise -- it retrieves data from CDS. `binding.reference` only
+Notice that `binding.record` is more expensive performance-wise -- it retrieves data from Dataverse. `binding.reference` only
 reads the local database and request parameters to calculate the entity reference.
 
 {% raw %}
@@ -56,7 +56,7 @@ If `ICDS_COMPATIBLE_BINDING` flag is set to *true* you can use the `currentrecor
 
 ### Access the current user record {% include icds_premium.html %}
 
-Use the `user` object to check whether the current user is bound, and to access the bound CDS record values. See [user binding](../user-binding/).
+Use the `user` object to check whether the current user is bound, and to access the bound Dataverse record values. See [user binding](../user-binding/).
 
 The following object members are available:
 
@@ -65,7 +65,7 @@ The following object members are available:
 - `record` -- *(Entity)* bound record object.
 - `wp_user` -- *(WP_User)* information about the current WordPress user.
 
-Notice that `user.record` is more expensive performance-wise -- it retrieves data from CDS. `user.reference` only
+Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
 reads the local database and request parameters to calculate the entity reference.
 
 {% raw %}
@@ -76,9 +76,9 @@ reads the local database and request parameters to calculate the entity referenc
 ```
 {% endraw %}
 
-### Access any record in your CDS organization
+### Access any record in your Dataverse instance
 
-Use the `entities` object to access any record in your CDS organization by its entity logical name and GUID. All record fields are available at once.
+Use the `entities` object to access any record in your Dataverse instance by its entity logical name and GUID. All record fields are available at once.
 
 {% raw %}
 ``` twig
@@ -86,13 +86,13 @@ Use the `entities` object to access any record in your CDS organization by its e
 ```
 {% endraw %}
 
-### Access the list of entities in your CDS organization
+### Access the list of entities in your Dataverse instance
 
-`entities_list` contains a map of all entities in your CDS organization. It maps logical names to display names.
+`entities_list` contains a map of all entities in your Dataverse instance. It maps logical names to display names.
 
-### Access your CDS organization metadata
+### Access your Dataverse Integration organization metadata
 
-`metadata` object allows accessing metadata of your CDS organization. It follows the interface of `EntityMetadata` in XRM SDK. See [Microsoft reference docs](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.metadata.entitymetadata).
+`metadata` object allows accessing metadata of your Dataverse instance. It follows the interface of `EntityMetadata` in XRM SDK. See [Microsoft reference docs](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.metadata.entitymetadata).
 
 {% raw %}
 ``` twig
@@ -119,15 +119,15 @@ Object `request` contains information about the current request. It has the foll
 
 Global object `params` is the alias of `request.params`.
 
-### Check if the website is connected to CDS
+### Check if the website is connected to Dataverse
 
-`crm.connected` tells whether the website is configured to make connections to CDS.
+`crm.connected` tells whether the website is configured to make connections to Dataverse.
 
 ## Filters
 
-Integration CDS provides several CDS-specific and general purpose Twig filters.
+Dataverse Integration provides several Dataverse-specific and general purpose Twig filters.
 
-- `formatted_value( attributeName )` -- returns the formatted value of the filtered entity record as reported by CDS. Returns the entity record attribute value if no formatted value available.  
+- `formatted_value( attributeName )` -- returns the formatted value of the filtered entity record as reported by Dataverse. Returns the entity record attribute value if no formatted value available.  
  E.g. `record|formatted_value( "preferredappointmenttimecode" )`
 - `to_entity_reference` -- converts an Entity object, or an EntityReference-like object to a strongly typed EntityReference object. For an EntityReference-like object, the filter expects `LogicalName` (required), `Id` and `Name` keys.  
  E.g. `record|to_entity_reference` or `{ "LogicalName": "contact", "Id": "00000000-0000-0000-0000-000000000000" }`
