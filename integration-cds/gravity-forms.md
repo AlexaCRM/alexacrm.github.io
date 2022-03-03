@@ -25,9 +25,17 @@ If you want to set default values for fields using the form's field_values attri
 Example for `companyid` parameter name (actual column name is `parentcustomerid` in the `contact` Dataverse table): 
 
 1. Fixed value:
-
+   
+{% raw %}
+```
 `field_values="companyid=account:f5aaed4c-654c-4730-bd4f-38bc19a330bd"`
+```
+{% endraw %}
 
 2. Using twig expressions to get dynamic value:
 
-`field_values="companyid=account:{{account.accountid}}"`
+{% raw %}
+```
+field_values="companyid=account:{{account.accountid}}"
+```
+{% endraw %}
