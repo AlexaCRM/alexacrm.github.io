@@ -1,5 +1,6 @@
 ---
 title: Quickstart
+typora-root-url: ../../docs
 ---
 
 This quickstart guide tells in brief how to install the plugin and start capturing leads from you site directly into Dynamics 365.
@@ -26,6 +27,8 @@ If you do not have app id/secret ready then you need to complete the following s
 2. [Add client secret credentials](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials). Copy client secret and set aside.
 3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user.
 4. Use application id and client secret in the plugin configuration dialog.
+
+[This knowledge base article](https://alexacrm.com/kb/plugin/config/oauth-setup/) contains step-by-step instructions and screenshots to guide you through the process. 
 
 ### Username / Password authentication 
 
