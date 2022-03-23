@@ -105,6 +105,8 @@ navigation:
     Webhooks: "/integration-cds/webhooks/"
     Multilingual: "/integration-cds/multilingual/"
     Gravity Forms: "/integration-cds/gravity-forms/"
+    Cache Management: "/integration-cds/cache-management/"
+    Working With Logs: "/integration-cds/working-with-logs/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
