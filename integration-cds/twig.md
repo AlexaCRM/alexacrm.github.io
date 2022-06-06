@@ -137,3 +137,15 @@ Dataverse Integration provides several Dataverse-specific and general purpose Tw
 ## Functions
 
 - `entity_url( record, postId = null )` -- {% include icds_premium.html %} returns URL to the website page with the given entity record bound to it. Uses [Entity Binding](../entity-binding/) feature. If more than one WordPress post is bound to the entity, you can pass post ID to link to a different page instead.
+
+## Templates usage
+
+Dataverse Integration gives you the ability to create reusable templates. To do this, you need to go to the plugin admin area and open the "Templates" tab.
+
+There you must enter the name of the template and the content of the template. The content could contain all the functions, statements and filters of Twig.
+
+To use templates in `Dataverse Twig Gutenberg` block, you need to use the `include` statement with the template name. For example:
+<br>
+`{% include 'name_of_your_template' %}`
+
+You can also use templates to replace the form template or individual form fields in form registration editor.
