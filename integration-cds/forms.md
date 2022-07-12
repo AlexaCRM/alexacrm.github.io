@@ -102,3 +102,9 @@ You can provide default values to pre-populate specific form fields using the `d
 {% form id=42 defaults={ "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" } %}
 ```
 {% endraw %}
+
+### Getting record GUID
+
+After the record has been successfully created, you can get the guid using the redirect setting with the %s parameter.
+
+For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-000000000000`

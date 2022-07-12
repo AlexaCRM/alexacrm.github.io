@@ -105,6 +105,7 @@ navigation:
     Webhooks: "/integration-cds/webhooks/"
     Multilingual: "/integration-cds/multilingual/"
     Gravity Forms: "/integration-cds/gravity-forms/"
+    Elementor: "/integration-cds/elementor/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"
