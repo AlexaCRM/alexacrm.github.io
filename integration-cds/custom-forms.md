@@ -108,3 +108,9 @@ Before you start using reCAPTCHA in your forms, please configure reCAPTCHA in th
 {% endform %}
 ```
 {% endraw %}
+
+### Getting record GUID
+
+After the record has been successfully created, you can get the guid using the redirect setting with the %s parameter.
+
+For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-000000000000`
