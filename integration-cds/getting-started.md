@@ -18,8 +18,6 @@ If you don't have a Dataverse / Dynamics 365 organization yet, you can sign up f
 
 Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dataverse Integration"* into the search box, hit Enter. Locate the plugin, click *Install Now*, then *Activate*. Alternatively, go to [WordPress.org](https://wordpress.org/plugins/integration-cds/) and download the latest version of the plugin and install it manually.
 
-To access premium features you will need AlexaCRM Dataverse solution for WordPress integration. This solution is currently in preview. If you would like to evaluation premium features please contact us at [support@alexacrm.com](mailto:support@alexacrm.com)
-
 ## Get credentials
 
 > Dataverse / Dynamics 365 supports several deployment and authentication scenarios. This tutorial assumes Dataverse / Dynamics 365 Online and Server-to-Server authentication with an application user.
@@ -39,7 +37,7 @@ By default, Dataverse Integration use a Wordpress `AUTH_KEY` constant for encryp
 These constants can be defined in your `wp-config.php` file, for example
 ```
 define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o;6U{#;;n+R');
-define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3 XIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
+define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
 ```
 To generate a suitable keys you may use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/
 
@@ -110,3 +108,34 @@ Custom forms allow creating new Dataverse / Dynamics 365 records, as well as upd
 The {% raw %}`{% form %}`{% endraw %} Twig tag lets you configure the form settings, such as target entity, submission mode (create or update), etc. See [custom forms documentation](/integration-cds/custom-forms/).
 
 Form control `name` attributes refer to the corresponding entity attributes, such as `firstname`, `lastname` and `emailaddress1`. Put the `<recaptcha>` placeholder where you want to put reCAPTCHA control if you enable reCAPTCHA on your form. Before you use reCAPTCHA, please configure it in plugin settings.
+
+## Install Premium Features
+
+{% include wpcrm_premium.html %}
+
+### Create Application Password
+
+1. Sign in into your WordPress site.
+2. Select a user with admin privileges or create a new one for Dataverse to connect back to the site.
+3. Edit their profile and create *application password*.
+
+### Configure Dataverse Solution
+
+1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_latest_managed.zip). 
+2. Sign in into https://make.powerapps.com and import downloaded solution into your Dataverse / Dynamics 365 instance.
+3. Select **Apps** then select **WordPress**.
+4. In the app, select **WordPress Sites**.
+5. Select **+ New** and enter the following information:
+   - **Name**: &lt;your WordPress site name&gt;. 
+   - **URL**: &lt;your WordPress site URL&gt;.
+   - **Is Default?**: Yes.
+   - **Login**: login name or email of the admin WordPress user you selected earlier.
+   - **Password**: application password you created earlier.
+6. Save the record.
+
+### Install WordPress Premium Solution
+
+1.  Sign in into WordPress as admin user.
+2. Select **Dataverse** in the left-hand side navigation.
+3. You should see the message about the premium plugin being available. Click **Download & install** link.
+4. Activate the plugin once it's installed. 

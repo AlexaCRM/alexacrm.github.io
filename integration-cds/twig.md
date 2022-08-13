@@ -145,7 +145,13 @@ Dataverse Integration gives you the ability to create reusable templates. To do 
 There you must enter the name of the template and the content of the template. The content could contain all the functions, statements and filters of Twig.
 
 To use templates in `Dataverse Twig Gutenberg` block, you need to use the `include` statement with the template name. For example:
-<br>
-`{% include 'name_of_your_template' %}`
+
+{% raw %}
+
+``` twig
+{% include 'name_of_your_template' %}
+```
+
+{% endraw %}
 
 You can also use templates to replace the form template or individual form fields in form registration editor.

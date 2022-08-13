@@ -7,13 +7,13 @@ permalink: /integration-cds/fetchxml/
 
 ## Introduction
 
-FetchXML is a query language used in Common Data Service to retrieve entity records using a set of conditions. *Integration CDS* brings support of FetchXML into Twig to allow rendering collections of CRM records or individual records on WordPress pages.
+FetchXML is a query language used in Common Data Service to retrieve entity records using a set of conditions. *Dataverse Integration* brings support of FetchXML into Twig to allow rendering collections of CRM records or individual records on WordPress pages.
 
-Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/use-fetchxml-construct-query) to learn about constructing FetchXML queries.
+Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/power-apps/developer/data-platform/use-fetchxml-construct-query) to learn about constructing FetchXML queries.
 
 ## Query data using FetchXML in Twig templates
 
-*Integration CDS* provides a new Twig tag, {% raw %}`{% fetchxml %}`{% endraw %}, which is accompanied by the required closing {% raw %}`{% endfetchxml %}`{% endraw %} tag. Use the required `collection` attribute to specify the variable you will use to access retrieved records. Write your FetchXML query inside these tags. Use the optional `cache` attribute to enable query cache -- please adhere to the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations).
+*Dataverse Integration* provides a new Twig tag, {% raw %}`{% fetchxml %}`{% endraw %}, which is accompanied by the required closing {% raw %}`{% endfetchxml %}`{% endraw %} tag. Use the required `collection` attribute to specify the variable you will use to access retrieved records. Write your FetchXML query inside these tags. Use the optional `cache` attribute to enable query cache -- please adhere to the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations).
 
 {% raw %}
 ``` twig
@@ -32,7 +32,7 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/en-us/pow
 
 The returned collection contains several members:
 
-- `xml` -- FetchXML query that was sent to CDS.
+- `xml` -- FetchXML query that was sent to Dataverse.
 - `error` -- error message, null if no errors.
 - `results` -- an object that contains results of the query.
   - `entities` -- array of retrieved Entity objects
