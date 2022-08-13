@@ -9,6 +9,12 @@ premium: true
 ## Introduction
 
 Our plugin supports Gravity Forms. So you can use it instead of our Custom or Power Apps forms
+<br>
+When you have created the form, you must also create a Dataverse Feed.
+<br>
+To create a Dataverse Feed, you need to click `Dataverse` in the `Settings` dropdown.
+<br>
+Then click `Add New`, select crm table, action type and map form fields to crm fields.
 
 ## Dynamic field population
 
@@ -39,3 +45,10 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
    field_values="companyid=account:{{account.accountid}}"
    ```
    {% endraw %}
+
+## Lookup Fields
+Lookup field supports two views for displaying the field: dropdown and dialog.
+<br>
+To select a view, you need to open the `Appearance` tab in the field settings.
+<br>
+If you select the dropdown, you must also select the entity and view to lookup. The dialog view does not require any additional settings.

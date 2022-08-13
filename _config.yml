@@ -105,6 +105,8 @@ navigation:
     Hooks Reference: "/integration-cds/api-hooks/"
     Multilingual: "/integration-cds/multilingual/"
     Gravity Forms: "/integration-cds/gravity-forms/"
+    Cache Management: "/integration-cds/cache-management/"
+    Working With Logs: "/integration-cds/working-with-logs/"
     Elementor: "/integration-cds/elementor/"
   wpcrm:
     Introduction: "/wpcrm/"

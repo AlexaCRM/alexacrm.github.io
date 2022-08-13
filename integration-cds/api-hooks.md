@@ -146,7 +146,7 @@ This filter allows establishing conditional access to certain entity records on 
 
 ---
 
-`integration-cds/binding/custom/target-`
+`integration-cds/binding/custom/target-${postId}`
 
 Filters the bound record for the post.
 
@@ -155,7 +155,7 @@ Filters the bound record for the post.
 
 ---
 
-`integration-cds/binding/custom/targetref-`
+`integration-cds/binding/custom/targetref-${postId}`
 
 Filters the bound record reference for the post.
 
@@ -164,7 +164,7 @@ Filters the bound record reference for the post.
 
 ---
 
-`integration-cds/binding/custom/url-`
+`integration-cds/binding/custom/url-${postId}`
 
 Filters the URL to the bound post.
 
