@@ -13,15 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@domain.com
+title: AlexaCRM
+email: support@alexacrm.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://alexacrm.github.io" # the base hostname & protocol for your site
-twitter_username: alex4crm
+twitter_username: georgedude
 github_username:  alexacrm
 
 repository: AlexaCRM/alexacrm.github.io
@@ -55,8 +55,8 @@ defaults:
       layout: documentation
       group: "integration-cds"
       navigation: "integration-cds"
-      jumbo_title: "CDS Integration"
-      jumbo_lead: "The easiest way to connect Common Data Service and Dynamics 365 with WordPress."
+      jumbo_title: "Dataverse Integration"
+      jumbo_lead: "The easiest way to connect Dataverse / Dynamics 365 with WordPress."
   - scope:
       path: "wpcrm"
       type: "pages"
@@ -94,19 +94,20 @@ navigation:
   integration-cds:
     Introduction: "/integration-cds/"
     Getting Started: "/integration-cds/getting-started/"
+    Custom Forms: "/integration-cds/custom-forms/"
+    PowerApps Forms: "/integration-cds/forms/"
     Using Twig: "/integration-cds/twig/"
     FetchXML: "/integration-cds/fetchxml/"
-    Custom Forms: "/integration-cds/custom-forms/"
     Entity Binding: "/integration-cds/entity-binding/"
-    PowerApps Forms: "/integration-cds/forms/"
-    Views: "/integration-cds/views/"
     User Binding: "/integration-cds/user-binding/"
-    Hooks Reference: "/integration-cds/api-hooks/"
     Webhooks: "/integration-cds/webhooks/"
+    Views: "/integration-cds/views/"
+    Hooks Reference: "/integration-cds/api-hooks/"
     Multilingual: "/integration-cds/multilingual/"
     Gravity Forms: "/integration-cds/gravity-forms/"
     Cache Management: "/integration-cds/cache-management/"
     Working With Logs: "/integration-cds/working-with-logs/"
+    Elementor: "/integration-cds/elementor/"
   wpcrm:
     Introduction: "/wpcrm/"
     Quickstart: "/wpcrm/quickstart/"

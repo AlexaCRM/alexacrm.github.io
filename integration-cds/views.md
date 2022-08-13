@@ -103,6 +103,8 @@ You have to substitute lookup and optionset conditions separately because you ca
 
 By default, Dataverse Integration uses `view.twig` as a template. (See `/integration-cds/templates/twig/view.twig`.) You can define your own template inside between {% raw %}`{% view %}` and `{% endview %}`{% endraw %}.
 
+You can access the base view via ssh or ftp by navigating to `{your_wordpress_site_path}/wp-content/plugins/integration-cds/templates/twig/view.twig`. Below you can see the description of the variables present in the file.
+
 `entityview` is the object exposed inside the template. It contains view data, configuration options and essential metadata required to render the template with Dataverse records. Following items are included in `entityview`:
 
 - `columns` -- map of view column definitions. Logical names of column attributes are used as a key. Each object includes several fields:
