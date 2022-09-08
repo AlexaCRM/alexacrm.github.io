@@ -36,7 +36,7 @@ By default, all available records below the system-imposed 5000 records are disp
 
 ### Change the language of column titles
 
-If you have several languages installed in your organization, you can choose the language of column titles. Specify the LCID in the `language` attribute. 
+If you have several languages installed in your organization, you can choose the language of column titles. Specify the LCID in the `language` attribute ([see the link to choose language] (https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a)). 
 
 {% raw %}
 ```twig
