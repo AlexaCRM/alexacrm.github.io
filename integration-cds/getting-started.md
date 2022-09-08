@@ -39,7 +39,7 @@ These constants can be defined in your `wp-config.php` file, for example
 define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o;6U{#;;n+R');
 define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
 ```
-To generate a suitable keys you may use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/
+To generate a suitable key you may use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to Dataverse Integration -> Status tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
 
 ## Connect the plugin
 
@@ -51,7 +51,7 @@ Go to your WordPress Admin  Area and access the *Integration Dataverse* menu. Sw
 1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
 2. Select the *Deployment Type* -- **Online**
 3. Select the *Authentication Method* -- **OAuth 2.0 / Shared Secret**
-4. Enter the *Application ID* and *Client Secret* which you set aside previously
+4. Enter the *Application ID* and *Client Secret* (from client secret value column) which you set aside previously
 5. Check whether the credentials are OK by hitting the **Verify Connection** button
 6. Upon successful test, click **Save settings** to establish a connection to CRM
 
@@ -116,22 +116,24 @@ Form control `name` attributes refer to the corresponding entity attributes, suc
 ### Create Application Password
 
 1. Sign in into your WordPress site.
-2. Select a user with admin privileges or create a new one for Dataverse to connect back to the site.
-3. Edit their profile and create *application password*.
+2. Select a user with admin privileges (user with the role System Administrator) or create a new one for Dataverse to connect back to the site.
+3. Click Edit Profile.
+4. Type password name in New Application Password Name text box and click the Add New Application Password button. It will be *application password*.
 
 ### Configure Dataverse Solution
 
 1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_latest_managed.zip). 
-2. Sign in into https://make.powerapps.com and import downloaded solution into your Dataverse / Dynamics 365 instance.
-3. Select **Apps** then select **WordPress**.
-4. In the app, select **WordPress Sites**.
-5. Select **+ New** and enter the following information:
+2. Sign in into https://make.powerapps.com.
+3. Select **Solutions** then click **Import solution** and import downloaded solution(from step 1) into your Dataverse / Dynamics 365 instance.
+4. Select **Apps** then select **WordPress**.
+5. In the app, from lhe left menu select **WordPress Sites** tab.
+6. Select **+ New** and enter the following information:
    - **Name**: &lt;your WordPress site name&gt;. 
    - **URL**: &lt;your WordPress site URL&gt;.
    - **Is Default?**: Yes.
    - **Login**: login name or email of the admin WordPress user you selected earlier.
    - **Password**: application password you created earlier.
-6. Save the record.
+7. Save the record (at the top of the page you will see "Successfully connected to the site" message).
 
 ### Install WordPress Premium Solution
 
