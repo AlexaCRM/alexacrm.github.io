@@ -28,6 +28,23 @@ To create application id and client secret or certificate you need to complete t
 2. [Add client secret credentials](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials). You can use either client secret or certificate. If using the secret make sure to copy and set it aside. If using certificate, make sure you have a certificate file (.cer) and its password protected copy (.pfx).
 3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user.
 
+As an alternative option to not to work with Microsoft Azure through UI(steps 1, 2), you can create app and add secret through command line. This is the link with [the latest version of the of the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+You can use next commands:
+1. `az login --user <myAlias@myCompany.com> --password <myPassword>`  
+to login to Microsoft Azure
+For example, `az login --user myUsername@company.com --password SecretPassword@1`  
+2. `az ad app create --display-name <appName>`
+To create app (analogue Azure Active Directory-> App registrations -> New registration)
+For example, `az ad app create --display-name mytestapp2`
+3. `az ad app credential reset --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
+To add client secret to this app (analogue Sertificates & Secrets -> Client secrets -> New client secret) 
+For example, `az ad app credential reset --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
+
+If you need to delete this new application, you can use this command 
+`az ad app delete --id 00000000-0000-0000-0000-000000000000`
+For example, `az ad app delete --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
+
 ## Set authentication keys
 
 By default, Dataverse Integration use a Wordpress `AUTH_KEY` constant for encryption purposes. To ensure maximum security you may want to create specific authentication constants to use by the plugin:
