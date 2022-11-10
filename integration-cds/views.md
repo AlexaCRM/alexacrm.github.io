@@ -62,13 +62,24 @@ To cache the data in the view, specify the cache duration in the `cache` paramet
 
 PowerApps and Dynamics 365 views are essentially FetchXML queries. You can parameterize the filter conditions contained in the view to decide which records to include.
 
-We will assume a PowerApps view for an Invoice entity with two filter conditions: for Status Reason and for Customer. The `<filter/>` portion of the FetchXML is as follow:
+To create filter you should go to Templates -> FetchXML Templates in Dataverse plugin menu. Then you click `create new` button. Save the template name to use it when you create page.
 
+We will assume a PowerApps view for an Invoice entity with two filter conditions: for Status Reason and for Customer. The `<filter/>` portion of the FetchXML is as follow:
 ```xml
 <filter type="and" >
   <condition attribute="customerid" operator="eq" value="a83ec8e5-9e5e-47cd-b5a9-c2ee4eae42c5" />
   <condition attribute="name" operator="like" value="%Value%" />
 </filter>
+```
+
+If you want to filter using only one condition you can type text like this one:
+```xml
+<condition attribute="fullname" operator="like" value="%TestData%" />
+```
+
+Then Go to Pages -> Add New and type:
+```xml
+{% view entity="contact" name="All Contacts" filter='templateName' %}{% endview %}
 ```
 
 ### Prepare the view for use

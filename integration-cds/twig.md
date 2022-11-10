@@ -107,6 +107,43 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 `now` contains the value of PHP function [`time()`](https://www.php.net/manual/en/function.time.php) at the moment of Twig environment initialization.
 
+### Get date column from CRM and transform its value
+
+Use `format_datetime()` to get value of any date column and transform its value. 
+
+{% raw %}
+``` twig
+{% set record=entities.contact[GUID] %}
+{{ record.date_column|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
+```
+{% endraw %}
+
+Example: we need to get Birthday column value and to see it as 11/1/22, 12:00 AM
+
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
+```
+{% endraw %}
+
+You can override the default timezone by explicitly specifying a timezone:
+
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|date("F jS \\a\\t g:ia", "Europe/Paris") }}
+```
+{% endraw %}
+
+You can even define your own pattern using format_datetime() [See details](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#time-zone-pattern-usage):
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
+```
+{% endraw %}
+
 ### Get current request information
 
 Object `request` contains information about the current request. It has the following members:
