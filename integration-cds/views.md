@@ -84,7 +84,16 @@ Then Go to Pages -> Add New and type:
 
 ### Prepare the view for use
 
-Before you substitute parameters, you need to change the existing condition values to [format items](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting), for example `{0}`. Instead of integers, you can use labels, e.g. `{status}`.
+Before you substitute parameters, you need to change the existing condition values to [format items](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting).
+For example, you go to your crm admin, choose an entity(in this example - account) and a view (in this example - Inactive Accounts) and set filters: `Account Name` should be equal to `{0}` parameter, `Address 1: City` begins with `{1}` parameter. 
+
+Then Go to WordPress, click Pages -> Add New and type:
+```xml
+{% view entity="account" name="Inactive Accounts" parameters={ "0": "MegaOrganization", "1": "Sidn" } %}{% endview %}
+```
+
+When you click `Preview` you will see only records with `MegaOrganization` Account name and the city, which begins with `Sidn` letters.
+Instead of integers, you can use labels, e.g. `{status}`.
 
 ### Substitute parameter condition values
 
@@ -100,15 +109,41 @@ Use the `parameters` attribute to substitute condition values in the view FetchX
 ```
 {% endraw %}
 
+This is an example from previous situation:
+
+{% raw %}
+```twig
+{# Integer placeholders #}
+{% view entity="account" name="Inactive Accounts" parameters=[ "MegaOrganization", "Sidn" ] %}{% endview %}
+```
+{% endraw %}
+
+If we change `{0}` parameter to `accountName`, `{1}` to `city`, our example will contain next text:
+
+{% raw %}
+```twig
+{# String placeholders #}
+{% view entity="account" name="Inactive Accounts" parameters={ "accountName": "param1", "city": "param2" } %}{% endview %}
+```
+{% endraw %}
+
 ### Substitute lookup condition values
 
 You have to substitute lookup and optionset conditions separately because you cannot specify format items in Advanced Find. Substitution is performed by attribute name using the `lookups` parameter.
 
- {% raw %}
+{% raw %}
  ```twig
- {% view entity="contact" name="Active Contacts" lookups={ "customerid": user.id } %}{% endview %}
+{% view entity="contact" name="Active Contacts" lookups={ "customerid": user.id } %}{% endview %}
  ```
- {% endraw %}
+{% endraw %}
+ 
+For example, you add a filter in your crm to see only contacts, which have `SuperCompany` Company name. But when you create a page you need to see contacts with another Company name. In that case you should save id of the record and use this id in a view. 
+
+{% raw %}
+ ```twig
+{% view entity="contact" name="Contact Test" lookups={ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }%}{% endview %}
+ ```
+{% endraw %}
 
 ## Display data using a custom template
 
