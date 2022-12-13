@@ -26,8 +26,18 @@ You can choose from several options how to bind the post.
 
 **Via GUID in query string.** Specify the query parameter name in the binding options. For "id" the sample URL would be `htps://example.com/sample-page/?id=00000000-0000-0000-0000-000000000000`.
 
-**Via alternate key in query string.** Choose the alternate key and specify the query parameter name for each key attribute. For "attr1" and "attr2" as query parameter names the sample URL would be `https://example.com/sample-page/?attr1=val1&attr2=val2`.
+**Via alternate key in query string.** Before to choose this option you need to create a key in your crm admin. How to create the key you can read [here](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/define-alternate-keys-portal). For this key you should choose at least 2 options(columns).
+Choose the alternate key and specify the query parameter name for each key attribute. For "attr1" and "attr2" as query parameter names the sample URL would be `https://example.com/sample-page/?attr1=val1&attr2=val2`.
+For example, you have the `AccountNameFax` key in your crm, which is connected with `Account name` and `Fax` columns.
+Then you create the "Page for alternate key" page. On this page you want to see only sevaral columns: `Account name`, `Fax`, `City`, `Email`. You need to add this text:
 
+{% raw %}
+```twig
+{{ binding.record['name'] }}
+{{ binding.record['fax'] }}
+{{ binding.record['address1_city'] }} 
+```
+{% endraw %}
 **Via custom code.** Add handlers for two WordPress filters, `integration-cds/binding/custom/target-{$postId}` and `integration-cds/binding/custom/url-{$postId}`, where `{$postId}` is the WordPress post ID of the bound page.
 
 ### Conditional access
