@@ -82,6 +82,8 @@ Then Go to Pages -> Add New and type:
 {% view entity="contact" name="All Contacts" filter='templateName' %}{% endview %}
 ```
 
+Note: be attentive, please. If you add redundant space, like `filter=' templateName'` your filter won't work and you will get all all records.
+
 ### Prepare the view for use
 
 Before you substitute parameters, you need to change the existing condition values to [format items](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting).
