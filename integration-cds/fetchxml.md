@@ -64,3 +64,36 @@ FetchXML provides SQL JOIN operations via `<link-entity />` tag. Common Data Ser
 
 - Alias the `link-entity`. You will be able to access linked entity attributes via dot-notation: {% raw %}`{{record["aliasedEntity.attributeName"]}}`{% endraw %}.
 - Alias the attributes inside `link-entity`. You will be able to access the aliased attributes directly: {% raw %}`{{record["aliasedLinkedAttributeName"]}}`{% endraw %}. Keep in mind that naming collisions may occur between alias names and main entity attribute names.
+
+## Using FetchXML Template
+
+Use fetchXML template to add filters. 
+
+{% raw %}
+``` twig
+<filter>
+  <condition attribute="address1_city" operator="eq" value="Sydney" />
+  <condition attribute="name" operator="eq" value="OrganizationName" />
+</filter>
+```
+{% endraw %}
+
+This template you can use in forms. Just choose your fetchXML template title in the Conditional access section of the form. The same choise you can make in `Forms Global Settings` to make this choice for all forms.
+
+To add parameters for the template modify you template: 
+
+{% raw %}
+``` twig
+<filter>
+  <condition attribute="address1_city" operator="eq" value="*city*" />
+  <condition attribute="name" operator="eq" value="*name*" />
+</filter>
+```
+{% endraw %}
+
+You can also set default value for these parameters in `FetchXML` section or in your form section. When you choose this template you will see whether this template has any parameters.
+
+Also you can add a fetchXML template at the moment of binding configuration for a page.
+
+[See how to combine fetchXML templates and views](https://docs.alexacrm.com/integration-cds/views/#parameterize-your-views)
+XrmToolBox can help you to create fetchXML filters. [See XrmToolBox documentation](https://www.xrmtoolbox.com/documentation/) Use FetchXML Builder tool to get help for fetchXML creation.
