@@ -196,6 +196,35 @@ Then at the moment of page creation you need to use the `include` statement with
 
 You can also use templates to replace the form template or individual form fields in form registration editor. For this purpose click `Render form based on twig template` on the creation form page. Then choose your template name from the form template dropdown. If you want to replace just some fields you should leave default value for the form template dropdown, but set value for `fields templates`.
 
+Also you can partially change behavior for some fields. For example, this code will change placeholders for first name and last name fields:
+
+{% raw %}
+``` twig
+{% set firstnameDisabled = control.disabled %}
+{% set lastnameDisabled = control.disabled %}
+<div class="row">
+  <div class="col-6 {% if 'firstname' in form.errors|keys %}has-danger{% endif %}">
+    <input type="text" name="firstname" placeholder="Client First Name" class="form-control form-control-danger" value="{{ attribute(record, 'firstname') ?? formDefaults['firstname'] }}" {% if firstnameDisabled %}readonly="readonly"{% endif %}>
+    {% if 'firstname' in form.errors|keys %}
+      {% for errorMessage in form.errors['firstname'] %}
+        <div class="form-control-feedback">{{ errorMessage }}</div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="col-6 {% if 'lastname' in form.errors|keys %}has-danger{% endif %}">
+    <input type="text" name="lastname" placeholder="Client Last Name" class="form-control" value="{{ attribute(record, 'lastname') ?? formDefaults['lastname'] }}" {% if lastnameDisabled %}readonly="readonly"{% endif %}>
+    {% if 'lastname' in form.errors|keys %}
+      {% for errorMessage in form.errors['lastname'] %}
+        <div class="form-control-feedback">{{ errorMessage }}</div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+```
+{% endraw %}
+
+To use this template at the moment of form creation set `Render form based on twig template` as `Yes` on the creation form page. Then set mapping between `Fullname` field and your template name as value.
+
 ## Date Time and Date Only fields in twig templates
 
 For example, you have several custom fields: `cr1d1_dateonly` - Date Only format, `cr1d1_datetime` - Date Time format. Specify them in a twig template. 
@@ -231,32 +260,3 @@ For example, you have several custom fields: `cr1d1_dateonly` - Date Only format
 {% endraw %}
 
 Then you view page with this template. To fill in this form you should type content in Date only field in `yyyy-mm-dd` or `yyyy/mm/dd` format (like `2023-01-20` or `2023/01/20`), Date Time field in `yyyy-mm-ddThh:mm` format (like `2023-01-20T12:30`).
-
-Also you can partially change behavior for some fields. For example, this code will change placeholders for first name and last name fields:
-
-{% raw %}
-``` twig
-{% set firstnameDisabled = control.disabled %}
-{% set lastnameDisabled = control.disabled %}
-<div class="row">
-  <div class="col-6 {% if 'firstname' in form.errors|keys %}has-danger{% endif %}">
-    <input type="text" name="firstname" placeholder="Client First Name" class="form-control form-control-danger" value="{{ attribute(record, 'firstname') ?? formDefaults['firstname'] }}" {% if firstnameDisabled %}readonly="readonly"{% endif %}>
-    {% if 'firstname' in form.errors|keys %}
-      {% for errorMessage in form.errors['firstname'] %}
-        <div class="form-control-feedback">{{ errorMessage }}</div>
-      {% endfor %}
-    {% endif %}
-  </div>
-  <div class="col-6 {% if 'lastname' in form.errors|keys %}has-danger{% endif %}">
-    <input type="text" name="lastname" placeholder="Client Last Name" class="form-control" value="{{ attribute(record, 'lastname') ?? formDefaults['lastname'] }}" {% if lastnameDisabled %}readonly="readonly"{% endif %}>
-    {% if 'lastname' in form.errors|keys %}
-      {% for errorMessage in form.errors['lastname'] %}
-        <div class="form-control-feedback">{{ errorMessage }}</div>
-      {% endfor %}
-    {% endif %}
-  </div>
-</div>
-```
-{% endraw %}
-
-To use this template at the moment of form creation set `Render form based on twig template` as `Yes` on the creation form page. Then set mapping between `Fullname` field and your template name as value.
