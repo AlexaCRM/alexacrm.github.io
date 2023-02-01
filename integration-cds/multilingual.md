@@ -54,6 +54,6 @@ To translate Gravity Forms you can choose one of several options:
 
 1. To create several Gravity Forms for each of language and set fields or buttons titles for each language.
 
-2.  Use a plugin for this aim, such as WPML.
+2. Use a plugin for this aim, such as WPML.
 [How to make Gravity Form multilingual](https://wpml.org/documentation/related-projects/gravity-forms-multilingual/)
 
