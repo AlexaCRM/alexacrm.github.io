@@ -74,3 +74,9 @@ If you want to set a default value for Dataverse Lookup look at this example:
    table:98837486-742e-ed22-9db1-00224893bd2f
    ```
    {% endraw %}
+
+## File upload fields
+
+You can set maximum attached file size for File upload field in Gravity Forms. But you should also remember about the file size limits which are set for such columns in crm. So that your maximum attached file should not be more than the size from the crm column settings.
+
+At current moment we don't support uploading multiple files.  
