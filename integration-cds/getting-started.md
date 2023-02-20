@@ -26,7 +26,7 @@ To create application id and client secret or certificate you need to complete t
 
 1. [Register an app](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-an-application) in Azure Active Directory. During the registration select **Accounts in this organizational directory only** as Supported account types. Stop the walkthrough after the step when the app is registered, do not add redirect URI or change platform settings. Copy Application (client) ID and set it aside.
 2. [Add client secret credentials](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials). You can use either client secret or certificate. If using the secret make sure to copy and set it aside. If using certificate, make sure you have a certificate file (.cer) and its password protected copy (.pfx).
-3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user.
+3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user. Add the `WordPress App User Role` role. This role will be enough to manage the contact table. But to manage custom tables, create a WordPress Extended Role in which you mark all tables necessary for work. You will always be able to modify this role and add other tables.
 
 ## Set authentication keys
 
@@ -40,6 +40,7 @@ define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o
 define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
 ```
 To generate a suitable keys you may use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/
+If you generate key this way you should save this key (go to Dataverse Integration -> Status tab -> open `Advanced Settings` in the end of the page, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
 
 ## Connect the plugin
 
@@ -65,77 +66,3 @@ Go to your WordPress Admin  Area and access the *Integration Dataverse* menu. Sw
 7. Upon successful test, click **Save settings** to establish a connection to CRM
 
 Now the plugin is connected to CRM, and you can start building the integration.
-
-## Create a Contact Us form
-
-The plugin provides a Gutenberg block, "Dataverse Plain". It accepts Twig code and renders it as HTML at front-end. To create your first form, you can use the [custom form syntax](/integration-cds/custom-forms/). It allows creating HTML forms and capturing submissions into your Dataverse or Dynamics 365 organization.
-
-Custom forms allow creating new Dataverse / Dynamics 365 records, as well as updating existing records. reCAPTCHA is supported to protect your forms from spam.
-
-{% raw %}
-``` twig
-{% form entity="lead" mode="create" recaptcha=true %}
-<form>
-    <div class="form-group">
-        <label>
-            First Name:
-            <input class="form-control" name="firstname">
-        </label>
-    </div>
-    <div class="form-group">
-        <label>
-            Last Name:
-            <input class="form-control" name="lastname">
-        </label>
-    </div>
-    <div class="form-group">
-        <label>
-            Email:
-            <input class="form-control" name="emailaddress1">
-        </label>
-    </div>
-    <div class="form-group">
-        <recaptcha>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Send</button>
-    </div>
-</form>
-{% endform %}
-```
-{% endraw %}
-
-The {% raw %}`{% form %}`{% endraw %} Twig tag lets you configure the form settings, such as target entity, submission mode (create or update), etc. See [custom forms documentation](/integration-cds/custom-forms/).
-
-Form control `name` attributes refer to the corresponding entity attributes, such as `firstname`, `lastname` and `emailaddress1`. Put the `<recaptcha>` placeholder where you want to put reCAPTCHA control if you enable reCAPTCHA on your form. Before you use reCAPTCHA, please configure it in plugin settings.
-
-## Install Premium Features
-
-{% include wpcrm_premium.html %}
-
-### Create Application Password
-
-1. Sign in into your WordPress site.
-2. Select a user with admin privileges or create a new one for Dataverse to connect back to the site.
-3. Edit their profile and create *application password*.
-
-### Configure Dataverse Solution
-
-1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_latest_managed.zip). 
-2. Sign in into https://make.powerapps.com and import downloaded solution into your Dataverse / Dynamics 365 instance.
-3. Select **Apps** then select **WordPress**.
-4. In the app, select **WordPress Sites**.
-5. Select **+ New** and enter the following information:
-   - **Name**: &lt;your WordPress site name&gt;. 
-   - **URL**: &lt;your WordPress site URL&gt;.
-   - **Is Default?**: Yes.
-   - **Login**: login name or email of the admin WordPress user you selected earlier.
-   - **Password**: application password you created earlier.
-6. Save the record.
-
-### Install WordPress Premium Solution
-
-1.  Sign in into WordPress as admin user.
-2. Select **Dataverse** in the left-hand side navigation.
-3. You should see the message about the premium plugin being available. Click **Download & install** link.
-4. Activate the plugin once it's installed. 

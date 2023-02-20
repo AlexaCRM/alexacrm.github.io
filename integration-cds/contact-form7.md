@@ -22,6 +22,7 @@ At the top of the page you can see the shortcode how to create a page with this 
 <br>
 
 ## Lookup Fields
+
 To work with lookup fields you can click the `Dataverse Lookup column` button.
 <br>
 You need to set entity column(Logical name of you column), name and view. Also you have an opportunity to choose between dialog and dropdown lookup display method.
