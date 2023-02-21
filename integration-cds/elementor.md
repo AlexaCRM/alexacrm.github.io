@@ -12,9 +12,9 @@ Our plugin supports Elementor. We provide several widgets to work with Elementor
 
 ## Form widget
 
-Widget Name - `Dataverse Twig`
+Widget Name - `Dataverse Form`
 
-Category - `PRO`
+Category - `Dataverse`
 
 Description: Basically, it is a native form of Elementor, but with special settings related to Dataverse.
 
@@ -25,8 +25,17 @@ Then in the `Form Fields` section, in each field, you can select `Dataverse fiel
 
 ## Twig widget
 
-Widget Name - `Dataverse Form`
+Widget Name - `Twig Template`
 
-Category - `General`
+Category - `Dataverse`
 
 Description: A simple and visual widget. Write your twig code and you will immediately see the generated content in the content area.
+
+
+## Field widget
+
+Widget Name - `Dataverse Field`
+
+Category - `Dataverse`
+
+Description: To use it you need just to choose a table and a field from this table, which you want to display.
