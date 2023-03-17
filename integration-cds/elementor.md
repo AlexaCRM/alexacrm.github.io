@@ -20,7 +20,7 @@ Description: Basically, it is a native form of Elementor, but with special setti
 
 All you need to do is drag the `Dataverse Form` widget into the content area, select `Dataverse Table` and select `Action` in the `Dataverse` section.
 
-Then in the `Form Fields` section, in each field, you can select `Dataverse field`.
+Then in the `Form Fields` section, in each column, you can select `Dataverse field`.
 
 
 ## Twig widget
@@ -38,4 +38,4 @@ Widget Name - `Dataverse Field`
 
 Category - `Dataverse`
 
-Description: To use it you need just to choose a table and a field from this table, which you want to display.
+Description: To use it you need just to choose a table and a column from this table, which you want to display.

@@ -9,12 +9,12 @@ typora-root-url: ../
 ## Premium features
 
 Our premium plugin allows you:
-- to work with forms and manage crm tables. You can add required fields or, on the contrary, make required fields optional, set default value for fields, add filters, configure binding, change fields or buttons language and so on. 
+- to work with forms and manage crm tables. You can add required columns (fields) or, on the contrary, make required columns optional, set default value for columns, add filters, configure binding, change columns or buttons language and so on. 
 - to create General settings for all forms or several forms.
-- to make integration with form plugins. Create beautiful forms with Gravity Forms, Ninja Forms, Contact Form 7, and capture leads, contacts and any other Dynamics 365 entities. Edit your records with Gravity Forms and Ninja Forms.
+- to make integration with form plugins. Create beautiful forms with Gravity Forms, Ninja Forms, Contact Form 7, and capture leads, contacts and any other Dynamics 365 tables. Edit your records (rows) with Gravity Forms and Ninja Forms.
 - to edit a form with the Elementor plugin.
 - to create views and manage these views (like change language, add pagination, add parameters).
-- to add fetchXML template(to filter records) or twig template(to change fields behavior or the whole form) to manage forms or views. 
+- to add fetchXML template(to filter rows) or twig template(to change columns behavior or the whole form) to manage forms or views. 
 
 To edit page using Elementor you need to download, install and activate `Dataverse Integration Elementor Extension` from Dataverse Admin Area, Addons page.
 
@@ -50,7 +50,7 @@ You can skip this paragraph if you click the `Add registration` button at the mo
    - **Is Default?**: Yes.
    - **Login**: login name or email of the admin WordPress user you selected earlier.
    - **Password**: application password you created earlier.
-7. Save the record (at the top of the page you will see "Successfully connected to the site" message).
+7. Save the row (at the top of the page you will see "Successfully connected to the site" message).
 
 ### Install WordPress Premium Solution
 

@@ -15,9 +15,9 @@ Custom forms are a feature provided in the free Dataverse Integration plugin at 
 
 Dataverse Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endform %}`{% endraw %}, to define a form. {% raw %}`{% form %}`{% endraw %} tag accepts the following parameters:
 
-- `entity` -- *(string, required)* logical name of the target entity.
+- `entity` -- *(string, required)* logical name of the target table.
 - `mode` -- *(string, required)* `create` for creation forms. `update` for update forms.
-- `record` -- *(EntityReference)* record GUID, or EntityReference, or Entity to update. Used in `update` mode.
+- `record` -- *(TableReference)* row (record) GUID, or TableReference, or Table to update. Used in `update` mode.
 - `recaptcha` -- *(boolean)* whether reCAPTCHA validation is required. See [Protect form submissions with reCAPTCHA](#protect-form-submissions-with-recaptcha).
 - `redirect` -- *(string)* URL to redirect to after a successful submission.
 - `message` -- *(string)* custom message to show after a successful submission.
@@ -65,7 +65,7 @@ Dataverse Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endfo
 
 Make sure to define your form between the `<form></form>` tags. The form submission will be handled on the [`submit` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event).
 
-To link a form control to a corresponding entity attribute, specify the logical name of the attribute in the HTML attribute `name`, e.g. `emailaddress1` for Email.
+To link a form control to a corresponding table column, specify the logical name of the column in the HTML column `name`, e.g. `emailaddress1` for Email.
 
 ## Protect form submissions with reCAPTCHA
 
@@ -109,8 +109,8 @@ Before you start using reCAPTCHA in your forms, please configure reCAPTCHA in th
 ```
 {% endraw %}
 
-### Getting record GUID
+### Getting row GUID
 
-After the record has been successfully created, you can get the guid using the redirect setting with the %s parameter.
+After the row has been successfully created, you can get the guid using the redirect setting with the %s parameter.
 
 For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-000000000000`
