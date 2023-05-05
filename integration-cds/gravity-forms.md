@@ -62,6 +62,7 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
    {% endraw %}
 
 ## Lookup Fields
+
 Lookup column supports two views for displaying the column: dropdown and dialog.
 <br>
 To select a view, you need to click the `Add Fields` tab and choose `Dataverse Lookup` from `Advanced Fields`. Then open the `Appearance` tab in the column settings.
@@ -80,3 +81,7 @@ If you want to set a default value for Dataverse Lookup look at this example:
 You can set maximum attached file size for File upload column in Gravity Forms. But you should also remember about the file size limits which are set for such columns in crm. So that your maximum attached file should not be more than the size from the crm column settings.
 
 At current moment we don't support uploading multiple files.  
+
+## Access to a table
+
+Be attentive with the access to tables from Maker portal. Pages, based on Gravity forms do not show any error when you try to fill in and submit the form even if you don't have an access to this table. You click Submit and then you will see success message even when you don't have privilege to create a new record. In that case the administrator will get an email with the details.
