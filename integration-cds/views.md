@@ -94,9 +94,12 @@ Before you substitute parameters, you need to change the existing condition valu
 For example, you go to your crm admin, choose an entity(in this example - account) and a view (in this example - Inactive Accounts) and set filters: `Account Name` should be equal to `{0}` parameter, `Address 1: City` begins with `{1}` parameter. 
 
 Then Go to WordPress, click Pages -> Add New and type:
+
+{% raw %}
 ```xml
 {% view entity="account" name="Inactive Accounts" parameters={ "0": "MegaOrganization", "1": "Sidn" } %}{% endview %}
 ```
+{% endraw %}
 
 When you click `Preview` you will see only records with `MegaOrganization` Account name and the city, which begins with `Sidn` letters.
 Instead of integers, you can use labels, e.g. `{status}`.
