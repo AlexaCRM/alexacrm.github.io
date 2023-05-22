@@ -107,6 +107,43 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 `now` contains the value of PHP function [`time()`](https://www.php.net/manual/en/function.time.php) at the moment of Twig environment initialization.
 
+### Get date column from CRM and transform its value
+
+Use `format_datetime()` to get value of any date column and transform its value. 
+
+{% raw %}
+``` twig
+{% set record=entities.contact[GUID] %}
+{{ record.date_column|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
+```
+{% endraw %}
+
+Example: we need to get Birthday column value and to see it as 11/1/22, 12:00 AM
+
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
+```
+{% endraw %}
+
+You can override the default timezone by explicitly specifying a timezone:
+
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|date("F jS \\a\\t g:ia", "Europe/Paris") }}
+```
+{% endraw %}
+
+You can even define your own pattern using format_datetime() [See details](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#time-zone-pattern-usage):
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
+```
+{% endraw %}
+
 ### Get current request information
 
 Object `request` contains information about the current request. It has the following members:
@@ -157,4 +194,77 @@ To use templates in `Dataverse Twig Gutenberg` block, you need to use the `inclu
 
 {% endraw %}
 
-You can also use templates to replace the form template or individual form fields in form registration editor.
+If you want create a template for updating record you can look at next example:
+
+{% raw %}
+
+``` twig
+{% set currentRecord=entities.account[params.id] %}
+{% form entity="account" mode="update" record=currentRecord|to_entity_reference %}
+<form>
+    <div class="form-group">
+        <label>
+            Account Name:
+            <input class="form-control" name="name" value="{{ currentRecord["name"] }}">
+        </label>
+    </div>
+	<div class="form-group">
+        <label>
+            Email:
+            <input class="form-control" name="emailaddress1" value="{{ record["emailaddress1"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Last Date Included in Campaign:
+            <input class="vdatetime" name="lastusedincampaign" value="{{ currentRecord["lastusedincampaign"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
+```
+
+{% endraw %}
+
+Then at the moment of page creation you need to use the `include` statement with the template name(previous example). And you need to configure binding for this page to have opportunity to update necessary record. [See how to configure binding.](https://docs.alexacrm.com/integration-cds/entity-binding/) 
+
+You can also use templates to replace the form template or individual form fields in form registration editor. For this purpose click `Render form based on twig template` on the creation form page. Then choose your template name from the form template dropdown. If you want to replace just some fields you should leave default value for the form template dropdown, but set value for `fields templates`.
+
+## Date Time and Date Only fields in twig templates
+
+For example, you have several custom fields: `cr1d1_dateonly` - Date Only format, `cr1d1_datetime` - Date Time format. Specify them in a twig template. 
+ 
+{% raw %}
+``` twig
+{% form entity="contact" mode="create" record=record|to_entity_reference %}
+<form>
+    <div class="form-group">
+        <label>
+            Account Name:
+            <input class="form-control" name="name" value="{{ record["name"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Date Only field:
+            <input class="vdatetime" name="cr1d1_dateonly" value="{{ record["cr1d1_dateonly"] }}">
+        </label>
+    </div>
+	<div class="form-group">
+        <label>
+            Date Time field:
+            <input class="vdatetime" name="cr1d1_datetime" value="{{ record["cr1d1_datetime"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
+```
+{% endraw %}
+
+Then you view page with this template. To fill in this form you should type content in Date only field in `yyyy-mm-dd` or `yyyy/mm/dd` format (like `2023-01-20` or `2023/01/20`), Date Time field in `yyyy-mm-ddThh:mm` format (like `2023-01-20T12:30`).

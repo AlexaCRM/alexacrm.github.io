@@ -36,7 +36,7 @@ By default, all available records below the system-imposed 5000 records are disp
 
 ### Change the language of column titles
 
-If you have several languages installed in your organization, you can choose the language of column titles. Specify the LCID in the `language` attribute. 
+If you have several languages installed in your organization, you can choose the language of column titles. Specify the LCID in the `language` attribute ([see the link to choose language] (https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a)). 
 
 {% raw %}
 ```twig
@@ -62,8 +62,9 @@ To cache the data in the view, specify the cache duration in the `cache` paramet
 
 PowerApps and Dynamics 365 views are essentially FetchXML queries. You can parameterize the filter conditions contained in the view to decide which rows to include.
 
-We will assume a PowerApps view for an Invoice table with two filter conditions: for Status Reason and for Customer. The `<filter/>` portion of the FetchXML is as follow:
+To create filter you should go to Templates -> FetchXML Templates in Dataverse plugin menu. Then you click `create new` button. Save the template name to use it when you create page.
 
+We will assume a PowerApps view for an Invoice entity with two filter conditions: for Status Reason and for Customer. The `<filter/>` portion of the FetchXML is as follow:
 ```xml
 <filter type="and" >
   <condition attribute="customerid" operator="eq" value="a83ec8e5-9e5e-47cd-b5a9-c2ee4eae42c5" />
@@ -71,9 +72,30 @@ We will assume a PowerApps view for an Invoice table with two filter conditions:
 </filter>
 ```
 
+If you want to filter using only one condition you can type text like this one:
+```xml
+<condition attribute="fullname" operator="like" value="%TestData%" />
+```
+
+Then Go to Pages -> Add New and type:
+```xml
+{% view entity="contact" name="All Contacts" filter='templateName' %}{% endview %}
+```
+
+Note: be attentive, please. If you add redundant space, like `filter=' templateName'` your filter won't work and you will get all all records.
+
 ### Prepare the view for use
 
-Before you substitute parameters, you need to change the existing condition values to [format items](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting), for example `{0}`. Instead of integers, you can use labels, e.g. `{status}`.
+Before you substitute parameters, you need to change the existing condition values to [format items](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting).
+For example, you go to your crm admin, choose an entity(in this example - account) and a view (in this example - Inactive Accounts) and set filters: `Account Name` should be equal to `{0}` parameter, `Address 1: City` begins with `{1}` parameter. 
+
+Then Go to WordPress, click Pages -> Add New and type:
+```xml
+{% view entity="account" name="Inactive Accounts" parameters={ "0": "MegaOrganization", "1": "Sidn" } %}{% endview %}
+```
+
+When you click `Preview` you will see only records with `MegaOrganization` Account name and the city, which begins with `Sidn` letters.
+Instead of integers, you can use labels, e.g. `{status}`.
 
 ### Substitute parameter condition values
 
@@ -89,15 +111,41 @@ Use the `parameters` attribute to substitute condition values in the view FetchX
 ```
 {% endraw %}
 
+This is an example from previous situation:
+
+{% raw %}
+```twig
+{# Integer placeholders #}
+{% view entity="account" name="Inactive Accounts" parameters=[ "MegaOrganization", "Sidn" ] %}{% endview %}
+```
+{% endraw %}
+
+If we change `{0}` parameter to `accountName`, `{1}` to `city`, our example will contain next text:
+
+{% raw %}
+```twig
+{# String placeholders #}
+{% view entity="account" name="Inactive Accounts" parameters={ "accountName": "param1", "city": "param2" } %}{% endview %}
+```
+{% endraw %}
+
 ### Substitute lookup condition values
 
 You have to substitute lookup and optionset conditions separately because you cannot specify format items in Advanced Find. Substitution is performed by attribute name using the `lookups` parameter.
 
- {% raw %}
+{% raw %}
  ```twig
- {% view entity="contact" name="Active Contacts" lookups={ "customerid": user.id } %}{% endview %}
+{% view entity="contact" name="Active Contacts" lookups={ "customerid": user.id } %}{% endview %}
  ```
- {% endraw %}
+{% endraw %}
+ 
+For example, you add a filter in your crm to see only contacts, which have `SuperCompany` Company name. But when you create a page you need to see contacts with another Company name. In that case you should save id of the record and use this id in a view. 
+
+{% raw %}
+ ```twig
+{% view entity="contact" name="Contact Test" lookups={ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }%}{% endview %}
+ ```
+{% endraw %}
 
 ## Display data using a custom template
 

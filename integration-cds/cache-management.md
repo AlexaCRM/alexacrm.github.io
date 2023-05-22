@@ -20,6 +20,6 @@ Look for the `ICDS_DISABLE_CACHE` option and enable it to disable caching.
 You can force Dataverse Integration to use specified storage by changing `ICDS_CACHE_STORAGE` option in `Advanced settings`
 
 ### Clearing the cache
-You can clear the cache by going to the `Cache` tab in the plugin's admin area
+You can clear the cache by going to the `Status` tab `Cache storage` header in the plugin's admin area
 <br>
 There you can clear all cache or select specific cache pools to clear
