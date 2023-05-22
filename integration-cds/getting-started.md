@@ -26,7 +26,11 @@ To create application id and client secret or certificate you need to complete t
 
 1. [Register an app](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-an-application) in Azure Active Directory. During the registration select **Accounts in this organizational directory only** as Supported account types. Stop the walkthrough after the step when the app is registered, do not add redirect URI or change platform settings. Copy Application (client) ID and set it aside.
 2. [Add client secret credentials](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials). You can use either client secret or certificate. If using the secret make sure to copy and set it aside. If using certificate, make sure you have a certificate file (.cer) and its password protected copy (.pfx).
-3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user.
+3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user. Add the `WordPress App User Role` role. This role will be enough to manage the contact table. But to manage custom tables, create a WordPress Extended Role in which you mark all tables necessary for work. You will always be able to modify this role and add other tables.
+
+You can use field level security to control access to specific fields. This functionality is available for the default fields on most out-of-box entities, custom fields, and custom fields on custom entities. 
+[Read the details how to start work with field level security.](https://learn.microsoft.com/en-us/dynamics365/customerengagement/on-premises/admin/field-level-security?view=op-9-1)
+Add your app user into the WordPress Site Password profile. Click Users and add the application user, which you created previously. In the Field Permissions section you can manage access to different fields.  
 
 As an alternative option to not to work with Microsoft Azure through UI(steps 1, 2), you can create app and add secret through command line. This is the link with [the latest version of the of the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 
@@ -56,7 +60,8 @@ These constants can be defined in your `wp-config.php` file, for example
 define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o;6U{#;;n+R');
 define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
 ```
-To generate a suitable key you may use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to Dataverse Integration -> Status tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
+
+To generate a suitable key you can use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to Dataverse Integration -> Status tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
 
 ## Connect the plugin
 

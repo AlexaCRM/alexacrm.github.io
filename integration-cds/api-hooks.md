@@ -12,7 +12,7 @@ permalink: /integration-cds/api-hooks/
 Fires if error occurs while submitting custom form.
 
 `$this` (CustomFormModel) \
-`$record` (Entity) \
+`$record` (Table) \
 `$e` (\Exception)
 
 ---
@@ -22,7 +22,7 @@ Fires if error occurs while submitting custom form.
 Fires after custom form was successfully submitted.
 
 `$this` (CustomFormModel) \
-`$record` (Entity)
+`$record` (Table)
 
 ---
 
@@ -136,31 +136,31 @@ Filters the collection of available API endpoints.
 
 `integration-cds/binding/authorize-binding`
 
-Filters the authorization flag for entity binding.
+Filters the authorization flag for table binding.
 
-This filter allows establishing conditional access to certain entity records on a given WordPress page.
+This filter allows establishing conditional access to certain table raws on a given WordPress page.
 
-`$isAuthorized` (bool) - Whether requesting services may access the bound record.\
+`$isAuthorized` (bool) - Whether requesting services may access the bound raw.\
 `$postId` (int) \
-`$binding` (EntityBinding)
+`$binding` (TableBinding)
 
 ---
 
 `integration-cds/binding/custom/target-${postId}`
 
-Filters the bound record for the post.
+Filters the bound raw for the post.
 
-`$record` (Entity|null) \
-`$target` (string) - Target entity logical name.
+`$record` (Table|null) \
+`$target` (string) - Target table logical name.
 
 ---
 
 `integration-cds/binding/custom/targetref-${postId}`
 
-Filters the bound record reference for the post.
+Filters the bound raw reference for the post.
 
-`$ref` (EntityReference|null) \
-`$target` (string) - Target entity logical name.
+`$ref` (TableReference|null) \
+`$target` (string) - Target table logical name.
 
 ---
 
@@ -170,17 +170,17 @@ Filters the URL to the bound post.
 
 `$url` (string|null) - URL to the bound post which allows to display a Dataverse row.\
 `$post` (\WP_Post) - Bound WordPress post object.\
-`$ref` (EntityReference) - Entity reference which is the target of the filtered URL.
+`$ref` (TableReference) - Table reference which is the target of the filtered URL.
 
 ---
 
 `integration-cds/binding/methods`
 
-Entity binding methods.
+Table binding methods.
 
-Enumerates implementations of entity binding.
+Enumerates implementations of table binding.
 
-`$methods` (array) - A map of entity binding implementations.
+`$methods` (array) - A map of table binding implementations.
 
 ---
 
@@ -194,7 +194,7 @@ Filters the registered cache pools.
 
 `integration-cds/cache/warmup-entities`
 
-Filters the list of entities which must be pre-cached.
+Filters the list of tables which must be pre-cached.
 
 `$entities` (array)
 
@@ -206,7 +206,7 @@ Filters the “Allow Deletion” flag for the form registration.
 
 `$isAuthorized` (bool) - Whether to allow deletion.\
 `$reg` (FormRegistration) - Form registration which initiated deletion.\
-`$target` (EntityReference|null) - Record that is being deleted.
+`$target` (TableReference|null) - Raw(record) that is being deleted.
 
 ---
 
@@ -223,9 +223,9 @@ Filters error message for form submission.
 
 `integration-cds/forms/fields`
 
-Allows altering the list of accepted fields.
+Allows altering the list of accepted columns.
 
-`$keys` (array) - List of form fields.
+`$keys` (array) - List of form columns.
 
 ---
 
@@ -234,7 +234,7 @@ Allows altering the list of accepted fields.
 Filters the default form validation.
 
 `$validationResult` (bool) \
-`$data` (array) - map of fields received from the form.\
+`$data` (array) - map of columns received from the form.\
 `$this` (CustomFormModel)
 
 ---
@@ -244,7 +244,7 @@ Filters the default form validation.
 Filters the default form validation.
 
 `$validationResult` (bool) \
-`$data` (array) - map of fields received from the form.\
+`$data` (array) - map of columns received from the form.\
 `$this` (CustomFormModel)
 
 ---
@@ -370,7 +370,7 @@ Allows modifying user authorization mode using user binding feature.
 
 Allows using alternative means to bind users to Dataverse rows.
 
-`$ref` (EntityReference|null) \
+`$ref` (TableReference|null) \
 `$userId` (int) \
 `$userService` (UserService)
 
@@ -388,7 +388,7 @@ Allows filtering the default mode during UserService::bind() if the user hasn't 
 
 `integration-cds/user-binding/manual-entities`
 
-Filters the list of entities displayed in the lookup dialog during manual user binding.
+Filters the list of tables displayed in the lookup dialog during manual user binding.
 
 `$targets` (string[])
 
@@ -396,7 +396,7 @@ Filters the list of entities displayed in the lookup dialog during manual user b
 
 `integration-cds/user-binding/manual-entities`
 
-Filters the list of entities displayed in the lookup dialog during manual user binding.
+Filters the list of tables displayed in the lookup dialog during manual user binding.
 
 `$targets` (string[])
 
