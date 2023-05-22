@@ -10,19 +10,34 @@ premium: true
 
 Our plugin supports Gravity Forms. So you can use it instead of our Custom or Power Apps forms
 <br>
-When you have created the form, you must also create a Dataverse Feed.
+When you have created the form and clicked the `Save Form` button, you must also create a Dataverse Feed.
 <br>
-To create a Dataverse Feed, you need to click `Dataverse` in the `Settings` dropdown.
+To create a Dataverse Feed, you need to click `Settings` -> `Dataverse` without closing your Gravity form.
 <br>
-Then click `Add New`, select crm table, action type and map form fields to crm fields.
+Then click `Add New`, select crm table, action type(create or update) and map form columns to crm columns(set a correspondence between the column name from crm (key) and the column name from the gravity form(value)).
 
-## Dynamic field population
+## Dynamic column population
 
-If you want to set default values for fields using the form's field_values attribute (see [Dynamically Populating a Field](https://docs.gravityforms.com/using-dynamic-population/), you can follow the following instructions.
+If you want to set default values for columns you can follow these instructions:
 
-1. Add a new field and check the `Allow field to be populated dynamically` checkbox.
-2. Specify a parameter name just below the `Allow field to be populated dynamically` checkbox.
-3. Map the field to one of the Dataverse fields in the `Dataverse feed` settings.
+1. To set default value for standard columns go to `Field settings` tab - `Advanced`.
+2. To add lookup column you should go to `Add Fields` tab and choose `Dataverse Lookup` from `Advanced Fields` tab. Then you need to open the `Appearance` tab and set default value.
+
+If you want to set default values dynamically for columns using the form's field_values attribute (see [Dynamically Populating a Field](https://docs.gravityforms.com/using-dynamic-population/), you can follow the following instructions.
+
+1. Add a new field, go to `Advanced Settings` and check the `Allow field to be populated dynamically` checkbox.
+2. Specify a parameter name just below the `Allow field to be populated dynamically` checkbox and save the parameter name.
+3. Map the field to one of the Dataverse columns in the `Dataverse Feed` settings.
+4. Remember your Gravity Form id.
+5. Go to `Pages` -> `Add New` and choose `Custom HTML` block
+
+Example for setting dynamic value:
+   
+   {% raw %}
+   ```
+	gravityforms id="1" field_values="parameter_name=Dynamic Value"
+   ```
+   {% endraw %}
 
 **Note:** The parameter name in the `field_values` attribute must be the same as specified in the `2nd` point.
 
@@ -47,8 +62,26 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
    {% endraw %}
 
 ## Lookup Fields
-Lookup field supports two views for displaying the field: dropdown and dialog.
+
+Lookup column supports two views for displaying the column: dropdown and dialog.
 <br>
-To select a view, you need to open the `Appearance` tab in the field settings.
+To select a view, you need to click the `Add Fields` tab and choose `Dataverse Lookup` from `Advanced Fields`. Then open the `Appearance` tab in the column settings.
 <br>
-If you select the dropdown, you must also select the entity and view to lookup. The dialog view does not require any additional settings.
+If you select the dropdown, you must also select the table and view to lookup. The dialog view does not require any additional settings.
+<br>
+If you want to set a default value for Dataverse Lookup look at this example:
+   {% raw %}
+   ```
+   table:98837486-742e-ed22-9db1-00224893bd2f
+   ```
+   {% endraw %}
+
+## File upload columns
+
+You can set maximum attached file size for File upload column in Gravity Forms. But you should also remember about the file size limits which are set for such columns in crm. So that your maximum attached file should not be more than the size from the crm column settings.
+
+At current moment we don't support uploading multiple files.  
+
+## Access to a table
+
+Be attentive with the access to tables from Maker portal. Pages, based on Gravity forms do not show any error when you try to fill in and submit the form even if you don't have an access to this table. You click Submit and then you will see success message even when you don't have privilege to create a new record. In that case the administrator will get an email with the details.
