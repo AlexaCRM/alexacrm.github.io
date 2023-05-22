@@ -24,16 +24,16 @@ Dataverse Integration makes several new global objects available in the Twig env
 
 ### Access the current bound record {% include icds_premium.html %}
 
-Use the `binding` object to access entity binding on the current page. See [entity binding](../entity-binding/).
+Use the `binding` object to access table binding on the current page. See [table binding](../table-binding/).
 
 `binding` includes several properties:
 
-- `is_bound` -- *(boolean)* whether current page supports entity binding.
-- `reference` -- *(EntityReference)* reference to the bound record.
-- `record` -- *(Entity)* bound record object.
+- `is_bound` -- *(boolean)* whether current page supports table binding.
+- `reference` -- *(TableReference)* reference to the bound record.
+- `record` -- *(Table)* bound record object.
 
 Notice that `binding.record` is more expensive performance-wise -- it retrieves data from Dataverse. `binding.reference` only
-reads the local database and request parameters to calculate the entity reference.
+reads the local database and request parameters to calculate the table reference.
 
 {% raw %}
 ``` twig
@@ -66,7 +66,7 @@ The following object members are available:
 - `wp_user` -- *(WP_User)* information about the current WordPress user.
 
 Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
-reads the local database and request parameters to calculate the entity reference.
+reads the local database and request parameters to calculate the table reference.
 
 {% raw %}
 ``` twig
@@ -78,7 +78,7 @@ reads the local database and request parameters to calculate the entity referenc
 
 ### Access any record in your Dataverse instance
 
-Use the `entities` object to access any record in your Dataverse instance by its entity logical name and GUID. All record fields are available at once.
+Use the `entities` object to access any record in your Dataverse instance by its table logical name and GUID. All record fields are available at once.
 
 {% raw %}
 ``` twig
@@ -86,9 +86,9 @@ Use the `entities` object to access any record in your Dataverse instance by its
 ```
 {% endraw %}
 
-### Access the list of entities in your Dataverse instance
+### Access the list of tables in your Dataverse instance
 
-`entities_list` contains a map of all entities in your Dataverse instance. It maps logical names to display names.
+`entities_list` contains a map of all tables in your Dataverse instance. It maps logical names to display names.
 
 ### Access your Dataverse Integration organization metadata
 
@@ -106,6 +106,43 @@ Use the `entities` object to access any record in your Dataverse instance by its
 ### Get current timestamp
 
 `now` contains the value of PHP function [`time()`](https://www.php.net/manual/en/function.time.php) at the moment of Twig environment initialization.
+
+### Get date column from CRM and transform its value
+
+Use `format_datetime()` to get value of any date column and transform its value. 
+
+{% raw %}
+``` twig
+{% set record=entities.contact[GUID] %}
+{{ record.date_column|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
+```
+{% endraw %}
+
+Example: we need to get Birthday column value and to see it as 11/1/22, 12:00 AM
+
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
+```
+{% endraw %}
+
+You can override the default timezone by explicitly specifying a timezone:
+
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|date("F jS \\a\\t g:ia", "Europe/Paris") }}
+```
+{% endraw %}
+
+You can even define your own pattern using format_datetime() [See details](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#time-zone-pattern-usage):
+{% raw %}
+``` twig
+{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
+{{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
+```
+{% endraw %}
 
 ### Get current request information
 
@@ -127,9 +164,9 @@ Global object `params` is the alias of `request.params`.
 
 Dataverse Integration provides several Dataverse-specific and general purpose Twig filters.
 
-- `formatted_value( attributeName )` -- returns the formatted value of the filtered entity record as reported by Dataverse. Returns the entity record attribute value if no formatted value available.  
+- `formatted_value( attributeName )` -- returns the formatted value of the filtered table record as reported by Dataverse. Returns the table record attribute value if no formatted value available.  
  E.g. `record|formatted_value( "preferredappointmenttimecode" )`
-- `to_entity_reference` -- converts an Entity object, or an EntityReference-like object to a strongly typed EntityReference object. For an EntityReference-like object, the filter expects `LogicalName` (required), `Id` and `Name` keys.  
+- `to_entity_reference` -- converts an Table object, or an EntityReference-like object to a strongly typed EntityReference object. For an EntityReference-like object, the filter expects `LogicalName` (required), `Id` and `Name` keys.  
  E.g. `record|to_entity_reference` or `{ "LogicalName": "contact", "Id": "00000000-0000-0000-0000-000000000000" }`
 - `add_query( queryName, queryValue )` -- adds a GET query argument to the filtered URL, honors the already existing query string which allows piping.
 - `wpautop` -- see [WordPress wpautop() docs](https://developer.wordpress.org/reference/functions/wpautop/).
@@ -139,7 +176,7 @@ Dataverse Integration provides several Dataverse-specific and general purpose Tw
 - `image_url( record, imageColumn, isThumb = false )` -- returns URL to the image stored in the specified Dataverse image column. A thumbnail instead of a full image can be requested by setting `isThumb` parameter to `true`.
 - `file_url( record, fileColumn )` -- returns download URL for the file stored in the specified Dataverse file column.  
 - `last_error()` - returns last error generated by the Twig provider.
-- `entity_url( record, postId = null )` -- {% include icds_premium.html %} returns URL to the website page with the given entity record bound to it. Uses [Entity Binding](../entity-binding/) feature. If more than one WordPress post is bound to the entity, you can pass post ID to link to a different page instead.
+- `entity_url( record, postId = null )` -- {% include icds_premium.html %} returns URL to the website page with the given table record bound to it. Uses [Table Binding](../table-binding/) feature. If more than one WordPress post is bound to the table, you can pass post ID to link to a different page instead.
 
 ## Templates usage
 
@@ -157,4 +194,77 @@ To use templates in `Dataverse Twig Gutenberg` block, you need to use the `inclu
 
 {% endraw %}
 
-You can also use templates to replace the form template or individual form fields in form registration editor.
+If you want create a template for updating record you can look at next example:
+
+{% raw %}
+
+``` twig
+{% set currentRecord=entities.account[params.id] %}
+{% form entity="account" mode="update" record=currentRecord|to_entity_reference %}
+<form>
+    <div class="form-group">
+        <label>
+            Account Name:
+            <input class="form-control" name="name" value="{{ currentRecord["name"] }}">
+        </label>
+    </div>
+	<div class="form-group">
+        <label>
+            Email:
+            <input class="form-control" name="emailaddress1" value="{{ record["emailaddress1"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Last Date Included in Campaign:
+            <input class="vdatetime" name="lastusedincampaign" value="{{ currentRecord["lastusedincampaign"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
+```
+
+{% endraw %}
+
+Then at the moment of page creation you need to use the `include` statement with the template name(previous example). And you need to configure binding for this page to have opportunity to update necessary record. [See how to configure binding.](https://docs.alexacrm.com/integration-cds/entity-binding/) 
+
+You can also use templates to replace the form template or individual form fields in form registration editor. For this purpose click `Render form based on twig template` on the creation form page. Then choose your template name from the form template dropdown. If you want to replace just some fields you should leave default value for the form template dropdown, but set value for `fields templates`.
+
+## Date Time and Date Only fields in twig templates
+
+For example, you have several custom fields: `cr1d1_dateonly` - Date Only format, `cr1d1_datetime` - Date Time format. Specify them in a twig template. 
+ 
+{% raw %}
+``` twig
+{% form entity="contact" mode="create" record=record|to_entity_reference %}
+<form>
+    <div class="form-group">
+        <label>
+            Account Name:
+            <input class="form-control" name="name" value="{{ record["name"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Date Only field:
+            <input class="vdatetime" name="cr1d1_dateonly" value="{{ record["cr1d1_dateonly"] }}">
+        </label>
+    </div>
+	<div class="form-group">
+        <label>
+            Date Time field:
+            <input class="vdatetime" name="cr1d1_datetime" value="{{ record["cr1d1_datetime"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
+```
+{% endraw %}
+
+Then you view page with this template. To fill in this form you should type content in Date only field in `yyyy-mm-dd` or `yyyy/mm/dd` format (like `2023-01-20` or `2023/01/20`), Date Time field in `yyyy-mm-ddThh:mm` format (like `2023-01-20T12:30`).

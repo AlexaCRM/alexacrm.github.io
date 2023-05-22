@@ -6,11 +6,15 @@ premium: true
 
 <p class="lead">Link your WordPress users to Dataverse records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>
 
+## Deprecated
+
+This feature is not available in new deployment.
+
 ## Introduction
 
 Dataverse Integration provides capability to associate WordPress users with Dataverse Integration records to provide more opportunities to build self-service customer portals.
 
-When a bound user signs in, your website receives data from the bound record. You can use current user data to parameterize [FetchXML queries](../fetchxml/) and [views](../views/#prepare-the-view-for-use), [specify default values](../forms/#default-values) in forms or even [implement custom entity binding](../entity-binding/#implement-custom-binding) using current user data.
+When a bound user signs in, your website receives data from the bound record. You can use current user data to parameterize [FetchXML queries](../fetchxml/) and [views](../views/#prepare-the-view-for-use), [specify default values](../forms/#default-values) in forms or even [implement custom table binding](../table-binding/#implement-custom-binding) using current user data.
 
 You can enable extra sign-in authorization which allows disabling sign-in for select users in Dataverse / Dynamics 365.
 
@@ -22,7 +26,7 @@ Dataverse Integration can bind a user to a Dataverse record in several different
 
 By default, a WordPress user is **not bound** to a Dataverse record. That means, whatever the global options are, the current user object is not populated, no authorization against Dataverse is performed, no data synchronization is performed, and so on. In some integration scenarios the user may be implicitly switched to the *Default mode* programmatically.
 
-In **Default mode,** Dataverse Integration binds the user to a Contact record. AlexaCRM solution creates a few new attributes in the Contact entity, including Username `alexacrm_wordpress_username`. When any plugin service or 3rd party integration requests to resolve the binding into a reference to a record or an Entity object, the plugin looks up a Contact record by the `alexacrm_wordpress_username` attribute, comparing it to the WordPress user's username (login). To associate a Dataverse record with a different WordPress user, change the value of the Contact record.
+In **Default mode,** Dataverse Integration binds the user to a Contact record. AlexaCRM solution creates a few new attributes in the Contact table, including Username `alexacrm_wordpress_username`. When any plugin service or 3rd party integration requests to resolve the binding into a reference to a record or an Entity object, the plugin looks up a Contact record by the `alexacrm_wordpress_username` attribute, comparing it to the WordPress user's username (login). To associate a Dataverse record with a different WordPress user, change the value of the Contact record.
 
 In **Custom mode,** you must implement the `integration-cds/user-binding/bind-custom` filter to produce an [EntityReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php) for the given user. 
 
@@ -38,7 +42,7 @@ Go to **Settings UI > User Binding** to configure global user binding settings.
 
 Check *"Authorize users against Dataverse during sign-in"* to add an extra step to the standard WordPress authentication flow.
 
-To disable sign-in for a chosen user, set the Contact *"User Enabled"* field to **No**.
+To disable sign-in for a chosen user, set the Contact *"User Enabled"* column to **No**.
 
 ### Enable auto binding for new WordPress users
 
@@ -48,11 +52,11 @@ If you choose *Default* mode, you need to provide WordPress user/usermeta field 
 
 ### Enable field synchronization for bound users
 
-When a WordPress user is bound to a Dataverse record, you may want to synchronize some of their data between the systems. That data may include Email *(user_email)*, First Name *(first_name)*, Last Name *(last_name)* and Display Name *(display_name).* You can map these WordPress user and usermeta fields to Dataverse entity fields. Leave the mapping field empty if you don't want to synchronize that particular WordPress user field.
+When a WordPress user is bound to a Dataverse record, you may want to synchronize some of their data between the systems. That data may include Email *(user_email)*, First Name *(first_name)*, Last Name *(last_name)* and Display Name *(display_name).* You can map these WordPress user and usermeta fields to Dataverse table columns. Leave the mapping field empty if you don't want to synchronize that particular WordPress user field.
 
 You can only choose one synchronization direction: WordPress → Dataverse *(Push)* or Dataverse → WordPress *(Pull)*. Data pushes happen after registration (if auto binding is enabled), after sign-in, and after user data/metadata change. Data pulls happen after user registration and sign-in events.
 
-If you mix Default and Custom binding modes on one website, Dataverse Integration will apply the synchronization mapping to any entity -- missing fields will be skipped.
+If you mix Default and Custom binding modes on one website, Dataverse Integration will apply the synchronization mapping to any table -- missing columns will be skipped.
 
 ## Use user binding UI to bind users to Dataverse
 
