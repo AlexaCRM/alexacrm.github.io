@@ -78,11 +78,13 @@ If you want to filter using only one condition you can type text like this one:
 ```
 
 Then Go to Pages -> Add New and type:
-```xml
+{% raw %}
+```twig
 {% view entity="contact" name="All Contacts" filter='templateName' %}{% endview %}
 ```
+{% endraw %}
 
-Note: be attentive, please. If you add redundant space, like `filter=' templateName'` your filter won't work and you will get all all records.
+Note: It's important for the name to match including whitespaces. If you add an extra space, for example `filter=' templateName'`, your filter won't work and you will get all records instead.
 
 ### Prepare the view for use
 
