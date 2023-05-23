@@ -6,10 +6,6 @@ premium: true
 
 <p class="lead">Link your WordPress users to Dataverse records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>
 
-## Deprecated
-
-This feature is not available in new deployment.
-
 ## Introduction
 
 Dataverse Integration provides capability to associate WordPress users with Dataverse Integration records to provide more opportunities to build self-service customer portals.
