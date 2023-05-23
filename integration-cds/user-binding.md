@@ -24,15 +24,17 @@ Synchronization between WordPress user and Dataverse record is supported in both
 
 Dataverse Integration can bind a user to a Dataverse record in several different ways which are referred to as "binding modes".
 
-By default, a WordPress user is **not bound** to a Dataverse record. That means, whatever the global options are, the current user object is not populated, no authorization against Dataverse is performed, no data synchronization is performed, and so on. In some integration scenarios the user may be implicitly switched to the *Default mode* programmatically.
+By default, a WordPress user is **not bound** to a Dataverse record. That means, whatever the global options are, the current user object is not populated, no authorization against Dataverse is performed, no data synchronization is performed, and so on. 
 
-In **Default mode,** Dataverse Integration binds the user to a Contact record. AlexaCRM solution creates a few new attributes in the Contact table, including Username `alexacrm_wordpress_username`. When any plugin service or 3rd party integration requests to resolve the binding into a reference to a record or an Entity object, the plugin looks up a Contact record by the `alexacrm_wordpress_username` attribute, comparing it to the WordPress user's username (login). To associate a Dataverse record with a different WordPress user, change the value of the Contact record.
+In **Lookup mode,** the user is associated with a Dataverse record via user interface (previously known as manual mode).
+
+In **Username mode,** Dataverse Integration binds the user to a Contact record (previously known as default or auto). AlexaCRM solution creates a few new attributes in the Contact table, including Username `alexacrm_wordpress_username`. When any plugin service or 3rd party integration requests to resolve the binding into a reference to a record or an Entity object, the plugin looks up a Contact record by the `alexacrm_wordpress_username` attribute, comparing it to the WordPress user's username (login). To associate a Dataverse record with a different WordPress user, change the value of the Contact record.
 
 In **Custom mode,** you must implement the `integration-cds/user-binding/bind-custom` filter to produce an [EntityReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php) for the given user. 
 
-In **Manual mode,** the user is associated with a Dataverse record via user interface.
+In **Disabled mode,** (**Deprecated.** This feature is not available in new deployment.)
 
-In **Disabled mode,** the user is essentially *not bound*, but the mode cannot be implicitly switched to *Default* programmatically -- explicit `setMode()` call is still allowed.
+The functionality to auto-bind on user creation and synchronise data is still there but removed from admin UI. 
 
 ## Configure global binding settings
 
@@ -42,24 +44,42 @@ Go to **Settings UI > User Binding** to configure global user binding settings.
 
 Check *"Authorize users against Dataverse during sign-in"* to add an extra step to the standard WordPress authentication flow.
 
-To disable sign-in for a chosen user, set the Contact *"User Enabled"* column to **No**.
+## Use user binding UI to bind users to Dataverse
 
-### Enable auto binding for new WordPress users
+User binding for individual users is set up in the **WordPress Admin > Users**. Hover over the user row and click **Configure binding** to reveal the configuration panel.
 
-Check *"Bind new users to a corresponding Dataverse Integration record automatically"* to enable the feature. Choose among *Default* and *Custom* modes for new users.
+You can change the binding mode of the selected user. In *Lookup mode* you can select the user via lookup dialog.
 
-If you choose *Default* mode, you need to provide WordPress user/usermeta field to Dataverse Contact field for initial matching. Dataverse Integration will locate the contact record using this mapping and set `alexacrm_wordpress_username` to the user's username.
+### Enable username binding for new WordPress users
+
+You can provide WordPress user/usermeta field to Dataverse Contact field for initial matching. Dataverse Integration will locate the contact record using this mapping and set `alexacrm_wordpress_username` to the user's username.
 
 ### Enable field synchronization for bound users
 
 When a WordPress user is bound to a Dataverse record, you may want to synchronize some of their data between the systems. That data may include Email *(user_email)*, First Name *(first_name)*, Last Name *(last_name)* and Display Name *(display_name).* You can map these WordPress user and usermeta fields to Dataverse table columns. Leave the mapping field empty if you don't want to synchronize that particular WordPress user field.
 
-You can only choose one synchronization direction: WordPress → Dataverse *(Push)* or Dataverse → WordPress *(Pull)*. Data pushes happen after registration (if auto binding is enabled), after sign-in, and after user data/metadata change. Data pulls happen after user registration and sign-in events.
+### How to bind user through API
 
-If you mix Default and Custom binding modes on one website, Dataverse Integration will apply the synchronization mapping to any table -- missing columns will be skipped.
+You need to use POST method and update user by id.
 
-## Use user binding UI to bind users to Dataverse
+```
+https://datapress.testrino.com/wp-json/wp/v2/users/10 
+https://{url}/wp-json/wp/v2/users/<userId>
+```
 
-User binding for individual users is set up in the **WordPress Admin > Users**. Hover over the user row and click **Configure binding** to reveal the configuration panel.
+And add json body with fields, which we want to update.
+There is information about the contact table record which I want to bind to user with 10 id.
 
-You can change the binding mode of the selected user. In *Manual mode* you can select the user via lookup dialog.
+```
+{
+"meta":{
+"icds_binding": 3,
+"icds_binding_ref": {
+"Name": "ContactFirstName ContactLastName",
+"Id": "11fa11e8-34bc-ed11-81ff-0011189804cd",
+"LogicalName": "contact",
+"KeyAttributes": null
+}
+}
+}
+```
