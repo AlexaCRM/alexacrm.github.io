@@ -103,6 +103,24 @@ You can provide default values to pre-populate specific form columns using the `
 ```
 {% endraw %}
 
+If you create a page using the Dataverse Form block set values in the `defaults` field.
+
+{% raw %}
+``` twig
+{ "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" }
+```
+{% endraw %}
+
+To set default value for choice field you need to analyze possible values. For example, you can find label and value mapping in table settings. For the gender column to set `Male` label you need to choose 1 value.
+
+{% raw %}
+``` twig
+{% form id=4 defaults={"gendercode": 1} %}
+```
+{% endraw %}
+
+Also you can provide default values in Dataverse Admin Area. Choose the form and go to Fields customization, find the Default field values section. Here you just need to choose field name and set the default value for it. Feel free to set default value even for lookup and choice fields.
+
 ### Getting record GUID
 
 After the record has been successfully created, you can get the guid using the redirect setting with the %s parameter.
