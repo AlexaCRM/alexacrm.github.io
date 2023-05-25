@@ -68,8 +68,8 @@ When you choose the *update* or *read-only* mode, you can enable record deletion
 You are advised to implement the `integration-cds/forms/authorize-delete` filter hook to guard against unauthorized use. When deletion request is submitted, three parameters are passed into the hook:
 
 - `$isAuthorized` -- *(boolean)* whether to authorize deletion of the record.
-- `$reg` -- *(FormRegistration)* form registration which initiated deletion. Contains form ID, target table and other form registration settings.
-- `$target` -- *([TableReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php)|null)* record that is being deleted. The hook should return `false` if `NULL` has been passed.
+- `$reg` -- *(FormRegistration)* form registration which initiated deletion. Contains form ID, target entity and other form registration settings.
+- `$target` -- *([EntityReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php)|null)* record that is being deleted. The hook should return `false` if `NULL` has been passed.
 
 ### Required and optional columns
 

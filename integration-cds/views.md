@@ -170,8 +170,8 @@ You can access the base view via ssh or ftp by navigating to `{your_wordpress_si
 - `records` -- map of Entity objects. Record GUID serves as map key.
 - `total_records` -- total count of rows in the view.
 - `name` -- name of the view, e.g. `Active Contacts`.
-- `entity_logical_name` -- logical name of the table, e.g. `contact`.
-- `primary_key_logical_name` -- logical name of the column that serves as record GUID, e.g. `contactid`. Corresponds to `PrimaryIdAttribute` table metadata value.
+- `entity_logical_name` -- logical name of the entity, e.g. `contact`.
+- `primary_key_logical_name` -- logical name of the column that serves as record GUID, e.g. `contactid`. Corresponds to `PrimaryIdAttribute` entity metadata value.
 - `first_page` -- number of the first page, starting with `1`. `NULL` if no results on the current page.
 - `last_page` -- number of the last page. `NULL` if no results on the current page.
 - `next_page` -- number of the next page. `NULL` if pagination is not enabled or no pages left.

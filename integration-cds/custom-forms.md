@@ -17,7 +17,7 @@ Dataverse Integration provides a pair of Twig tags, {% raw %}`{% form %}{% endfo
 
 - `entity` -- *(string, required)* logical name of the target table.
 - `mode` -- *(string, required)* `create` for creation forms. `update` for update forms.
-- `record` -- *(TableReference)* row (record) GUID, or TableReference, or Table to update. Used in `update` mode.
+- `record` -- *(EntityReference)* row (record) GUID, or EntityReference, or Table to update. Used in `update` mode.
 - `recaptcha` -- *(boolean)* whether reCAPTCHA validation is required. See [Protect form submissions with reCAPTCHA](#protect-form-submissions-with-recaptcha).
 - `redirect` -- *(string)* URL to redirect to after a successful submission.
 - `message` -- *(string)* custom message to show after a successful submission.
