@@ -95,7 +95,7 @@ This code is sufficient to display a Dataverse form on a WordPress page and star
 
 ### Default values
 
-You can provide default values to pre-populate specific form columns using the `defaults` attribute in the {% raw %}`{% form %}`{% endraw %} tag.
+You can provide default values to pre-populate specific form columns by using the ‘defaults’ attribute in the {% raw %}‘{% form %}’{% endraw %} tag.
 
 {% raw %}
 ``` twig
@@ -103,7 +103,7 @@ You can provide default values to pre-populate specific form columns using the `
 ```
 {% endraw %}
 
-If you create a page using the Dataverse Form block set values in the `defaults` field.
+If you create a page using the Dataverse Form block, you can set values in the `defaults` field.
 
 {% raw %}
 ``` twig
@@ -111,7 +111,7 @@ If you create a page using the Dataverse Form block set values in the `defaults`
 ```
 {% endraw %}
 
-To set default value for choice field you need to analyze possible values. For example, you can find label and value mapping in table settings. For the gender column to set `Male` label you need to choose 1 value.
+To set a default value for a choice field, you need to analyze the possible values. For example, you can find the label and value mapping in the table settings. To set the ‘Male’ label for the gender column, you need to choose the value of 1.
 
 {% raw %}
 ``` twig
@@ -119,7 +119,7 @@ To set default value for choice field you need to analyze possible values. For e
 ```
 {% endraw %}
 
-Also you can provide default values in Dataverse Admin Area. Choose the form and go to Fields customization, find the Default field values section. Here you just need to choose field name and set the default value for it. Feel free to set default value even for lookup and choice fields.
+Additionally, you can provide default values in the Dataverse Admin Area. Choose the form, go to Fields Customization, and find the Default Field Values section. Here, you just need to choose the field name and set the default value for it. You can set default values even for lookup and choice fields.
 
 ### Getting record GUID
 
