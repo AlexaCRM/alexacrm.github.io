@@ -119,6 +119,14 @@ To set a default value for a choice field, you need to analyze the possible valu
 ```
 {% endraw %}
 
+Similar way to set default value for multiple choice field.
+
+{% raw %}
+``` twig
+{% form id=2 defaults={"multipleChoiceColumnName": '3,4'} %}
+```
+{% endraw %}
+
 Additionally, you can provide default values in the Dataverse Admin Area. Choose the form, go to Fields Customization, and find the Default Field Values section. Here, you just need to choose the field name and set the default value for it. You can set default values even for lookup and choice fields.
 
 ### Getting record GUID
