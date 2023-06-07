@@ -68,8 +68,8 @@ When you choose the *update* or *read-only* mode, you can enable record deletion
 You are advised to implement the `integration-cds/forms/authorize-delete` filter hook to guard against unauthorized use. When deletion request is submitted, three parameters are passed into the hook:
 
 - `$isAuthorized` -- *(boolean)* whether to authorize deletion of the record.
-- `$reg` -- *(FormRegistration)* form registration which initiated deletion. Contains form ID, target table and other form registration settings.
-- `$target` -- *([TableReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php)|null)* record that is being deleted. The hook should return `false` if `NULL` has been passed.
+- `$reg` -- *(FormRegistration)* form registration which initiated deletion. Contains form ID, target entity and other form registration settings.
+- `$target` -- *([EntityReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php)|null)* record that is being deleted. The hook should return `false` if `NULL` has been passed.
 
 ### Required and optional columns
 
@@ -95,13 +95,39 @@ This code is sufficient to display a Dataverse form on a WordPress page and star
 
 ### Default values
 
-You can provide default values to pre-populate specific form columns using the `defaults` attribute in the {% raw %}`{% form %}`{% endraw %} tag.
+You can provide default values to pre-populate specific form columns by using the ‘defaults’ attribute in the {% raw %}‘{% form %}’{% endraw %} tag.
 
 {% raw %}
 ``` twig
 {% form id=42 defaults={ "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" } %}
 ```
 {% endraw %}
+
+If you create a page using the Dataverse Form block, you can set values in the `defaults` field.
+
+{% raw %}
+``` twig
+{ "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" }
+```
+{% endraw %}
+
+To set a default value for a choice field, you need to analyze the possible values. For example, you can find the label and value mapping in the table settings. To set the ‘Male’ label for the gender column, you need to choose the value of 1.
+
+{% raw %}
+``` twig
+{% form id=4 defaults={"gendercode": 1} %}
+```
+{% endraw %}
+
+Similar way to set default value for multiple choice field.
+
+{% raw %}
+``` twig
+{% form id=2 defaults={"multipleChoiceColumnName": '3,4'} %}
+```
+{% endraw %}
+
+Additionally, you can provide default values in the Dataverse Admin Area. Choose the form, go to Fields Customization, and find the Default Field Values section. Here, you just need to choose the field name and set the default value for it. You can set default values even for lookup and choice fields.
 
 ### Getting record GUID
 
