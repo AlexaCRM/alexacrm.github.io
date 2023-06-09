@@ -12,15 +12,15 @@ Our plugin supports Elementor. We provide several widgets to work with Elementor
 
 ## Form widget
 
-Widget Name - `Dataverse Form`
+Widget Name - `Form`
 
-Category - `Dataverse`
+Category - `Pro`
 
-Description: Basically, it is a native form of Elementor, but with special settings related to Dataverse.
+Description: It is a native form of Elementor, but you should add `Send to Dataverse` action after submit.
 
-All you need to do is drag the `Dataverse Form` widget into the content area, select `Dataverse Table` and select `Action` in the `Dataverse` section.
+All you need to do is drag the `Form` widget into the content area, create  the necessary fields and Save their ID. Next, navigate to `Actions After Submit`, click `+` and add the `Send to Dataverse` action.  Then, select the `Send to Dataverse` menu section and choose a table from the `Table` dropdown.
 
-Then in the `Form Fields` section, in each column, you can select `Dataverse field`.
+After choosing an action, like create, you need to make `Fields Mapping`. Click `+ADD ITEM`. Here, fill in `Form field` (which is the field ID that was saved previously) and `Table column` (which is the logical name for the column) for each field.
 
 
 ## Twig widget
