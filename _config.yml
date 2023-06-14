@@ -98,7 +98,7 @@ navigation:
     PowerApps Forms: "/integration-cds/forms/"
     Using Twig: "/integration-cds/twig/"
     FetchXML: "/integration-cds/fetchxml/"
-    Entity Binding: "/integration-cds/entity-binding/"
+    Table Binding: "/integration-cds/table-binding/"
     User Binding: "/integration-cds/user-binding/"
     Webhooks: "/integration-cds/webhooks/"
     Views: "/integration-cds/views/"
