@@ -229,7 +229,7 @@ If you want to create a template for updating record you can look at this exampl
 
 {% endraw %}
 
-Then at the moment of page creation you need to use the `include` statement with the template name(previous example). And you need to configure binding for this page to have opportunity to update necessary record. [See how to configure binding.](https://docs.alexacrm.com/integration-cds/entity-binding/) 
+Then at the moment of page creation you need to use the `include` statement with the template name(previous example). And you need to configure binding for this page to have opportunity to update necessary record. [See how to configure binding.](./table-binding/) 
 
 You can also use templates to replace the form template or individual form fields in form registration editor. For this purpose click `Render form based on twig template` on the creation form page. Then choose your template name from the form template dropdown. If you want to replace just some fields you should leave default value for the form template dropdown, but set value for `fields templates`.
 
