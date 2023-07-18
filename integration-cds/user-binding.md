@@ -80,4 +80,8 @@ Request body should contain json body with the meta property and the fields `icd
     }
 }```
 
+### Important to remember
 
+When using the User Binding functionality, it is essential to leave at least one user without binding. Therefore, it is recommended that you create a new user as soon as possible and without any binding. This will help ensure that you can continue to manage and administer the system should any issues arise with the users who have binding.
+
+In summary, always have at least one user without binding to guarantee the smooth running and administration of the system.
