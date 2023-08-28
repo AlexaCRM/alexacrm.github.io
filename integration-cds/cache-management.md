@@ -19,7 +19,93 @@ Look for the `ICDS_DISABLE_CACHE` option and enable it to disable caching.
 ### Manage cache storage
 You can force Dataverse Integration to use specified storage by changing `ICDS_CACHE_STORAGE` option in `Advanced settings`
 
+To set cache settings, navigate to the `Cache` section in the Dataverse Admin Area. Here, you have the option to clear all cache or clear cache by type.
+
+Additionally, there are `Entity Cache Settings` where you can create cache settings for specific tables. Simply choose a table and set the cache duration using the [ISO 8601 Cache duration](https://en.wikipedia.org/wiki/ISO_8601#Durations), such as PT36H (P<date>T<time>).
+
+You can also set cache settings for a form or view at the moment of page creation by including the cache parameter:
+
+{% raw %}
+```twig
+{% form id=42 cache='P1DT10H' %}
+```
+{% endraw %}
+   
+To set a cache duration of 1 day and 12 hours for a view:
+
+{% raw %}
+```twig
+{% view entity="contact" name="Active Contacts" cache="P1DT12H" %}{% endview %}
+```
+{% endraw %}
+
+To configure cache settings for fetchXML, refer to the following example:
+
+{% raw %}
+``` twig
+{% fetchxml collection="customers" cache="PT30M" %}
+<fetch mapping='logical' returntotalrecordcount='true'>  
+   <entity name='account'>
+      <attribute name='accountid'/>
+      <attribute name='name'/>
+   </entity>
+</fetch>
+{% endfetchxml %}
+```
+{% endraw %} 
+
 ### Clearing the cache
-You can clear the cache by going to the `Status` tab `Cache storage` header in the plugin's admin area
-<br>
-There you can clear all cache or select specific cache pools to clear
+You can clear the cache by going to the `Cache` tab in the plugin's admin area
+
+There you can clear all cache or select specific cache pools to clear.
+
+Also you can clear cache through API request.
+
+Form examples:
+{% raw %}
+```
+wp-json/wp/v1/cache/forms
+wp-json/wp/v1/cache/forms/{formId}
+wp-json/wp/v1/cache/forms/{formGuid}
+```
+{% endraw %}
+
+{% raw %}
+```
+wp-json/wp/v1/cache/forms/2
+wp-json/wp/v1/cache/forms/7a3eabfa-94ea-eb11-bacb-000d3acc54f0
+```
+{% endraw %}
+
+To clear cache for views:
+{% raw %}
+```
+wp-json/wp/v1/cache/views
+wp-json/wp/v1/cache/views/{tableName}/{viewTitle}
+wp-json/wp/v1/cache/views/{viewGuid}
+```
+{% endraw %}
+   
+{% raw %}
+```
+wp-json/wp/v1/cache/views/account/All Accounts
+wp-json/wp/v1/cache/views/6a1eabfa-94ea-eb11-bacb-000d3acc54f0
+```
+{% endraw %}
+
+To clear cache for FetchXML:
+{% raw %}
+```
+wp-json/wp/v1/cache/fetchxml
+wp-json/wp/v1/cache/fetchxml/contact
+```
+{% endraw %}
+
+To clear cache for a specific table:
+{% raw %}
+```
+wp-json/wp/v1/cache/entity
+wp-json/wp/v1/cache/entity/{tableName}
+wp-json/wp/v1/cache/entity/contact
+```
+{% endraw %}
