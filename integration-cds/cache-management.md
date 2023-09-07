@@ -64,48 +64,55 @@ Also you can clear cache through API request.
 Form examples:
 {% raw %}
 ```
-wp-json/wp/v1/cache/forms
-wp-json/wp/v1/cache/forms/{formId}
-wp-json/wp/v1/cache/forms/{formGuid}
+wp-json/integration-cds/v1/cache/forms
+wp-json/integration-cds/v1/cache/forms/{formId}
+wp-json/integration-cds/v1/cache/forms/{formGuid}
 ```
 {% endraw %}
 
 {% raw %}
 ```
-wp-json/wp/v1/cache/forms/2
-wp-json/wp/v1/cache/forms/7a3eabfa-94ea-eb11-bacb-000d3acc54f0
+wp-json/integration-cds/v1/cache/forms/2
+wp-json/integration-cds/v1/cache/forms/7a3eabfa-94ea-eb11-bacb-000d3acc54f0
 ```
 {% endraw %}
 
 To clear cache for views:
 {% raw %}
 ```
-wp-json/wp/v1/cache/views
-wp-json/wp/v1/cache/views/{tableName}/{viewTitle}
-wp-json/wp/v1/cache/views/{viewGuid}
+wp-json/integration-cds/v1/cache/views
+wp-json/integration-cds/v1/cache/views/{tableName}/{viewTitle}
+wp-json/integration-cds/v1/cache/views/{viewGuid}
 ```
 {% endraw %}
    
 {% raw %}
 ```
-wp-json/wp/v1/cache/views/account/All Accounts
-wp-json/wp/v1/cache/views/6a1eabfa-94ea-eb11-bacb-000d3acc54f0
+wp-json/integration-cds/v1/cache/views/account/All Accounts
+wp-json/integration-cds/v1/cache/views/6a1eabfa-94ea-eb11-bacb-000d3acc54f0
 ```
 {% endraw %}
 
-To clear cache for FetchXML:
+To clear cache for FetchXML you have several options:
 {% raw %}
 ```
-wp-json/wp/v1/cache/fetchxml
-wp-json/wp/v1/cache/fetchxml/contact
+wp-json/integration-cds/v1/cache/fetchxml
+wp-json/integration-cds/v1/cache/fetchxml/{tableName}
+wp-json/integration-cds/v1/cache/fetchxml/contact
+```
+{% endraw %}
+
+To clear cache for all tables:
+{% raw %}
+```
+wp-json/integration-cds/v1/cache/entity
 ```
 {% endraw %}
 
 To clear cache for a specific table:
 {% raw %}
 ```
-wp-json/wp/v1/cache/entity
-wp-json/wp/v1/cache/entity/{tableName}
-wp-json/wp/v1/cache/entity/contact
+wp-json/integration-cds/v1/cache/entity/{tableName}
+wp-json/integration-cds/v1/cache/entity/contact
 ```
 {% endraw %}
