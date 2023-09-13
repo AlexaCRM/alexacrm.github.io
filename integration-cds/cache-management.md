@@ -17,7 +17,12 @@ Look for the `ICDS_DISABLE_CACHE` option and enable it to disable caching.
 {% include icds_warning.html %} By enabling this option, your site may slow down. Therefore, use it only for debugging purposes.
 
 ### Manage cache storage
-You can force Dataverse Integration to use specified storage by changing `ICDS_CACHE_STORAGE` option in `Advanced settings`
+You can force Dataverse Integration to use specified storage by changing `ICDS_CACHE_STORAGE` option in `Advanced settings`.
+
+For optimal performance of the cache clearing function, it is crucial to configure the settings in the Dataverse Admin Area under the Status menu. Follow these steps to ensure stable operation:
+1. Access the Advanced settings in the Dataverse Admin Area.
+2. Double-check that the value of the ICDS_CACHE_STORAGE option is set to `Files`.
+By paying attention to these settings, you can guarantee the smooth functioning of the cache clearing feature.
 
 To set cache settings, navigate to the `Cache` section in the Dataverse Admin Area. Here, you have the option to clear all cache or clear cache by type.
 
