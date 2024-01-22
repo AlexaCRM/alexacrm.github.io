@@ -134,3 +134,23 @@ Additionally, you can provide default values in the Dataverse Admin Area. Choose
 After the record has been successfully created, you can get the guid using the redirect setting with the %s parameter.
 
 For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-000000000000`
+
+### Lookup security
+
+Lookups utilize a custom REST API that could potentially execute outside of the form context, thereby unintentionally exposing data. To mitigate the risk of accidental exposure, we have implemented additional security measures:
+
+1. We fully support Wordpress nonces for lookup queries, i.e. queries performed outside of the form context will fail. Learn more at [Nonces – Common APIs Handbook | Developer.WordPress.org](https://developer.wordpress.org/apis/security/nonces/).
+
+2. We support custom filter restricting access to the lookups. For example, to restrict lookups to the signed-in users only, add the following code to the `functions.php` file of the current theme. 
+
+``` php
+add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $entityName, $view ){
+    if ( !is_user_logged_in() ) {
+        return false;
+    }
+
+    return $isAllowed;
+}, 10, 3 );
+```
+
+3. Data returned by a lookup can be filtered using fetchXML templates, refer to the `FetchXML queries` page for sample templates. To add a template to a form in the Dataverse Admin Area, navigate to the Forms settings and scroll down to the `Conditional access` section located at the bottom of the page and add your desired template for the form lookups.
