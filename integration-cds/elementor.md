@@ -8,10 +8,9 @@ premium: true
 
 ## Introduction
 
-Our plugin supports Elementor. We provide several widgets to work with Elementor. To edit form with Elementor you need to install and activate the `Dataverse Integration Elementor Extension` plugin. This functionality is available only for premium plugin version.
-*Note:* You also need to install and activate Elementor Pro. {% include icds_premium.html %}
+Our plugin supports Elementor. We offer several widgets that are compatible with Elementor (including Elementor Pro). To edit a form using Elementor, you need to install and activate the 'Dataverse Integration Elementor Extension' plugin. Please note that this functionality is available only with the premium version of our plugin.
 
-*Note:* You also need to install and activate Elementor Pro. {% include icds_premium.html %}
+*Note:* You may also need to install and activate Elementor Pro. {% include icds_premium.html %}
 
 ## Form widget
 
@@ -25,7 +24,6 @@ All you need to do is drag the `Form` widget into the content area, create  the 
 
 After selecting an action, for example `create`, you need to add `Fields Mapping`. Click `+ADD ITEM`. Here, fill in `Form field` (which is the field ID that was saved previously) and `Table column` (which is the logical name for the column) for each field.
 
-
 ## Twig widget
 
 Widget Name - `Twig Template`
@@ -34,11 +32,19 @@ Category - `Dataverse`
 
 Description: A simple and visual widget. Write your twig code and you will immediately see the generated content in the content area.
 
-
 ## Field widget
 
 Widget Name - `Dataverse Field`
 
 Category - `Dataverse`
 
-Description: To utilize this feature, locate the page first and click on `Configure binding`. From the dropdown, select the desired table. Afterwards, while in Elementor editing page mode, you can select the specific fields from this table that you wish to display on the page.
+Description: To use this feature, simply select a table and then choose a column from that table which you wish to display.
+
+## Dynamic tags
+
+One of the simplest methods to display a field value for any record is by using dynamic tags. First, configure the binding for the page by selecting a table and the binding method. Then, return to page editing and, in the Elementor Text Editor widget, click the Dynamic Tags button (symbolized by a coins icon). Next, select the 'Dynamic field' option and click the settings button. Now, you can choose any field from which to display a record value.
+
+## Default record in editing mode
+
+You can enter a record GUID to be used as the default record in the page editing context. Simply find the page, click `Configure Binding`, select a table and enter an id in the `Default record` textbox.
+

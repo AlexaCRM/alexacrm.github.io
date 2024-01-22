@@ -21,3 +21,11 @@ For a more detailed analysis, you can download the logs by clicking `Download Lo
 <br>
 You can delete saved logs by clicking `Remove logs`.
 
+### Advanced settings`
+To configure advanced settings, navigate to the Dataverse Admin Area and open the `Status` tab. At the bottom of the page, you will find the `Advanced settings` button.
+
+Here are some key flags to take note of:
+`ICDS_ADVANCED_USER_BINDING` - If set to true, the legacy advanced editor will be used to configure user binding. You can see changes in `Bindings` -> `User Binding`;
+`ICDS_DISABLE_CACHE` - Use this flag to prevent the caching of any Dataverse-related data.;
+`ICDS_AUTH_KEY`, `ICDS_FORM_AUTH_KEY` - Before connecting the plugin, make sure to set these keys. You can generate suitable keys using the online generator provided by WordPress at https://api.wordpress.org/secret-key/1.0/;
+`ICDS_DISABLE_MONACO` - If set to true, the Monaco editor will not be used on admin pages for editing, resulting in the absence of syntax hints. Instead, the `Twig Plain` area will be used. Conversely, if false, enjoy the `Dataverse Twig` area with its hints. 
