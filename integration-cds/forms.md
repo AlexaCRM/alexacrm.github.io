@@ -137,14 +137,13 @@ For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-0000000
 
 ### Lookup security
 
-To increase safety we offer the following options:
+Lookups utilize a custom REST API that could potentially execute outside of the form context, thereby unintentionally exposing data. To mitigate the risk of accidental exposure, we have implemented additional security measures:
 
-1. We fully support Wordpress nonces, learn more [here](https://developer.wordpress.org/apis/security/nonces/).
+1. We fully support Wordpress nonces for lookup queries, i.e. queries performed outside of the form context will fail. Learn more at [Nonces – Common APIs Handbook | Developer.WordPress.org](https://developer.wordpress.org/apis/security/nonces/).
 
-2. To restrict viewing of lookups to unregistered users, utilize the following example to set a filter. 
+2. We support custom filter restricting access to the lookups. For example, to restrict lookups to the signed-in users only, add the following code to the `functions.php` file of the current theme. 
 
-{% raw %}
-``` twig
+``` php
 add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $entityName, $view ){
     if ( !is_user_logged_in() ) {
         return false;
@@ -153,6 +152,5 @@ add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $en
     return $isAllowed;
 }, 10, 3 );
 ```
-{% endraw %}
 
-3. For filtering lookups using fetchXML templates, refer to the `FetchXML queries` page for sample templates. To add a template to a form in the Dataverse Admin Area, navigate to the Forms settings and scroll down to the `Conditional access` section located at the bottom of the page. Add your desired template for form lookups here.
+3. Data returned by a lookup can be filtered using fetchXML templates, refer to the `FetchXML queries` page for sample templates. To add a template to a form in the Dataverse Admin Area, navigate to the Forms settings and scroll down to the `Conditional access` section located at the bottom of the page and add your desired template for the form lookups.
