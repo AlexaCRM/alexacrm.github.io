@@ -9,6 +9,7 @@ premium: true
 ## Introduction
 
 Our plugin supports Elementor. We provide several widgets to work with Elementor. To edit form with Elementor you need to install and activate the `Dataverse Integration Elementor Extension` plugin. This functionality is available only for premium plugin version.
+*Note:* You also need to install and activate Elementor Pro. {% include icds_premium.html %}
 
 *Note:* You also need to install and activate Elementor Pro. {% include icds_premium.html %}
 
