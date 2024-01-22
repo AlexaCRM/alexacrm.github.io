@@ -180,3 +180,30 @@ You can access the base view via ssh or ftp by navigating to `{your_wordpress_si
 - `pages` -- array of all page numbers. Always returns an array, at least `[ 1 ]`.
 - `page_size` -- number of rows per page.
 - `total_pages` -- total number of pages.
+
+
+## Dataverse view block
+
+To simplify your work with views, you can utilize the Dataverse view block while editing a page. In this block, you have the option to select the table and view name from dropdown menus.
+
+Additionally, you can adjust the cache time in seconds or change the language for the view.
+
+The page size determines the number of records displayed on each page. The number of pages is displayed digitally at the bottom of the screen. Please note that when entering a value in the text field, it must be an odd number.
+
+To further filter the view, you can choose a fetchXML template from the dropdown menu.
+
+If you want to filter the view based on a lookup, enter a similar value in the lookups substitution textbox:
+
+{% raw %}
+ ```twig
+{ "customerid": "97737487-742e-ed11-9db1-00224893bd2f" }
+ ```
+{% endraw %}
+
+In the case of variables in a view, you can input values in the parameters substitution textbox:
+
+{% raw %}
+ ```twig
+{ "accountName": "param1Value", "city": "param2Value" }
+ ```
+{% endraw %}
