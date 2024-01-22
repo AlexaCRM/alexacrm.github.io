@@ -10,6 +10,8 @@ premium: true
 
 Our plugin supports Elementor. We offer several widgets that are compatible with Elementor (including Elementor Pro). To edit a form using Elementor, you need to install and activate the 'Dataverse Integration Elementor Extension' plugin. Please note that this functionality is available only with the premium version of our plugin.
 
+*Note:* You may also need to install and activate Elementor Pro. {% include icds_premium.html %}
+
 ## Form widget
 
 Widget Name - `Form`
@@ -22,7 +24,6 @@ All you need to do is drag the `Form` widget into the content area, create  the 
 
 After selecting an action, for example `create`, you need to add `Fields Mapping`. Click `+ADD ITEM`. Here, fill in `Form field` (which is the field ID that was saved previously) and `Table column` (which is the logical name for the column) for each field.
 
-
 ## Twig widget
 
 Widget Name - `Twig Template`
@@ -30,7 +31,6 @@ Widget Name - `Twig Template`
 Category - `Dataverse`
 
 Description: A simple and visual widget. Write your twig code and you will immediately see the generated content in the content area.
-
 
 ## Field widget
 
@@ -47,3 +47,4 @@ One of the simplest methods to display a field value for any record is by using 
 ## Default record in editing mode
 
 You can enter a record GUID to be used as the default record in the page editing context. Simply find the page, click `Configure Binding`, select a table and enter an id in the `Default record` textbox.
+
