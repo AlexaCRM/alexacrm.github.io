@@ -139,7 +139,7 @@ For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-0000000
 
 Lookups utilize a custom REST API that could potentially execute outside of the form context, thereby unintentionally exposing data. To mitigate the risk of accidental exposure, we have implemented additional security measures:
 
-1. We fully support Wordpress nonces for lookup queries, i.e. queries performed outside of the form context will fail. Learn more at [Nonces – Common APIs Handbook | Developer.WordPress.org](https://developer.wordpress.org/apis/security/nonces/).
+1. We fully support Wordpress nonces for lookup queries, i.e. queries performed outside of the form context will fail. Learn more at [Nonces – Common APIs Handbook - Developer.WordPress.org](https://developer.wordpress.org/apis/security/nonces/).
 
 2. We support custom filter restricting access to the lookups. For example, to restrict lookups to the signed-in users only, add the following code to the `functions.php` file of the current theme. 
 
