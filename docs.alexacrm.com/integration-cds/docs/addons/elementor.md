@@ -5,11 +5,17 @@ premium: true
 ---
 
 <p class="lead">Build your forms and write custom twig code using Elementor!</p>
+<div style={{ padding: '3px', backgroundColor: 'gold' }}>
+    <h3>Premium</h3>
+</div> 
 
 ## Introduction
 
 Our plugin supports Elementor. We offer several widgets that are compatible with Elementor (including Elementor Pro). To edit a form using Elementor, you need to install and activate the 'Dataverse Integration Elementor Extension' plugin. Please note that this functionality is available only with the premium version of our plugin.
 
+<div style={{ padding: '3px', backgroundColor: 'yellow' }}>
+    <h3>Warning</h3>
+</div> 
 *Note:* You may also need to install and activate Elementor Pro. 
 
 ## Form widget

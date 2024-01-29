@@ -6,7 +6,9 @@ sidebar_position: 11
 The page describes multilingual support in Dataverse plugin
 
 ## WPML support 
-
+<div style={{ padding: '3px', backgroundColor: 'gold' }}>
+    <h3>Premium</h3>
+</div> 
 Integration-cds plugin supports wpml string translations. 
 
 To add a string to wpml you need to use `translate` twig filter.

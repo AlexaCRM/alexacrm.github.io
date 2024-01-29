@@ -15,6 +15,9 @@ There at the bottom of the `Status` panel, click on `Advanced settings`
 
 Look for the `ICDS_DISABLE_CACHE` option and enable it to disable caching.
 
+<div style={{ padding: '3px', backgroundColor: 'yellow' }}>
+    <h3>Warning</h3>
+</div> 
 By enabling this option, your site may slow down. Therefore, use it only for debugging purposes.
 
 ### Manage cache storage

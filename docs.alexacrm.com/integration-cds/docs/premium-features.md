@@ -1,5 +1,5 @@
 ---
-title: Premium features
+title: Premium plugin
 sidebar_position: 2
 permalink: /integration-cds/premium-features/
 redirect_from:

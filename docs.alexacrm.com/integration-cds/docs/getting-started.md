@@ -131,6 +131,9 @@ The `{% form %}` Twig tag lets you configure the form settings, such as target e
 Form control `name` attributes refer to the corresponding entity attributes, such as `firstname`, `lastname` and `emailaddress1`. Put the `<recaptcha>` placeholder where you want to put reCAPTCHA control if you enable reCAPTCHA on your form. Before you use reCAPTCHA, please configure it in plugin settings.
 
 ## Install Premium Features
+<div style={{ padding: '3px', backgroundColor: 'gold' }}>
+    <h3>Premium</h3>
+</div> 
 
 ### Create Application Password
 

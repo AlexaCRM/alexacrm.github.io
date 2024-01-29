@@ -24,6 +24,10 @@ Dataverse Integration makes several new global objects available in the Twig env
 
 ### Access the current bound record 
 
+<div style={{ padding: '3px', backgroundColor: 'gold' }}>
+    <h3>Premium</h3>
+</div> 
+
 Use the `binding` object to access table binding on the current page. See [table binding](../table-binding/).
 
 `binding` includes several properties:
