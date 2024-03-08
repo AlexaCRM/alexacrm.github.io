@@ -133,7 +133,7 @@ Form control `name` attributes refer to the corresponding entity attributes, suc
 
 ## Install Premium Features
 
-Premium feature! This feature is available in the premium extension. {% include icds_premium.html %}
+Additional features are available in the premium extension. {% include icds_premium.html %}
 
 ### Create Application Password
 
