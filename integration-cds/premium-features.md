@@ -20,7 +20,7 @@ To edit page using Elementor you need to download, install and activate `Dataver
 
 ## Install Premium Features
 
-{% include wpcrm_premium.html %}
+Additional features are available in the premium extensions. {% include icds_premium.html %}
 
 ### Create Application Password
 
