@@ -1,11 +1,11 @@
 ---
 title: Views
 sidebar_position: 14
+permalink: /wpcrm/views/
 ---
 
-<div style={{ padding: '3px', backgroundColor: 'red' }}>
-    <h3>Deprecated twig</h3>
-</div> 
+
+<Highlight color="#6e001d">This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.</Highlight>
 
 A view is a grid with records listed under selected column headings. It is a type of [saved query](https://msdn.microsoft.com/en-us/library/gg328457.aspx). Users can select different views to look at a subset of records of the same entity that fit into pre-specified filter conditions. There are 3 main types of views: public, system, and personal.
 
@@ -21,20 +21,20 @@ The output of this shortcode is a table populated with record columns retrieved 
 
 ## Shortcode attributes
 
-name
-: **Required**`{:.tag .tag-danger} **String**{:.tag.tag-primary}` Name of the view (saved query) to display records, e.g. `Active Invoices`.
+**name**<br></br>
+**Required String** Name of the view (saved query) to display records, e.g. `Active Invoices`.
 
-entity
-: **Required**`{:.tag .tag-danger} **String**{:.tag.tag-primary}` Logical name of the entity that contains the view, e.g. `invoice`.
+**entity**<br></br>
+**Required String** Logical name of the entity that contains the view, e.g. `invoice`.
 
-parameters
-: **String**`{:.tag.tag-primary}` See [Parameters](#parameters)
+**parameters**<br></br>
+**String** See [Parameters](#parameters)
 
-lookups
-: **String**`{:.tag.tag-primary}` See [Lookups](#lookups)
+**lookups**<br></br>
+**String** See [Lookups](#lookups)
 
-count
-: **Integer**`{:.tag.tag-primary}` Records per page. Enables pagination if value is larger than zero.
+**count**<br></br>
+**Integer** Records per page. Enables pagination if value is larger than zero.
 
 ### Parameters
 
@@ -49,9 +49,19 @@ Allows to customize lookup conditions. Example:
 `{parentcustomerid:GUID}{transactioncurrencyid:querystring.currency}{a_customid:currentrecord.custom_field}`
 
 ## Inline views
-<div style={{ padding: '3px', backgroundColor: 'gold' }}>
-    <h3>Premium</h3>
-</div> 
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
 *Dynamics CRM Integration Premium* allows to define views that do not rely on view definitions in the CRM. The basic view consists of a view shortcode with attributes, but a view for the inline templates can be defined inside the msdyncrm_view tag, i. e. `[msdyncrm_view]...[/msdyncrm_view]`.
 
@@ -125,7 +135,3 @@ Below is the resulting code for the inline view template including the shortcode
 ```
 {% gist wizardist/eddf7afef7bee8c96e44fb34ef270c93 %}
 ```
-
-### Using lookups and parameters in FetchXML
-
-TODO.

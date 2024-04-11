@@ -1,9 +1,10 @@
 ---
 title: Entity Binding
 sidebar_position: 6
+permalink: /wpcrm/binding/
 ---
 
-**Dynamics CRM Integration** allows you to bind CRM entities to WordPress pages dynamically. This way you can surface CRM data with [views](/wpcrm/views/), [forms](/wpcrm/forms/), [Twig templates](/wpcrm/twig/), or just raw PHP code.
+**Dynamics CRM Integration** allows you to bind CRM entities to WordPress pages dynamically. This way you can surface CRM data with [views](./views.md), [forms](./forms.md), [Twig templates](./twig.md), or just raw PHP code.
 
 ## Setting up binding for the page
 
@@ -24,7 +25,7 @@ Empty parameter behavior
 : Allows to choose the right action when the *Query string parameter name* is empty. Available options are "Ignore" and "Page Not Found" -- the latter will trigger a 404 error in the browser.
 
 Set default for views
-: If checked, [view records](/wpcrm/views/) that belong to the selected entity will be linked to this page with correct query string parameters.
+: If checked, [view records](./views.md) that belong to the selected entity will be linked to this page with correct query string parameters.
 
 ## Using bound entities with forms
 
@@ -44,7 +45,7 @@ You can use attribute values from the current entity record to set up `parameter
 
 ## Using bound entities with Twig templates
 
-To surface a value for the currently visited entity record, use the `currentrecord` object. More details are available in the [Twig templates documentation](/wpcrm/twig/).
+To surface a value for the currently visited entity record, use the `currentrecord` object. More details are available in the [Twig templates documentation](./twig.md).
 
 ```
 {{ currentrecord.name }}

@@ -1,6 +1,7 @@
 ---
 title: Twig Templates
 sidebar_position: 5
+permalink: /wpcrm/twig/
 ---
 
 **Twig templates** give you a powerful tool to create a custom experience for your users.
@@ -12,7 +13,7 @@ Twig syntax is explained in [Twig documentation](https://twig.symfony.com/doc/2.
 ## Features
 
 - *entity binding* -- bind any entity to a page and display relevant record data
-- *user binding* -- access record data of the the current [CRM identity](/wpcrm/authentication/)
+- *user binding* -- access record data of the the current [CRM identity](./authentication.md)
 - *views* -- render CRM views in WordPress, with customizable templates
 - *inline FetchXML queries* -- query CRM data and render it in WordPress
 - *forms* -- render CRM forms or custom HTML forms in WordPress, capture submissions and send data back to CRM
@@ -62,7 +63,7 @@ Twig templates go here...
 
 ### Entity binding
 
-Configure entity binding for the page as described in [Entity binding](/wpcrm/binding). If the page is bound to an entity, and the respective entity record is found in the CRM, that record will be available as a global `currentrecord` object in Twig templates.
+Configure entity binding for the page as described in [Entity binding](./binding.md). If the page is bound to an entity, and the respective entity record is found in the CRM, that record will be available as a global `currentrecord` object in Twig templates.
 
 ```
 {{ currentrecord.name }}
@@ -70,11 +71,21 @@ Configure entity binding for the page as described in [Entity binding](/wpcrm/bi
 
 ### User binding
 
-<div style={{ padding: '3px', backgroundColor: 'gold' }}>
-    <h3>Premium</h3>
-</div> 
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
 
-Configure authentication for the site as described in [Authentication](/wpcrm/authentication/). If the current user is an identity user, then the global `user` object will be available in Twig templates.
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+
+Configure authentication for the site as described in [Authentication](./authentication.md). If the current user is an identity user, then the global `user` object will be available in Twig templates.
 
 ```
 {{ user.emailaddress1 }}

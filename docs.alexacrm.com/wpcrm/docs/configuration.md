@@ -8,7 +8,7 @@ redirect_from:
  - /wpcrm/configuration/roles/
  - /wpcrm/configuration/forms/
  - /wpcrm/configuration/images/
-typora-root-url: ../../docs
+permalink: /wpcrm/configuration/
 ---
 
 Configuration of the plugin is performed in the WordPress Administration panel. The plugin provides a separate section for that, which is called "Dynamics CRM". You can locate it in the main navigation menu on the left side of the screen.
@@ -50,9 +50,8 @@ However, in some cases an unsupported ADFS endpoint may be specified by Azure AD
 When a non-ADFS solution is employed, or ADFS is being used in a non-supported way, such behavior may actually make things worse. For that reason, please check this box to make the plugin use the exact STS URL as reported by Azure Active Directory.
 
 ## Portal
-<div style={{ padding: '3px', backgroundColor: 'gold' }}>
-    <h3>Premium</h3>
-</div> 
+
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
 **Delete Unlinked Users** removes all CRM-managed WordPress users which do not have a corresponding WP Identity record in CRM. Useful if you have deleted a lot of WP Identity records or user names were changed.  
 
@@ -61,9 +60,20 @@ In the **Login Settings** section, you can configure the entity to bind users to
 Check **Authenticate new users against Dynamics CRM by default** if you want newly created WordPress users to be automatically authenticated against Dynamics CRM.
 
 ## Registration
-<div style={{ padding: '3px', backgroundColor: 'gold' }}>
-    <h3>Premium</h3>
-</div> 
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
 This tab provides extra options for the `[msdyncrm_registration]` shortcode.
 
@@ -71,14 +81,13 @@ Configure these options to show a CRM form instead of the default registration f
 
 ![Registration settings screen](./img/registration-options.png)
 
-Pick the entity -- it should be the same entity chosen on the Portal tab in the Login Settings section. Specify the form you want to use in the **Form name** field, enter the name of the attribute to use as user name in **Email field.** Additional form parameters may be configured in the **Additional form shortcode attributes** field -- see [Forms](/wpcrm/docs/forms.md).
+Pick the entity -- it should be the same entity chosen on the Portal tab in the Login Settings section. Specify the form you want to use in the **Form name** field, enter the name of the attribute to use as user name in **Email field.** Additional form parameters may be configured in the **Additional form shortcode attributes** field -- see [Forms](./forms.md).
 
 Check **Match records during registration** if you want to reuse existing records (e.g. contacts) with matching email addresses. It will create new records every time if unchecked. 
 
 ## Roles
-<div style={{ padding: '3px', backgroundColor: 'gold' }}>
-    <h3>Premium</h3>
-</div> 
+
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
 The plugin will ask you to install default identity roles in CRM to provide role management for CRM-managed users. Click **Install Default Roles** to do that.
 
@@ -96,8 +105,6 @@ In the Messages section you can configure various messages that the plugin print
 
 You can configure the logging verbosity on the About tab.
 
-<div style={{ padding: '3px', backgroundColor: 'gold' }}>
-    <h3>Premium</h3>
-</div> 
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
 To install the license for the premium add-on, pick your edition (Pro, Business, Enterprise) and enter the license key. Click the **Activate** button.
