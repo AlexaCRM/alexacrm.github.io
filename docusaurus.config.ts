@@ -65,6 +65,11 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     navbar: {
       title: 'AlexaCRM',
       logo: {
@@ -88,6 +93,11 @@ const config: Config = {
         {
           href: 'https://github.com/AlexaCRM/alexacrm.github.io',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://alexacrm.com/kb',
+          label: 'Knowledge base',
           position: 'right',
         },
       ],
