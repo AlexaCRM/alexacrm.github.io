@@ -1,5 +1,7 @@
 ---
 title: Twig Templates
+sidebar_position: 5
+permalink: /wpcrm/twig/
 ---
 
 **Twig templates** give you a powerful tool to create a custom experience for your users.
@@ -11,7 +13,7 @@ Twig syntax is explained in [Twig documentation](https://twig.symfony.com/doc/2.
 ## Features
 
 - *entity binding* -- bind any entity to a page and display relevant record data
-- *user binding* -- access record data of the the current [CRM identity](/wpcrm/authentication/)
+- *user binding* -- access record data of the the current [CRM identity](./authentication.md)
 - *views* -- render CRM views in WordPress, with customizable templates
 - *inline FetchXML queries* -- query CRM data and render it in WordPress
 - *forms* -- render CRM forms or custom HTML forms in WordPress, capture submissions and send data back to CRM
@@ -61,25 +63,33 @@ Twig templates go here...
 
 ### Entity binding
 
-Configure entity binding for the page as described in [Entity binding](/wpcrm/binding). If the page is bound to an entity, and the respective entity record is found in the CRM, that record will be available as a global `currentrecord` object in Twig templates.
+Configure entity binding for the page as described in [Entity binding](./binding.md). If the page is bound to an entity, and the respective entity record is found in the CRM, that record will be available as a global `currentrecord` object in Twig templates.
 
-{% raw %}
 ```
 {{ currentrecord.name }}
 ```
-{% endraw %}
 
 ### User binding
 
-{% include wpcrm_premium.html %}
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
 
-Configure authentication for the site as described in [Authentication](/wpcrm/authentication/). If the current user is an identity user, then the global `user` object will be available in Twig templates.
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
-{% raw %}
+Configure authentication for the site as described in [Authentication](./authentication.md). If the current user is an identity user, then the global `user` object will be available in Twig templates.
+
 ```
 {{ user.emailaddress1 }}
 ```
-{% endraw %}
 
 ### Views
 
@@ -118,13 +128,13 @@ Inside the template the tag exposes `entityview` object with a collection of fie
 
 Please note that personal views must be shared with the user you use to connect WordPress to Dynamics 365 before you start surfacing them with Twig. The user must have *read* access to that view in order to surface it in WordPress.
 
-![Dynamics 365 Share Personal View window.](/img/wpcrm/twig_view-share.png)
+![Dynamics 365 Share Personal View window.]
 
 #### Parameters substitution
 
 In order to use `parameters` attribute, you need to create a view with placeholders. A placeholder is an integer value (0, 1, 2...) enclosed in the curly braces: `{0}`. When you construct a view, enter these placeholders into field values you want to filter. See the example below.
 
-![Dynamics 365 Advanced Find window.](/img/wpcrm/twig_view-parameters.png)
+![Dynamics 365 Advanced Find window.]
 
 `parameters` receives a Twig array: `[ "value 0", "value 1", "value 2" ]`.
 
@@ -138,11 +148,9 @@ You can substitute lookup conditions in the view. Please use a map `{ attribute 
 
 The following snippet will insert a Contact view "Active Contacts" with pagination enabled with 10 records per page. The result of the view query will be fetched for 30 minutes. It will substitute placeholder `{0}` with raw value `contoso.com` and substitute `parentcustomerid` lookup with `account` query argument (i.e. `?account=GUID` in the URL).
 
-{% raw %}
 ```
 {% view entity="contact" name="Active Contacts" parameters=[ "contoso.com" ] lookups={ "parentcustomerid": params.account } count="10" cache="PT30M" %}{% endview %}
 ```
-{% endraw %}
 
 ### FetchXML queries
 
@@ -155,7 +163,6 @@ The tag supports the following attributes:
 
 The FetchXML query is contained between the `fetchxml` and `endfetchxml` tags.
 
-{% raw %}
 ```twig
 {% fetchxml collection="contacts" cache="PT30M" %}
 ```
@@ -172,7 +179,6 @@ The FetchXML query is contained between the `fetchxml` and `endfetchxml` tags.
 ```twig
 {% endfetchxml %}
 ```
-{% endraw %}
 
 Variable `contacts` would contain an object with the following fields:
 
@@ -184,7 +190,6 @@ Variable `contacts` would contain an object with the following fields:
   - `paging_cookie` - paging cookie value
 - `error` - contains an error message if there's any
 
-{% raw %}
 ```
 <ul>
 {% for contact in contacts.results.entities %}
@@ -192,7 +197,6 @@ Variable `contacts` would contain an object with the following fields:
 {% endfor %}
 </ul>
 ```
-{% endraw %}
 
 ### Forms
 
@@ -257,11 +261,10 @@ The default form template is located in `templates/twig/form.twig`. If you need 
 
 You don't need a form defined in CRM to capture data from WordPress. You can design your own form, and data received from it will be sent to Dynamics 365 the same way if you had a CRM form.
 
-To capture data this way, you need to define a custom template inside the {%raw%}`{% form %}{% endform %}`{%endraw%} tags. You need to specify the entity name, and you must not include the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your custom form with the `required` attribute.
+To capture data this way, you need to define a custom template inside the `{% form %}{% endform %}` tags. You need to specify the entity name, and you must not include the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your custom form with the `required` attribute.
 
 If you have more than one Twig form on the page, you need to add the hidden `_key` input and specify `form.key` as its value. This will help to distinguish submissions from different forms. If you omit the key, every form present on the page will try to process the submission which is likely undesired.
 
-{% raw %}
 ```twig
 {% form entity="lead" mode="create" required=["lastname", "emailaddress1", "description"] %}
 <form method="POST">
@@ -276,15 +279,12 @@ If you have more than one Twig form on the page, you need to add the hidden `_ke
 </form>
 {% endform %}
 ```
-{% endraw %}
 
 ### Access to records by ID
 
 You can access any entity record by its ID.
 
-{% raw %}
 ```
 {% set fooContact = entities.contact["36049e71-8132-e711-8102-5065f38b2601"] %}
 {% set barAccount = entities.account["ce039e71-8132-e711-8102-5065f38b2601"] %}
 ```
-{% endraw %}

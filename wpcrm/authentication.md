@@ -1,8 +1,23 @@
 ---
 title: Authentication
+sidebar_position: 11
+permalink: /wpcrm/authentication/
 ---
 
-{% include wpcrm_premium.html %}
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
 **Dynamics CRM Integration Premium** lets you create a membership system with Microsoft Dynamics CRM and WordPress.
 
@@ -24,7 +39,7 @@ You can choose whether user is authenticated strictly by their username and pass
 
 You can switch authentication method (WordPress or CRM) individually for each user, or use the appropriate bulk action.
 
-![User authentication mode selection](/img/wpcrm/authentication_fig1.png)
+![User authentication mode selection](./img/authentication_fig1.png)
 
 - *Link to CRM* -- authenticate the user by their username and password, and additionally match the user against an Identity record in Dynamics CRM. `currentuser` object in view, form and template shortcodes will contain the entity record specified in the aforementioned Identity record.
 - *Unlink from CRM* -- authenticate the user by their username and password only. No identity record matching is performed and `currentuser` object is not available.
@@ -53,7 +68,8 @@ The plugin calls three specific custom actions to notify the CRM about events:
 
 ## CRM-managed users
 
-{% include deprecated_twig.html %}
+<Highlight color="#6e001d">This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.</Highlight>
+
 
 If you have a large contact base (or accounts and other CRM entities) - you can easily allow them to log in on your site.
 
@@ -77,14 +93,14 @@ This shortcode renders a form with login and password inputs, remember me checkb
 
 #### Attributes
 
-reset_url
-: **String**{:.tag.tag-primary} URL to the password recovery page. It points to the login page with `?reset` query argument by default, as the `[msdyncrm_login]` shortcode switches to password recovery mode if the `?reset` query argument is present.
+**reset_url**<br></br>
+**String** URL to the password recovery page. It points to the login page with `?reset` query argument by default, as the `[msdyncrm_login]` shortcode switches to password recovery mode if the `?reset` query argument is present.
 
-newpassword_url
-: **String**{:.tag.tag-primary} URL to the page that contains `[msdyncrm_change_password]` shortcode. If the *change password on next login* flag is set to true in CRM, user will be navigated to the page that contains password change shortcode in order to change old password to the new one.
+**newpassword_url**<br></br>
+**String** URL to the page that contains `[msdyncrm_change_password]` shortcode. If the *change password on next login* flag is set to true in CRM, user will be navigated to the page that contains password change shortcode in order to change old password to the new one.
 
-redirect_url
-: **String**{:.tag.tag-primary} URL of the page to redirect to after the user logs in.
+**redirect_url**<br></br>
+**String** URL of the page to redirect to after the user logs in.
 
 ### Registration
 
@@ -96,14 +112,14 @@ Registration shortcode allows users to enter their credentials.
 
 #### Attributes
 
-redirect_url
-: **String**{:.tag.tag-primary} URL of the page to redirect to after email is confirmed, new password is set and user logged in at the registration page. 
+**redirect_url**<br></br>
+**String** URL of the page to redirect to after email is confirmed, new password is set and user logged in at the registration page. 
 
-mailsent_redirect_url
-: **String**{:.tag.tag-primary} URL of the page to redirect to after the user has entered email or submitted registration form, usually used to redirect identity user to the “thank you” page.
+**mailsent_redirect_url**<br></br>
+**String** URL of the page to redirect to after the user has entered email or submitted registration form, usually used to redirect identity user to the “thank you” page.
 
-activation_url
-: **String**{:.tag.tag-primary} URL that will be used for the activation link in the confirm email, default is registration page, but can be changed if you want to process registration at a different page that contains invitation or registration shortcode.
+**activation_url**<br></br>
+**String** URL that will be used for the activation link in the confirm email, default is registration page, but can be changed if you want to process registration at a different page that contains invitation or registration shortcode.
 
 ### Invitations
 
@@ -115,8 +131,8 @@ Invitation shortcode allows users to ask for an invite on your site.
 
 #### Attributes
 
-redirect_url
-: **String**{:.tag.tag-primary} URL of the page to redirect to after email confirmed, new password is set and user logged in at the invitation page.
+**redirect_url**
+**String** URL of the page to redirect to after email confirmed, new password is set and user logged in at the invitation page.
 
 ### Password recovery
 
@@ -128,5 +144,5 @@ Password recovery shortcode allows users to change password of their identity us
 
 ##### Attributes
 
-newpassword
-: **Boolean**{:.tag.tag-primary} Can be *true* of *false*. Attribute defines how the form will work. If `newpassword` is true then the user doesn't need to enter the old password. Default is *false*. 
+**newpassword**<br></br>
+**Boolean** Can be *true* of *false*. Attribute defines how the form will work. If `newpassword` is true then the user doesn't need to enter the old password. Default is *false*. 

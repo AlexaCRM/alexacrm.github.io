@@ -1,5 +1,7 @@
 ---
 title: Filters and Actions
+sidebar_position: 13
+permalink: /wpcrm/forms/
 ---
 
 **Dynamics** provides a number of WordPress *filters* and *actions* that allow you to extend the plugin and augment its behaviour.

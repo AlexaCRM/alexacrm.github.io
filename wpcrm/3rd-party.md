@@ -1,8 +1,23 @@
 ---
 title: 3rd-party Plugins
+sidebar_position: 12
+permalink: ./wpcrm/3rd-party/
 ---
 
-{% include wpcrm_premium.html %}
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
 **Dynamics 365 Integration Premium** provides a few extensions for other WordPress plugins and enables them to integrate with Dynamics 365.
 
@@ -14,7 +29,7 @@ title: 3rd-party Plugins
 
 After installing and activating the plugin, the Contact Form 7 tag generator will have 2 new tag types: "CRM field" and "CRM Lookup field". Most of the options will be familiar to Contact Form 7 users.
 
-![CRM fields in the CF7 tag generator](/img/wpcrm/3rd-party_cf7-fields.jpg)
+![CRM fields in the CF7 tag generator](./img/3rd-party_cf7-fields.jpg)
 
 The newly added tags are:
 
@@ -32,34 +47,34 @@ After the form entity is configured, you can go back to the **Form** tab to add 
  
 This tag allows you to map a CF7 form control to a CRM field. Data entered in this field will end up in the corresponding CRM field.
  
- ![CRM field in the CF7 tag generator](/img/wpcrm/3rd-party_cf7-crm-field.png)
+ ![CRM field in the CF7 tag generator](./img/3rd-party_cf7-crm-field.png)
 
 Both `msdyncrm` and `msdyncrm*` are used as CRM fields. By CF7's convention, the asterisk means that the field is required.
 
-id
-: `id` attribute value of the form control (`input`, `textarea`, etc.)<br><br>
+**id**<br></br>
+`id` attribute value of the form control (`input`, `textarea`, etc.)<br></br>
 Example: `id:foo`
 
-class
-: `class` attribute value of the form control. To set two or more classes, you may use this option multiple times.<br><br>
+**class**<br></br>
+`class` attribute value of the form control. To set two or more classes, you may use this option multiple times.<br></br>
 Example: `class:bar class:baz`
 
-field
-: Attribute name of the specified entity.<br><br>
+**field**<br></br>
+Attribute name of the specified entity.<br></br>
 Example: `field:emailaddress1`
 
-placeholder
-: [Placeholder text](https://contactform7.com/setting-placeholder-text/) of the form control.
+**placeholder**<br></br>
+[Placeholder text](https://contactform7.com/setting-placeholder-text/) of the form control.
 
-wpcrm-boolean
-: Type of control for boolean CRM attributes. `radio` (default) and `checkbox` are supported as values.
+**wpcrm-boolean**<br></br>
+Type of control for boolean CRM attributes. `radio` (default) and `checkbox` are supported as values.
 
-default
-: Default value of the form control.<br><br>
-Examples:<br>
-`querystring.parameter` -- will fill the control with the URL query argument "parameter".<br>
-`currentuser` -- will fill the control with the current user ID. See [Authentication](/wpcrm/authentication/).<br>
-`currentuser.emailaddress1` -- will fill the control with the e-mail address for the current user. See [Authentication](/wpcrm/authentication/).
+**default**<br></br>
+Default value of the form control.<br></br>
+Examples:
+`querystring.parameter` -- will fill the control with the URL query argument "parameter".
+`currentuser` -- will fill the control with the current user ID. See [Authentication](./authentication.md).
+`currentuser.emailaddress1` -- will fill the control with the e-mail address for the current user. See [Authentication](./authentication.md).
 
 The full example would look like this:
 
@@ -75,32 +90,32 @@ This tag allows you to add entity lookup controls to a CF7 form. Lookup input wi
  
 `msdyncrm_lookup` and `msdyncrm_lookup*` are the tags that represent the CRM lookup field. By CF7's convention, the asterisk means that the field is required.
 
-![CRM lookup field in the CF7 tag generator](/img/wpcrm/3rd-party_cf7-crm-lookup-field.jpg)
+![CRM lookup field in the CF7 tag generator](./img/3rd-party_cf7-crm-lookup-field.jpg)
 
-id
-: `id` attribute value of the form control (`input`, `textarea`, etc.)<br><br>
+**id**<br></br>
+`id` attribute value of the form control (`input`, `textarea`, etc.)<br></br>
 Example: `id:foo`
 
-class
-: `class` attribute value of the form control. To set two or more classes, you may use this option multiple times.<br><br>
+**class**<br></br>
+`class` attribute value of the form control. To set two or more classes, you may use this option multiple times.<br></br>
 Example: `class:bar class:baz`
 
-field
-: Lookup attribute name of the specified entity.<br><br>
+**field**<br></br>
+Lookup attribute name of the specified entity.<br></br>
 Example: `field:transactioncurrencyid`
 
-view
-: Name of the view that will populate values in the dropdown.<br><br>
+**view**<br></br>
+Name of the view that will populate values in the dropdown.<br></br>
 Example: `view:Currency Lookup View`
 
-values
-: Map of ID/label if no view has been specified.<br><br>
-Examples:<br>
-`":none"` (empty label, i.e. default)<br>
+**values**<br></br>
+Map of ID/label if no view has been specified.<br></br>
+Examples:
+`":none"` (empty label, i.e. default)
 `"0D9140A8-265D-E511-80E9-C4346BC516E8:Australian Dollar"`
 
-lookuptype
-: Used to restrict lookup types to a single entity.<br><br>
+**lookuptype**<br></br>
+Used to restrict lookup types to a single entity.<br></br>
 Example: `lookuptype:transactioncurrency`
 
 The full example would look like this:
@@ -114,20 +129,20 @@ The full example would look like this:
 
 You can specify additional settings for each contact form by adding code snippets in the specific format into the Additional Settings field in the contact form's edit screen.
 
-entity
-: Specifies the entity to create new records for.<br><br> 
+**entity**<br></br>
+Specifies the entity to create new records for.<br></br> 
 Example: `entity: lead`
 
-crm_error_message
-: Message text if record creation failed.<br><br>
+**crm_error_message**<br></br>
+Message text if record creation failed.<br></br>
 Example: `crm_error_message: Houston, we have a problem`
 
-commonfield
-: Field that will receive aggregated values from all form fields not bound to CRM, e.g. default CF7 tags.<br><br>
+**commonfield**<br></br>
+Field that will receive aggregated values from all form fields not bound to CRM, e.g. default CF7 tags.<br></br>
 Example: `commonfield: description`
 
-fields_map
-: Allows to map non-CRM CF7 tags to CRM attributes.<br><br> 
+**fields_map**<br></br>
+Allows to map non-CRM CF7 tags to CRM attributes.<br></br> 
 Example: `fields_map: {your-name:firstname1}{your-email:emailaddress1}`
 
 ## Gravity Forms
@@ -140,19 +155,19 @@ Example: `fields_map: {your-name:firstname1}{your-email:emailaddress1}`
 1. Navigate to the form editor.
 1. Point to **Form Settings** and click **Dynamics 365 Plugin**
 
-   ![Dynamics 365 Integration in the Gravity Forms settings menu](/img/wpcrm/3rd-party_gf-menu.png)
+   ![Dynamics 365 Integration in the Gravity Forms settings menu](./img/3rd-party_gf-menu.png)
 
 1. Click **Add New** to create a new feed to Dynamics 365.
 
-   ![List of feeds in the Gravity Forms settings](/img/wpcrm/3rd-party_gf-new-feed.png)
+   ![List of feeds in the Gravity Forms settings](./img/3rd-party_gf-new-feed.png)
 
 1. Enter the **Feed Name**, select an action (create or update), and choose the entity.
 
-   ![Dynamics 365 Integration settings for a Gravity Forms form](/img/wpcrm/3rd-party_gf-feed-settings1.png)
+   ![Dynamics 365 Integration settings for a Gravity Forms form](./img/3rd-party_gf-feed-settings1.png)
 
 1. In the next section, you need to map CRM fields (on the left) to corresponding form fields (on the right).
 
-   ![Dynamics 365 field mapping for a Gravity Forms form](/img/wpcrm/3rd-party_gf-feed-settings2.png)
+   ![Dynamics 365 field mapping for a Gravity Forms form](./img/3rd-party_gf-feed-settings2.png)
 
 1. Click **Update Settings**.
 
@@ -166,7 +181,7 @@ Lookup Select controls allow to capture and surface lookup attributes on your fo
 
 To specify a default value, enter the GUID of the desired record into the **Default Value** field on the Advanced tab.
 
-![Configuring a lookup select control in Gravity Forms.](/img/wpcrm/3rd-party_gf-lookup.png)
+![Configuring a lookup select control in Gravity Forms.](./img/3rd-party_gf-lookup.png)
 
 ### Capture attachments
 
@@ -185,7 +200,7 @@ Ninja Forms integration is provided with Dynamics 365 Premium.
    - *Lookup Select* control allows to add a dropdown with Dynamics 365 records. Default value is set via the *Default record ID* field, e.g. `contact,1900bd7a-c6b8-e711-8112-5065f38a1b01`.
    - Hidden field may be used to preset a CRM field. 
 1. Add the *Send to Dynamics 365* action. Pick the entity and the action (create / update).
-   - If you choose the *update* action, [Entity Binding](/wpcrm/binding/) record is chosen for update. Existing record field values are pulled into mapped fields. 
+   - If you choose the *update* action, [Entity Binding](./binding.md) record is chosen for update. Existing record field values are pulled into mapped fields. 
 1. Configure the field map in the action. Ninja Forms fields are in the left column. Dynamics 365 fields are in the right column.
 
 ### Lookup Select records source
@@ -196,7 +211,6 @@ View is simple -- pick the entity and corresponding view to populate the dropdow
 
 Choose the Twig option for more advanced scenarios. For example, you could parameterize the dropdown. For example:
 
-{% raw %}
 ```twig
 {% fetchxml collection="records" %}
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true" >
@@ -216,6 +230,5 @@ Choose the Twig option for more advanced scenarios. For example, you could param
 {% endfor %}
 {{ result|json_encode|raw }}
 ```
-{% endraw %}
 
 The *for-in* loop populates the `result` collection with entity references, and then a JSON is returned. You can use a different FetchXML query or even construct a JSON manually with hard-coded references.
