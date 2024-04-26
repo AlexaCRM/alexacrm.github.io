@@ -1,0 +1,43 @@
+---
+title: Add custom functions and variables to Twig
+permalink: /wpcrm/code/add-custom-function-to-twig
+sidebar_position: 23
+---
+
+To add a custom Twig function use following action:
+
+```
+function translate_twig( $twigEnv ) {
+  $translateFunction = new \Twig\TwigFunction(
+    'translate', function( $text ) {
+      return __($text);
+  } );
+ 
+  $twigEnv->addFunction( $translateFunction );
+ 
+  return $twigEnv;
+}
+ 
+add_action('wordpresscrm_after_twig_ready', 'translate_twig', 10, 1);
+```
+
+Usage:
+
+```
+{{ translate('Hello') }}
+```
+
+To add a custom variable use following action:
+
+```
+add_action( 'wordpresscrm_after_twig_ready', 
+   function ( $twigEnvironment ) {
+      $twigEnvironment->addGlobal( 'today', date( 'm/d/Y' ) );
+   } );
+```
+
+Usage:
+
+```
+{{ today }}
+```
