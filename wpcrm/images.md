@@ -2,6 +2,10 @@
 title: Annotations & Images
 sidebar_position: 8
 permalink: /wpcrm/images/
+tags:
+    - Image
+    - Attachment
+    - Dynamics 365 Integration
 ---
 
 Integration Dynamics provides means to show images stored in Dynamics 365, including entity images and annotation images.

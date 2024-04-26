@@ -2,6 +2,9 @@
 title: Cache Management
 sidebar_position: 1
 permalink: /datapress/administration/cache-management/
+tags:
+    - Cache
+    - Datapress
 ---
 
 <p class="lead">This page describes how to manage caching, including force disabling caching, configuring cache storage, and clearing the cache.</p>

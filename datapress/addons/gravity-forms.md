@@ -2,6 +2,9 @@
 title: Gravity Forms
 sidebar_position: 1
 premium: true
+tags:
+    - Gravity Forms
+    - Datapress
 ---
 
 <p class="lead">Use gravity forms to manage your organization data</p>

@@ -9,6 +9,11 @@ redirect_from:
  - /wpcrm/configuration/forms/
  - /wpcrm/configuration/images/
 permalink: /wpcrm/configuration/
+tags:
+    - Connection
+    - Configuration
+    - Portal
+    - Dynamics 365 Integration
 ---
 
 Configuration of the plugin is performed in the WordPress Administration panel. The plugin provides a separate section for that, which is called "Dynamics CRM". You can locate it in the main navigation menu on the left side of the screen.

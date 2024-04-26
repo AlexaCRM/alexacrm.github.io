@@ -2,6 +2,8 @@
 title: For developers
 sidebar_position: 16
 permalink: /wpcrm/for-developers/
+tags:
+    - Dynamics 365 Integration
 ---
 
 The page describes aspects of the plugin that are useful for developers.

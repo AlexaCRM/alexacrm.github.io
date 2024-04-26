@@ -2,6 +2,10 @@
 title: User Binding
 sidebar_position: 2
 premium: true
+tags:
+    - Binding
+    - User binding
+    - Datapress
 ---
 
 <p class="lead">Link your WordPress users to Dataverse contact records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>

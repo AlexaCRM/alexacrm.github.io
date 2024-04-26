@@ -5,6 +5,10 @@ permalink: /datapress/getting-started/
 redirect_from:
  - /integration-dynamics/getting-started/
 typora-root-url: ../
+tags:
+    - How to start
+    - Connection
+    - Datapress
 ---
 
 <p class="lead">Get acquainted with the plugin, learn how to install and configure it properly and learn about its features and capabilities.</p>

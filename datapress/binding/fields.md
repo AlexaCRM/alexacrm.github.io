@@ -3,6 +3,10 @@ title: Dataverse Integration Fields Binding
 sidebar_position: 3
 permalink: /datapress/fields-binding/
 premium: true
+tags:
+    - Binding
+    - Fields binding
+    - Datapress
 ---
 
 <p class="lead">Display column value using Dataverse Integration Fields Binding!</p>

@@ -2,6 +2,10 @@
 title: Add custom functions and variables to Twig
 permalink: /wpcrm/code/add-custom-function-to-twig
 sidebar_position: 23
+tags:
+    - Knowledge base
+    - Code
+    - Dynamics 365 Integration
 ---
 
 To add a custom Twig function use following action:

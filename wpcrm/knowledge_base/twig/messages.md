@@ -2,6 +2,11 @@
 title: Messages in custom twig form
 permalink: /wpcrm/twig/messages
 sidebar_position: 28
+tags:
+    - Knowledge base
+    - Form
+    - Twig
+    - Dynamics 365 Integration
 ---
 
 Messages in twig forms can be customized using messages property. That approach, however, does not work for custom twig forms where the form is provided as part of the `{% form %}` tag.

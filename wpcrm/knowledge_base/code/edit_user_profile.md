@@ -2,6 +2,11 @@
 title: Editing user profile
 permalink: /wpcrm/code/user-profile
 sidebar_position: 19
+tags:
+    - Knowledge base
+    - Code
+    - User
+    - Dynamics 365 Integration
 ---
 
 If a page is bound to a contact table then passing contact identifier in the query string will set the currentrecord object and allow record editing using, for example a Gravity form that relies on the record binding.

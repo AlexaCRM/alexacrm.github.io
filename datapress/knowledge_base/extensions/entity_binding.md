@@ -2,6 +2,10 @@
 title: Custom entity binding
 permalink: /datapress/extensions/entity_binding
 sidebar_position: 16
+tags:
+    - Knowledge base
+    - Entity binding
+    - Datapress
 ---
 
 

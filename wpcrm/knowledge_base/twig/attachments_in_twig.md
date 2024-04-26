@@ -2,6 +2,11 @@
 title: Attachments in twig
 permalink: /wpcrm/twig/attachments-in-twig
 sidebar_position: 25
+tags:
+    - Knowledge base
+    - Twig
+    - Attachment
+    - Dynamics 365 Integration
 ---
 
 The attachments stored in annotation entity are accessible using a special purpose-built URL:

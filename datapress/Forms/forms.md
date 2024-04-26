@@ -3,6 +3,9 @@ title: PowerApps Forms
 permalink: /datapress/forms/
 sidebar_position: 1
 premium: true
+tags:
+    - Form
+    - Datapress
 ---
 
 <p class="lead">Capture leads, feedback and other information from your website using forms designed in PowerApps and Dynamics 365.</p>

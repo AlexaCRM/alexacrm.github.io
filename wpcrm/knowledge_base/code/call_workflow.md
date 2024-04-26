@@ -2,6 +2,10 @@
 title: Call workflow
 permalink: /wpcrm/code/call-workflow
 sidebar_position: 20
+tags:
+    - Knowledge base
+    - Code
+    - Dynamics 365 Integration
 ---
 
 While it’s not possible to call any workflow directly there is a simple workaround that involves using custom actions.

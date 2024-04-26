@@ -2,6 +2,9 @@
 title: Create your form
 sidebar_position: 2
 typora-root-url: ../
+tags:
+    - Form
+    - Datapress
 ---
 
 ## Create a Contact Us form

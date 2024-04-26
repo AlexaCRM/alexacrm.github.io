@@ -2,6 +2,9 @@
 title: Templates
 sidebar_position: 7
 permalink: /wpcrm/templates/
+tags:
+    - Templates
+    - Dynamics 365 Integration
 ---
 
 *Dynamics CRM Integration* template files contain the markup and template structure for the front-end of your site. If you open these files, you will notice that they all contain hooks that allow you to add/move content without editing the template files themselves. Plugin template files shouldn't be touched because changes would be lost during the next plugin update.

@@ -2,6 +2,10 @@
 title: Entity Binding
 sidebar_position: 6
 permalink: /wpcrm/binding/
+tags:
+    - Binding
+    - Entity binding
+    - Dynamics 365 Integration
 ---
 
 **Dynamics CRM Integration** allows you to bind CRM entities to WordPress pages dynamically. This way you can surface CRM data with [views](./views.md), [forms](./forms.md), [Twig templates](./twig.md), or just raw PHP code.

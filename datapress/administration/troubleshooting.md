@@ -2,6 +2,10 @@
 title: Troubleshooting
 permalink: /datapress/administration/troubleshooting/
 sidebar_position: 3
+tags:
+    - Logs
+    - Settings
+    - Datapress
 ---
 
 <p class="lead">This page describes how to set up logs.</p>

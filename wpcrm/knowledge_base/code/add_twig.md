@@ -2,6 +2,11 @@
 title: Add twig in header/footer
 permalink: /wpcrm/code/add-twig-in-header
 sidebar_position: 18
+tags:
+    - Knowledge base
+    - Code
+    - Twig
+    - Dynamics 365 Integration
 ---
 
 Inside the page content inserting twig content is as easy as

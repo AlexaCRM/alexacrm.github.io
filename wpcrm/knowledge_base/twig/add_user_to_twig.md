@@ -2,6 +2,10 @@
 title: Add current WordPress user to Twig
 permalink: /wpcrm/twig/add-user-to-twig
 sidebar_position: 29
+tags:
+    - Knowledge base
+    - Twig
+    - Dynamics 365 Integration
 ---
 
 To add WordPress user as an object to Twig, use the following code:

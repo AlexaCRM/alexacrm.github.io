@@ -2,6 +2,10 @@
 title: Form redirect is not working for twig forms
 permalink: /wpcrm/twig/form-redirect
 sidebar_position: 26
+tags:
+    - Knowledge base
+    - Twig
+    - Dynamics 365 Integration
 ---
 
 After submitting a form, a site visitor can be redirected to any page using redirect attribute of the `{% form %}` tag

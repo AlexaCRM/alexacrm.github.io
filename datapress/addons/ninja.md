@@ -4,6 +4,9 @@ permalink: /datapress/ninja-forms/
 sidebar_position: 4
 premium: true
 sidebar_class_name: hidden
+tags:
+    - Ninja
+    - Datapress
 ---
 
 <p class="lead">Use Ninja Forms to manage your organization data</p>

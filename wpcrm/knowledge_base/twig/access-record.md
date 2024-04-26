@@ -2,6 +2,10 @@
 title: Access record identifier in form redirect
 permalink: /wpcrm/twig/access-record
 sidebar_position: 27
+tags:
+    - Knowledge base
+    - Twig
+    - Dynamics 365 Integration
 ---
 
 The record identifier can be included in the redirect string using `%s` placeholder. For example, if a form is used to create a new record, and you would like to redirect to a page `viewrecord` afterwards, then the new record identifier can be passed in the query string:    

@@ -2,6 +2,10 @@
 title: Installation
 sidebar_position: 3
 permalink: /wpcrm/installation/
+tags:
+    - Installation
+    - Configuration
+    - Dynamics 365 Integration
 ---
 
 Using the WordPress Admin to install plugins is the most straightforward option, as it handles the file transfer without you needing to leave the Web browser.

@@ -1,6 +1,9 @@
 ---
 sidebar_position: 4
 title: Using Twig
+tags:
+    - Twig
+    - Datapress
 ---
 
 <p class="lead">Use Twig templates to create custom layouts. Access your Dataverse data and metadata in Twig to share your data with your users.</p>

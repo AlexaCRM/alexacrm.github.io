@@ -2,6 +2,9 @@
 title: Elementor
 sidebar_position: 2
 premium: true
+tags:
+    - Elementor
+    - Datapress
 ---
 
 <p class="lead">Build your forms and write custom twig code using Elementor!</p>

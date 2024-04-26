@@ -2,6 +2,9 @@
 title: Multilingual Support
 sidebar_position: 10
 permalink: /wpcrm/multilingual/
+tags:
+    - Language
+    - Dynamics 365 Integration
 ---
 
 **Dynamics 365 Integration** provides limited support for multiple languages in Dynamics 365 and Dynamics CRM. Display forms and views in different CRM languages.

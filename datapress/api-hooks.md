@@ -2,6 +2,9 @@
 title: Hooks Reference
 sidebar_position: 10
 permalink: /datapress/api-hooks/
+tags:
+    - API
+    - Datapress
 ---
 
 <p class="lead"><b>Dataverse Integration</b> provides a number of WordPress hooks that allow you to extend the plugin and augment its behaviour.</p>

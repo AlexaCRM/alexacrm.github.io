@@ -2,6 +2,11 @@
 title: Twig Templates
 sidebar_position: 5
 permalink: /wpcrm/twig/
+tags:
+    - Twig
+    - FetchXML
+    - Views
+    - Dynamics 365 Integration
 ---
 
 **Twig templates** give you a powerful tool to create a custom experience for your users.

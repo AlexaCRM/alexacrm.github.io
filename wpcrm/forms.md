@@ -2,6 +2,10 @@
 title: Forms
 sidebar_position: 15
 permalink: /wpcrm/forms/
+tags:
+    - Forms
+    - Default fields values
+    - Dynamics 365 Integration
 ---
 
 

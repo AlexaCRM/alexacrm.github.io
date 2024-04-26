@@ -2,6 +2,11 @@
 title: Custom notifications for user functions
 permalink: /wpcrm/code/custom_notification
 sidebar_position: 21
+tags:
+    - Knowledge base
+    - Code
+    - Notification
+    - Dynamics 365 Integration
 ---
 
 Dynamics 365 plugin has built-in notifications when a WordPress user is created, updated, or deleted. Custom actions associated with these events are distributed as part of the Dynamics 365 solution and can be customized further to perform the required operations.

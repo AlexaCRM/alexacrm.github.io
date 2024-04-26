@@ -2,6 +2,10 @@
 title: Create app id and secret for OAuth authentication
 permalink: /wpcrm/configuration/auth
 sidebar_position: 17
+tags:
+    - Knowledge base
+    - Configuration
+    - Dynamics 365 Integration
 ---
 
 IMPORTANT! To complete the steps below you need to have one of the following roles in Azure Active Directory: Dynamics 365 Administrator, Power Platform Administrator, or Global Administrator.

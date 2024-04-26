@@ -2,6 +2,10 @@
 title: Add custom functions and variables to Twig
 permalink: /datapress/extensions/custom_function
 sidebar_position: 17
+tags:
+    - Knowledge base
+    - Twig
+    - Datapress
 ---
 
 To add a custom function use following filter:

@@ -2,6 +2,9 @@
 title: FetchXML queries
 sidebar_position: 6
 permalink: /datapress/fetchxml/
+tags:
+    - FetchXML
+    - Datapress
 ---
 
 <p class="lead">Use the powerful FetchXML query language in Twig to reflect your Common Data Service / Dynamics 365 data in WordPress.</p>

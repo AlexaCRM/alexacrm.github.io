@@ -2,6 +2,10 @@
 title: Unable to save connection settings
 permalink: /datapress/configuration/connection
 sidebar_position: 13
+tags:
+    - Knowledge base
+    - Configuration
+    - Datapress
 ---
 
 When connecting WordPress instance to Dataverse/CDS, you need to verify and then save the connection configuration.

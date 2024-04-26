@@ -2,6 +2,9 @@
 title: Premium Features
 sidebar_position: 9
 permalink: /wpcrm/premium/
+tags:
+    - Premium
+    - Dynamics 365 Integration
 ---
 
 **Dynamics CRM Integration Premium** comes with a handful of premium extensions to our free plugin&nbsp;-- [Dynamics CRM Integration](https://wordpress.org/plugins/integration-dynamics/).

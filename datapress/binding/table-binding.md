@@ -2,6 +2,9 @@
 title: Table Binding
 sidebar_position: 1
 premium: true
+tags:
+    - Table binding
+    - Datapress
 ---
 
 <p class="lead">Link WordPress pages to Dataverse tables to provide direct access to your organization data.</p>

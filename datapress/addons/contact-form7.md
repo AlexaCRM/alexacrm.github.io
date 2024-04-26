@@ -3,6 +3,9 @@ title: Contact Form 7
 sidebar_position: 3
 premium: true
 sidebar_class_name: hidden
+tags:
+    - Contact Form 7
+    - Datapress
 ---
 
 <p class="lead">Use Contact Form 7 to manage your organization data</p>

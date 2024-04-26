@@ -2,6 +2,11 @@
 title: Authentication
 sidebar_position: 11
 permalink: /wpcrm/authentication/
+tags:
+    - Login
+    - Users
+    - Authentication
+    - Dynamics 365 Integration
 ---
 
 

@@ -3,6 +3,9 @@ title: User administration
 sidebar_position: 2
 permalink: /datapress/administration/user-administration/
 premium: true
+tags:
+    - User
+    - Datapress
 ---
 
 <p class="lead">Link your WordPress users to Dataverse records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>

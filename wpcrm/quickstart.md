@@ -2,6 +2,10 @@
 title: Quickstart
 sidebar_position: 2
 permalink: /wpcrm/quickstart/
+tags:
+    - Installation
+    - How to start
+    - Dynamics 365 Integration
 ---
 
 This quickstart guide tells in brief how to install the plugin and start capturing leads from you site directly into Dynamics 365.

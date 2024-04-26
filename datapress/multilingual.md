@@ -1,6 +1,9 @@
 ---
 title: Multilingual
 sidebar_position: 11
+tags:
+    - Language
+    - Datapress
 ---
 
 The page describes multilingual support in Dataverse plugin

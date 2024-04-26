@@ -2,6 +2,11 @@
 title: Upload attachments in twig forms
 permalink: /wpcrm/code/upload-attachment-in-twig-form
 sidebar_position: 24
+tags:
+    - Knowledge base
+    - Code
+    - Attachment
+    - Dynamics 365 Integration
 ---
 
 To add attachment uploads to Twig forms, you need to build a custom form layout with an input file control and an upload handler.

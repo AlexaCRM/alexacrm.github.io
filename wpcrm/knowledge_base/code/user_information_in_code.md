@@ -2,6 +2,11 @@
 title: Access user contact information in code
 permalink: /wpcrm/code/user-contact-information-in-code
 sidebar_position: 22
+tags:
+    - Knowledge base
+    - Code
+    - User
+    - Dynamics 365 Integration
 ---
 
 Sometimes it’s required to access information about the currently logged-in user in PHP. It can be easily done by using `Identity` class that has static `auto` method that returns the current user identity information including the linked CRM record (if available).

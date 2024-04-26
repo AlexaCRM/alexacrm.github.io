@@ -3,6 +3,9 @@ title: Views
 permalink: /datapress/views/
 sidebar_position: 5
 premium: true
+tags:
+    - Views
+    - Datapress
 ---
 
 <p class="lead">Add views to your WordPress pages to display tabular data from Dataverse and Dynamics 365.</p>
