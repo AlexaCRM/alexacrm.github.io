@@ -1,6 +1,5 @@
 ---
 title: Add current WordPress user to Twig
-permalink: /wpcrm/twig/add-user-to-twig
 sidebar_position: 29
 tags:
     - Knowledge base

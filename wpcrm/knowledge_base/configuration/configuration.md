@@ -1,6 +1,5 @@
 ---
 title: Create app id and secret for OAuth authentication
-permalink: /wpcrm/configuration/auth
 sidebar_position: 17
 tags:
     - Knowledge base

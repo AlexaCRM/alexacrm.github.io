@@ -1,7 +1,6 @@
 ---
 title: User administration
 sidebar_position: 2
-permalink: /datapress/administration/user-administration/
 premium: true
 tags:
     - User

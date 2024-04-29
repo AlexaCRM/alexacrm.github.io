@@ -1,6 +1,5 @@
 ---
 title: Troubleshooting
-permalink: /datapress/administration/troubleshooting/
 sidebar_position: 3
 tags:
     - Logs

@@ -1,6 +1,5 @@
 ---
 title: Accessing Choice columns metadata
-permalink: /datapress/twig/metadata
 sidebar_position: 18
 tags:
     - Knowledge base

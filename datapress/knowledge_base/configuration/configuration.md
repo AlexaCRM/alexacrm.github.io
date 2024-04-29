@@ -1,6 +1,5 @@
 ---
 title: Unable to save connection settings
-permalink: /datapress/configuration/connection
 sidebar_position: 13
 tags:
     - Knowledge base

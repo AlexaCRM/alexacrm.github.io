@@ -1,7 +1,6 @@
 ---
 title: For developers
 sidebar_position: 16
-permalink: /wpcrm/for-developers/
 tags:
     - Dynamics 365 Integration
 ---

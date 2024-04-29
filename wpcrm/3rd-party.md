@@ -1,7 +1,6 @@
 ---
 title: 3rd-party Plugins
 sidebar_position: 12
-permalink: ./wpcrm/3rd-party/
 tags:
     - Gravity Forms
     - Contact form 7

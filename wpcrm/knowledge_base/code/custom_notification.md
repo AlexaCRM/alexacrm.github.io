@@ -1,6 +1,5 @@
 ---
 title: Custom notifications for user functions
-permalink: /wpcrm/code/custom_notification
 sidebar_position: 21
 tags:
     - Knowledge base

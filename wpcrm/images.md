@@ -1,7 +1,6 @@
 ---
 title: Annotations & Images
 sidebar_position: 8
-permalink: /wpcrm/images/
 tags:
     - Image
     - Attachment

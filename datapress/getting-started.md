@@ -1,10 +1,6 @@
 ---
 title: Getting Started
 sidebar_position: 1
-permalink: /datapress/getting-started/
-redirect_from:
- - /integration-dynamics/getting-started/
-typora-root-url: ../
 tags:
     - How to start
     - Connection

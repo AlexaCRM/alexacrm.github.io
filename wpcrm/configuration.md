@@ -2,13 +2,12 @@
 title: Configuration
 sidebar_position: 4
 redirect_from:
- - /wpcrm/configuration/connection/
- - /wpcrm/configuration/portal/
- - /wpcrm/configuration/registration/
- - /wpcrm/configuration/roles/
- - /wpcrm/configuration/forms/
- - /wpcrm/configuration/images/
-permalink: /wpcrm/configuration/
+ - ./wpcrm/configuration/connection/
+ - ./wpcrm/configuration/portal/
+ - ./wpcrm/configuration/registration/
+ - ./wpcrm/configuration/roles/
+ - ./wpcrm/configuration/forms/
+ - ./wpcrm/configuration/images/
 tags:
     - Connection
     - Configuration

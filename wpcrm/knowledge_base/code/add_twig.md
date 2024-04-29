@@ -1,6 +1,5 @@
 ---
 title: Add twig in header/footer
-permalink: /wpcrm/code/add-twig-in-header
 sidebar_position: 18
 tags:
     - Knowledge base

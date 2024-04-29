@@ -1,7 +1,6 @@
 ---
 title: Hooks Reference
 sidebar_position: 10
-permalink: /datapress/api-hooks/
 tags:
     - API
     - Datapress

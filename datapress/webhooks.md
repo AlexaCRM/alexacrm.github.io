@@ -1,6 +1,5 @@
 ---
 title: Webhooks
-permalink: /datapress/webhooks/
 sidebar_position: 13
 tags:
     - Datapress

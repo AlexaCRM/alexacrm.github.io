@@ -1,6 +1,5 @@
 ---
 title: PowerApps Forms
-permalink: /datapress/forms/
 sidebar_position: 1
 premium: true
 tags:

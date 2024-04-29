@@ -1,6 +1,5 @@
 ---
 title: Add custom functions and variables to Twig
-permalink: /wpcrm/code/add-custom-function-to-twig
 sidebar_position: 23
 tags:
     - Knowledge base

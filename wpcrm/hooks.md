@@ -1,7 +1,6 @@
 ---
 title: Filters and Actions
 sidebar_position: 13
-permalink: /wpcrm/hooks/
 tags:
     - Hooks
     - Dynamics 365 Integration

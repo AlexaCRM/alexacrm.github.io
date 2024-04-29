@@ -1,7 +1,6 @@
 ---
 title: Entity Binding
 sidebar_position: 6
-permalink: /wpcrm/binding/
 tags:
     - Binding
     - Entity binding

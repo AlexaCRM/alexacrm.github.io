@@ -1,10 +1,7 @@
 ---
 title: Premium plugin
 sidebar_position: 2
-permalink: /datapress/premium-features/
-redirect_from:
- - /integration-dynamics/premium-features/
- tags:
+tags:
     - Premium
     - Datapress
 ---

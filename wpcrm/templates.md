@@ -1,7 +1,6 @@
 ---
 title: Templates
 sidebar_position: 7
-permalink: /wpcrm/templates/
 tags:
     - Templates
     - Dynamics 365 Integration

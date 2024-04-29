@@ -1,7 +1,6 @@
 ---
 title: Dataverse Integration Fields Binding
 sidebar_position: 3
-permalink: /datapress/fields-binding/
 premium: true
 tags:
     - Binding

@@ -1,6 +1,5 @@
 ---
 title: Call workflow
-permalink: /wpcrm/code/call-workflow
 sidebar_position: 20
 tags:
     - Knowledge base

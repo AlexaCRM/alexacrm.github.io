@@ -1,6 +1,5 @@
 ---
 title: Ninja Forms
-permalink: /datapress/ninja-forms/
 sidebar_position: 4
 premium: true
 sidebar_class_name: hidden

@@ -1,7 +1,6 @@
 ---
 title: Premium Features
 sidebar_position: 9
-permalink: /wpcrm/premium/
 tags:
     - Premium
     - Dynamics 365 Integration

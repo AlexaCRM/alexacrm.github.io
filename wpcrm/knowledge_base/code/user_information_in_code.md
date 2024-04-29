@@ -1,6 +1,5 @@
 ---
 title: Access user contact information in code
-permalink: /wpcrm/code/user-contact-information-in-code
 sidebar_position: 22
 tags:
     - Knowledge base

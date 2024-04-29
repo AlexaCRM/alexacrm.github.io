@@ -1,6 +1,5 @@
 ---
 title: Upload attachments in twig forms
-permalink: /wpcrm/code/upload-attachment-in-twig-form
 sidebar_position: 24
 tags:
     - Knowledge base

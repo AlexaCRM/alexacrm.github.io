@@ -1,7 +1,6 @@
 ---
 title: Installation
 sidebar_position: 3
-permalink: /wpcrm/installation/
 tags:
     - Installation
     - Configuration

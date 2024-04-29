@@ -1,6 +1,5 @@
 ---
 title: Attachments in twig
-permalink: /wpcrm/twig/attachments-in-twig
 sidebar_position: 25
 tags:
     - Knowledge base

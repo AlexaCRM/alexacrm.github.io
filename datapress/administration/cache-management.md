@@ -1,7 +1,6 @@
 ---
 title: Cache Management
 sidebar_position: 1
-permalink: /datapress/administration/cache-management/
 tags:
     - Cache
     - Datapress

@@ -1,7 +1,6 @@
 ---
 title: FetchXML queries
 sidebar_position: 6
-permalink: /datapress/fetchxml/
 tags:
     - FetchXML
     - Datapress

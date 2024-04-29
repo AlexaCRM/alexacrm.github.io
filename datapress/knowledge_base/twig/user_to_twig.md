@@ -1,6 +1,5 @@
 ---
 title: Add current WordPress user to Twig
-permalink: /datapress/twig/user-to-twig
 sidebar_position: 19
 tags:
     - Knowledge base

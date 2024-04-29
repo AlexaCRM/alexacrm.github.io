@@ -1,6 +1,5 @@
 ---
 title: Editing user profile
-permalink: /wpcrm/code/user-profile
 sidebar_position: 19
 tags:
     - Knowledge base

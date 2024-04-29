@@ -1,7 +1,6 @@
 ---
 title: Twig Templates
 sidebar_position: 5
-permalink: /wpcrm/twig/
 tags:
     - Twig
     - FetchXML

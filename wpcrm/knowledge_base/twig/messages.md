@@ -1,6 +1,5 @@
 ---
 title: Messages in custom twig form
-permalink: /wpcrm/twig/messages
 sidebar_position: 28
 tags:
     - Knowledge base

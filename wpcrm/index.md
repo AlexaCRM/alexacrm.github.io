@@ -1,6 +1,5 @@
 ---
 title: WordPress Plugin
-permalink: /wpcrm/
 sidebar_position: 1
 omit_title: true
 tags:

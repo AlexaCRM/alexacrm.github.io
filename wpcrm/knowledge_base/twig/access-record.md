@@ -1,6 +1,5 @@
 ---
 title: Access record identifier in form redirect
-permalink: /wpcrm/twig/access-record
 sidebar_position: 27
 tags:
     - Knowledge base

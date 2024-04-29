@@ -1,7 +1,6 @@
 ---
 title: Views
 sidebar_position: 14
-permalink: /wpcrm/views/
 tags:
     - Views
     - Dynamics 365 Integration

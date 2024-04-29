@@ -1,7 +1,6 @@
 ---
 title: Multilingual Support
 sidebar_position: 10
-permalink: /wpcrm/multilingual/
 tags:
     - Language
     - Dynamics 365 Integration

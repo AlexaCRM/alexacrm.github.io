@@ -1,7 +1,6 @@
 ---
 title: Authentication
 sidebar_position: 11
-permalink: /wpcrm/authentication/
 tags:
     - Login
     - Users

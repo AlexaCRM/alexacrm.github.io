@@ -1,6 +1,5 @@
 ---
 title: Custom Forms
-permalink: /datapress/custom-forms/
 sidebar_position: 3
 tags:
     - Form

@@ -1,6 +1,5 @@
 ---
 title: Views
-permalink: /datapress/views/
 sidebar_position: 5
 premium: true
 tags:
