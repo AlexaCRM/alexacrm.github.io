@@ -11,14 +11,14 @@ const config: Config = {
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'AlexaCRM', // Usually your GitHub org/user name.
   projectName: 'Datapress', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -34,7 +34,7 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: 'datapress',
+          routeBasePath: '/',
           path: 'datapress',
           sidebarPath: require.resolve('./sidebars.ts'),
           lastVersion: 'current',
@@ -45,6 +45,7 @@ const config: Config = {
           editUrl:
             'https://github.com/AlexaCRM/alexacrm.github.io',
         },
+        blog: false, 
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -62,7 +63,17 @@ const config: Config = {
       }, 
     ],
 ],
-
+themes: [
+  [
+    require.resolve("docusaurus-plugin-search-local"),
+    {
+      indexDocs: true,
+      indexPages: true,
+      hashed: true,
+      docsRouteBasePath: '/'
+    },
+  ]
+],
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -70,7 +81,7 @@ const config: Config = {
       sidebar: {
         hideable: true,
       },
-    },
+    },   
     navbar: {
       title: 'AlexaCRM',
       logo: {
@@ -92,13 +103,18 @@ const config: Config = {
           activeBaseRegex: `/wpcrm/`,
         },
         {
-          href: 'https://github.com/AlexaCRM/alexacrm.github.io',
-          label: 'GitHub',
+          to: '/datapress/knowledge-base',
+          label: 'Knowledge base v2',
           position: 'right',
         },
         {
-          href: 'https://alexacrm.com/kb',
-          label: 'Knowledge base',
+          to: '/wpcrm/category/knowledge-base',
+          label: 'Knowledge base v1',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/AlexaCRM/alexacrm.github.io',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -128,7 +144,11 @@ const config: Config = {
               to: '/datapress',
             },
             {
-              label: 'Knowledge base',
+              label: 'Knowledge base for Dynamics 365 Integration',
+              to: '/wpcrm/category/knowledge-base',
+            },
+            {
+              label: 'Knowledge base for Datapress',
               to: 'https://alexacrm.com/kb/dataverse',
             },
           ],
