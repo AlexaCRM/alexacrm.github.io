@@ -97,13 +97,13 @@ themes: [
           label: 'Datapress',
         },
         {
-          to: '/wpcrm/quickstart',    // ./docs-api/Intro.md
+          to: '/wpcrm/quickstart',    
           label: 'Dynamics 365 Integration',
           position: 'left',
           activeBaseRegex: `/wpcrm/`,
         },
         {
-          to: '/datapress/knowledge-base',
+          to: '/category/knowledge-base',
           label: 'Knowledge base v2',
           position: 'right',
         },
@@ -149,7 +149,7 @@ themes: [
             },
             {
               label: 'Knowledge base for Datapress',
-              to: 'https://alexacrm.com/kb/dataverse',
+              to: '/category/knowledge-base',
             },
           ],
         },

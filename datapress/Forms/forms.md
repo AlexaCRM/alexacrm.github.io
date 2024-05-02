@@ -73,7 +73,7 @@ In the plugin dashboard, go to the *Forms* tab and click **Create new** to start
 Enter the *Form Name*, select the *CRM Form* and choose the mode of operation. Three modes are available:
 
 - Create a new record -- submissions always create a new record (row).
-- Update or create a record -- form uses [table binding](../binding/table-binding.md) to acquire a record and put its values into form, and submission updates the row with changed values. If table binding hasn't yielded an existing record, a new record will be created instead.
+- Update or create a record -- form uses [table binding](../binding/table-binding) to acquire a record and put its values into form, and submission updates the row with changed values. If table binding hasn't yielded an existing record, a new record will be created instead.
 - Read-only -- table binding is used to acquire a record, its values are displayed, but nothing can be changed on the form.
 
 Finally, click **Create** to save the new form registration.

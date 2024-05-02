@@ -28,7 +28,7 @@ export const Highlight = ({children, color}) => (
 
 ## Features
 
-- **[Inline view templates](./views/#inline-views)** and **[Twig templates](./twig.md).** Create your own views directly in WordPress using the powerful FetchXML query language.
-- **Extensions for [*Contact Form 7*](./3rd-party/#contact-form-7) and *[Gravity Forms](./3rd-party/#gravity-forms).*** Create beautiful forms and connect them to Dynamics CRM with our plugin.
-- **[Registration, login and role management](./authentication.md).** Control your users right in Dynamics CRM. Use custom workflow actions to cover countless cases.
+- **[Inline view templates](views#inline-views)** and **[Twig templates](twig).** Create your own views directly in WordPress using the powerful FetchXML query language.
+- **Extensions for [*Contact Form 7*](3rd-party#contact-form-7) and *[Gravity Forms](3rd-party#gravity-forms).*** Create beautiful forms and connect them to Dynamics CRM with our plugin.
+- **[Registration, login and role management](authentication).** Control your users right in Dynamics CRM. Use custom workflow actions to cover countless cases.
 - **Support.** We will listen to you and provide you help if you meet any obstacles.
