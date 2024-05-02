@@ -1,5 +1,6 @@
 ---
 title: Call workflow
+slug: /knowledge-base/call-workflow
 sidebar_position: 20
 tags:
     - Knowledge base

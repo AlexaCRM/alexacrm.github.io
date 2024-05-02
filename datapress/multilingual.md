@@ -1,6 +1,7 @@
 ---
 title: Multilingual
 sidebar_position: 11
+slug: /multilingual
 tags:
     - Language
     - Datapress

@@ -1,6 +1,7 @@
 ---
 title: Webhooks
 sidebar_position: 13
+slug: /webhooks
 tags:
     - Datapress
 ---

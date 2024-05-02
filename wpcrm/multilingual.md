@@ -1,6 +1,7 @@
 ---
 title: Multilingual Support
 sidebar_position: 10
+slug: /multilingual
 tags:
     - Language
     - Dynamics 365 Integration

@@ -1,6 +1,7 @@
 ---
 title: Unable to save connection settings
 sidebar_position: 13
+slug: /knowledge-base/configuration
 tags:
     - Knowledge base
     - Configuration

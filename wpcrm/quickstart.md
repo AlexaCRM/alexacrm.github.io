@@ -1,7 +1,7 @@
 ---
 title: Quickstart
 sidebar_position: 2
-permalink: /wpcrm/quickstart
+slug: /quickstart
 tags:
     - Installation
     - How to start

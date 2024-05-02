@@ -1,6 +1,7 @@
 ---
 title: Troubleshooting
 sidebar_position: 3
+slug: /administration/troubleshooting
 tags:
     - Logs
     - Settings

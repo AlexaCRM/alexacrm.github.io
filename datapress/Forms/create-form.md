@@ -1,6 +1,7 @@
 ---
 title: Create your form
 sidebar_position: 2
+slug: /forms/create-form
 tags:
     - Form
     - Datapress

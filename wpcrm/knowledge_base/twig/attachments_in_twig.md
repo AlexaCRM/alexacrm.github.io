@@ -1,5 +1,6 @@
 ---
 title: Attachments in twig
+slug: /knowledge-base/attachments-in-twig
 sidebar_position: 25
 tags:
     - Knowledge base

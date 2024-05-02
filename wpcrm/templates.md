@@ -1,6 +1,7 @@
 ---
 title: Templates
 sidebar_position: 7
+slug: /templates
 tags:
     - Templates
     - Dynamics 365 Integration

@@ -1,5 +1,6 @@
 ---
 title: Add twig in header/footer
+slug: /knowledge-base/add-twig-in-header
 sidebar_position: 18
 tags:
     - Knowledge base

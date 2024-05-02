@@ -1,6 +1,7 @@
 ---
 title: For developers
 sidebar_position: 16
+slug: /for-developers
 tags:
     - Dynamics 365 Integration
 ---

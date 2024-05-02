@@ -1,6 +1,7 @@
 ---
 title: User administration
 sidebar_position: 2
+slug: /administration/disable-user
 premium: true
 tags:
     - User

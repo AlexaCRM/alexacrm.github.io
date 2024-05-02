@@ -1,6 +1,7 @@
 ---
 title: Authentication
 sidebar_position: 11
+slug: /authentication
 tags:
     - Login
     - Users

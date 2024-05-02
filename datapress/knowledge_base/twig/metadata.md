@@ -1,6 +1,7 @@
 ---
 title: Accessing Choice columns metadata
 sidebar_position: 18
+slug: /knowledge-base/metadata
 tags:
     - Knowledge base
     - Twig

@@ -1,6 +1,7 @@
 ---
 title: Premium plugin
 sidebar_position: 2
+slug: /premium-features
 tags:
     - Premium
     - Datapress

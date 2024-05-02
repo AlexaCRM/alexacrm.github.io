@@ -1,6 +1,7 @@
 ---
 title: Custom Forms
 sidebar_position: 3
+slug: /forms/custom-forms
 tags:
     - Form
     - Datapress

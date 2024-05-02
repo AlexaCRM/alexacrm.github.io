@@ -2,6 +2,7 @@
 title: PowerApps Forms
 sidebar_position: 1
 premium: true
+slug: /forms/forms
 tags:
     - Form
     - Datapress

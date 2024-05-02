@@ -1,6 +1,7 @@
 ---
 title: Add custom functions and variables to Twig
 sidebar_position: 23
+slug: /knowledge-base/add-custom-function-to-twig
 tags:
     - Knowledge base
     - Code

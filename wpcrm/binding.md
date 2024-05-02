@@ -1,6 +1,7 @@
 ---
 title: Entity Binding
 sidebar_position: 6
+slug: /binding
 tags:
     - Binding
     - Entity binding

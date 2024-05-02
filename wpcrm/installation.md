@@ -1,6 +1,7 @@
 ---
 title: Installation
 sidebar_position: 3
+slug: /installation
 tags:
     - Installation
     - Configuration

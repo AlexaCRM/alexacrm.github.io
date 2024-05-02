@@ -1,5 +1,6 @@
 ---
 title: Upload attachments in twig forms
+slug: /knowledge-base/upload-attachments
 sidebar_position: 24
 tags:
     - Knowledge base

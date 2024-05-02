@@ -1,5 +1,6 @@
 ---
 title: Add current WordPress user to Twig
+slug: /knowledge-base/add-wp-user-to-twig
 sidebar_position: 29
 tags:
     - Knowledge base

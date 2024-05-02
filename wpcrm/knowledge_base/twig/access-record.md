@@ -1,5 +1,6 @@
 ---
 title: Access record identifier in form redirect
+slug: /knowledge-base/access-record
 sidebar_position: 27
 tags:
     - Knowledge base

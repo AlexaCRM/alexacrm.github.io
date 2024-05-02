@@ -2,6 +2,7 @@
 title: Gravity Forms
 sidebar_position: 1
 premium: true
+slug: /addons/gravity-forms
 tags:
     - Gravity Forms
     - Datapress

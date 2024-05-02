@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Using Twig
+slug: /twig
 tags:
     - Twig
     - Datapress

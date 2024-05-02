@@ -1,6 +1,7 @@
 ---
 title: Configuration
 sidebar_position: 4
+slug: /configuration
 redirect_from:
  - ./wpcrm/configuration/connection/
  - ./wpcrm/configuration/portal/

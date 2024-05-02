@@ -1,6 +1,7 @@
 ---
 title: Filters and Actions
 sidebar_position: 13
+slug: /hooks
 tags:
     - Hooks
     - Dynamics 365 Integration

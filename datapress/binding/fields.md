@@ -1,6 +1,7 @@
 ---
 title: Dataverse Integration Fields Binding
 sidebar_position: 3
+slug: /binding/fields
 premium: true
 tags:
     - Binding

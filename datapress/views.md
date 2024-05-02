@@ -2,6 +2,7 @@
 title: Views
 sidebar_position: 5
 premium: true
+slug: /views
 tags:
     - Views
     - Datapress

@@ -1,5 +1,6 @@
 ---
 title: Editing user profile
+slug: /knowledge-base/edit-user-profile
 sidebar_position: 19
 tags:
     - Knowledge base

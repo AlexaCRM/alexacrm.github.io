@@ -1,6 +1,7 @@
 ---
 title: Forms
 sidebar_position: 15
+slug: /forms
 tags:
     - Forms
     - Default fields values

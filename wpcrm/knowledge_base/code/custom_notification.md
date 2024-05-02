@@ -1,5 +1,6 @@
 ---
 title: Custom notifications for user functions
+slug: /knowledge-base/custom-notification
 sidebar_position: 21
 tags:
     - Knowledge base

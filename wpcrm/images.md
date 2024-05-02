@@ -1,6 +1,7 @@
 ---
 title: Annotations & Images
 sidebar_position: 8
+slug: /images
 tags:
     - Image
     - Attachment

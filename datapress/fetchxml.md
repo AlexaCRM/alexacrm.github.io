@@ -1,6 +1,7 @@
 ---
 title: FetchXML queries
 sidebar_position: 6
+slug: /fetchxml
 tags:
     - FetchXML
     - Datapress

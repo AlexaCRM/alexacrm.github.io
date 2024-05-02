@@ -1,6 +1,7 @@
 ---
 title: Premium Features
 sidebar_position: 9
+slug: /premium
 tags:
     - Premium
     - Dynamics 365 Integration

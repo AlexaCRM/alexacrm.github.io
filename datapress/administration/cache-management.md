@@ -1,6 +1,7 @@
 ---
 title: Cache Management
 sidebar_position: 1
+slug: /administration/cache
 tags:
     - Cache
     - Datapress

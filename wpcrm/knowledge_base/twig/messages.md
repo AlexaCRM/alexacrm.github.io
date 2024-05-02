@@ -1,5 +1,6 @@
 ---
 title: Messages in custom twig form
+slug: /knowledge-base/messages
 sidebar_position: 28
 tags:
     - Knowledge base

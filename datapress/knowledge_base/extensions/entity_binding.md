@@ -1,6 +1,7 @@
 ---
 title: Custom entity binding
 sidebar_position: 16
+slug: /knowledge-base/custom-entity-binding
 tags:
     - Knowledge base
     - Entity binding

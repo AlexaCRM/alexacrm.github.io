@@ -1,5 +1,6 @@
 ---
 title: Form redirect is not working for twig forms
+slug: /knowledge-base/form-redirect
 sidebar_position: 26
 tags:
     - Knowledge base

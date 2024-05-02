@@ -1,6 +1,7 @@
 ---
 title: 3rd-party Plugins
 sidebar_position: 12
+slug: /3rd-party-plugins
 tags:
     - Gravity Forms
     - Contact form 7

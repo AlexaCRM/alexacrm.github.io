@@ -1,6 +1,7 @@
 ---
 title: Views
 sidebar_position: 14
+slug: /views
 tags:
     - Views
     - Dynamics 365 Integration

@@ -1,6 +1,7 @@
 ---
 title: Hooks Reference
 sidebar_position: 10
+slug: /api-hooks
 tags:
     - API
     - Datapress

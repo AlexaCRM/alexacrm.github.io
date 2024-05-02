@@ -2,6 +2,7 @@
 title: User Binding
 sidebar_position: 2
 premium: true
+slug: /binding/user-binding
 tags:
     - Binding
     - User binding

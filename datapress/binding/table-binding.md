@@ -2,6 +2,7 @@
 title: Table Binding
 sidebar_position: 1
 premium: true
+slug: /binding/table-binding
 tags:
     - Table binding
     - Datapress

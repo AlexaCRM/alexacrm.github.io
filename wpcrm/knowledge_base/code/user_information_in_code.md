@@ -1,5 +1,6 @@
 ---
 title: Access user contact information in code
+slug: /knowledge-base/add-user-contact-information
 sidebar_position: 22
 tags:
     - Knowledge base

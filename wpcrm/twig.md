@@ -1,6 +1,7 @@
 ---
 title: Twig Templates
 sidebar_position: 5
+slug: /twig
 tags:
     - Twig
     - FetchXML

@@ -1,6 +1,7 @@
 ---
 title: Create app id and secret for OAuth authentication
 sidebar_position: 17
+slug: /knowledge-base/configuration
 tags:
     - Knowledge base
     - Configuration
