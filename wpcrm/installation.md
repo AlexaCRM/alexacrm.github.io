@@ -1,10 +1,16 @@
 ---
 title: Installation
+sidebar_position: 3
+slug: /installation
+tags:
+    - Installation
+    - Configuration
+    - Dynamics 365 Integration
 ---
 
 Using the WordPress Admin to install plugins is the most straightforward option, as it handles the file transfer without you needing to leave the Web browser.
 
-Please refer to [Configuration](/wpcrm/configuration/) to configure the plugin successfully. 
+Please refer to [Configuration](configuration.md) to configure the plugin successfully. 
 
 ## Install Dynamics CRM Integration (preferred)
 

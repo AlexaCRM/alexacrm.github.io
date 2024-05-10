@@ -1,5 +1,10 @@
 ---
 title: Filters and Actions
+sidebar_position: 13
+slug: /hooks
+tags:
+    - Hooks
+    - Dynamics 365 Integration
 ---
 
 **Dynamics** provides a number of WordPress *filters* and *actions* that allow you to extend the plugin and augment its behaviour.
