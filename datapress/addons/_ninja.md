@@ -50,7 +50,7 @@ If you want to set a default value for Dataverse Lookup just type its id:
 ```
 
 Also you can use fetchXML filter:
-```php
+```
    <filter>
 		<condition attribute="address1_city" operator="eq" value="Sydney" />
    </filter>

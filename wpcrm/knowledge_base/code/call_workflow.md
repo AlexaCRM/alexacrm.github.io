@@ -17,7 +17,7 @@ While it’s not possible to call any workflow directly there is a simple workar
 
 3. Add PHP code to call the custom action:
 
-```
+```php
 $ref = new \AlexaCRM\CRMToolkit\Entity\EntityReference( 'account', $accountid );
 $request = [
   [

@@ -216,7 +216,7 @@ View is simple -- pick the entity and corresponding view to populate the dropdow
 
 Choose the Twig option for more advanced scenarios. For example, you could parameterize the dropdown. For example:
 
-```php
+```
 {% fetchxml collection="records" %}
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true" >
   <entity name="account" >

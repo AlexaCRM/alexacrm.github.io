@@ -92,7 +92,7 @@ In this example, we're retrieving ten *Contact* records, fetching only fields `c
 
 Add the results node into the `[msdyncrm_view]` shortcode. `<results />` may contain HTML tags. Please note that its contents must be valid XML.
 
-```php
+```
 <results>
     <h2>Contacts list</h2>
     <p>List of active contacts</p>
@@ -117,7 +117,7 @@ To print out all available record fields straight away, use `<foreachcell />` in
 
 If no records were retrieved from the CRM, you can display a custom message using `<noresults />`.
 
-```php
+```
 <noresults>
     <p>Sorry, no contact records found.</p>
 </noresults>

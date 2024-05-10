@@ -10,7 +10,7 @@ tags:
 
 To add WordPress user as an object to Twig, use the following code:
 
-```
+```php
 add_action( 'wordpresscrm_after_twig_ready', function( $twigEnv ) { 
    $twigEnv->addGlobal( 
       'wpuser', 

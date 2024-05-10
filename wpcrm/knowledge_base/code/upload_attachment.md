@@ -15,7 +15,7 @@ To add attachment uploads to Twig forms, you need to build a custom form layout 
 
 Default plugin template is called `form.twig` and is located in the `plugins/integration-dynamics/templates/twig` folder. Copy the content of that file and paste it between `{% form %}` and `{% endform %}` tags so that the twig code looks like the following (for the plugin version 1.3.2 or lower):
 
-```
+```php
 [msdyncrm_twig]
 {% form %}
 {% spaceless %}
@@ -33,7 +33,7 @@ Default plugin template is called `form.twig` and is located in the `plugins/int
 
 Or like the following for the plugin version 1.3.3 or higher:
 
-```
+```php
 [msdyncrm_twig]
 {% form %}
 {% apply spaceless %}
@@ -51,20 +51,20 @@ Or like the following for the plugin version 1.3.3 or higher:
 
 Alternatively, create your custom form layout (works great for small forms). In either case don’t forget to add enctype=`"multipart/form-data"` to `<form>` tag so that it works with the file uploads:
 
-```
+```php
 <form method="post" id="form-{{ form.id }}" enctype="multipart/form-data">
 ```
 
 Add input file controls and give them distinct names
 
-```
+```php
 <input type="file" name="file-1">
 <input type="file" name="file-2">
 ```
 
 It is also a good idea to add a hidden control to identify the form in case you have multiple forms on your site or even on the same page:
 
-```
+```php
 <input type="hidden" name="__formid" value="1234-6789">
 ```
 
@@ -72,7 +72,7 @@ It is also a good idea to add a hidden control to identify the form in case you 
 
 Add the following code to your `functions.php` file. This code will create an annotation record for each of the uploaded files and attach the file content to it.
 
-```
+```php
 add_action( 'wordpresscrm_twig_form_submit_success', function( 
             \AlexaCRM\WordpressCRM\Form\Model $model,
             \AlexaCRM\CRMToolkit\Entity $record ) {​​​​

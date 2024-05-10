@@ -60,7 +60,7 @@ To set a cache duration of 1 day and 12 hours for a view:
 
 To configure cache settings for fetchXML, refer to the following example:
 
-```php
+```
 {% fetchxml collection="customers" cache="PT30M" %}
 <fetch mapping='logical' returntotalrecordcount='true'>  
    <entity name='account'>

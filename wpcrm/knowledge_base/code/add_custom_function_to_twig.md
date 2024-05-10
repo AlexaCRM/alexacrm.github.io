@@ -10,7 +10,7 @@ tags:
 
 To add a custom Twig function use following action:
 
-```
+```php
 function translate_twig( $twigEnv ) {
   $translateFunction = new \Twig\TwigFunction(
     'translate', function( $text ) {
@@ -27,13 +27,13 @@ add_action('wordpresscrm_after_twig_ready', 'translate_twig', 10, 1);
 
 Usage:
 
-```
+```php
 {{ translate('Hello') }}
 ```
 
 To add a custom variable use following action:
 
-```
+```php
 add_action( 'wordpresscrm_after_twig_ready', 
    function ( $twigEnvironment ) {
       $twigEnvironment->addGlobal( 'today', date( 'm/d/Y' ) );
@@ -42,6 +42,6 @@ add_action( 'wordpresscrm_after_twig_ready',
 
 Usage:
 
-```
+```php
 {{ today }}
 ```

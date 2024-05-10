@@ -171,7 +171,8 @@ The FetchXML query is contained between the `fetchxml` and `endfetchxml` tags.
 ```php
 {% fetchxml collection="contacts" cache="PT30M" %}
 ```
-```php
+
+```
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
   <entity name="contact">
     <attribute name="fullname" />
