@@ -48,19 +48,19 @@ Additionally, there are `Entity Cache Settings` where you can create cache setti
 
 You can also set cache settings for a form or view at the moment of page creation by including the cache parameter:
 
-```twig
+```php
 {% form id=42 cache='P1DT10H' %}
 ```
    
 To set a cache duration of 1 day and 12 hours for a view:
 
-```twig
+```php
 {% view entity="contact" name="Active Contacts" cache="P1DT12H" %}{% endview %}
 ```
 
 To configure cache settings for fetchXML, refer to the following example:
 
-```twig
+```php
 {% fetchxml collection="customers" cache="PT30M" %}
 <fetch mapping='logical' returntotalrecordcount='true'>  
    <entity name='account'>
@@ -81,33 +81,33 @@ Also you can clear cache through API request.
 
 Form examples:
 
-```html
+```php
 wp-json/integration-cds/v1/cache/forms
 wp-json/integration-cds/v1/cache/forms/{formId}
 wp-json/integration-cds/v1/cache/forms/{formGuid}
 ```
 
-```html
+```php
 wp-json/integration-cds/v1/cache/forms/2
 wp-json/integration-cds/v1/cache/forms/7a3eabfa-94ea-eb11-bacb-000d3acc54f0
 ```
 
 To clear cache for views:
 
-```html
+```php
 wp-json/integration-cds/v1/cache/views
 wp-json/integration-cds/v1/cache/views/{tableName}/{viewTitle}
 wp-json/integration-cds/v1/cache/views/{viewGuid}
 ```
 
-```html
+```php
 wp-json/integration-cds/v1/cache/views/account/All Accounts
 wp-json/integration-cds/v1/cache/views/6a1eabfa-94ea-eb11-bacb-000d3acc54f0
 ```
 
 To clear cache for FetchXML you have several options:
 
-```html
+```php
 wp-json/integration-cds/v1/cache/fetchxml
 wp-json/integration-cds/v1/cache/fetchxml/{tableName}
 wp-json/integration-cds/v1/cache/fetchxml/contact
@@ -115,13 +115,13 @@ wp-json/integration-cds/v1/cache/fetchxml/contact
 
 To clear cache for all tables:
 
-```html
+```php
 wp-json/integration-cds/v1/cache/entity
 ```
 
 To clear cache for a specific table:
 
-```html
+```php
 wp-json/integration-cds/v1/cache/entity/{tableName}
 wp-json/integration-cds/v1/cache/entity/contact
 ```

@@ -31,7 +31,7 @@ You can create and adjust forms in Dynamics CRM and then use them in WordPress i
 
 Shortcode syntax:
 
-```
+```php
 [msdyncrm_form entity="lead" name="Contact Us" mode="create" captcha="true" message="Thanks!" hide_form="true"]
 ```
 

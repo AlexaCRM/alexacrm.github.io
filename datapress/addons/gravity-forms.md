@@ -51,7 +51,7 @@ If you want to set default values dynamically for columns using the form's field
 
 Example for setting dynamic value:
 
-```html
+```php
 [gravityforms id="1" field_values="parameter_name=Dynamic Value"]
 ```
 
@@ -63,13 +63,13 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
 
 1. Fixed value:
 
-  ```html
+  ```php
      field_values="companyid=account:f5aaed4c-654c-4730-bd4f-38bc19a330bd"
   ```
 
 1. Using twig expressions to get dynamic value:
 
-  ```twig
+  ```php
      field_values="companyid=account:{{account.accountid}}"
   ```
 
@@ -83,7 +83,7 @@ If you select the dropdown, you must also select the table and view to lookup. T
 
 If you want to set a default value for Dataverse Lookup look at this example:
 
-```html
+```php
    table:98837486-742e-ed22-9db1-00224893bd2f
 ```
 

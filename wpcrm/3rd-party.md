@@ -83,7 +83,7 @@ Examples:
 
 The full example would look like this:
 
-```
+```php
 [msdyncrm* msdyncrm-77 id:emailaddress1 class:email field:emailaddress1 placeholder "test@example.com"]
 
 [msdyncrm* msdyncrm-78 field:donotemail wpcrm-boolean:checkbox]
@@ -125,7 +125,7 @@ Example: `lookuptype:transactioncurrency`
 
 The full example would look like this:
 
-```
+```php
 [msdyncrm_lookup msdyncrm_lookup-161 field:transactioncurrencyid view:Currency Lookup View lookuptype:transactioncurrency]
 [msdyncrm_lookup msdyncrm_lookup-846 field:transactioncurrencyid ":none" "0D9140A8-265D-E511-80E9-C4346BC516E8:Australian Dollar"]
 ```
@@ -216,7 +216,7 @@ View is simple -- pick the entity and corresponding view to populate the dropdow
 
 Choose the Twig option for more advanced scenarios. For example, you could parameterize the dropdown. For example:
 
-```twig
+```php
 {% fetchxml collection="records" %}
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true" >
   <entity name="account" >

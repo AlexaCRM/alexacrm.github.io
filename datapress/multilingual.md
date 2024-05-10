@@ -44,7 +44,7 @@ Then  click `Settings` > `General` in WordPress Admin Area and select `Francais`
 To translate form fields you need to set and enable this language in your crm settings. [How to set language](https://learn.microsoft.com/en-us/dynamics365/customerengagement/on-premises/admin/enable-languages?view=op-9-1)
 Then you call form:
 
-```twig
+```php
 {% form id= {formId} language=1036 %}
 ```
 
@@ -57,7 +57,7 @@ To make translation process easier you can use Easy Translator tool from XrmTool
 
 To translate a view you can use next example:
 
-```twig
+```php
 {% view entity="contact" name="Active Contacts" language=1036 %}{% endview %}
 ```
 

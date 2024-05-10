@@ -90,7 +90,7 @@ An identity user is comprised of:
 
 Login is facilitated by the shortcode `[msdyncrm_login]`.
 
-```
+```php
 [msdyncrm_login reset_url="" newpassword_url="" redirect_url=""]
 ```
 
@@ -111,7 +111,7 @@ This shortcode renders a form with login and password inputs, remember me checkb
 
 Registration shortcode allows users to enter their credentials.
 
-```
+```php
 [msdyncrm_registration redirect_url="" mailsent_redirect_url="" activation_url=""]
 ```
 
@@ -130,7 +130,7 @@ Registration shortcode allows users to enter their credentials.
 
 Invitation shortcode allows users to ask for an invite on your site.
 
-```
+```php
 [msdyncrm_invitation redirect_url=""]
 ```
 
@@ -143,7 +143,7 @@ Invitation shortcode allows users to ask for an invite on your site.
 
 Password recovery shortcode allows users to change password of their identity user.
 
-```
+```php
 [msdyncrm_change_password newpassword=""]
 ```
 

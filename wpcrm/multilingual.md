@@ -17,13 +17,13 @@ The plugin allows to specify a custom language to render forms and views in. To 
 
 Language is specified in the `form` tag via language code in the `language` parameter.
 
-```twig
+```php
 {% form entity="contact" name="Contact Form" language=3082 %}{% endform %}
 ```
 
 Translations come from entity attribute metadata, and form control labels are replaced by default. If you want to keep the original form labels (e.g. different forms per language are used) please specify additional parameter `keep_labels`:
 
-```twig
+```php
 {% form entity="contact" name="Contact Form" language=3082 keep_labels=true %}{% endform %}
 ```
 
@@ -31,7 +31,7 @@ Translations come from entity attribute metadata, and form control labels are re
 
 You can translate table headers by specifying the `language` parameter in the `view` tag.
 
-```twig
+```php
 {% view entity="contact" name="Active Contacts" language=3082 %}{% endview %}
 ```
 
@@ -45,13 +45,13 @@ You can translate table headers by specifying the `language` parameter in the `v
 
 Language is specified in the `form` shortcode via language code in the `language` parameter.
 
-```
+```php
 [msdyncrm_form entity="contact" name="Contact Form" language="3082"]
 ```
 
 Translations come from entity attribute metadata, and form control labels are replaced by default. If you want to keep the original form labels (e.g. different forms per language are used) please specify additional parameter `keep_labels`:
 
-```
+```php
 [msdyncrm_form entity="contact" name="Contact Form" language="3082" keep_labels="true"]
 ```
 
@@ -59,6 +59,6 @@ Translations come from entity attribute metadata, and form control labels are re
 
 You can translate table headers by specifying the `language` parameter in the `view` tag.
 
-```
+```php
 [msdyncrm_view entity="contact" name="Active Contacts" language="3082"]
 ```

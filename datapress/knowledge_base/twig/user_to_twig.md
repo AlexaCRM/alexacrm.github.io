@@ -21,7 +21,7 @@ add_action( 'integration-cds/twig/ready', function( $twigEnv ) {
 
 After that you should be able to use wpuser object
 
-```html
+```php
 <p>Hello, {{wpuser.first_name}}</p>
 <p>Your roles: {{wpuser.roles | join (', ') }}</p>
 ```

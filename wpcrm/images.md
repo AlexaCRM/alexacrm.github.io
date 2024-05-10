@@ -16,7 +16,7 @@ Annotation images are exposed via a crafted URL, which includes GUID of the anno
 
 Original image is downloaded, and you may request a downsized copy (a thumbnail) by specifying the optional `width` argument -- the image will be scaled proportionally.
 
-```
+```php
 /wp-admin/admin-ajax.php?action=msdyncrm_image&id=dfa55463-a9b1-4180-a8ff-e2967c6bc3a4&width=300
 ```
 
@@ -26,7 +26,7 @@ The plugin provides an opportunity to download attachments, whether they are ima
 
 To download a file, you need the annotation ID.
 
-```
+```php
 /wp-admin/admin-ajax.php?action=msdyncrm_attachment&id=dfa55463-a9b1-4180-a8ff-e2967c6bc3a4
 ```
 

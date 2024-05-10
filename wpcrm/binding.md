@@ -35,7 +35,7 @@ Set default for views
 
 If you bind the entity by ID, you can surface data from CRM via forms by specifying the `parameter_name` attribute of the form shortcode.
 
-```
+```php
 [msdyncrm_form entity="product" name="Web Product View" mode="readonly" parameter_name="id"]
 ```
 
@@ -43,7 +43,7 @@ If you bind the entity by ID, you can surface data from CRM via forms by specify
 
 You can use attribute values from the current entity record to set up `parameters` and `lookups` attributes in the view shortcode. See documentation on how these shortcode attributes are treated in the [Views documentation](/wpcrm/views/).
 
-```
+```php
 [msdyncrm_view entity="invoice" name="Invoices for Contact per Department" parameters="{currentrecord.department}" lookups="{contactid:currentrecord.id}"]
 ```
 
@@ -51,7 +51,7 @@ You can use attribute values from the current entity record to set up `parameter
 
 To surface a value for the currently visited entity record, use the `currentrecord` object. More details are available in the [Twig templates documentation](./twig.md).
 
-```
+```php
 {{ currentrecord.name }}
 ```
 
@@ -65,13 +65,13 @@ Below are some use cases for the entity binding API.
 
 In this example, we have a page with ID 42, which is bound to an entity (e.g. Contact). Below is a fraction of the template for this page (e.g. `page-42.php`).
 
-```twig
+```php
 {% gist wizardist/e4d2c764ee19d7fb3e5923ad2ceeee6d %}
 ```
 
 The plugin doesn't retrieve all columns, only those which are requested. To decide which columns are needed, it parses the post content by default. In order to make the previous example work, you need to add a WordPress filter to `wordpresscrm_data_binding_columns`.
 
-```twig
+```php
 {% gist wizardist/f811856e2afbb7a1d229704e88923af3 %}
 ```
 
@@ -81,6 +81,6 @@ If you need to build a URL for an entity-bound page programmatically, you are pr
 
 For example, we have a page with address `/invoices/view/`, that is bound to entity *Invoice* which query string parameter `id` which matches the entity record ID, and the page is set as "default for views".
 
-```twig
+```php
 {% gist wizardist/34aa9688294d92022b905ae6d2d06df3 %}
 ```

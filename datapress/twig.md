@@ -53,7 +53,7 @@ Use the `binding` object to access table binding on the current page. See [table
 Notice that `binding.record` is more expensive performance-wise -- it retrieves data from Dataverse. `binding.reference` only
 reads the local database and request parameters to calculate the entity reference.
 
-```twig
+```php
 {% if binding.is_bound %}
   {% set contact = binding.record %}
   {{ contact["fullname"] }} <{{ contact["emailaddress1"] }}>
@@ -62,7 +62,7 @@ reads the local database and request parameters to calculate the entity referenc
 
 If `ICDS_COMPATIBLE_BINDING` flag is set to *true* you can use the `currentrecord` variable that refers to the `binding.record`. This is intended mostly for backward compatibility with previous versions of the plugin and should not be used in general.
 
-```twig
+```php
 {% if binding.is_bound %}
   {{ currentrecord["fullname"] }} <{{ currentrecord["emailaddress1"] }}>
 {% endif %}
@@ -82,7 +82,7 @@ The following object members are available:
 Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
 reads the local database and request parameters to calculate the entity reference.
 
-```twig
+```php
 {% if user.is_bound %}
   {{ user.record["fullname"] }}
 {% endif %}
@@ -92,7 +92,7 @@ reads the local database and request parameters to calculate the entity referenc
 
 Use the `entities` object to access any record in your Dataverse instance by its table logical name and GUID. All record fields are available at once.
 
-```twig
+```php
 {{ entities.contact["00000000-0000-0000-0000-000000000000"]["fullname"] }}
 ```
 
@@ -104,7 +104,7 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 `metadata` object allows accessing metadata of your Dataverse instance. It follows the interface of `EntityMetadata` in XRM SDK. See [Microsoft reference docs](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.metadata.entitymetadata).
 
-```twig
+```php
 {% set options = metadata["contact"].Attributes["gendercode"].OptionSet.Options %}
 {% for option in options %}
   <li>{{option.Value}} - {{option.Label.UserLocalizedLabel.Label}}</li>
@@ -119,27 +119,27 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 Use `format_datetime()` to get value of any date column and transform its value. 
 
-```twig
+```php
 {% set record=entities.contact[GUID] %}
 {{ record.date_column|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
 ```
 
 Example: we need to get Birthday column value and to see it as 11/1/22, 12:00 AM
 
-```twig
+```php
 {% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
 {{ record.birthdate|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
 ```
 
 You can override the default timezone by explicitly specifying a timezone:
 
-```twig
+```php
 {% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
 {{ record.birthdate|date("F jS \\a\\t g:ia", "Europe/Paris") }}
 ```
 
 You can even define your own pattern using format_datetime() [See details](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#time-zone-pattern-usage):
-```twig
+```php
 {% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
 {{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
 ```
@@ -173,7 +173,7 @@ Dataverse Integration provides several Dataverse-specific and general purpose Tw
 
 ## Functions
 
-```twig
+```php
 - image_url(
     record,
     column,
@@ -208,14 +208,14 @@ There you must enter the name of the template and the content of the template. T
 
 To use templates in `Dataverse Twig Gutenberg` block, you need to use the `include` statement with the template name. For example:
 
-```twig
+```php
 {% include 'name_of_your_template' %}
 ```
 
 
 If you want to create a template for updating record you can look at this example:
 
-```twig
+```php
 {% set currentRecord=entities.account[params.id] %}
 {% form entity="account" mode="update" record=currentRecord|to_entity_reference %}
 <form>
@@ -250,7 +250,7 @@ You can also use templates to replace the form template or individual form field
 
 Also you can partially change behavior for some fields. For example, this code will change placeholders for first name and last name fields:
 
-```twig
+```php
 {% set firstnameDisabled = control.disabled %}
 {% set lastnameDisabled = control.disabled %}
 <div class="row">
@@ -279,7 +279,7 @@ To use this template at the moment of form creation set `Render form based on tw
 
 For example, you have several custom fields: `cr1d1_dateonly` - Date Only format, `cr1d1_datetime` - Date Time format. Specify them in a twig template.
 
-```twig
+```php
 {% form entity="contact" mode="create" record=record|to_entity_reference %}
 <form>
     <div class="form-group">
