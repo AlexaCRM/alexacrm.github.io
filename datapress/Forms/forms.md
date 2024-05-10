@@ -151,7 +151,7 @@ Lookups utilize a custom REST API that could potentially execute outside of the 
 
 2. We support custom filter restricting access to the lookups. For example, to restrict lookups to the signed-in users only, add the following code to the `functions.php` file of the current theme. 
 
-```twig
+```php
 add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $entityName, $view ){
     if ( !is_user_logged_in() ) {
         return false;

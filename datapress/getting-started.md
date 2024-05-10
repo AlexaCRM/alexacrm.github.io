@@ -58,7 +58,7 @@ By default, Dataverse Integration use a Wordpress `AUTH_KEY` constant for encryp
 - `ICDS_FORM_AUTH_KEY` - Used for safe forms processing.
 
 These constants can be defined in your `wp-config.php` file, for example
-```twig
+```php
 define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o;6U{#;;n+R');
 define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
 ```
@@ -96,7 +96,7 @@ The plugin provides a Gutenberg block, "Dataverse Plain". It accepts Twig code a
 
 Custom forms allow creating new Dataverse / Dynamics 365 records, as well as updating existing records. reCAPTCHA is supported to protect your forms from spam.
 
-```twig
+```html
 {% form entity="lead" mode="create" recaptcha=true %}
 <form>
     <div class="form-group">

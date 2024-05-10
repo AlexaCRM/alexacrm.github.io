@@ -76,7 +76,7 @@ To create filter you should go to Templates -> FetchXML Templates in Dataverse p
 
 We will assume a PowerApps view for an Invoice entity with two filter conditions: for Status Reason and for Customer. The `<filter/>` portion of the FetchXML is as follow:
 
-```twig
+```xml
 <filter type="and" >
   <condition attribute="customerid" operator="eq" value="a83ec8e5-9e5e-47cd-b5a9-c2ee4eae42c5" />
   <condition attribute="name" operator="like" value="%Value%" />
@@ -84,7 +84,7 @@ We will assume a PowerApps view for an Invoice entity with two filter conditions
 ```
 
 If you want to filter using only one condition you can type text like this one:
-```twig
+```xml
 <condition attribute="fullname" operator="like" value="%TestData%" />
 ```
 
