@@ -154,8 +154,9 @@ themes: [
       copyright: `Copyright © ${new Date().getFullYear()} AlexaCRM`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.vsLight,
+      darkTheme: prismThemes.vsDark,
+      additionalLanguages: ['php', 'csharp', 'twig']
     },
   } satisfies Preset.ThemeConfig,
 };

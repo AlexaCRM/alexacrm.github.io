@@ -10,8 +10,8 @@ tags:
 
 To add a custom function use following filter:
 
-```
-add_filter( 'integration-cds/twig/functions', function( $functions ) {
+```php
+add_filter('integration-cds/twig/functions', function( $functions ) {
     $functions['translate'] = new \Twig\TwigFunction(
         'translate',
         function ( $text ) {
@@ -25,13 +25,13 @@ add_filter( 'integration-cds/twig/functions', function( $functions ) {
 
 Usage:
 
-```
+```twig
 {{ translate('Hello') }}
 ```
 
 To add a custom variable use following action:
 
-```
+```php
 add_action( 'integration-cds/twig/after-globals', function ( $twigEnvironment ) {
     $twigEnvironment->addGlobal( 'today', date( 'm/d/Y' ) );
 } );
@@ -39,6 +39,6 @@ add_action( 'integration-cds/twig/after-globals', function ( $twigEnvironment ) 
 
 Usage:
 
-```
+```twig
 {{ today }}
 ```

@@ -10,7 +10,7 @@ tags:
 
 To add WordPress user as an object to Twig, use the following code:
 
-```
+```php
 add_action( 'integration-cds/twig/ready', function( $twigEnv ) { 
    $twigEnv->addGlobal( 
       'wpuser', 
@@ -21,7 +21,7 @@ add_action( 'integration-cds/twig/ready', function( $twigEnv ) {
 
 After that you should be able to use wpuser object
 
-```
+```html
 <p>Hello, {{wpuser.first_name}}</p>
 <p>Your roles: {{wpuser.roles | join (', ') }}</p>
 ```

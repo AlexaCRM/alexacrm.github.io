@@ -12,7 +12,7 @@ When custom forms include a choice column (previously known as an optionset or a
 
 Dataverse plugin includes global metadata object which is an array of [entity metadata objects](https://learn.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.metadata.entitymetadata?view=dataverse-sdk-latest) indexed by the table name. This objects include attribute metadata including localized labels for all choice column values. For example, the following twig fragment creates a SELECT tag for Gender column using labels in the default language.
 
-```
+```html
 <select>
 {% for optionMeta in metadata['contact'].Attributes['gendercode'].OptionSet.Options %}
    <option value="{{ optionMeta.Value }}">

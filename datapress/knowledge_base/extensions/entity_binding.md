@@ -21,7 +21,7 @@ Sometimes it’s desirable to provide a friendlier URLs, for example https://you
 First we need to tell WordPress that we want to treat last part of the URL as an account number and not as a page-specific slug. We can do it using the following code:
 After successfully verifying the connection you may not be able to save settings you click Save settings link but nothing happens.
 
-```
+```php
 add_action('init', 'custom_rewrite_tag', 10);
 function custom_rewrite_tag() {
   add_rewrite_tag('%accNo%', '([^\/]+)');
@@ -39,7 +39,7 @@ Once this code is in place we can access account number using get_query_var('acc
 **Custom filters** <br></br>
 Next we need to define two filters. First, given a page url, will return an account record. Second filter will do the opposite: given an account record it will return a page url for that record.
 
-```
+```php
 use AlexaCRM\Nextgen\ConnectionService;
 use AlexaCRM\Xrm\{
   EntityReference,
@@ -75,4 +75,5 @@ function account_url($url, $post, $ref) {
 add_filter('integration-cds/binding/custom/target-' . $accPage , 'account_callback', 10, 3);
 add_filter('integration-cds/binding/custom/url-' . $accPage, 'account_url', 10, 3);
 ```
-Once this code is placed in functions.php or custom plugin, account pages can be referenced using slug syntax, e.g. https://yoursite.com/account/abc123
+
+Once this code is placed in functions.php or custom plugin, account pages can be referenced using slug syntax, e.g. [https://yoursite.com/account/abc123](https://yoursite.com/account/abc123).
