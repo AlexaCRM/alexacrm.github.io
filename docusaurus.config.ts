@@ -16,7 +16,8 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'AlexaCRM', // Usually your GitHub org/user name.
-  projectName: 'Datapress', // Usually your repo name.
+  projectName: 'alexacrm.github.io', // Usually your repo name.
+  trailingSlash: true,
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
