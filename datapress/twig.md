@@ -277,8 +277,8 @@ To use this template at the moment of form creation set `Render form based on tw
 
 ## Date Time and Date Only fields in twig templates
 
-For example, you have several custom fields: `cr1d1_dateonly` - Date Only format, `cr1d1_datetime` - Date Time format. Specify them in a twig template. 
- 
+For example, you have several custom fields: `cr1d1_dateonly` - Date Only format, `cr1d1_datetime` - Date Time format. Specify them in a twig template.
+
 ```twig
 {% form entity="contact" mode="create" record=record|to_entity_reference %}
 <form>

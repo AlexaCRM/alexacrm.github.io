@@ -90,7 +90,7 @@ The query is virtually a [Twig template](../twig), and all the same Twig constru
 
 Sample FetchXML query that grants access only to users which are bound to contacts which in turn belong to the requested Account.
 
-```twig
+```xml
 <fetch version="1.0" output-format="xml-platform" mapping="logical" >
   <entity name="contact" >
     <attribute name="emailaddress1" />

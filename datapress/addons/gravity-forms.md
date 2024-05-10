@@ -50,11 +50,10 @@ If you want to set default values dynamically for columns using the form's field
 5. Go to `Pages` -> `Add New` and choose `Custom HTML` block
 
 Example for setting dynamic value:
-   
-```twig
-	gravityforms id="1" field_values="parameter_name=Dynamic Value"
-```
 
+```html
+[gravityforms id="1" field_values="parameter_name=Dynamic Value"]
+```
 
 **Note:** The parameter name in the `field_values` attribute must be the same as specified in the `2nd` point.
 
@@ -63,16 +62,16 @@ Example for setting dynamic value:
 Example for `companyid` parameter name (actual column name is `parentcustomerid` in the `contact` Dataverse table): 
 
 1. Fixed value:
-   
-```twig
-   field_values="companyid=account:f5aaed4c-654c-4730-bd4f-38bc19a330bd"
-```
 
-2. Using twig expressions to get dynamic value:
+  ```html
+     field_values="companyid=account:f5aaed4c-654c-4730-bd4f-38bc19a330bd"
+  ```
 
-```twig
-   field_values="companyid=account:{{account.accountid}}"
-```
+1. Using twig expressions to get dynamic value:
+
+  ```twig
+     field_values="companyid=account:{{account.accountid}}"
+  ```
 
 ## Lookup Fields
 
@@ -83,7 +82,8 @@ To select a view, you need to click the `Add Fields` tab and choose `Dataverse L
 If you select the dropdown, you must also select the table and view to lookup. The dialog view does not require any additional settings.
 
 If you want to set a default value for Dataverse Lookup look at this example:
-```twig
+
+```html
    table:98837486-742e-ed22-9db1-00224893bd2f
 ```
 

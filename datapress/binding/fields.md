@@ -38,6 +38,7 @@ To use this plugin, follow the steps below:
 6. Click `Create Binding`, and choose the page that was created earlier. Then select `Add Field` and choose the custom field created for the page.
 
 Additionally, the following options will replace a field:
+
 - Twig Expression (type Twig expression to display it as the field value)
 - Column (choose the column logical name from the drop-down)
 - Twig Template (choose the Twig template, which is in Templates -> Twig templates)
@@ -45,6 +46,6 @@ Additionally, the following options will replace a field:
 
 Add the output of the meta field to your template:
 
-```twig
+```php
 <?= get_post_meta( get_the_ID(), '{fieldName}', true ); ?>
 ```

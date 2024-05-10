@@ -69,7 +69,7 @@ FetchXML provides SQL JOIN operations via `<link-entity />` tag. Common Data Ser
 
 Use fetchXML template to add filters. 
 
-```twig
+```xml
 <filter>
   <condition attribute="address1_city" operator="eq" value="Sydney" />
   <condition attribute="name" operator="eq" value="OrganizationName" />
@@ -80,7 +80,7 @@ This template you can use in forms. Just choose your fetchXML template title in 
 
 To add parameters for the template modify you template: 
 
-```twig
+```xml
 <filter>
   <condition attribute="address1_city" operator="eq" value="*city*" />
   <condition attribute="name" operator="eq" value="*name*" />
