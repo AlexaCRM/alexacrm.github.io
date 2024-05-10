@@ -11,7 +11,7 @@ tags:
 To add a custom function use following filter:
 
 ```php
-add_filter('integration-cds/twig/functions', function( $functions ) {
+add_filter( 'integration-cds/twig/functions', function( $functions ) {
     $functions['translate'] = new \Twig\TwigFunction(
         'translate',
         function ( $text ) {
