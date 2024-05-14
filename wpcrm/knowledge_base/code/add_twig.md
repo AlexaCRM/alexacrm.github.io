@@ -11,7 +11,7 @@ tags:
 
 Inside the page content inserting twig content is as easy as
 
-```
+```php
 [msdyncrm_twig]
    You template
 [/msdyncrm_twig]
@@ -21,7 +21,7 @@ But if we need to inject dynamic data outside of the page content we are out of 
 
 Instead, direct code can be used in header.php/footer.php to render dynamic content:
 
-```
+```php
 <?php
 $sh = new \AlexaCRM\WordpressCRM\Shortcode\Twig();
 try {

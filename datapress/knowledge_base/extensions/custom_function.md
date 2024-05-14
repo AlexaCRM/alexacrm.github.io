@@ -25,7 +25,7 @@ add_filter( 'integration-cds/twig/functions', function( $functions ) {
 
 Usage:
 
-```twig
+```php
 {{ translate('Hello') }}
 ```
 
@@ -39,6 +39,6 @@ add_action( 'integration-cds/twig/after-globals', function ( $twigEnvironment ) 
 
 Usage:
 
-```twig
+```php
 {{ today }}
 ```

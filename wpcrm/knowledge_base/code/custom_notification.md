@@ -19,7 +19,7 @@ Let’s say you defined in Dynamics 365 a custom action `foo_WPUserRegistered` w
 
 Code in WordPress that calls that custom action when a user is registered would look like the following:
 
-```
+```php
 add_action( 'user_register', function( $userId ) {
     $client = ACRM()->getSdk();
     if ( !$client || !\AlexaCRM\WordpressCRM\Solution::isInstalled() ) {

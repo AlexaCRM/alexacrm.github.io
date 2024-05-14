@@ -103,7 +103,7 @@ Form registration provides several options to override global form settings, suc
 
 Dataverse Integration provides a custom Twig tag, `{% form %}`, to add Dataverse forms to WordPress pages. When you add a Dataverse form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
 
-```twig
+```php
 {% form id=42 %}
 ```
 
@@ -113,25 +113,25 @@ This code is sufficient to display a Dataverse form on a WordPress page and star
 
 You can provide default values to pre-populate specific form columns by using the ‘defaults’ attribute in the `{% form %}` tag.
 
-```twig
+```php
 {% form id=42 defaults={ "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" } %}
 ```
 
 If you create a page using the Dataverse Form block, you can set values in the `defaults` field.
 
-```twig
+```php
 { "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" }
 ```
 
 To set a default value for a choice field, you need to analyze the possible values. For example, you can find the label and value mapping in the table settings. To set the ‘Male’ label for the gender column, you need to choose the value of 1.
 
-```twig
+```php
 {% form id=4 defaults={"gendercode": 1} %}
 ```
 
 Similar way to set default value for multiple choice field.
 
-```twig
+```php
 {% form id=2 defaults={"multipleChoiceColumnName": '3,4'} %}
 ```
 

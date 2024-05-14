@@ -25,7 +25,7 @@ wp_ob_end_flush_all();
 
 3. The code for the function should now read:
 
-```
+```php
  function wordpresscrm_javascript_redirect( $location = null ) {
      if ( !headers_sent() ) {
          wp_redirect( $location );

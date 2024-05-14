@@ -60,7 +60,7 @@ Twig syntax is explained in [Twig documentation](https://twig.symfony.com/doc/2.
 
 All Twig templates must be enclosed into the special Twig shortcode -- `[msdyncrm_twig]`.
 
-```
+```php
 [msdyncrm_twig]
 Twig templates go here...
 [/msdyncrm_twig]
@@ -70,7 +70,7 @@ Twig templates go here...
 
 Configure entity binding for the page as described in [Entity binding](./binding.md). If the page is bound to an entity, and the respective entity record is found in the CRM, that record will be available as a global `currentrecord` object in Twig templates.
 
-```
+```php
 {{ currentrecord.name }}
 ```
 
@@ -92,7 +92,7 @@ export const Highlight = ({children, color}) => (
 
 Configure authentication for the site as described in [Authentication](./authentication.md). If the current user is an identity user, then the global `user` object will be available in Twig templates.
 
-```
+```php
 {{ user.emailaddress1 }}
 ```
 
@@ -153,7 +153,7 @@ You can substitute lookup conditions in the view. Please use a map `{ attribute 
 
 The following snippet will insert a Contact view "Active Contacts" with pagination enabled with 10 records per page. The result of the view query will be fetched for 30 minutes. It will substitute placeholder `{0}` with raw value `contoso.com` and substitute `parentcustomerid` lookup with `account` query argument (i.e. `?account=GUID` in the URL).
 
-```
+```php
 {% view entity="contact" name="Active Contacts" parameters=[ "contoso.com" ] lookups={ "parentcustomerid": params.account } count="10" cache="PT30M" %}{% endview %}
 ```
 
@@ -168,10 +168,11 @@ The tag supports the following attributes:
 
 The FetchXML query is contained between the `fetchxml` and `endfetchxml` tags.
 
-```twig
+```php
 {% fetchxml collection="contacts" cache="PT30M" %}
 ```
-```xml
+
+```
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
   <entity name="contact">
     <attribute name="fullname" />
@@ -181,7 +182,7 @@ The FetchXML query is contained between the `fetchxml` and `endfetchxml` tags.
   </entity>
 </fetch>
 ```
-```twig
+```php
 {% endfetchxml %}
 ```
 
@@ -195,7 +196,7 @@ Variable `contacts` would contain an object with the following fields:
   - `paging_cookie` - paging cookie value
 - `error` - contains an error message if there's any
 
-```twig
+```php
 <ul>
 {% for contact in contacts.results.entities %}
   <li><a href="{{ entityUrl( "contact", contact.id ) }}">{{contact.fullname ?? "[noname]" }}</a> &lt;{{contact.emailaddress1}}&gt;</li>
@@ -270,7 +271,7 @@ To capture data this way, you need to define a custom template inside the `{% fo
 
 If you have more than one Twig form on the page, you need to add the hidden `_key` input and specify `form.key` as its value. This will help to distinguish submissions from different forms. If you omit the key, every form present on the page will try to process the submission which is likely undesired.
 
-```twig
+```php
 {% form entity="lead" mode="create" required=["lastname", "emailaddress1", "description"] %}
 <form method="POST">
 <input name="firstname" required placeholder="First Name">
@@ -289,7 +290,7 @@ If you have more than one Twig form on the page, you need to add the hidden `_ke
 
 You can access any entity record by its ID.
 
-```
+```php
 {% set fooContact = entities.contact["36049e71-8132-e711-8102-5065f38b2601"] %}
 {% set barAccount = entities.account["ce039e71-8132-e711-8102-5065f38b2601"] %}
 ```

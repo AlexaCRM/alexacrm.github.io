@@ -1,7 +1,7 @@
 ---
 title: WordPress Plugin
 sidebar_position: 1
-slug: /plugin-description
+slug: /
 omit_title: true
 tags:
     - Dynamics 365 Integration

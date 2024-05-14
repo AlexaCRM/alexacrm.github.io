@@ -19,7 +19,7 @@ Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/power-app
 
 *Dataverse Integration* provides a new Twig tag, `{% fetchxml %}`, which is accompanied by the required closing `{% endfetchxml %}` tag. Use the required `collection` column to specify the variable you will use to access retrieved records. Write your FetchXML query inside these tags. Use the optional `cache` attribute to enable query cache -- please adhere to the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations).
 
-```twig
+```
 {% fetchxml collection="customers" cache="PT30M" %}
 <fetch mapping='logical' returntotalrecordcount='true'>  
    <entity name='account'>
@@ -46,7 +46,7 @@ The returned collection contains several members:
 
 Use `results.entities` to access the fetched rows. You can use a `for` loop to display a list of records (rows).
 
-```twig
+```php
 {% if customers.results.entities|length > 0 %}
     <ul>
     {% for customer in customers.results.entities %}
@@ -69,7 +69,7 @@ FetchXML provides SQL JOIN operations via `<link-entity />` tag. Common Data Ser
 
 Use fetchXML template to add filters. 
 
-```xml
+```
 <filter>
   <condition attribute="address1_city" operator="eq" value="Sydney" />
   <condition attribute="name" operator="eq" value="OrganizationName" />
@@ -80,7 +80,7 @@ This template you can use in forms. Just choose your fetchXML template title in 
 
 To add parameters for the template modify you template: 
 
-```xml
+```
 <filter>
   <condition attribute="address1_city" operator="eq" value="*city*" />
   <condition attribute="name" operator="eq" value="*name*" />

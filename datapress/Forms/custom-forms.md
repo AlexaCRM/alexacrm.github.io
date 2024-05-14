@@ -31,7 +31,7 @@ Dataverse Integration provides a pair of Twig tags, `{% form %}{% endform %}`, t
 
 *Note:* when the premium add-on is installed, the `{% form %}` acts as a PowerApps form tag if the `id` parameter is specified. See [PowerApps forms documentation](forms).
 
-```twig
+```php
 {% form entity="contact" mode="update" record=record|to_entity_reference %}
 <form>
     <div class="form-group">
@@ -77,7 +77,7 @@ Before you start using reCAPTCHA in your forms, please configure reCAPTCHA in th
 
 #### Example
 
-```twig
+```php
 {% set useRecaptcha = true %}
 {% form entity="lead" mode="create" recaptcha=useRecaptcha %}
 <form>

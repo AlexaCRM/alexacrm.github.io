@@ -17,7 +17,7 @@ Allowing user to edit their own Dynamics 365/Dataverse record is slightly differ
 
 This can be used, for example, to build a page that uses Gravity Form for user profile editing.
 
-```
+```php
 add_filter( 'wordpresscrm_data_binding_entity', 
   function( $record, $post ) {​     
     if ( $post->ID !== 16814 ) {​ // page id of the profile page
@@ -34,7 +34,7 @@ The challenge is that the user record updated via the form does not refresh the 
 
 **Gravity Form**
 
-```
+```php
 add_action( 'gform_pre_handle_confirmation', 
   function( $lead, $form ) {​​​​​​​
     if ( (int)$form['id'] !== 42 ) { // Gravity Form id
@@ -49,7 +49,7 @@ add_action( 'gform_pre_handle_confirmation',
 
 If `{​​​​​​​​​​% form %}`​​​​​​​​​​ is used then
 
-```
+```php
 add_action( 'wordpresscrm_twig_form_submit_success', 
   function() {
 ​​​​​​​​    if ( get_the_ID() !== 42 ) {​​​​​​​​​​ // WordPress post ID.         return;     

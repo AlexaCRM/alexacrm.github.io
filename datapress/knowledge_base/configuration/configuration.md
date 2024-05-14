@@ -31,7 +31,7 @@ You need to allow additional HTTP verbs on your server including the verb PUT. S
 4. Select web.config
 5. Insert the following lines to allow additional HTTP verbs. NOTE: your path to php-cgi module may vary depending on 32 or 64 bit environment and PHP version.
 
-```xml
+```
 <configuration>
   <system.webServer>
     <handlers>

@@ -45,12 +45,12 @@ To work with lookup columns you can choose the `Dataverse Lookup` column.
 To select a view, you need to open the `Dataverse Lookup` column settings and choose necessary table and view.
 
 If you want to set a default value for Dataverse Lookup just type its id:
-```bash
+```php
    98837486-742e-ed22-9db1-00224893bd2f
 ```
 
 Also you can use fetchXML filter:
-```bash
+```
    <filter>
 		<condition attribute="address1_city" operator="eq" value="Sydney" />
    </filter>

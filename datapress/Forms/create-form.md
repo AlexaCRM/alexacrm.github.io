@@ -13,7 +13,7 @@ The plugin provides a Gutenberg block, "Dataverse Plain". It accepts Twig code a
 
 Custom forms allow creating new Dataverse / Dynamics 365 rows, as well as updating existing rows. reCAPTCHA is supported to protect your forms from spam.
 
-```twig
+```php
 {% form entity="lead" mode="create" recaptcha=true %}
 <form>
     <div class="form-group">

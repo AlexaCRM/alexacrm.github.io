@@ -13,7 +13,7 @@ Sometimes it’s required to access information about the currently logged-in us
 
 Once the contact is retrieved, PHP CRM toolkit can be used to access additional information. Connection required by the toolkit is provided by the plugin via global `ASDK()` function.
 
-```
+```php
 use AlexaCRM\CRMToolkit\Entity;
 use AlexaCRM\WordpressCRM\Identity;  
 

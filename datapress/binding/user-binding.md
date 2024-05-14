@@ -80,13 +80,13 @@ When a WordPress user is bound to a Dataverse record, you may want to synchroniz
 
 To create a lookup bind, send a POST request to
 
-```
+```php
 https://{site-url}/wp-json/wp/v2/users/{wordpress-user-id}
 ```
 
 Request body should contain json body with the meta property and the fields `icds_binding` and `icds_binding_ref`.
 
-```
+```php
 {
     "meta": {
         "icds_binding": 3,

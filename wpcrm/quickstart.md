@@ -75,7 +75,7 @@ Create a new page in your WordPress administration panel by navigating to **Page
 
 Switch the content editor mode to plain text by clicking on the *Text* tab. Finally insert the following code into the editor:
 
-```twig
+```php
 [msdyncrm_twig]
 {% form entity="contact" name="WordPress Example Form" mode="create" %}{% endform %}
 [/msdyncrm_twig]
@@ -119,7 +119,7 @@ Create a new page in your WordPress administration panel by navigating to **Page
 
 Switch the content editor mode to plain text by clicking on the *Text* tab, and insert the following code into the editor:
 
-```twig
+```php
 [msdyncrm_twig]
 {% view entity="contact" name="Filtered Contacts" count="10" cache="PT60M" %}{% endview %}
 [/msdyncrm_twig]
@@ -147,7 +147,7 @@ First, we will create an automatically binding between the two previously create
 
 Open the page where the contact form is located and setup a binding to the *Contact* entity, as shown in the screenshot below. Select the *Contact* entity from the drop-down list and select checkbox **Set default for views**. After that change the *form* tag in *Content* text field as follows:
 
-```twig
+```php
 [msdyncrm_twig]
 {% form entity="contact" name="WordPress Example Form" mode="edit" record=currentrecord %}{% endform %}
 [/msdyncrm_twig]
@@ -169,7 +169,7 @@ You can also specify your own custom template for view to customize the displayi
 
 For example, let's change default table view to more flexible one using this template:
 
-```twig
+```php
 [msdyncrm_twig]
 {% view entity="contact" name="Filtered Contacts" count="10" cache="PT60M" %}
 <div class="contacts-list">

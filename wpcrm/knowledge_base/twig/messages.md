@@ -18,7 +18,7 @@ status – boolean flag indicating if the form submission succeeded (true) or fa
 form.parameters.messages – provides access to the messages map defined as part of the form tag
 The following example illustrates how these properties can be used at run-time to render different messages depending on form submission status.
 
-```
+```php
 {% form entity="lead" mode="create" required=["firstname", "companyname", "mobilephone"]
 messages={ "success": "Form submitted.", "error": "Submission failed." } %}
 {% if form.submission and form.status %}

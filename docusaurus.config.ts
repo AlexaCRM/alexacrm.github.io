@@ -60,6 +60,17 @@ const config: Config = {
         sidebarPath: require.resolve('./sidebars.ts'),
       }, 
     ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            to: '/forms/create-form', // string
+            from: ['/integration-cds'], // string | string[]
+          },
+        ],
+      }
+    ]
 ],
 themes: [
   [

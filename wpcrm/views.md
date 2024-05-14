@@ -16,7 +16,7 @@ You can insert views from Dynamics CRM into your posts and pages using shortcode
 
 Shortcode syntax:
 
-```
+```php
 [msdyncrm_view entity="invoice" name="Show Invoices" parameters="{querystring.id}" lookups="{contact:}" allfields="true"]
 ```
 
@@ -84,7 +84,7 @@ See also: [FetchXML documentation](https://msdn.microsoft.com/en-us/library/gg32
 
 In this example, we're retrieving ten *Contact* records, fetching only fields `contactid`, `fullname`, `emailaddress1`, and `mobilephone`, using `fullname` for ascending order.
 
-```
+```php
 {% gist wizardist/366675d7caff2b154bcfea12c59400ed %}
 ```
 
@@ -92,7 +92,7 @@ In this example, we're retrieving ten *Contact* records, fetching only fields `c
 
 Add the results node into the `[msdyncrm_view]` shortcode. `<results />` may contain HTML tags. Please note that its contents must be valid XML.
 
-```xml
+```
 <results>
     <h2>Contacts list</h2>
     <p>List of active contacts</p>
@@ -103,13 +103,13 @@ To show retrieved records, tags `<foreachrow />` and `<foreachcell />` are intro
 
 `<foreachrow />` loops through the collection of retrieved records. If you retrieve ten records, the template contained in this tag will be rendered ten times -- once for each record. To access record fields, use the `$row.fieldname` syntax inside `<foreachrow />`. For instance, `$row.emailaddress1` will print the value of `emailaddress1` field of the current record.
 
-```
+```php
 {% gist wizardist/f40d44771484ae954f739d7f7f56b081 %}
 ```
 
 To print out all available record fields straight away, use `<foreachcell />` inside the `<foreachrow />` tag. Formatted field value can be accessed using the `$cell` construct.
 
-```
+```php
 {% gist wizardist/478102cc67e5aa498554e96693c49603 %}
 ```
 
@@ -117,7 +117,7 @@ To print out all available record fields straight away, use `<foreachcell />` in
 
 If no records were retrieved from the CRM, you can display a custom message using `<noresults />`.
 
-```xml
+```
 <noresults>
     <p>Sorry, no contact records found.</p>
 </noresults>
@@ -127,7 +127,7 @@ If no records were retrieved from the CRM, you can display a custom message usin
 
 Below is the resulting code for the inline view template including the shortcode opening and closing tags.
 
-```
+```php
 {% gist wizardist/88ef5a72ffa2f764474aa94fa47cd0bb %}
 ```
 
@@ -135,6 +135,6 @@ Below is the resulting code for the inline view template including the shortcode
 
 `<results />` and `<noresults />` templates may be used with CRM views.
 
-```
+```php
 {% gist wizardist/eddf7afef7bee8c96e44fb34ef270c93 %}
 ```
