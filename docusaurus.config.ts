@@ -101,6 +101,7 @@ themes: [
       items: [
         {
           type: 'docSidebar',
+          to: '/getting-started',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Datapress',
@@ -150,7 +151,7 @@ themes: [
             },
             {
               label: 'Documentation v.2',
-              to: '/datapress',
+              to: '/getting-started',
             },
             {
               label: 'Knowledge base for Dynamics 365 Integration',

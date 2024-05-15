@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-slug: /
+slug: /getting-started
 sidebar_position: 1
 tags:
     - How to start
