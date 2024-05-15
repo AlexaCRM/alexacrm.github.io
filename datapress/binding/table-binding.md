@@ -34,7 +34,7 @@ Data in Dataverse is organized in various tables. All contacts, leads, invoices,
 
 In most integration scenarios, one WordPress page is used to display data records of one table type. For example, "Invoice View" page displays an invoice and its details -- the system decides which invoice to show via GUID in the URL query string.
 
-Such binding may be achieved with a [FetchXML query](../fetchxml). However, it requires a certain amount of scaffolding on each bound page. Table binding lets you avoid this, and also enables tighter integration with other plugin features and services.
+Such binding may be achieved with a [FetchXML query](/datapress/fetchxml.md). However, it requires a certain amount of scaffolding on each bound page. Table binding lets you avoid this, and also enables tighter integration with other plugin features and services.
 
 When table binding is enabled for a WordPress post, a new object called "current record" is established. It contains an Table object with the column values of the bound table row (record). In Twig the current record is exposed via the global object `record`. The type of table binding determines how to pick the right record for a request.
 
@@ -64,7 +64,7 @@ WordPress has several built-in post types, including posts and pages. 3rd-party 
 
 ### Choose default posts for bound Dataverse tables
 
-Several features, including [views](../views) and `entity_url()` Twig filter, may link table references to the bound WordPress. In WordPress, table binding is a many-to-many association. In global settings you can choose the default post of each bound table. You need to bind a post to an table before it is shown in the dropdown.
+Several features, including [views](/datapress/views.md) and `entity_url()` Twig filter, may link table references to the bound WordPress. In WordPress, table binding is a many-to-many association. In global settings you can choose the default post of each bound table. You need to bind a post to an table before it is shown in the dropdown.
 
 ## Configure post binding
 
@@ -86,7 +86,7 @@ If you choose binding via custom code, you must implement two filter hooks.
 
 Enable conditional access by selecting the checkbox. Add a FetchXML query in the text area.
 
-The query is virtually a [Twig template](../twig), and all the same Twig constructs, objects, filters and functions are available. Members of the `binding` object will reference the current record, and `user` object members will reference to the current user if [User Binding](user-binding) is implemented.
+The query is virtually a [Twig template](/datapress/twig.md), and all the same Twig constructs, objects, filters and functions are available. Members of the `binding` object will reference the current record, and `user` object members will reference to the current user if [User Binding](/datapress/binding/user-binding.md) is implemented.
 
 Sample FetchXML query that grants access only to users which are bound to contacts which in turn belong to the requested Account.
 
@@ -130,6 +130,6 @@ Access to the post is not allowed if:
 
 You can manage page binding in WordPress Admin Area by navigating to Bindings -> Page Binding. Here, you can choose any page for any table. However, by default, only the contact table is visible. To add more tables, you need to create a page and click ‘Configure Binding’ to select the table to bind. After doing this, the table dropdown will appear in the Page Binding section.
 
-Information retrieved via table binding is used to update a certain record(row) with a form. See [Forms documentation](../Forms/forms).
+Information retrieved via table binding is used to update a certain record(row) with a form. See [Forms documentation](/datapress/Forms/forms.md).
 
-In Twig, the current row on a page is exposed via the global object `binding.record`. It contains an Table object of the current row, and you can access any column, e.g. `{{ binding.record["fullname"] }}`. For more information see [Twig documentation](../twig)
+In Twig, the current row on a page is exposed via the global object `binding.record`. It contains an Table object of the current row, and you can access any column, e.g. `{{ binding.record["fullname"] }}`. For more information see [Twig documentation](/datapress/twig.md)

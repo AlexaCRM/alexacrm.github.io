@@ -65,7 +65,7 @@ const config: Config = {
       {
         redirects: [
           {
-            to: '/forms/create-form', // string
+            to: '/getting-started', // string
             from: ['/integration-cds'], // string | string[]
           },
         ],
@@ -85,7 +85,7 @@ themes: [
 ],
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/dataverse.png',
     docs: {
       sidebar: {
         hideable: true,
@@ -101,7 +101,6 @@ themes: [
       items: [
         {
           type: 'docSidebar',
-          to: '/getting-started',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Datapress',

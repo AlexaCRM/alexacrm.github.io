@@ -29,7 +29,7 @@ export const Highlight = ({children, color}) => (
 
 Dataverse Integration provides capability to associate WordPress users with Dataverse contact records to provide more opportunities to build self-service customer portals.
 
-When a bound user successfully signs in, your website receives data from the bound contact record. You can use current user data to parameterize [FetchXML queries](../fetchxml) and [views](../views#prepare-the-view-for-use), [specify default values](forms/forms#default-values) in forms or even [implement custom table binding](table-binding#implement-custom-binding) using current user data.
+When a bound user successfully signs in, your website receives data from the bound contact record. You can use current user data to parameterize [FetchXML queries](/datapress/fetchxml.md) and [views](/datapress/views.md#prepare-the-view-for-use), [specify default values](/datapress/Forms/forms.md#default-values) in forms or even [implement custom table binding](/datapress/binding/table-binding.md#implement-custom-binding) using current user data.
 
 You can add additional authorization step to disable sign-in for selected users in Dataverse / Dynamics 365.
 
