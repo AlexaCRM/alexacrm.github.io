@@ -95,7 +95,7 @@ themes: [
       title: 'AlexaCRM',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/icon.svg',
         href: 'https://alexacrm.com/'
       },
       items: [
