@@ -2,7 +2,7 @@
 title: Elementor
 sidebar_position: 2
 premium: true
-slug: /addons-elementor
+slug: /addons/elementor
 tags:
     - Elementor
     - Datapress
