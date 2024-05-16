@@ -44,7 +44,7 @@ Once the plugin is activated, go to **Dynamics 365 > Connection** and configure 
 
 After connecting to Dynamics 365 you should see the message "Connected to &lt;Your Organization Name&gt;".
 
-You can find more information about connection settings at the [Configuration documentation page](configuration#connection)
+You can find more information about connection settings at the [Configuration documentation page](/wpcrm/configuration.md#connection)
 
 ## Surface a Dynamics 365 form in WordPress
 
@@ -91,7 +91,7 @@ Now you should see your form on a website page. This form will submit new contac
 
 ![Show form on a page.](img/quickstart-form-show.png)
 
-You can find more information about creating forms at the [Twig Templates documentation page](twig#forms)
+You can find more information about creating forms at the [Twig Templates documentation page](/wpcrm/twig.md#forms)
 
 
 
@@ -135,7 +135,7 @@ Now you should see retrieved data from Dynamics 365 on a website page.
 
 ![Show view on a page.](img/quickstart-views-show.png)
 
-You can find more information about creating views at the [Twig Templates documentation page](twig#views)
+You can find more information about creating views at the [Twig Templates documentation page](/wpcrm/twig.md#views)
 
 
 ## Entity Binding
@@ -193,7 +193,7 @@ For example, let's change default table view to more flexible one using this tem
 
 ![Set custom template for Entity binded view](img/quickstart-binding-view-custom.png)
 
-Here we use `entityview.rows` variable to loop through all records of *Contact* entity. To build correct links for each record we use the `entityUrl(entityName, recordId)` function. More information about aviable variables, filters and functions you can find at the [Twig Templates documentation page](twig#global-objects)
+Here we use `entityview.rows` variable to loop through all records of *Contact* entity. To build correct links for each record we use the `entityUrl(entityName, recordId)` function. More information about aviable variables, filters and functions you can find at the [Twig Templates documentation page](/wpcrm/twig.md#global-objects)
 
 Now you can see that layout of contacts list page has been changed according custom template.
 
@@ -201,4 +201,4 @@ Now you can see that layout of contacts list page has been changed according cus
 
 Default built-in template for views is located in `templates/twig/view.twig` within **Dynamics 365 Integration** installation directory.
 
-You can find more information about Entity data binding at the [Entity Binding documentation page](binding)
+You can find more information about Entity data binding at the [Entity Binding documentation page](/wpcrm/binding)
