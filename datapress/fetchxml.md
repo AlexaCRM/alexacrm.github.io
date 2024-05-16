@@ -91,5 +91,5 @@ You can also set default value for these parameters in `FetchXML` section or in 
 
 Also you can add a fetchXML template at the moment of binding configuration for a page.
 
-[See how to combine fetchXML templates and views](views.md#parameterize-your-views)
+[See how to combine fetchXML templates and views](/datapress/views.md#parameterize-your-views)
 XrmToolBox can help you to create fetchXML filters. [See XrmToolBox documentation](https://www.xrmtoolbox.com/documentation/) Use FetchXML Builder tool to get help for fetchXML creation.

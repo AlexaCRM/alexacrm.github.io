@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Datapress',
-  tagline: 'Dinosaurs are cool',
+  tagline: '',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -65,7 +65,7 @@ const config: Config = {
       {
         redirects: [
           {
-            to: '/forms/create-form', // string
+            to: '/getting-started', // string
             from: ['/integration-cds'], // string | string[]
           },
         ],
@@ -85,7 +85,7 @@ themes: [
 ],
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/dataverse.png',
     docs: {
       sidebar: {
         hideable: true,
@@ -150,7 +150,7 @@ themes: [
             },
             {
               label: 'Documentation v.2',
-              to: '/datapress',
+              to: '/getting-started',
             },
             {
               label: 'Knowledge base for Dynamics 365 Integration',
