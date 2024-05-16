@@ -66,7 +66,31 @@ const config: Config = {
         redirects: [
           {
             to: '/getting-started', // string
-            from: ['/integration-cds'], // string | string[]
+            from: ['/integration-cds', '/integration-cds/getting-started'], // string | string[]
+          },
+          {
+            to: '/views', 
+            from: ['/integration-cds/views'],
+          },
+          {
+            to: '/twig', 
+            from: ['/integration-cds/twig'],
+          },
+          {
+            to: '/fetchxml', 
+            from: ['/integration-cds/fetchxml'],
+          },
+          {
+            to: '/forms/forms', 
+            from: ['/integration-cds/forms'],
+          },
+          {
+            to: '/addons/gravity-forms', 
+            from: ['/integration-cds/gravity-forms'],
+          },
+          {
+            to: '/addons/elementor', 
+            from: ['/integration-cds/elementor'],
           },
         ],
       }
