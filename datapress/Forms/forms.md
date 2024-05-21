@@ -5,7 +5,8 @@ premium: true
 slug: /forms/forms
 tags:
     - Form
-    - Datapress
+    - DataPress
+keywords: [DataPress forms]  
 ---
 
 <p class="lead">Capture leads, feedback and other information from your website using forms designed in PowerApps and Dynamics 365.</p>

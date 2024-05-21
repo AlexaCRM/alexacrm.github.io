@@ -5,7 +5,8 @@ premium: true
 slug: /addons/gravity-forms
 tags:
     - Gravity Forms
-    - Datapress
+    - DataPress
+keywords: [DataPress Gravity Forms addon, create DataPress form with Gravity Forms]    
 ---
 
 <p class="lead">Use gravity forms to manage your organization data</p>
@@ -41,7 +42,7 @@ If you want to set default values for columns you can follow these instructions:
 1. To set default value for standard columns go to `Field settings` tab - `Advanced`.
 2. To add lookup column you should go to `Add Fields` tab and choose `Dataverse Lookup` from `Advanced Fields` tab. Then you need to open the `Appearance` tab and set default value.
 
-If you want to set default values dynamically for columns using the form's field_values attribute (see [Dynamically Populating a Field](https://docs.gravityforms.com/using-dynamic-population/), you can follow the following instructions.
+If you want to set default values dynamically for columns using the form's field_values attribute (see [Dynamically Populating a Field](https://docs.gravityforms.com/using-dynamic-population/)), you can follow the following instructions.
 
 1. Add a new field, go to `Advanced Settings` and check the `Allow field to be populated dynamically` checkbox.
 2. Specify a parameter name just below the `Allow field to be populated dynamically` checkbox and save the parameter name.
@@ -87,6 +88,8 @@ If you want to set a default value for Dataverse Lookup look at this example:
    table:98837486-742e-ed22-9db1-00224893bd2f
 ```
 
+To control conditional access to requested records in dropdown or dialog use fetchXML filter.
+
 ## File upload columns
 
 You can set maximum attached file size for File upload column in Gravity Forms. But you should also remember about the file size limits which are set for such columns in crm. So that your maximum attached file should not be more than the size from the crm column settings.
@@ -96,3 +99,35 @@ At current moment we don't support uploading multiple files.
 ## Access to a table
 
 Be attentive with the access to tables from Maker portal. Pages, based on Gravity forms do not show any error when you try to fill in and submit the form even if you don't have an access to this table. You click Submit and then you will see success message even when you don't have privilege to create a new record. In that case the administrator will get an email with the details.
+
+## How to bind a record by its guid
+
+To bind a record on a page created with the help of Gravity Forms, follow these steps:
+1. Create a Gravity Form with an Update Action in Dataverse Feed:
+- First, create a Gravity Form that includes the necessary fields for your record.
+- Configure the form to perform an update action in your Dataverse feed.
+- Remember the name of this Gravity Form.
+2. Create a Page based on the Gravity Form Block:
+- Create a new page. Use the Gravity Form block to build your page. Save the page.
+3. Configure Binding for the Page:
+- Locate the page you just created in your list of pages.
+- Click `Configure binding` -> `Setup binding`.
+- Choose the appropriate table name and select the `Via GUID in query string` option 
+4. Add the Record GUID to the Page URL:
+- Now you can include the record GUID as part of the URL.
+- For example, if your record GUID is 65ffaf9a-e8c5-432d-860b-32f841b00d87, your URL could look like
+
+```php
+https://yourwebsite.com/your-page?id=65ffaf9a-e8c5-432d-860b-32f841b00d87
+```
+
+Alternatively, you can use a shortcode to achieve the same result (use the `Custom HTML` block):
+
+```php
+[gravityform id="1" action="icds" icds_record="contact:2793c9dc-ff0d-ef11-9f89-0022489310b4"]
+```
+
+This shortcode will populate the form fields with values from the record with the GUID 2793c9dc-ff0d-ef11-9f89-0022489310b4 in the contact table. In this case you don't need to configure binding for the page, just to write the record guid in the `Custom HTML` block.
+
+
+

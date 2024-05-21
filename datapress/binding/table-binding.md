@@ -5,7 +5,8 @@ premium: true
 slug: /binding/table-binding
 tags:
     - Table binding
-    - Datapress
+    - DataPress
+keywords: [DataPress Table binding, Table Binding]  
 ---
 
 <p class="lead">Link WordPress pages to Dataverse tables to provide direct access to your organization data.</p>
