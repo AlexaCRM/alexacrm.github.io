@@ -5,7 +5,7 @@ slug: /knowledge-base/add-user-to-twig
 tags:
     - Knowledge base
     - Twig
-    - Datapress
+    - DataPress
 ---
 
 To add WordPress user as an object to Twig, use the following code:

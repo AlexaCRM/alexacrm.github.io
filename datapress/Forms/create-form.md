@@ -4,7 +4,8 @@ sidebar_position: 2
 slug: /forms/create-form
 tags:
     - Form
-    - Datapress
+    - DataPress
+keywords: [DataPress form]  
 ---
 
 ## Create a Contact Us form

@@ -6,7 +6,8 @@ premium: true
 tags:
     - Binding
     - Fields binding
-    - Datapress
+    - DataPress
+keywords: [DataPress Fields Binding, Fields Binding addon]    
 ---
 
 <p class="lead">Display column value using Dataverse Integration Fields Binding!</p>

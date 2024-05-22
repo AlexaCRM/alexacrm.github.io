@@ -5,7 +5,7 @@ slug: /knowledge-base/custom-function-to-twig
 tags:
     - Knowledge base
     - Twig
-    - Datapress
+    - DataPress
 ---
 
 To add a custom function use following filter:

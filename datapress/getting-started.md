@@ -5,7 +5,8 @@ sidebar_position: 1
 tags:
     - How to start
     - Connection
-    - Datapress
+    - DataPress
+keywords: [DataPress how to start]  
 ---
 
 <p class="lead">Get acquainted with the plugin, learn how to install and configure it properly and learn about its features and capabilities.</p>

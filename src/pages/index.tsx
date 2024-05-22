@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/getting-started">
-            Read Datapress documentation 
+            Read DataPress documentation 
           </Link>
         </div>
       </div>

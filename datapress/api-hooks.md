@@ -4,7 +4,8 @@ sidebar_position: 10
 slug: /api-hooks
 tags:
     - API
-    - Datapress
+    - DataPress
+keywords: [DataPress API]  
 ---
 
 <p class="lead"><b>Dataverse Integration</b> provides a number of WordPress hooks that allow you to extend the plugin and augment its behaviour.</p>

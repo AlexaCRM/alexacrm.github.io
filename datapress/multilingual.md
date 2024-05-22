@@ -4,7 +4,8 @@ sidebar_position: 11
 slug: /multilingual
 tags:
     - Language
-    - Datapress
+    - DataPress
+keywords: [DataPress multilingual]  
 ---
 
 The page describes multilingual support in Dataverse plugin
