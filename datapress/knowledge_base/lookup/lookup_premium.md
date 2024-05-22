@@ -5,7 +5,8 @@ slug: /knowledge-base/lookup-premium
 tags:
     - Knowledge base
     - Lookup
-    - Datapress
+    - DataPress
+keywords: [DataPress lookup in premium forms]  
 ---
 
 Use next steps to manage lookup fields in your forms:

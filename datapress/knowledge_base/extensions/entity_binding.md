@@ -5,7 +5,7 @@ slug: /knowledge-base/custom-entity-binding
 tags:
     - Knowledge base
     - Entity binding
-    - Datapress
+    - DataPress
 ---
 
 

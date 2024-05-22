@@ -5,7 +5,7 @@ slug: /knowledge-base/configuration
 tags:
     - Knowledge base
     - Configuration
-    - Datapress
+    - DataPress
 ---
 
 When connecting WordPress instance to Dataverse/CDS, you need to verify and then save the connection configuration.

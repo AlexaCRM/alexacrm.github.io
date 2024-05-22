@@ -6,7 +6,8 @@ slug: /binding/user-binding
 tags:
     - Binding
     - User binding
-    - Datapress
+    - DataPress
+keywords: [DataPress User binding, User Binding]  
 ---
 
 <p class="lead">Link your WordPress users to Dataverse contact records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>

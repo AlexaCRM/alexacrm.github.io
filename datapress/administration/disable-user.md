@@ -5,7 +5,8 @@ slug: /administration/disable-user
 premium: true
 tags:
     - User
-    - Datapress
+    - DataPress
+keywords: [DataPress user, WordPress uer]    
 ---
 
 <p class="lead">Link your WordPress users to Dataverse records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>

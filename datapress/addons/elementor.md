@@ -5,7 +5,8 @@ premium: true
 slug: /addons/elementor
 tags:
     - Elementor
-    - Datapress
+    - DataPress
+keywords: [DataPress Elementor addon, create DataPress form with Elementor]
 ---
 
 <p class="lead">Build your forms and write custom twig code using Elementor!</p>
@@ -42,6 +43,8 @@ All you need to do is drag the `Form` widget into the content area, create  the 
 
 After selecting an action, for example `create`, you need to add `Fields Mapping`. Click `+ADD ITEM`. Here, fill in `Form field` (which is the field ID that was saved previously) and `Table column` (which is the logical name for the column) for each field.
 
+**To create a lookup field** you need to add `select` type field and map this field with the lookup field logical name in the `Send to Dataverse` action.
+
 ## Twig widget
 
 Widget Name - `Twig Template`
@@ -65,4 +68,3 @@ One of the simplest methods to display a field value for any record is by using 
 ## Default record in editing mode
 
 You can enter a record GUID to be used as the default record in the page editing context. Simply find the page, click `Configure Binding`, select a table and enter an id in the `Default record` textbox.
-
