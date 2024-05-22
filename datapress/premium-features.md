@@ -23,13 +23,29 @@ export const Highlight = ({children, color}) => (
 
 <Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
 
-Our premium plugin allows you:
-- to work with forms and manage crm tables. You can add required columns (fields) or, on the contrary, make required columns optional, set default value for columns, add filters, configure binding, change columns or buttons language and so on. 
-- to create General settings for all forms or several forms.
-- to make integration with form plugins. Create beautiful forms with Gravity Forms, Ninja Forms, Contact Form 7, and capture leads, contacts and any other Dynamics 365 tables. Edit your records (rows) with Gravity Forms and Ninja Forms.
-- to edit a form with the Elementor plugin.
-- to create views and manage these views (like change language, add pagination, add parameters).
-- to add fetchXML template(to filter rows) or twig template(to change columns behavior or the whole form) to manage forms or views. 
+**Our Premium Plugin Features.**
+
+*Form Management and CRM Tables:*
+- Customize columns (fields) by adding or making them optional.
+- Set default values for columns.
+- Apply filters and configure bindings.
+- Adjust language for columns and buttons.<br></br>
+
+*General Settings:*
+- Create global settings for all forms or specific ones.<br></br>
+
+*Views Management:*
+- Customize views (e.g., change language, add pagination, parameters).
+- Utilize fetchXML templates (for row filtering).<br></br>
+
+*Elementor Integration:*
+- Create and edit forms seamlessly using the Elementor plugin.
+- Display and update records.
+- Show fields value.<br></br>
+
+*Gravity Forms:*
+- Build beautiful forms with Gravity Forms.
+- Edit records (rows) with additional addons.<br></br>
 
 To edit page using Elementor you need to download, install and activate `Dataverse Integration Elementor Extension` from Dataverse Admin Area, Addons page.
 
