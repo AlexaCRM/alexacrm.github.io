@@ -118,8 +118,8 @@ themes: [
     navbar: {
       title: 'AlexaCRM',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/dataverse-icon.svg',
+        alt: 'AlexaCRM Logo',
+        src: 'img/iconAlexaCRM.png',
         href: 'https://alexacrm.com/'
       },
       items: [
