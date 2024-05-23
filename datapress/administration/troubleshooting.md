@@ -43,7 +43,7 @@ For a more detailed analysis, you can download the logs by clicking `Download Lo
 You can delete saved logs by clicking `Remove logs`.
 
 ### Advanced settings`
-To configure advanced settings, navigate to the Dataverse Admin Area and open the `Status` tab. At the bottom of the page, you will find the `Advanced settings` button.
+To configure advanced settings, navigate to the Dataverse Admin Area and open the `Settings` tab. At the bottom of the page, you will find `Advanced settings`.
 
 Here are some key flags to take note of:
 `ICDS_ADVANCED_USER_BINDING` - If set to true, the legacy advanced editor will be used to configure user binding. You can see changes in `Bindings` -> `User Binding`;
