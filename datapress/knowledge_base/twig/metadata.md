@@ -5,7 +5,7 @@ slug: /knowledge-base/metadata
 tags:
     - Knowledge base
     - Twig
-    - Datapress
+    - DataPress
 ---
 
 When custom forms include a choice column (previously known as an optionset or a picklist), access to the metadata is required to include all possible values as part of the markup, usually as a SELECT HTML tag.

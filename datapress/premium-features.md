@@ -4,7 +4,8 @@ sidebar_position: 2
 slug: /premium-features
 tags:
     - Premium
-    - Datapress
+    - DataPress
+keywords: [DataPress premium]  
 ---
 
 ## Premium features

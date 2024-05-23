@@ -4,7 +4,8 @@ title: Using Twig
 slug: /twig
 tags:
     - Twig
-    - Datapress
+    - DataPress
+keywords: [DataPress twig]  
 ---
 
 <p class="lead">Use Twig templates to create custom layouts. Access your Dataverse data and metadata in Twig to share your data with your users.</p>

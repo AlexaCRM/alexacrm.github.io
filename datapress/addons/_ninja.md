@@ -5,7 +5,7 @@ premium: true
 sidebar_class_name: hidden
 tags:
     - Ninja
-    - Datapress
+    - DataPress
 ---
 
 <p class="lead">Use Ninja Forms to manage your organization data</p>

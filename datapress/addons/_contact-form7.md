@@ -5,7 +5,7 @@ premium: true
 sidebar_class_name: hidden
 tags:
     - Contact Form 7
-    - Datapress
+    - DataPress
 ---
 
 <p class="lead">Use Contact Form 7 to manage your organization data</p>

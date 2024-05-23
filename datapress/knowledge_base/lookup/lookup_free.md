@@ -5,7 +5,8 @@ slug: /knowledge-base/lookup
 tags:
     - Knowledge base
     - Lookup
-    - Datapress
+    - DataPress
+keywords: [DataPress lookup]  
 ---
 
 To create a form with a lookup field you can follow next example

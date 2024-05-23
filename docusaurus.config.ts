@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Datapress',
+  title: 'DataPress',
   tagline: '',
   favicon: 'img/favicon.ico',
 
@@ -104,13 +104,17 @@ themes: [
   ]
 ],
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/dataverse.png',
     docs: {
       sidebar: {
         hideable: true,
       },
     },   
+    metadata: [
+      {name: 'keywords', content: 'DataPress, Dataverse, AlexaCRM, DataPress documentation'},
+      {name: 'description', content: 'DataPress documentation - a WordPress plugin'}, 
+      {name: 'application-name', content: 'DataPress by AlexaCRM'}
+    ],
     navbar: {
       title: 'AlexaCRM',
       logo: {
@@ -123,7 +127,7 @@ themes: [
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Datapress',
+          label: 'DataPress',
         },
         {
           to: '/wpcrm/quickstart',    
@@ -177,7 +181,7 @@ themes: [
               to: '/wpcrm/category/knowledge-base',
             },
             {
-              label: 'Knowledge base for Datapress',
+              label: 'Knowledge base for DataPress',
               to: '/category/knowledge-base',
             },
           ],
@@ -191,6 +195,28 @@ themes: [
       additionalLanguages: ['php', 'csharp', 'twig']
     },
   } satisfies Preset.ThemeConfig,
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://docs.alexacrm.com',
+      },
+    },
+     {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'Organization',
+        name: 'AlexaCRM',
+        url: 'https://docs.alexacrm.com/',
+        logo: 'https://docs.alexacrm.com/img/logos/dataverse-icon.svg',
+      }),
+    },
+  ],
 };
 
 export default config;

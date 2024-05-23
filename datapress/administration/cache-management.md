@@ -4,7 +4,8 @@ sidebar_position: 1
 slug: /administration/cache
 tags:
     - Cache
-    - Datapress
+    - DataPress
+keywords: [DataPress cache]    
 ---
 
 <p class="lead">This page describes how to manage caching, including force disabling caching, configuring cache storage, and clearing the cache.</p>

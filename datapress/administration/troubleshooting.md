@@ -5,7 +5,8 @@ slug: /administration/troubleshooting
 tags:
     - Logs
     - Settings
-    - Datapress
+    - DataPress
+keywords: [DataPress troubleshooting]
 ---
 
 <p class="lead">This page describes how to set up logs.</p>

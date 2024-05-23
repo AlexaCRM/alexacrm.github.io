@@ -5,7 +5,8 @@ premium: true
 slug: /views
 tags:
     - Views
-    - Datapress
+    - DataPress
+keywords: [DataPress views]  
 ---
 
 <p class="lead">Add views to your WordPress pages to display tabular data from Dataverse and Dynamics 365.</p>
