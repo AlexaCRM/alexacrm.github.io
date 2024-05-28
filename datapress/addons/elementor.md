@@ -8,7 +8,6 @@ tags:
     - DataPress
 keywords: [DataPress Elementor addon, create DataPress form with Elementor]
 ---
-
 <p class="lead">Build your forms and write custom twig code using Elementor!</p>
 
 export const Highlight = ({children, color}) => (
@@ -39,9 +38,31 @@ Category - `Pro`
 
 Description: It is a native form of Elementor, but you should add `Send to Dataverse` action after submit.
 
-All you need to do is drag the `Form` widget into the content area, create  the necessary fields and Save their ID. Next, navigate to `Actions After Submit`, click `+` and add the `Send to Dataverse` action.  Then, select the `Send to Dataverse` menu section and choose a table from the `Table` dropdown.
+All you need to do is drag the `Form` widget into the content area, create  the necessary fields and Save their ID.
 
+<div class="text--center"> 
+<img src="/images/elementor-form.jpg" alt="Elementor form" width="400" />
+<img src="/images/elementor-id.jpg" alt="Save id" width="550" />
+</div>
+
+Next, navigate to `Actions After Submit`, click `+` and add the `Send to Dataverse` action.  
+
+<div class="text--center"> 
+<img src="/images/send-to-dataverse.jpg" alt="Send to Dataverse action" width="400" />
+</div>
+
+To choose a table save the form and get back to the `Pages` -> `All pages` and find the page  and click `Configure Binding`. Here you can choose a table for new records. 
+
+<div class="text--center"> 
+<img src="/images/elementor-bind-table.jpg" alt="Binding configuration" width="550" />
+</div>
+
+Click `Edit with Elementor` and `Send to Dataverse`. Here you will see the chosen table in the `Table` dropdown.
 After selecting an action, for example `create`, you need to add `Fields Mapping`. Click `+ADD ITEM`. Here, fill in `Form field` (which is the field ID that was saved previously) and `Table column` (which is the logical name for the column) for each field.
+
+<div class="text--center"> 
+<img src="/images/elementor-mapping.png" alt="Mapping in Elementor" width="400" />
+</div>
 
 **To create a lookup field** you need to add `select` type field and map this field with the lookup field logical name in the `Send to Dataverse` action.
 
@@ -68,3 +89,7 @@ One of the simplest methods to display a field value for any record is by using 
 ## Default record in editing mode
 
 You can enter a record GUID to be used as the default record in the page editing context. Simply find the page, click `Configure Binding`, select a table and enter an id in the `Default record` textbox.
+
+<div class="text--center"> 
+<img src="/images/elementor-default.png" alt="Elementor default" width="400" />
+</div>
