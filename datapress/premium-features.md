@@ -82,6 +82,10 @@ You can skip this paragraph if you click the `Add registration` button at the mo
    - **Password**: application password you created earlier.
 7. Save the row (at the top of the page you will see "Successfully connected to the site" message).
 
+<div class="text--center"> 
+<img src="/images/wp-site.png" width="700" />
+</div>
+
 ### Install WordPress Premium Solution
 
 1. Sign in into WordPress as admin user.
