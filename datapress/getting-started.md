@@ -58,6 +58,10 @@ By default, Dataverse Integration use a Wordpress `AUTH_KEY` constant for encryp
 - `ICDS_AUTH_KEY` - Used to encrypt sensitive data such as application secret.
 - `ICDS_FORM_AUTH_KEY` - Used for safe forms processing.
 
+<div class="text--center"> 
+<img src="/images/keys.png" width="700" />
+</div>
+
 These constants can be defined in your `wp-config.php` file, for example
 ```php
 define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o;6U{#;;n+R');
@@ -79,6 +83,10 @@ Go to your WordPress Admin  Area and access the *Integration Dataverse* menu. Sw
 4. Enter the *Application ID* and *Client Secret* (from client secret value column) which you set aside previously
 5. Check whether the credentials are OK by hitting the **Verify Connection** button
 6. Upon successful test, click **Save settings** to establish a connection to CRM
+
+<div class="text--center"> 
+<img src="/images/connection.png" width="700" />
+</div>
 
 `For OAuth 2.0 / Certificate authentication method`
 1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
@@ -155,6 +163,10 @@ export const Highlight = ({children, color}) => (
 3. Click Edit Profile.
 4. Type password name in New Application Password Name text box and click the Add New Application Password button. It will be *application password*.
 
+<div class="text--center"> 
+<img src="/images/password.png" width="700" />
+</div>
+
 ### Configure Dataverse Solution
 
 1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_latest_managed.zip). 
@@ -169,6 +181,10 @@ export const Highlight = ({children, color}) => (
    - **Login**: login name or email of the admin WordPress user you selected earlier.
    - **Password**: application password you created earlier.
 7. Save the record (at the top of the page you will see "Successfully connected to the site" message).
+
+<div class="text--center"> 
+<img src="/images/wp-site.png" width="700" />
+</div>
 
 ### Install WordPress Premium Solution
 

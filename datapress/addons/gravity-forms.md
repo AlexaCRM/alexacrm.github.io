@@ -33,7 +33,15 @@ When you have created the form and clicked the `Save Form` button, you must also
 
 To create a Dataverse Feed, you need to click `Settings` -> `Dataverse` without closing your Gravity form.
 
+<div class="text--center"> 
+<img src="/images/gf-dataverse.png" width="400" />
+</div>
+
 Then click `Add New`, select crm table, action type(create or update) and map form columns to crm columns(set a correspondence between the column name from crm (key) and the column name from the gravity form(value)).
+
+<div class="text--center"> 
+<img src="/images/gf-mapping.png" width="600" />
+</div>
 
 ## Dynamic column population
 
@@ -80,13 +88,24 @@ Lookup column supports two views for displaying the column: dropdown and dialog.
 
 To select a view, you need to click the `Add Fields` tab and choose `Dataverse Lookup` from `Advanced Fields`. Then open the `Appearance` tab in the column settings.
 
+<div class="text--center"> 
+<img src="/images/gf-lookup.png" width="400" />
+</div>
 If you select the dropdown, you must also select the table and view to lookup. The dialog view does not require any additional settings.
+
+<div class="text--center"> 
+<img src="/images/gf-lookup2.png" width="400" />
+</div>
 
 If you want to set a default value for Dataverse Lookup look at this example:
 
 ```php
    table:98837486-742e-ed22-9db1-00224893bd2f
 ```
+
+<div class="text--center"> 
+<img src="/images/gf-lookup-default.png" width="400" />
+</div>
 
 To control conditional access to requested records in dropdown or dialog use fetchXML filter.
 
