@@ -109,6 +109,24 @@ If you want to set a default value for Dataverse Lookup look at this example:
 
 To control conditional access to requested records in dropdown or dialog use fetchXML filter.
 
+## Date and time columns
+
+To create a record with `date and time` data type fields you need to follow next steps:
+1. Add a Date Field to Your Gravity Form:
+- In your Gravity Form, create a field that captures the date. This field will store the date portion of your record.
+- Configure the date field according to your requirements (e.g., date format, default value, etc.).
+2. Add a Time Field:
+- Next, add a separate field to capture the time. This field will store the time portion of your record.
+- Customize the time field settings as needed (e.g., 12-hour or 24-hour format, default time, etc.).
+3. Map the Fields in Dataverse Feed:
+- When setting up your Dataverse feed (integration with DataPress), you’ll notice that instead of a single field from the maker portal, you’ll encounter two separate fields: one for the date and another for the time.
+- Map the date field from your Gravity Form to the corresponding date field in Dateverse.
+- Similarly, map the time field from your Gravity Form to the corresponding time field in Dateverse.
+
+<div class="text--center"> 
+<img src="/images/date-time-gf.png" width="400" />
+</div>
+
 ## File upload columns
 
 You can set maximum attached file size for File upload column in Gravity Forms. But you should also remember about the file size limits which are set for such columns in crm. So that your maximum attached file should not be more than the size from the crm column settings.
