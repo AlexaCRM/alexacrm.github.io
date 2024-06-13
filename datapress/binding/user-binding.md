@@ -106,3 +106,28 @@ Request body should contain json body with the meta property and the fields `icd
 When using the User Binding functionality, it is essential to leave at least one user without binding. Therefore, it is recommended that you create a new user as soon as possible and without any binding. This will help ensure that you can continue to manage and administer the system should any issues arise with the users who have binding.
 
 In summary, always have at least one user without binding to guarantee the smooth running and administration of the system.
+
+## How to bind a user in WordPress Power App
+
+Here are the revised instructions for binding a user from the maker portal in two different ways:
+
+1. Bind Contact Record to WordPress User:
+- Open the WordPress user.
+- Pay attention to the Binding section.
+- In the “Contact” field, type the first or last name of the contact and select it.
+- Simultaneously, the contact option will be chosen in the binding field.
+
+<div class="text--center"> 
+<img src="/images/contact-to-user.png" width="700" />
+</div>
+
+2. Bind WordPress User to Contact Record:
+- Open the contact record.
+- Pay attention to the WordPress section.
+- In the “User (default site)” field, type the first and last name of your WordPress user and select it.
+- Check the username in the “Username (default site)” field.
+- Ensure that the “Login Enabled” field is set to “yes.”
+
+<div class="text--center"> 
+<img src="/images/user-to-contact.png" width="700" />
+</div>
