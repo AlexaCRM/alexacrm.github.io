@@ -88,6 +88,22 @@ const config: Config = {
             to: '/addons/gravity-forms', 
             from: ['/integration-cds/gravity-forms'],
           },
+          {
+            to: '/binding/table-binding', 
+            from: ['/integration-cds/table-binding'],
+          },
+          {
+            to: '/binding/user-binding', 
+            from: ['/integration-cds/user-binding'],
+          },
+          {
+            to: '/webhooks', 
+            from: ['/integration-cds/webhooks'],
+          },
+          {
+            to: '/forms/forms', 
+            from: ['/integration-cds/forms'],
+          },
         ],
       }
     ]
