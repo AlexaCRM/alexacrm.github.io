@@ -70,6 +70,8 @@ Make sure to define your form between the `<form></form>` tags. The form submiss
 
 To link a form control to a corresponding table column, specify the logical name of the column in the HTML column `name`, e.g. `emailaddress1` for Email.
 
+[Read more about a form with a lookup](../knowledge_base/lookup/lookup_free.md)
+
 ## Protect form submissions with reCAPTCHA
 
 To prevent spam submissions from getting into your CRM, add reCAPTCHA to your form. Add `recaptcha=true` to the list of `{% raw %}{% form %}{% endraw %}` parameters, and add the `<recaptcha>` placeholder to a desired place in your form.

@@ -48,3 +48,5 @@ Custom forms allow creating new Dataverse / Dynamics 365 rows, as well as updati
 The `{% form %}` Twig tag lets you configure the form settings, such as target table, submission mode (create or update), etc. See [custom forms documentation](../Forms/custom-forms.md).
 
 Form control `name` columns refer to the corresponding table columns, such as `firstname`, `lastname` and `emailaddress1`. Put the `<recaptcha>` placeholder where you want to put reCAPTCHA control if you enable reCAPTCHA on your form. Before you use reCAPTCHA, please configure it in plugin settings.
+
+[Read more about a form with a lookup](../knowledge_base/lookup/lookup_free.md)
