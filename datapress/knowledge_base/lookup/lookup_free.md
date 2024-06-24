@@ -9,7 +9,7 @@ tags:
 keywords: [DataPress lookup]  
 ---
 
-To create a form with a lookup field you can follow next example
+To `create` a form with a lookup field you can follow next example
 
 ```
 {% fetchxml collection="contacts" %}
@@ -54,4 +54,43 @@ To create a form with a lookup field you can follow next example
         </entity>
     </fetch>
 {% endfetchxml %}
+ ```
+
+ To `update` a record via a form with a lookup using free plugin you can follow next example
+
+  ```
+{% fetchxml collection="contacts" %}
+    <fetch mapping='logical' returntotalrecordcount='true'>
+        <entity name='contact'>
+            <attribute name='contactid' />
+            <attribute name='fullname' />
+        </entity>
+    </fetch>
+{% endfetchxml %}
+
+{% set currentRecord=entities.account['0a7e4fb6-a6f1-ee11-904b-000d3a6a6eca'] %}
+{% form entity="account" mode="update" record=currentRecord|to_entity_reference cache='PT30M' %}
+<form>
+    <div class="form-group">
+        <label>
+            Name:
+            <input class="form-control" name="name" value="{{ currentRecord["name"] }}">
+        </label>
+    </div>
+ <div class="form-group">
+<label>
+    Contact:
+<select class="form-control custom-select" name="contactid">
+        {% for contact in contacts.results.entities %}
+<option value='contact:{{ contact.Id }}'>{{ contact.fullname }} </option>
+        {% endfor %}
+</select>
+
+</label>
+</div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
  ```
