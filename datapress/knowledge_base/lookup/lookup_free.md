@@ -62,7 +62,7 @@ To use `hidden` fields pay attention to this example
         <input type="hidden" name="accountid" value="account:{{ contact.parentaccount.Id }}" />
 ```
 
- To `update` a record via a form with a lookup using free plugin you can follow 2 ways:
+ To `display` a record via a form with a lookup using free plugin you can follow 2 ways:
  
  1. serialised lookup (recommended)
  In this approach, you’ll serialize the lookup value and store it in a field on your form. When the form is submitted, this serialized value is used to update the corresponding record.
