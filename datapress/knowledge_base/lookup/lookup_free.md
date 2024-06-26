@@ -56,8 +56,57 @@ To `create` a form with a lookup field you can follow next example
 {% endfetchxml %}
  ```
 
- To `update` a record via a form with a lookup using free plugin you can follow next example
+To use `hidden` fields pay attention to this example
+```
+        <input type="hidden" name="contactid" value="contact:{{ contact.contactid }}" />
+        <input type="hidden" name="accountid" value="account:{{ contact.parentaccount.Id }}" />
+```
 
+ To `update` a record via a form with a lookup using free plugin you can follow 2 ways:
+ 
+ 1. serialised lookup (recommended)
+ In this approach, you’ll serialize the lookup value and store it in a field on your form. When the form is submitted, this serialized value is used to update the corresponding record.
+```
+ {% fetchxml collection="contacts" %}
+    <fetch mapping='logical' returntotalrecordcount='true'>
+        <entity name='contact'>
+            <attribute name='contactid' />
+            <attribute name='fullname' />
+        </entity>
+    </fetch>
+{% endfetchxml %}
+
+{% set currentRecord=entities.account['0a7e4fb6-a6f1-ee11-904b-000d3a6a6eca'] %}
+{% set contactref = {"LogicalName": "contact", "Id": contactid } %}
+{% form entity="account" mode="update" record=currentRecord|to_entity_reference cache='PT1M' %}
+<form>
+<div class="form-group">
+<label>
+            Name:
+<input class="form-control" name="name" value="{{ currentRecord["name"] }}">
+</label>
+</div>
+<div class="form-group">
+<label>
+    Contact:
+<select class="form-control custom-select" name="contactid">
+        {% for contact in contacts.results.entities %}
+<option value='{{contactref}}'>{{ contact.fullname }} </option>
+ 
+        {% endfor %}
+</select>
+ 
+</label>
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary">Send</button>
+</div>
+</form>
+{% endform %}
+ ```
+
+ 2. table:guid
+ In this approach, you directly use the GUID value from the lookup field to update the record.
   ```
 {% fetchxml collection="contacts" %}
     <fetch mapping='logical' returntotalrecordcount='true'>

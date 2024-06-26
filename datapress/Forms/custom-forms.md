@@ -112,6 +112,45 @@ Before you start using reCAPTCHA in your forms, please configure reCAPTCHA in th
 {% endform %}
 ```
 
+## Create a Contact Us form
+
+The plugin provides a Gutenberg block, "Dataverse Plain". It accepts Twig code and renders it as HTML at front-end. 
+Custom forms allow creating new Dataverse / Dynamics 365 rows, as well as updating existing rows. 
+
+```php
+{% form entity="lead" mode="create" recaptcha=true %}
+<form>
+    <div class="form-group">
+        <label>
+            First Name:
+            <input class="form-control" name="firstname">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Last Name:
+            <input class="form-control" name="lastname">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Email:
+            <input class="form-control" name="emailaddress1">
+        </label>
+    </div>
+    <div class="form-group">
+        <recaptcha>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
+```
+
+The `{% form %}` Twig tag lets you configure the form settings, such as target table, submission mode (create or update), etc. 
+Form control `name` columns refer to the corresponding table columns, such as `firstname`, `lastname` and `emailaddress1`. Put the `<recaptcha>` placeholder where you want to put reCAPTCHA control if you enable reCAPTCHA on your form. Before you use reCAPTCHA, please configure it in plugin settings.
+
 ### Getting row GUID
 
 After the row has been successfully created, you can get the guid using the redirect setting with the %s parameter.
