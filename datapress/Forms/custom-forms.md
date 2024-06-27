@@ -70,6 +70,8 @@ Make sure to define your form between the `<form></form>` tags. The form submiss
 
 To link a form control to a corresponding table column, specify the logical name of the column in the HTML column `name`, e.g. `emailaddress1` for Email.
 
+[Read more about a form with a lookup](../knowledge_base/lookup/lookup_free.md)
+
 ## Protect form submissions with reCAPTCHA
 
 To prevent spam submissions from getting into your CRM, add reCAPTCHA to your form. Add `recaptcha=true` to the list of `{% raw %}{% form %}{% endraw %}` parameters, and add the `<recaptcha>` placeholder to a desired place in your form.
@@ -109,6 +111,45 @@ Before you start using reCAPTCHA in your forms, please configure reCAPTCHA in th
 </form>
 {% endform %}
 ```
+
+## Create a Contact Us form
+
+The plugin provides a Gutenberg block, "Dataverse Plain". It accepts Twig code and renders it as HTML at front-end. 
+Custom forms allow creating new Dataverse / Dynamics 365 rows, as well as updating existing rows. 
+
+```php
+{% form entity="lead" mode="create" recaptcha=true %}
+<form>
+    <div class="form-group">
+        <label>
+            First Name:
+            <input class="form-control" name="firstname">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Last Name:
+            <input class="form-control" name="lastname">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Email:
+            <input class="form-control" name="emailaddress1">
+        </label>
+    </div>
+    <div class="form-group">
+        <recaptcha>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
+```
+
+The `{% form %}` Twig tag lets you configure the form settings, such as target table, submission mode (create or update), etc. 
+Form control `name` columns refer to the corresponding table columns, such as `firstname`, `lastname` and `emailaddress1`. Put the `<recaptcha>` placeholder where you want to put reCAPTCHA control if you enable reCAPTCHA on your form. Before you use reCAPTCHA, please configure it in plugin settings.
 
 ### Getting row GUID
 
