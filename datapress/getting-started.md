@@ -99,6 +99,14 @@ Go to your WordPress Admin  Area and access the *Integration Dataverse* menu. Sw
 
 Now the plugin is connected to CRM, and you can start building the integration.
 
+**Important Information for Data Migration**
+
+If you are planning to migrate data from one solution to another, follow these steps:
+
+1. Make sure to set ICDS_AUTH_KEY in Advanced Settings. This key is essential for authentication during the migration process.
+2. Connect the Plugin.
+3. Add Registration.
+
 ## Create a form
 
 The plugin provides a Gutenberg block, "Dataverse Plain". To create your first form, you can use the [custom form syntax](/datapress/Forms/custom-forms.md).
