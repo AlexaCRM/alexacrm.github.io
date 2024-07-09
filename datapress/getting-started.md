@@ -99,6 +99,13 @@ Go to your WordPress Admin  Area and access the *Integration Dataverse* menu. Sw
 
 Now the plugin is connected to CRM, and you can start building the integration.
 
+:::note Important Information for site migration
+
+If you are planning to migrate your website between deployments, make sure to set ICDS_AUTH_KEY in Advanced Settings before connecting the plugin to Dataverse. This key is used to encrypt sensitive information stored in the plugin configuration. If it is not present, the plugin will not be able to automatically reconnect to Dataverse after the migration.
+
+After the site migration, ensure you re-register the site in Dataverse. Multiple site registrations are supported, allowing connections from both the original site and the copy at the same time.
+:::
+
 ## Create a form
 
 The plugin provides a Gutenberg block, "Dataverse Plain". To create your first form, you can use the [custom form syntax](/datapress/Forms/custom-forms.md).
