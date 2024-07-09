@@ -64,7 +64,12 @@ After selecting an action, for example `create`, you need to add `Fields Mapping
 <img src="/images/elementor-mapping.png" alt="Mapping in Elementor" width="400" />
 </div>
 
-**To create a lookup field** you need to add `select` type field and map this field with the lookup field logical name in the `Send to Dataverse` action.
+**To create a field for a lookup column** you need to add a new field and set its type to `Dataverse Lookup.` Then type the appropriate table and view.
+Map this field with the column logical name in the `Send to Dataverse` action.
+
+<div class="text--center"> 
+<img src="/images/elementor-lookup.png" alt="Create a lookup field" width="400" />
+</div>
 
 ## Twig widget
 
