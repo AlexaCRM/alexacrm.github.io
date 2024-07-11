@@ -147,7 +147,7 @@ You can even define your own pattern using format_datetime() [See details](https
 
 ### Get lookup value
 
-You can follow next examples:
+You can follow the examples below:
 
 ```php
 {{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Name }}
@@ -336,9 +336,9 @@ For example, you have several custom fields: `cr1d1_dateonly` - Date Only format
 
 Then you view page with this template. To fill in this form you should type content in Date only field in `yyyy-mm-dd` or `yyyy/mm/dd` format (like `2023-01-20` or `2023/01/20`), Date Time field in `yyyy-mm-ddThh:mm` format (like `2023-01-20T12:30`).
 
-## Support Mobile-Detect
+## Supporting Mobile-Detect
 
-The MobileDetect class contains many different functions for detecting mobile devices and browsers. [Read more](https://github.com/serbanghita/Mobile-Detect)
+The `MobileDetect` class contains various functions for detecting mobile devices and browsers. [Read more](https://github.com/serbanghita/Mobile-Detect)
 
 ```php
 

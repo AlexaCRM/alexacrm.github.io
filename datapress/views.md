@@ -153,7 +153,7 @@ For example, you add a filter in your crm to see only contacts, which have `Supe
 
 ## How to display email and url as active links
 
-To display email and url as active links set `formatHyperlinks` option as `true`, otherwise they will be just text.
+To display email addresses and URLs as active links, set the formatHyperlinks option to true. Otherwise, they will appear as plain text.
 
 ```php
 {% view entity="contact" name="Active Contacts" formatHyperlinks=true  count=100 %}{% endview %}
