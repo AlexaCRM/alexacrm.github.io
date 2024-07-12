@@ -151,6 +151,14 @@ For example, you add a filter in your crm to see only contacts, which have `Supe
 {% view entity="contact" name="Contact Test" lookups={ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }%}{% endview %}
  ```
 
+## How to display email and url as active links
+
+To display email addresses and URLs as active links, set the formatHyperlinks option to true. Otherwise, they will appear as plain text.
+
+```php
+{% view entity="contact" name="Active Contacts" formatHyperlinks=true  count=100 %}{% endview %}
+```
+
 ## Display data using a custom template
 
 By default, Dataverse Integration uses `view.twig` as a template. (See `/integration-cds/templates/twig/view.twig`.) You can define your own template inside between `{% view %}` and `{% endview %}`.

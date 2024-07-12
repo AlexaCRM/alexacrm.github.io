@@ -145,6 +145,28 @@ You can even define your own pattern using format_datetime() [See details](https
 {{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
 ```
 
+### Get lookup value
+
+You can follow the examples below:
+
+```php
+{{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Name }}
+
+{{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Id }}
+```
+
+### Specify fields to display
+
+When using the `expand` parameter, you can specify which fields to display. If you don’t specify any fields, all of them will be selected. Fields are specified as an array or a comma-delimited string.
+
+```php
+{%  set contact = entities.contact['ea8157fa-cc32-ef11-8409-000d3a38d58d']|expand('createdby','fullname,Id') %}
+
+{%  set contact = entities.contact['ea8157fa-cc32-ef11-8409-000d3a38d58d']|expand('createdby',['fullname']) %}
+
+{%  set contact = entities.contac​t['ea8157fa-cc32-ef11-8409-000d3a38d58d']|expand('createdby') %}
+```
+
 ### Get current request information
 
 Object `request` contains information about the current request. It has the following members:
@@ -313,3 +335,16 @@ For example, you have several custom fields: `cr1d1_dateonly` - Date Only format
 ```
 
 Then you view page with this template. To fill in this form you should type content in Date only field in `yyyy-mm-dd` or `yyyy/mm/dd` format (like `2023-01-20` or `2023/01/20`), Date Time field in `yyyy-mm-ddThh:mm` format (like `2023-01-20T12:30`).
+
+## Supporting Mobile-Detect
+
+The `MobileDetect` class contains various functions for detecting mobile devices and browsers. [Read more](https://github.com/serbanghita/Mobile-Detect)
+
+```php
+
+isMobile: {% if is_mobile() %} Yes! {% else %} No! {% endif %}<br/>
+
+isTablet: {% if is_tablet() %} Yes! {% else %} No! {% endif %}<br/>
+
+isFirefox: {% if is_firefox() %} Yes! {% else %} No! {% endif %}<br/>
+```
