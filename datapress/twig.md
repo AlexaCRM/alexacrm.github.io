@@ -341,10 +341,9 @@ Then you view page with this template. To fill in this form you should type cont
 The `MobileDetect` class contains various functions for detecting mobile devices and browsers. [Read more](https://github.com/serbanghita/Mobile-Detect)
 
 ```php
+isMobile: {% if isMobile %} Yes! {% else %} No! {% endif %}<br/>
 
-isMobile: {% if is_mobile() %} Yes! {% else %} No! {% endif %}<br/>
+isChrome: {% if isChrome %} Yes! {% else %} No! {% endif %}<br/>
 
-isTablet: {% if is_tablet() %} Yes! {% else %} No! {% endif %}<br/>
-
-isFirefox: {% if is_firefox() %} Yes! {% else %} No! {% endif %}<br/>
+isFirefox: {% if isFirefox %} Yes! {% else %} No! {% endif %}<br/>
 ```
