@@ -347,3 +347,8 @@ isChrome: {% if isChrome %} Yes! {% else %} No! {% endif %}<br/>
 
 isFirefox: {% if isFirefox %} Yes! {% else %} No! {% endif %}<br/>
 ```
+
+:::note Hints
+
+Hints for working with mobile detection methods can be viewed in the `Dataverse Twig` block as you begin typing `{{`
+:::
