@@ -66,6 +66,12 @@ FetchXML provides SQL JOIN operations via `<link-entity />` tag. Common Data Ser
 - Alias the `link-entity`. You will be able to access linked entity attributes via dot-notation: `{{record["aliasedEntity.attributeName"]}}`.
 - Alias the attributes inside `link-entity`. You will be able to access the aliased attributes directly: `{{record["aliasedLinkedAttributeName"]}}`. Keep in mind that naming collisions may occur between alias names and main entity attribute names.
 
+:::warning Important
+
+If the linked entity alias matches any column name, it may result in errors or unpredictable output.
+
+:::
+
 ## Using FetchXML Template
 
 Use fetchXML template to add filters. 

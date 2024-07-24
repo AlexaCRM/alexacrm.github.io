@@ -54,7 +54,7 @@ Use the `binding` object to access table binding on the current page. See [table
 Notice that `binding.record` is more expensive performance-wise -- it retrieves data from Dataverse. `binding.reference` only
 reads the local database and request parameters to calculate the entity reference.
 
-```php
+```twig
 {% if binding.is_bound %}
   {% set contact = binding.record %}
   {{ contact["fullname"] }} <{{ contact["emailaddress1"] }}>
@@ -63,7 +63,7 @@ reads the local database and request parameters to calculate the entity referenc
 
 If `ICDS_COMPATIBLE_BINDING` flag is set to *true* you can use the `currentrecord` variable that refers to the `binding.record`. This is intended mostly for backward compatibility with previous versions of the plugin and should not be used in general.
 
-```php
+```twig
 {% if binding.is_bound %}
   {{ currentrecord["fullname"] }} <{{ currentrecord["emailaddress1"] }}>
 {% endif %}
@@ -83,7 +83,7 @@ The following object members are available:
 Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
 reads the local database and request parameters to calculate the entity reference.
 
-```php
+```twig
 {% if user.is_bound %}
   {{ user.record["fullname"] }}
 {% endif %}
@@ -93,7 +93,7 @@ reads the local database and request parameters to calculate the entity referenc
 
 Use the `entities` object to access any record in your Dataverse instance by its table logical name and GUID. All record fields are available at once.
 
-```php
+```twig
 {{ entities.contact["00000000-0000-0000-0000-000000000000"]["fullname"] }}
 ```
 
@@ -105,7 +105,7 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 `metadata` object allows accessing metadata of your Dataverse instance. It follows the interface of `EntityMetadata` in XRM SDK. See [Microsoft reference docs](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.metadata.entitymetadata).
 
-```php
+```twig
 {% set options = metadata["contact"].Attributes["gendercode"].OptionSet.Options %}
 {% for option in options %}
   <li>{{option.Value}} - {{option.Label.UserLocalizedLabel.Label}}</li>
@@ -120,27 +120,28 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 Use `format_datetime()` to get value of any date column and transform its value. 
 
-```php
+```twig
 {% set record=entities.contact[GUID] %}
 {{ record.date_column|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
 ```
 
 Example: we need to get Birthday column value and to see it as 11/1/22, 12:00 AM
 
-```php
+```twig
 {% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
 {{ record.birthdate|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
 ```
 
 You can override the default timezone by explicitly specifying a timezone:
 
-```php
+```twig
 {% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
 {{ record.birthdate|date("F jS \\a\\t g:ia", "Europe/Paris") }}
 ```
 
 You can even define your own pattern using format_datetime() [See details](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#time-zone-pattern-usage):
-```php
+
+```twig
 {% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
 {{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
 ```
@@ -149,7 +150,7 @@ You can even define your own pattern using format_datetime() [See details](https
 
 You can follow the examples below:
 
-```php
+```twig
 {{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Name }}
 
 {{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Id }}
@@ -159,7 +160,7 @@ You can follow the examples below:
 
 When using the `expand` parameter, you can specify which fields to display. If you don’t specify any fields, all of them will be selected. Fields are specified as an array or a comma-delimited string.
 
-```php
+```twig
 {%  set contact = entities.contact['ea8157fa-cc32-ef11-8409-000d3a38d58d']|expand('createdby','fullname,Id') %}
 
 {%  set contact = entities.contact['ea8157fa-cc32-ef11-8409-000d3a38d58d']|expand('createdby',['fullname']) %}
@@ -196,7 +197,7 @@ Dataverse Integration provides several Dataverse-specific and general purpose Tw
 
 ## Functions
 
-```php
+```twig
 - image_url(
     record,
     column,
@@ -210,7 +211,7 @@ Dataverse Integration provides several Dataverse-specific and general purpose Tw
 ```
 -- returns URL to the image stored in the specified Dataverse image column. 
 
-```php
+```twig
 - file_url(
     record,
     column,
@@ -235,14 +236,14 @@ There you must enter the name of the template and the content of the template. T
 
 To use templates in `Dataverse Twig Gutenberg` block, you need to use the `include` statement with the template name. For example:
 
-```php
+```twig
 {% include 'name_of_your_template' %}
 ```
 
 
 If you want to create a template for updating record you can look at this example:
 
-```php
+```twig
 {% set currentRecord=entities.account[params.id] %}
 {% form entity="account" mode="update" record=currentRecord|to_entity_reference %}
 <form>
@@ -277,7 +278,7 @@ You can also use templates to replace the form template or individual form field
 
 Also you can partially change behavior for some fields. For example, this code will change placeholders for first name and last name fields:
 
-```php
+```twig
 {% set firstnameDisabled = control.disabled %}
 {% set lastnameDisabled = control.disabled %}
 <div class="row">
@@ -306,7 +307,7 @@ To use this template at the moment of form creation set `Render form based on tw
 
 For example, you have several custom fields: `cr1d1_dateonly` - Date Only format, `cr1d1_datetime` - Date Time format. Specify them in a twig template.
 
-```php
+```twig
 {% form entity="contact" mode="create" record=record|to_entity_reference %}
 <form>
     <div class="form-group">
@@ -340,10 +341,16 @@ Then you view page with this template. To fill in this form you should type cont
 
 The `MobileDetect` class contains various functions for detecting mobile devices and browsers. [Read more](https://github.com/serbanghita/Mobile-Detect)
 
-```php
+```twig
 isMobile: {% if isMobile %} Yes! {% else %} No! {% endif %}<br/>
 
 isChrome: {% if isChrome %} Yes! {% else %} No! {% endif %}<br/>
 
 isFirefox: {% if isFirefox %} Yes! {% else %} No! {% endif %}<br/>
 ```
+
+:::tip Intellisense
+
+Intellisense for working with the mobile detection methods is available in the `Dataverse Twig` block after typing `{{`.
+
+:::
