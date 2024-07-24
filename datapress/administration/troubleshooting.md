@@ -51,3 +51,4 @@ Here are some key flags to take note of:
 `ICDS_DISABLE_CACHE` - Use this flag to prevent the caching of any Dataverse-related data.;
 `ICDS_AUTH_KEY`, `ICDS_FORM_AUTH_KEY` - Before connecting the plugin, make sure to set these keys. You can generate suitable keys using the online generator provided by WordPress at https://api.wordpress.org/secret-key/1.0/;
 `ICDS_DISABLE_MONACO` - If set to true, the Monaco editor will not be used on admin pages for editing, resulting in the absence of syntax hints. Instead, the `Twig Plain` area will be used. Conversely, if false, enjoy the `Dataverse Twig` area with its hints. 
+`ICDS_TWIG_DEBUG` - When this flag is set to true, the dump() function can be used to print information about Twig objects using PHP’s var_dump(). This feature aids in identifying errors in your Twig code, enabling quicker troubleshooting and resolution.
