@@ -46,9 +46,10 @@ You can delete saved logs by clicking `Remove logs`.
 ### Advanced settings`
 To configure advanced settings, navigate to the Dataverse Admin Area and open the `Settings` tab. At the bottom of the page, you will find `Advanced settings`.
 
-Here are some key flags to take note of:
-`ICDS_ADVANCED_USER_BINDING` - If set to true, the legacy advanced editor will be used to configure user binding. You can see changes in `Bindings` -> `User Binding`;
-`ICDS_DISABLE_CACHE` - Use this flag to prevent the caching of any Dataverse-related data.;
-`ICDS_AUTH_KEY`, `ICDS_FORM_AUTH_KEY` - Before connecting the plugin, make sure to set these keys. You can generate suitable keys using the online generator provided by WordPress at https://api.wordpress.org/secret-key/1.0/;
-`ICDS_DISABLE_MONACO` - If set to true, the Monaco editor will not be used on admin pages for editing, resulting in the absence of syntax hints. Instead, the `Twig Plain` area will be used. Conversely, if false, enjoy the `Dataverse Twig` area with its hints. 
-`ICDS_TWIG_DEBUG` - When this flag is set to true, the dump() function can be used to print information about Twig objects using PHP’s var_dump(). This feature aids in identifying errors in your Twig code, enabling quicker troubleshooting and resolution.
+Here are some of the key flags:
+
+- `ICDS_ADVANCED_USER_BINDING` - If set to true, the legacy advanced editor will be used to configure user binding. You can see changes in `Bindings` -> `User Binding`;
+- `ICDS_DISABLE_CACHE` - Use this flag to prevent the caching of any Dataverse-related data.;
+- `ICDS_AUTH_KEY`, `ICDS_FORM_AUTH_KEY` - Before connecting the plugin, make sure to set these keys. You can generate suitable keys using the online generator provided by WordPress at https://api.wordpress.org/secret-key/1.0/;
+- `ICDS_DISABLE_MONACO` - When editing page content, `Dataverse Twig` block uses the Monaco editor that provides syntax highlighting and intellisense. If `ICDS_DISABLE_MONACO` flag is set to true, the Monaco editor will be disabled and the plain text editor will be used instead. 
+- `ICDS_TWIG_DEBUG` - When this flag is not set, Twig compile and runtime errors generate a short error message with the details available in the logs. When this flag is set, detailed error information is generated in the output. In addition, the `dump()` Twig function can be used to display object content, for example `{{ dump(contact) }}`. 
