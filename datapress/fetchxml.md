@@ -103,7 +103,7 @@ XrmToolBox can help you to create fetchXML filters. [See XrmToolBox documentatio
 
 ## How to use formattedValues
 
-`FormattedValues` is a property used in the context of Microsoft Dynamics CRM (Customer Relationship Management) and Dataverse. It provides a collection of formatted values for the entity attributes. This property is particularly useful when you need to display data to users in a user-friendly format. It is often used in forms and reports where the raw data needs to be presented in a more understandable way. [Read more](https://learn.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.entity.formattedvalues?view=dataverse-sdk-latest)<br></br>
+`FormattedValues` is a property used in the context of Dataverse. It provides a collection of formatted values for the table columns. This property is particularly useful when you need to display data to users in a user-friendly format. It is often used in forms and reports where the raw data needs to be presented in a more understandable way. [Read more](https://learn.microsoft.com/dotnet/api/microsoft.xrm.sdk.entity.formattedvalues?view=dataverse-sdk-latest)<br></br>
 This is an example of how to use `FormattedValues` in your code:
 
 ```
