@@ -7,8 +7,11 @@ tags:
     - Dynamics 365 Integration
 ---
 
+:::warning
 
-<Highlight color="#6e001d">This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.</Highlight>
+This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.
+
+:::
 
 A view is a grid with records listed under selected column headings. It is a type of [saved query](https://msdn.microsoft.com/en-us/library/gg328457.aspx). Users can select different views to look at a subset of records of the same entity that fit into pre-specified filter conditions. There are 3 main types of views: public, system, and personal.
 
@@ -52,19 +55,12 @@ Allows to customize lookup conditions. Example:
 `{parentcustomerid:GUID}{transactioncurrencyid:querystring.currency}{a_customid:currentrecord.custom_field}`
 
 ## Inline views
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+:::info
+
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 *Dynamics CRM Integration Premium* allows to define views that do not rely on view definitions in the CRM. The basic view consists of a view shortcode with attributes, but a view for the inline templates can be defined inside the msdyncrm_view tag, i. e. `[msdyncrm_view]...[/msdyncrm_view]`.
 

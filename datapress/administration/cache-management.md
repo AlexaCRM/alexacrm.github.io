@@ -19,21 +19,11 @@ There at the bottom of the `Status` panel, click on `Advanced settings`
 
 Look for the `ICDS_DISABLE_CACHE` option and enable it to disable caching.
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#000000',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
-
-<Highlight color="#FDDA0D">Warning</Highlight>
+:::warning
 
 By enabling this option, your site may slow down. Therefore, use it only for debugging purposes.
+
+:::
 
 ### Manage cache storage
 You can force Dataverse Integration to use specified storage by changing `ICDS_CACHE_STORAGE` option in `Advanced settings`.

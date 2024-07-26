@@ -30,7 +30,11 @@ Dataverse Integration provides a pair of Twig tags, `{% form %}{% endform %}`, t
 - `keep` -- *(boolean)* whether to keep the form visible after a successful submission. `false` is the default value and the form is collapsed.
 - `keep_data` -- *(boolean)* whether to keep values entered into form inputs after a successful submission. `false` is the default value and all values are removed.
 
-*Note:* when the premium add-on is installed, the `{% form %}` acts as a PowerApps form tag if the `id` parameter is specified. See [PowerApps forms documentation](/datapress/Forms/forms.md).
+:::note
+
+ When the premium add-on is installed, the `{% form %}` acts as a PowerApps form tag if the `id` parameter is specified. See [PowerApps forms documentation](/datapress/Forms/forms.md).
+ 
+ :::
 
 ```php
 {% form entity="contact" mode="update" record=record|to_entity_reference %}

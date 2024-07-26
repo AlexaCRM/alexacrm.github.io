@@ -13,19 +13,11 @@ keywords: [DataPress Table binding, Table Binding]
 
 ## Introduction
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 Table binding is a feature of Dataverse Integration plugin that allows linking specific Dataverse tables to WordPress posts and pages. When binding is set up, Twig, forms and other services get access to the "current" bound record and its columns.
 

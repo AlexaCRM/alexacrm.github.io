@@ -37,9 +37,11 @@ You can translate table headers by specifying the `language` parameter in the `v
 
 ## In shortcodes
 
-<div style={{ padding: '3px', backgroundColor: 'red' }}>
-    <h3>Deprecated twig</h3>
-</div> 
+:::warning
+
+    Deprecated twig
+    
+::: 
 
 ### Forms
 

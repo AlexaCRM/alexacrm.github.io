@@ -66,19 +66,11 @@ Check **Authenticate new users against Dynamics CRM by default** if you want new
 
 ## Registration
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 This tab provides extra options for the `[msdyncrm_registration]` shortcode.
 
@@ -92,7 +84,11 @@ Check **Match records during registration** if you want to reuse existing record
 
 ## Roles
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+:::info
+
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 The plugin will ask you to install default identity roles in CRM to provide role management for CRM-managed users. Click **Install Default Roles** to do that.
 
@@ -110,6 +106,10 @@ In the Messages section you can configure various messages that the plugin print
 
 You can configure the logging verbosity on the About tab.
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+:::info
+
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 To install the license for the premium add-on, pick your edition (Pro, Business, Enterprise) and enter the license key. Click the **Activate** button.

@@ -13,19 +13,11 @@ Our premium plugin will enable you to fully grasp the power of both WordPress an
 
 > This site provides documentation for both free and premium plugins. Premium features are marked as seen below.
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 ## Features
 

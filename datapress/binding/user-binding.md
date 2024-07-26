@@ -14,19 +14,11 @@ keywords: [DataPress User binding, User Binding]
 
 ## Introduction
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 Dataverse Integration provides capability to associate WordPress users with Dataverse contact records to provide more opportunities to build self-service customer portals.
 
