@@ -19,5 +19,13 @@ There are two ways to add custom templates:
 2. Use `wordpresscrm_locate_template` [filter](./hooks.md) to add a custom template path. Filter handler would look like this:
 
 ```php
-{% gist wizardist/f5af58b315616699dc275306d1fecffe %}
+<?php
+
+add_filter( 'wordpresscrm_locate_template', function( $template, $template_name, $template_path ) {
+    if ( !file_exists( $template ) ) {
+        return '/custom-directory/templates/' . $template_name;
+    }
+
+    return $template;
+}, 10, 3 );
 ```

@@ -66,13 +66,42 @@ Below are some use cases for the entity binding API.
 In this example, we have a page with ID 42, which is bound to an entity (e.g. Contact). Below is a fraction of the template for this page (e.g. `page-42.php`).
 
 ```php
-{% gist wizardist/e4d2c764ee19d7fb3e5923ad2ceeee6d %}
+<?php
+
+/**
+ * This piece of code fits well in the theme template
+ * that renders the page which is bound to an entity.
+ */
+
+// retrieve the bound entity record
+$currentRecord = ACRM()->binding->getEntity();
+
+// Binding::getEntity() returns null if no record retrieved from CRM
+if ( !is_null( $currentRecord ) ) {
+  ?>
+    <p>Contact name: <?php echo $currentRecord->fullname; ?></p>
+    <address><?php echo wpautop( $currentRecord->address1_composite ); ?></address>
+<?php
+}
 ```
+
 
 The plugin doesn't retrieve all columns, only those which are requested. To decide which columns are needed, it parses the post content by default. In order to make the previous example work, you need to add a WordPress filter to `wordpresscrm_data_binding_columns`.
 
 ```php
-{% gist wizardist/f811856e2afbb7a1d229704e88923af3 %}
+<?php
+
+/**
+ * This piece of code should usually be stored
+ * in functions.php of your theme.
+ */
+
+add_filter( 'wordpresscrm_data_binding_columns', function( $fields, $postContent, $postId ) {
+  return array_merge(
+    $fields,
+    [ 'fullname', 'address1_composite' ], // list of fields that we need
+  );
+}, 10, 3 );
 ```
 
 ### Build a URL for an entity-bound page
@@ -82,5 +111,12 @@ If you need to build a URL for an entity-bound page programmatically, you are pr
 For example, we have a page with address `/invoices/view/`, that is bound to entity *Invoice* which query string parameter `id` which matches the entity record ID, and the page is set as "default for views".
 
 ```php
-{% gist wizardist/34aa9688294d92022b905ae6d2d06df3 %}
+<?php
+
+$entityRef = new \AlexaCRM\CRMToolkit\Entity\EntityReference( 'invoice', '22b953ae-6a0a-e711-80f9-5065f38bf4a1' );
+
+$invoiceUrl = ACRM()->binding->buildUrl( $entityRef );
+
+// will echo 'https://contoso.com/invoices/view/?id=22b953ae-6a0a-e711-80f9-5065f38bf4a1'
+echo $invoiceUrl;
 ```
