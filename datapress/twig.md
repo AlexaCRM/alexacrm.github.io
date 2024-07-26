@@ -73,7 +73,7 @@ If `ICDS_COMPATIBLE_BINDING` flag is set to *true* you can use the `currentrecor
 
 ### Access the current user record 
 
-Use the `user` object to check whether the current user is bound, and to access the bound Dataverse record values. See [user binding](/datapress/binding/user-binding).
+Use the `user` object to check whether the current user is bound, and to access the bound Dataverse record values. See [user binding](/datapress/binding/user-binding.md).
 
 The following object members are available:
 
