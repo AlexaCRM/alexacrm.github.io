@@ -100,3 +100,26 @@ Also you can add a fetchXML template at the moment of binding configuration for 
 
 [See how to combine fetchXML templates and views](/datapress/views.md#parameterize-your-views)
 XrmToolBox can help you to create fetchXML filters. [See XrmToolBox documentation](https://www.xrmtoolbox.com/documentation/) Use FetchXML Builder tool to get help for fetchXML creation.
+
+## How to use formattedValues
+
+`FormattedValues` is a property used in the context of Microsoft Dynamics CRM (Customer Relationship Management) and Dataverse. It provides a collection of formatted values for the entity attributes. This property is particularly useful when you need to display data to users in a user-friendly format. It is often used in forms and reports where the raw data needs to be presented in a more understandable way. [Read more](https://learn.microsoft.com/en-us/dotnet/api/microsoft.xrm.sdk.entity.formattedvalues?view=dataverse-sdk-latest)<br></br>
+This is an example of how to use `FormattedValues` in your code:
+
+```
+{% fetchxml collection="accounts" %}
+<fetch>
+<entity name="account">
+  <attribute name="name" />
+  <link-entity name="contact" to="primarycontactid" from="contactid" alias="cont">
+   <attribute name="createdon" />
+   <attribute name="modifiedon" />
+  </link-entity>
+</entity>
+</fetch> 
+{% endfetchxml %}
+
+{% set record=accounts.results.entities[0] %}
+
+{{ record.FormattedValues["cont.modifiedon"] }}
+```
