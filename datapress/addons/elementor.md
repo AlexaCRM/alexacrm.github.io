@@ -10,25 +10,17 @@ keywords: [DataPress Elementor addon, create DataPress form with Elementor]
 ---
 <p class="lead">Build your forms and write custom twig code using Elementor!</p>
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
-
-<Highlight color="#25c2a0">Premium feature! This feature is available in the addon to the premium extension.</Highlight>
-
 ## Introduction
+
+:::info
+Premium feature! This feature is available in the addon to the premium extension.
+:::
 
 Our plugin supports Elementor. We offer several widgets that are compatible with Elementor (including Elementor Pro). To edit a form using Elementor, you need to install and activate the 'Dataverse Integration Elementor Extension' plugin. Please note that this functionality is available only with the premium version of our plugin.
 
-<Highlight color="#FDDA0D">*Note:* You may also need to install and activate Elementor Pro.</Highlight>
+:::note
+You may also need to install and activate Elementor Pro.
+:::
 
 ## Form widget
 

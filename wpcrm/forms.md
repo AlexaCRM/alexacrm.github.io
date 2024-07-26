@@ -9,19 +9,11 @@ tags:
 ---
 
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::warning
 
-<Highlight color="#6e001d">This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.</Highlight>
+This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.
+
+:::
 
 *Dynamics CRM Integration* allows you to work with Dynamics CRM data using forms. Forms perform basic operations such as Create, Update, and Read.
 
@@ -120,12 +112,20 @@ You can fill a field with a value from the query string. For instance, if you ha
 
 ### Currentuser value
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+:::info
+
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 When a user marked as CRM user logs in to WordPress, they're mapped to a linked record in Dynamics CRM -- usually a contact or an account. By using `currentuser` as a value you can put that record's ID into the field. E.g. `{parentcustomerid:currentuser}` will put the current user's record ID into `parentcustomerid`.
 
 ### Currentuser field value
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+:::info
+
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 Similar to `currentuser`, you can put any record field value into the form field by using dot notation. E.g., `{firstname:currentuser.firstname}{lastname:currentuser.lastname}` will set `firstname` and `lastname` in the form to the values of the current user record's `firstname` and `lastname`.

@@ -13,19 +13,11 @@ keywords: [DataPress views]
 
 ## Introduction
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 Views are a concept in PowerApps and Dynamics 365 that allows listing table records in tables. A view defines what data to show and in which order. **Dataverse Integration** allows to surface personal, system and public views on your WordPress website.
 

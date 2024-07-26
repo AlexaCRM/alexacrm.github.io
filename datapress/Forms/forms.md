@@ -13,19 +13,11 @@ keywords: [DataPress forms]
 
 ## Introduction
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 Forms are an essential component of Power Apps and Dynamics 365 which enables interaction with your data. Dataverse Integration brings the comparable experience to your WordPress website. It makes writing data back to Dataverse / Dynamics 365 a priority, and to achieve the goal it provides support for rendering Dataverse / Dynamics 365 forms and processing the input by converting it into new Dataverse rows (records) or updates to the existing rows.
 

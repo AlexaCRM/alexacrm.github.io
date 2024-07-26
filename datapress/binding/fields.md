@@ -14,19 +14,11 @@ keywords: [DataPress Fields Binding, Fields Binding addon]
 
 ## Introduction
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the addon to the premium extension.</Highlight>
+Premium feature! This feature is available in the addon to the premium extension.
+
+:::
 
 With the Dataverse Integration Fields Binding plugin available in the Addons, you can work with custom fields, allowing you to display any text before displaying the field value and formatting the field value.
 

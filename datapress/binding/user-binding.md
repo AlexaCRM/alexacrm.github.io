@@ -14,19 +14,11 @@ keywords: [DataPress User binding, User Binding]
 
 ## Introduction
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 Dataverse Integration provides capability to associate WordPress users with Dataverse contact records to provide more opportunities to build self-service customer portals.
 
@@ -81,13 +73,13 @@ When a WordPress user is bound to a Dataverse record, you may want to synchroniz
 
 To create a lookup bind, send a POST request to
 
-```php
+```text
 https://{site-url}/wp-json/wp/v2/users/{wordpress-user-id}
 ```
 
 Request body should contain json body with the meta property and the fields `icds_binding` and `icds_binding_ref`.
 
-```php
+```json
 {
     "meta": {
         "icds_binding": 3,
@@ -112,6 +104,7 @@ In summary, always have at least one user without binding to guarantee the smoot
 Here are the revised instructions for binding a user from the maker portal in two different ways:
 
 1. Bind Contact Record to WordPress User:
+
 - Open the WordPress user.
 - Pay attention to the Binding section.
 - In the “Contact” field, type the first or last name of the contact and select it.
@@ -122,6 +115,7 @@ Here are the revised instructions for binding a user from the maker portal in tw
 </div>
 
 2. Bind WordPress User to Contact Record:
+
 - Open the contact record.
 - Pay attention to the WordPress section.
 - In the “User (default site)” field, type the first and last name of your WordPress user and select it.

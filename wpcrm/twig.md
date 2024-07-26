@@ -76,19 +76,11 @@ Configure entity binding for the page as described in [Entity binding](./binding
 
 ### User binding
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 Configure authentication for the site as described in [Authentication](./authentication.md). If the current user is an identity user, then the global `user` object will be available in Twig templates.
 

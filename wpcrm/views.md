@@ -7,8 +7,11 @@ tags:
     - Dynamics 365 Integration
 ---
 
+:::warning
 
-<Highlight color="#6e001d">This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.</Highlight>
+This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.
+
+:::
 
 A view is a grid with records listed under selected column headings. It is a type of [saved query](https://msdn.microsoft.com/en-us/library/gg328457.aspx). Users can select different views to look at a subset of records of the same entity that fit into pre-specified filter conditions. There are 3 main types of views: public, system, and personal.
 
@@ -52,19 +55,12 @@ Allows to customize lookup conditions. Example:
 `{parentcustomerid:GUID}{transactioncurrencyid:querystring.currency}{a_customid:currentrecord.custom_field}`
 
 ## Inline views
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+:::info
+
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 *Dynamics CRM Integration Premium* allows to define views that do not rely on view definitions in the CRM. The basic view consists of a view shortcode with attributes, but a view for the inline templates can be defined inside the msdyncrm_view tag, i. e. `[msdyncrm_view]...[/msdyncrm_view]`.
 
@@ -84,8 +80,16 @@ See also: [FetchXML documentation](https://msdn.microsoft.com/en-us/library/gg32
 
 In this example, we're retrieving ten *Contact* records, fetching only fields `contactid`, `fullname`, `emailaddress1`, and `mobilephone`, using `fullname` for ascending order.
 
-```php
-{% gist wizardist/366675d7caff2b154bcfea12c59400ed %}
+```xml
+<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false" count="10">
+    <entity name="contact">
+        <attribute name="contactid" />
+        <attribute name="fullname" />
+        <attribute name="emailaddress1" />
+        <attribute name="mobilephone" />
+        <order attribute="fullname" descending="false" />
+    </entity>
+</fetch>
 ```
 
 #### Define a results template
@@ -103,21 +107,45 @@ To show retrieved records, tags `<foreachrow />` and `<foreachcell />` are intro
 
 `<foreachrow />` loops through the collection of retrieved records. If you retrieve ten records, the template contained in this tag will be rendered ten times -- once for each record. To access record fields, use the `$row.fieldname` syntax inside `<foreachrow />`. For instance, `$row.emailaddress1` will print the value of `emailaddress1` field of the current record.
 
-```php
-{% gist wizardist/f40d44771484ae954f739d7f7f56b081 %}
+```xml
+<results>
+  <h2>Contacts list</h2>
+  <p>List of active contacts</p>
+  <ul>
+    <foreachrow>
+      <li>
+        <a href="/contact-information/?id=$row.contactid">
+          $row.fullname <span class="email">$row.emailaddress1</span>
+        </a>
+      </li>
+    </foreachrow>
+  </ul>
+</results>
 ```
 
 To print out all available record fields straight away, use `<foreachcell />` inside the `<foreachrow />` tag. Formatted field value can be accessed using the `$cell` construct.
 
-```php
-{% gist wizardist/478102cc67e5aa498554e96693c49603 %}
+```xml
+<results>
+  <ul>
+    <foreachrow>
+      <li>
+        <ul>
+          <foreachcell>
+            <li>$cell</li>
+          </foreachcell>
+        </ul>
+      </li>
+    </foreachrow>
+  </ul>
+</results>
 ```
 
 #### Define an empty results template
 
 If no records were retrieved from the CRM, you can display a custom message using `<noresults />`.
 
-```
+```xml
 <noresults>
     <p>Sorry, no contact records found.</p>
 </noresults>
@@ -127,14 +155,57 @@ If no records were retrieved from the CRM, you can display a custom message usin
 
 Below is the resulting code for the inline view template including the shortcode opening and closing tags.
 
-```php
-{% gist wizardist/88ef5a72ffa2f764474aa94fa47cd0bb %}
+```xml
+[msdyncrm_view]
+<fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false" count="10">
+  <entity name="contact">
+    <attribute name="contactid" />
+    <attribute name="fullname" />
+    <attribute name="emailaddress1" />
+    <attribute name="mobilephone" />
+    <order attribute="fullname" descending="false" />
+  </entity>
+</fetch>
+<results>
+  <h2>Contacts list</h2>
+  <p>List of active contacts</p>
+  <ul>
+    <foreachrow>
+      <li>
+        <a href="/contact-information/?id=$row.contactid">
+          $row.fullname <span>$row.emailaddress1</span>
+        </a>
+      </li>
+    </foreachrow>
+  </ul>
+</results>
+<noresults>
+  <p>Sorry, no contact records found.</p>
+</noresults>
+[/msdyncrm_view]
 ```
 
 ### Using inline templates with CRM views
 
 `<results />` and `<noresults />` templates may be used with CRM views.
 
-```php
-{% gist wizardist/eddf7afef7bee8c96e44fb34ef270c93 %}
+```xml
+[msdyncrm_view entity="contact" view="Active Contacts"]
+<results>
+  <h2>Contacts list</h2>
+  <p>List of active contacts</p>
+  <ul>
+    <foreachrow>
+      <li>
+        <a href="/contact-information/?id=$row.contactid">
+          $row.fullname <span>$row.emailaddress</span>
+        </a>
+      </li>
+    </foreachrow>
+  </ul>
+</results>
+<noresults>
+  <p>Sorry, no contact records found.</p>
+</noresults>
+[/msdyncrm_view]
 ```

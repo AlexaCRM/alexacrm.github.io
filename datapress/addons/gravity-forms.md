@@ -13,21 +13,11 @@ keywords: [DataPress Gravity Forms addon, create DataPress form with Gravity For
 
 ## Introduction
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
-
-<Highlight color="#25c2a0">Premium feature! This feature is available in the addon to the premium extension.</Highlight>
-
 Our plugin supports Gravity Forms. So you can use it instead of our Custom or Power Apps forms
+
+:::info
+Premium feature! This feature is available in the addon to the premium extension.
+:::
 
 When you have created the form and clicked the `Save Form` button, you must also create a Dataverse Feed.
 
@@ -167,6 +157,3 @@ Alternatively, you can use a shortcode to achieve the same result (use the `Cust
 ```
 
 This shortcode will populate the form fields with values from the record with the GUID 2793c9dc-ff0d-ef11-9f89-0022489310b4 in the contact table. In this case you don't need to configure binding for the page, just to write the record guid in the `Custom HTML` block.
-
-
-

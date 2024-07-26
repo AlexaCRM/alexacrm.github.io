@@ -13,19 +13,11 @@ keywords: [DataPress Table binding, Table Binding]
 
 ## Introduction
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+:::info
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+Premium feature! This feature is available in the premium extension.
+
+:::
 
 Table binding is a feature of Dataverse Integration plugin that allows linking specific Dataverse tables to WordPress posts and pages. When binding is set up, Twig, forms and other services get access to the "current" bound record and its columns.
 
@@ -91,7 +83,7 @@ The query is virtually a [Twig template](/datapress/twig.md), and all the same T
 
 Sample FetchXML query that grants access only to users which are bound to contacts which in turn belong to the requested Account.
 
-```
+```xml
 <fetch version="1.0" output-format="xml-platform" mapping="logical" >
   <entity name="contact" >
     <attribute name="emailaddress1" />
@@ -108,7 +100,7 @@ Sample FetchXML query that grants access only to users which are bound to contac
 </fetch>
 ```
 
-Access to the post is allowed if:
+#### Access to the post is allowed if:
 
 - Binding is not configured, **OR**
 - Binding is configured, **AND**
@@ -118,7 +110,7 @@ Access to the post is allowed if:
     - The evaluated query (after Twig expansion) is empty, **OR**
     - The evaluated query returns a non-empty collection
 
-Access to the post is not allowed if:
+#### Access to the post is not allowed if:
 
 - Binding is configured, **AND**
   - Conditional access is enabled, **AND**
