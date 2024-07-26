@@ -106,7 +106,7 @@ XrmToolBox can help you to create fetchXML filters. [See XrmToolBox documentatio
 `FormattedValues` is a property used in the context of Dataverse. It provides a collection of formatted values for the table columns. This property is particularly useful when you need to display data to users in a user-friendly format. It is often used in forms and reports where the raw data needs to be presented in a more understandable way. [Read more](https://learn.microsoft.com/dotnet/api/microsoft.xrm.sdk.entity.formattedvalues?view=dataverse-sdk-latest)<br></br>
 This is an example of how to use `FormattedValues` in your code:
 
-```
+```twig
 {% fetchxml collection="accounts" %}
 <fetch>
 <entity name="account">
