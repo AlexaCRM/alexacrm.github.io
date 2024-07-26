@@ -65,7 +65,11 @@ The plugin calls three specific custom actions to notify the CRM about events:
 
 ## CRM-managed users
 
-<Highlight color="#6e001d">This feature has been deprecated! Please use Twig templates. Twig provides richer opportunities for programmed page templates.</Highlight>
+:::info
+
+This feature has been deprecated. Please use Twig templates instead. Twig provides richer opportunities for programmed page templates.
+
+:::
 
 
 If you have a large contact base (or accounts and other CRM entities) - you can easily allow them to log in on your site.

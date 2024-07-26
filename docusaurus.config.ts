@@ -100,10 +100,6 @@ const config: Config = {
             to: '/webhooks', 
             from: ['/integration-cds/webhooks'],
           },
-          {
-            to: '/forms/forms', 
-            from: ['/integration-cds/forms'],
-          },
         ],
       }
     ]

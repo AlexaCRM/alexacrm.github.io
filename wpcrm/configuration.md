@@ -56,7 +56,11 @@ When a non-ADFS solution is employed, or ADFS is being used in a non-supported w
 
 ## Portal
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the premium extension.</Highlight>
+:::info
+
+Premium feature! This feature is available in the addon to the premium extension.
+
+:::
 
 **Delete Unlinked Users** removes all CRM-managed WordPress users which do not have a corresponding WP Identity record in CRM. Useful if you have deleted a lot of WP Identity records or user names were changed.  
 
