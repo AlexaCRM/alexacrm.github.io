@@ -83,7 +83,7 @@ The query is virtually a [Twig template](/datapress/twig.md), and all the same T
 
 Sample FetchXML query that grants access only to users which are bound to contacts which in turn belong to the requested Account.
 
-```
+```xml
 <fetch version="1.0" output-format="xml-platform" mapping="logical" >
   <entity name="contact" >
     <attribute name="emailaddress1" />
@@ -100,7 +100,7 @@ Sample FetchXML query that grants access only to users which are bound to contac
 </fetch>
 ```
 
-Access to the post is allowed if:
+#### Access to the post is allowed if:
 
 - Binding is not configured, **OR**
 - Binding is configured, **AND**
@@ -110,7 +110,7 @@ Access to the post is allowed if:
     - The evaluated query (after Twig expansion) is empty, **OR**
     - The evaluated query returns a non-empty collection
 
-Access to the post is not allowed if:
+#### Access to the post is not allowed if:
 
 - Binding is configured, **AND**
   - Conditional access is enabled, **AND**
