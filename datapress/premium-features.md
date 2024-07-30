@@ -61,6 +61,8 @@ If you click the `Add registration` button at the moment of plugin connection yo
 
 You can skip this paragraph if you click the `Add registration` button at the moment of plugin connection.
 
+>When adding a registration, you may encounter a 403 error. In that case, please, [follow next steps](/knowledge-base/add-registration)
+
 1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_latest_managed.zip). 
 2. Sign in into https://make.powerapps.com.
 3. Select **Solutions** then click **Import solution** and import downloaded solution(from step 1) into your Dataverse / Dynamics 365 instance.

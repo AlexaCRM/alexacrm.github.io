@@ -31,6 +31,8 @@ To create application id and client secret or certificate you need to complete t
 2. [Add client secret credentials](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials). You can use either client secret or certificate. If using the secret make sure to copy and set it aside. If using certificate, make sure you have a certificate file (.cer) and its password protected copy (.pfx).
 3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user. Add the `WordPress App User Role` role. This role will be enough to manage the contact table. But to manage custom tables, create a WordPress Extended Role in which you mark all tables necessary for work. You will always be able to modify this role and add other tables.
 
+> `WordPress App User Role` comes with the solution. Without the WordPress Integration solution, you can use the `Basic User` role. The App user role is also part of the solution. However, the `Basic User` role allows only a limited set of actions.
+
 You can use field level security to control access to specific fields. This functionality is available for the default fields on most out-of-box entities, custom fields, and custom fields on custom entities. 
 [Read the details how to start work with field level security.](https://learn.microsoft.com/en-us/dynamics365/customerengagement/on-premises/admin/field-level-security?view=op-9-1)
 Add your app user into the WordPress Site Password profile. Click Users and add the application user, which you created previously. In the Field Permissions section you can manage access to different fields.  
@@ -51,6 +53,12 @@ For example, `az ad app credential reset --id b4d8eb36-5431-4a7a-b32c-647dbb1b56
 If you need to delete this new application, you can use this command 
 `az ad app delete --id 00000000-0000-0000-0000-000000000000`
 For example, `az ad app delete --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
+
+:::warning
+
+Do not change the timezone for your app user. If you do, you may encounter undefined results when working with a Date Time column that has User Local behavior.
+
+:::
 
 ## Set authentication keys
 
@@ -154,3 +162,23 @@ Premium feature! This feature is available in the premium extension.
 2. Select **Dataverse** in the left-hand side navigation.
 3. You should see the message about the premium plugin being available. Click **Download & install** link.
 4. Activate the plugin once it's installed. 
+
+:::note
+
+The minimum required PHP version is 7.4.
+The minimum required WordPress version is 5.4. 
+
+Here are the recommended and mandatory PHP extensions for the plugin:
+
+```
+RECOMMENDED_EXTENSIONS = [
+  'mbstring',
+]
+
+MANDATORY_EXTENSIONS = [
+  'curl',
+  'dom',
+  'intl',
+]
+```
+:::
