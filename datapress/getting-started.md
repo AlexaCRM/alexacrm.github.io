@@ -23,36 +23,36 @@ Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dataverse
 
 ## Get credentials
 
-> Dataverse / Dynamics 365 supports several deployment and authentication scenarios. This tutorial assumes Dataverse / Dynamics 365 Online and Server-to-Server authentication with an application user.
+::: note
+
+Dataverse / Dynamics 365 supports several deployment and authentication scenarios. This tutorial assumes Dataverse / Dynamics 365 Online and Server-to-Server authentication with an application user.
+
+::: 
 
 To create application id and client secret or certificate you need to complete the following steps:
 
 1. [Register an app](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#register-an-application) in Azure Active Directory. During the registration select **Accounts in this organizational directory only** as Supported account types. Stop the walkthrough after the step when the app is registered, do not add redirect URI or change platform settings. Copy Application (client) ID and set it aside.
 2. [Add client secret credentials](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app#add-credentials). You can use either client secret or certificate. If using the secret make sure to copy and set it aside. If using certificate, make sure you have a certificate file (.cer) and its password protected copy (.pfx).
-3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user. Add the `WordPress App User Role` role. This role will be enough to manage the contact table. But to manage custom tables, create a WordPress Extended Role in which you mark all tables necessary for work. You will always be able to modify this role and add other tables.
+3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign security roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user. We recommend assigning **Basis User** built-in role or another role with same or wider privileges. If you have the WordPress solution installed in your Dataverse instance, assign **WordPress App User** role to the app user. This security role provides access to additional tables included with the solution, for example **WordPress Sites**.
+4. If you have the WordPress solution installed, add the app user to **WordPress Site Password** column security profile. This [column level security](https://learn.microsoft.com/power-platform/admin/field-level-security) ensures that the app user has access to the secure columns included with the solution, even without system administrator privileges.  
 
-> `WordPress App User Role` comes with the solution. Without the WordPress Integration solution, you can use the `Basic User` role. The App user role is also part of the solution. However, the `Basic User` role allows only a limited set of actions.
+You can also use [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) (command line interface) to create app user and secret. 
 
-You can use field level security to control access to specific fields. This functionality is available for the default fields on most out-of-box entities, custom fields, and custom fields on custom entities. 
-[Read the details how to start work with field level security.](https://learn.microsoft.com/en-us/dynamics365/customerengagement/on-premises/admin/field-level-security?view=op-9-1)
-Add your app user into the WordPress Site Password profile. Click Users and add the application user, which you created previously. In the Field Permissions section you can manage access to different fields.  
+1. `az login --user <myAlias@myCompany.com> --password <myPassword>` to login to Microsoft Azure. 
 
-As an alternative option to not to work with Microsoft Azure through UI(steps 1, 2), you can create app and add secret through command line. This is the link with [the latest version of the of the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+   For example, `az login --user myUsername@company.com --password SecretPassword@1`  
 
-You can use next commands:
-1. `az login --user <myAlias@myCompany.com> --password <myPassword>`  
-to login to Microsoft Azure
-For example, `az login --user myUsername@company.com --password SecretPassword@1`  
-2. `az ad app create --display-name <appName>`
-To create app (analogue Azure Active Directory-> App registrations -> New registration)
-For example, `az ad app create --display-name mytestapp2`
-3. `az ad app credential reset --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
-To add client secret to this app (analogue Sertificates & Secrets -> Client secrets -> New client secret) 
-For example, `az ad app credential reset --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
+2. `az ad app create --display-name <appName>` to create an app. 
 
-If you need to delete this new application, you can use this command 
-`az ad app delete --id 00000000-0000-0000-0000-000000000000`
-For example, `az ad app delete --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
+   For example, `az ad app create --display-name mytestapp2`
+
+3. `az ad app credential reset --id <app id>` to add client secret to this app registration. 
+
+   For example, `az ad app credential reset --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
+
+4. `az ad app delete --id <app id>` to delete the app.
+
+   For example, `az ad app delete --id b4d8eb36-5431-4a7a-b32c-647dbb1b568d`
 
 :::warning
 
@@ -71,6 +71,7 @@ By default, Dataverse Integration use a Wordpress `AUTH_KEY` constant for encryp
 </div>
 
 These constants can be defined in your `wp-config.php` file, for example
+
 ```php
 define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o;6U{#;;n+R');
 define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
@@ -158,19 +159,19 @@ Premium feature! This feature is available in the premium extension.
 
 ### Install WordPress Premium Solution
 
-1.  Sign in into WordPress as admin user.
+1. Sign in into WordPress as admin user.
 2. Select **Dataverse** in the left-hand side navigation.
 3. You should see the message about the premium plugin being available. Click **Download & install** link.
 4. Activate the plugin once it's installed. 
 
 :::note
 
-The minimum required PHP version is 7.4.
+The minimum required PHP version is 8.2.
 The minimum required WordPress version is 5.4. 
 
 Here are the recommended and mandatory PHP extensions for the plugin:
 
-```
+```php
 RECOMMENDED_EXTENSIONS = [
   'mbstring',
 ]
