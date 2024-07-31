@@ -63,6 +63,18 @@ Map this field with the column logical name in the `Send to Dataverse` action.
 <img src="/images/elementor-lookup.png" alt="Create a lookup field" width="400" />
 </div>
 
+**To create a field for a Date Time column** you need to add 2 fields: one field for date and the other - for time.
+Set for both fields the same column logical name in `Send to Dataverse` section.
+
+**To create a field for a Date Time column**, follow these steps:
+
+1. Add Two Fields:
+ - **Date Field**: Create a field specifically for the date.
+ - **Time Field**: Create another field specifically for the time.
+ 
+2. Set Column Logical Name:
+In the `Send to Dataverse` section, set the same column logical name for both the date and time fields. This ensures that both fields are recognized as part of the same Date Time column.
+
 ## Twig widget
 
 Widget Name - `Twig Template`
