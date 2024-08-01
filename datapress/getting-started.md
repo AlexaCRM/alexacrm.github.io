@@ -23,7 +23,7 @@ Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dataverse
 
 ## Get credentials
 
-::: note
+:::note
 
 Dataverse / Dynamics 365 supports several deployment and authentication scenarios. This tutorial assumes Dataverse / Dynamics 365 Online and Server-to-Server authentication with an application user.
 
