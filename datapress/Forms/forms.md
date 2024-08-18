@@ -146,18 +146,12 @@ When working with date and time values in forms, you can customize how they are 
 
 [Read more](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field)
 
-To set the time zone for your entire website, follow these steps:
-
-1. Click **Settings**.
-2. Go to **General**.
-3. Select your desired time zone.
-
 When using the User Local behavior, all columns will display date or date-time fields converted to the specified time zone. For instance:
 
 If you have a value like **5/15/2028 03:00:00 AM** in a column with User Local behavior and set the time zone to **UTC + 2h**, the form will show **5/15/2028 05:00:00 AM**.
 If you set the time zone to **UTC - 4h**, the form will display **5/14/2028 11:00:00 PM**.
 
-Additionally, you can set time zones for **individual WordPress users**:
+You can set time zones for **individual WordPress users**:
 
 - Find the user and click **Edit**.
 - Go to the **Dataverse Extra Fields** section.
@@ -167,8 +161,12 @@ For example, if a user has the same **5/15/2028 03:00:00 AM** column value with 
 - Setting their time zone to **UTC + 2h** will display **5/15/2028 05:00:00 AM**.
 - Setting their time zone to **UTC - 4h** will show **5/14/2028 11:00:00 PM**.
 
-Unlogged users will see the UTC field value.
- You can also select a city instead of an exact time zone value. 
+Anonymous visitors will see the values in the timezone of the website. To set the time zone for the website, follow these steps:
+
+1. Sign in into WordPress administrative interface.
+1. Click **Settings**.
+2. Go to **General**.
+3. Select the required time zone.
 
 ### Lookup security
 
