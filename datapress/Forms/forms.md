@@ -136,6 +136,38 @@ After the record has been successfully created, you can get the guid using the r
 
 For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-000000000000`
 
+## Date Time and Date Only fields in forms
+
+When working with date and time values in forms, you can customize how they are displayed to users and how they are adjusted for different time zones. Here are the behavior options available in Dataverse and model-driven apps:
+
+**User Local**: Adjusts values based on the user’s time zone.
+**Time Zone Independent**: No time zone conversion is applied.
+**Date Only**: Displays only the date portion without time zone conversion.
+
+[Read more](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field)
+
+When using the User Local behavior, all columns will display date or date-time fields converted to the specified time zone. For instance:
+
+If you have a value like **5/15/2028 03:00:00 AM** in a column with User Local behavior and set the time zone to **UTC + 2h**, the form will show **5/15/2028 05:00:00 AM**.
+If you set the time zone to **UTC - 4h**, the form will display **5/14/2028 11:00:00 PM**.
+
+You can set time zones for **individual WordPress users**:
+
+- Find the user and click **Edit**.
+- Go to the **Dataverse Extra Fields** section.
+- Choose a value from the **Timezone** dropdown.
+
+For example, if a user has the same **5/15/2028 03:00:00 AM** column value with User Local behavior:
+- Setting their time zone to **UTC + 2h** will display **5/15/2028 05:00:00 AM**.
+- Setting their time zone to **UTC - 4h** will show **5/14/2028 11:00:00 PM**.
+
+Anonymous visitors will see the values in the timezone of the website. To set the time zone for the website, follow these steps:
+
+1. Sign in into WordPress administrative interface.
+1. Click **Settings**.
+2. Go to **General**.
+3. Select the required time zone.
+
 ### Lookup security
 
 Lookups utilize a custom REST API that could potentially execute outside of the form context, thereby unintentionally exposing data. To mitigate the risk of accidental exposure, we have implemented additional security measures:
