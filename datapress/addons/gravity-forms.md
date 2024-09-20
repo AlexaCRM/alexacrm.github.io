@@ -117,6 +117,9 @@ To create a record with `date and time` data type columns you need to follow nex
 <img src="/images/date-time-gf.png" width="400" />
 </div>
 
+Here are two options. We recommend using **Local Date** and **Local Time** for the **User Local** behavior option, and **Date Only** and **Time Only** for the **Time Zone Independent** and **Date Only** behavior options.
+[Read more](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field)
+
 In case, when you set only time value, the date represents the date zero (January 1, 1900).
 
 ## File upload columns

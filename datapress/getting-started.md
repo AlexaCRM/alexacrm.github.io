@@ -161,8 +161,10 @@ Premium feature! This feature is available in the premium extension.
 
 1. Sign in into WordPress as admin user.
 2. Select **Dataverse** in the left-hand side navigation.
-3. You should see the message about the premium plugin being available. Click **Download & install** link.
-4. Activate the plugin once it's installed. 
+3. Go to the **Addons** tab 
+4. Download **Dataverse Integration Premium**
+5. Click **Back to WordPress** 
+6. Click **Plugins** -> **Add New Plugin** and upload the downloaded .zip file.
 
 :::note
 

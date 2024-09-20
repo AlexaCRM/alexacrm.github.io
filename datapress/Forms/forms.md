@@ -49,6 +49,10 @@ Dataverse Integration allows customizing the list of underlying attributes for F
 
 Dataverse forms are fully integrated with reCAPTCHA. Version 2 with checkbox challenge, version 2 invisible and version 3 are supported.
 
+To add Google reCAPTCHA, fill in this [form](https://www.google.com/recaptcha/admin/create). You will then receive a site key and a secret key. Save these keys and go to the Dataverse Admin Area, then open the reCAPTCHA menu. Choose the same reCAPTCHA type and paste the keys into the textboxes.
+
+In **Forms Global Settings**, you can enable or disable reCAPTCHA for all forms from the Dataverse Admin Area. By default, reCAPTCHA is disabled on all forms. You can enable reCAPTCHA separately in the form registration settings under the reCAPTCHA settings override section.
+
 Dataverse Integration supports 3rd party plugins to retrieve reCAPTCHA credentials and settings:
 
 - [Contact Form 7 Captcha](https://wordpress.org/plugins/contact-form-7-simple-recaptcha/)
@@ -140,9 +144,9 @@ For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-0000000
 
 When working with date and time values in forms, you can customize how they are displayed to users and how they are adjusted for different time zones. Here are the behavior options available in Dataverse and model-driven apps:
 
-**User Local**: Adjusts values based on the user’s time zone.
-**Time Zone Independent**: No time zone conversion is applied.
-**Date Only**: Displays only the date portion without time zone conversion.
+**User Local**: Adjusts values based on the user’s time zone. <br></br>
+**Time Zone Independent**: No time zone conversion is applied. <br></br>
+**Date Only**: Displays only the date portion without time zone conversion. <br></br>
 
 [Read more](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field)
 
