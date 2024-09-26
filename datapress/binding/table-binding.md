@@ -51,6 +51,16 @@ Dataverse Integration provides capability of restricting access by executing a p
 
 Go to **Settings UI > Binding** to configure global binding settings.
 
+:::note
+
+Configure Binding Settings for a page
+
+The first time you configure binding, the dropdown to choose a page will be disabled. In that case, you need to go back to WordPress and find the page you want to bind. 
+Click **Configure binding** and choose the table from which you will take data.
+Then, return to the Dataverse Admin Area and go to **Binding** -> **Page Binding**. Here, you need to choose the page name.
+
+:::
+
 ### Choose post types to allow binding
 
 WordPress has several built-in post types, including posts and pages. 3rd-party plugins can add custom post types. You can choose which post types should be exposed to Table Binding. 

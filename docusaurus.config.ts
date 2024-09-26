@@ -100,6 +100,10 @@ const config: Config = {
             to: '/webhooks', 
             from: ['/integration-cds/webhooks'],
           },
+          {
+            to: '/binding/fields', 
+            from: ['/integration-cds/fields-binding'],
+          },
         ],
       }
     ]
