@@ -100,7 +100,7 @@ Form registration provides several options to override global form settings, suc
 
 Dataverse Integration provides a custom Twig tag, `{% form %}`, to add Dataverse forms to WordPress pages. When you add a Dataverse form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
 
-```php
+```twig
 {% form id=42 %}
 ```
 
@@ -110,25 +110,25 @@ This code is sufficient to display a Dataverse form on a WordPress page and star
 
 You can provide default values to pre-populate specific form columns by using the ‘defaults’ attribute in the `{% form %}` tag.
 
-```php
+```twig
 {% form id=42 defaults={ "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" } %}
 ```
 
 If you create a page using the Dataverse Form block, you can set values in the `defaults` field.
 
-```php
+```twig
 { "leadsourcecode": 8, "donotfax": true, "address1_country": "United States" }
 ```
 
 To set a default value for a choice field, you need to analyze the possible values. For example, you can find the label and value mapping in the table settings. To set the ‘Male’ label for the gender column, you need to choose the value of 1.
 
-```php
+```twig
 {% form id=4 defaults={"gendercode": 1} %}
 ```
 
 Similar way to set default value for multiple choice field.
 
-```php
+```twig
 {% form id=2 defaults={"multipleChoiceColumnName": '3,4'} %}
 ```
 
@@ -144,9 +144,9 @@ For example, `/?id=%s` will be replaced by `/?id=00000000-0000-0000-0000-0000000
 
 When working with date and time values in forms, you can customize how they are displayed to users and how they are adjusted for different time zones. Here are the behavior options available in Dataverse and model-driven apps:
 
-**User Local**: Adjusts values based on the user’s time zone. <br></br>
-**Time Zone Independent**: No time zone conversion is applied. <br></br>
-**Date Only**: Displays only the date portion without time zone conversion. <br></br>
+- **User Local**: Adjusts values based on the user’s time zone. 
+- **Time Zone Independent**: No time zone conversion is applied.
+- **Date Only**: Displays only the date portion without time zone conversion.
 
 [Read more](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field)
 
@@ -157,20 +157,21 @@ If you set the time zone to **UTC - 4h**, the form will display **5/14/2028 11:0
 
 You can set time zones for **individual WordPress users**:
 
-- Find the user and click **Edit**.
-- Go to the **Dataverse Extra Fields** section.
-- Choose a value from the **Timezone** dropdown.
+1. Find the user and click **Edit**.
+2. Go to the **Dataverse Extra Fields** section.
+3. Choose a value from the **Timezone** dropdown.
 
 For example, if a user has the same **5/15/2028 03:00:00 AM** column value with User Local behavior:
+
 - Setting their time zone to **UTC + 2h** will display **5/15/2028 05:00:00 AM**.
 - Setting their time zone to **UTC - 4h** will show **5/14/2028 11:00:00 PM**.
 
 Anonymous visitors will see the values in the timezone of the website. To set the time zone for the website, follow these steps:
 
 1. Sign in into WordPress administrative interface.
-1. Click **Settings**.
-2. Go to **General**.
-3. Select the required time zone.
+2. Click **Settings**.
+3. Go to **General**.
+4. Select the required time zone.
 
 ### Lookup security
 
