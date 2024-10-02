@@ -6,7 +6,7 @@ premium: true
 tags:
     - User
     - DataPress
-keywords: [DataPress user, WordPress uer]    
+keywords: [DataPress user, WordPress user]    
 ---
 
 <p class="lead">Link your WordPress users to Dataverse records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>
@@ -29,3 +29,78 @@ You can also disable a user via Maker portal. You just need to find the record i
 
 Also if you set the Login Enabled column as 'Yes' for the user, this user will be able to login. If you set 'No' - the user will be disabled. 
 
+:::note
+
+[How to bind a user using WP API](/binding/user-binding/#how-to-bind-a-user-using-wp-api) 
+
+:::
+
+## How to get last login date for a user
+
+To see the last login date, you need to get the user by ID (send a GET request).
+
+```text
+https://{url}/wp-json/wp/v2/users/{id}
+```
+
+Pay attention to the meta fields in the response.
+
+```twig
+"meta": {
+    "persisted_preferences": {
+    "core/edit-post": {
+    "isComplementaryAreaVisible": true,
+    "welcomeGuide": false,
+    "openPanels": [
+    "post-status",
+    "page-attributes",
+    "featured-image"
+]
+},
+"_modified": "2024-03-09T08:18:09.934Z"
+},
+    "icds_binding": 3,
+    "icds_timezone": "+00:00",
+    "icds_locale": "en_US",
+    "icds_disabled": 0,
+    "icds_last_login": "2024-03-20T08:30:14+00:00",
+    "icds_meta": "{"icds_binding":3,"icds_locale":"en_US","icds_timezone":"+00:00","icds_disabled":0,"icds_last_login":"2023-03-20T08:30:14+00:00"}",
+    "icds_binding_ref": {
+        "Name": "Chaunce Perrie",
+        "Id": "4fc12b21-686a-ed11-81ac-00224892b4a1",
+        "LogicalName": "contact",
+        "KeyAttributes": null
+}
+}
+```
+
+`icds_last_login` shows the last login date. It can be empty if the user hasn’t signed in.
+
+## How to filter users
+
+To get users filtered by conditions, you need to send a GET request with the following encoded part:
+
+```twig
+[
+{
+"Field": "icds_binding",
+"Operator": "eq",
+"Value": "1"
+},
+{
+"Field": "icds_binding_ref",
+"Operator": "ne",
+"Value": null
+}
+]
+```
+
+You can add as many elements as you want. Operators can be: `eq, ne, gt, lt, ge, le, - =, !=, >, <, >=, <=, LIKE, IN, BETWEEN, REGEXP, EXISTS`.
+
+You need to encode this body using URL-encoded format (you can use any tool).
+
+Then add this encoded part in the URL. See the example below.
+
+<div class="text--center"> 
+<img src="/images/filter-user.png" alt="Filter users via API" width="800" />
+</div>
