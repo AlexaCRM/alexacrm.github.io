@@ -173,6 +173,28 @@ Anonymous visitors will see the values in the timezone of the website. To set th
 3. Go to **General**.
 4. Select the required time zone.
 
+## Lookup fields in forms
+
+In PowerApps Forms for Dataverse, lookups are crucial for creating relationships between tables and enhancing data entry. Here’s a detailed look at how lookups function in different contexts:
+
+1. **Dialog**
+
+Search dialog boxes provide an interactive way to search and select records. Key features include:
+
+**Advanced Search**: Users can view all records or get results as they type, making it easier to find the right record.
+**Filters**: Filters set with the view help narrow down search results. You can set values to sort while searching in any view.
+
+2. **Dropdown** 
+
+Dropdown controls are used to display records with selections, allowing users to choose from a predefined list of options. They can be customized as follows:
+
+**Filter Choices**: Use the view to filter the available choices based on the records available in it. The name of the view must be pre-defined by the administrator in the form settings.
+**Search Options**: When there are a large number of records, it is convenient to use the search option to find the desired value.
+
+3. Select
+
+This is basically a standard dropdown list where users can select an entry from a dropdown list. By default, about 50 values are displayed.
+
 ### Lookup security
 
 Lookups utilize a custom REST API that could potentially execute outside of the form context, thereby unintentionally exposing data. To mitigate the risk of accidental exposure, we have implemented additional security measures:
