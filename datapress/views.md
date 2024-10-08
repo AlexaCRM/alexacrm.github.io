@@ -131,16 +131,28 @@ If we change `{0}` parameter to `accountName`, `{1}` to `city`, our example will
 
 ### Substitute lookup condition values
 
-You have to substitute lookup and optionset conditions separately because you cannot specify format items in Advanced Find. Substitution is performed by attribute name using the `lookups` parameter.
+You need to substitute lookup and optionset conditions separately because you cannot specify format items in Advanced Find. Substitution is performed by attribute name using the lookups parameter.
+
+**Steps to Perform Lookup Substitution for a View:**
+
+1. Go to Power Apps, find the necessary table, and create a new view.
+2. Add a filter for a lookup field. For example, in the account table, you can filter the Primary Contact by the value “Mateo Passman”. This will display only accounts with Mateo Passman as the primary contact. If you want to substitute this value to display accounts with “Amelita Ensten” as the primary contact, follow the next step:
+- Create a page with the Dataverse view block and set the Amelita Ensten record GUID as shown in the example:
+
+```php
+{ "primarycontactid": "97737487-742e-ed11-9db1-00224893bd2f" }
+```
+ 
+Alternatively, use the **view** tag in a Twig template:
+
+```php
+{% view entity="account" name="account with lookup substitution" lookups={ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }%}{% endview %}
+ ```
+
+Example Using **user.id**:
 
 ```php
 {% view entity="contact" name="Active Contacts" lookups={ "customerid": user.id } %}{% endview %}
- ```
- 
-For example, you add a filter in your crm to see only contacts, which have `SuperCompany` Company name. But when you create a page you need to see contacts with another Company name. In that case you should save id of the record and use this id in a view. 
-
-```php
-{% view entity="contact" name="Contact Test" lookups={ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }%}{% endview %}
  ```
 
 ## How to display email and url as active links
@@ -189,10 +201,10 @@ The page size determines the number of records displayed on each page. The numbe
 
 To further filter the view, you can choose a fetchXML template from the dropdown menu.
 
-If you want to filter the view based on a lookup, enter a similar value in the lookups substitution textbox:
+If you want to filter the view based on a lookup, enter a similar value in the lookups substitution textbox. Ensure you have a filter set in the view settings in Power Apps:
 
 ```php
-{ "customerid": "97737487-742e-ed11-9db1-00224893bd2f" }
+{ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }
  ```
 
 In the case of variables in a view, you can input values in the parameters substitution textbox:
