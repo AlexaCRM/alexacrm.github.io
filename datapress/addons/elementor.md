@@ -95,6 +95,15 @@ Description: To use this feature, simply select a table and then choose a column
 
 One of the simplest methods to display a field value for any record is by using dynamic tags. First, configure the binding for the page by selecting a table and the binding method. Then, return to page editing and, in the Elementor Text Editor widget, click the Dynamic Tags button (symbolized by a coins icon). Next, select the 'Dynamic field' option and click the settings button. Now, you can choose any field from which to display a record value.
 
+### Date Time fields in the Dataverse field widget
+
+You can see several options for Date Time and Date Only fields. For example, if we have a Date Time value of **2025-10-01T21:00:00Z**, the field will display the following values for a user in the UTC -4h timezone:
+
+- Column Name Only: **2025-10-01T21:00:00Z** (No timezone conversion)
+- Column Name + Local DateTime: **2025-10-01T17:00:00** -04:00 (Timezone conversion according to the user’s timezone)
+- Column Name + Local Date: **2025-10-01** (Date part only, converted to the user’s timezone)
+- Column Name + Local Time: **17:00:00** (Time part only, converted to the user’s timezone)
+
 ## Default record in editing mode
 
 You can enter a record GUID to be used as the default record in the page editing context. Simply find the page, click `Configure Binding`, select a table and enter an id in the `Default record` textbox.
