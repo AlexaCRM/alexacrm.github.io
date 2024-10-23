@@ -64,6 +64,15 @@ In this approach, you’ll serialize the lookup value and store it in a field on
 {% endform %}
 ```
 
+For record or lookup, you can use the **json_encode** filter:
+
+```twig
+{% set account = entities.account["9467eea0-70f7-ec11-82e7-002248159955"] %}
+{% set accountRef = account | to_entity_reference %}
+
+<input value="{{ accountRef | json_encode }}">
+```
+
 ### Table:guid
 
 In this approach, you directly use the GUID value from the lookup field to update the record. Note: this method is supported for backward compatibility with v1 plugin only and should not be used when writing new code. The only difference is how the value is set in the `<option>` element.
