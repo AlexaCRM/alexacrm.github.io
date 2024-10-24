@@ -81,7 +81,7 @@ To generate a suitable key you can use an online generator provided by Wordpress
 
 :::note
 
-If you did not set the **ICDS_AUTH_KEY**, it will be generated after connection. However, you must set the **ICDS_FORM_AUTH_KEY** yourself. You can also change both of these keys without losing connection. The length of the keys should not be less than 32 characters. 
+If you did not set the **ICDS_AUTH_KEY**, it will be generated automarically. However, you must set the **ICDS_FORM_AUTH_KEY** yourself. You can also change either of these keys without disconnecting. The keys should be at least 32 characters long. 
 If you define them in your **wp-config.php** file, these file values will take precedence.
 
 :::
