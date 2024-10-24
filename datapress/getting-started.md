@@ -79,6 +79,13 @@ define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e
 
 To generate a suitable key you can use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to Dataverse Integration -> Settings tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
 
+:::note
+
+If you did not set the **ICDS_AUTH_KEY**, it will be generated automarically. However, you must set the **ICDS_FORM_AUTH_KEY** yourself. You can also change either of these keys without disconnecting. The keys should be at least 32 characters long. 
+If you define them in your **wp-config.php** file, these file values will take precedence.
+
+:::
+
 ## Connect the plugin
 
 Once you got required credentials, it's time to connect the plugin to CRM.
