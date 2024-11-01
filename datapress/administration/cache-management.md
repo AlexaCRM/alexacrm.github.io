@@ -7,6 +7,10 @@ tags:
     - DataPress
 keywords: [DataPress cache]    
 ---
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
 
 <p class="lead">This page describes how to manage caching, including force disabling caching, configuring cache storage, and clearing the cache.</p>
 
@@ -26,7 +30,7 @@ By enabling this option, your site may slow down. Therefore, use it only for deb
 :::
 
 ### Manage cache storage
-You can force Dataverse Integration to use specified storage by changing `ICDS_CACHE_STORAGE` option in `Advanced settings`.
+You can force DataPress (Dataverse Integration) to use specified storage by changing `ICDS_CACHE_STORAGE` option in `Advanced settings`.
 
 For optimal performance of the cache clearing function, it is crucial to configure the settings in the Dataverse Admin Area under the Status menu. Follow these steps to ensure stable operation:
 1. Access the Advanced settings in the Dataverse Admin Area.

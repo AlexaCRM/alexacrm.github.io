@@ -8,6 +8,10 @@ tags:
     - DataPress
 keywords: [DataPress forms]  
 ---
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
 
 <p class="lead">Capture leads, feedback and other information from your website using forms designed in PowerApps and Dynamics 365.</p>
 
@@ -19,7 +23,7 @@ Premium feature! This feature is available in the premium extension.
 
 :::
 
-Forms are an essential component of Power Apps and Dynamics 365 which enables interaction with your data. Dataverse Integration brings the comparable experience to your WordPress website. It makes writing data back to Dataverse / Dynamics 365 a priority, and to achieve the goal it provides support for rendering Dataverse / Dynamics 365 forms and processing the input by converting it into new Dataverse rows (records) or updates to the existing rows.
+Forms are an essential component of Power Apps and Dynamics 365 which enables interaction with your data. DataPress (Dataverse Integration) brings the comparable experience to your WordPress website. It makes writing data back to Dataverse / Dynamics 365 a priority, and to achieve the goal it provides support for rendering Dataverse / Dynamics 365 forms and processing the input by converting it into new Dataverse rows (records) or updates to the existing rows.
 
 The plugin introduces a concept of *"form registrations"*, a proxy layer between WordPress and a Dataverse form. It specifies among other things which Dataverse form to show, how to handle submissions, which fields to make required or optional.
 
@@ -27,9 +31,9 @@ Forms are fully integrated into the Twig templating engine, and Twig templates a
 
 ## Features and limitations
 
-Dataverse Integration renders forms close to what they are defined in Dataverse, layout-wise. Most control types are supported too, including lookups, radio buttons and checkboxes, date & time pickers, as well as simple text (e.g. single-line and multi-line text, email) and number (e.g. integers, money) inputs.
+DataPress (Dataverse Integration) renders forms close to what they are defined in Dataverse, layout-wise. Most control types are supported too, including lookups, radio buttons and checkboxes, date & time pickers, as well as simple text (e.g. single-line and multi-line text, email) and number (e.g. integers, money) inputs.
 
-Dataverse Integration provides a lookup dialog very similar to one included in Power Apps and Dynamics 365. It allows picking rows as values for lookup and customer columns. The lookup dialog included in the plugin does not support selecting multiple rows for one column. Multi-select picklists are not supported yet.
+DataPress (Dataverse Integration) provides a lookup dialog very similar to one included in Power Apps and Dynamics 365. It allows picking rows as values for lookup and customer columns. The lookup dialog included in the plugin does not support selecting multiple rows for one column. Multi-select picklists are not supported yet.
 
 Several composite controls are not supported yet. Those include subgrids, maps, nested forms (quick forms), notes (Posts, Assistant, Activities, Notes).
 
@@ -39,11 +43,11 @@ There are no plans for support of web resources, such as custom JavaScript libra
 
 Default Dataverse tables, such as Contact and Lead, include several composite read-only columns.
 
-`fullname` is a calculated column which by default represents First Name and Last Name. Dataverse Integration and Dynamics 365 provide several options to generate the Full Name, [see the article](https://www.magnetismsolutions.com/blog/colinmaitland/2014/02/03/how-to-change-the-full-name-format-for-contacts-in-microsoft-dynamics-crm-2013). The plugin does not show a pop-up to specify each name component separately. It instead decomposes the `fullname` column, if one is present on the form, into separate controls on the form as if the form contained `firstname` and `lastname` instead.
+`fullname` is a calculated column which by default represents First Name and Last Name. DataPress (Dataverse Integration) and Dynamics 365 provide several options to generate the Full Name, [see the article](https://www.magnetismsolutions.com/blog/colinmaitland/2014/02/03/how-to-change-the-full-name-format-for-contacts-in-microsoft-dynamics-crm-2013). The plugin does not show a pop-up to specify each name component separately. It instead decomposes the `fullname` column, if one is present on the form, into separate controls on the form as if the form contained `firstname` and `lastname` instead.
 
 `addressN_composite` columns are likewise calculated based on other `addressN_*` columns. In terms of rendering composite address columns are treated the same as Full Name columns.
 
-Dataverse Integration allows customizing the list of underlying attributes for Full Name and Address columns.
+DataPress (Dataverse Integration) allows customizing the list of underlying attributes for Full Name and Address columns.
 
 ### reCAPTCHA support
 
@@ -53,7 +57,7 @@ To add Google reCAPTCHA, fill in this [form](https://www.google.com/recaptcha/ad
 
 In **Forms Global Settings**, you can enable or disable reCAPTCHA for all forms from the Dataverse Admin Area. By default, reCAPTCHA is disabled on all forms. You can enable reCAPTCHA separately in the form registration settings under the reCAPTCHA settings override section.
 
-Dataverse Integration supports 3rd party plugins to retrieve reCAPTCHA credentials and settings:
+DataPress (Dataverse Integration) supports 3rd party plugins to retrieve reCAPTCHA credentials and settings:
 
 - [Contact Form 7 Captcha](https://wordpress.org/plugins/contact-form-7-simple-recaptcha/)
 - [Google Captcha (reCAPTCHA) by BestWebSoft](https://wordpress.org/plugins/google-captcha/)
@@ -98,7 +102,7 @@ Form registration provides several options to override global form settings, suc
 
 ## Add the form to a page
 
-Dataverse Integration provides a custom Twig tag, `{% form %}`, to add Dataverse forms to WordPress pages. When you add a Dataverse form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
+DataPress (Dataverse Integration) provides a custom Twig tag, `{% form %}`, to add Dataverse forms to WordPress pages. When you add a Dataverse form to a page, you need to know its form registration ID -- it is specified in the list of form registrations.
 
 ```twig
 {% form id=42 %}

@@ -8,7 +8,7 @@ tags:
 keywords: [DataPress multilingual]  
 ---
 
-The page describes multilingual support in Dataverse plugin
+The page describes multilingual support in the DataPress (Dataverse Integration) plugin
 
 ## WPML support 
 

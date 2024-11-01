@@ -8,7 +8,12 @@ tags:
 keywords: [DataPress API]  
 ---
 
-<p class="lead"><b>Dataverse Integration</b> provides a number of WordPress hooks that allow you to extend the plugin and augment its behaviour.</p>
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
+
+<p class="lead"><b>DataPress (Dataverse Integration)</b> provides a number of WordPress hooks that allow you to extend the plugin and augment its behaviour.</p>
 
 ## Actions
 
@@ -33,7 +38,7 @@ Fires after custom form was successfully submitted.
 
 `integration-cds/initialized`
 
-Fires after Dataverse Integration has been initialized.
+Fires after DataPress (Dataverse Integration) has been initialized.
 
 ---
 

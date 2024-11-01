@@ -9,11 +9,16 @@ tags:
 keywords: [DataPress how to start]  
 ---
 
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
+
 <p class="lead">Get acquainted with the plugin, learn how to install and configure it properly and learn about its features and capabilities.</p>
 
 ## Get your Dataverse / Dynamics 365 organization ready
 
-Dataverse Integration is a WordPress plugin that makes WordPress and Dataverse / Dynamics 365 work together. It is not a stand-alone solution.
+**DataPress (Dataverse Integration)** is a WordPress plugin that makes WordPress and Dataverse / Dynamics 365 work together. It is not a stand-alone solution.
 
 If you don't have a Dataverse / Dynamics 365 organization yet, you can sign up for a free trial at [powerapps.microsoft.com](https://powerapps.microsoft.com/) for Dataverse or at [trials.dynamics.com](https://trials.dynamics.com/) for Dynamics 365 trial.
 
@@ -62,7 +67,7 @@ Do not change the timezone for your app user. If you do, you may encounter undef
 
 ## Set authentication keys
 
-By default, Dataverse Integration use a Wordpress `AUTH_KEY` constant for encryption purposes. To ensure maximum security you may want to create specific authentication constants to use by the plugin:
+By default, DataPress (Dataverse Integration) use a Wordpress `AUTH_KEY` constant for encryption purposes. To ensure maximum security you may want to create specific authentication constants to use by the plugin:
 - `ICDS_AUTH_KEY` - Used to encrypt sensitive data such as application secret.
 - `ICDS_FORM_AUTH_KEY` - Used for safe forms processing.
 
@@ -77,7 +82,7 @@ define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o
 define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
 ```
 
-To generate a suitable key you can use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to Dataverse Integration -> Settings tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
+To generate a suitable key you can use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to Dataverse -> Settings tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
 
 :::note
 
@@ -90,7 +95,7 @@ If you define them in your **wp-config.php** file, these file values will take p
 
 Once you got required credentials, it's time to connect the plugin to CRM.
 
-Go to your WordPress Admin  Area and access the *Integration Dataverse* menu. Switch to the *Connection* tab and choose the authentication method. Then follow these steps:
+Go to your WordPress Admin  Area and access the *Dataverse* menu. Switch to the *Connection* tab and choose the authentication method. Then follow these steps:
 
 `For OAuth 2.0 / Shared Secret authentication method`
 1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`

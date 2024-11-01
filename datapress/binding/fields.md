@@ -9,6 +9,10 @@ tags:
     - DataPress
 keywords: [DataPress Fields Binding, Fields Binding addon]    
 ---
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
 
 <p class="lead">Display column value using Dataverse Integration Fields Binding!</p>
 

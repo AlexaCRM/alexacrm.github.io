@@ -8,6 +8,10 @@ tags:
     - DataPress
 keywords: [DataPress user, WordPress user]    
 ---
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
 
 <p class="lead">Link your WordPress users to Dataverse records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>
 
@@ -21,7 +25,7 @@ To enable this user you need to find this user again, tick this username, choose
 
 ## How to disable a user in Maker portal
 
-Dataverse Integration provides capability to associate WordPress users with Dataverse Integration records to provide more opportunities to build self-service customer portals.
+DataPress (Dataverse Integration) provides capability to associate WordPress users with DataPress (Dataverse Integration) records to provide more opportunities to build self-service customer portals.
 
 When a bound user signs in, your website receives data from the bound record. To bind user manually, you should go to Users -> All Users in WordPress Admin Area and fond this user. Then hover the mouse cursor over the username and click 'Dataverse Binding', choose 'Manual' mode and find necessary record from the Contact table. Click Add and Apply to save settings.  
 
@@ -37,7 +41,7 @@ Also if you set the Login Enabled column as 'Yes' for the user, this user will b
 
 ## How to get last login date for a user
 
-To see the last login date, you need to get the user by ID (send a GET request).
+To see the last login date, you need to get the user by ID by sending a GET request:
 
 ```text
 https://{url}/wp-json/wp/v2/users/{id}
@@ -74,13 +78,13 @@ Pay attention to the meta fields in the response.
 }
 ```
 
-`icds_last_login` shows the last login date. It can be empty if the user hasn’t signed in.
+The **icds_last_login** field shows the last login date. It can be empty if the user hasn’t signed in.
 
 ## How to filter users
 
-To get users filtered by conditions, you need to send a GET request with the following encoded part:
+To get users filtered by conditions, send a GET request with the following encoded part:
 
-```twig
+```text
 [
 {
 "Field": "icds_binding",
@@ -97,10 +101,55 @@ To get users filtered by conditions, you need to send a GET request with the fol
 
 You can add as many elements as you want. Operators can be: `eq, ne, gt, lt, ge, le, - =, !=, >, <, >=, <=, LIKE, IN, BETWEEN, REGEXP, EXISTS`.
 
-You need to encode this body using URL-encoded format (you can use any tool).
+Encode this body using URL-encoded format (you can use any tool).
 
-Then add this encoded part in the URL. See the example below.
+Then add this encoded part in the URL. See the example below:
 
 <div class="text--center"> 
 <img src="/images/filter-user.png" alt="Filter users via API" width="800" />
 </div>
+
+Another way to filter users is to use the **X-Icds-Filter** header. The value of the header can be:
+
+```text
+[
+{
+"Field": "icds_binding",
+"Operator": "eq",
+"Value": "1"
+},
+{
+"Field": "icds_binding_ref",
+"Operator": "ne",
+"Value": null
+}
+]
+```
+In this example, you should not encode this text.
+
+Also, add **icds_filter_header=1** in your request URL: 
+
+```
+https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_filter_header=1
+```
+
+## How to get only necessary user fields in response
+
+Add **icds_select_header=1** in your request URL: 
+
+```
+https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_select_header=1
+```
+Also, use the **X-Icds-Select** header. Here you can specify any fields you want to see for users, for example, `id, email, description, url`.
+
+In this example, you will see only the **id, email, description, and url** fields for the WordPress users.
+
+## How to sort users by fields in response
+
+Add **icds_order_header=1** in your request URL: 
+
+```
+https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_order_header=1
+```
+
+Also use the **X-Icds-Order** header. Here you can specify the field name to sort users, for, example **url** or **username**.
