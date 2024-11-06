@@ -8,6 +8,10 @@ tags:
     - DataPress
 keywords: [DataPress Table binding, Table Binding]  
 ---
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
 
 <p class="lead">Link WordPress pages to Dataverse tables to provide direct access to your organization data.</p>
 
@@ -19,7 +23,7 @@ Premium feature! This feature is available in the premium extension.
 
 :::
 
-Table binding is a feature of Dataverse Integration plugin that allows linking specific Dataverse tables to WordPress posts and pages. When binding is set up, Twig, forms and other services get access to the "current" bound record and its columns.
+Table binding is a feature of DataPress (Dataverse Integration) plugin that allows linking specific Dataverse tables to WordPress posts and pages. When binding is set up, Twig, forms and other services get access to the "current" bound record and its columns.
 
 ## Understand table binding
 
@@ -45,7 +49,7 @@ You can choose from several options how to bind the post.
 
 In certain integration scenarios, it may be desirable to limit the number of table rows exposed to a user. In a self-service portal, you may want to allow a user access to their invoices, but keep them from seeing invoices for your other clients.
 
-Dataverse Integration provides capability of restricting access by executing a provided FetchXML query before access to the page is granted. The query allows determining relations between the requested table row and the visitor. Access is granted if the query returns any rows.
+DataPress (Dataverse Integration) provides capability of restricting access by executing a provided FetchXML query before access to the page is granted. The query allows determining relations between the requested table row and the visitor. Access is granted if the query returns any rows.
 
 ## Configure global binding settings
 

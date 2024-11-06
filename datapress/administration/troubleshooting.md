@@ -8,11 +8,15 @@ tags:
     - DataPress
 keywords: [DataPress troubleshooting]
 ---
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
 
 <p class="lead">This page describes how to set up logs.</p>
 
 ### Setting up logs
-Dataverse Integration stores in the logs some information about received and transmitted data, logical handlers, and so on. Thus, you can easily get data and analyze it.
+DataPress (Dataverse Integration) stores in the logs some information about received and transmitted data, logical handlers, and so on. Thus, you can easily get data and analyze it.
 
 #### Log Storage
 By default, collected data is stored in log files. You can change it to use database as a storage by enabling the `ICDS_DB_LOGS` option in the `Advanced settings`.
@@ -24,9 +28,9 @@ By default, collected data is stored in log files. You can change it to use data
 :::
 
 #### QM support
-Dataverse Integration supports the QueryMonitor plugin. So you can control this feature by toggling the `ICDS_QM_LOGS` option in the `Advanced settings`.
+DataPress (Dataverse Integration) supports the QueryMonitor plugin. So you can control this feature by toggling the `ICDS_QM_LOGS` option in the `Advanced settings`.
 
-When this feature is enabled, Dataverse Integration logs will be duplicated in QueryMonitor.
+When this feature is enabled, DataPress (Dataverse Integration) logs will be duplicated in QueryMonitor.
 #### Reading logs
 Some recent logs are displayed on the `Status` tab in the plugin's admin area. You can view them by clicking on the `Show recent logs` link.
 

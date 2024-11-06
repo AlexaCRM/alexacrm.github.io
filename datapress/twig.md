@@ -7,25 +7,29 @@ tags:
     - DataPress
 keywords: [DataPress twig]  
 ---
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
 
 <p class="lead">Use Twig templates to create custom layouts. Access your Dataverse data and metadata in Twig to share your data with your users.</p>
 
 ## Introduction
 
-*Dataverse Integration* employs [Twig](https://twig.symfony.com/) to make most data-rich layout jobs effortless.
+**DataPress (Dataverse Integration)** employs [Twig](https://twig.symfony.com/) to make most data-rich layout jobs effortless.
 
-On this page you can find information about custom Twig features that Integration Dataverse Integration brings. Please refer to [Twig documentation](https://twig.symfony.com/doc/2.x/templates.html) to learn about its templating capabilities.
+On this page you can find information about custom Twig features that Integration DataPress (Dataverse Integration) brings. Please refer to [Twig documentation](https://twig.symfony.com/doc/2.x/templates.html) to learn about its templating capabilities.
 
 ## Runtime settings
 
-Twig in Dataverse Integration supports debug mode and template caching.
+Twig in DataPress (Dataverse Integration) supports debug mode and template caching.
 
 - Debug mode allows using `dump()` to print information about Twig objects using PHP `var_dump()`. It is enabled in [WordPress debug mode](https://wordpress.org/support/article/debugging-in-wordpress/) (`WP_DEBUG`) or if `ICDS_TWIG_DEBUG` is *true*.
 - Template caching enhances page rendering performance. Enabled if `ICDS_TWIG_CACHE` is *true*.
 
 ## Global objects
 
-Dataverse Integration makes several new global objects available in the Twig environment.
+DataPress (Dataverse Integration) makes several new global objects available in the Twig environment.
 
 ### Access the current bound record 
 
@@ -188,7 +192,7 @@ Global object `params` is the alias of `request.params`.
 
 ## Filters
 
-Dataverse Integration provides several Dataverse-specific and general purpose Twig filters.
+DataPress (Dataverse Integration) provides several Dataverse-specific and general purpose Twig filters.
 
 - `formatted_value( attributeName )` -- returns the formatted value of the filtered entity record as reported by Dataverse. Returns the entity record attribute value if no formatted value available.  
  E.g. `record|formatted_value( "preferredappointmenttimecode" )`
@@ -238,7 +242,7 @@ Premium feature!
 
 ## Templates usage
 
-Dataverse Integration gives you the ability to create reusable templates. To do this, you need to go to the plugin admin area and open the "Templates" tab.
+DataPress (Dataverse Integration) gives you the ability to create reusable templates. To do this, you need to go to the plugin admin area and open the "Templates" tab.
 
 There you must enter the name of the template and the content of the template. The content could contain all the functions, statements and filters of Twig.
 

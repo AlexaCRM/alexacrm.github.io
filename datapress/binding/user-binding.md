@@ -10,6 +10,11 @@ tags:
 keywords: [DataPress User binding, User Binding]  
 ---
 
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
+
 <p class="lead">Link your WordPress users to Dataverse contact records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>
 
 ## Introduction
@@ -20,7 +25,7 @@ Premium feature! This feature is available in the premium extension.
 
 :::
 
-Dataverse Integration provides capability to associate WordPress users with Dataverse contact records to provide more opportunities to build self-service customer portals.
+DataPress (Dataverse Integration) provides capability to associate WordPress users with Dataverse contact records to provide more opportunities to build self-service customer portals.
 
 When a bound user successfully signs in, your website receives data from the bound contact record. You can use current user data to parameterize [FetchXML queries](/datapress/fetchxml.md) and [views](/datapress/views.md#prepare-the-view-for-use), [specify default values](/datapress/Forms/forms.md#default-values) in forms or even [implement custom table binding](/datapress/binding/table-binding.md#implement-custom-binding) using current user data.
 
@@ -28,13 +33,13 @@ You can add additional authorization step to disable sign-in for selected users 
 
 ## Understand user binding modes
 
-Dataverse Integration can bind a user to a Dataverse record in several different ways which are referred to as "binding modes".
+DataPress (Dataverse Integration) can bind a user to a Dataverse record in several different ways which are referred to as "binding modes".
 
 By default, a WordPress user is **not bound** to a Dataverse record. That means, whatever the global options are, the current user object is not populated, no authorization against Dataverse is performed.
 
 In **Lookup mode** a user is bound to a Dataverse contact that is specified  explicitly. Contact can be selected using either WordPress or Dataverse user interface. This mode was previously known as Manual.
 
-In **Username mode** Dataverse Integration binds the user to a contact record with a matching value in `alexacrm_wordpress_username` column (added to contact by AlexaCRM solution). This mode was previously known as Default or Auto. 
+In **Username mode** DataPress (Dataverse Integration) binds the user to a contact record with a matching value in `alexacrm_wordpress_username` column (added to contact by AlexaCRM solution). This mode was previously known as Default or Auto. 
 
 In **Custom mode** you must implement the `integration-cds/user-binding/bind-custom` filter to return an [EntityReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php) for the given user. 
 
@@ -61,7 +66,7 @@ Recommended way to auto-create user bindings and synchronize data between WordPr
 
 ### Enable username binding for new WordPress users
 
-You can provide WordPress user/usermeta field to Dataverse Contact field for initial matching. Dataverse Integration will locate the contact record using this mapping and set `alexacrm_wordpress_username` to the user's username.
+You can provide WordPress user/usermeta field to Dataverse Contact field for initial matching. DataPress (Dataverse Integration) will locate the contact record using this mapping and set `alexacrm_wordpress_username` to the user's username.
 
 ### Enable field synchronization for bound users
 

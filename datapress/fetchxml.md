@@ -7,18 +7,22 @@ tags:
     - DataPress
 keywords: [DataPress fetchXML]  
 ---
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
 
 <p class="lead">Use the powerful FetchXML query language in Twig to reflect your Common Data Service / Dynamics 365 data in WordPress.</p>
 
 ## Introduction
 
-FetchXML is a query language used in Common Data Service to retrieve table rows using a set of conditions. *Dataverse Integration* brings support of FetchXML into Twig to allow rendering collections of CRM records or individual records on WordPress pages.
+FetchXML is a query language used in Common Data Service to retrieve table rows using a set of conditions. **DataPress (Dataverse Integration)** brings support of FetchXML into Twig to allow rendering collections of CRM records or individual records on WordPress pages.
 
 Please refer to the [Microsoft Docs portal](https://docs.microsoft.com/power-apps/developer/data-platform/use-fetchxml-construct-query) to learn about constructing FetchXML queries.
 
 ## Query data using FetchXML in Twig templates
 
-*Dataverse Integration* provides a new Twig tag, `{% fetchxml %}`, which is accompanied by the required closing `{% endfetchxml %}` tag. Use the required `collection` column to specify the variable you will use to access retrieved records. Write your FetchXML query inside these tags. Use the optional `cache` attribute to enable query cache -- please adhere to the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations).
+**DataPress (Dataverse Integration)** provides a new Twig tag, `{% fetchxml %}`, which is accompanied by the required closing `{% endfetchxml %}` tag. Use the required `collection` column to specify the variable you will use to access retrieved records. Write your FetchXML query inside these tags. Use the optional `cache` attribute to enable query cache -- please adhere to the [ISO 8601 duration specification](https://en.wikipedia.org/wiki/ISO_8601#Durations).
 
 ```
 {% fetchxml collection="customers" cache="PT30M" %}

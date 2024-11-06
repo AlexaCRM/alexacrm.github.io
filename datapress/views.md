@@ -9,6 +9,11 @@ tags:
 keywords: [DataPress views]  
 ---
 
+:::note
+The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
+All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+:::
+
 <p class="lead">Add views to your WordPress pages to display tabular data from Dataverse and Dynamics 365.</p>
 
 ## Introduction
@@ -51,7 +56,7 @@ If you have several languages installed in your organization, you can choose the
 
 ### Enable data caching
 
-Dataverse Integration plugin always caches the view definition. That includes the underlying FetchXML query and the list of columns. To further boost performance, you can enable caching for the rows displayed in the view.
+DataPress (Dataverse Integration) plugin always caches the view definition. That includes the underlying FetchXML query and the list of columns. To further boost performance, you can enable caching for the rows displayed in the view.
 
 To cache the data in the view, specify the cache duration in the `cache` parameter. ISO 8601 duration format is accepted as a valid duration value.
 
@@ -65,7 +70,7 @@ To cache the data in the view, specify the cache duration in the `cache` paramet
 
 PowerApps and Dynamics 365 views are essentially FetchXML queries. You can parameterize the filter conditions contained in the view to decide which rows to include.
 
-To create filter you should go to Templates -> FetchXML Templates in Dataverse plugin menu. Then you click `create new` button. Save the template name to use it when you create page.
+To create filter you should go to Templates -> FetchXML Templates in DataPress (Dataverse Integration) plugin menu. Then you click `create new` button. Save the template name to use it when you create page.
 
 We will assume a PowerApps view for an Invoice entity with two filter conditions: for Status Reason and for Customer. The `<filter/>` portion of the FetchXML is as follow:
 
@@ -165,7 +170,7 @@ To display email addresses and URLs as active links, set the formatHyperlinks op
 
 ## Display data using a custom template
 
-By default, Dataverse Integration uses `view.twig` as a template. (See `/integration-cds/templates/twig/view.twig`.) You can define your own template inside between `{% view %}` and `{% endview %}`.
+By default, DataPress (Dataverse Integration) uses `view.twig` as a template. (See `/integration-cds/templates/twig/view.twig`.) You can define your own template inside between `{% view %}` and `{% endview %}`.
 
 You can access the base view via ssh or ftp by navigating to `{your_wordpress_site_path}/wp-content/plugins/integration-cds/templates/twig/view.twig`. Below you can see the description of the variables present in the file.
 
