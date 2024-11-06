@@ -8,11 +8,11 @@ tags:
     - Dynamics 365 Integration
 ---
 
-IMPORTANT! To complete the steps below you need to have one of the following roles in Azure Active Directory: Dynamics 365 Administrator, Power Platform Administrator, or Global Administrator.
+IMPORTANT! To complete the steps below you need to have one of the following roles in Microsoft Entra ID: Dynamics 365 Administrator, Power Platform Administrator, or Global Administrator.
 
-**Register application in Azure Active Directory**<br></br>
+**Register application in Microsoft Entra ID**<br></br>
 1. Navigate to https://portal.azure.com in your browser.
-2. Select Azure Active Directory. If it is not available on the screen, select search bar and type azure active directory then select it from the search results.
+2. Select Microsoft Entra ID. If it is not available on the screen, select search bar and type Microsoft Entra ID then select it from the search results.
 
 ![image1](../img/azure1.png)
 
