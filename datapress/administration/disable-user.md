@@ -153,3 +153,53 @@ https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_order_header
 ```
 
 Also use the **X-Icds-Order** header. Here you can specify the field name to sort users, for, example **url** or **username**.
+
+## How to reset user password
+
+To reset a user password, you need to send a **POST** request to the following URL:
+
+```
+https://{your-wordpress-site}/wp-json/integration-cds/v1/reset_password?email={userEmail}&id={userId}&login={userLogin} 
+```
+
+This request should contain one of the following parameters:
+
+- **email**: User email
+- **id**: WordPress user ID
+- **login**: User login for the WordPress site
+
+The order of reading parameters is: id, email, login.
+
+This request will immediately send a password reset link to the specified user email and return an empty body (204 response). In case of an error, it will return a 500 response with an error description:
+
+```text
+{
+    "code": 3,
+    "message": "User not found.",
+    "data": null
+}
+```
+
+Alternatively, you can send a **GET** request to:
+
+```
+https://{your-wordpress-site}/wp-json/integration-cds/v1/reset_password_link?email=user@example.com 
+```
+
+This request should contain **one** of the following parameters:
+
+- **email**: User email
+- **id**: WordPress user ID
+- **login**: User login for the WordPress site
+
+It will return a JSON response with the link for password resetting created by WordPress (or an error description in case of an error):
+
+```text
+{
+    "link": "https://your-wordpress-site.com/wp-login.php?action=rp&key=HEA7wLLCEvtnV3Ick1bQ&login={username}&wp_lang=en_US"
+}
+```
+
+:::note
+Don’t forget to include Basic Authentication for all requests.
+:::
