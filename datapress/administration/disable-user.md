@@ -49,32 +49,38 @@ https://{url}/wp-json/wp/v2/users/{id}
 
 Pay attention to the meta fields in the response.
 
-```twig
+```json
 "meta": {
     "persisted_preferences": {
-    "core/edit-post": {
-    "isComplementaryAreaVisible": true,
-    "welcomeGuide": false,
-    "openPanels": [
-    "post-status",
-    "page-attributes",
-    "featured-image"
-]
-},
-"_modified": "2024-03-09T08:18:09.934Z"
-},
+        "core/edit-post": {
+            "isComplementaryAreaVisible": true,
+            "welcomeGuide": false,
+            "openPanels": [
+                "post-status",
+                "page-attributes",
+                "featured-image"
+            ]
+        },
+        "_modified": "2024-03-09T08:18:09.934Z"
+    },
     "icds_binding": 3,
     "icds_timezone": "+00:00",
     "icds_locale": "en_US",
     "icds_disabled": 0,
     "icds_last_login": "2024-03-20T08:30:14+00:00",
-    "icds_meta": "{"icds_binding":3,"icds_locale":"en_US","icds_timezone":"+00:00","icds_disabled":0,"icds_last_login":"2023-03-20T08:30:14+00:00"}",
+    "icds_meta": {
+        "icds_binding": 3,
+        "icds_locale": "en_US",
+        "icds_timezone": "+00:00",
+        "icds_disabled": 0,
+        "icds_last_login": "2023-03-20T08:30:14+00:00"
+    },
     "icds_binding_ref": {
         "Name": "Chaunce Perrie",
         "Id": "4fc12b21-686a-ed11-81ac-00224892b4a1",
         "LogicalName": "contact",
         "KeyAttributes": null
-}
+    }
 }
 ```
 
@@ -84,18 +90,18 @@ The **icds_last_login** field shows the last login date. It can be empty if the 
 
 To get users filtered by conditions, send a GET request with the following encoded part:
 
-```text
+```json
 [
-{
-"Field": "icds_binding",
-"Operator": "eq",
-"Value": "1"
-},
-{
-"Field": "icds_binding_ref",
-"Operator": "ne",
-"Value": null
-}
+    {
+        "Field": "icds_binding",
+        "Operator": "eq",
+        "Value": "1"
+    },
+    {
+        "Field": "icds_binding_ref",
+        "Operator": "ne",
+        "Value": null
+    }
 ]
 ```
 
@@ -111,18 +117,18 @@ Then add this encoded part in the URL. See the example below:
 
 Another way to filter users is to use the **X-Icds-Filter** header. The value of the header can be:
 
-```text
+```json
 [
-{
-"Field": "icds_binding",
-"Operator": "eq",
-"Value": "1"
-},
-{
-"Field": "icds_binding_ref",
-"Operator": "ne",
-"Value": null
-}
+    {
+        "Field": "icds_binding",
+        "Operator": "eq",
+        "Value": "1"
+    },
+    {
+        "Field": "icds_binding_ref",
+        "Operator": "ne",
+        "Value": null
+    }
 ]
 ```
 In this example, you should not encode this text.
@@ -153,3 +159,54 @@ https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_order_header
 ```
 
 Also use the **X-Icds-Order** header. Here you can specify the field name to sort users, for, example **url** or **username**.
+
+## How to send a password reset message 
+
+:::note
+All API requests below require Basic Authentication.
+:::
+
+To send a password reset message to a user, you can use one of the following:
+
+1. Send a password reset email using WordPress. Send a **POST** request to:
+
+    ```
+    https://{your-wordpress-site}/wp-json/integration-cds/v1/reset_password?email={userEmail}&id={userId}&login={userLogin} 
+    ```
+    
+    To identify the user, the request should contain **one** of the following parameters:
+    
+    - **id**: WordPress user ID
+    - **email**: User email
+    - **login**: User login for the WordPress site
+    
+    The parameters priority is: id, email, login.
+    
+    This request will send a password reset link to the user and return an empty body (204 response). In case of an error, it will return a 500 response with the error description:
+    
+    ```json
+    {
+        "code": 3,
+        "message": "User not found.",
+        "data": null
+    }
+    ```
+2. Generate a password reset link. Send a **GET** request to:
+
+    ```
+    https://{your-wordpress-site}/wp-json/integration-cds/v1/reset_password_link?email=user@example.com 
+    ```
+    
+    To identify the user, the request should contain **one** of the following parameters:
+    
+    - **id**: WordPress user ID
+    - **email**: User email
+    - **login**: User login for the WordPress site
+    
+    It will return a JSON response with a password reset link or an error description in case of an error:
+    
+    ```json
+    {
+        "link": "https://your-wordpress-site.com/wp-login.php?action=rp&key=HEA7wLLCEvtnV3Ick1bQ&login={username}&wp_lang=en_US"
+    }
+    ```
