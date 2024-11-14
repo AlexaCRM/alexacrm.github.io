@@ -72,31 +72,11 @@ You can provide WordPress user/usermeta field to Dataverse Contact field for ini
 
 When a WordPress user is bound to a Dataverse record, you may want to synchronize some of their data between the systems. That data may include Email *(user_email)*, First Name *(first_name)*, Last Name *(last_name)* and Display Name *(display_name).* You can map these WordPress user and usermeta fields to Dataverse table columns. Leave the mapping field empty if you don't want to synchronize that particular WordPress user field.
 
-## Information for developers
+:::tip
+**Information for developers**
+[How to bind a user using WP API](/knowledge-base/bind-user-via-api) 
 
-### How to bind a user using WP API
-
-To create a lookup bind, send a POST request to
-
-```text
-https://{site-url}/wp-json/wp/v2/users/{wordpress-user-id}
-```
-
-Request body should contain json body with the meta property and the fields `icds_binding` and `icds_binding_ref`.
-
-```json
-{
-    "meta": {
-        "icds_binding": 3,
-        "icds_binding_ref": {
-            "Name": "ContactFirstName ContactLastName",
-            "Id": "11fa11e8-34bc-ed11-81ff-0011189804cd",
-            "LogicalName": "contact",
-            "KeyAttributes": null
-        }
-    }
-}
-```
+:::
 
 ### Important to remember
 
