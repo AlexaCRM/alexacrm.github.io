@@ -66,55 +66,6 @@ To configure cache settings for fetchXML, refer to the following example:
 {% endfetchxml %}
 ```
 
-### Clearing the cache
-
-You can clear the cache by going to the **Cache** tab in the plugin’s admin area. There, you can clear all cache or select specific cache pools to clear.
-
-Additionally, you can clear the cache through a **DELETE** API request. For this, you need to add basic authentication to your request. Basic authentication involves sending a verified username and password with your request. The user must have the **Administrator** role. To set a password for the user, edit the user and add a new application password.
-
-Form examples:
-
-```text
-wp-json/integration-cds/v1/cache/forms
-wp-json/integration-cds/v1/cache/forms/{formId}
-wp-json/integration-cds/v1/cache/forms/{formGuid}
-```
-
-```text
-wp-json/integration-cds/v1/cache/forms/2
-wp-json/integration-cds/v1/cache/forms/7a3eabfa-94ea-eb11-bacb-000d3acc54f0
-```
-
-To clear cache for views:
-
-```text
-wp-json/integration-cds/v1/cache/views
-wp-json/integration-cds/v1/cache/views/{tableName}/{viewTitle}
-wp-json/integration-cds/v1/cache/views/{viewGuid}
-```
-
-```text
-wp-json/integration-cds/v1/cache/views/account/All Accounts
-wp-json/integration-cds/v1/cache/views/6a1eabfa-94ea-eb11-bacb-000d3acc54f0
-```
-
-To clear cache for FetchXML you have several options:
-
-```text
-wp-json/integration-cds/v1/cache/fetchxml
-wp-json/integration-cds/v1/cache/fetchxml/{tableName}
-wp-json/integration-cds/v1/cache/fetchxml/contact
-```
-
-To clear cache for all tables:
-
-```text
-wp-json/integration-cds/v1/cache/entity
-```
-
-To clear cache for a specific table:
-
-```text
-wp-json/integration-cds/v1/cache/entity/{tableName}
-wp-json/integration-cds/v1/cache/entity/contact
-```
+:::tip
+[Cache API documentation](/knowledge-base/clear-cache)
+:::
