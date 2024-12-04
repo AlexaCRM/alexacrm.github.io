@@ -61,7 +61,7 @@ If you click the `Add registration` button at the moment of plugin connection yo
 
 You can skip this paragraph if you click the `Add registration` button at the moment of plugin connection.
 
-::: tip
+:::tip
 
 When adding a registration, you may encounter a 403 error. Follow [these steps](/knowledge-base/add-registration) to resolve the permissions issue.
 

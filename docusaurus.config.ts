@@ -93,6 +93,10 @@ const config: Config = {
             from: ['/integration-cds/table-binding'],
           },
           {
+            to: '/binding/table-binding', 
+            from: ['/datapress/binding/table-binding'],
+          },
+          {
             to: '/binding/user-binding', 
             from: ['/integration-cds/user-binding'],
           },
