@@ -218,3 +218,7 @@ add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $en
 ```
 
 3. Data returned by a lookup can be filtered using fetchXML templates, refer to the `FetchXML queries` page for sample templates. To add a template to a form in the Dataverse Admin Area, navigate to the Forms settings and scroll down to the `Conditional access` section located at the bottom of the page and add your desired template for the form lookups.
+
+:::note
+We do not support the following types of **Number** data type fields: **Language code**, **Duration**, **Time zone**.
+:::
