@@ -56,6 +56,14 @@ After selecting an action, for example `create`, you need to add `Fields Mapping
 <img src="/images/elementor-mapping.png" alt="Mapping in Elementor" width="400" />
 </div>
 
+:::note
+To ensure updated field values are displayed after submission, set the **Do not reset form values after submitting** option to **Yes**.
+
+<div class="text--center"> 
+<img src="/images/elementor-reset-value.png" alt="Do not reset form values after submitting" width="400" />
+</div>
+:::
+
 **To create a field for a lookup column** you need to add a new field and set its type to `Dataverse Lookup.` Then type the appropriate table and view.
 Map this field with the column logical name in the `Send to Dataverse` action.
 
