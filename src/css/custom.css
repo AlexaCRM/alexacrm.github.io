@@ -28,3 +28,8 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.split-screen { display: flex; } 
+.left-pane, .right-pane { flex: 1; padding: 20px; overflow: auto; margin: 10px; /* Add margin to separate panes */ border: 1px solid #ccc; /* Optional: Add border for better visualization */ }
+.left-pane { background-color: #f0f0f0; align-self: flex-start; /* Aligns to the start of the container */ } 
+.right-pane { background-color: #e0e0e0; align-self: flex-start; /* Aligns to the start of the container */ }
