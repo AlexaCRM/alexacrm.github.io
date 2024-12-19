@@ -222,3 +222,7 @@ add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $en
 :::note
 The following formats of the **Whole Number** data type are currently unsupported: **Language code**, **Duration**, **Time zone**.
 :::
+
+## How to work with decimal and float fields
+
+Decimal and float fields depend on your Power Apps website settings. Here, you can set minimum and maximum values, decimal places, and other settings. [Read more](https://learn.microsoft.com/power-apps/maker/data-platform/formula-column-data-types)

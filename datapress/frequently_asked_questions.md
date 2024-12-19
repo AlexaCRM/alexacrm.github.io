@@ -25,36 +25,4 @@ No, you should register an app in Microsoft Entra admin center and add client se
 
 ## What's the difference between DataPress (Dataverse Integration) and Dynamics 365 Integration?
 
-*Key Features*
-
-**DataPress (Dataverse Integration):**
-- Uses 100% Web API-based communication, ensuring a future-proof investment.
-- Secure server-to-server authentication, eliminating the need for usernames and passwords.
-- Allows creation of custom forms in WordPress that map to Dataverse tables and columns.
-- Extensible through WordPress actions and filters.
-
-**Dynamics 365 Integration:**
-- Initially used WS-Trust protocol for authentication, but now supports app ID/secret authentication.
-- Directly integrates with Dynamics 365 applications, providing access to Dynamics 365 data.
-- Suitable for users who primarily work within the Dynamics 365 ecosystem.
-
-*Use Cases*
-
-**DataPress (Dataverse Integration):**
-- Ideal for businesses that use Dataverse as a central data repository and want to extend its capabilities to WordPress.
-- Suitable for creating custom forms, collecting leads, and displaying data from Dataverse without coding.
-
-**Dynamics 365 Integration:**
-- Best for organizations that rely heavily on Dynamics 365 and need direct integration with WordPress.
-- Useful for accessing and displaying Dynamics 365 data within WordPress.
-
-*Extensibility*
-
-**DataPress (Dataverse Integration):**
-- Highly extensible through WordPress actions and filters.
-- Supports custom layouts using the Twig template engine.
-
-**Dynamics 365 Integration:**
-- Extensible within the Dynamics 365 framework.
-- Primarily focused on direct data integration and display.
-
+Use Dynamics 365 Integration for on-premises versions. For other scenarios, we recommend using DataPress (Dataverse Integration).
