@@ -1,10 +1,11 @@
 ---
-title: How to retrieve a record
+title: How to retrieve Dataverse records using Web API twig functions
 sidebar_position: 17
 slug: /knowledge-base/retrieve-records
 tags:
     - Knowledge base
     - DataPress
+    - Twig
 ---
 
 Follow this example to retrieve multiple records:
