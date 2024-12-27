@@ -10,7 +10,7 @@ tags:
 
 Follow this example to retrieve multiple records:
 
-```php
+```twig
 {% set records = 
 retrieve_multiple(
 entity:'contact', 
@@ -33,7 +33,7 @@ skipToken:null
 
 Here is an example of how to retrieve a single record:
 
-```php
+```twig
 {% set record1 = 
 retrieve(
 entity:'account',
