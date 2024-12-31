@@ -93,7 +93,7 @@ If you choose binding via custom code, you must implement two filter hooks.
 
 Enable conditional access by selecting the checkbox. Add a FetchXML query in the text area.
 
-The query is virtually a [Twig template](/datapress/twig.md), and all the same Twig constructs, objects, filters and functions are available. Members of the `binding` object will reference the current record, and `user` object members will reference to the current user if [User Binding](/datapress/binding/user-binding.md) is implemented.
+The query is virtually a [Twig template](/datapress/using-twig/twig_template.md), and all the same Twig constructs, objects, filters and functions are available. Members of the `binding` object will reference the current record, and `user` object members will reference to the current user if [User Binding](/datapress/binding/user-binding.md) is implemented.
 
 Sample FetchXML query that grants access only to users which are bound to contacts which in turn belong to the requested Account.
 
@@ -139,4 +139,4 @@ You can manage page binding in WordPress Admin Area by navigating to Bindings ->
 
 Information retrieved via table binding is used to update a certain record(row) with a form. See [Forms documentation](/datapress/Forms/forms.md).
 
-In Twig, the current row on a page is exposed via the global object `binding.record`. It contains an Table object of the current row, and you can access any column, e.g. `{{ binding.record["fullname"] }}`. For more information see [Twig documentation](/datapress/twig.md)
+In Twig, the current row on a page is exposed via the global object `binding.record`. It contains an Table object of the current row, and you can access any column, e.g. `{{ binding.record["fullname"] }}`. For more information see [Twig documentation](/datapress/using-twig/twig_introduction.md)

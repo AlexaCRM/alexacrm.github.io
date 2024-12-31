@@ -74,7 +74,7 @@ const config: Config = {
           },
           {
             to: '/twig', 
-            from: ['/integration-cds/twig'],
+            from: ['/integration-cds/twig/introduction'],
           },
           {
             to: '/fetchxml', 

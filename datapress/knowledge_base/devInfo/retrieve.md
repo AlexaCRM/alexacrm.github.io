@@ -46,3 +46,4 @@ expand:"ownerid"
 <li><b>ID:</b> {{record1["accountid"]}} <b>Name: </b>{{record1["name"]}} |{{record1["ownerid"].Name}}</li>
 ```
 
+For more information about function see [Filters and function](/datapress/using-twig/filters_and_function.md)
