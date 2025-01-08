@@ -44,3 +44,9 @@ Also if you set the Login Enabled column as 'Yes' for the user, this user will b
 [Users API documentation](/knowledge-base/manage-users)
 
 :::
+
+:::tip
+
+Use the `ICDS_TWIG_USE_PRIVILEGES` flag to prevent editors and contributors from editing the page with view, twig, or fetchXML. Page view permissions will be preserved.
+
+:::
