@@ -53,6 +53,6 @@ Here are some of the key flags:
 
 - `ICDS_TWIG_DEBUG` - When this flag is not set, Twig compile and runtime errors generate a short error message with the details available in the logs. When this flag is set, detailed error information is generated in the output. In addition, the `dump()` Twig function can be used to display object content, for example `{{ dump(contact) }}`. 
 
-- `ICDS_TWIG_USE_PRIVILEGES`- Use this flag to prevent editors and contributors from editing the page with view, twig, or fetchXML. Page view permissions will be preserved.
+- `ICDS_TWIG_USE_PRIVILEGES`- Use this flag to prevent editors and contributors from editing pages that access Dataverse data using twig code including but not limited to `view` and `fetchxml` tags. Existing page view permissions are preserved.
 
-- `ICDS_TWIG_SUPPRESS_ERRORS` - If this flag is set to true, twig templates failing to compile or generating runtime errors should produce empty output.
+- `ICDS_TWIG_SUPPRESS_ERRORS` - If this flag is set to true, twig templates failing to compile or generating runtime errors will produce empty output.
