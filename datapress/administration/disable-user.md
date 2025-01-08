@@ -44,3 +44,9 @@ Also if you set the Login Enabled column as 'Yes' for the user, this user will b
 [Users API documentation](/knowledge-base/manage-users)
 
 :::
+
+:::tip
+
+Use the `ICDS_TWIG_USE_PRIVILEGES` flag to prevent editors and contributors from editing pages that access Dataverse data using twig code including but not limited to `view` and `fetchxml` tags. Existing page view permissions are preserved.
+
+:::
