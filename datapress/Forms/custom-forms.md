@@ -159,6 +159,40 @@ Custom forms allow creating new Dataverse / Dynamics 365 rows, as well as updati
 The `{% form %}` Twig tag lets you configure the form settings, such as target table, submission mode (create or update), etc. 
 Form control `name` columns refer to the corresponding table columns, such as `firstname`, `lastname` and `emailaddress1`. Put the `<recaptcha>` placeholder where you want to put reCAPTCHA control if you enable reCAPTCHA on your form. Before you use reCAPTCHA, please configure it in plugin settings.
 
+## Date Time and Date Only fields in custom forms
+
+For example, you have several custom fields: `cr1d1_dateonly` - Date Only format, `cr1d1_datetime` - Date Time format.
+
+```php
+{% form entity="contact" mode="create" record=record|to_entity_reference %}
+<form>
+    <div class="form-group">
+        <label>
+            Account Name:
+            <input class="form-control" name="name" value="{{ record["name"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            Date Only field:
+            <input class="vdatetime" name="cr1d1_dateonly" value="{{ record["cr1d1_dateonly"] }}">
+        </label>
+    </div>
+	<div class="form-group">
+        <label>
+            Date Time field:
+            <input class="vdatetime" name="cr1d1_datetime" value="{{ record["cr1d1_datetime"] }}">
+        </label>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+{% endform %}
+```
+
+Then you view page with this template. To fill in this form you should type content in Date only field in `yyyy-mm-dd` or `yyyy/mm/dd` format (like `2023-01-20` or `2023/01/20`), Date Time field in `yyyy-mm-ddThh:mm` format (like `2023-01-20T12:30`).
+
 ### Getting row GUID
 
 After the row has been successfully created, you can get the guid using the redirect setting with the %s parameter.
