@@ -31,26 +31,6 @@ skipToken:null
 </ul>
 ```
 
-**entity**: This specifies the name of the entity from which records are being retrieved. In this case, the entity is contact.
-
-**select**: A list of the fields to be returned for each record. Here, the columns specified are fullname and ownerid.
-
-**filter**: This parameter is used to filter the records based on specified value. 
-
-**order**: Specifies the ordering of the returned records. The key is the column logical name and the value is the sort direction. 
-
-**expand**: Used to include related entities or additional data from related entities in the results. This parameter can help fetch detailed information from linked entities. Other examples:
-- parentcustomerid_account($select=name,telephone1,accountid) 
-- transactioncurrencyid($select=isocurrencycode).
-
-**top**: Limits the number of records returned. Here, it is set to 2, meaning only the top 2 records will be returned.
-
-**includeCount**: This should be a boolean value. If set to true, the total record count can be retrieved using `{{ records.TotalRecordCount }}`. In this example, it is set to null, meaning the count is not included.
-
-**skip**: Specifies the records to skip. It is set to null here, meaning no records are skipped.
-
-**skipToken**: Used for pagination. When set to null, it indicates there is no token used for skipping records.
-
 Here is an example of how to retrieve a single record:
 
 ```twig
