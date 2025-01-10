@@ -6,6 +6,8 @@ tags:
     - Knowledge base
     - DataPress
     - Twig
+    - Retrieve
+    - retrieve_multiple
 ---
 
 Follow this example to retrieve multiple records:
