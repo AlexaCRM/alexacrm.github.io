@@ -28,24 +28,64 @@ With the Dataverse Integration Fields Binding plugin available in the Addons, yo
 
 To use this plugin, follow the steps below:
 
-1. In the Dataverse Admin Area, navigate to Bindings -> Fields Binding. Here, you can set pre-rendering Twig code that will execute before rendering Twig expression substitution. Use this to retrieve data, define variables, and more.
-2. Select `Add field` to choose the custom field to display or click `Create field` to create a new custom field.
-3. Add a table from which to retrieve data.
-4. Click Save.
-5. Return to the WordPress Admin Area and create a page. Click `Preferences`, then open the `Panel` settings.
-6. Add extra areas to the editor by choosing `Custom fields` option. Click `Enable & Reload` to see the Custom fields section.
-7. At the bottom of the page, create a name for custom field(s). Save and publish the page.
-8. Go to the pages list, find the page you created and click `Configure Binding` to choose the table to bind and how to bind the post.
+1. Navigate to **Bindings -> Fields Binding** in the Dataverse Admin Area:
+
+- Here, you can set pre-rendering Twig code that will execute before rendering Twig expression substitution. Use this to retrieve data, define variables, and more.
+
+2. **Create or Add Fields:**
+
+- Click **Create field** to create a new custom field, then click **Add field** to choose the custom field to display. 
+
+3. **Choose a Table:**
+
+- Add a table from which to retrieve data.
+
+4. Click **Save**
+
+5. Return to the WordPress Admin Area and create a page. 
+
+6. **Enable Custom Fields**:
+
+- Click **Preferences**, then open the **Panel** settings. Add extra areas to the editor by choosing the **Custom fields** option. Click **Enable & Reload** to see the Custom fields section.
+
+7. **Select and Add Custom Fields:**
+
+At the bottom of the page, select the custom field(s) created in the Dataverse Admin Area and click **Add Custom Field**. Use the following example to display the field on the page:
+
+```
+{{ getMeta("custom_field_name")}}<br>
+```
+
+8. **Save and publish** the page.
+
+9. **Add the output of the meta field to your template:**
+
+```
+add_filter('integration-cds/twig/functions', function( $functionsArray ) { 
+       $functionsArray['getMeta'] = new TwigFunction('getMeta',function($metaName){  
+            return get_post_meta(get_the_ID(), $metaName);        });  
+            return $functionsArray;}, 10, 5 );
+```
+
+10. **Configure Binding**
+
+- Go to the pages list, find the page you created, and click **Configure Binding** to choose the table to bind and how to bind the post.
 
 Additionally, the following options can replace a field:
 
 - **Twig Expression:** Type a Twig expression to display it as the field value.
 - **Column:** Choose the column logical name from the drop-down.
-- **Twig Template:** Choose the Twig template, which can be found under `Templates` -> `Twig Templates`.
+- **Twig Template:** Choose the Twig template, which can be found under **Templates** -> **Twig Templates**.
 - **Formatted Column:** Choose the column logical name from the drop-down.
 
 :::note
 
 The selected table in the Configure Binding item must match the table for this custom field in the Dataverse Admin Area.
+
+:::
+
+:::note
+
+When adding custom fields, you may encounter an empty content of a page. Follow [these steps](/knowledge-base/empty-page-after-custom-field) to resolve the issue.
 
 :::
