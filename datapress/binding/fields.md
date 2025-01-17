@@ -61,10 +61,10 @@ At the bottom of the page, select the custom field(s) created in the Dataverse A
 9. **Add the output of the meta field to your template:**
 
 ```
-add_filter('integration-cds/twig/functions', function( $functionsArray ) { 
-       $functionsArray['getMeta'] = new TwigFunction('getMeta',function($metaName){  
-            return get_post_meta(get_the_ID(), $metaName);        });  
-            return $functionsArray;}, 10, 5 );
+add_filter('integration-cds/twig/functions', function ($functionsArray) {    
+    $functionsArray['getMeta'] = new Twig\TwigFunction('getMeta', function ($metaName) { 
+        return get_post_meta(get_the_ID(), $metaName);    });    
+        return $functionsArray;}, 10, 5);
 ```
 
 10. **Configure Binding**
@@ -81,11 +81,5 @@ Additionally, the following options can replace a field:
 :::note
 
 The selected table in the Configure Binding item must match the table for this custom field in the Dataverse Admin Area.
-
-:::
-
-:::note
-
-When adding custom fields, you may encounter an empty content of a page. Follow [these steps](/knowledge-base/empty-page-after-custom-field) to resolve the issue.
 
 :::
