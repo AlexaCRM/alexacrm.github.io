@@ -143,6 +143,20 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 ### Get date column from CRM and transform its value
 
+To display a column value in UTC, use the following Twig code snippet:
+
+```
+{% set record=entities.contact["11c4c8fa-bf0e-ef11-9f89-0022489310b4"] %} 
+{{ record.createdon }}
+```
+
+To convert a column value to the user's timezone, use the `_local` suffix as shown below:
+
+```
+{% set record=entities.contact["11c4c8fa-bf0e-ef11-9f89-0022489310b4"] %} 
+{{ record.createdon_local }}
+```
+
 Use `format_datetime()` to get value of any date column and transform its value. 
 
 ```twig
@@ -171,6 +185,21 @@ You can even define your own pattern using format_datetime() [See details](https
 {{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
 ```
 
+### Get user data
+
+**User Timezone and Locale**
+
+You can retrieve the user's timezone and locale using the following Twig syntax:
+
+```
+{{user.timezone}}
+{{user.locale}}
+```
+
+**WordPress User Details**
+
+Use `user.wp_user` to get WordPress user details.
+
 ### Get lookup value
 
 You can follow the examples below:
@@ -183,7 +212,7 @@ You can follow the examples below:
 
 ### Specify fields to display
 
-When using the `expand` parameter, you can specify which fields to display. If you don’t specify any fields, all of them will be selected. Fields are specified as an array or a comma-delimited string.
+When using the `expand` filter, you can specify which fields to display. If you don’t specify any fields, all of them will be selected. Fields are specified as an array or a comma-delimited string.
 
 ```twig
 {%  set contact = entities.contact['ea8157fa-cc32-ef11-8409-000d3a38d58d']|expand('createdby','fullname,Id') %}
