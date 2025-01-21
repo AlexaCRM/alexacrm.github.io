@@ -106,3 +106,5 @@ The format of displaying decimal and float columns depends on the settings of yo
 {{ record | formatted_value("cr1d1_decimal")}}<br> 
 {{ record.cr1d1_decimal }}
 ```
+
+An example output: **50,002.25**.

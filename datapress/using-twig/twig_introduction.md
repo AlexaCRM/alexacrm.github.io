@@ -104,8 +104,8 @@ The following object members are available:
 - `reference` -- *(EntityReference)* reference to the bound record.
 - `record` -- *(Entity)* bound record object.
 - `wp_user` -- *(WP_User)* information about the current WordPress user.
-- `timezone`-- Overrides the date using the current user's timezone.
-- `locale` -- Overrides the date using the current user's locale.
+- `timezone`-- Returns the timezone for the current user. The timezone should not be null and typically returns as a string. Example output: **America/New_York**, **UTC**. The format "Asia/Tokyo" is known as an [**IANA time zone name**](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). The exact format depends on how the timezone is stored and managed in your WordPress setup. If you need to convert or manipulate this value further, you can use additional Twig filters or functions as needed.
+- `locale` -- Return locale for the current user. Example output: **en_GB**
 
 Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
 reads the local database and request parameters to calculate the entity reference.
@@ -116,7 +116,7 @@ reads the local database and request parameters to calculate the entity referenc
 {% endif %}
 ```
 
-Example of a date override with explicit timezone and locale:
+An example of date display with explicit time zone and locale:
 
 ```twig
 {{ "now"|format_datetime('short', 'short', locale: user.locale, timezone: user.timezone) }} 
