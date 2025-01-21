@@ -104,6 +104,8 @@ The following object members are available:
 - `reference` -- *(EntityReference)* reference to the bound record.
 - `record` -- *(Entity)* bound record object.
 - `wp_user` -- *(WP_User)* information about the current WordPress user.
+- `timezone`-- Overrides the date using the current user's timezone.
+- `locale` -- Overrides the date using the current user's locale.
 
 Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
 reads the local database and request parameters to calculate the entity reference.
@@ -112,6 +114,12 @@ reads the local database and request parameters to calculate the entity referenc
 {% if user.is_bound %}
   {{ user.record["fullname"] }}
 {% endif %}
+```
+
+Example of a date override with explicit timezone and locale:
+
+```twig
+{{ "now"|format_datetime('short', 'short', locale: user.locale, timezone: user.timezone) }} 
 ```
 
 ### Access any record in your Dataverse instance
@@ -184,21 +192,6 @@ You can even define your own pattern using format_datetime() [See details](https
 {% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
 {{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
 ```
-
-### Get user data
-
-**User Timezone and Locale**
-
-You can retrieve the user's timezone and locale using the following Twig syntax:
-
-```
-{{user.timezone}}
-{{user.locale}}
-```
-
-**WordPress User Details**
-
-Use `user.wp_user` to get WordPress user details.
 
 ### Get lookup value
 
