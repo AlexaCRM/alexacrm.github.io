@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Filters and function
 slug: /twig/filters_and_function
 tags:

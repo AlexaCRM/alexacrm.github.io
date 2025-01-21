@@ -149,60 +149,6 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 `now` contains the value of PHP function [`time()`](https://www.php.net/manual/en/function.time.php) at the moment of Twig environment initialization.
 
-### Get date column from CRM and transform its value
-
-To display a column value in UTC, use the following Twig code snippet:
-
-```
-{% set record=entities.contact["11c4c8fa-bf0e-ef11-9f89-0022489310b4"] %} 
-{{ record.createdon }}
-```
-
-To convert a column value to the user's timezone, use the `_local` suffix as shown below:
-
-```
-{% set record=entities.contact["11c4c8fa-bf0e-ef11-9f89-0022489310b4"] %} 
-{{ record.createdon_local }}
-```
-
-Use `format_datetime()` to get value of any date column and transform its value. 
-
-```twig
-{% set record=entities.contact[GUID] %}
-{{ record.date_column|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
-```
-
-Example: we need to get Birthday column value and to see it as 11/1/22, 12:00 AM
-
-```twig
-{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
-{{ record.birthdate|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
-```
-
-You can override the default timezone by explicitly specifying a timezone:
-
-```twig
-{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
-{{ record.birthdate|date("F jS \\a\\t g:ia", "Europe/Paris") }}
-```
-
-You can even define your own pattern using format_datetime() [See details](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#time-zone-pattern-usage):
-
-```twig
-{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
-{{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
-```
-
-### Get lookup value
-
-You can follow the examples below:
-
-```twig
-{{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Name }}
-
-{{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Id }}
-```
-
 ### Specify fields to display
 
 When using the `expand` filter, you can specify which fields to display. If you don’t specify any fields, all of them will be selected. Fields are specified as an array or a comma-delimited string.
