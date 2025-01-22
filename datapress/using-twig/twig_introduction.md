@@ -104,6 +104,8 @@ The following object members are available:
 - `reference` -- *(EntityReference)* reference to the bound record.
 - `record` -- *(Entity)* bound record object.
 - `wp_user` -- *(WP_User)* information about the current WordPress user.
+- `timezone`-- Returns the timezone for the current user. The timezone should not be null and typically returns as a string. Example output: **America/New_York**, **UTC**. The format "Asia/Tokyo" is known as an [**IANA time zone name**](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). The exact format depends on how the timezone is stored and managed in your WordPress setup. If you need to convert or manipulate this value further, you can use additional Twig filters or functions as needed.
+- `locale` -- Return locale for the current user. Example output: **en_GB**
 
 Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
 reads the local database and request parameters to calculate the entity reference.
@@ -112,6 +114,12 @@ reads the local database and request parameters to calculate the entity referenc
 {% if user.is_bound %}
   {{ user.record["fullname"] }}
 {% endif %}
+```
+
+An example of date display with explicit time zone and locale:
+
+```twig
+{{ "now"|format_datetime('short', 'short', locale: user.locale, timezone: user.timezone) }} 
 ```
 
 ### Access any record in your Dataverse instance
@@ -141,49 +149,9 @@ Use the `entities` object to access any record in your Dataverse instance by its
 
 `now` contains the value of PHP function [`time()`](https://www.php.net/manual/en/function.time.php) at the moment of Twig environment initialization.
 
-### Get date column from CRM and transform its value
-
-Use `format_datetime()` to get value of any date column and transform its value. 
-
-```twig
-{% set record=entities.contact[GUID] %}
-{{ record.date_column|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
-```
-
-Example: we need to get Birthday column value and to see it as 11/1/22, 12:00 AM
-
-```twig
-{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
-{{ record.birthdate|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
-```
-
-You can override the default timezone by explicitly specifying a timezone:
-
-```twig
-{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
-{{ record.birthdate|date("F jS \\a\\t g:ia", "Europe/Paris") }}
-```
-
-You can even define your own pattern using format_datetime() [See details](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#time-zone-pattern-usage):
-
-```twig
-{% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
-{{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
-```
-
-### Get lookup value
-
-You can follow the examples below:
-
-```twig
-{{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Name }}
-
-{{ entities.contact['ae8bca63-706a-ed11-9561-000d3a227751'].parentcustomerid.Id }}
-```
-
 ### Specify fields to display
 
-When using the `expand` parameter, you can specify which fields to display. If you don’t specify any fields, all of them will be selected. Fields are specified as an array or a comma-delimited string.
+When using the `expand` filter, you can specify which fields to display. If you don’t specify any fields, all of them will be selected. Fields are specified as an array or a comma-delimited string.
 
 ```twig
 {%  set contact = entities.contact['ea8157fa-cc32-ef11-8409-000d3a38d58d']|expand('createdby','fullname,Id') %}
