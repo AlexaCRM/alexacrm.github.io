@@ -10,23 +10,26 @@ keywords: [DataPress twig, decimal, float, currency, duration, choice]
 
 ## Displaying Column Values
 
-### Get date column from CRM and transform its value
+### Get date column from CRM
 
-To display a column value in UTC, use the following Twig code snippet:
+In Dataverse Admin Area you can manage display date and time. Pay attention to the `ICDS_DATETIME_VALUE` setting. It has several options: **Legacy**, **UTC**, **Local**.
+
+Examples for the **createdon** column which has User Local behavior:
+
+|                      | Legacy     |  UTC              | Local  |
+|----------------------|--------------|----------------|-----------|
+|`{{record.createdon}}`  | UTC | UTC | convert the date and time to the user's timezone |
+|`{{record.createdon_utc}}` | UTC | UTC | UTC |
+|`{{record.createdon_local}}` |  convert the date and time to the user's timezone | convert the date and time to the user's timezone | convert the date and time to the user's timezone |
+
+To display a column value for Time zone independent and Date only behavior , use the following Twig code snippet:
 
 ```twig
 {% set record=entities.contact["11c4c8fa-bf0e-ef11-9f89-0022489310b4"] %} 
 {{ record.createdon }}
 ```
 
-To convert a column value to the user's timezone, use the `_local` suffix as shown below:
-
-```twig
-{% set record=entities.contact["11c4c8fa-bf0e-ef11-9f89-0022489310b4"] %} 
-{{ record.createdon_local }}
-```
-
-Use `format_datetime()` to get value of any date column and transform its value. 
+Use `format_datetime()` to get the value of any date column and convert its value according to user's locale and timezone. 
 
 ```twig
 {% set record=entities.contact[GUID] %}
@@ -40,7 +43,7 @@ Example: we need to get Birthday column value and to see it as 11/1/22, 12:00 AM
 {{ record.birthdate|format_datetime(dateFormat='short', timeFormat='short', locale=user.locale, timezone=user.timezone) }}
 ```
 
-You can override the default timezone by explicitly specifying a timezone:
+You can convert the default timezone by explicitly specifying a timezone:
 
 ```twig
 {% set record=entities.contact[9ff7777f-6266-ed11-9562-00224892b4a1] %}
