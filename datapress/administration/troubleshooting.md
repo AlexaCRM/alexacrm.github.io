@@ -38,7 +38,7 @@ For a more detailed analysis, you can download the logs by clicking `Download Lo
 
 You can delete saved logs by clicking `Remove logs`.
 
-### Advanced settings`
+### Advanced settings
 To configure advanced settings, navigate to the Dataverse Admin Area and open the `Settings` tab. At the bottom of the page, you will find `Advanced settings`.
 
 Here are some of the key flags:
@@ -56,3 +56,25 @@ Here are some of the key flags:
 - `ICDS_TWIG_USE_PRIVILEGES`- Use this flag to prevent editors and contributors from editing pages that access Dataverse data using twig code including but not limited to `view` and `fetchxml` tags. Existing page view permissions are preserved.
 
 - `ICDS_TWIG_SUPPRESS_ERRORS` - If this flag is set to true, twig templates failing to compile or generating runtime errors will produce empty output.
+
+- `ICDS_DISABLE_FETCHXML_LINKED_TABLES_EXPANSION` - If the  flag is set to true, it is disable access to linked columns is via dotted notation, e.g. `contact.account.name`.
+
+- `ICDS_DATETIME_VALUE` - Options to choose: **Legacy**, **UTC**, **Local**. Change behavior of User Local fields.
+
+**Examples**:
+ 
+|                 | Legacy     |  UTC              | Local  |
+|-----------------|--------------|----------------|-----------|
+| twig            | UTC | UTC | convert the date and time to the user's timezone |
+|views            | UTC | UTC | convert the date and time to the user's timezone |
+|custom forms |  UTC | UTC | convert the date and time to the user's timezone |
+|premium forms | convert the date and time to the user's timezone | UTC | convert the date and time to the user's timezone |
+
+
+For more details:
+
+[More details for twig](/datapress/using-twig/separate_columns_in_twig.md)
+
+[More details for view](/datapress/views.md)
+
+[More details for custom forms](/datapress/Forms/custom-forms.md)

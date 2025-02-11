@@ -167,6 +167,31 @@ To display email addresses and URLs as active links, set the formatHyperlinks op
 ```php
 {% view entity="contact" name="Active Contacts" formatHyperlinks=true  count=100 %}{% endview %}
 ```
+## How to display date or date-time column
+
+When using the **User Local** behavior, all columns will display date or date-time columns converted to the specified time zone in case of the **Local** option in `ICDS_DATETIME_VALUE`. [More details](/datapress/administration/troubleshooting.md) 
+
+**Examples:**
+
+To get the value of a date column and convert it to the user's time zone, use:
+
+```php
+{% view entity="account" name="All Accounts" datetime = 'local' %} {% endview %}
+```
+
+To get the value of a date column in UTC, use:
+
+```php
+{% view entity="account" name="All Accounts" datetime = 'utc' %} {% endview %}
+```
+
+**Comparison Table**
+
+|                 | Legacy     |  UTC              | Local  |
+|-----------------|------------|-------------------|--------|
+|view | UTC  | UTC | convert the date and time to the user's timezone |
+|view with datetime = 'utc' | UTC  | UTC | UTC |
+|view with datetime = 'local' | convert the date and time to the user's timezone  | convert the date and time to the user's timezone | convert the date and time to the user's timezone |
 
 ## Display data using a custom template
 

@@ -193,6 +193,45 @@ For example, you have several custom fields: `cr1d1_dateonly` - Date Only format
 
 Then you view page with this template. To fill in this form you should type content in Date only field in `yyyy-mm-dd` or `yyyy/mm/dd` format (like `2023-01-20` or `2023/01/20`), Date Time field in `yyyy-mm-ddThh:mm` format (like `2023-01-20T12:30`).
 
+When using the User Local behavior, all columns will display date or date-time fields converted to the specified time zone in case of the **Local** option in `ICDS_DATETIME_VALUE`. [More details](/datapress/administration/troubleshooting.md) 
+
+|                 | Legacy     |  UTC              | Local  |
+|-----------------|------------|-------------------|--------|
+|cr1d1_datetime | UTC  | UTC | convert the date and time to the user's timezone |
+|cr1d1_datetime_utc | UTC  | UTC | UTC |
+|cr1d1_datetime_local | convert the date and time to the user's timezone  | convert the date and time to the user's timezone | convert the date and time to the user's timezone |
+
+To display only a date or time column value, use the following code snippet:
+
+```php
+<div class="form-group">
+       <label>
+        dateuserlocal date utc:
+        <input class="form-control" name="cr1d1_datetime_utc_date" value="{{ currentRecord["cr1d1_datetime_utc_date"] }}">
+        </label>
+</div>
+<div class="form-group">
+       <label>
+        dateuserlocal date local:
+        <input class="form-control" name="cr1d1_datetime_local_date" value="{{ currentRecord["cr1d1_datetime_local_date"] }}">
+        </label>
+</div>
+ 
+<div class="form-group">
+       <label>
+               dateuserlocal time utc:
+        <input class="form-control" name="cr1d1_datetime_utc_time" value="{{ currentRecord["cr1d1_datetime_utc_time"] }}">
+        </label>
+</div>
+ 
+<div class="form-group">
+        <label>
+        dateuserlocal time local:
+        <input class="form-control" name="cr1d1_datetime_local_time" value="{{ currentRecord["cr1d1_datetime_local_time"] }}">
+        </label>
+</div>
+```
+
 ### Getting row GUID
 
 After the row has been successfully created, you can get the guid using the redirect setting with the %s parameter.
