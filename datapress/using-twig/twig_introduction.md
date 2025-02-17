@@ -104,7 +104,7 @@ The following object members are available:
 - `reference` -- *(EntityReference)* reference to the bound record.
 - `record` -- *(Entity)* bound record object.
 - `wp_user` -- *(WP_User)* information about the current WordPress user.
-- `timezone`-- Returns the timezone for the current user. The timezone should not be null and typically returns as a string. Example output: **America/New_York**, **UTC**. The format "Asia/Tokyo" is known as an [**IANA time zone name**](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). The exact format depends on how the timezone is stored and managed in your WordPress setup. If you need to convert or manipulate this value further, you can use additional Twig filters or functions as needed.
+- `timezone`-- Returns the timezone for the current user. The timezone should not be null and typically returns as a string. Example output: **America/New_York**, **UTC**. The format "Asia/Tokyo" is known as an [**IANA time zone name**](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). The exact format depends on how the timezone is stored and managed in your WordPress setup. If you need to convert or manipulate this value further, you can use additional Twig filters or functions as needed. If user timezone is not specified, it returns the actual site zone.
 - `locale` -- Return locale for the current user. Example output: **en_GB**
 
 Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
@@ -144,6 +144,13 @@ Use the `entities` object to access any record in your Dataverse instance by its
   <li>{{option.Value}} - {{option.Label.UserLocalizedLabel.Label}}</li>
 {% endfor %}
 ```
+
+### Get site timezone and locale
+
+Use the `site` object to get the site's locale or timezone:
+
+- `timezone`-- Returns the timezone for the site. The format "Asia/Tokyo" is known as an [**IANA time zone name**](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). The exact format depends on how the timezone is stored and managed in your WordPress setup (**Settings** -> **General**). 
+- `locale` -- Returns the locale for the site.
 
 ### Get current timestamp
 

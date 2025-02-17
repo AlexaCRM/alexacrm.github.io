@@ -57,6 +57,54 @@ You can even define your own pattern using format_datetime() [See details](https
 {{ record.birthdate|format_datetime(pattern="hh 'oclock' a, zzzz") }}
 ```
 
+### How to calculate real GMT offset
+
+To calculate the real GMT offset, you can use the following Twig syntax:
+
+```twig
+{{ "2024-08-11T17:39:00+03" | timezone_offset("Australia/Sydney") }}
+```
+
+The output: **+10:00**
+
+```twig
+{{ "2025-01-11T17:39:00+03" | timezone_offset("Australia/Sydney") }}
+```
+
+The output: **+11:00**
+
+You can also use [Windows timezones](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11).
+
+```twig
+{{ "2025-01-11T17:39:00+03"|timezone_offset("Afghanistan Standard Time") }}
+```
+The output: **+4:30**
+
+```twig
+{{ "2025-01-11T17:39:00+03"|timezone_offset("Central America Standard Time") }}
+```
+The output: **-06:00**
+
+### How to Convert Date and Time to UTC or Necessary Time Zone
+
+Use the `convert_from_utc()` filter to convert date and time from UTC to the necessary time zone:
+
+```twig
+{{ "2025-01-11T17:39:00+03"|convert_from_utc("Australia/Sydney") }}
+```
+
+Use the `convert_to_utc()` filter to convert date and time from a specific time zone to UTC:
+
+```twig
+{{ "2025-01-11T17:39:00+03"|convert_to_utc("Australia/Sydney") }}
+```
+
+Use the `convert_timezone()` to convert date and time from UTC to Central European Standard Time in the following example:
+
+```twig
+{{ "2025-01-11T17:39:00+03"|convert_timezone("UTC","Central Europe Standard Time") }}
+```
+
 ### Get lookup value
 
 You can follow the examples below:
