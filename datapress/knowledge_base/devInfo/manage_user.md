@@ -69,14 +69,14 @@ The icds_last_login field shows the last login date. It can be empty if the user
 **Definition:**
 
 ```
-GET  /wp-json/wp/v2/users/context=edit&isds_filter={encodedPart}
+GET  /wp-json/wp/v2/users/context=edit&icds_filter={encodedPart}
 ```
 
 **Example**
 
 <div class="text--center"> <img src="/images/filter-user.png" alt="Filter users via API" width="800" /> </div>
 
-**Parameter**: `isds_filter={encodedPart}`. Add the following encoded part:
+**Parameter**: `icds_filter={encodedPart}`. Add the following encoded part:
 
 ```json
 [
@@ -97,13 +97,23 @@ You can add as many elements as you want. Operators can be: `eq, ne, gt, lt, ge,
 
 Encode this body using URL-encoded format (you can use any tool).
 
+:::note
+
+When a header is used, the JSON text does not have to be encoded, but cannot contain newlines.
+
+**Example**
+
+```
+https://{{baseUrl}}/wp-json/wp/v2/users?context=edit&icds_filter=[{"Field": "icds_binding","Operator": "eq","Value": "1"}]
+```
+:::
 
 Another way to filter users is to use the **X-Icds-Filter** header.
 
 **Definition:**
 
 ```
-GET  /wp-json/wp/v2/users/context=edit&isds_filter_header=1
+GET  /wp-json/wp/v2/users/context=edit&icds_filter_header=1
 ```
 
 **Example**
