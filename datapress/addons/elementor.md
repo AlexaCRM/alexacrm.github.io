@@ -64,24 +64,113 @@ To ensure updated field values are displayed after submission, set the **Do not 
 </div>
 :::
 
-**To create a field for a lookup column** you need to add a new field and set its type to `Dataverse Lookup.` Then type the appropriate table and view.
-Map this field with the column logical name in the `Send to Dataverse` action.
+### How to create a field for a lookup column
+
+Steps:
+
+1. Add a new field and set its type to **Dataverse Lookup**.
+
+2. Specify the corresponding table and view.
 
 <div class="text--center"> 
 <img src="/images/elementor-lookup.png" alt="Create a lookup field" width="400" />
 </div>
 
-**To create a field for a Date Time column** you need to add 2 fields: one field for date and the other - for time.
-Set for both fields the same column logical name in `Send to Dataverse` section.
+3. Map this field with the column logical name in the **Send to Dataverse** action.
+
+
+### How to create a field for a Date Time column
 
 **To create a field for a Date Time column**, follow these steps:
 
 1. Add Two Fields:
+
  - **Date Field**: Create a field specifically for the date.
+
+<div class="text--center"> 
+<img src="/images/date-el.png" alt="Elementor date" width="400" />
+</div>
+
  - **Time Field**: Create another field specifically for the time.
  
-2. Set Column Logical Name:
-In the `Send to Dataverse` section, set the same column logical name for both the date and time fields. This ensures that both fields are recognized as part of the same Date Time column.
+<div class="text--center"> 
+<img src="/images/time-el.png" alt="Elementor time" width="400" />
+</div>
+
+2. In the Send to Dataverse section:
+
+- Assign the same column logical name for both the date and time fields.
+
+- Use appropriate postfixes such as **_local_date**, **_local_time**, **_utc_date**, or **_utc_time** to manage timezone adjustments.
+
+<div class="text--center"> 
+<img src="/images/elementor-time.png" alt="Elementor time field" width="400" />
+</div>
+
+<div class="text--center"> 
+<img src="/images/elementor-date.png" alt="Elementor date field" width="400" />
+</div>
+
+**Dataverse Admin Area Settings:**
+
+Adjust the `ICDS_DATETIME_VALUE` setting with options like:
+
+- **Legacy**
+- **UTC**
+- **Local**
+
+Examples for the **createdon** column which has User Local behavior:
+
+|                      | Legacy     |  UTC              | Local  |
+|----------------------|--------------|----------------|-----------|
+|`createdon_utc_date` | UTC | UTC | UTC |
+|`createdon_utc_time` | UTC | UTC | UTC |
+|`createdon_local_date` |  convert the date to the user's timezone | convert the date to the user's timezone | convert the date to the user's timezone |
+|`createdon_local_time` |  convert the time to the user's timezone | convert the time to the user's timezone | convert the time to the user's timezone |
+
+### How to create a field for a Decimal or Float Column
+
+**Steps:**
+
+1. Add the **Dataverse Number Field**:
+
+<div class="text--center"> 
+<img src="/images/elementor-decimal0.png" alt="Elementor decimal" width="400" />
+</div>
+
+2. Configure column logical name:
+
+In the **Send to Dataverse** section:
+
+- Set the column logical name in the **Table column**.
+- Specify the field ID in the **Form field**.
+
+<div class="text--center"> 
+<img src="/images/elementor-decimal.png" alt="Elementor decimal2" width="400" />
+</div>
+
+### How to create a field for a Choice Column
+
+**Example:** You have a choice field with day options.
+
+<div class="text--center"> 
+<img src="/images/day-label.png" alt="Choice label" width="400" />
+</div>
+
+**Steps:**
+
+1. Create a Select Field:
+
+Set the options in the format **label|value** as shown in the image below.
+
+<div class="text--center"> 
+<img src="/images/days.png" alt="Days" width="400" />
+</div>
+
+2. Configure the column logical name in the **Send to Dataverse** section:
+
+- Set the column logical name in the **Table column**.
+- Specify the field ID in the **Form field**.
 
 ## Twig widget
 
