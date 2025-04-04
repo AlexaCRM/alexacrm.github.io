@@ -201,6 +201,8 @@ When using the User Local behavior, all columns will display date or date-time f
 |cr1d1_datetime_utc | UTC  | UTC | UTC |
 |cr1d1_datetime_local | convert the date and time to the user's timezone  | convert the date and time to the user's timezone | convert the date and time to the user's timezone |
 
+[Usage Scenarios](/date-and-time/#usage-scenarios)
+
 To display only a date or time column value, use the following code snippet:
 
 ```php

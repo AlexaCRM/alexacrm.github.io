@@ -70,8 +70,7 @@ Here are some of the key flags:
 |custom forms |  UTC | UTC | convert the date and time to the user's timezone |
 |premium forms | convert the date and time to the user's timezone | UTC | convert the date and time to the user's timezone |
 
-
-For more details:
+[Usage Scenarios](/date-and-time/#usage-scenarios)
 
 [More details for twig](/datapress/using-twig/separate_columns_in_twig.md)
 
