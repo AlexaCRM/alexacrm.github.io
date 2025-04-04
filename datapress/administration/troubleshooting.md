@@ -78,3 +78,7 @@ For more details:
 [More details for view](/datapress/views.md)
 
 [More details for custom forms](/datapress/Forms/custom-forms.md)
+
+[More details for Elementor](/addons/elementor/#how-to-create-a-field-for-a-date-time-column)
+
+[More details for Gravity forms](/addons/gravity-forms/#date-and-time-columns)
