@@ -69,14 +69,14 @@ The icds_last_login field shows the last login date. It can be empty if the user
 **Definition:**
 
 ```
-GET  /wp-json/wp/v2/users/context=edit&isds_filter={encodedPart}
+GET  /wp-json/wp/v2/users/context=edit&icds_filter={encodedPart}
 ```
 
 **Example**
 
 <div class="text--center"> <img src="/images/filter-user.png" alt="Filter users via API" width="800" /> </div>
 
-**Parameter**: `isds_filter={encodedPart}`. Add the following encoded part:
+**Parameter**: `icds_filter={encodedPart}`. Add the following encoded part:
 
 ```json
 [
@@ -97,13 +97,43 @@ You can add as many elements as you want. Operators can be: `eq, ne, gt, lt, ge,
 
 Encode this body using URL-encoded format (you can use any tool).
 
+:::note
+
+When a header is used, the JSON text does not have to be encoded, but cannot contain newlines.
+
+**Example**
+
+```
+https://{{baseUrl}}/wp-json/wp/v2/users?context=edit&icds_filter=[{"Field": "icds_binding","Operator": "eq","Value": "1"}]
+```
+:::
+
+**Examples**
+
+|         Operator        | `icds_filter` value     | 
+|-----------------|-------------------------|
+|like | `[{"Field": "user_name", "Operator": "LIKE", "Value": "*adam*"}]`  |
+|like | `[{"Field": "user_name", "Operator": "LIKE", "Value": "on"}]`  |
+|like | `[{"Field": "email", "Operator": "LIKE", "Value": "*@huffingtonpost.com"}]`  |
+|like | `[{"Field":"user_id","Operator":"like","Value":"1113c9dc-ff0d-ef11-9f89-0022489310b4"}] ` |
+|like | `[{"Field": "icds_binding_ref", "Operator": "like", "Value": "Mateo Passman"}]`|
+|eq | `[{"Field": "email", "Operator": "eq", "Value": "vsearight7@huffingtonpost.com"}]`  |
+|ne | `[{"Field": "icds_locale", "Operator": "ne", "Value": "en_US"}]`  |
+|GT | `[{"Field": "icds_last_login", "Operator": "GT", "Value": "2025-03-20"}]` | 
+|GE | `[{"Field": "icds_last_login", "Operator": "GE", "Value": "2025-03-20"}]`  |
+|`>=` | `[{"Field": "icds_last_login", "Operator": ">=", "Value": "2025-03-20"}]` |
+|`> `| `[{"Field": "icds_last_login", "Operator": ">", "Value": "2025-03-20"}]`  |
+|LT | `[{"Field": "icds_last_login", "Operator": "LT", "Value": "2025-03-20"}]` | 
+|LE | `[{"Field": "icds_last_login", "Operator": "LE", "Value": "2025-03-20"}]`  |
+|`<= `| `[{"Field": "icds_last_login", "Operator": ">=", "Value": "2025-03-20"}]` |
+|`<` | `[{"Field": "icds_last_login", "Operator": ">", "Value": "2025-03-20"}]`  |
 
 Another way to filter users is to use the **X-Icds-Filter** header.
 
 **Definition:**
 
 ```
-GET  /wp-json/wp/v2/users/context=edit&isds_filter_header=1
+GET  /wp-json/wp/v2/users/context=edit&icds_filter_header=1
 ```
 
 **Example**
