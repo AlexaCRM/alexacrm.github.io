@@ -105,20 +105,65 @@ To create a record with `date and time` data type columns you need to follow nex
 1. Add a Date Field to Your Gravity Form:
 - In your Gravity Form, create a field that captures the date. This field will store the date portion of your record.
 - Configure the date field according to your requirements (e.g., date format, default value, etc.).
+
+<div class="text--center"> 
+<img src="/images/date-gr.png" width="400" />
+</div>
+
 2. Add a Time Field:
 - Next, add a separate field to capture the time. This field will store the time portion of your record.
 - Customize the time field settings as needed (e.g., 12-hour or 24-hour format, default time, etc.).
+
+<div class="text--center"> 
+<img src="/images/time-gr.png" width="400" />
+</div>
+
 3. Map the Fields and columns in Dataverse Feed:
 - When configuring your Dataverse feed (integration with DataPress), you’ll observe that instead of a single column from the Power App, you’ll encounter two separate columns: one for the date and another for the time. These columns are `pseudo-columns` because they do not exist in Dataverse as standalone entities. Instead, they are derived by splitting or combining data from the source column as needed.
+
+<div class="text--center"> 
+<img src="/images/fields-gf.png" width="400" />
+</div>
+
 - Map the date field from your Gravity Form to the corresponding date column in Dateverse.
 - Similarly, map the time field from your Gravity Form to the corresponding time column in Dateverse.
 
 <div class="text--center"> 
-<img src="/images/date-time-gf.png" width="400" />
+<img src="/images/mapping.png" width="700" />
 </div>
 
-Here are two options. We recommend using **Local Date** and **Local Time** for the **User Local** behavior option, and **Date Only** and **Time Only** for the **Time Zone Independent** and **Date Only** behavior options.
+Here are two options. We recommend using **Local Date** and **Local Time** for the **User Local** behavior option, and **Date Only**, **Time Only** (or **UTC Date** and **UTC Time**) for the **Time Zone Independent** and **Date Only** behavior options.
 [Read more](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field)
+
+**Dataverse Admin Area Settings:**
+
+Adjust the `ICDS_DATETIME_VALUE` setting with options like:
+
+- **Legacy**
+- **UTC**
+- **Local**
+
+The **Time Zone Independent** and **Date Only** behavior options works as UTC and don't depend on the user's timezone
+
+Examples for the **DateTimeUserLocal** column which has User Local behavior:
+
+|                      | Legacy     |  UTC              | Local  |
+|----------------------|--------------|----------------|-----------|
+|`DateTimeUserLocal (UTC DateTime) (Date Only)` | UTC | UTC | UTC |
+|`DateTimeUserLocal (UTC DateTime) (Time Only)` | UTC | UTC | UTC |
+|`DateTimeUserLocal (Local Date)` |  convert the date to the user's timezone | convert the date to the user's timezone | convert the date to the user's timezone |
+|`DateTimeUserLocal (Local Time)` |  convert the time to the user's timezone | convert the time to the user's timezone | convert the time to the user's timezone |
+
+Examples for the **DateOnlyUserLocal** column which has User Local behavior:
+
+|                      | Legacy     |  UTC              | Local  |
+|----------------------|--------------|----------------|-----------|
+|`DateOnlyUserLocal (UTC Date) (Date Only)` | UTC | UTC | UTC |
+|`DateOnlyUserLocal (Local Date)` |  convert the date to the user's timezone | convert the date to the user's timezone | convert the date to the user's timezone |
+
+<div class="text--center"> 
+<img src="/images/gravity-date-options.png" width="400" />
+</div>
 
 In case, when you set only time value, the date represents the date zero (January 1, 1900).
 
@@ -135,16 +180,33 @@ Be attentive with the access to tables from Maker portal. Pages, based on Gravit
 ## How to bind a record by its guid
 
 To bind a record on a page created with the help of Gravity Forms, follow these steps:
+
 1. Create a Gravity Form with an Update Action in Dataverse Feed:
 - First, create a Gravity Form that includes the necessary fields for your record.
 - Configure the form to perform an update action in your Dataverse feed.
+
+<div class="text--center"> 
+<img src="/images/feed-to-update.png" width="400" />
+</div>
+
 - Remember the name of this Gravity Form.
+
 2. Create a Page based on the Gravity Form Block:
 - Create a new page. Use the Gravity Form block to build your page. Save the page.
+
+<div class="text--center"> 
+<img src="/images/gravity-form.png" width="400" />
+</div>
+
 3. Configure Binding for the Page:
 - Locate the page you just created in your list of pages.
 - Click `Configure binding` -> `Setup binding`.
 - Choose the appropriate table name and select the `Via GUID in query string` option 
+
+<div class="text--center"> 
+<img src="/images/gf-configuration.png" width="400" />
+</div>
+
 4. Add the Record GUID to the Page URL:
 - Now you can include the record GUID as part of the URL.
 - For example, if your record GUID is 65ffaf9a-e8c5-432d-860b-32f841b00d87, your URL could look like
@@ -156,7 +218,7 @@ https://yourwebsite.com/your-page?id=65ffaf9a-e8c5-432d-860b-32f841b00d87
 Alternatively, you can use a shortcode to achieve the same result (use the `Custom HTML` block):
 
 ```php
-[gravityform id="1" action="icds" icds_record="contact:2793c9dc-ff0d-ef11-9f89-0022489310b4"]
+[gravityform id="1" action="icds" icds_record="account:2793c9dc-ff0d-ef11-9f89-0022489310b4"]
 ```
 
 This shortcode will populate the form fields with values from the record with the GUID 2793c9dc-ff0d-ef11-9f89-0022489310b4 in the contact table. In this case you don't need to configure binding for the page, just to write the record guid in the `Custom HTML` block.
