@@ -22,6 +22,8 @@ Examples for the **createdon** column which has User Local behavior:
 |`{{record.createdon_utc}}` | UTC | UTC | UTC |
 |`{{record.createdon_local}}` |  convert the date and time to the user's timezone | convert the date and time to the user's timezone | convert the date and time to the user's timezone |
 
+[Usage Scenarios](/date-and-time/#usage-scenarios)
+
 To display a column value for Time zone independent and Date only behavior , use the following Twig code snippet:
 
 ```twig

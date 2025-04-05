@@ -154,6 +154,8 @@ When working with date and time values in forms, you can customize how they are 
 
 [Read more](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field)
 
+[Usage Scenarios](/date-and-time/#usage-scenarios)
+
 When using the User Local behavior, all columns will display date or date-time fields converted to the specified time zone in case of the **Legacy** or **Local** option in `ICDS_DATETIME_VALUE`. [More details](/datapress/administration/troubleshooting.md) 
 
 For instance:

@@ -193,6 +193,8 @@ To get the value of a date column in UTC, use:
 |view with datetime = 'utc' | UTC  | UTC | UTC |
 |view with datetime = 'local' | convert the date and time to the user's timezone  | convert the date and time to the user's timezone | convert the date and time to the user's timezone |
 
+[Usage Scenarios](/date-and-time/#usage-scenarios)
+
 ## Display data using a custom template
 
 By default, DataPress (Dataverse Integration) uses `view.twig` as a template. (See `/integration-cds/templates/twig/view.twig`.) You can define your own template inside between `{% view %}` and `{% endview %}`.
