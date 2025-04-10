@@ -7,6 +7,10 @@ tags:
     - DataPress
 ---
 
+**Overview**
+
+This documentation provides API methods for managing users in WordPress via REST API. Below, you will find details on retrieving user data, filtering users, sorting responses, and handling authentication.
+
 :::note 
 All API requests below require Basic Authentication. 
 :::
@@ -66,17 +70,25 @@ The icds_last_login field shows the last login date. It can be empty if the user
 
 ## How to Filter Users
 
+### GET method
+
+1. The following method allows filtering users using complex query conditions.
+
 **Definition:**
 
 ```
-GET  /wp-json/wp/v2/users/context=edit&icds_filter={encodedPart}
+GET  /wp-json/wp/v2/users/context=edit&icds_filter={conditions}
 ```
 
 **Example**
 
-<div class="text--center"> <img src="/images/filter-user.png" alt="Filter users via API" width="800" /> </div>
+```
+https://{{baseUrl}}/wp-json/wp/v2/users?context=edit&icds_filter=[{"Field": "icds_binding","Operator": "eq","Value": "1"}]
+```
 
-**Parameter**: `icds_filter={encodedPart}`. Add the following encoded part:
+When a header is used, the JSON text does not have to be encoded, but cannot contain newlines. Or encode this body using URL-encoded format (you can use any tool).
+
+ Other examples:
 
 ```json
 [
@@ -93,20 +105,13 @@ GET  /wp-json/wp/v2/users/context=edit&icds_filter={encodedPart}
 ]
 ```
 
+**Example with encoded json**
+
+<div class="text--center"> <img src="/images/filter-user.png" alt="Filter users via API" width="800" /> </div>
+
+**Parameter**: `icds_filter={encodedPart}`.
+
 You can add as many elements as you want. Operators can be: `eq, ne, gt, lt, ge, le, =, !=, >, <, >=, <=, LIKE, IN, BETWEEN, REGEXP, EXISTS`.
-
-Encode this body using URL-encoded format (you can use any tool).
-
-:::note
-
-When a header is used, the JSON text does not have to be encoded, but cannot contain newlines.
-
-**Example**
-
-```
-https://{{baseUrl}}/wp-json/wp/v2/users?context=edit&icds_filter=[{"Field": "icds_binding","Operator": "eq","Value": "1"}]
-```
-:::
 
 **Examples**
 
@@ -128,7 +133,84 @@ https://{{baseUrl}}/wp-json/wp/v2/users?context=edit&icds_filter=[{"Field": "icd
 |`<= `| `[{"Field": "icds_last_login", "Operator": ">=", "Value": "2025-03-20"}]` |
 |`<` | `[{"Field": "icds_last_login", "Operator": ">", "Value": "2025-03-20"}]`  |
 
-Another way to filter users is to use the **X-Icds-Filter** header.
+### GET method with multiple conditions
+
+2. **Another way to filter users:**
+
+**Definition:**
+
+```
+GET  /wp-json/wp/v2/users?context=edit&query={conditions}
+```
+
+```
+https://{baseUrl}/wp-json/wp/v2/users?context=edit&query={"Filter": {"Type": "and", "Conditions": [{"Field": "user_name", "Operator": "eq", "Value": "adil"}]}, "Order": [{"Field": "id", "Dir": "asc"}], "Select": ["id", "email", "first_name"]}
+```
+
+**Parameters**:
+
+- `context=edit` – Retrieves detailed user information.
+- `query={encodedJSON}` – Encoded JSON defining filtering conditions.
+
+**Filtering Logic**:
+
+- Filter conditions support multiple fields using **AND** or **OR** logic.
+- Operators include comparison (`>`, `<`, `=`, `like`, `in`, `exists`, etc.).
+- Ordering sorts results based on specified fields.
+- Selection limits the response to relevant fields.
+
+**JSON Schema for Query**:
+
+```json
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "https://alexacrm.com/data/rest-api-users.schema.json",
+  "title": "REST API Users request extended",
+  "type": "object",
+  "properties": {
+    "Filter": {
+      "type": "object",
+      "properties": {
+        "Type": { "enum": ["and", "or"] },
+        "Conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Field": { "type": "string" },
+              "Operator": { "enum": ["eq", "ne", "gt", "ge", "lt", "le", "like", "in", "between", "regexp", "exists"] },
+              "Value": { "type": ["string", "number", "null"] }
+            },
+            "required": ["Field", "Operator", "Value"]
+          }
+        }
+      },
+      "required": ["Type", "Conditions"]
+    },
+    "Order": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Field": { "type": "string" },
+          "Dir": { "enum": ["asc", "desc"] }
+        },
+        "required": ["Field", "Dir"]
+      }
+    },
+    "Select": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}
+```
+
+### GET method using the X-Icds-Filter header
+
+3. One more way to filter users is to use the **X-Icds-Filter** header.
 
 **Definition:**
 
@@ -161,7 +243,43 @@ https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_filter_heade
 ]
 ```
 
-In this example, you should not encode this text.
+**Note:** When using the X-Icds-Filter header, the JSON filter conditions must NOT be URL-encoded.
+
+### POST Method: Filtering Users with Payload
+
+**Definition**
+
+```
+POST /wp-json/integration-cds/v1/users
+```
+
+**Example Request:**
+
+```
+https://{baseUrl}/wp-json/integration-cds/v1/users
+```
+
+**Request Body:**
+
+```
+{
+  "Filter": {
+    "Type": "and",
+    "Conditions": [
+      { "Field": "icds_last_login", "Operator": ">", "Value": "2025-01-01" },
+      { "Field": "email", "Operator": "like", "Value": "%huffingtonpost.com" }
+    ]
+  },
+  "Order": [
+    { "Field": "email", "Dir": "desc" },
+    { "Field": "icds_last_login", "Dir": "asc" }
+  ],
+  "Select": [
+    "id", "email", "username", "name", "first_name", "last_name", "roles",
+    "meta"
+  ]
+}
+```
 
 ## How to Get Only Necessary User Fields in Response
 
