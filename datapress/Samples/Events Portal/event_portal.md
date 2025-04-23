@@ -1,13 +1,13 @@
 ---
-title: Events Portal
+title: Events Portal Overview and Supported Features
 sidebar_position: 1
-slug: /events_portal
+slug: /events_portal_overview
 tags:
-    - Events Portal
+    - Events Portal Overview and Supported Features
     - DataPress
-keywords: [DataPress Events Portal]  
+keywords: [DataPress Events Portal Overview and Supported Features]  
 ---
-## Event Portal Overview and Supported Features
+
 Event Portal is a comprehensive, ready-made integration that connects your Event Registration WordPress site with Dynamics 365 Customer Insights – Journeys, powered by DataPress.
 
 This solution provides a structured and user-friendly way to explore upcoming and past events and ensures a seamless registration experience for your customers while giving you enhanced control over managing event registration journeys efficiently.
@@ -127,3 +127,4 @@ When [configuring a journey](https://github.com/georged/datapress/wiki/Configure
 
 ### TBD. Waitlist
 ### TBD. Payments
+

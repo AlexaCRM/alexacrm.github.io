@@ -1,6 +1,6 @@
 ---
 title: RapidStart Customer Service
-sidebar_position: 2
+sidebar_position: 1
 slug: /rapidstart_customer_service
 tags:
     - RapidStart Customer Service Portal
