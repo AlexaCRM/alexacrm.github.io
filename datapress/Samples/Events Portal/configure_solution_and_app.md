@@ -197,7 +197,7 @@ For **Registration Exists Journey**, the final result should appear as follows.
 #### How to create a Journey
 
 First let's create **Event Registration Journey**
-1. Create a new Journey from blank. Choose the type Trigger-based and select the Event Registration trigger.
+1. Create a new Journey from blank. Choose the type Trigger-based and select the **Event Registration** trigger.
 
 <div class="text--center">
 <img src="/images/journey-create-base.jpg" alt="Create Journey Trigger-based" width="520" />
@@ -259,7 +259,7 @@ Use the left branch (New Event Registration) of the **New event registration** c
 
 Now let's take a look at the **Registration Exists Journey** creation process.
 
-1. Simply create another journey from blank and select the same trigger again.
+1. Simply create another journey from blank and select the same **Event Registration** trigger again.
 
 2. Attribute *Registration Exists*. Add a condition **Attribute branch**. Find the trigger parameter **NewRegistration** and set it equal to **No**.
 

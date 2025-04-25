@@ -83,7 +83,7 @@ If the WordPress user is logged in but the contact is not bound, the form will b
 If the WordPress user is not logged in, they will see a standard registration form with all fields available for manual input. 
 
 <div class="text--center">
-<img src="/images/form-standart.jpg" alt="Standart Form View" width="800" />
+<img src="/images/form-standard.jpg" alt="Standart Form View" width="800" />
 </div>
 
 ### Thank You page
