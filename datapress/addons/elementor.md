@@ -24,44 +24,73 @@ You may also need to install and activate Elementor Pro.
 
 ## Form widget
 
+### Steps to Create a Form
+
 Widget Name - `Form`
 
-Category - `Pro`
-
-Description: It is a native form of Elementor, but you should add `Send to Dataverse` action after submit.
-
-All you need to do is drag the `Form` widget into the content area, create  the necessary fields and Save their ID.
+1. **Add the Form Widget**.
+ Drag the **Form** widget into the content area, create the necessary fields, and save their IDs.
 
 <div class="text--center"> 
 <img src="/images/elementor-form.jpg" alt="Elementor form" width="400" />
 <img src="/images/elementor-id.jpg" alt="Save id" width="550" />
 </div>
 
-Next, navigate to `Actions After Submit`, click `+` and add the `Send to Dataverse` action.  
+2. **Configure Actions After Submit**
+
+Navigate to Actions After Submit.
+Click `+` and add the **Send to Dataverse** action.
 
 <div class="text--center"> 
 <img src="/images/send-to-dataverse.jpg" alt="Send to Dataverse action" width="400" />
 </div>
 
-To choose a table save the form and get back to the `Pages` -> `All pages` and find the page  and click `Configure Binding`. Here you can choose a table for new records. 
+3. **Set Up Binding**
+ There are two binding configuration options available:
+
+&nbsp;&nbsp;3.1 **Manual binding** 
+    
+   - Set the **Table source** to **Manual**.
+   - Select the **table** you want to use.
+   - Choose an action: **create** or **update** records.
+
+<div class="text--center"> 
+<img src="/images/elementor-manual-binding.png" alt="Page binding in Elementor" width="400" />
+</div>
+
+&nbsp;&nbsp;3.2 **Page Binding Configuration**
+
+   - Save the form and navigate to **Pages** → **All Pages**.
+   - Find the page, click **Configure Binding**, and select a **table** for new records.
 
 <div class="text--center"> 
 <img src="/images/elementor-bind-table.jpg" alt="Binding configuration" width="550" />
 </div>
 
-Click `Edit with Elementor` and `Send to Dataverse`. Here you will see the chosen table in the `Table` dropdown.
-After selecting an action, for example `create`, you need to add `Fields Mapping`. Click `+ADD ITEM`. Here, fill in `Form field` (which is the field ID that was saved previously) and `Table column` (which is the logical name for the column) for each field.
+    Open the page in **Edit with Elementor** mode and select **Send to Dataverse**. The chosen table will be displayed in the **Table** dropdown.
+
+4. **Map Fields**
+
+- After selecting an action (create, update), add field mappings:
+- Click `+ADD ITEM`.
+- Define the **Form field** (the previously saved field ID) and the **Table column** (the logical name of the column) for each field.
 
 <div class="text--center"> 
-<img src="/images/elementor-mapping.png" alt="Mapping in Elementor" width="400" />
+<img src="/images/elementor-page-binding.png" alt="Page binding in Elementor" width="400" />
+</div>
+
+<div class="text--center"> 
+<img src="/images/elementor-mapping1.png" alt="Mapping in Elementor" width="400" />
 </div>
 
 :::note
+
 To ensure updated field values are displayed after submission, set the **Do not reset form values after submitting** option to **Yes**.
 
 <div class="text--center"> 
 <img src="/images/elementor-reset-value.png" alt="Do not reset form values after submitting" width="400" />
 </div>
+
 :::
 
 ### How to create a field for a lookup column
