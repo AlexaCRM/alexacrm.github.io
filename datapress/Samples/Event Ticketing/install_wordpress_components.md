@@ -3,13 +3,14 @@ title: Install WordPress Components
 sidebar_position: 2
 slug: /install_wordpress_components
 tags:
-    - Events Portal
+    - Event Ticketing
     - DataPress
     - Install WordPress Components
-keywords: [DataPress Events Portal Install]  
+keywords: [DataPress Event Ticketing Install]  
 --- 
 
-Go to the admin section of your WordPress site. If you don't have one, refer to the WordPress article [Build Your Website in Five Steps](https://wordpress.com/support/five-step-website-setup/) for guidance.  
+To set up the solution on your website, you will first need to install the necessary WordPress components.
+To start with, go to the admin section of your WordPress site. If you don't have one, refer to the WordPress article [Build Your Website in Five Steps](https://wordpress.com/support/five-step-website-setup/) for guidance.  
 
 ### DataPress plugin
 Go to the Plugins tab and click Add New Plugin. Search for Dataverse Integration (currently renamed to DataPress).  
@@ -37,7 +38,7 @@ If your caching provider allows varying cache by query string parameters, pp and
 
 ### Templates
 
-After setting up the plugin, download the [Twig templates](https://github.com/georged/datapress/blob/main/templates/ci-j/twig-templates.json) from GitHub and install them in the Twig Templates section of your WordPress site. 
+After setting up the plugin, download the [Twig templates](https://github.com/georged/datapress/blob/main/templates/ci-j/twig_templates.json) from GitHub and install them in the Twig Templates section of your WordPress site. 
 
 Go to Dataverse in the side menu → Settings. Find the **Import Configuration Settings** section, browse for the file you just downloaded, and click the **Import** button.
 

@@ -1,14 +1,14 @@
 ---
-title: Events Portal Overview and Supported Features
+title: Overview and Supported Features
 sidebar_position: 1
-slug: /events_portal_overview
+slug: /overview_and_supported_features
 tags:
-    - Events Portal Overview and Supported Features
+    - Overview and Supported Features
     - DataPress
-keywords: [DataPress Events Portal Overview and Supported Features]  
+keywords: [DataPress Event Ticketing Overview and Supported Features]  
 ---
 
-Event Portal is a comprehensive, ready-made integration that connects your Event Registration WordPress site with Dynamics 365 Customer Insights – Journeys, powered by DataPress.
+Event Ticketing is a comprehensive, ready-made integration that connects your Event Ticketing WordPress site with Dynamics 365 Customer Insights – Journeys, powered by DataPress.
 
 This solution provides a structured and user-friendly way to explore upcoming and past events and ensures a seamless registration experience for your customers while giving you enhanced control over managing event registration journeys efficiently.
 
@@ -19,7 +19,7 @@ The diagram below illustrates the complete flow of the event registration proces
 </div>
 
 ### List of events
-The portal displays a complete list of events, helping users easily find and register for relevant opportunities. 
+The site displays a complete list of events, helping users easily find and register for relevant opportunities. 
 
 By default, only future events are shown, but a toggle option allows past events to be included in the list as well.
 
@@ -59,7 +59,7 @@ Switch tabs to see more information.
 
 ### Event-level registration
 
-For details on configuring the registration form, click [here](https://github.com/georged/datapress/wiki/Configure-Solution-and-App#form-settings).
+For details on configuring the registration form, click [here](/configure_solution_and_app/#form-settings).
 
 The registration form, easily accessible by clicking the Register Now button on the event details page, makes the sign-up process quick and seamless.
 
@@ -109,9 +109,12 @@ When the registration limit is reached, the client sees a notification that the 
 </div>
 
 
-### TBD. Event cancellation
+### Event cancellation
+
+To be completed
+
 ### Email Notifications
-When [configuring a journey](https://github.com/georged/datapress/wiki/Configure-Solution-and-App#journey), you have the flexibility to define which emails users will receive. Our solution includes five pre-configured [email templates](https://github.com/georged/datapress/wiki/Configure-Solution-and-App#emails) that you can incorporate into your journey:
+When [configuring a journey](/configure_solution_and_app/#journey), you have the flexibility to define which emails users will receive. Our solution includes five pre-configured [email templates](/configure_solution_and_app/#emails) that you can incorporate into your journey:
 
 * Event Registration Template – Confirms a successful registration.
 
@@ -125,6 +128,9 @@ When [configuring a journey](https://github.com/georged/datapress/wiki/Configure
 * 1-Day Reminder Template – Sends a final reminder the day before the event.
 
 
-### TBD. Waitlist
-### TBD. Payments
+### Waitlist
+To be completed
+
+### Payments
+To be completed
 
