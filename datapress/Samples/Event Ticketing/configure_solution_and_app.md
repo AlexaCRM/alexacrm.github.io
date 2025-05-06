@@ -320,7 +320,7 @@ In the Events table in Customer Insights - Journey app, some useful fields are h
 
 If you prefer to add your own fields, please change the values of `template/event/columns/description` and `template/event/columns/image` accordingly in the Event Ticketing Settings table to match your field names.
 
-Read more about table settings affecting the site style in the [Modifying the Look and Feel. Event Ticketing Settings Table](/configure_solution_and_app/#event-ticketing-settings-table-1)
+Read more about table settings affecting the site style in the [Modifying the Look and Feel. Event Portal Settings Table](/configure_solution_and_app/#event-portal-settings-table-1)
 
 ## Modifying the Look and Feel
 This section provides some basic guidelines on how you can adjust the visual style of your website to match your branding and design preferences
@@ -346,13 +346,13 @@ div[data-cached-form-url] .onFormSubmittedFeedback .onFormSubmittedFeedbackInter
             padding: 30px 0px 30px 1px;
             background: url(/wp-content/uploads/2025/01/site-logo.png) no-repeat center calc(100% - 50px);
             background-size: contain;
-            margin: auto;
+            margin: auto;git
         }
 ```
 4. Replace the URL in `background: url(/wp-content/uploads/2025/01/site-logo.png) no-repeat center calc(100% - 50px);` with the URL of your logo.
 
-### Event Ticketing Settings Table
-The solution includes the Event Ticketing Settings table, where you can configure options to modify the look of the site.
+### Event Portal Settings Table
+The solution includes the Event Portal Settings table, where you can configure options to modify the look of the site.
 
 Set `template/event/formats/date` and `template/event/formats/time` to the required format. By default, the date is set to `d.m.Y`, which represents **24.11.2024**, and the time is set to `H:i`, which displays **18:30**. Set it, for example, to `F j, Y` to display **November 24, 2024**.
 
