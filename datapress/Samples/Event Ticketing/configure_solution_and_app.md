@@ -10,7 +10,7 @@ keywords: [DataPress Event Ticketing Configure Sulution]
 --- 
 
 ## Install Solution
-Download the [Event Ticketing solution](https://github.com/georged/datapress/blob/main/templates/ci-j/event-portal-solution.zip) and install it to your environment with Dynamics 365 Customer Insights.
+Download the [DataPress Event Ticketing solution](https://github.com/georged/datapress/blob/main/templates/ci-j/event-portal-solution.zip) and install it to your environment with Dynamics 365 Customer Insights.
 
 :::note
 Dynamics 365 Customer Insights – Journeys provides real-time marketing capabilities to help organizations orchestrate personalized customer journeys across multiple touchpoints. 
@@ -313,14 +313,14 @@ If you need to specify a different email address for the coordinator:
 - Add a custom field to define the coordinator's contact information.   
 - Edit the email, go to the Personalize tab on the right, and change the CoordinatorEmail value.
 
-### Event Ticketing Settings Table
-The solution contains the Event Ticketing Settings table, where you can define options to configure event display settings and data mapping.
+### Event Portal Management Table
+The solution contains the Event Portal Management table, where you can define options to configure event display settings and data mapping.
 
 In the Events table in Customer Insights - Journey app, some useful fields are hidden. For example, `msevtmgt_description` is used for the event description, and `msevtmgt_eventimage` is the event image. You can still use these fields or create your own custom fields instead. 
 
-If you prefer to add your own fields, please change the values of `template/event/columns/description` and `template/event/columns/image` accordingly in the Event Ticketing Settings table to match your field names.
+If you prefer to add your own fields, please change the values of `template/event/columns/description` and `template/event/columns/image` accordingly in the Event Portal Management table to match your field names.
 
-Read more about table settings affecting the site style in the [Modifying the Look and Feel. Event Portal Settings Table](/configure_solution_and_app/#event-portal-settings-table-1)
+Read more about table settings affecting the site style in the [Modifying the Look and Feel. Event Portal Management Table](/configure_solution_and_app/#event-portal-management-table-1)
 
 ## Modifying the Look and Feel
 This section provides some basic guidelines on how you can adjust the visual style of your website to match your branding and design preferences
@@ -351,8 +351,8 @@ div[data-cached-form-url] .onFormSubmittedFeedback .onFormSubmittedFeedbackInter
 ```
 4. Replace the URL in `background: url(/wp-content/uploads/2025/01/site-logo.png) no-repeat center calc(100% - 50px);` with the URL of your logo.
 
-### Event Portal Settings Table
-The solution includes the Event Portal Settings table, where you can configure options to modify the look of the site.
+### Event Portal Management Table
+The solution includes the Event Portal Management table, where you can configure options to modify the look of the site.
 
 Set `template/event/formats/date` and `template/event/formats/time` to the required format. By default, the date is set to `d.m.Y`, which represents **24.11.2024**, and the time is set to `H:i`, which displays **18:30**. Set it, for example, to `F j, Y` to display **November 24, 2024**.
 
@@ -372,8 +372,8 @@ All of them are file-type fields, and you can upload images directly to them.
   
 Setting `template/event/view/pagination_limit` defines the maximum number of events displayed per page in event listings.  
   
-To change any of these settings, go to the Event Ticketing Settings model-driven app and edit the record. For example, to change the speaker's image placeholder to your own:  
-1. Open the Event Ticketing Settings model-driven app from the Event Ticketing solution. 
+To change any of these settings, go to the Event Portal Management model-driven app and edit the record. For example, to change the speaker's image placeholder to your own:  
+1. Open the Event Portal Management model-driven app from the DataPress Event Ticketing solution. 
  
 2. Edit the `template/event/placeholders/speaker_image` record.  
 
