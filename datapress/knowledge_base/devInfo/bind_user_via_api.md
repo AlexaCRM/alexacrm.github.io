@@ -1,6 +1,6 @@
 ---
 title: How to bind a user using WP API
-sidebar_position: 19
+sidebar_position: 6
 slug: /knowledge-base/bind-user-via-api
 tags:
     - Knowledge base
