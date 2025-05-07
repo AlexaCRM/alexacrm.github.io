@@ -19,9 +19,25 @@ Our plugin supports Gravity Forms. So you can use it instead of our Custom or Po
 Premium feature! This feature is available in the addon to the premium extension.
 :::
 
-When you have created the form and clicked the `Save Form` button, you must also create a Dataverse Feed.
+## Form configuration
 
-To create a Dataverse Feed, you need to click `Settings` -> `Dataverse` without closing your Gravity form.
+1. **Create a Gravity Form**
+
+- To begin, navigate to **Forms** → **Add New** in Gravity Forms.
+
+- Add the necessary fields to the form.
+
+- Assign titles to each field to ensure clarity.
+
+- Once all required fields are set up, click the **Save Form** button to finalize the form creation.
+
+2. **Configure Dataverse Feed**
+
+- After saving the form, you must set up a **Dataverse Feed** to integrate the form with Dataverse.
+
+- Without closing your Gravity Form, go to **Settings** → **Dataverse**.
+
+- Follow the necessary configuration steps to map form fields to Dataverse columns.
 
 <div class="text--center"> 
 <img src="/images/gf-dataverse.png" width="400" />
@@ -33,7 +49,11 @@ Then click `Add New`, select crm table, action type(create or update) and map fo
 <img src="/images/gf-mapping.png" width="600" />
 </div>
 
-## Dynamic column population
+### Access to a table
+
+Be attentive with the access to tables from Maker portal. Pages, based on Gravity forms do not show any error when you try to fill in and submit the form even if you don't have an access to this table. You click Submit and then you will see success message even when you don't have privilege to create a new record. In that case the administrator will get an email with the details.
+
+### Dynamic column population
 
 If you want to set default values for columns you can follow these instructions:
 
@@ -72,7 +92,55 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
      field_values="companyid=account:{{account.accountid}}"
   ```
 
-## Lookup Fields
+### How to bind a record by its guid
+
+To bind a record on a page created with the help of Gravity Forms, follow these steps:
+
+1. Create a Gravity Form with an Update Action in Dataverse Feed:
+- First, create a Gravity Form that includes the necessary fields for your record.
+- Configure the form to perform an update action in your Dataverse feed.
+
+<div class="text--center"> 
+<img src="/images/feed-to-update.png" width="400" />
+</div>
+
+- Remember the name of this Gravity Form.
+
+2. Create a Page based on the Gravity Form Block:
+- Create a new page. Use the Gravity Form block to build your page. Save the page.
+
+<div class="text--center"> 
+<img src="/images/gravity-form.png" width="400" />
+</div>
+
+3. Configure Binding for the Page:
+- Locate the page you just created in your list of pages.
+- Click `Configure binding` -> `Setup binding`.
+- Choose the appropriate table name and select the `Via GUID in query string` option 
+
+<div class="text--center"> 
+<img src="/images/gf-configuration.png" width="400" />
+</div>
+
+4. Add the Record GUID to the Page URL:
+- Now you can include the record GUID as part of the URL.
+- For example, if your record GUID is 65ffaf9a-e8c5-432d-860b-32f841b00d87, your URL could look like
+
+```php
+https://yourwebsite.com/your-page?id=65ffaf9a-e8c5-432d-860b-32f841b00d87
+```
+
+Alternatively, you can use a shortcode to achieve the same result (use the `Custom HTML` block):
+
+```php
+[gravityform id="1" action="icds" icds_record="account:2793c9dc-ff0d-ef11-9f89-0022489310b4"]
+```
+
+This shortcode will populate the form fields with values from the record with the GUID 2793c9dc-ff0d-ef11-9f89-0022489310b4 in the contact table. In this case you don't need to configure binding for the page, just to write the record guid in the `Custom HTML` block.
+
+## Handling Various Data Types
+
+### Lookup Columns
 
 Lookup column supports two views for displaying the column: dropdown and dialog.
 
@@ -99,7 +167,37 @@ If you want to set a default value for Dataverse Lookup look at this example:
 
 To control conditional access to requested records in dropdown or dialog use fetchXML filter.
 
-## Date and time columns
+### Choice
+
+Choice columns allow you to present dropdown lists with fixed values in your app, ensuring data consistency. [Read more](https://learn.microsoft.com/power-apps/maker/data-platform/custom-picklists).
+
+Choice columns can be configured as either **single selection (choice)** or **multi-selection (choices)**.
+
+**Single Selection (Choice) - Radio Buttons**
+
+When a user must select only one value from the list, use **Radio Buttons**:
+
+<div class="text--center"> 
+<img src="/images/gravity-single-choice.png" width="400" />
+</div>
+
+- Select the **table** and the **column** where the choice values are stored.
+
+Map the selected **Form Field** to the corresponding **Dataverse column** in Dataverse Feed.
+
+**Multi-Selection (Choices) - Multi Select**
+
+For cases where multiple values can be selected, use **Multi Select**:
+
+<div class="text--center"> 
+<img src="/images/gravity-multiple-choice.png" width="400" />
+</div>
+
+- Select the **table** and the **column** where the multi-choice values are stored.
+
+- Map the selected **Form Field** to the corresponding **Dataverse column** in Dataverse Feed.
+
+### Date and time columns
 
 To create a record with `date and time` data type columns you need to follow next steps:
 1. Add a Date Field to Your Gravity Form:
@@ -167,58 +265,8 @@ Examples for the **DateOnlyUserLocal** column which has User Local behavior:
 
 In case, when you set only time value, the date represents the date zero (January 1, 1900).
 
-## File upload columns
+### File upload columns
 
 You can set maximum attached file size for File upload column in Gravity Forms. But you should also remember about the file size limits which are set for such columns in crm. So that your maximum attached file should not be more than the size from the crm column settings.
 
 At current moment we don't support uploading multiple files.  
-
-## Access to a table
-
-Be attentive with the access to tables from Maker portal. Pages, based on Gravity forms do not show any error when you try to fill in and submit the form even if you don't have an access to this table. You click Submit and then you will see success message even when you don't have privilege to create a new record. In that case the administrator will get an email with the details.
-
-## How to bind a record by its guid
-
-To bind a record on a page created with the help of Gravity Forms, follow these steps:
-
-1. Create a Gravity Form with an Update Action in Dataverse Feed:
-- First, create a Gravity Form that includes the necessary fields for your record.
-- Configure the form to perform an update action in your Dataverse feed.
-
-<div class="text--center"> 
-<img src="/images/feed-to-update.png" width="400" />
-</div>
-
-- Remember the name of this Gravity Form.
-
-2. Create a Page based on the Gravity Form Block:
-- Create a new page. Use the Gravity Form block to build your page. Save the page.
-
-<div class="text--center"> 
-<img src="/images/gravity-form.png" width="400" />
-</div>
-
-3. Configure Binding for the Page:
-- Locate the page you just created in your list of pages.
-- Click `Configure binding` -> `Setup binding`.
-- Choose the appropriate table name and select the `Via GUID in query string` option 
-
-<div class="text--center"> 
-<img src="/images/gf-configuration.png" width="400" />
-</div>
-
-4. Add the Record GUID to the Page URL:
-- Now you can include the record GUID as part of the URL.
-- For example, if your record GUID is 65ffaf9a-e8c5-432d-860b-32f841b00d87, your URL could look like
-
-```php
-https://yourwebsite.com/your-page?id=65ffaf9a-e8c5-432d-860b-32f841b00d87
-```
-
-Alternatively, you can use a shortcode to achieve the same result (use the `Custom HTML` block):
-
-```php
-[gravityform id="1" action="icds" icds_record="account:2793c9dc-ff0d-ef11-9f89-0022489310b4"]
-```
-
-This shortcode will populate the form fields with values from the record with the GUID 2793c9dc-ff0d-ef11-9f89-0022489310b4 in the contact table. In this case you don't need to configure binding for the page, just to write the record guid in the `Custom HTML` block.
