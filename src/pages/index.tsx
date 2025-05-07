@@ -26,7 +26,7 @@ function HomepageHeader() {
       </div>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Dynamics 365 Integration
+        On-Premises (v1) Dynamics 365 Integration Plugin
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
