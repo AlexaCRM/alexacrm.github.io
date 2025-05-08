@@ -64,5 +64,27 @@ In the Settings page, users can make limited visual adjustments to the portal by
 <img src="/images/rs_page_settings.jpg" alt="Settings Page" width="800" />
 </div>
 
+### Rapid Start CRM Service
 
+RapidStart CRM Service is a model-driven application designed to streamline customer support operations. It provides structured access to key data entities including Accounts, Contacts, Cases, and Case Notes.
 
+Support team can efficiently manage the entire case lifecycle — from case creation to resolution — while having full visibility into related customer information. 
+
+<div class="text--center">
+<img src="/images/rs_crm_case.jpg" alt="Case Notes" width="1000" />
+</div>
+<br></br>
+
+Each case includes a detailed history of messages and replies, ensuring transparent and traceable communication with clients.
+
+<div class="text--center">
+<img src="/images/rs_crm_case_notes.jpg" alt="Case Notes" width="1000" />
+</div>
+
+#### WordPress User Manager
+
+On the contact form, the WordPress tab displays information about the associated WordPress user. This tab displays key information about the associated WordPress user — such as their name, email address, role, etc. It also provides options to enable or disable login access or create a new WordPress user if one is not yet linked to the contact.
+
+<div class="text--center">
+<img src="/images/rs_crm_wp_management.jpg" alt="Case Notes" width="1000" />
+</div>
