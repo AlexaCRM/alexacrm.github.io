@@ -152,12 +152,12 @@ themes: [
         {
           to: '/category/knowledge-base',
           label: 'Knowledge base v2',
-          position: 'right',
+          position: 'left',
         },
         {
           to: '/wpcrm',    
-          label: 'On-Premises (v1) Dynamics 365 Integration Plugin',
-          position: 'right',
+          label: 'On-Premises',
+          position: 'left',
           activeBaseRegex: `/wpcrm/`,
         },
         {
@@ -188,7 +188,7 @@ themes: [
               to: '/getting-started',
             },
             {
-              label: 'Documentation v.1',
+              label: 'On-Premises (v1) Dynamics 365 Integration Documentation',
               to: '/wpcrm',
             },
             {

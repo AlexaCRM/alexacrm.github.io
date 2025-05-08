@@ -1,5 +1,5 @@
 ---
-title: WordPress Plugin
+title: Dynamics 365 Integration Plugin (On-Premises)
 sidebar_position: 1
 slug: /
 omit_title: true
