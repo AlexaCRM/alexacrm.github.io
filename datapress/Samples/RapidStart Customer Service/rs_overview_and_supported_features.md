@@ -58,7 +58,7 @@ To update personal details, users can click the Edit Profile button. This action
 
 ### Settings
 
-In the Settings page, users can make limited visual adjustments to the portal by selecting a Primary Color (used for the menu and confirmation buttons), a Secondary Color (used for cancelation buttons), and a Link Color. These options offer basic control over the portal’s color scheme.
+In the Settings page, users can [make limited visual adjustments](http://localhost:3000/rs_configure_solution_and_app/#modifying-the-look-and-feel) to the portal by selecting a Primary Color (used for the menu and confirmation buttons), a Secondary Color (used for cancelation buttons), and a Link Color. These options offer basic control over the portal’s color scheme.
 
 <div class="text--center">
 <img src="/images/rs_page_settings.jpg" alt="Settings Page" width="800" />
