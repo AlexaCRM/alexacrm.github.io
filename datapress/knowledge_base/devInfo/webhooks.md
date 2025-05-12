@@ -1,6 +1,6 @@
 ---
 title: Webhooks
-sidebar_position: 14
+sidebar_position: 1
 slug: /webhooks
 tags:
     - DataPress

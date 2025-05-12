@@ -1,6 +1,6 @@
 ---
 title: Clearing the Cache
-sidebar_position: 18
+sidebar_position: 3
 slug: /knowledge-base/clear-cache
 tags:
     - Knowledge base

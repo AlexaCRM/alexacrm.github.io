@@ -26,14 +26,14 @@ function HomepageHeader() {
       </div>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Dynamics 365 Integration
+        On-Premises 
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/wpcrm/quickstart">
-            Read Dynamics 365 Integration documentation 
+            Read On-Premises (v1) documentation 
           </Link>
         </div>
       </div>

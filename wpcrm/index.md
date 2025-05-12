@@ -1,11 +1,17 @@
 ---
-title: WordPress Plugin
+title: Dynamics 365 Integration Plugin (On-Premises)
 sidebar_position: 1
 slug: /
 omit_title: true
 tags:
     - Dynamics 365 Integration
 ---
+
+:::note
+
+Use Dynamics 365 Integration for on-premises versions. For other scenarios, we recommend using DataPress (Dataverse Integration).
+
+:::
 
 Nothing gets between your web site and your CRM. No more iframes, no more third-party services, no more moving parts. Built using [CRM Toolkit for PHP](https://github.com/AlexaCRM/php-crm-toolkit), the plugin connects directly to Dynamics CRM without the need to add anything else.
 

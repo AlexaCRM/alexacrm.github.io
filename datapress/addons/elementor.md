@@ -52,10 +52,10 @@ Click `+` and add the **Send to Dataverse** action.
     
    - Set the **Table source** to **Manual**.
    - Select the **table** you want to use.
-   - Choose an action: **create** or **update** records.
+   - Only the **create** action is available in this mode.
 
 <div class="text--center"> 
-<img src="/images/elementor-manual-binding.png" alt="Page binding in Elementor" width="400" />
+<img src="/images/elementor-manual-binding1.png" alt="Page binding in Elementor" width="400" />
 </div>
 
 &nbsp;&nbsp;3.2 **Page Binding Configuration**
@@ -67,11 +67,13 @@ Click `+` and add the **Send to Dataverse** action.
 <img src="/images/elementor-bind-table.jpg" alt="Binding configuration" width="550" />
 </div>
 
-    Open the page in **Edit with Elementor** mode and select **Send to Dataverse**. The chosen table will be displayed in the **Table** dropdown.
+- Open the page in **Edit with Elementor** mode and select **Send to Dataverse**. The chosen table will be displayed in the **Table** dropdown.
+
+- Choose an action (**create**, **update**).
 
 4. **Map Fields**
 
-- After selecting an action (create, update), add field mappings:
+Once the action is selected, configure the necessary field mappings:
 - Click `+ADD ITEM`.
 - Define the **Form field** (the previously saved field ID) and the **Table column** (the logical name of the column) for each field.
 

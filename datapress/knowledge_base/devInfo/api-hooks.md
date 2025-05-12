@@ -1,6 +1,6 @@
 ---
-title: Hooks Reference
-sidebar_position: 10
+title: WordPress Hooks
+sidebar_position: 2
 slug: /api-hooks
 tags:
     - API

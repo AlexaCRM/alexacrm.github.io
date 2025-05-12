@@ -150,23 +150,18 @@ themes: [
           label: 'DataPress',
         },
         {
-          to: '/wpcrm/quickstart',    
-          label: 'Dynamics 365 Integration',
+          to: '/category/knowledge-base',
+          label: 'Knowledge base',
+          position: 'left',
+        },
+        {
+          to: '/wpcrm',    
+          label: 'On-Premises',
           position: 'left',
           activeBaseRegex: `/wpcrm/`,
         },
         {
-          to: '/category/knowledge-base',
-          label: 'Knowledge base v2',
-          position: 'right',
-        },
-        {
-          to: '/wpcrm/category/knowledge-base',
-          label: 'Knowledge base v1',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/AlexaCRM/alexacrm.github.io',
+          href: 'https://github.com/AlexaCRM',
           label: 'GitHub',
           position: 'right',
         },
@@ -179,7 +174,7 @@ themes: [
           title: 'Community',
           items: [
             {
-              href: 'https://github.com/AlexaCRM/alexacrm.github.io',
+              href: 'https://github.com/AlexaCRM',
               label: 'GitHub',
               position: 'right',
             },
@@ -189,15 +184,15 @@ themes: [
           title: 'More',
           items: [
             {
-              label: 'Documentation v.1',
-              to: '/wpcrm',
-            },
-            {
               label: 'Documentation v.2',
               to: '/getting-started',
             },
             {
-              label: 'Knowledge base for Dynamics 365 Integration',
+              label: 'On-Premises (v1) Dynamics 365 Integration Documentation',
+              to: '/wpcrm',
+            },
+            {
+              label: 'Knowledge base for On-Premises (v1) Dynamics 365 Integration Plugin',
               to: '/wpcrm/category/knowledge-base',
             },
             {
