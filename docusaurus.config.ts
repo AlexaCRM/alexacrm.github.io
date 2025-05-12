@@ -151,7 +151,7 @@ themes: [
         },
         {
           to: '/category/knowledge-base',
-          label: 'Knowledge base v2',
+          label: 'Knowledge base',
           position: 'left',
         },
         {
