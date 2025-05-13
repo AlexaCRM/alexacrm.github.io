@@ -53,18 +53,40 @@ The twig templates are stored under Dataverse → Templates → Twig Templates.
 </div>
 
 ### WordPress Pages
-Add required pages **Available Events**, **Register** and **View Event**
+Add required pages **Access Restricted**, **Profile**, **Available Events**, **Register** and **View Event**
 
 <div class="text--center">
 <img src="/images/wp-pages.jpg" alt="WordPress Pages" width="600" />
 </div>
 
 Include twig templates using the next code.
- 
+
+In the **Access Restricted** page: 
+```twig
+{% include 'styles' %}
+```
+Then add Paragraph block and add text - 
+
+"Access Restricted" as a title.
+
+"We're sorry, but access to this area is limited to registered customers only.
+
+If you’re a customer, please log in to continue. If you believe you’ve received this message in error, feel free to contact our support team for assistance.
+
+Thank you for your understanding!"
+
+Add link to your login page on 'log in' words.
+
 In the **Available Events** page: 
 ```twig
 {% include 'styles' %}
 {% include 'page_list_events' %}
+```
+
+In the **Profile** page: 
+```twig
+{{ include('styles') }}
+{{ include('page_profile') }}
 ```
 
 In the **Register** page: 
@@ -89,7 +111,7 @@ In the **View Event** page:
 #### Page Binding
 When you hover over the page name, a menu appears where you should click **Configure Binding**.
 
-For the **Register** and **View Event** pages, set the parameters below and click Save afterward.
+For the **Register**, **Thank You**, and **View Event** pages, set the parameters below and click Save afterward.
 
 Settings:
 1. Choose an entity to bind to: 'Event (msevtmgt_event)'
