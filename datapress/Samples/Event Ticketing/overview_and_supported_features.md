@@ -134,3 +134,13 @@ To be completed
 ### Payments
 To be completed
 
+### User Profile Page
+
+Registered users have the ability to update their profile information, such as their first and last name. However, the email address field is read-only. To update the email address, users are required to contact support directly, as the email is used for matching with the contact information in the system.
+
+Additionally, the profile page displays a list of all events the user is registered for, providing a convenient overview of their registrations.
+
+<div class="text--center">
+<img src="/images/page_profile.jpg" alt="User Profile Page" width="800" />
+</div>
+<br></br>
