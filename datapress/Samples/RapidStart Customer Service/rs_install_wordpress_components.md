@@ -59,7 +59,7 @@ The twig templates are stored under Dataverse → Templates → Twig Templates.
 </div>
 
 ### WordPress Pages
-Add required pages **Access Restricted**, **My Cases**, **Case Details**, **Create Case**, **My Profile**, and **Settings**
+Add required pages **Access Restricted**, **Cases**, **Case Details**, **Create Case**, **Profile**, and **Settings**
 
 <div class="text--center">
 <img src="/images/rs_wp-pages.jpg" alt="WordPress Pages" width="600" />
@@ -81,15 +81,15 @@ Thank you for your understanding!"
 
 Add link to your login page on 'log in' words.
 
-In the **My Cases** page: 
+In the **Cases** page: 
 ```twig
 {{ include('styles') }}
 {% if not user.is_bound %}
     <script>
-        window.location.href = "https://forceworks.com.au/log-in";
+        window.location.href = "https://<your-site-url>/access-restricted";
     </script>
 {% else %}
-    {{ include('list_cases') }}
+{{ include('my_profile') }}
 {% endif %}
 ```
 
@@ -99,7 +99,7 @@ In the **Case Details** page:
 {{ include('styles') }}
 {% if not user.is_bound %}
     <script>
-        window.location.href = "https://forceworks.com.au/log-in";
+        window.location.href = "https://<your-site-url>/access-restricted";
     </script>
 {% else %}
 {{ include('case_details') }}
@@ -112,19 +112,19 @@ In the **Create Case** page:
 {{ include('styles') }}
 {% if not user.is_bound %}
     <script>
-        window.location.href = "https://forceworks.com.au/log-in";
+        window.location.href = "https://<your-site-url>/access-restricted";
     </script>
 {% else %}
 {{ include('create_case') }}
 {% endif %}
 ```
 
-In the **My Profile** page: 
+In the **Profile** page: 
 ```twig
 {{ include('styles') }}
 {% if not user.is_bound %}
     <script>
-        window.location.href = "https://forceworks.com.au/log-in";
+        window.location.href = "https://<your-site-url>/access-restricted";
     </script>
 {% else %}
 {{ include('my_profile') }}
@@ -136,7 +136,7 @@ In the **Settings** page:
 {{ include('styles') }}
 {% if not user.is_bound %}
     <script>
-        window.location.href = "https://forceworks.com.au/log-in";
+        window.location.href = "https://<your-site-url>/access-restricted";
     </script>
 {% else %}
 [wppb-edit-profile]

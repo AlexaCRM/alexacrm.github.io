@@ -8,7 +8,7 @@ tags:
 keywords: [DataPress Event Ticketing Overview and Supported Features]  
 ---
 
-Event Ticketing is a comprehensive, ready-made integration that connects your Event Ticketing WordPress site with Dynamics 365 Customer Insights – Journeys, powered by DataPress.
+DataPress Event Ticketing is a comprehensive, ready-made integration that connects your Event Ticketing WordPress site with Dynamics 365 Customer Insights – Journeys, powered by DataPress.
 
 This solution provides a structured and user-friendly way to explore upcoming and past events and ensures a seamless registration experience for your customers while giving you enhanced control over managing event registration journeys efficiently.
 
@@ -141,6 +141,6 @@ Registered users have the ability to update their profile information, such as t
 Additionally, the profile page displays a list of all events the user is registered for, providing a convenient overview of their registrations.
 
 <div class="text--center">
-<img src="/images/page_profile.jpg" alt="User Profile Page" width="800" />
+<img src="/images/page_profile.jpg" alt="User Profile Page" width="8çc00" />
 </div>
 <br></br>
