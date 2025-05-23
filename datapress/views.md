@@ -20,11 +20,8 @@ All references to Dataverse Integration in the documentation, user interface wil
 
 :::info
 
-This feature is exclusive to the premium extension.
+Premium feature! This feature is available in the premium extension.
 
-Licensing Requirement
-
-If the premium plugin is not properly licensed, syntax errors may occur. Ensure the plugin is correctly licensed to maintain Power Apps Forms functionality.
 :::
 
 Views are a concept in PowerApps and Dynamics 365 that allows listing table records in tables. A view defines what data to show and in which order. **Dataverse Integration** allows to surface personal, system and public views on your WordPress website.
