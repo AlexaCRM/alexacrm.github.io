@@ -20,7 +20,11 @@ All references to Dataverse Integration in the documentation, user interface wil
 
 :::info
 
-Premium feature! This feature is available in the premium extension.
+This feature is exclusive to the premium extension.
+
+Licensing Requirement
+
+If the premium plugin is not properly licensed, syntax errors may occur. Ensure the plugin is correctly licensed to maintain view functionality.
 
 :::
 
