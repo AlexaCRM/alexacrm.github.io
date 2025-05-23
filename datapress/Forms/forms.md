@@ -1,5 +1,5 @@
 ---
-title: PowerApps Forms
+title: Power Apps Forms
 sidebar_position: 1
 premium: true
 slug: /forms/forms
@@ -13,13 +13,16 @@ The plugin previously known as Dataverse Integration has been renamed to DataPre
 All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
 :::
 
-<p class="lead">Capture leads, feedback and other information from your website using forms designed in PowerApps and Dynamics 365.</p>
+<p class="lead">Capture leads, feedback and other information from your website using forms designed in Power Apps and Dynamics 365.</p>
 
 ## Introduction
 
 :::info
+This feature is exclusive to the premium extension.
 
-Premium feature! This feature is available in the premium extension.
+Licensing Requirement
+
+If the premium plugin is not properly licensed, syntax errors may occur. Ensure the plugin is correctly licensed to maintain Power Apps Forms functionality.
 
 :::
 
@@ -187,7 +190,7 @@ Anonymous visitors will see the values in the timezone of the website. To set th
 
 ## Lookup fields in forms
 
-In PowerApps Forms for Dataverse, lookups are crucial for creating relationships between tables and enhancing data entry. Here’s a detailed look at how lookups function in different contexts:
+In Power Apps Forms for Dataverse, lookups are crucial for creating relationships between tables and enhancing data entry. Here’s a detailed look at how lookups function in different contexts:
 
 1. **Dialog**
 
