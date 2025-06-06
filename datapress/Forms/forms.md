@@ -56,7 +56,7 @@ DataPress (Dataverse Integration) allows customizing the list of underlying attr
 ### reCAPTCHA support
 
 Dataverse forms are fully integrated with reCAPTCHA. 
-[Read more](/datapress/forms/recaptcha.md)
+[Read more](/forms/recaptcha/#recaptcha-support-for-power-apps-forms)
 
 ### Front-end dependencies
 
