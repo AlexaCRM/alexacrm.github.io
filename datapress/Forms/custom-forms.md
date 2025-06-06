@@ -1,6 +1,6 @@
 ---
 title: Custom Forms
-sidebar_position: 3
+sidebar_position: 2
 slug: /forms/custom-forms
 tags:
     - Form
@@ -83,41 +83,8 @@ To link a form control to a corresponding table column, specify the logical name
 ## Protect form submissions with reCAPTCHA
 
 To prevent spam submissions from getting into your CRM, add reCAPTCHA to your form. Add `recaptcha=true` to the list of `{% raw %}{% form %}{% endraw %}` parameters, and add the `<recaptcha>` placeholder to a desired place in your form.
+[Read more](/datapress/forms/recaptcha.md)
 
-Before you start using reCAPTCHA in your forms, please configure reCAPTCHA in the plugin settings interface.
-
-#### Example
-
-```php
-{% set useRecaptcha = true %}
-{% form entity="lead" mode="create" recaptcha=useRecaptcha %}
-<form>
-    <div class="form-group">
-        <label>
-            First Name:
-            <input class="form-control" name="firstname">
-        </label>
-    </div>
-    <div class="form-group">
-        <label>
-            Last Name:
-            <input class="form-control" name="lastname">
-        </label>
-    </div>
-    <div class="form-group">
-        <label>
-            Email:
-            <input class="form-control" name="emailaddress1">
-        </label>
-    </div>
-    <div class="form-group">
-        <recaptcha>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Send</button>
-    </div>
-</form>
-{% endform %}
 ```
 
 ## Create a Contact Us form

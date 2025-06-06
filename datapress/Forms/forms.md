@@ -55,16 +55,8 @@ DataPress (Dataverse Integration) allows customizing the list of underlying attr
 
 ### reCAPTCHA support
 
-Dataverse forms are fully integrated with reCAPTCHA. Version 2 with checkbox challenge, version 2 invisible and version 3 are supported.
-
-To add Google reCAPTCHA, fill in this [form](https://www.google.com/recaptcha/admin/create). You will then receive a site key and a secret key. Save these keys and go to the Dataverse Admin Area, then open the reCAPTCHA menu. Choose the same reCAPTCHA type and paste the keys into the textboxes.
-
-In **Forms Global Settings**, you can enable or disable reCAPTCHA for all forms from the Dataverse Admin Area. By default, reCAPTCHA is disabled on all forms. You can enable reCAPTCHA separately in the form registration settings under the reCAPTCHA settings override section.
-
-DataPress (Dataverse Integration) supports 3rd party plugins to retrieve reCAPTCHA credentials and settings:
-
-- [Contact Form 7 Captcha](https://wordpress.org/plugins/contact-form-7-simple-recaptcha/)
-- [Google Captcha (reCAPTCHA) by BestWebSoft](https://wordpress.org/plugins/google-captcha/)
+Dataverse forms are fully integrated with reCAPTCHA. 
+[Read more](/datapress/forms/recaptcha.md)
 
 ### Front-end dependencies
 
