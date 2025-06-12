@@ -96,19 +96,25 @@ If `ICDS_COMPATIBLE_BINDING` flag is set to *true* you can use the `currentrecor
 
 ### Access the current user record 
 
-Use the `user` object to check whether the current user is bound, and to access the bound Dataverse record values. See [user binding](/datapress/binding/user-binding.md).
+The user object allows you to check whether the current user is bound and access their associated Dataverse record values. For more details, see [user binding](/datapress/binding/user-binding.md).
+
 
 The following object members are available:
 
-- `is_bound` -- *(boolean)* whether the current user is bound.
-- `reference` -- *(EntityReference)* reference to the bound record.
-- `record` -- *(Entity)* bound record object.
-- `wp_user` -- *(WP_User)* information about the current WordPress user.
+- `is_bound` -- *(boolean)* Indicates whether the current user is bound.
+- `reference` -- *(EntityReference)* Provides a reference to the bound record.
+- `record` -- *(Entity)* Represents the bound record object.
+- `wp_user` -- *(WP_User)* Contains information about the current WordPress user.
 - `timezone`-- Returns the timezone for the current user. The timezone should not be null and typically returns as a string. Example output: **America/New_York**, **UTC**. The format "Asia/Tokyo" is known as an [**IANA time zone name**](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). The exact format depends on how the timezone is stored and managed in your WordPress setup. If you need to convert or manipulate this value further, you can use additional Twig filters or functions as needed. If user timezone is not specified, it returns the actual site zone.
 - `locale` -- Return locale for the current user. Example output: **en_GB**
 
-Notice that `user.record` is more expensive performance-wise -- it retrieves data from Dataverse. `user.reference` only
-reads the local database and request parameters to calculate the entity reference.
+**Performance Considerations**
+
+- **user.record retrieves** data directly from Dataverse, making it more resource-intensive.
+
+- **user.reference** derives the entity reference from the local database and request parameters, offering a more efficient solution.
+
+**Example: Displaying User Full Name**
 
 ```twig
 {% if user.is_bound %}
@@ -116,7 +122,7 @@ reads the local database and request parameters to calculate the entity referenc
 {% endif %}
 ```
 
-An example of date display with explicit time zone and locale:
+**Example: Formatting Date with User Locale and Timezone**
 
 ```twig
 {{ "now"|format_datetime('short', 'short', locale: user.locale, timezone: user.timezone) }} 
