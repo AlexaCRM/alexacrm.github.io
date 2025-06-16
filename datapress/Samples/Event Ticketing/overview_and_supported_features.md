@@ -124,24 +124,19 @@ A human-readable string (e.g. `DynamicsMinds2025`) that identifies the event. Yo
 #### Event Image
 Allows uploading or selecting an image that represents the event. This image appears in event listings, on the event details page, and in registration forms.
 
-
 #### Live Event Visibility
 This dropdown lets you choose how the event is shown publicly on the WordPress site.
 - **Show** – Event is visible in the listing. This is the default option.
 - **Hide** – Event is not publicly visible, and registration is not available.
 - **Show via Registration Link** – Event is not shown in the listing, but registration is accessible via a direct registration link.
 
-
 <div class="text--center">
 <img src="/images/cij-datapress-panel-visibility.jpg" alt="Live Event Visibility choice dropdown" width="600" />
 </div>
 
-
 ### Passes Overview
 
-
 Below the visibility settings, the Passes list displays available access options for the event.
-
 
 Each pass represents ticket options tied to the event. These can define different access levels or pricing categories.
 
