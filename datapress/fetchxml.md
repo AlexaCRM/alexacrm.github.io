@@ -78,8 +78,7 @@ If the linked entity alias matches any column name, it may result in errors or u
 
 ## Using FetchXML Template
 
-You can apply a FetchXML template while configuring binding for a page. Simply select your FetchXML template title in the Conditional Access section during binding configuration for your page. Or use it for forms.
-To apply the same template for all forms, set the template in Forms Global Settings.
+You can apply a FetchXML template while configuring binding for a page. Simply select your FetchXML template title in the Conditional Access section.
 
 **Example FetchXML Template**:
 
@@ -149,6 +148,18 @@ To make the filter dynamic, modify the template using **parameters**:
 
 User `filter='fetchXMLtemplateName'` to use a new fetchXML template with a view.
 [Learn more about FetchXML templates and views](/datapress/views.md#parameterize-your-views)
+
+**Applying FetchXML Templates in Forms**
+
+FetchXML templates can also be configured for lookup fields in forms.
+To set a FetchXML template for a lookup field:
+
+- Navigate to DataPress (Dataverse) Admin Area.
+- Open the **Forms Editor** and find your form.
+- Locate the **Lookup Fields** section.
+- Assign a FetchXML template to the desired lookup field.
+
+To apply a FetchXML template globally across all forms, set the template in **Forms Global Settings**.
 
 **FetchXML Template Creation Tools**
 
