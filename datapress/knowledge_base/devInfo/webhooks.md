@@ -1,7 +1,7 @@
 ---
 title: Webhooks
 sidebar_position: 1
-slug: /webhooks
+slug: /knowledge-base/webhooks
 tags:
     - DataPress
 ---
