@@ -33,10 +33,25 @@ Follow these steps to set up a webhook using the **"When an HTTP request is rece
    - Use Postman, curl, or your external system to send a test request.
    - The flow should trigger and execute your defined steps.
 
-6. **Configure Webhook in DataPress Admin Area** 
-   - Navigate to the DataPress admin interface.
-   - Create a new webhook following this [instruction](/knowledge-base/webhooks/#configuring-webhooks)
-   - Set the webhook target URL using the address obtained in Step 4.
+6. **Register the Webhook Source**
+
+**Option A: Using DataPress Admin Interface**:
+
+- Open the DataPress Admin Area.
+- Create a new webhook following this [instruction](/knowledge-base/webhooks/#configuring-webhooks).
+- Paste the Power Automate URL from Step 4 into the Webhook URL field.
+
+**Option B: Using Power Automate HTTP Webhook Trigger Flow**:
+
+Instead of configuring the webhook in DataPress, you can create another flow using the HTTP Webhook trigger. Use the settings below:
+- Subscribe Method: POST
+- Subscribe URI: https://your-website.com/wp-json/integration-cds/v1/webhooks
+- Subscribe Body: Follow the same [instruction](/knowledge-base/webhooks/#configuring-webhooks)
+- Subscribe - Authentication: Username and password (basic authentication)
+
+<div class="text--center"> 
+<img src="/images/http-webhook.png" alt="Add webhooks via Power Automate" width="500" />
+</div>
 
 ## 🚀 Using HTTP Webhook Trigger – Summary
 
