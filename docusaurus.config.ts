@@ -101,7 +101,7 @@ const config: Config = {
             from: ['/integration-cds/user-binding'],
           },
           {
-            to: '/webhooks', 
+            to: '/knowledge-base/webhooks', 
             from: ['/integration-cds/webhooks'],
           },
           {
