@@ -22,12 +22,12 @@ If you're logged in as an **admin user**, Query Monitor will automatically be vi
 - In the top admin bar, click **Query Monitor** to open the console.
 
 ### 2. Use the **Timings** Tab
-- Go to the **Timings** tab.
+- Go to the **Timings** tab, located in the dropdown menu at the top of the Query Monitor panel.
 - This view shows a breakdown of page load execution time, including:
   - Template rendering
   - Hooks and filters
   - Custom PHP functions
-- Use this to pinpoint which components of the form are consuming the most time on page load.
+- Use this to identify which parts of the form consume the most time during page load or form submission.
 
 >  This is especially helpful for diagnosing heavy server-side logic or misbehaving third-party plugins that impact initial form rendering.
 
