@@ -10,7 +10,7 @@ These Terms & Conditions govern your use of the **DataPress Integration plugin**
 
 ## 1. Plugin Licensing
 
-DataPress Integration Plugin and all extensions, unless otherwise stated, are licensed under the GNU General Public License (http://www.gnu.org/licenses/gpl.html) version 3.0 or later.
+DataPress Integration Plugin and all extensions, unless otherwise stated, are licensed under the [GNU General Public License](http://www.gnu.org/licenses/gpl.html) version 3.0 or later.
 
 ## 2. Warranty
 
