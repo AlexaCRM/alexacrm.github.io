@@ -106,10 +106,10 @@ For example, you go to your crm admin, choose an entity(in this example - accoun
 Then Go to WordPress, click Pages -> Add New and type:
 
 ```php
-{% view entity="account" name="Inactive Accounts" parameters={ "0": "MegaOrganization", "1": "Sidn" } %}{% endview %}
+{% view entity="account" name="Inactive Accounts" parameters={ "0": "Voomm", "1": "Manyana" } %}{% endview %}
 ```
 
-When you click `Preview` you will see only records with `MegaOrganization` Account name and the city, which begins with `Sidn` letters.
+When you click `Preview` you will see only records with `Voomm` Account name and the city, which begins with `Manyana` letters.
 Instead of integers, you can use labels, e.g. `{status}`.
 
 ### Substitute parameter condition values
@@ -128,7 +128,7 @@ This is an example from previous situation:
 
 ```php
 {# Integer placeholders #}
-{% view entity="account" name="Inactive Accounts" parameters=[ "MegaOrganization", "Sidn" ] %}{% endview %}
+{% view entity="account" name="Inactive Accounts" parameters=[ "Topiclounge", "Sydn" ] %}{% endview %}
 ```
 
 If we change `{0}` parameter to `accountName`, `{1}` to `city`, our example will contain next text:

@@ -108,6 +108,37 @@ When the registration limit is reached, the client sees a notification that the 
 <img src="/images/notification-reg-full.jpg" alt="Event is Full Notification" width="800" />
 </div>
 
+### DataPress Settings Panel in Customer Insights - Journeys
+
+
+The **DataPress** tab is part of the Event form in Customer Insights - Journeys. It allows you to view key details such as the Readable Event ID, change the event image,control the public visibility of live events on your WordPress site and manage associated passes. All of these fields are hidden by default.
+
+
+<div class="text--center">
+<img src="/images/cij-datapress-panel.jpg" alt="DataPress Settings Panel" width="800" />
+</div>
+
+#### Readable Event ID
+A human-readable string (e.g. `DynamicsMinds2025`) that identifies the event. You need it for use in registration URLs.
+
+#### Event Image
+Allows uploading or selecting an image that represents the event. This image appears in event listings, on the event details page, and in registration forms.
+
+#### Live Event Visibility
+This dropdown lets you choose how the event is shown publicly on the WordPress site.
+- **Show** – Event is visible in the listing. This is the default option.
+- **Hide** – Event is not publicly visible, and registration is not available.
+- **Show via Registration Link** – Event is not shown in the listing, but registration is accessible via a direct registration link.
+
+<div class="text--center">
+<img src="/images/cij-datapress-panel-visibility.jpg" alt="Live Event Visibility choice dropdown" width="600" />
+</div>
+
+### Passes Overview
+
+Below the visibility settings, the Passes list displays available access options for the event.
+
+Each pass represents ticket options tied to the event. These can define different access levels or pricing categories.
 
 ### Event cancellation
 
@@ -141,6 +172,6 @@ Registered users have the ability to update their profile information, such as t
 Additionally, the profile page displays a list of all events the user is registered for, providing a convenient overview of their registrations.
 
 <div class="text--center">
-<img src="/images/page_profile.jpg" alt="User Profile Page" width="800" />
+<img src="/images/cij-page-profile.jpg" alt="User Profile Page" width="800" />
 </div>
 <br></br>

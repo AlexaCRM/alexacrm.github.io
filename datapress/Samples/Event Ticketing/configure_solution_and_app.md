@@ -41,19 +41,19 @@ If the customer is a logged-in WordPress user and has a bound contact, the form 
 To complete the registration, the customer simply clicks the submit button.
 
 <div class="text--center">
-<img src="/images/form-logged.jpg" alt="Registration Form User Logged In" width="600" />
+<img src="/images/form-logged.jpg" alt="Registration Form User Logged In" width="800" />
 </div>
 <br></br>
 If logged in but not bound to a contact, the form pre-fills with WordPress data, allowing review and edits before submission.
 
 <div class="text--center">
-<img src="/images/form-notbound.jpg" alt="Registration Form Contact not bound" width="600" />
+<img src="/images/form-notbound.jpg" alt="Registration Form Contact not bound" width="800" />
 </div>
 <br></br>
 If the WordPress user is not logged in or the contact is not bound, they see a standard form with all fields available for manual input.
 
 <div class="text--center">
-<img src="/images/form-standard.jpg" alt="Registration Form Standard View" width="600" />
+<img src="/images/form-standard.jpg" alt="Registration Form Standard View" width="800" />
 </div>
 
 #### Form Settings
@@ -65,12 +65,21 @@ To create an event registration form, go to the [Website and form tab of your ev
 When you create a new event, a **Default registration form** is bound to it.
 
 <div class="text--center">
-<img src="/images/form-default.jpg" alt="Default Registration Form" width="600" />
+<img src="/images/cji-registration-default-form.jpg" alt="Default Registration Form" width="800" />
 </div>
 <br></br>
 
-Copy the raw file [registration-form.html](https://github.com/georged/datapress/blob/main/templates/ci-j/registration_form.html) from GitHub. Edit the **Default registration form**, click &lt;/&gt; HTML to open the editor, paste the code there, then close the editor and save the form with a name you prefer.
-  
+To create a new custom form go to Real-time Journeys area → Forms, Click shevron and choose Registration Forms. Click '+ New' to create a new form.
+
+<div class="text--center">
+<img src="/images/cij-register-new-form.jpg" alt="Create a new Registration Form" width="800" />
+</div>
+<br></br>
+
+Copy the raw file [registration-form.html](https://github.com/georged/datapress/blob/main/templates/ci-j/registration_form.html) from GitHub. Click &lt;/&gt; HTML to open the editor, paste the code there, then close the editor and save the form with a name you prefer.
+
+Come back to Event Planning area → Events → Website and Form tab, and change the Default registration form to your new form.
+
 If you wish to customize your own form, you need to add the code below into your form's HTML body to ensure proper form submission and smooth functioning of the 'Event Registration' journey.
 
 The WordPress site passes some data during a client's registration, which is collected as a Form Submission record. These parameters must be defined in HTML as hidden fields. 
@@ -158,8 +167,18 @@ function processHiddenParams(event) {
 }          
 </script>
 ```
-You can also find tips on styling the form in the [Modifying the Look and Feel: Registration Form](/configure_solution_and_app/#registration-form-1) section.
+You can also find tips on styling the form in the [Modifying the Look and Feel: Registration Form](//overview_and_supported_features/#registration-form-1) section.
 
+### Event Registration Settings
+
+In the Event Planning area → Events → Website and Form tab, under the drop-down **Where do you want attendees to register for this event?**, select **On your own website**. 
+
+Below fill in **Registration page URL** with `https://{your-site-url}/register/{readable-event-id}`. You can find Readable Event ID in the Event Planning area → Events → [DataPress tab](/configure_solution_and_app/#datapress-settings-panel-in-customer-insights---journeys).
+
+<div class="text--center">
+<img src="/images/cij-register-url.jpg" alt="Registration URL Settings" width="800" />
+</div>
+<br></br>
 
 ### Custom Trigger
 Form submission triggers the **[Events] Form Submitted** Power Automate flow, which invokes the **Event Registration** custom trigger via an HTTP request. 

@@ -100,3 +100,9 @@ Readable event ID: eventid
 Then, return to the Dataverse Admin area and go to Binding → Page Binding. Under Choose post types to allow binding, check **Pages**. For the Event label, choose the **View Event** page.
 
 Read more about binding WordPress pages to Dataverse tables using the DataPress plugin [here](https://docs.alexacrm.com/binding/table-binding/).
+
+For the **Register** page, configure conditional access so it is hidden for [events with restricted registration](/overview_and_supported_features/#live-event-visibility). Check **Enable conditional access**, select a *fetch_liveeventvisibility* fetchXML template and and click Save.
+
+<div class="text--center">
+<img src="/images/cij-register-page-binding.jpg" alt="Configure Register Page Binding" width="800" />
+</div>

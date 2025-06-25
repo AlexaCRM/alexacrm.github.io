@@ -31,6 +31,7 @@ When a bound user successfully signs in, your website receives data from the bou
 
 You can add additional authorization step to disable sign-in for selected users in Dataverse / Dynamics 365.
 
+
 ## Understand user binding modes
 
 DataPress (Dataverse Integration) can bind a user to a Dataverse record in several different ways which are referred to as "binding modes".
@@ -45,13 +46,16 @@ In **Custom mode** you must implement the `integration-cds/user-binding/bind-cus
 
 **Disabled mode** has been **deprecated.** This feature is not available in new deployment.
 
+
 ## Configure global binding settings
 
 Select **Bindings > User Binding** in plugin admin interface to configure global user binding settings.
 
 ### Configure sign-in authorization for bound users
 
-Check *"Authorize users against Dataverse during sign-in"* to add Dataverse authorization step to the standard WordPress authentication flow.
+Enable "Authorize users against Dataverse during sign-in" to incorporate a Dataverse authorization step into the standard WordPress authentication flow.
+
+This setting ensures that user authentication is validated against Dataverse. The system will only check whether login is enabled for the user, allowing seamless integration with existing WordPress authentication mechanisms.
 
 ## Use user binding UI to bind users to Dataverse
 
@@ -59,16 +63,7 @@ User binding for individual users is set up in the **WordPress Admin > Users**. 
 
 You can change the binding mode of the selected user. In *Lookup mode* you can select the user using lookup dialog.
 
-## Deprecated functionality
-The following functionality has been **deprecated** and removed from plugin interface. If this functionality is required please contact technical support.
-
-Recommended way to auto-create user bindings and synchronize data between WordPress users and Dataverse contacts is to use Microsoft Power Automate.
-
-### Enable username binding for new WordPress users
-
-You can provide WordPress user/usermeta field to Dataverse Contact field for initial matching. DataPress (Dataverse Integration) will locate the contact record using this mapping and set `alexacrm_wordpress_username` to the user's username.
-
-### Enable field synchronization for bound users
+## Enable field synchronization for bound users
 
 When a WordPress user is bound to a Dataverse record, you may want to synchronize some of their data between the systems. That data may include Email *(user_email)*, First Name *(first_name)*, Last Name *(last_name)* and Display Name *(display_name).* You can map these WordPress user and usermeta fields to Dataverse table columns. Leave the mapping field empty if you don't want to synchronize that particular WordPress user field.
 
@@ -78,7 +73,21 @@ When a WordPress user is bound to a Dataverse record, you may want to synchroniz
 
 :::
 
-### Important to remember
+## Deprecated functionality
+<details>
+  <summary>Click to expand</summary>
+
+The following functionality has been **deprecated** and removed from plugin interface. If this functionality is required please contact technical support.
+
+Recommended way to auto-create user bindings and synchronize data between WordPress users and Dataverse contacts is to use Microsoft Power Automate.
+
+### Enable username binding for new WordPress users
+
+You can provide WordPress user/usermeta field to Dataverse Contact field for initial matching. DataPress (Dataverse Integration) will locate the contact record using this mapping and set `alexacrm_wordpress_username` to the user's username.
+  
+</details>
+
+## Important to remember
 
 When using the User Binding functionality, it is essential to leave at least one user without binding. Therefore, it is recommended that you create a new user as soon as possible and without any binding. This will help ensure that you can continue to manage and administer the system should any issues arise with the users who have binding.
 
@@ -110,3 +119,24 @@ Here are the revised instructions for binding a user from the maker portal in tw
 <div class="text--center"> 
 <img src="/images/user-to-contact.png" width="700" />
 </div>
+
+**How to use binding information in twig** 
+
+The user object allows you to check whether the current user is bound and access their associated Dataverse record values. For more details, see [user binding](/datapress/binding/user-binding.md).
+
+**Example Usage**
+
+```twig
+{{ user.record }} 
+```
+
+```twig
+{{ user.reference }}
+```
+Example Output
+
+```
+Jsandye Stanbra
+```
+
+[Read more](/twig/introduction/#access-the-current-user-record)
