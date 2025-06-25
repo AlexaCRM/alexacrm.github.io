@@ -78,7 +78,49 @@ If the linked entity alias matches any column name, it may result in errors or u
 
 ## Using FetchXML Template
 
-Use fetchXML template to add filters. 
+You can apply a FetchXML template while configuring binding for a page. Simply select your FetchXML template title in the Conditional Access section.
+
+**Example FetchXML Template**:
+
+```xml
+<fetch version="1.0" output-format="xml-platform" mapping="logical">
+  <entity name="account">
+    <attribute name="accountid" />
+    <attribute name="name" />
+    <filter type="and">
+      <condition attribute="name" operator="eq" value="OrganizationName" />
+    </filter>
+  </entity>
+</fetch>
+```
+
+**FetchXML Template with Multiple Tables**:
+
+```xml
+<fetch version="1.0" output-format="xml-platform" mapping="logical">
+  <entity name="contact">
+    <attribute name="contactid" />
+    <attribute name="fullname" />
+    <link-entity name="account" from="accountid" to="parentcustomerid" alias="account">
+      <attribute name="name" />
+    </link-entity>
+  </entity>
+</fetch>
+```
+
+**FetchXML Key Concepts:**
+
+- Filter Types: Use **not**, **and**, or **or** filters to refine queries.
+- Using **link-entity**: Establish relationships between entities and retrieve related data in a single query, avoiding multiple separate queries.
+- Using **attribute**: Specifies which fields should be retrieved from a table. Each corresponds to a column in the Dataverse table.
+
+[Microsoft FetchXML Documentation](https://learn.microsoft.com/power-apps/developer/data-platform/fetchxml/overview)
+
+### Using FetchXML Template with views
+
+FetchXML templates can be used to apply filters in views.
+
+For example, to filter the All Accounts view, create the following FetchXML template in the DataPress Admin Area: 
 
 ```
 <filter>
@@ -87,9 +129,9 @@ Use fetchXML template to add filters.
 </filter>
 ```
 
-This template you can use in forms. Just choose your fetchXML template title in the Conditional access section of the form. The same choise you can make in `Forms Global Settings` to make this choice for all forms.
+**Using Template Parameters**
 
-To add parameters for the template modify you template: 
+To make the filter dynamic, modify the template using **parameters**:
 
 ```
 <filter>
@@ -98,12 +140,31 @@ To add parameters for the template modify you template:
 </filter>
 ```
 
-You can also set default value for these parameters in `FetchXML` section or in your form section. When you choose this template you will see whether this template has any parameters.
+- Set default values for these parameters in the FetchXML section or directly in the form settings.
 
-Also you can add a fetchXML template at the moment of binding configuration for a page.
+- When selecting a template, it will indicate whether parameters are required.
 
-[See how to combine fetchXML templates and views](/datapress/views.md#parameterize-your-views)
-XrmToolBox can help you to create fetchXML filters. [See XrmToolBox documentation](https://www.xrmtoolbox.com/documentation/) Use FetchXML Builder tool to get help for fetchXML creation.
+📌 Use `filter='fetchXMLtemplateName'` to apply a FetchXML template in a view
+
+User `filter='fetchXMLtemplateName'` to use a new fetchXML template with a view.
+[Learn more about FetchXML templates and views](/datapress/views.md#parameterize-your-views)
+
+**Applying FetchXML Templates in Forms**
+
+FetchXML templates can also be configured for lookup fields in forms.
+To set a FetchXML template for a lookup field:
+
+- Navigate to DataPress (Dataverse) Admin Area.
+- Open the **Forms Editor** and find your form.
+- Locate the **Lookup Fields** section.
+- Assign a FetchXML template to the desired lookup field.
+
+To apply a FetchXML template globally across all forms, set the template in **Forms Global Settings**.
+
+**FetchXML Template Creation Tools**
+
+🛠 **XrmToolBox** can help you to create fetchXML filters. 
+[XrmToolBox documentation](https://www.xrmtoolbox.com/documentation/) Use FetchXML Builder tool to get help for fetchXML creation.
 
 ## How to use formattedValues
 

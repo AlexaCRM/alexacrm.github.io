@@ -37,6 +37,10 @@ When table binding is enabled for a WordPress post, a new object called "current
 
 ### Types of table binding
 
+<div class="text--center"> 
+<img src="/images/table-binding-mode.png" width="700" />
+</div>
+
 You can choose from several options how to bind the post.
 
 **Via GUID in query string.** Specify the query parameter name in the binding options. For "id" the sample URL would be `htps://example.com/sample-page/?id=00000000-0000-0000-0000-000000000000`.
@@ -50,6 +54,9 @@ You can choose from several options how to bind the post.
 In certain integration scenarios, it may be desirable to limit the number of table rows exposed to a user. In a self-service portal, you may want to allow a user access to their invoices, but keep them from seeing invoices for your other clients.
 
 DataPress (Dataverse Integration) provides capability of restricting access by executing a provided FetchXML query before access to the page is granted. The query allows determining relations between the requested table row and the visitor. Access is granted if the query returns any rows.
+
+
+[How to use fetchXML template and view](/fetchxml/#using-fetchxml-template)
 
 ## Configure global binding settings
 
@@ -132,6 +139,8 @@ Sample FetchXML query that grants access only to users which are bound to contac
       - Dataverse connection is not configured, **OR**
       - The evaluated query returns an empty collection, **OR**
       - Query failed
+
+[More examples for fetchXML templates](/fetchxml/#using-fetchxml-template)
 
 ## Use table binding on your website
 
