@@ -1,68 +1,60 @@
 ---
-title: Webhooks in Power Automate
+title: Using Power Automate HTTP Webhook Trigger
+slug: /knowledge-base/http-webhook-trigger
 sidebar_position: 2
-slug: /knowledge-base/webhooks-in-power-automate
 tags:
-  - DataPress
+  - Power Automate
+  - Webhooks
+  - Integration
 ---
 
-# Webhooks in Power Automate
+# Using Power Automate HTTP Webhook Trigger
 
-Webhooks are a powerful way to trigger Power Automate flows from external systems in real time. This guide walks you through how to configure and use them effectively.
+Power Automate supports **HTTP Webhook triggers** through custom connectors, allowing flows to be triggered by external systems in real time. This article outlines two common scenarios:
 
-## 🔗 Setting Up a Webhook Trigger
+- Creating a **dynamic webhook** on the fly
+- Registering a **fixed webhook** for known endpoints
 
-Follow these steps to set up a webhook using the **"When an HTTP request is received"** trigger:
+## Scenario 1: Creating a Webhook on the Fly
 
-1. **Create a New Flow**
-   - Go to Power Automate and select **Create → Instant cloud flow**.
-   - Choose **"When an HTTP request is received"** as the trigger.
+In this approach, a webhook is **created dynamically** each time a request comes in. This is useful when the target site is not known in advance or changes frequently.
 
-2. **Define the JSON Schema**
-   - Click **Use sample payload to generate schema**.
-   - Paste a sample JSON payload that your external service will send.
+### How It Works
 
-3. **Add Actions**
-   - Use the output from the trigger to add further actions—such as sending an email, storing data, or calling another API.
+1. Power Automate receives a request (e.g., from a form or API).
+2. It extracts the **site URL** from the request body or headers.
+3. It sends a **POST** request to that site to register a webhook.
+4. Once the event is received and processed, the webhook is **deleted** (either automatically or manually).
 
-4. **Save and Copy the URL**
-   - Save the flow to generate a unique webhook URL.
-   - Use this URL in your external system to send HTTP POST requests.
+## Scenario 2: Creating a Fixed Webhook
+If the target site is known in advance, you can configure a static webhook during connector setup. This is ideal for stable integrations with a single WordPress instance or API.
+This setup registers the webhook once and listens for events continuously until the flow is disabled or removed.
 
-5. **Test the Webhook**
-   - Use Postman, curl, or your external system to send a test request.
-   - The flow should trigger and execute your defined steps.
+## Example Flow
 
-6. **Register the Webhook Source**
+- **Subscribe Method:** `POST`  
+- **Subscribe URI:** `https://{dynamic-site}/wp-json/integration-cds/v1/webhooks`  
+- **Subscribe Body:**
 
-**Option A: Using DataPress Admin Interface**:
+```json
+{
+  "name": "Power Automate Create",
+  "description": "Description",
+  "topic": "form/create",
+  "target": "@{listCallbackUrl()}",
+  "form_type": "gravity",
+  "form_id": "all"
+}
+```
 
-- Open the DataPress Admin Area.
-- Create a new webhook following this [instruction](/knowledge-base/webhooks/#configuring-webhooks).
-- Paste the Power Automate URL from Step 4 into the Webhook URL field.
+- **Unsubscribe Method**: DELETE (optional, depending on the external system)
 
-**Option B: Using Power Automate HTTP Webhook Trigger Flow**:
+ Power Automate will automatically attempt to unregister the webhook when the flow is disabled or deleted. However, we recommend verifying that the webhook has been removed manually.
 
-Instead of configuring the webhook in DataPress, you can create another flow using the HTTP Webhook trigger. Use the settings below:
-- Subscribe Method: POST
-- Subscribe URI: https://your-website.com/wp-json/integration-cds/v1/webhooks
-- Subscribe Body: Follow the same [instruction](/knowledge-base/webhooks/#configuring-webhooks)
-- Subscribe - Authentication: Username and password (basic authentication)
+## Best Practices
 
-<div class="text--center"> 
-<img src="/images/http-webhook.png" alt="Add webhooks via Power Automate" width="500" />
-</div>
+Always validate the callback URL `(@{listCallbackUrl()})` is correctly passed to the external system.
 
-## 🚀 Using HTTP Webhook Trigger – Summary
+Use authentication (e.g., basic auth or API keys) when registering webhooks to prevent unauthorized access.
 
-Setting up the webhook trigger is a five-step process:
-
-- Create a flow using the **"When an HTTP request is received"** trigger.
-- Define a JSON schema based on expected data.
-- Build out actions within the flow.
-- Copy the generated HTTP POST endpoint.
-- Test it using tools or actual services.
-
-
-For advanced scenarios, refer to [Microsoft’s official documentation on webhook connectors](https://learn.microsoft.com/en-us/connectors/custom-connectors/create-webhook-trigger).
-
+Monitor webhook lifecycle events and clean up unused registrations to avoid clutter or duplicate triggers.
