@@ -88,3 +88,61 @@ Also you can partially change behavior for some fields. For example, this code w
 ```
 
 To use this template at the moment of form creation set `Render form based on twig template` as `Yes` on the creation form page. Then set mapping between `Fullname` field and your template name as value.
+
+## Using Twig Templates from a Folder
+
+To keep your Twig templates organized and reusable, you can load them from a custom folder on your WordPress site. This allows you to separate content logic from layout components and maintain a modular development structure.
+
+**Steps:**
+
+1. Create a Folder for Templates
+
+Inside your WordPress installation, create a directory to store Twig templates, for example:
+
+```plaintext
+wp-content/uploads/templates/
+```
+
+Place your Twig files in this folder, such as:
+
+```
+wp-content/uploads/templates/t1.twig
+```
+
+2. Register the Template Folder in functions.php
+Add the following snippet to your theme's functions.php file to tell the integration plugin where to look for custom templates:
+
+```php
+add_filter( 'integration-cds/twig/templates', function( $templatePaths ) {
+    $templatePaths[] = ABSPATH . 'wp-content/uploads/templates/';
+    return $templatePaths;
+});
+```
+
+This appends your custom directory to the list of locations the Twig engine searches for templates.
+
+3. Include the Template in a Page
+
+To use a template from your custom folder, create a WordPress page or post with the following Twig syntax:
+
+```twig
+{% include 't1.twig' %}
+```
+
+This will load and render the contents of `t1.twig` from the folder you registered in the previous step.
+
+### Template Resolution Order and Overrides
+
+Twig will resolve templates in the following order. If multiple templates share the same filename, the later ones in this list will override the earlier ones:
+
+1. `integration-cds/templates/twig`
+
+2. `integration-cds-premium/templates/twig`
+
+3. Templates defined in **Admin → Templates → Twig Templates**
+
+4. Custom paths registered via the `integration-cds/twig/templates` filter
+
+This allows for a flexible override system—custom templates (such as those in /uploads/templates/) can selectively replace default or premium ones without modifying core files.
+
+>  Use unique filenames or naming conventions to avoid unintentional overrides unless override behavior is desired.
