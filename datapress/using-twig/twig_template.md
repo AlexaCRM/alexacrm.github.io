@@ -130,3 +130,19 @@ To use a template from your custom folder, create a WordPress page or post with 
 ```
 
 This will load and render the contents of `t1.twig` from the folder you registered in the previous step.
+
+### Template Resolution Order and Overrides
+
+Twig will resolve templates in the following order. If multiple templates share the same filename, the later ones in this list will override the earlier ones:
+
+1. `integration-cds/templates/twig`
+
+2. `integration-cds-premium/templates/twig`
+
+3. Templates defined in **Admin → Templates → Twig Templates**
+
+4. Custom paths registered via the `integration-cds/twig/templates` filter
+
+This allows for a flexible override system—custom templates (such as those in /uploads/templates/) can selectively replace default or premium ones without modifying core files.
+
+>  Use unique filenames or naming conventions to avoid unintentional overrides unless override behavior is desired.
