@@ -18,7 +18,7 @@ The diagram below illustrates the complete flow of the event registration proces
 <img src="/images/diagram.jpg" alt="Registration process diagram" width="700" />
 </div>
 
-### List of events
+## List of events
 The site displays a complete list of events, helping users easily find and register for relevant opportunities. 
 
 By default, only future events are shown, but a toggle option allows past events to be included in the list as well.
@@ -27,7 +27,7 @@ By default, only future events are shown, but a toggle option allows past events
 <img src="/images/page-event-list.jpg" alt="Page Events list" width="800" />
 </div>
 
-### Individual event details view
+## Individual event details view
 The event details page provides information about a specific event, including its name, date, time, location, and description, as well as details about event sessions, speakers, passes, and sponsors. It also features a registration button for easy sign-up. 
 
 <div class="text--center">
@@ -57,7 +57,7 @@ Switch tabs to see more information.
 </div>
 <br></br>
 
-### Event-level registration
+## Event-level registration
 
 For details on configuring the registration form, click [here](/configure_solution_and_app/#form-settings).
 
@@ -86,7 +86,7 @@ If the WordPress user is not logged in, they will see a standard registration fo
 <img src="/images/form-standard.jpg" alt="Standart Form View" width="800" />
 </div>
 
-### Thank You page
+## Thank You page
 
 After the form has been successfully submitted, the user will be redirected to a confirmation page that thanks them for their registration.
 
@@ -94,7 +94,7 @@ After the form has been successfully submitted, the user will be redirected to a
 <img src="/images/thank-you-page.jpg" alt="Thank You Page" width="800" />
 </div>
 
-### Registration limit control
+## Registration limit control
 
 Maximum event capacity is set in the Customer Insights – Journeys app in the Event planning area → Events → General → Capacity.
 
@@ -102,13 +102,22 @@ Maximum event capacity is set in the Customer Insights – Journeys app in the E
 <img src="/images/registration-limit.jpg" alt="Maximum Event Capacity" width="800" />
 </div>
 <br></br>
-When the registration limit is reached, the client sees a notification that the event is full.
 
+If waitlist registrations are not supported, when the registration limit is reached, the client will see a notification that the event is full.
 <div class="text--center">
 <img src="/images/notification-reg-full.jpg" alt="Event is Full Notification" width="800" />
 </div>
+<br></br>
 
-### DataPress Settings Panel in Customer Insights - Journeys
+### Waitlist
+To let your customers enroll in a waitlist, switch the toggle **Enable waitlist** in the Customer Insights – Journeys app under Event Planning → Events → General → Capacity.
+
+If waitlist registrations are supported, once the registration limit is reached, clients can join the waitlist and will receive a notification confirming their waitlist status. If a spot becomes available, they can be registered automatically or manually. 
+<div class="text--center">
+<img src="/images/cij-waitlist-form.jpg" alt="Join a Waitlist Form" width="800" />
+</div>
+
+## DataPress Settings Panel in Customer Insights - Journeys
 
 The **DataPress** tab is part of the Event form in Customer Insights - Journeys. It allows you to view key details such as the Readable Event ID, change the event image,control the public visibility of live events on your WordPress site and manage associated passes. All of these fields are hidden by default.
 
@@ -116,13 +125,13 @@ The **DataPress** tab is part of the Event form in Customer Insights - Journeys.
 <img src="/images/cij-datapress-panel.jpg" alt="DataPress Settings Panel" width="1000" />
 </div>
 
-#### Readable Event ID
+### Readable Event ID
 A human-readable string (e.g. `DynamicsMinds2025`) that identifies the event. You need it for use in registration URLs.
 
-#### Event Image
+### Event Image
 Allows uploading or selecting an image that represents the event. This image appears in event listings, on the event details page, and in registration forms.
 
-#### Event Registration Access
+### Event Registration Access
 This dropdown lets you choose whether the event is publicly available for registration on the WordPress site.
 - **Public** – Event is visible in the listing. This is the default option.
 - **Unlisted** – Event is not shown in the listing, but registration is accessible via a direct registration link.
@@ -132,17 +141,17 @@ This dropdown lets you choose whether the event is publicly available for regist
 <img src="/images/cij-datapress-panel-visibility.jpg" alt="Live Event Visibility choice dropdown" width="600" />
 </div>
 
-### Passes Overview
+## Passes Overview
 
 Below the visibility settings, the Passes list displays available access options for the event.
 
 Each pass represents ticket options tied to the event. These can define different access levels or pricing categories.
 
-### Event cancellation
+## Event cancellation
 
 To be completed
 
-### Email Notifications
+## Email Notifications
 When [configuring a journey](/configure_solution_and_app/#journey), you have the flexibility to define which emails users will receive. Our solution includes five pre-configured [email templates](/configure_solution_and_app/#emails) that you can incorporate into your journey:
 
 * Event Registration Template – Confirms a successful registration.
@@ -156,14 +165,10 @@ When [configuring a journey](/configure_solution_and_app/#journey), you have the
 * 7-Day Reminder Template – Sends a reminder one week before the event.
 * 1-Day Reminder Template – Sends a final reminder the day before the event.
 
-
-### Waitlist
+## Payments
 To be completed
 
-### Payments
-To be completed
-
-### User Profile Page
+## User Profile Page
 
 Registered users have the ability to update their profile information, such as their first and last name. However, the email address field is read-only. To update the email address, users are required to contact support directly, as the email is used for matching with the contact information in the system.
 

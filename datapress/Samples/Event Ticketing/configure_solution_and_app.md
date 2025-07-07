@@ -18,10 +18,10 @@ Dynamics 365 Customer Insights – Journeys provides real-time marketing capabil
 Previously known as Dynamics 365 Marketing, some customers may still encounter references to 'Marketing' in their environment.
 :::
 
-## Solution and App Configuration 
+# Solution and App Configuration 
 **DataPress Event Ticketing** is an unmanaged solution you can modify after importing.
 
-### Environment Variable 
+## Environment Variable 
 The **CI-J Settings** environment variable is used for the administrator to decide whether to automatically create a new WordPress user when the customer is registering for an event. A new WordPress user will only be created if one does not already exist.
 
 By default, new users are not created. To enable this, go to the solution and change the **CI-J Settings** environment variable value to true:
@@ -32,7 +32,7 @@ By default, new users are not created. To enable this, go to the solution and ch
 The contact email field is used as the WordPress username. This can be changed in the **[Events] Form Submitted** Power Automate flow
 :::
 
-### Registration Form  
+## Registration Form  
 Our solution includes a ready-made custom registration form for convenient data processing.  
 
 If the customer is a logged-in WordPress user and has a bound contact, the form is automatically populated. It fills in details such as the contact's FirstName, LastName, Email, and other required data. In this case, the customer does not interact with the form fields. Instead, a message confirms their registration details:
@@ -56,7 +56,7 @@ If the WordPress user is not logged in or the contact is not bound, they see a s
 <img src="/images/form-standard.jpg" alt="Registration Form Standard View" width="800" />
 </div>
 
-#### Form Settings
+### Form Settings
 
 You need to use a customized event registration form with some hidden fields.  
 
@@ -169,7 +169,7 @@ function processHiddenParams(event) {
 ```
 You can also find tips on styling the form in the [Modifying the Look and Feel: Registration Form](//overview_and_supported_features/#registration-form-1) section.
 
-### Event Registration Settings
+## Event Registration Settings
 
 In the Event Planning area → Events → Website and Form tab, under the drop-down **Where do you want attendees to register for this event?**, select **On your own website**. 
 
@@ -180,7 +180,25 @@ Below fill in **Registration page URL** with `https://{your-site-url}/register/{
 </div>
 <br></br>
 
-### Custom Trigger
+### Registration limit control
+
+Maximum event capacity is set in the Customer Insights – Journeys app in the Event planning area → Events → General → Capacity.
+
+<div class="text--center">
+<img src="/images/cij-registration-limit.jpg" alt="Maximum Event Capacity" width="800" />
+</div>
+<br></br>
+
+### Waitlist
+To let your customers enroll in a waitlist, switch the toggle **Enable waitlist** in the Customer Insights – Journeys app under Event Planning → Events → General → Capacity. 
+
+<div class="text--center">
+<img src="/images/cij-waitlist-enable.jpg" alt="Maximum Event Capacity" width="800" />
+</div>
+<br></br>
+Read more about [how up and manage an event waitlist](https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/set-up-and-manage-waitlist) in Microsoft documentation. 
+
+## Custom Trigger
 Form submission triggers the **[Events] Form Submitted** Power Automate flow, which invokes the **Event Registration** custom trigger via an HTTP request. 
 
 A custom trigger need to be used to understand whether a new WordPress user was created and whether a password reset link needs to be sent. It also helps prevent duplicate event registrations if the contact is already registered for the event.
@@ -194,17 +212,25 @@ Parameters passed to the trigger by the flow:
 * WordPress Site Url – WordPress site URL.
 * Password Reset Link – Link for a newly created WordPress user to reset their password.
 
-### Journey
+## Journey
 The trigger starts two separate journeys: **Event Registration Journey** and **Registration Exists Journey**. The **Event Registration Journey** is the primary process that guides the client through the entire registration experience, ensuring they receive relevant confirmations and updates. The **Registration Exists Journey** notifies clients if they attempt to register for the same event more than once, ensuring they are informed that their registration is already recorded.
 
 Follow the instructions below - [How to create a Journey](https://github.com/georged/datapress/wiki/Configure-Solution-and-App#how-to-create-a-journey) - to create a basic Journey using the parameters passed by the **Event Registration** trigger. You can customize it as needed to align with your business requirements.
 
-The final result for **Event Registration Journey** should look like this.
+If [waitlist registrations](/configure_solution_and_app/#waitlist) are not supported, the final structure of the **Event Registration Journey** should look like this.
 
 <div class="text--center">
 <img src="/images/journey.jpg" alt="Journey" width="1000" />
 </div>
 <br></br>
+
+If you choose to support [waitlist registrations](/configure_solution_and_app/#waitlist), the Event Registration Journey will need to be extended with additional conditions and actions to handle the waitlist logic. 
+
+<div class="text--center">
+<img src="/images/cij-journey-reg-wait.jpg" alt="Journey" width="1200" />
+</div>
+<br></br>
+
 
 For **Registration Exists Journey**, the final result should appear as follows.
 
@@ -213,7 +239,7 @@ For **Registration Exists Journey**, the final result should appear as follows.
 </div>
 
 
-#### How to create a Journey
+### How to create a Journey
 
 First let's create **Event Registration Journey**
 1. Create a new Journey from blank. Choose the type Trigger-based and select the **Event Registration**  trigger.
@@ -293,21 +319,21 @@ Now let's take a look at the **Registration Exists Journey** creation process.
 <img src="/images/journey2-create-email-reg-exists.jpg" alt="Create Journey Registration Exists. Email" width="300" />
 </div>
 
-### Payments 
+## Payments 
 
 To be completed
 
-### Event Cancellation 
+## Event Cancellation 
 
 To be completed
 
-### Emails
+## Emails
 
 The solution includes five email templates to illustrate how you can configure your communication. You can edit them both from the solution and from the Customer Insights – Journeys application under the Real-time Journeys area → Assets → Templates → Email.
 
 Please feel free to modify these templates to include details specific to your events and align them with your company’s brand style for a more personalized and professional experience.
 
-#### Email Templates
+### Email Templates
 
 1. **Event Registration Template**  
    This template is used to create the email sent when a new customer successfully registers for an event. It includes event details in the email body.
@@ -325,14 +351,14 @@ Please feel free to modify these templates to include details specific to your e
 
 5. **1-Day Reminder Template**  – For a final reminder email the day before the event.  
 
-#### Default Configuration
+### Default Configuration
 
 By default, the coordinator's email address is set to the **Event Owner's Primary Email**.  
 If you need to specify a different email address for the coordinator:  
 - Add a custom field to define the coordinator's contact information.   
 - Edit the email, go to the Personalize tab on the right, and change the CoordinatorEmail value.
 
-### Event Portal Management Table
+## Event Portal Management Table
 The solution contains the Event Portal Management table, where you can define options to configure event display settings and data mapping.
 
 In the Events table in Customer Insights - Journey app, some useful fields are hidden. For example, `msevtmgt_description` is used for the event description, and `msevtmgt_eventimage` is the event image. You can still use these fields or create your own custom fields instead. 
@@ -341,10 +367,10 @@ If you prefer to add your own fields, please change the values of `template/even
 
 Read more about table settings affecting the site style in the [Modifying the Look and Feel. Event Portal Management Table](/configure_solution_and_app/#event-portal-management-table-1)
 
-## Modifying the Look and Feel
+# Modifying the Look and Feel
 This section provides some basic guidelines on how you can adjust the visual style of your website to match your branding and design preferences
 
-### Registration Form
+## Registration Form
 The default success notification after form submission has been updated, and you can customize it with your company logo.
 
 <div class="text--center">
@@ -370,7 +396,7 @@ div[data-cached-form-url] .onFormSubmittedFeedback .onFormSubmittedFeedbackInter
 ```
 4. Replace the URL in `background: url(/wp-content/uploads/2025/01/site-logo.png) no-repeat center calc(100% - 50px);` with the URL of your logo.
 
-### Event Portal Management Table
+## Event Portal Management Table
 The solution includes the Event Portal Management table, where you can configure options to modify the look of the site.
 
 Set `template/event/formats/date` and `template/event/formats/time` to the required format. By default, the date is set to `d.m.Y`, which represents **24.11.2024**, and the time is set to `H:i`, which displays **18:30**. Set it, for example, to `F j, Y` to display **November 24, 2024**.

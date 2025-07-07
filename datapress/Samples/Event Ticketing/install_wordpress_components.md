@@ -12,7 +12,7 @@ keywords: [DataPress Event Ticketing Install]
 To set up the solution on your website, you will first need to install the necessary WordPress components.
 To start with, go to the admin section of your WordPress site. If you don't have one, refer to the WordPress article [Build Your Website in Five Steps](https://wordpress.com/support/five-step-website-setup/) for guidance.  
 
-### DataPress plugin
+## DataPress plugin
 Go to the Plugins tab and click Add New Plugin. Search for Dataverse Integration (currently renamed to DataPress).  
 
 You require the Premium DataPress plugin extension. Follow the instructions how to [Install Premium Features](https://docs.alexacrm.com/premium-features/#install-premium-features) to enable it. 
@@ -21,7 +21,7 @@ You require the Premium DataPress plugin extension. Follow the instructions how 
 <img src="/images/plugin-datapress.jpg" alt="DataPress Plugin" width="600" />
 </div>
 
-### Other plugins
+## Other plugins
 
 Breeze is a WordPress Caching Plugin developed by Cloudways. Breeze uses advance caching systems to improve WordPress loading times.
 
@@ -36,7 +36,7 @@ The use of this plugin is optional and depends on your specific requirements.
 If your caching provider allows varying cache by query string parameters, pp and past should be added to the list of parameters.
 :::
 
-### Templates
+## Templates
 
 After setting up the plugin, download the [Twig templates](https://github.com/georged/datapress/blob/main/templates/ci-j/twig_templates.json) from GitHub and install them in the Twig Templates section of your WordPress site. 
 
@@ -52,7 +52,7 @@ The twig templates are stored under Dataverse → Templates → Twig Templates.
 <img src="/images/templates-twig-storage.jpg" alt="Twig templates Storage" width="600" />
 </div>
 
-### WordPress Pages
+## WordPress Pages
 Add required pages **Available Events**, **Register** and **View Event**
 
 <div class="text--center">
@@ -86,7 +86,7 @@ In the **View Event** page:
 {% include 'page_view_event' %}
 ```
 
-#### Page Binding
+### Page Binding
 When you hover over the page name, a menu appears where you should click **Configure Binding**.
 
 For the **Register** and **View Event** pages, set the parameters below and click Save afterward.
