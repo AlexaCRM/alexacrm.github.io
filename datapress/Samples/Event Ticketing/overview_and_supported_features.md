@@ -110,12 +110,10 @@ When the registration limit is reached, the client sees a notification that the 
 
 ### DataPress Settings Panel in Customer Insights - Journeys
 
-
 The **DataPress** tab is part of the Event form in Customer Insights - Journeys. It allows you to view key details such as the Readable Event ID, change the event image,control the public visibility of live events on your WordPress site and manage associated passes. All of these fields are hidden by default.
 
-
 <div class="text--center">
-<img src="/images/cij-datapress-panel.jpg" alt="DataPress Settings Panel" width="800" />
+<img src="/images/cij-datapress-panel.jpg" alt="DataPress Settings Panel" width="1000" />
 </div>
 
 #### Readable Event ID
@@ -124,11 +122,11 @@ A human-readable string (e.g. `DynamicsMinds2025`) that identifies the event. Yo
 #### Event Image
 Allows uploading or selecting an image that represents the event. This image appears in event listings, on the event details page, and in registration forms.
 
-#### Live Event Visibility
-This dropdown lets you choose how the event is shown publicly on the WordPress site.
-- **Show** – Event is visible in the listing. This is the default option.
-- **Hide** – Event is not publicly visible, and registration is not available.
-- **Show via Registration Link** – Event is not shown in the listing, but registration is accessible via a direct registration link.
+#### Event Registration Access
+This dropdown lets you choose whether the event is publicly available for registration on the WordPress site.
+- **Public** – Event is visible in the listing. This is the default option.
+- **Unlisted** – Event is not shown in the listing, but registration is accessible via a direct registration link.
+- **None** – Event is not publicly visible, and registration is not available.
 
 <div class="text--center">
 <img src="/images/cij-datapress-panel-visibility.jpg" alt="Live Event Visibility choice dropdown" width="600" />
