@@ -138,6 +138,28 @@ Alternatively, you can use a shortcode to achieve the same result (use the `Cust
 
 This shortcode will populate the form fields with values from the record with the GUID 2793c9dc-ff0d-ef11-9f89-0022489310b4 in the contact table. In this case you don't need to configure binding for the page, just to write the record guid in the `Custom HTML` block.
 
+:::note
+
+**Duplicating Gravity Forms with Dataverse Feed**
+
+If you need to reuse an existing form setup, Gravity Forms makes duplication fast and efficient—especially when working with Dataverse integration.
+
+When you duplicate a form through the Gravity Forms admin interface:
+- The form structure and all fields are copied.
+- The associated Dataverse feed is duplicated automatically—retaining table mappings, action types (create or update), and field relationships.
+
+This eliminates the need to manually reconfigure Dataverse integration for each new form. It’s particularly useful for scenarios like:
+- Building multiple forms for similar entities (e.g. contacts, leads, events)
+- Creating multilingual or region-specific versions of forms
+- Iterating new versions for testing, staging, or conditional logic workflows.
+
+> After duplication, you can tweak individual mappings or feed settings in the new form without affecting the original.
+
+<div class="text--center"> 
+<img src="/images/gravity-duplicate.png" width="400" />
+</div>
+:::
+
 ## Handling Various Data Types
 
 ### Lookup Columns
