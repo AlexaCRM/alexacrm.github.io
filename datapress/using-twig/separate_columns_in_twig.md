@@ -161,3 +161,43 @@ The format of displaying decimal and float columns depends on the settings of yo
 ```
 
 An example output: **50,002.25**.
+
+## Custom Forms with Multiple Choice Fields
+
+This guide shows how to create a custom form in WordPress using DataPress, where a choice field supports multiple selections.
+
+**Prerequisites**: 
+Dataverse column with multiple choice options (e.g., hobbies field on the contact entity)
+
+**Using** `<select multiple>`
+
+```twig
+{% form entity="contact" mode="create" %}
+<form>
+  <div class="form-group">
+    <label>First Name:
+      <input class="form-control" name="firstname">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>Last Name:
+      <input class="form-control" name="lastname">
+    </label>
+  </div>
+
+  <label>Hobbies:
+    <select name="hobbies" multiple>
+      <option value="1">Reading</option>
+      <option value="2">Traveling</option>
+      <option value="3">Cooking</option>
+      <option value="4">Gaming</option>
+    </select>
+  </label>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+{% endform %}
+```
