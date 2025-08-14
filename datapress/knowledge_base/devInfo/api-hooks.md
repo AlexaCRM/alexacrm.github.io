@@ -1,7 +1,7 @@
 ---
 title: WordPress Hooks
 sidebar_position: 2
-slug: /api-hooks
+slug: /knowledge-base/api-hooks
 tags:
     - API
     - DataPress

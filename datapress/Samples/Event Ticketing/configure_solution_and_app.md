@@ -173,7 +173,7 @@ You can also find tips on styling the form in the [Modifying the Look and Feel: 
 
 In the Event Planning area → Events → Website and Form tab, under the drop-down **Where do you want attendees to register for this event?**, select **On your own website**. 
 
-Below fill in **Registration page URL** with `https://{your-site-url}/register/{readable-event-id}`. You can find Readable Event ID in the Event Planning area → Events → [DataPress tab](/configure_solution_and_app/#datapress-settings-panel-in-customer-insights---journeys).
+Below fill in **Registration page URL** with `https://{your-site-url}/register/{readable-event-id}`. You can find Readable Event ID in the Event Planning area → Events → [DataPress tab](/overview_and_supported_features/#datapress-settings-panel-in-customer-insights---journeys).
 
 <div class="text--center">
 <img src="/images/cij-register-url.jpg" alt="Registration URL Settings" width="800" />
