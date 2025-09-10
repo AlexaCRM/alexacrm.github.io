@@ -14,6 +14,8 @@ The plugin previously known as Dataverse Integration has been renamed to DataPre
 All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
 :::
 
+import ExpandableSection from '@site/src/components/ExpandableSection';
+
 <p class="lead">Get acquainted with the plugin, learn how to install and configure it properly and learn about its features and capabilities.</p>
 
 ## Get your Dataverse / Dynamics 365 organization ready
@@ -33,6 +35,8 @@ Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dataverse
 Dataverse / Dynamics 365 supports several deployment and authentication scenarios. This tutorial assumes Dataverse / Dynamics 365 Online and Server-to-Server authentication with an application user.
 
 ::: 
+
+<ExpandableSection title="How to create application id and client secret">
 
 To create application id and client secret or certificate you need to complete the following steps:
 
@@ -64,8 +68,23 @@ You can also use [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure
 Do not change the timezone for your app user. If you do, you may encounter undefined results when working with a Date Time column that has User Local behavior.
 
 :::
+</ExpandableSection>
 
 ## Set authentication keys
+
+If the ICDS_AUTH_KEY is not explicitly defined, it will be generated automatically. However, the ICDS_FORM_AUTH_KEY must be set manually.
+
+Both keys can be updated at any time without disconnecting the integration. For security and compatibility, each key should be at least 32 characters long.
+
+If you define these keys in your site’s wp-config.php file, those values will take precedence over any settings stored in the database.
+
+To verify whether the keys are set:
+
+- Navigate to Dataverse → Settings
+- Scroll to the bottom of the page to locate the Advanced Settings section
+- The current key values will be displayed there
+
+<ExpandableSection title="How to set authentication keys">
 
 By default, DataPress (Dataverse Integration) use a Wordpress `AUTH_KEY` constant for encryption purposes. To ensure maximum security you may want to create specific authentication constants to use by the plugin:
 - `ICDS_AUTH_KEY` - Used to encrypt sensitive data such as application secret.
@@ -84,12 +103,7 @@ define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e
 
 To generate a suitable key you can use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to Dataverse -> Settings tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
 
-:::note
-
-If you did not set the **ICDS_AUTH_KEY**, it will be generated automarically. However, you must set the **ICDS_FORM_AUTH_KEY** yourself. You can also change either of these keys without disconnecting. The keys should be at least 32 characters long. 
-If you define them in your **wp-config.php** file, these file values will take precedence.
-
-:::
+</ExpandableSection>
 
 ## Connect the plugin
 
@@ -139,6 +153,30 @@ Premium feature! This feature is available in the premium extension.
 
 :::
 
+### Install WordPress Premium Solution
+
+1. Sign in into WordPress as admin user.
+2. Select **Dataverse** in the left-hand side navigation.
+3. Go to the **Addons** tab 
+4. Download **Dataverse Integration Premium**
+5. Click **Back to WordPress** 
+6. Click **Plugins** -> **Add New Plugin** and upload the downloaded .zip file.
+
+### Configure Dataverse Solution or click Add registration in DataPress Admin Panel (Connection tab)
+
+To configure the Dataverse Solution, you can either:
+
+Open the DataPress Admin Panel, go to the Connection tab, and click Add Registration, or
+
+Follow the manual steps outlined below.
+
+Once the connection is configured, proceed to the Status tab to complete your registration:
+- Enter your Company Name, First Name, Last Name, and Email
+- Click Register
+If you already have a registration, you can skip this step. 
+
+<ExpandableSection title="How to configure Dataverse Solution">
+
 ### Create Application Password
 
 1. Sign in into your WordPress site.
@@ -169,14 +207,8 @@ Premium feature! This feature is available in the premium extension.
 <img src="/images/wp-site.png" width="700" />
 </div>
 
-### Install WordPress Premium Solution
+</ExpandableSection>
 
-1. Sign in into WordPress as admin user.
-2. Select **Dataverse** in the left-hand side navigation.
-3. Go to the **Addons** tab 
-4. Download **Dataverse Integration Premium**
-5. Click **Back to WordPress** 
-6. Click **Plugins** -> **Add New Plugin** and upload the downloaded .zip file.
 
 :::note
 
