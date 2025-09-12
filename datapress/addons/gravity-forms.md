@@ -177,7 +177,7 @@ If you select the dropdown, you must also select the table and view to lookup. T
 <img src="/images/gf-lookup2.png" width="400" />
 </div>
 
-If you want to set a default value for Dataverse Lookup look at this example:
+To set a default value for a Dataverse Lookup field, use the following format:
 
 ```php
    table:98837486-742e-ed22-9db1-00224893bd2f
@@ -186,6 +186,14 @@ If you want to set a default value for Dataverse Lookup look at this example:
 <div class="text--center"> 
 <img src="/images/gf-lookup-default.png" width="400" />
 </div>
+
+For a **Dialog** Lookup, the format includes the entity name:
+
+```php
+account:98837486-742e-ed22-9db1-00224893bd2f
+```
+
+Replace account or table with the appropriate entity logical name, and use the actual GUID of the record you want to preselect.
 
 To control conditional access to requested records in dropdown or dialog use fetchXML filter.
 
