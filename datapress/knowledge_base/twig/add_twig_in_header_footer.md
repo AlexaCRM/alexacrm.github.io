@@ -1,5 +1,5 @@
 ---
-title: Add twig in header/footer
+title: Add Twig in header/footer
 slug: /knowledge-base/add-twig-in-header-footer
 sidebar_position: 20
 tags:
@@ -13,6 +13,9 @@ To inject dynamic data outside of the page content, you can use direct code in *
 
 ```php
 
-<?php echo \AlexaCRM\Nextgen\TwigProvider::instance()->renderString('Hello, {{ user.record["fullname"] }}'); ?>
+<?php 
+echo \AlexaCRM\Nextgen\TwigProvider::instance()->renderString(
+   'Hello, {{ user.record["fullname"] }}'); 
+?>
 
 ```
