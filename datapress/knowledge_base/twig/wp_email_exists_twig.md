@@ -1,5 +1,5 @@
 ---
-title: Check if WordPress user with given email exists
+title: Check if email already exists in WordPress
 description: Add a custom Twig function to verify if user with given email already exists.
 sidebar_position: 4
 slug: /knowledge-base/wp-email-exists-twig
@@ -23,12 +23,15 @@ Add the following PHP code to your theme’s `functions.php` file or a custom pl
 
 ```php
 add_filter('integration-cds/twig/functions', function (array $fns) {
-    $fns['wp_email_exists'] = new Twig\TwigFunction('wp_email_exists', function (string $email): bool {
+    $fns['wp_email_exists'] = new Twig\TwigFunction('wp_email_exists', 
+      function (string $email): bool {
         $email = sanitize_email($email);
         return is_email($email) && (bool) email_exists($email);
-    });
+      }
+    );
     return $fns;
 }, 10, 1);
+```
 ```
 
 This registers a new Twig function `wp_email_exists` that:
