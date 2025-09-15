@@ -239,3 +239,13 @@ You can enter a record GUID to be used as the default record in the page editing
 <div class="text--center"> 
 <img src="/images/elementor-default.png" alt="Elementor default" width="400" />
 </div>
+
+## Troubleshooting: Updated Records Not Reflected in Forms
+
+In some cases, you can successfully update a record, but the updated values do not appear in the Elementor form afterward.  As one of the possible solutions, you can disable Elementor's internal caching (it may contain outdated form data).
+
+You may also need to manually clear Elementor’s cache:
+- Go to Elementor → Tools
+- Click Regenerate CSS and Clear Cache
+
+These steps ensure that updated record values are properly reflected in the form and that dynamic field mappings work as expected.
