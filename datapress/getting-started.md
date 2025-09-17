@@ -152,7 +152,7 @@ Premium feature! This feature is available in the premium extension.
 
 ### Configure Dataverse Solution
 
-1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_latest_managed.zip). 
+1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_managed.zip). 
 2. Sign in into https://make.powerapps.com.
 3. Select **Solutions** then click **Import solution** and import downloaded solution(from step 1) into your Dataverse / Dynamics 365 instance.
 4. Select **Apps** then select **WordPress**.
