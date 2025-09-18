@@ -62,3 +62,11 @@ To clear the cache through a **DELETE** API request, you need to add basic authe
 | `wp-json/integration-cds/v1/cache/entity`             | Clear cache for all tables         |
 | `wp-json/integration-cds/v1/cache/entity/{tableName}` | Clear cache for a specific table by name |
 | `wp-json/integration-cds/v1/cache/entity/contact`     | Clear cache for the contact table  |
+| `wp-json/integration-cds/v1/cache/entity/contact/{guid}` | Clear cache for a specific contact record by GUID |
+
+#### Bound records
+
+| Endpoint                                              | Description                        |
+|-------------------------------------------------------|------------------------------------|
+| `wp-json/integration-cds/v1/cache/boundrecords`       | Clear cache for all bound records  |
+| `wp-json/integration-cds/v1/cache/boundrecords/{guid}`| Clear cache for a specific bound record by guid  |
