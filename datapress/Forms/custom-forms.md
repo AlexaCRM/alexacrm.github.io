@@ -90,6 +90,13 @@ To prevent spam submissions from getting into your CRM, add reCAPTCHA to your fo
 The plugin provides a Gutenberg block, "Dataverse Plain". It accepts Twig code and renders it as HTML at front-end. 
 Custom forms allow creating new Dataverse / Dynamics 365 rows, as well as updating existing rows. 
 
+:::note
+If you enable `recaptcha=true` in the `{% form %}` tag, you must include the `<recaptcha>` placeholder inside your form markup. This placeholder will be replaced with the actual reCAPTCHA widget at runtime.
+
+Before using reCAPTCHA, make sure it is properly configured in the plugin settings. Without configuration, the form will fail to render or submit. [More details](/datapress/Forms/recaptcha.md)
+
+:::
+
 ```php
 {% form entity="lead" mode="create" recaptcha=true %}
 <form>
