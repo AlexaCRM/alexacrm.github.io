@@ -59,6 +59,12 @@ To activate reCAPTCHA for **individual forms**:
 
 For custom forms, you must explicitly configure reCAPTCHA before implementation. Below is an example setup:
 
+:::note
+If you enable `recaptcha=true` in the `{% form %}` tag, you must include the `<recaptcha>` placeholder inside your form markup. This placeholder will be replaced with the actual reCAPTCHA widget at runtime.
+
+Before using reCAPTCHA, make sure it is properly configured in the plugin settings. Without configuration, the form will fail to render or submit.
+:::
+
 ```php
 {% set useRecaptcha = true %}
 {% form entity="lead" mode="create" recaptcha=useRecaptcha %}
