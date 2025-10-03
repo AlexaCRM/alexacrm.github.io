@@ -139,4 +139,4 @@ Example Output
 Jsandye Stanbra
 ```
 
-[Read more](/twig/introduction/#access-the-current-user-record)
+ [Read more](/twig/introduction/#access-the-current-user-record)
