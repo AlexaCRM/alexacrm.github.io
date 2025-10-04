@@ -171,6 +171,7 @@ To select a view, you need to click the `Add Fields` tab and choose `Dataverse L
 <div class="text--center"> 
 <img src="/images/gf-lookup.png" width="400" />
 </div>
+
 If you select the dropdown, you must also select the table and view to lookup. The dialog view does not require any additional settings.
 
 <div class="text--center"> 
@@ -185,6 +186,18 @@ To set a default value for a Dataverse Lookup field, use the following format:
 
 <div class="text--center"> 
 <img src="/images/gf-lookup-default.png" width="400" />
+</div>
+
+To filter the available options in a dropdown lookup, you can apply a FetchXML query:
+
+```twig
+<filter>
+  <condition attribute="address1_city" operator="eq" value="London" />
+</filter>
+```
+
+<div class="text--center"> 
+<img src="/images/gf-fetch.png" width="400" />
 </div>
 
 For a **Dialog** Lookup, the format includes the entity name:
