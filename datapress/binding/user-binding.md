@@ -122,7 +122,7 @@ Here are the revised instructions for binding a user from the maker portal in tw
 
 **How to use binding information in twig** 
 
-The user object allows you to check whether the current user is bound and access their associated Dataverse record values. For more details, see [user binding](/datapress/binding/user-binding.md).
+The user object allows you to check whether the current user is bound and access their associated Dataverse record values.
 
 **Example Usage**
 
@@ -139,4 +139,4 @@ Example Output
 Jsandye Stanbra
 ```
 
-[Read more](/twig/introduction/#access-the-current-user-record)
+ [Read more](/twig/introduction/#access-the-current-user-record)
