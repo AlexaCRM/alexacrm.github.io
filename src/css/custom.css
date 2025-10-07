@@ -6,33 +6,61 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #0097E6; /* Brand primary */
+  --ifm-color-primary-dark: #0086cf;
+  --ifm-color-primary-darker: #0079bd;
+  --ifm-color-primary-darkest: #0069a3;
+  --ifm-color-primary-light: #1aa2ea;
+  --ifm-color-primary-lighter: #48D0FF; /* Secondary */
+  --ifm-color-primary-lightest: #7EDCFF; /* Divider on white */
+
+  --ifm-background-color: #EFFAFF; /* Background */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 151, 230, 0.1);
 }
+
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #48D0FF;
+  --ifm-color-primary-dark: #3bbbe6;
+  --ifm-color-primary-darker: #32a8cf;
+  --ifm-color-primary-darkest: #278fb3;
+  --ifm-color-primary-light: #7EDCFF;
+  --ifm-color-primary-lighter: #a3e9ff;
+  --ifm-color-primary-lightest: #c2f2ff;
+
+  --ifm-background-color: #0a1e2a;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
 }
 
 .split-screen { display: flex; } 
 .left-pane, .right-pane { flex: 1; padding: 20px; overflow: auto; margin: 10px; /* Add margin to separate panes */ border: 1px solid #ccc; /* Optional: Add border for better visualization */ }
 .left-pane { background-color: #f0f0f0; align-self: flex-start; /* Aligns to the start of the container */ } 
 .right-pane { background-color: #e0e0e0; align-self: flex-start; /* Aligns to the start of the container */ }
+
+/* Navbar with gradient */
+.navbar {
+  background: linear-gradient(135deg, #0097E6 0%, #48D0FF 100%) !important;
+  color: white;
+  box-shadow: none;
+}
+
+.navbar__logo {
+  background-color: rgba(255, 255, 255, 0.8); /* under logo */
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* White links and logo */
+.navbar__link,
+.navbar__title {
+  color: white !important;
+}
+
+.navbar__link:hover {
+  color: #EFFAFF !important;
+}
 
 /* Underline all links */
 article a {
