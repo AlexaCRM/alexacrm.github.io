@@ -1,6 +1,6 @@
 ---
 title: WordPress Users Table
-sidebar_position: 7
+sidebar_position: 40
 slug: /knowledge-base/wp-users-table
 tags:
     - Knowledge base

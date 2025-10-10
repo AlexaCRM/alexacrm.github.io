@@ -1,6 +1,6 @@
 ---
 title: How to display a list of bound users in WordPress
-sidebar_position: 5
+sidebar_position: 20
 slug: /knowledge-base/bound-users
 tags:
     - Knowledge base
