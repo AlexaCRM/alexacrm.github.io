@@ -26,7 +26,7 @@ if ($userService->isBound()){
 
     /** @var EntityReference $accountRef */
     $accountRef = $contact['parentcustomerid'];
-    $account = ConnectionService::instance()->getClient()->Retrieve('account', $accountRef->Id, new ColumnSet(true));
+    $account = ConnectionService::instance()->getClient()->Retrieve('account', $accountRef->Id, new ColumnSet(['accountnumber']));
     $accountNum = $account['accountnumber'];
 }
 ```
