@@ -1,6 +1,6 @@
 ---
 title: Manage users
-sidebar_position: 4
+sidebar_position: 10
 slug: /knowledge-base/manage-users
 tags:
     - Knowledge base
