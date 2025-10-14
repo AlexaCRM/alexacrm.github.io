@@ -6,15 +6,15 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #0097E6; /* Brand primary */
+  --ifm-color-primary: #0097E6 !important; /* Brand primary */
   --ifm-color-primary-dark: #0086cf;
   --ifm-color-primary-darker: #0079bd;
   --ifm-color-primary-darkest: #0069a3;
-  --ifm-color-primary-light: #1aa2ea;
+  --ifm-color-primary-light: #48D0FF !important;
   --ifm-color-primary-lighter: #48D0FF; /* Secondary */
-  --ifm-color-primary-lightest: #7EDCFF; /* Divider on white */
+  --ifm-color-primary-lightest: #7EDCFF !important; /* Divider on white */
 
-  --ifm-background-color: #EFFAFF; /* Background */
+  --ifm-background-color: #ffffff !important; /* Background */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 151, 230, 0.1);
 }
@@ -62,6 +62,11 @@
   color: #EFFAFF !important;
 }
 
+.hero--primary {
+  background-color: var(--ifm-hero-background-color) !important;
+  color: var(--ifm-hero-text-color) !important;
+}
+
 /* Underline all links */
 article a {
   text-decoration: underline;
@@ -69,8 +74,50 @@ article a {
 
 /* Add external link icon to external links */
 article a[href^="http"]:not([href*="docs.alexacrm.com"]):after {
-  content: "🔗";
-  margin-left: 4px;
-  font-size: 0.9em;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
   vertical-align: middle;
+  background-color: currentColor;
+  mask-image: url("/img/external-link.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: url("/img/external-link.svg"); /* for Safari */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+/* Collapsible block styling */
+details summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 0.5rem;
+}
+
+/* ► icon when collapsed */
+details summary::before {
+  content: "\f0da"; /* fa-caret-square-o-right */
+  font-family: "FontAwesome";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+}
+
+/* ▼ icon when expanded */
+details[open] summary::before {
+  content: "\f0d7"; /* fa-caret-square-o-down */
+}
+
+/* Optional: spacing and border for collapsible content */
+details {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid #7EDCFF;
+  border-bottom: 1px solid #7EDCFF;
 }

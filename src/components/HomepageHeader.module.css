@@ -1,11 +1,22 @@
 .heroBanner {
-  margin-top: 60px; /* Line between navbar and banner */
+  margin-top: 60px;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #0077c2 0%, #48D0FF 100%);
-  color: #EFFAFF;
-  text-align: center;
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  color: #1a1a1a;
+  text-align: left;
+  border-bottom: 1px solid #7EDCFF;
+  position: relative;
+}
+
+/* Line between navbar and banner */
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(to right, #0097E6, #48D0FF);
 }
 
 /* Line between navbar and banner */
@@ -16,11 +27,13 @@
 .title {
   font-size: 3rem;
   margin-bottom: 0.5rem;
+  color: #005a99; /* Contrast ratio ~7.5:1 Emphasis on the title*/
 }
 
 .subtitle {
   font-size: 1.25rem;
   margin-bottom: 2rem;
+  color: #0079bd; /* A slightly softer accent */
 }
 
 .cardGrid {
@@ -31,21 +44,24 @@
 }
 
 .card {
-  background: #EFFAFF;
-  color: #333;
+  background-color: #ffffff;
+  color: #1a1a1a;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  border-left: 6px solid #0097E6; /* Цветовая метка слева */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
   margin-top: 0;
   font-size: 1.5rem;
+  color: #0097E6;
 }
 
 .card p {
