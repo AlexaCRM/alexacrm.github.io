@@ -43,7 +43,7 @@ Premium feature! This feature is available in the addon to the premium extension
 <img src="/images/gf-dataverse.png" width="400" />
 </div>
 
-Then click `Add New`, select crm table, action type(create or update) and map form columns to crm columns(set a correspondence between the column name from crm (key) and the column name from the gravity form(value)).
+Then click `Add New`, select the CRM table, choose the action type (create, update, or upsert - which performs create or update depending on the situation), and map the form columns to the CRM columns by setting a correspondence between the CRM column name (key) and the Gravity Form field name (value).
 
 <div class="text--center"> 
 <img src="/images/gf-mapping.png" width="600" />
@@ -313,3 +313,12 @@ In case, when you set only time value, the date represents the date zero (Januar
 You can set maximum attached file size for File upload column in Gravity Forms. But you should also remember about the file size limits which are set for such columns in crm. So that your maximum attached file should not be more than the size from the crm column settings.
 
 At current moment we don't support uploading multiple files.  
+
+## Sending Error Messages to the Admin Email
+
+To configure error notifications:
+1. Navigate to the Gravity Forms plugin settings.
+2. Open the Dataverse menu.
+3. Specify one or more email addresses to receive error messages.
+
+You can enter any valid email address — not just admin accounts. This allows you to notify stakeholders whenever an error occurs during form submission or CRM integration.
