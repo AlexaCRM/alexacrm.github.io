@@ -91,7 +91,7 @@ By default, DataPress (Dataverse Integration) use a Wordpress `AUTH_KEY` constan
 - `ICDS_FORM_AUTH_KEY` - Used for safe forms processing.
 
 <div class="text--center"> 
-<img src="/images/keys.png" width="700" />
+<img src="/images/keys.png" alt="Keys" width="700" />
 </div>
 
 These constants can be defined in your `wp-config.php` file, for example
@@ -120,7 +120,7 @@ Go to your WordPress Admin  Area and access the *Dataverse* menu. Switch to the 
 6. Upon successful test, click **Save settings** to establish a connection to CRM
 
 <div class="text--center"> 
-<img src="/images/connection.png" width="700" />
+<img src="/images/connection.png" alt="Connection" width="700" />
 </div>
 
 `For OAuth 2.0 / Certificate authentication method`
@@ -185,7 +185,7 @@ If you already have a registration, you can skip this step.
 4. Type password name in New Application Password Name text box and click the Add New Application Password button. It will be *application password*.
 
 <div class="text--center"> 
-<img src="/images/password.png" width="700" />
+<img src="/images/password.png" alt="Password" width="700" />
 </div>
 
 ### Configure Dataverse Solution
@@ -204,7 +204,7 @@ If you already have a registration, you can skip this step.
 7. Save the record (at the top of the page you will see "Successfully connected to the site" message).
 
 <div class="text--center"> 
-<img src="/images/wp-site.png" width="700" />
+<img src="/images/wp-site.png" alt="WP-site" width="700" />
 </div>
 
 </ExpandableSection>
