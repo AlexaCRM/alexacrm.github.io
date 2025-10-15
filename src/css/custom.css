@@ -146,7 +146,7 @@ details {
 .breadcrumbs__link,
 span[itemprop="name"],
 .DocSearch-Button-Placeholder {
-  color: #005fa0 !important;
+  color: #003366 !important;
   font-weight: 600;
   text-decoration: none !important;
 }
@@ -173,4 +173,15 @@ button {
 button:hover {
   background-color: #f0f8ff !important;
   color: #003f70 !important;
+}
+/* Fix for DocSearch placeholder contrast */
+.DocSearch-Button-Placeholder {
+  color: #003366 !important;
+  font-weight: 600;
+}
+
+/* Fix for breadcrumbs span */
+span[itemprop="name"] {
+  color: #005fa0 !important;
+  font-weight: 600;
 }
