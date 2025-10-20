@@ -127,11 +127,11 @@ The user object allows you to check whether the current user is bound and access
 **Example Usage**
 
 ```twig
-{{ user.record }} 
+{{ user.record.fullname }} 
 ```
 
 ```twig
-{{ user.reference }}
+{{ user.reference.Id }}
 ```
 Example Output
 

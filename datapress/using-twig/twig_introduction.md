@@ -110,7 +110,7 @@ The following object members are available:
 
 **Performance Considerations**
 
-- **user.record retrieves** data directly from Dataverse, making it more resource-intensive.
+- **user.record** retrieves data directly from Dataverse, making it more resource-intensive.
 
 - **user.reference** derives the entity reference from the local database and request parameters, offering a more efficient solution.
 
