@@ -89,7 +89,7 @@ When adding a registration, you may encounter a 403 error. Follow [these steps](
 1. Sign in into WordPress as admin user.
 2. Select **Dataverse** in the left-hand side navigation.
 3. Select **Addons** in the left-hand side navigation.
-4. Download **Dataverse Integration Premium**.
+4. Download **DataPress (Dataverse Integration) Premium**.
 5. Select **Back to WordPress** in the left-hand side navigation.
 6. Navigate to **Plugins** > **Add New** > **Upload Plugin**.
 7. Activate the plugin once it's installed. 
