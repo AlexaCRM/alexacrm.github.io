@@ -49,7 +49,7 @@ Premium feature! This feature is available in the premium extension.
 3. Click Edit Profile.
 4. Type password name in New Application Password Name text box and click the Add New Application Password button. It will be *application password*.
 
-### Configure Dataverse Solution
+### Configure DataPress Solution
 
 When the plugin is connected to CRM, and you can start building the integration.
 Then you will see that you have been connected to your environment.
