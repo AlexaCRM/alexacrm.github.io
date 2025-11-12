@@ -53,8 +53,8 @@ Premium feature! This feature is available in the premium extension.
 
 When the plugin is connected to CRM, and you can start building the integration.
 Then you will see that you have been connected to your environment.
-The `Site Registration in DataPress` paragraph will appeare at the bottom of the page.
-Click `Add registration`. In that case you will see `Site Registration in DataPress: Registered` status and can open Connection details.
+The `Site Registration in Dataverse` paragraph will appeare at the bottom of the page.
+Click `Add registration`. In that case you will see `Site Registration in Dataverse: Registered` status and can open Connection details.
 If you click the `Add registration` button at the moment of plugin connection you can skip `Configure DataPress Solution` paragraph. Or anyway you can configure Dataverse Solution instead of clicking `Add registration`.
 
 You can skip this paragraph if you click the `Add registration` button at the moment of plugin connection.
