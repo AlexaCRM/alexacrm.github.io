@@ -40,8 +40,6 @@ Premium feature! This feature is available in the premium extension.
 - Build beautiful forms with Gravity Forms.
 - Edit records (rows) with additional addons.<br></br>
 
-To edit page using Elementor you need to download, install and activate `Dataverse Integration Elementor Extension` from Dataverse Admin Area, Addons page.
-
 ## Install Premium Features
 
 ### Create Application Password
@@ -55,9 +53,9 @@ To edit page using Elementor you need to download, install and activate `Dataver
 
 When the plugin is connected to CRM, and you can start building the integration.
 Then you will see that you have been connected to your environment.
-The `Site Registration in Dataverse` paragraph will appeare at the bottom of the page.
-Click `Add registration`. In that case you will see `Site Registration in Dataverse: Registered` status and can open Connection details.
-If you click the `Add registration` button at the moment of plugin connection you can skip `Configure Dataverse Solution` paragraph. Or anyway you can configure Dataverse Solution instead of clicking `Add registration`.
+The `Site Registration in DataPress` paragraph will appeare at the bottom of the page.
+Click `Add registration`. In that case you will see `Site Registration in DataPress: Registered` status and can open Connection details.
+If you click the `Add registration` button at the moment of plugin connection you can skip `Configure DataPress Solution` paragraph. Or anyway you can configure Dataverse Solution instead of clicking `Add registration`.
 
 You can skip this paragraph if you click the `Add registration` button at the moment of plugin connection.
 
@@ -67,7 +65,7 @@ When adding a registration, you may encounter a 403 error. Follow [these steps](
 
 :::
 
-1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_latest_managed.zip). 
+1. Download latest [DataPress solution](https://wpab.alexacrm.com/release/WordPressIntegration_latest_managed.zip). 
 2. Sign in into https://make.powerapps.com.
 3. Select **Solutions** then click **Import solution** and import downloaded solution(from step 1) into your Dataverse / Dynamics 365 instance.
 4. Select **Apps** then select **WordPress**.
@@ -86,13 +84,38 @@ When adding a registration, you may encounter a 403 error. Follow [these steps](
 
 ### Install WordPress Premium Solution
 
-1. Sign in into WordPress as admin user.
-2. Select **Dataverse** in the left-hand side navigation.
-3. Select **Addons** in the left-hand side navigation.
-4. Download **DataPress (Dataverse Integration) Premium**.
-5. Select **Back to WordPress** in the left-hand side navigation.
-6. Navigate to **Plugins** > **Add New** > **Upload Plugin**.
-7. Activate the plugin once it's installed. 
+1. Sign in into WordPress as an administrator.
+2. In the left-hand navigation menu, select **DataPress**.
+3. Navigate to the **Extensions** tab.
+4. Locate and download the **DataPress Integration Premium** package.
+5. Click **Back to WordPress** to return to the main dashboard.
+6. Go to **Plugins** → **Add New Plugin**, then upload the downloaded `.zip` file.
+
+:::note
+Important Notice about **DataPress 2.85** and Later
+
+Starting from version 2.85, the DataPress admin interface has been significantly updated. To ensure your experience matches the instructions in this documentation, please make sure you have updated the DataPress plugin to version **2.85 or higher**.
+
+If you are using an older version, the interface and available features may differ, resulting in a mismatch with the documented steps.
+
+For backward compatibility, we continue to provide links to previously used addons in the **Extensions** tab. However, please note:
+
+These addons are **deprecated** and should not be used with DataPress 2.85 or later.
+
+<div class="text--center"> 
+<img src="/images/deprecated_addons.png" width="600" />
+</div>
+
+**All addon functionality is now built into the premium plugin.**
+
+Use of deprecated addons is at your own risk.
+
+You can manage all extensions directly in the Extensions tab. From the Registered extensions section, you can enable or disable individual addons as needed.
+
+<div class="text--center"> 
+<img src="/images/extensions-list.png" width="700" />
+</div>
+:::
 
 ## Rollback process
 
