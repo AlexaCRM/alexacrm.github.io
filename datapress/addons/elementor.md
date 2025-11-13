@@ -16,7 +16,7 @@ keywords: [DataPress Elementor addon, create DataPress form with Elementor]
 Premium feature! This feature is available in the addon to the premium extension.
 :::
 
-Our plugin supports Elementor. We offer several widgets that are compatible with Elementor (including Elementor Pro). To edit a form using Elementor, you need to install and activate the 'Dataverse Integration Elementor Extension' plugin. Please note that this functionality is available only with the premium version of our plugin.
+Our plugin supports Elementor. We offer several widgets that are compatible with Elementor (including Elementor Pro). To edit a form using Elementor, you need to install and activate the DataPress Integration Premium plugin.
 
 :::note
 You may also need to install and activate Elementor Pro.
@@ -142,7 +142,7 @@ Steps:
 <img src="/images/elementor-date.png" alt="Elementor date field" width="400" />
 </div>
 
-**Dataverse Admin Area Settings:**
+**DataPress Admin Area Settings:**
 
 Adjust the `ICDS_DATETIME_VALUE` setting with options like:
 
