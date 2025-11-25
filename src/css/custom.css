@@ -1,7 +1,7 @@
 :root {
   --ifm-color-primary: #0077c2 !important;
   --ifm-color-primary-dark: #006bb0;
-  --ifm-color-primary-darker: #005fa0;
+  --ifm-color-primary-darker: #004080; /* заменено для контраста */
   --ifm-color-primary-darkest: #004f8a;
   --ifm-color-primary-light: #48D0FF !important;
   --ifm-color-primary-lighter: #48D0FF;
@@ -67,10 +67,12 @@
 }
 
 /* Content links only */
-article a:not(.menu__link):not(.navbar__link):not(.breadcrumbs__link):not(.menu__link--sublist) {
-  text-decoration: underline;
-  color: #005fa0;
-  font-weight: 600;
+article a:not(.menu__link):not(.navbar__link):not(.breadcrumbs__link):not(.menu__link--sublist),
+p a[target="_blank"],
+details summary,
+span[itemprop="name"] {
+  color: #004080; /* тёмный оттенок для контраста */
+  font-weight: 700;
 }
 
 article a:hover {
@@ -79,8 +81,8 @@ article a:hover {
 
 /* External links in paragraphs */
 p a[target="_blank"] {
-  color: #005fa0 !important;
-  font-weight: 600;
+  color: #004080 !important; /* исправлено */
+  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -109,7 +111,7 @@ details summary {
   position: relative;
   padding-left: 24px;
   margin-bottom: 0.5rem;
-  color: #005fa0;
+  color: #004080; /* исправлено */
 }
 
 details summary:hover {
@@ -163,10 +165,10 @@ span[itemprop="name"],
 
 /* Buttons */
 button {
-  color: #005fa0 !important;
+  color: #004080 !important; /* исправлено */
   background-color: #ffffff !important;
-  font-weight: 600;
-  border: 1px solid #005fa0;
+  font-weight: 700;
+  border: 1px solid #004f8a;
   padding: 0.4em 0.8em;
 }
 
@@ -174,6 +176,7 @@ button:hover {
   background-color: #f0f8ff !important;
   color: #003f70 !important;
 }
+
 /* Fix for DocSearch placeholder contrast */
 .DocSearch-Button-Placeholder {
   color: #003366 !important;
@@ -182,6 +185,41 @@ button:hover {
 
 /* Fix for breadcrumbs span */
 span[itemprop="name"] {
-  color: #005fa0 !important;
+  color: #004080 !important; 
   font-weight: 600;
+}
+
+.token.class-name {
+  color: #004080 !important; 
+  font-weight: 600 !important;
+}
+
+.token.attr-name.tag {
+  color: #b00000 !important;
+  font-weight: 600;
+}
+
+.token.operator {
+  color: #004080; 
+  font-weight: 600;
+}
+
+.token.attr-value {
+  color: #005a73; 
+  font-weight: 600;
+}
+
+.table-of-contents__link--active {
+  color: #004080 !important;
+  font-weight: 600;
+}
+
+.token.comment {
+  color: #006400 !important;
+  font-weight: 600 !important;
+}
+
+.token.number {
+  color: #006400 !important; 
+  font-weight: 600 !important;
 }
