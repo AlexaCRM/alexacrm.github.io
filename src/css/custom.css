@@ -1,48 +1,225 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #0077c2 !important;
+  --ifm-color-primary-dark: #006bb0;
+  --ifm-color-primary-darker: #004080; /* заменено для контраста */
+  --ifm-color-primary-darkest: #004f8a;
+  --ifm-color-primary-light: #48D0FF !important;
+  --ifm-color-primary-lighter: #48D0FF;
+  --ifm-color-primary-lightest: #7EDCFF !important;
+
+  --ifm-background-color: #ffffff !important;
+  --ifm-font-color-base: #212121;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 119, 194, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #48D0FF;
+  --ifm-color-primary-dark: #3bbbe6;
+  --ifm-color-primary-darker: #32a8cf;
+  --ifm-color-primary-darkest: #278fb3;
+  --ifm-color-primary-light: #7EDCFF;
+  --ifm-color-primary-lighter: #a3e9ff;
+  --ifm-color-primary-lightest: #c2f2ff;
+
+  --ifm-background-color: #0a1e2a;
+  --ifm-font-color-base: #f5f5f5;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
 }
 
-.split-screen { display: flex; } 
-.left-pane, .right-pane { flex: 1; padding: 20px; overflow: auto; margin: 10px; /* Add margin to separate panes */ border: 1px solid #ccc; /* Optional: Add border for better visualization */ }
-.left-pane { background-color: #f0f0f0; align-self: flex-start; /* Aligns to the start of the container */ } 
-.right-pane { background-color: #e0e0e0; align-self: flex-start; /* Aligns to the start of the container */ }
+/* Pane backgrounds */
+.left-pane {
+  background-color: #e5e5e5;
+  color: #212121;
+}
+.right-pane {
+  background-color: #d5d5d5;
+  color: #212121;
+}
 
-/* Underline all links */
-article a {
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #0077c2 0%, #48D0FF 100%) !important;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.navbar__logo {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.navbar__link,
+.navbar__title {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.navbar__link:hover {
+  color: #e0f7ff !important;
+}
+
+/* Hero section */
+.hero--primary {
+  background-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
+}
+
+/* Content links only */
+article a:not(.menu__link):not(.navbar__link):not(.breadcrumbs__link):not(.menu__link--sublist),
+p a[target="_blank"],
+details summary,
+span[itemprop="name"] {
+  color: #004080; /* тёмный оттенок для контраста */
+  font-weight: 700;
+}
+
+article a:hover {
+  color: #003f70;
+}
+
+/* External links in paragraphs */
+p a[target="_blank"] {
+  color: #004080 !important; /* исправлено */
+  font-weight: 700;
   text-decoration: underline;
 }
 
-/* Add external link icon to external links */
+/* External link icon */
 article a[href^="http"]:not([href*="docs.alexacrm.com"]):after {
-  content: "🔗";
-  margin-left: 4px;
-  font-size: 0.9em;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
   vertical-align: middle;
+  background-color: currentColor;
+  mask-image: url("/img/external-link.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: url("/img/external-link.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+/* Collapsible block */
+details summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 0.5rem;
+  color: #004080; /* исправлено */
+}
+
+details summary:hover {
+  color: #003f70;
+}
+
+details summary::before {
+  content: "\f0da";
+  font-family: "FontAwesome";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+}
+
+details[open] summary::before {
+  content: "\f0d7";
+}
+
+details {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid #0077c2;
+  border-bottom: 1px solid #0077c2;
+  color: #212121;
+}
+
+/* Menu and pagination links */
+.menu__link,
+.menu__link--active,
+.menu__link--sublist,
+.menu__list-item-collapsible > a,
+.pagination-nav__label,
+.breadcrumbs__link,
+span[itemprop="name"],
+.DocSearch-Button-Placeholder {
+  color: #003366 !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.menu__link:hover,
+.menu__link--active:hover,
+.menu__link--sublist:hover,
+.menu__list-item-collapsible > a:hover,
+.pagination-nav__label:hover,
+.breadcrumbs__link:hover,
+.DocSearch-Button-Placeholder:hover {
+  color: #003f70 !important;
+}
+
+/* Buttons */
+button {
+  color: #004080 !important; /* исправлено */
+  background-color: #ffffff !important;
+  font-weight: 700;
+  border: 1px solid #004f8a;
+  padding: 0.4em 0.8em;
+}
+
+button:hover {
+  background-color: #f0f8ff !important;
+  color: #003f70 !important;
+}
+
+/* Fix for DocSearch placeholder contrast */
+.DocSearch-Button-Placeholder {
+  color: #003366 !important;
+  font-weight: 600;
+}
+
+/* Fix for breadcrumbs span */
+span[itemprop="name"] {
+  color: #004080 !important; 
+  font-weight: 600;
+}
+
+.token.class-name {
+  color: #004080 !important; 
+  font-weight: 600 !important;
+}
+
+.token.attr-name.tag {
+  color: #b00000 !important;
+  font-weight: 600;
+}
+
+.token.operator {
+  color: #004080; 
+  font-weight: 600;
+}
+
+.token.attr-value {
+  color: #005a73; 
+  font-weight: 600;
+}
+
+.table-of-contents__link--active {
+  color: #004080 !important;
+  font-weight: 600;
+}
+
+.token.comment {
+  color: #006400 !important;
+  font-weight: 600 !important;
+}
+
+.token.number {
+  color: #006400 !important; 
+  font-weight: 600 !important;
 }
