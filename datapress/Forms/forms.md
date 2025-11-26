@@ -108,6 +108,25 @@ This code is sufficient to display a Dataverse form on a WordPress page and star
 
 ### Default values
 
+You can set default values for different fields in two ways:
+
+- In the DataPress Admin Area
+- In the WordPress Admin Area
+
+1. **Setting default values in the DataPress Admin Area**
+
+- Go to **Forms → Forms Editor** and open the required form.
+- Find the **Fields Customization** section.
+- Under **Default Field Values**, select the column display name and set the default value.
+
+For a choice field, you can set the default value as 0 (choices value).
+
+<div class="text--center"> 
+<img src="/images/choice-value.png" alt="Choice value" width="400" />
+</div>
+
+2. **Setting default values in the WordPress Admin Area**
+
 You can provide default values to pre-populate specific form columns by using the ‘defaults’ attribute in the `{% form %}` tag.
 
 ```twig
