@@ -18,7 +18,7 @@ When working with date and time values, you can customize how they are displayed
 For more details, refer to the [Microsoft Dataverse Date and Time documentation](https://learn.microsoft.com/power-apps/maker/data-platform/behavior-format-date-time-field).
 
 ## Advanced Configuration
-To configure advanced settings for date and time fields, navigate to the **Dataverse Admin Area** and open the **Settings tab**. At the bottom of the page, you will find the `ICDS_DATETIME_VALUE` Advanced settings. Options available:
+To configure advanced settings for date and time fields, navigate to the **DataPress Admin Area** and open the **Settings tab**. At the bottom of the page, you will find the `ICDS_DATETIME_VALUE` Advanced settings. Options available:
 
 - **Legacy**
 - **UTC**
