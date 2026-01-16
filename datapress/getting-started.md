@@ -28,6 +28,12 @@ If you don't have a Dataverse / Dynamics 365 organization yet, you can sign up f
 
 Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dataverse Integration"* into the search box, hit Enter. Locate the plugin, click *Install Now*, then *Activate*. Alternatively, go to [WordPress.org](https://wordpress.org/plugins/integration-cds/) and download the latest version of the plugin and install it manually.
 
+:::note
+
+The minimum required PHP version is 8.2.<br></br>
+The minimum required WordPress version is 6.1. 
+:::
+
 ## Get credentials
 
 :::note
@@ -211,9 +217,6 @@ If you already have a registration, you can skip this step.
 
 
 :::note
-
-The minimum required PHP version is 8.2.
-The minimum required WordPress version is 5.4. 
 
 Here are the recommended and mandatory PHP extensions for the plugin:
 
