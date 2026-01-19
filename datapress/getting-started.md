@@ -32,6 +32,20 @@ Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dataverse
 
 The minimum required PHP version is 8.2.<br></br>
 The minimum required WordPress version is 6.1. 
+
+Additionally, the plug requires the following PHP extensions:
+
+```php
+MANDATORY_EXTENSIONS = [
+  'curl',
+  'dom',
+  'intl',
+]
+
+RECOMMENDED_EXTENSIONS = [
+  'mbstring',
+]
+```
 :::
 
 ## Get credentials
@@ -214,21 +228,3 @@ If you already have a registration, you can skip this step.
 </div>
 
 </ExpandableSection>
-
-
-:::note
-
-Here are the recommended and mandatory PHP extensions for the plugin:
-
-```php
-RECOMMENDED_EXTENSIONS = [
-  'mbstring',
-]
-
-MANDATORY_EXTENSIONS = [
-  'curl',
-  'dom',
-  'intl',
-]
-```
-:::
