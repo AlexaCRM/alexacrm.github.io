@@ -1,9 +1,8 @@
-
 ---
 title: Forms Examples
 sidebar_position: 4
 premium: true
-slug: /forms/forms/examples
+slug: /forms/forms-examples
 tags:
   - Form
   - DataPress

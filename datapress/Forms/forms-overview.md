@@ -1,4 +1,3 @@
-
 ---
 title: Power Apps Forms
 sidebar_position: 1

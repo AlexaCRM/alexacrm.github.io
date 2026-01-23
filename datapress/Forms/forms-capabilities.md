@@ -2,7 +2,7 @@
 title:  Reference (Capabilities & Limitations)
 sidebar_position: 3
 premium: true
-slug: /forms/forms/forms-reference
+slug: /forms/forms-reference
 tags:
   - Form
   - DataPress

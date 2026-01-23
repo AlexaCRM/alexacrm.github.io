@@ -2,7 +2,7 @@
 title: Form Configuration
 sidebar_position: 2
 premium: true
-slug: /forms/forms/forms-configuration
+slug: /forms/forms-configuration
 tags:
   - Form
   - DataPress
