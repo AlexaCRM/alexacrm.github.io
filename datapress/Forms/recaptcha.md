@@ -1,6 +1,6 @@
 ---
 title: reCAPTCHA support
-sidebar_position: 7
+sidebar_position: 10
 premium: true
 slug: /forms/recaptcha
 tags:
