@@ -1,6 +1,6 @@
 ---
 title: Custom Forms
-sidebar_position: 2
+sidebar_position: 6
 slug: /forms/custom-forms
 tags:
     - Form

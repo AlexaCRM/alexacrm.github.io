@@ -1,6 +1,6 @@
 ---
-title: Power Apps Forms
-sidebar_position: 1
+title: Power Apps Forms - old
+sidebar_position: 5
 premium: true
 slug: /forms/forms
 tags:
