@@ -32,8 +32,8 @@ Widget Name - `Form`
  Drag the **Form** widget into the content area, create the necessary fields, and save their IDs.
 
 <div class="text--center"> 
-<img src="/images/elementor-form.jpg" alt="Elementor form" width="400" />
-<img src="/images/elementor-id.jpg" alt="Save id" width="550" />
+<img src="/images/elementor-form.jpg" alt="Elementor form" width="400" alt="Elementor form"/>
+<img src="/images/elementor-id.jpg" alt="Save id" width="550" alt="Elementor id"/>
 </div>
 
 2. **Configure Actions After Submit**

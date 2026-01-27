@@ -79,7 +79,7 @@ When adding a registration, you may encounter a 403 error. Follow [these steps](
 7. Save the row (at the top of the page you will see "Successfully connected to the site" message).
 
 <div class="text--center"> 
-<img src="/images/wp-site.png" width="700" />
+<img src="/images/wp-site.png" width="700" alt="WP site"/>
 </div>
 
 ### Install WordPress Premium Solution

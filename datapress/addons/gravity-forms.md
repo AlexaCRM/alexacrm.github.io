@@ -40,13 +40,13 @@ Premium feature! This feature is available in the premium extension.
 - Follow the necessary configuration steps to map form fields to table columns.
 
 <div class="text--center"> 
-<img src="/images/gf-dataverse.png" width="400" />
+<img src="/images/gf-dataverse.png" width="400" alt="GF dataverse"/>
 </div>
 
 Then click `Add New`, select the CRM table, choose the action type (create, update, or upsert - which performs create or update depending on the situation), and map the form columns to the CRM columns by setting a correspondence between the CRM column name (key) and the Gravity Form field name (value).
 
 <div class="text--center"> 
-<img src="/images/gf-mapping.png" width="600" />
+<img src="/images/gf-mapping.png" width="600" alt="GF fields mapping"/>
 </div>
 
 ### Access to a table
@@ -82,7 +82,7 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
 
 1. Fixed value:
 
-  ```php
+  ```
      field_values="companyid=account:f5aaed4c-654c-4730-bd4f-38bc19a330bd"
   ```
 
@@ -101,7 +101,7 @@ To bind a record on a page created with the help of Gravity Forms, follow these 
 - Configure the form to perform an update action in your DataPress feed.
 
 <div class="text--center"> 
-<img src="/images/feed-to-update.png" width="400" />
+<img src="/images/feed-to-update.png" width="400" alt="GF feed"/>
 </div>
 
 - Remember the name of this Gravity Form.
@@ -110,7 +110,7 @@ To bind a record on a page created with the help of Gravity Forms, follow these 
 - Create a new page. Use the Gravity Form block to build your page. Save the page.
 
 <div class="text--center"> 
-<img src="/images/gravity-form.png" width="400" />
+<img src="/images/gravity-form.png" width="400" alt="GF"/>
 </div>
 
 3. Configure Binding for the Page:
@@ -119,7 +119,7 @@ To bind a record on a page created with the help of Gravity Forms, follow these 
 - Choose the appropriate table name and select the `Via GUID in query string` option 
 
 <div class="text--center"> 
-<img src="/images/gf-configuration.png" width="400" />
+<img src="/images/gf-configuration.png" width="400" alt="GF configuration"/>
 </div>
 
 4. Add the Record GUID to the Page URL:
@@ -156,7 +156,7 @@ This eliminates the need to manually reconfigure DataPress integration for each 
 > After duplication, you can tweak individual mappings or feed settings in the new form without affecting the original.
 
 <div class="text--center"> 
-<img src="/images/gravity-duplicate.png" width="400" />
+<img src="/images/gravity-duplicate.png" width="400" alt="GF duplicate feed"/>
 </div>
 :::
 
@@ -169,13 +169,13 @@ Lookup column supports two views for displaying the column: dropdown and dialog.
 To select a view, you need to click the `Add Fields` tab and choose `Dataverse Lookup` from `Advanced Fields`. Then open the `Appearance` tab in the column settings.
 
 <div class="text--center"> 
-<img src="/images/gf-lookup.png" width="400" />
+<img src="/images/gf-lookup.png" width="400" alt="GF lookup"/>
 </div>
 
 If you select the dropdown, you must also select the table and view to lookup. The dialog view does not require any additional settings.
 
 <div class="text--center"> 
-<img src="/images/gf-lookup2.png" width="400" />
+<img src="/images/gf-lookup2.png" width="400" alt="GF lookup 2"/>
 </div>
 
 To set a default value for a Dataverse Lookup field, use the following format:
@@ -185,7 +185,7 @@ To set a default value for a Dataverse Lookup field, use the following format:
 ```
 
 <div class="text--center"> 
-<img src="/images/gf-lookup-default.png" width="400" />
+<img src="/images/gf-lookup-default.png" width="400" alt="GF lookup default value"/>
 </div>
 
 To filter the available options in a dropdown lookup, you can apply a FetchXML query:
@@ -221,7 +221,7 @@ Choice columns can be configured as either **single selection (choice)** or **mu
 When a user must select only one value from the list, use **Radio Buttons**:
 
 <div class="text--center"> 
-<img src="/images/gravity-single-choice.png" width="400" />
+<img src="/images/gravity-single-choice.png" width="400" alt="GF single choice"/>
 </div>
 
 - Select the **table** and the **column** where the choice values are stored.
@@ -233,7 +233,7 @@ Map the selected **Form Field** to the corresponding table column in DataPress F
 For cases where multiple values can be selected, use **Multi Select**:
 
 <div class="text--center"> 
-<img src="/images/gravity-multiple-choice.png" width="400" />
+<img src="/images/gravity-multiple-choice.png" width="400" alt="GF multiple choice" />
 </div>
 
 - Select the **table** and the **column** where the multi-choice values are stored.
@@ -248,7 +248,7 @@ To create a record with `date and time` data type columns you need to follow nex
 - Configure the date field according to your requirements (e.g., date format, default value, etc.).
 
 <div class="text--center"> 
-<img src="/images/date-gr.png" width="400" />
+<img src="/images/date-gr.png" width="400" alt="GF date" />
 </div>
 
 2. Add a Time Field:
@@ -256,21 +256,21 @@ To create a record with `date and time` data type columns you need to follow nex
 - Customize the time field settings as needed (e.g., 12-hour or 24-hour format, default time, etc.).
 
 <div class="text--center"> 
-<img src="/images/time-gr.png" width="400" />
+<img src="/images/time-gr.png" width="400" alt="GF time"/>
 </div>
 
 3. Map the Fields and columns in DataPress Feed:
 - When configuring your DataPress feed (integration with Dataverse), you’ll observe that instead of a single column from the Power App, you’ll encounter two separate columns: one for the date and another for the time. These columns are `pseudo-columns` because they do not exist in Dataverse as standalone entities. Instead, they are derived by splitting or combining data from the source column as needed.
 
 <div class="text--center"> 
-<img src="/images/fields-gf.png" width="400" />
+<img src="/images/fields-gf.png" width="400" alt="GF fields" />
 </div>
 
 - Map the date field from your Gravity Form to the corresponding date column in Dateverse.
 - Similarly, map the time field from your Gravity Form to the corresponding time column in Dateverse.
 
 <div class="text--center"> 
-<img src="/images/mapping.png" width="700" />
+<img src="/images/mapping.png" width="700" alt="Mapping" />
 </div>
 
 Here are two options. We recommend using **Local Date** and **Local Time** for the **User Local** behavior option, and **Date Only**, **Time Only** (or **UTC Date** and **UTC Time**) for the **Time Zone Independent** and **Date Only** behavior options.
@@ -303,7 +303,7 @@ Examples for the **DateOnlyUserLocal** column which has User Local behavior:
 |`DateOnlyUserLocal (Local Date)` |  convert the date to the user's timezone | convert the date to the user's timezone | convert the date to the user's timezone |
 
 <div class="text--center"> 
-<img src="/images/gravity-date-options.png" width="400" />
+<img src="/images/gravity-date-options.png" width="400" alt="Gravity date"/>
 </div>
 
 In case, when you set only time value, the date represents the date zero (January 1, 1900).
