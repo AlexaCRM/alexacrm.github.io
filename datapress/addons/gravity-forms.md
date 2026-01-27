@@ -16,7 +16,7 @@ keywords: [DataPress Gravity Forms addon, create DataPress form with Gravity For
 Our plugin supports Gravity Forms. So you can use it instead of our Custom or Power Apps forms
 
 :::info
-Premium feature! This feature is available in the addon to the premium extension.
+Premium feature! This feature is available in the premium extension.
 :::
 
 ## Form configuration
@@ -31,19 +31,19 @@ Premium feature! This feature is available in the addon to the premium extension
 
 - Once all required fields are set up, click the **Save Form** button to finalize the form creation.
 
-2. **Configure Dataverse Feed**
+2. **Configure DataPress Feed**
 
-- After saving the form, you must set up a **Dataverse Feed** to integrate the form with Dataverse.
+- After saving the form, you must set up a **DataPress Feed** to integrate the form with Dataverse.
 
-- Without closing your Gravity Form, go to **Settings** → **Dataverse**.
+- Without closing your Gravity Form, go to **Settings** → **DataPress**.
 
-- Follow the necessary configuration steps to map form fields to Dataverse columns.
+- Follow the necessary configuration steps to map form fields to table columns.
 
 <div class="text--center"> 
 <img src="/images/gf-dataverse.png" width="400" alt="GF dataverse"/>
 </div>
 
-Then click `Add New`, select crm table, action type(create or update) and map form columns to crm columns(set a correspondence between the column name from crm (key) and the column name from the gravity form(value)).
+Then click `Add New`, select the CRM table, choose the action type (create, update, or upsert - which performs create or update depending on the situation), and map the form columns to the CRM columns by setting a correspondence between the CRM column name (key) and the Gravity Form field name (value).
 
 <div class="text--center"> 
 <img src="/images/gf-mapping.png" width="600" alt="GF fields mapping"/>
@@ -64,7 +64,7 @@ If you want to set default values dynamically for columns using the form's field
 
 1. Add a new field, go to `Advanced Settings` and check the `Allow field to be populated dynamically` checkbox.
 2. Specify a parameter name just below the `Allow field to be populated dynamically` checkbox and save the parameter name.
-3. Map the field to one of the Dataverse columns in the `Dataverse Feed` settings.
+3. Map the field to one of the table columns in the `DataPress Feed` settings.
 4. Remember your Gravity Form id.
 5. Go to `Pages` -> `Add New` and choose `Custom HTML` block
 
@@ -96,9 +96,9 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
 
 To bind a record on a page created with the help of Gravity Forms, follow these steps:
 
-1. Create a Gravity Form with an Update Action in Dataverse Feed:
+1. Create a Gravity Form with an Update Action in DataPress Feed:
 - First, create a Gravity Form that includes the necessary fields for your record.
-- Configure the form to perform an update action in your Dataverse feed.
+- Configure the form to perform an update action in your DataPress feed.
 
 <div class="text--center"> 
 <img src="/images/feed-to-update.png" width="400" alt="GF feed"/>
@@ -140,15 +140,15 @@ This shortcode will populate the form fields with values from the record with th
 
 :::note
 
-**Duplicating Gravity Forms with Dataverse Feed**
+**Duplicating Gravity Forms with DataPress Feed**
 
-If you need to reuse an existing form setup, Gravity Forms makes duplication fast and efficient—especially when working with Dataverse integration.
+If you need to reuse an existing form setup, Gravity Forms makes duplication fast and efficient—especially when working with DataPress integration.
 
 When you duplicate a form through the Gravity Forms admin interface:
 - The form structure and all fields are copied.
-- The associated Dataverse feed is duplicated automatically—retaining table mappings, action types (create or update), and field relationships.
+- The associated DataPress feed is duplicated automatically—retaining table mappings, action types (create or update), and field relationships.
 
-This eliminates the need to manually reconfigure Dataverse integration for each new form. It’s particularly useful for scenarios like:
+This eliminates the need to manually reconfigure DataPress integration for each new form. It’s particularly useful for scenarios like:
 - Building multiple forms for similar entities (e.g. contacts, leads, events)
 - Creating multilingual or region-specific versions of forms
 - Iterating new versions for testing, staging, or conditional logic workflows.
@@ -171,6 +171,7 @@ To select a view, you need to click the `Add Fields` tab and choose `Dataverse L
 <div class="text--center"> 
 <img src="/images/gf-lookup.png" width="400" alt="GF lookup"/>
 </div>
+
 If you select the dropdown, you must also select the table and view to lookup. The dialog view does not require any additional settings.
 
 <div class="text--center"> 
@@ -185,6 +186,18 @@ To set a default value for a Dataverse Lookup field, use the following format:
 
 <div class="text--center"> 
 <img src="/images/gf-lookup-default.png" width="400" alt="GF lookup default value"/>
+</div>
+
+To filter the available options in a dropdown lookup, you can apply a FetchXML query:
+
+```twig
+<filter>
+  <condition attribute="address1_city" operator="eq" value="London" />
+</filter>
+```
+
+<div class="text--center"> 
+<img src="/images/gf-fetch.png" width="400" />
 </div>
 
 For a **Dialog** Lookup, the format includes the entity name:
@@ -213,7 +226,7 @@ When a user must select only one value from the list, use **Radio Buttons**:
 
 - Select the **table** and the **column** where the choice values are stored.
 
-Map the selected **Form Field** to the corresponding **Dataverse column** in Dataverse Feed.
+Map the selected **Form Field** to the corresponding table column in DataPress Feed.
 
 **Multi-Selection (Choices) - Multi Select**
 
@@ -225,7 +238,7 @@ For cases where multiple values can be selected, use **Multi Select**:
 
 - Select the **table** and the **column** where the multi-choice values are stored.
 
-- Map the selected **Form Field** to the corresponding **Dataverse column** in Dataverse Feed.
+- Map the selected **Form Field** to the corresponding table column in DataPress Feed.
 
 ### Date and time columns
 
@@ -246,8 +259,8 @@ To create a record with `date and time` data type columns you need to follow nex
 <img src="/images/time-gr.png" width="400" alt="GF time"/>
 </div>
 
-3. Map the Fields and columns in Dataverse Feed:
-- When configuring your Dataverse feed (integration with DataPress), you’ll observe that instead of a single column from the Power App, you’ll encounter two separate columns: one for the date and another for the time. These columns are `pseudo-columns` because they do not exist in Dataverse as standalone entities. Instead, they are derived by splitting or combining data from the source column as needed.
+3. Map the Fields and columns in DataPress Feed:
+- When configuring your DataPress feed (integration with Dataverse), you’ll observe that instead of a single column from the Power App, you’ll encounter two separate columns: one for the date and another for the time. These columns are `pseudo-columns` because they do not exist in Dataverse as standalone entities. Instead, they are derived by splitting or combining data from the source column as needed.
 
 <div class="text--center"> 
 <img src="/images/fields-gf.png" width="400" alt="GF fields" />
@@ -263,7 +276,7 @@ To create a record with `date and time` data type columns you need to follow nex
 Here are two options. We recommend using **Local Date** and **Local Time** for the **User Local** behavior option, and **Date Only**, **Time Only** (or **UTC Date** and **UTC Time**) for the **Time Zone Independent** and **Date Only** behavior options.
 [Read more](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field)
 
-**Dataverse Admin Area Settings:**
+**DataPress Admin Area Settings:**
 
 Adjust the `ICDS_DATETIME_VALUE` setting with options like:
 
@@ -300,3 +313,12 @@ In case, when you set only time value, the date represents the date zero (Januar
 You can set maximum attached file size for File upload column in Gravity Forms. But you should also remember about the file size limits which are set for such columns in crm. So that your maximum attached file should not be more than the size from the crm column settings.
 
 At current moment we don't support uploading multiple files.  
+
+## Sending Error Messages to the Admin Email
+
+To configure error notifications:
+1. Navigate to the Gravity Forms plugin settings.
+2. Open the DataPress menu.
+3. Specify one or more email addresses to receive error messages.
+
+You can enter any valid email address — not just admin accounts. This allows you to notify stakeholders whenever an error occurs during form submission or CRM integration.

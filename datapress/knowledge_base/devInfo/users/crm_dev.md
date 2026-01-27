@@ -1,6 +1,6 @@
 ---
 title: Automating User Management in PowerApps with Flows
-sidebar_position: 8
+sidebar_position: 50
 slug: /knowledge-base/user-management-in-powerapps
 tags:
     - User Management

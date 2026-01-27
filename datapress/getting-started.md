@@ -26,7 +26,27 @@ If you don't have a Dataverse / Dynamics 365 organization yet, you can sign up f
 
 ## Get the plugin
 
-Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"Dataverse Integration"* into the search box, hit Enter. Locate the plugin, click *Install Now*, then *Activate*. Alternatively, go to [WordPress.org](https://wordpress.org/plugins/integration-cds/) and download the latest version of the plugin and install it manually.
+Enter your WordPress Admin Area and go to *Plugins > Add New*. Enter *"DataPress Integration"* into the search box, hit Enter. Locate the plugin, click *Install Now*, then *Activate*. Alternatively, go to [WordPress.org](https://wordpress.org/plugins/integration-cds/) and download the latest version of the plugin and install it manually.
+
+:::note
+
+The minimum required PHP version is 8.2.<br></br>
+The minimum required WordPress version is 6.1. 
+
+Additionally, the plug requires the following PHP extensions:
+
+```php
+MANDATORY_EXTENSIONS = [
+  'curl',
+  'dom',
+  'intl',
+]
+
+RECOMMENDED_EXTENSIONS = [
+  'mbstring',
+]
+```
+:::
 
 ## Get credentials
 
@@ -42,7 +62,7 @@ To create application id and client secret or certificate you need to complete t
 
 1. [Register an app](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app?tabs=certificate#register-an-application) in Microsoft Entra ID. During the registration select **Accounts in this organizational directory only** as Supported account types. Stop the walkthrough after the step when the app is registered, do not add redirect URI or change platform settings. Copy Application (client) ID and set it aside.
 2. [Add client secret credentials](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app?tabs=certificate#add-credentials). You can use either client secret or certificate. If using the secret make sure to copy and set it aside. If using certificate, make sure you have a certificate file (.cer) and its password protected copy (.pfx).
-3. Create an application user in Dataverse by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign security roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user. We recommend assigning **Basis User** built-in role or another role with same or wider privileges. If you have the WordPress solution installed in your Dataverse instance, assign **WordPress App User** role to the app user. This security role provides access to additional tables included with the solution, for example **WordPress Sites**.
+3. Create an application user in DataPress by following [these instructions](https://docs.microsoft.com/power-platform/admin/manage-application-users#create-an-application-user). Make sure to [assign security roles](https://docs.microsoft.com/power-platform/admin/manage-application-users#manage-roles-for-an-application-user) to the user. We recommend assigning **Basis User** built-in role or another role with same or wider privileges. If you have the WordPress solution installed in your instance, assign **WordPress App User** role to the app user. This security role provides access to additional tables included with the solution, for example **WordPress Sites**.
 4. If you have the WordPress solution installed, add the app user to **WordPress Site Password** column security profile. This [column level security](https://learn.microsoft.com/power-platform/admin/field-level-security) ensures that the app user has access to the secure columns included with the solution, even without system administrator privileges.  
 
 You can also use [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) (command line interface) to create app user and secret. 
@@ -80,7 +100,7 @@ If you define these keys in your site’s wp-config.php file, those values will 
 
 To verify whether the keys are set:
 
-- Navigate to Dataverse → Settings
+- Navigate to DataPress → Settings
 - Scroll to the bottom of the page to locate the Advanced Settings section
 - The current key values will be displayed there
 
@@ -101,7 +121,7 @@ define('ICDS_AUTH_KEY', 'TfsFu)- pF\"6KNx@VT,FV@*`lM;Ls(nRy0/e:h^TnJ6/Ee$-cm@o2o
 define('ICDS_FORM_AUTH_KEY', 'ny%:T/j@I>/sMm8Unyi{+~oS/]PQKp3ZXIXb/)iLU|V]Q7gh^e4!fmka3xz[zpgN');
 ```
 
-To generate a suitable key you can use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to Dataverse -> Settings tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
+To generate a suitable key you can use an online generator provided by Wordpress at https://api.wordpress.org/secret-key/1.0/. If you generate key this way you should save this key (go to DataPress -> Settings tab -> at the end of the page Advanced Settings, paste the key here, one of key - ICDS_AUTH_KEY, when you reload link and get key one more time - ICDS_FORM_AUTH_KEY). 
 
 </ExpandableSection>
 
@@ -109,7 +129,7 @@ To generate a suitable key you can use an online generator provided by Wordpress
 
 Once you got required credentials, it's time to connect the plugin to CRM.
 
-Go to your WordPress Admin  Area and access the *Dataverse* menu. Switch to the *Connection* tab and choose the authentication method. Then follow these steps:
+Go to your WordPress Admin  Area and access the *DataPress* menu. Switch to the *Connection* tab and choose the authentication method. Then follow these steps:
 
 `For OAuth 2.0 / Shared Secret authentication method`
 1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
@@ -155,32 +175,44 @@ Premium feature! This feature is available in the premium extension.
 
 ### Install WordPress Premium Solution
 
-1. Sign in into WordPress as admin user.
-2. Select **Dataverse** in the left-hand side navigation.
-3. Go to the **Addons** tab 
-4. Download **Dataverse Integration Premium**
-5. Click **Back to WordPress** 
-6. Click **Plugins** -> **Add New Plugin** and upload the downloaded .zip file.
+1. Sign in into WordPress as an administrator.
+2. In the left-hand navigation menu, select **DataPress**.
+3. Navigate to the **Extensions** tab.
+4. Locate and download the **DataPress Integration Premium** package.
+5. Click **Back to WordPress** to return to the main dashboard.
+6. Go to **Plugins** → **Add New Plugin**, then upload the downloaded `.zip` file.
 
-### Configure Dataverse Solution or click Add registration in DataPress Admin Panel (Connection tab)
+ Alternatively, you can download the premium plugin directly from the Plugins tab in the **WordPress admin area**.
 
-To configure the Dataverse Solution, you can either:
+:::note
+Important Notice about **DataPress 2.85** and Later
 
-Open the DataPress Admin Panel, go to the Connection tab, and click Add Registration, or
+Starting from version 2.85, the DataPress admin interface has been significantly updated. To ensure your experience matches the instructions in this documentation, please make sure you have updated the DataPress plugin to version **2.85 or higher**.
 
-Follow the manual steps outlined below.
+If you are using an older version, the interface and available features may differ, resulting in a mismatch with the documented steps.
+
+**All addon functionality is now built into the premium plugin.**
+
+You can manage all extensions directly in the Extensions tab. From the Registered extensions section, you can enable or disable individual addons as needed.
+:::
+
+### Configure DataPress Solution or click Add registration in DataPress Admin Panel (Connection tab)
+
+To configure the solution, you can either:
+
+Open the DataPress Admin Panel, go to the Connection tab, and click Add Registration, or follow the manual steps outlined below.
 
 Once the connection is configured, proceed to the Status tab to complete your registration:
 - Enter your Company Name, First Name, Last Name, and Email
 - Click Register
 If you already have a registration, you can skip this step. 
 
-<ExpandableSection title="How to configure Dataverse Solution">
+<ExpandableSection title="How to configure DataPress Solution">
 
 ### Create Application Password
 
 1. Sign in into your WordPress site.
-2. Select a user with admin privileges (user with the role System Administrator) or create a new one for Dataverse to connect back to the site.
+2. Select a user with admin privileges (user with the role System Administrator) or create a new one to connect back to the site.
 3. Click Edit Profile.
 4. Type password name in New Application Password Name text box and click the Add New Application Password button. It will be *application password*.
 
@@ -188,9 +220,9 @@ If you already have a registration, you can skip this step.
 <img src="/images/password.png" alt="Password" width="700" />
 </div>
 
-### Configure Dataverse Solution
+### Configure DataPress Solution
 
-1. Download latest [Dataverse solution](https://wpab.alexacrm.com/release/WordPressIntegration_managed.zip). 
+1. Download latest [DataPress by AlexaCRM solution](https://wpab.alexacrm.com/release/WordPressIntegration_managed.zip). 
 2. Sign in into https://make.powerapps.com.
 3. Select **Solutions** then click **Import solution** and import downloaded solution(from step 1) into your Dataverse / Dynamics 365 instance.
 4. Select **Apps** then select **WordPress**.
@@ -208,24 +240,3 @@ If you already have a registration, you can skip this step.
 </div>
 
 </ExpandableSection>
-
-
-:::note
-
-The minimum required PHP version is 8.2.
-The minimum required WordPress version is 5.4. 
-
-Here are the recommended and mandatory PHP extensions for the plugin:
-
-```php
-RECOMMENDED_EXTENSIONS = [
-  'mbstring',
-]
-
-MANDATORY_EXTENSIONS = [
-  'curl',
-  'dom',
-  'intl',
-]
-```
-:::
