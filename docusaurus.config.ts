@@ -49,7 +49,7 @@ const config: Config = {
         },
         blog: false, 
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'),
         },
       } satisfies Preset.Options,
     ],
@@ -111,6 +111,10 @@ const config: Config = {
           {
             to: '/binding/fields', 
             from: ['/integration-cds/fields-binding'],
+          },
+          {
+            to: '/forms/gravity-forms', 
+            from: ['/addons/gravity-forms'],
           },
         ],
       }
@@ -236,7 +240,12 @@ themes: [
       }),
     },
   ],
-  stylesheets: [ { href: '/css/custom.css', type: 'text/css', }, ],
+stylesheets: [
+  {
+    href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+    type: 'text/css',
+  },
+],
 };
 
 export default config;
