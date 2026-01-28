@@ -1,8 +1,8 @@
 ---
-title: Gravity Forms
-sidebar_label: Gravity Forms
-slug: /addons/gravity-forms
-sidebar_position: 1
+title: Elementor
+sidebar_label: Elementor
+slug: /forms/elementor
+sidebar_position: 5
 ---
 
 import React from 'react';
@@ -11,7 +11,7 @@ import {useHistory} from '@docusaurus/router';
 export default function Redirect() {
   const history = useHistory();
   React.useEffect(() => {
-    history.replace('/forms/gravity-forms/');
+    history.replace('/addons/elementor/');
   }, []);
   return null;
 }

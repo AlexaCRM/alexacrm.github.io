@@ -89,7 +89,7 @@ const config: Config = {
             from: ['/integration-cds/forms'],
           },
           {
-            to: '/addons/gravity-forms', 
+            to: '/forms/gravity-forms', 
             from: ['/integration-cds/gravity-forms'],
           },
           {

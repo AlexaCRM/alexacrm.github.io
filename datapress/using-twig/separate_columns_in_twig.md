@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-title: Using Twig to display the value of separate columns 
+sidebar_position: 6
+title: Using Twig to display the value of separate columns - old
 slug: /twig/display-separate-column-value
 tags:
     - Twig

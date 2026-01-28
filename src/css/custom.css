@@ -1,7 +1,7 @@
 :root {
   --ifm-color-primary: #0077c2 !important;
   --ifm-color-primary-dark: #006bb0;
-  --ifm-color-primary-darker: #004080; /* заменено для контраста */
+  --ifm-color-primary-darker: #004080; 
   --ifm-color-primary-darkest: #004f8a;
   --ifm-color-primary-light: #48D0FF !important;
   --ifm-color-primary-lighter: #48D0FF;
@@ -71,7 +71,7 @@ article a:not(.menu__link):not(.navbar__link):not(.breadcrumbs__link):not(.menu_
 p a[target="_blank"],
 details summary,
 span[itemprop="name"] {
-  color: #004080; /* тёмный оттенок для контраста */
+  color: #004080; 
   font-weight: 700;
 }
 
@@ -81,7 +81,7 @@ article a:hover {
 
 /* External links in paragraphs */
 p a[target="_blank"] {
-  color: #004080 !important; /* исправлено */
+  color: #004080 !important; 
   font-weight: 700;
   text-decoration: underline;
 }
@@ -94,13 +94,61 @@ article a[href^="http"]:not([href*="docs.alexacrm.com"]):after {
   height: 16px;
   margin-left: 6px;
   vertical-align: middle;
-  background-color: currentColor;
-  mask-image: url("/img/external-link.svg");
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  -webkit-mask-image: url("/img/external-link.svg");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
+}
+
+/* Limit content width for better readability on long pages */
+.markdown,
+.theme-doc-markdown {
+  max-width: 780px;
+}
+
+/* Section headers (H2) */
+.markdown h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Subsection headers (H3) */
+.markdown h3 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Minor headers (H4) */
+.markdown h4 {
+  margin-top: 1.6rem;
+  font-weight: 600;
+}
+
+/* Paragraph readability */
+.markdown p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+
+/* Lists spacing */
+.markdown ul,
+.markdown ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.markdown li {
+  margin-bottom: 0.3rem;
+}
+
+
+/* Admonitions as visual anchors */
+.theme-admonition {
+  margin: 2rem 0;
+}
+
+/* Add breathing space between sections */
+.markdown > h2 + p {
+  margin-top: 1.2rem;
 }
 
 /* Collapsible block */
@@ -111,7 +159,7 @@ details summary {
   position: relative;
   padding-left: 24px;
   margin-bottom: 0.5rem;
-  color: #004080; /* исправлено */
+  color: #004080; 
 }
 
 details summary:hover {
@@ -223,3 +271,135 @@ span[itemprop="name"] {
   color: #006400 !important; 
   font-weight: 600 !important;
 }
+
+/* Section headers (H2) */
+.markdown h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Subsection headers (H3) */
+.markdown h3 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Minor headers (H4) */
+.markdown h4 {
+  margin-top: 1.6rem;
+  font-weight: 600;
+}
+
+/* Paragraph readability */
+.markdown p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+
+/* Lists spacing */
+.markdown ul,
+.markdown ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.markdown li {
+  margin-bottom: 0.3rem;
+}
+
+
+/* Admonitions as visual anchors */
+.theme-admonition {
+  margin: 2rem 0;
+}
+
+/* Add breathing space between sections */
+.markdown > h2 + p {
+  margin-top: 1.2rem;
+}
+
+/* ================================
+ Centering content and preventing it from sticking to the right
+   ================================ */
+
+:root {
+  --doc-content-max-width: 780px; 
+}
+
+.theme-doc-markdown,
+.markdown {
+  max-width: var(--doc-content-max-width);
+}
+
+
+/* Desktop TOC */
+.theme-doc-toc-desktop,
+.table-of-contents {
+  font-size: 0.95rem;  
+  font-weight: 500;      
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.table-of-contents a {
+  font-weight: 500;
+}
+
+.markdown > h2 + p {
+  margin-top: 1.2rem;
+}
+
+.tab-toc {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  overflow: auto;
+  padding: 0.5rem 0 0.5rem 0.25rem;
+  margin-bottom: 1rem;
+  border-left: 2px solid var(--ifm-toc-border-color, #eaecef);
+}
+
+.tab-toc strong {
+  display: block;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.tab-toc-list {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+.tab-toc-list li {
+  margin: 0.2rem 0;
+}
+
+.tab-toc-list li.level-2 { margin-left: 0.25rem; }
+.tab-toc-list li.level-3 { margin-left: 1rem;   font-size: 0.95em; }
+.tab-toc-list li.level-4 { margin-left: 1.75rem; font-size: 0.9em;  }
+
+.theme-doc-toc-desktop {
+  width: var(--doc-toc-width);
+  flex: 0 0 var(--doc-toc-width);
+  max-width: var(--doc-toc-width);
+}
+
+
+.tabs-container {
+  width: 100%;
+}
+
+.tab-item,
+.tabs__content {
+  width: 100%;
+}
+
+.tabs__content > * {
+  max-width: var(--doc-content-max-width);
+}
+

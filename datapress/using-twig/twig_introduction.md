@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: Using Twig
+sidebar_position: 5
+title: Using Twig - old
 slug: /twig/introduction
 tags:
     - Twig
