@@ -1,7 +1,7 @@
 :root {
   --ifm-color-primary: #0077c2 !important;
   --ifm-color-primary-dark: #006bb0;
-  --ifm-color-primary-darker: #004080; /* заменено для контраста */
+  --ifm-color-primary-darker: #004080; 
   --ifm-color-primary-darkest: #004f8a;
   --ifm-color-primary-light: #48D0FF !important;
   --ifm-color-primary-lighter: #48D0FF;
@@ -71,7 +71,7 @@ article a:not(.menu__link):not(.navbar__link):not(.breadcrumbs__link):not(.menu_
 p a[target="_blank"],
 details summary,
 span[itemprop="name"] {
-  color: #004080; /* тёмный оттенок для контраста */
+  color: #004080; 
   font-weight: 700;
 }
 
@@ -81,7 +81,7 @@ article a:hover {
 
 /* External links in paragraphs */
 p a[target="_blank"] {
-  color: #004080 !important; /* исправлено */
+  color: #004080 !important; 
   font-weight: 700;
   text-decoration: underline;
 }
@@ -159,7 +159,7 @@ details summary {
   position: relative;
   padding-left: 24px;
   margin-bottom: 0.5rem;
-  color: #004080; /* исправлено */
+  color: #004080; 
 }
 
 details summary:hover {
@@ -389,13 +389,17 @@ span[itemprop="name"] {
   max-width: var(--doc-toc-width);
 }
 
-@media (max-width: 997px) {
-  .theme-doc-toc-desktop {
-    display: none;
-  }
 
-  .theme-doc-markdown,
-  .markdown {
-    max-width: 100%;
-  }
+.tabs-container {
+  width: 100%;
 }
+
+.tab-item,
+.tabs__content {
+  width: 100%;
+}
+
+.tabs__content > * {
+  max-width: var(--doc-content-max-width);
+}
+
