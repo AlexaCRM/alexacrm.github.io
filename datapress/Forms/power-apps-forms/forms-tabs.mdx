@@ -1,0 +1,504 @@
+---
+title: Power Apps Forms - tabs
+sidebar_position: 5
+premium: true
+slug: /forms/forms-tabs
+tags:
+    - Form
+    - DataPress
+keywords: [DataPress forms]  
+hide_table_of_contents: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { TabTOCBrowserOnly } from '@site/src/components/TabTOC'
+
+<div style={{ display: 'flex', gap: '2rem' }}>
+  <div style={{ flex: '1 1 auto' }}>
+    <Tabs defaultValue="overview" values={[
+      {label: 'Overview', value: 'overview'},
+      {label: 'Configuration', value: 'configuration'},
+      {label: 'Notes', value: 'reference'},
+      {label: 'Examples', value: 'examples'},
+    ]}>
+
+
+<TabItem value="overview">
+
+# Overview
+
+:::note
+The plugin previously known as **Dataverse Integration** has been renamed to **DataPress**.
+All references in the documentation and user interface will be gradually updated.
+:::
+
+<p class="lead">
+Capture leads, feedback, and other data from your website using forms designed in Power Apps and Dynamics 365.
+</p>
+
+## What are Power Apps Forms in DataPress?
+
+**Power Apps Forms** allow you to display Dataverse (Dynamics 365) forms on your WordPress website and submit user input directly back to Dataverse.
+
+With DataPress, you can:
+
+- Render Dataverse forms on public or protected pages
+- Create new records from form submissions
+- Update existing records using table binding
+- Display data in a read‑only mode
+
+## Key concept: Form Registration
+
+To use a Dataverse form on a WordPress page, DataPress introduces the concept of a **form registration**.
+
+A form registration acts as a proxy between WordPress and Dataverse. It defines:
+
+- Which Dataverse form to display
+- How the form handles submissions
+- Which attributes are required or optional
+- Which form‑level settings override global defaults
+
+## How forms are rendered on the website
+
+Forms are embedded into pages using the Twig templating engine.
+
+```twig
+{% form id=42 %}
+```
+
+
+</TabItem>
+
+<TabItem value="configuration">
+
+# Configuration
+
+## Before you begin
+
+Make sure that:
+
+1. The premium extension is active and licensed
+2. A Dataverse (model‑driven) form already exists
+3. You know whether the form should create, update, or display records
+
+---
+
+## Creating a form registration
+
+To start collecting data, you must create a form registration.
+
+1. Open the plugin dashboard
+2. Go to **Forms**
+3. Click **Create new**
+
+Fill in the following fields:
+
+- **Form Name**
+- **CRM Form** — select a Dataverse form
+- **Mode** — choose how data is processed
+
+Click **Create** to save the registration.
+
+---
+
+## Form modes
+
+### Create a new record
+
+Each submission creates a **new Dataverse record**.
+
+### Update or create a record
+
+The form uses table binding to:
+
+- load an existing record into the form
+- update it on submission
+
+If no record is found, a new one is created.
+
+### Read‑only
+
+Table binding is used to load a record, but the form cannot be edited or submitted.
+
+---
+
+## Allow deleting records
+
+When using **Update** or **Read‑only** mode, you can enable record deletion:
+
+- Enable **Allow deleting the record**
+
+⚠️ To prevent unauthorized deletes, implement the filter:
+
+`integration-cds/forms/authorize-delete`
+
+Parameters passed to the filter:
+
+- `$isAuthorized` — whether deletion is allowed
+- `$reg` — the active form registration
+- `$target` — the record being deleted (or `NULL`)
+
+Return `false` if deletion should not be allowed.
+
+---
+
+## Required and optional attributes
+
+Dataverse defines required fields at the form level.  
+DataPress allows additional customization **without modifying the Dataverse form**.
+
+To change requiredness:
+
+1. Select attributes in **Attributes**
+2. Move them to:
+   - **Required →**
+   - **Optional →**
+3. Remove items by double‑clicking or using **Remove selected**
+
+---
+
+## Global settings overrides
+
+Each form registration can override global form behavior, including:
+
+- reCAPTCHA
+- Front‑end dependencies
+- Form messages and behavior
+- Full Name / Address decomposition
+
+---
+
+## Front‑end dependencies
+
+Power Apps forms require the following libraries:
+
+- **Bootstrap 4** — https://getbootstrap.com/
+- **Font Awesome 5** — https://fontawesome.com/
+
+DataPress ships custom, isolated builds of these libraries.  
+You may disable them if your WordPress theme already includes compatible versions.
+
+---
+
+## reCAPTCHA support
+
+Dataverse forms integrate with reCAPTCHA.
+  
+[Read more](/forms/recaptcha/#recaptcha-support-for-power-apps-forms)
+
+---
+
+## Adding the form to a page
+
+Use the Twig tag and the form registration ID:
+
+```twig
+{% form id=42 %}
+```
+
+This renders the form and starts accepting submissions.
+
+</TabItem>
+
+<TabItem value="reference">
+
+# Notes (capabilities & limitations)
+
+## Supported controls
+
+DataPress renders forms close to their Dataverse definitions.
+
+Supported control types include:
+
+- Single‑line and multi‑line text
+- Email and numeric fields
+- Money and integer fields
+- Radio buttons and checkboxes
+- Date and time pickers
+- Lookup fields
+
+---
+
+## Limitations
+
+### Lookup selection
+- Lookup dialogs do **not** support selecting multiple records
+- Multi‑select picklists are **not supported**
+
+### Unsupported composite controls
+The following controls are not currently supported:
+
+- Subgrids
+- Maps
+- Quick (nested) forms
+- Notes, activities, posts, assistant panels
+
+### Web resources
+Custom JavaScript web resources embedded in Dataverse forms are not supported.
+
+You may still use WordPress‑level CSS and JavaScript to customize appearance and behavior.
+
+---
+
+## Composite columns
+
+### Full Name (`fullname`)
+
+`fullname` is a calculated field composed of name attributes.
+
+If present on the form, DataPress automatically decomposes it into individual controls (such as `firstname` and `lastname`) instead of using a popup editor.
+
+Microsoft reference:  
+https://www.magnetismsolutions.com/blog/colinmaitland/2014/02/03/how-to-change-the-full-name-format-for-contacts-in-microsoft-dynamics-crm-2013
+
+### Address (`addressN_composite`)
+
+Address composite columns are handled similarly and decomposed into their underlying attributes.
+
+The plugin allows configuring which attributes are used for Full Name and Address fields.
+
+---
+
+## Date and time behavior
+
+Dataverse supports multiple date behaviors:
+
+- **User Local**: Adjusts values based on the user’s time zone. 
+- **Time Zone Independent**: No time zone conversion is applied.
+- **Date Only**: Displays only the date portion without time zone conversion.
+
+Documentation:  
+https://learn.microsoft.com/en-us/power-apps/maker/data-platform/behavior-format-date-time-field
+
+### Time zone handling
+
+For **User Local** fields, displayed values depend on:
+
+- `ICDS_DATETIME_VALUE` setting (Legacy или Local)
+- User time zone
+
+Example:
+
+| Stored Value | Timezone | Displayed Value |
+|-------------|----------|----------------|
+| 5/15/2028 03:00 AM | UTC+2 | 5/15/2028 05:00 AM |
+| 5/15/2028 03:00 AM | UTC‑4 | 5/14/2028 11:00 PM |
+
+Anonymous visitors see values using the WordPress site time zone.
+
+---
+
+## Lookup behavior and security
+
+### Display modes
+
+1. **Dialog** — searchable modal lookup
+2. **Dropdown** — filtered list with optional search
+3. **Select** — simple dropdown (≈ 50 options)
+
+---
+
+### Security measures
+
+To prevent unauthorized data access:
+
+1. WordPress nonces are enforced  
+   https://developer.wordpress.org/apis/security/nonces/
+
+2. Access can be restricted using a filter hook:
+
+```php
+add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $entityName, $view ){
+    if ( !is_user_logged_in() ) {
+        return false;
+    }
+    return $isAllowed;
+}, 10, 3 );
+```
+
+3. FetchXML templates can filter lookup results.
+
+## Unsupported Whole Number Formats
+These Dataverse formats are not supported:
+
+Language code
+Duration
+Time zone
+
+## Decimal & Float Fields
+Handled according to Dataverse settings (min/max, decimals).
+[Reference](https://learn.microsoft.com/power-apps/maker/data-platform/formula-column-data-types)
+
+</TabItem>
+
+<TabItem value="examples">
+
+# Examples
+
+This page provides copy/paste examples for rendering **Power Apps / Dataverse forms** on WordPress using **DataPress** form registrations.
+
+> **Prerequisite:** You must create a **form registration** in the plugin admin area.  
+> You will need its registration ID (for example, `id=42`).
+
+---
+
+##  Render a basic form
+
+Render a form using its **form registration ID**:
+
+```twig
+{% form id=42 %}
+```
+
+##  Render a form with default field values
+Use the defaults attribute to pre-populate fields:
+
+```
+{% form id=42 defaults={
+  "leadsourcecode": 8,
+  "donotfax": true,
+  "address1_country": "United States"
+} %}
+```
+
+**Notes:**
+
+- Defaults values must match Dataverse attribute logical names.
+- Boolean fields accept true/false.
+- For choice fields, pass the numeric option value (see next section).
+
+##  Set a default value for a Choice (Option Set) field
+
+For choice fields, pass the integer value of the option.
+**Example:** set gendercode to “Male” where “Male” has value 1:
+
+```
+{% form id=4 defaults={"gendercode": 1} %}
+```
+
+You can find label/value mapping in Dataverse column settings or metadata.
+
+##  Set a default value for a Multi-Select Choice field
+
+Multi-select values are passed as a comma-separated string:
+
+```
+
+{% form id=2 defaults={"multipleChoiceColumnName": "3,4"} %}
+```
+
+### Pre-select lead source
+
+```
+{% form id=42 defaults={"leadsourcecode": 8} %}
+```
+
+##  Redirect after submit and capture the created record GUID
+
+When a record is successfully created, you can inject the record GUID into a redirect URL using %s.
+Example:
+
+- Redirect setting: /?id=%s
+- After create: /?id=00000000-0000-0000-0000-000000000000
+
+Use this to forward users to a “Thank you” page, a confirmation screen, or a details page.
+
+##  Set default values via Admin UI (no Twig changes)
+
+You can define default values inside the Dataverse Admin Area:
+
+1. Choose the form
+2. Go to Fields Customization
+3. Find Default Field Values
+4. Add field name + default value
+
+This method supports defaults for:
+
+- text/number fields
+- choice fields
+- lookup fields (when configured)
+
+## Deletion security — authorize delete requests
+
+If your form registration enables **Allow deleting the record**, you should guard it with the `integration-cds/forms/authorize-delete filter`.
+
+Add to functions.php:
+
+```
+add_filter( 'integration-cds/forms/authorize-delete', function( $isAuthorized, $reg, $target ) {
+    // Reject if no record was resolved
+    if ( $target === null ) {
+        return false;
+    }
+
+    // Example rule: only signed-in users can delete
+    if ( ! is_user_logged_in() ) {
+        return false;
+    }
+
+    // You can add more rules here:
+    // - check user role/capability
+    // - check ownership against $target
+    // - check registration ID via $reg
+
+    return $isAuthorized;
+}, 10, 3 );
+```
+
+## Lookup security — restrict lookup access to signed-in users
+
+Lookups use a REST API endpoint and should be protected to avoid accidental data exposure.
+The snippet below restricts lookups to **authenticated users only**.
+
+Add it to the active theme’s functions.php:
+
+```
+add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $entityName, $view ) {
+    if ( ! is_user_logged_in() ) {
+        return false;
+    }
+
+    return $isAllowed;
+}, 10, 3 );
+```
+
+## Date & Time behavior — what users will see 
+
+Dataverse fields can behave as:
+
+**User Local**: value converts to user timezone
+**Time Zone Independent**: no conversion
+**Date Only**: date without time conversion
+
+Example value stored: 5/15/2028 03:00:00 AM (User Local field)
+
+If timezone is UTC + 2, users see 5/15/2028 05:00:00 AM
+If timezone is UTC - 4, users see 5/14/2028 11:00:00 PM
+
+Set timezone per WordPress user
+
+Users → Edit
+Dataverse Extra Fields
+Choose Timezone
+
+Anonymous visitors use the site timezone configured in:
+Settings → General → 
+
+## Troubleshooting tips (quick)
+
+- If the premium plugin is not licensed, forms may fail with syntax errors — verify licensing first.
+- If your theme already includes Bootstrap/Font Awesome, consider disabling DataPress dependencies to avoid conflicts.
+- If lookup results look too broad, use view filters and/or FetchXML templates in conditional access settings.
+
+</TabItem>
+
+</Tabs>
+
+
+  </div>
+
+  <div style={{ flex: '0 0 260px' }}>
+    <TabTOCBrowserOnly />
+  </div>
+</div>

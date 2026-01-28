@@ -272,12 +272,6 @@ span[itemprop="name"] {
   font-weight: 600 !important;
 }
 
-/* Limit content width for better readability on long pages */
-.markdown,
-.theme-doc-markdown {
-  max-width: 780px;
-}
-
 /* Section headers (H2) */
 .markdown h2 {
   margin-top: 3.5rem;
@@ -335,31 +329,11 @@ span[itemprop="name"] {
   --doc-content-max-width: 780px; 
 }
 
-.theme-doc-page .container,
-.theme-doc-page .container-fluid {
-  justify-content: center; 
-}
-
-.theme-doc-page .col.col--7,
-.theme-doc-page .col.col--8,
-.theme-doc-page .col.col--9,
-.theme-doc-page .docItemCol {
-  max-width: var(--doc-content-max-width);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .theme-doc-markdown,
 .markdown {
   max-width: var(--doc-content-max-width);
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.theme-doc-page .row {
-  justify-content: center;
-}
 
 /* Desktop TOC */
 .theme-doc-toc-desktop,
@@ -374,16 +348,54 @@ span[itemprop="name"] {
   font-weight: 500;
 }
 
-.theme-doc-toc-desktop .table-of-contents {
-  padding-left: 0.25rem;
-}
-
 .markdown > h2 + p {
   margin-top: 1.2rem;
 }
 
+.tab-toc {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  overflow: auto;
+  padding: 0.5rem 0 0.5rem 0.25rem;
+  margin-bottom: 1rem;
+  border-left: 2px solid var(--ifm-toc-border-color, #eaecef);
+}
+
+.tab-toc strong {
+  display: block;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.tab-toc-list {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+.tab-toc-list li {
+  margin: 0.2rem 0;
+}
+
+.tab-toc-list li.level-2 { margin-left: 0.25rem; }
+.tab-toc-list li.level-3 { margin-left: 1rem;   font-size: 0.95em; }
+.tab-toc-list li.level-4 { margin-left: 1.75rem; font-size: 0.9em;  }
+
 .theme-doc-toc-desktop {
-  width: 350px;     
-  max-width: 300px;  
-  flex: 0 0 300px;   
+  width: var(--doc-toc-width);
+  flex: 0 0 var(--doc-toc-width);
+  max-width: var(--doc-toc-width);
+}
+
+@media (max-width: 997px) {
+  .theme-doc-toc-desktop {
+    display: none;
+  }
+
+  .theme-doc-markdown,
+  .markdown {
+    max-width: 100%;
+  }
 }
