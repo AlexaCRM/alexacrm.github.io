@@ -7,7 +7,7 @@
   --ifm-color-primary-lighter: #48D0FF;
   --ifm-color-primary-lightest: #7EDCFF !important;
 
-  --ifm-background-color: #ffffff !important;
+  --ifm-background-color: #ffffff;
   --ifm-font-color-base: #212121;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 119, 194, 0.1);
@@ -52,7 +52,7 @@
 
 .navbar__link,
 .navbar__title {
-  color: #ffffff !important;
+  color: #ffffff;
   text-decoration: none !important;
 }
 
@@ -63,7 +63,7 @@
 /* Hero section */
 .hero--primary {
   background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 /* Content links only */
@@ -213,15 +213,15 @@ span[itemprop="name"],
 
 /* Buttons */
 button {
-  color: #004080 !important; /* исправлено */
-  background-color: #ffffff !important;
+  color: #004080; 
+  background-color: #ffffff;
   font-weight: 700;
   border: 1px solid #004f8a;
   padding: 0.4em 0.8em;
 }
 
 button:hover {
-  background-color: #f0f8ff !important;
+  background-color: #f0f8ff;
   color: #003f70 !important;
 }
 
@@ -403,3 +403,64 @@ span[itemprop="name"] {
   max-width: var(--doc-content-max-width);
 }
 
+/* =====================================
+   DARK MODE – contrast & readability fix
+   ===================================== */
+
+[data-theme='dark'] {
+
+  /* Base text */
+  color: var(--ifm-font-color-base);
+}
+
+/* Content */
+[data-theme='dark'] .theme-doc-markdown,
+[data-theme='dark'] .markdown {
+  background-color: transparent;
+  color: var(--ifm-font-color-base);
+}
+
+/* Links inside content */
+[data-theme='dark'] article a,
+[data-theme='dark'] .markdown a {
+  color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] article a:hover {
+  color: var(--ifm-color-primary-lighter);
+}
+
+/* details / collapsible */
+[data-theme='dark'] details,
+[data-theme='dark'] details summary {
+  color: var(--ifm-font-color-base);
+  border-color: var(--ifm-color-primary);
+}
+
+/* Menu, breadcrumbs, TOC */
+[data-theme='dark'] .menu__link,
+[data-theme='dark'] .menu__link--active,
+[data-theme='dark'] .pagination-nav__label,
+[data-theme='dark'] .breadcrumbs__link,
+[data-theme='dark'] .DocSearch-Button-Placeholder,
+[data-theme='dark'] .table-of-contents a {
+  color: var(--ifm-font-color-base) !important;
+}
+
+/* Buttons */
+[data-theme='dark'] button {
+  background-color: #123548 !important;
+  color: var(--ifm-font-color-base) !important;
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] button:hover {
+  background-color: #1a4a63 !important;
+}
+
+/* Panes */
+[data-theme='dark'] .left-pane,
+[data-theme='dark'] .right-pane {
+  background-color: #102a3a;
+  color: var(--ifm-font-color-base);
+}
