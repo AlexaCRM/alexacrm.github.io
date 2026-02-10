@@ -1,11 +1,12 @@
 ---
 title: Custom Forms examples
-sidebar_position: 9
+sidebar_position: 3
 slug: /forms/custom-forms-example
 tags:
   - Form
   - DataPress
 keywords: [DataPress custom form]
+description: How to create custom forms
 ---
 
 :::note

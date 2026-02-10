@@ -7,6 +7,7 @@ tags:
     - Gravity Forms
     - DataPress
 keywords: [DataPress Gravity Forms addon, create DataPress form with Gravity Forms]    
+description: Details of supporting Gravity Forms.
 ---
 
 <p class="lead">Use gravity forms to manage your organization data</p>

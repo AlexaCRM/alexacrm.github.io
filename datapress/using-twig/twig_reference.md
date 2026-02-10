@@ -1,9 +1,10 @@
 ---
 sidebar_position: 3
-title: Twig Reference. Capabilities & Limitations
-slug: /twig/reference
+title: Twig Notes. Capabilities & Limitations
+slug: /twig/notes
 tags: [Twig, DataPress]
 keywords: [DataPress twig reference]
+description: An overview of the global Twig objects available in DataPress pages.
 ---
 
 ## Global Objects Overview

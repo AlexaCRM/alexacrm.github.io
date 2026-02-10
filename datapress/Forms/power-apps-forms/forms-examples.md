@@ -8,6 +8,7 @@ tags:
   - DataPress
   - Examples
 keywords: [DataPress forms, Power Apps Forms examples, Dataverse forms examples]
+description: How to render Power Apps Forms
 ---
 This page provides copy/paste examples for rendering **Power Apps / Dataverse forms** on WordPress using **DataPress** form registrations.
 

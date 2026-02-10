@@ -4,6 +4,7 @@ title: Twig Configuration
 slug: /twig/configuration
 tags: [Twig, Configuration]
 keywords: [DataPress twig configuration]
+description: Configuration guide for Twig in DataPress, covering debug mode, caching, device detection, date/time handling, and request context objects.
 ---
 
 ## Debug Mode

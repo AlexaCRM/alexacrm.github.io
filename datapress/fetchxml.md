@@ -1,5 +1,5 @@
 ---
-title: FetchXML queries
+title: FetchXML
 sidebar_position: 6
 slug: /fetchxml
 tags:

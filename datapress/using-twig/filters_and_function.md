@@ -6,6 +6,7 @@ tags:
     - Twig
     - DataPress
 keywords: [DataPress twig]  
+description: Reference guide to DataPress Twig filters and functions, including formatted values, entity references, file/image URLs, Web API queries, and utility helpers.
 ---
 
 ## Filters

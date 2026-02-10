@@ -7,6 +7,7 @@ tags:
   - Form
   - DataPress
 keywords: [DataPress forms configuration]
+description: Features of working with different types of fields
 ---
 
 ## Supported controls

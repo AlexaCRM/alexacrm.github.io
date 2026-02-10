@@ -7,6 +7,7 @@ tags:
   - Form
   - DataPress
 keywords: [DataPress forms configuration]
+description: How to configure Power Apps Forms
 ---
 
 ## Before you begin

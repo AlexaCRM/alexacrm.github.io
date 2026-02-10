@@ -1,14 +1,15 @@
 ---
-title: Custom Forms - Reference
-sidebar_position: 8
+title: Custom Forms Notes
+sidebar_position: 2
 slug: /forms/custom-forms-reference
 tags:
   - Form
   - DataPress
 keywords: [DataPress custom form]
+description: Features of working with different types of fields.
 ---
 
-# Reference (Capabilities & Limitations)
+# Notes (Capabilities & Limitations)
 
 ## What Custom Forms can do
 

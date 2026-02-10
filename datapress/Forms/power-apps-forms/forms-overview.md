@@ -1,5 +1,5 @@
 ---
-title: Power Apps Forms
+title: Power Apps Forms Overview
 sidebar_position: 1
 premium: true
 slug: /forms/forms
@@ -7,6 +7,7 @@ tags:
   - Form
   - DataPress
 keywords: [DataPress forms]
+description: Power Apps Forms allow you to display Dataverse forms on your WordPress website and submit user input directly back to Dataverse.
 ---
 
 :::note

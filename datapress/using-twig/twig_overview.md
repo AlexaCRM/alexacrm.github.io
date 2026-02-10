@@ -4,6 +4,7 @@ title: Twig Overview
 slug: /twig/overview
 tags: [Twig, DataPress]
 keywords: [DataPress twig]
+description: What You Can Do with Twig in DataPress.
 ---
 
 > **Note:** Dataverse Integration has been renamed to **DataPress**. All references will be gradually updated.

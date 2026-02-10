@@ -1,11 +1,12 @@
 ---
 title: Custom Forms - Overview
-sidebar_position: 7
+sidebar_position: 1
 slug: /forms/custom-forms-overview
 tags:
   - Form
   - DataPress
 keywords: [DataPress custom form]
+description: Custom Forms let you capture data from your WordPress site without using Power Apps or Dynamics 365 forms.
 ---
 
 :::note

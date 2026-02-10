@@ -4,6 +4,7 @@ title: Twig Examples
 slug: /twig/examples
 tags: [Twig, DataPress]
 keywords: [DataPress twig examples]
+description: A collection of practical Twig examples for DataPress, covering record rendering, user info, metadata access, formatting, lookups, choices, currency, and more.
 ---
 
 # Twig Examples
