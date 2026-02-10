@@ -2,7 +2,7 @@
   margin-top: 60px;
   padding: 4rem 0;
 
-  /* вместо жесткого белого */
+  /* instead of hard white */
   background-color: var(--ifm-background-color);
   color: var(--ifm-font-color-base);
 
@@ -27,7 +27,7 @@
   border-top: 8px solid #EFFAFF;
 }
 
-/* Заголовки: светлая тема */
+/*Headers: light theme*/
 .title {
   font-size: 3rem;
   margin-bottom: 0.5rem;
@@ -49,7 +49,7 @@
 }
 
 .card {
-  /* вместо жесткого белого */
+  /*instead of hard white */
   background-color: var(--ifm-background-color);
   color: var(--ifm-font-color-base);
 
@@ -77,11 +77,9 @@
 }
 
 /* =========================================
-   Dark mode overrides (важно!)
+   Dark mode overrides 
    ========================================= */
 [data-theme='dark'] .heroBanner {
-  /* Можно оставить var(--ifm-background-color),
-     но часто для баннера хочется чуть отдельную "surface" */
   background-color: rgba(255, 255, 255, 0.02);
   border-bottom-color: rgba(126, 220, 255, 0.35);
 }
@@ -99,7 +97,6 @@
 }
 
 [data-theme='dark'] .card {
-  /* делаем карточку как "surface" на темном фоне */
   background-color: rgba(255, 255, 255, 0.04);
   border-left-color: var(--ifm-color-primary);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
