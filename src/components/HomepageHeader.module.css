@@ -1,10 +1,13 @@
 .heroBanner {
   margin-top: 60px;
   padding: 4rem 0;
-  background-color: #ffffff;
-  color: #1a1a1a;
+
+  /* instead of hard white */
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+
   text-align: left;
-  border-bottom: 1px solid #7EDCFF;
+  border-bottom: 1px solid var(--ifm-color-primary-lightest);
   position: relative;
 }
 
@@ -24,18 +27,20 @@
   border-top: 8px solid #EFFAFF;
 }
 
+/*Headers: light theme*/
 .title {
   font-size: 3rem;
   margin-bottom: 0.5rem;
-  color: #005a99; /* Contrast ratio ~7.5:1 Emphasis on the title*/
+  color: #005a99;
 }
 
 .subtitle {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  color: #0079bd; /* A slightly softer accent */
+  color: #0079bd;
 }
 
+/* Карточки */
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -44,18 +49,20 @@
 }
 
 .card {
-  background-color: #ffffff;
-  color: #1a1a1a;
+  /*instead of hard white */
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+
   padding: 1.5rem;
   border-radius: 12px;
-  border-left: 6px solid #0097E6; /* Цветовая метка слева */
+  border-left: 6px solid #0097E6;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
 }
 
 .card h3 {
@@ -67,4 +74,38 @@
 .card p {
   font-size: 1rem;
   margin-bottom: 1rem;
+}
+
+/* =========================================
+   Dark mode overrides 
+   ========================================= */
+[data-theme='dark'] .heroBanner {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-bottom-color: rgba(126, 220, 255, 0.35);
+}
+
+[data-theme='dark'] .navbar + .heroBanner {
+  border-top-color: rgba(126, 220, 255, 0.10);
+}
+
+[data-theme='dark'] .title {
+  color: var(--ifm-color-primary-lightest);
+}
+
+[data-theme='dark'] .subtitle {
+  color: rgba(245, 245, 245, 0.85);
+}
+
+[data-theme='dark'] .card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-left-color: var(--ifm-color-primary);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='dark'] .card h3 {
+  color: var(--ifm-color-primary-light);
 }

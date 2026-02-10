@@ -1,45 +1,69 @@
-:root {
-  --ifm-color-primary: #0077c2 !important;
-  --ifm-color-primary-dark: #006bb0;
-  --ifm-color-primary-darker: #004080; /* заменено для контраста */
-  --ifm-color-primary-darkest: #004f8a;
-  --ifm-color-primary-light: #48D0FF !important;
-  --ifm-color-primary-lighter: #48D0FF;
-  --ifm-color-primary-lightest: #7EDCFF !important;
+/* =====================================================
+   Base theme variables
+   ===================================================== */
 
-  --ifm-background-color: #ffffff !important;
+:root {
+  /* Brand colors */
+  --ifm-color-primary: #0077c2;
+  --ifm-color-primary-dark: #006bb0;
+  --ifm-color-primary-darker: #004f8a;
+  --ifm-color-primary-darkest: #004080;
+  --ifm-color-primary-light: #48d0ff;
+  --ifm-color-primary-lighter: #7edcff;
+  --ifm-color-primary-lightest: #a3e9ff;
+
+  /* Base colors */
+  --ifm-background-color: #ffffff;
   --ifm-font-color-base: #212121;
+
+  /* Code */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 119, 194, 0.1);
+
+  /* Layout */
+  --doc-content-max-width: 780px;
 }
 
+/* =====================================================
+   Dark mode variables
+   ===================================================== */
+
 [data-theme='dark'] {
-  --ifm-color-primary: #48D0FF;
+  --ifm-background-color: #0a1e2a;
+  --ifm-font-color-base: #f5f5f5;
+
+  --ifm-color-primary: #48d0ff;
   --ifm-color-primary-dark: #3bbbe6;
   --ifm-color-primary-darker: #32a8cf;
   --ifm-color-primary-darkest: #278fb3;
-  --ifm-color-primary-light: #7EDCFF;
+  --ifm-color-primary-light: #7edcff;
   --ifm-color-primary-lighter: #a3e9ff;
   --ifm-color-primary-lightest: #c2f2ff;
 
-  --ifm-background-color: #0a1e2a;
-  --ifm-font-color-base: #f5f5f5;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
 }
 
-/* Pane backgrounds */
-.left-pane {
-  background-color: #e5e5e5;
-  color: #212121;
-}
-.right-pane {
-  background-color: #d5d5d5;
-  color: #212121;
+/* =====================================================
+   Global layout
+   ===================================================== */
+
+body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
-/* Navbar */
+.theme-doc-markdown,
+.markdown {
+  max-width: var(--doc-content-max-width);
+  color: var(--ifm-font-color-base);
+}
+
+/* =====================================================
+   Navbar
+   ===================================================== */
+
 .navbar {
-  background: linear-gradient(135deg, #0077c2 0%, #48D0FF 100%) !important;
+  background: linear-gradient(135deg, #0077c2 0%, #48d0ff 100%);
   color: #ffffff;
   box-shadow: none;
 }
@@ -52,70 +76,106 @@
 
 .navbar__link,
 .navbar__title {
-  color: #ffffff !important;
-  text-decoration: none !important;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .navbar__link:hover {
-  color: #e0f7ff !important;
+  color: #e0f7ff;
 }
 
-/* Hero section */
+/* =====================================================
+   Hero
+   ===================================================== */
+
 .hero--primary {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
 }
 
-/* Content links only */
-article a:not(.menu__link):not(.navbar__link):not(.breadcrumbs__link):not(.menu__link--sublist),
-p a[target="_blank"],
-details summary,
-span[itemprop="name"] {
-  color: #004080; /* тёмный оттенок для контраста */
-  font-weight: 700;
+/* =====================================================
+   Content typography
+   ===================================================== */
+
+.markdown p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
-article a:hover {
-  color: #003f70;
+.markdown ul,
+.markdown ol {
+  margin: 0.5rem 0 1.2rem;
 }
 
-/* External links in paragraphs */
-p a[target="_blank"] {
-  color: #004080 !important; /* исправлено */
-  font-weight: 700;
-  text-decoration: underline;
+.markdown li {
+  margin-bottom: 0.3rem;
 }
 
-/* External link icon */
-article a[href^="http"]:not([href*="docs.alexacrm.com"]):after {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-left: 6px;
-  vertical-align: middle;
-  background-color: currentColor;
-  mask-image: url("/img/external-link.svg");
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  -webkit-mask-image: url("/img/external-link.svg");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
+/* Headers */
+
+.markdown h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
-/* Collapsible block */
+.markdown h3 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.markdown h4 {
+  margin-top: 1.6rem;
+  font-weight: 600;
+}
+
+/* =====================================================
+   Links
+   ===================================================== */
+
+.markdown a {
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 600;
+}
+
+.markdown a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+[data-theme='dark'] .markdown a {
+  color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .markdown a:hover {
+  color: var(--ifm-color-primary-lighter);
+}
+
+/* =====================================================
+   Admonitions
+   ===================================================== */
+
+.theme-admonition {
+  margin: 2rem 0;
+}
+
+/* =====================================================
+   Details / Collapsible
+   ===================================================== */
+
+details {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--ifm-color-primary);
+  border-bottom: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-font-color-base);
+}
+
 details summary {
-  list-style: none;
   cursor: pointer;
   font-weight: 600;
-  position: relative;
   padding-left: 24px;
-  margin-bottom: 0.5rem;
-  color: #004080; /* исправлено */
-}
-
-details summary:hover {
-  color: #003f70;
+  position: relative;
 }
 
 details summary::before {
@@ -124,102 +184,191 @@ details summary::before {
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 16px;
 }
 
 details[open] summary::before {
   content: "\f0d7";
 }
 
-details {
-  margin: 1rem 0;
-  padding: 0.5rem 0;
-  border-top: 1px solid #0077c2;
-  border-bottom: 1px solid #0077c2;
+/* =====================================================
+   Menu / TOC / Breadcrumbs
+   ===================================================== */
+
+.menu__link,
+.menu__link--active,
+.pagination-nav__label,
+.breadcrumbs__link,
+.table-of-contents a {
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+}
+
+.menu__link:hover,
+.pagination-nav__label:hover,
+.breadcrumbs__link:hover,
+.table-of-contents a:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* =====================================================
+   Buttons
+   ===================================================== */
+
+button {
+  background-color: transparent;
+  color: var(--ifm-color-primary-darkest);
+  border: 1px solid var(--ifm-color-primary);
+  font-weight: 600;
+  padding: 0.4em 0.8em;
+}
+
+button:hover {
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+/* Dark buttons */
+[data-theme='dark'] button {
+  background-color: #123548;
+  color: var(--ifm-font-color-base);
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] button:hover {
+  background-color: #1a4a63;
+}
+
+/* =====================================================
+   Side panes
+   ===================================================== */
+
+.left-pane,
+.right-pane {
+  background-color: #e5e5e5;
   color: #212121;
 }
 
-/* Menu and pagination links */
+[data-theme='dark'] .left-pane,
+[data-theme='dark'] .right-pane {
+  background-color: #102a3a;
+  color: var(--ifm-font-color-base);
+}
+/* =========================================================
+   WCAG AA Contrast Pack (Docusaurus)
+   Targets:
+   - Text contrast >= 4.5:1 (SC 1.4.3 AA)
+   - UI/non-text contrast >= 3:1 (SC 1.4.11 AA)
+   ========================================================= */
+
+/* A) Ensure background/text always follow Docusaurus variables */
+html, body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+/* B) Remove hardcoded low-contrast UI text colors (menu/breadcrumbs/toc/search placeholder) */
 .menu__link,
 .menu__link--active,
 .menu__link--sublist,
 .menu__list-item-collapsible > a,
 .pagination-nav__label,
 .breadcrumbs__link,
-span[itemprop="name"],
-.DocSearch-Button-Placeholder {
-  color: #003366 !important;
-  font-weight: 600;
-  text-decoration: none !important;
-}
-
-.menu__link:hover,
-.menu__link--active:hover,
-.menu__link--sublist:hover,
-.menu__list-item-collapsible > a:hover,
-.pagination-nav__label:hover,
-.breadcrumbs__link:hover,
-.DocSearch-Button-Placeholder:hover {
-  color: #003f70 !important;
-}
-
-/* Buttons */
-button {
-  color: #004080 !important; /* исправлено */
-  background-color: #ffffff !important;
-  font-weight: 700;
-  border: 1px solid #004f8a;
-  padding: 0.4em 0.8em;
-}
-
-button:hover {
-  background-color: #f0f8ff !important;
-  color: #003f70 !important;
-}
-
-/* Fix for DocSearch placeholder contrast */
-.DocSearch-Button-Placeholder {
-  color: #003366 !important;
-  font-weight: 600;
-}
-
-/* Fix for breadcrumbs span */
+.table-of-contents a,
+.DocSearch-Button-Placeholder,
 span[itemprop="name"] {
-  color: #004080 !important; 
-  font-weight: 600;
+  color: var(--ifm-font-color-base) !important;
+  text-decoration-color: currentColor;
 }
 
-.token.class-name {
-  color: #004080 !important; 
-  font-weight: 600 !important;
+/* C) Links in content: keep them clearly distinguishable + readable */
+.theme-doc-markdown a,
+.markdown a {
+  color: var(--ifm-color-primary-darkest);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
 }
 
-.token.attr-name.tag {
-  color: #b00000 !important;
-  font-weight: 600;
+.theme-doc-markdown a:hover,
+.markdown a:hover {
+  color: var(--ifm-color-primary-dark);
 }
 
-.token.operator {
-  color: #004080; 
-  font-weight: 600;
+/* Dark-mode link colors */
+[data-theme='dark'] .theme-doc-markdown a,
+[data-theme='dark'] .markdown a {
+  color: var(--ifm-color-primary-light);
 }
 
-.token.attr-value {
-  color: #005a73; 
-  font-weight: 600;
+[data-theme='dark'] .theme-doc-markdown a:hover,
+[data-theme='dark'] .markdown a:hover {
+  color: var(--ifm-color-primary-lighter);
 }
 
-.table-of-contents__link--active {
-  color: #004080 !important;
-  font-weight: 600;
+/* D) Non-text contrast: borders & separators for UI areas (>= 3:1 goal) */
+:root {
+  --wcag-border: rgba(33, 33, 33, 0.30);   /* visible on white */
+  --wcag-surface-hover: rgba(0, 0, 0, 0.06);
+  --wcag-focus: #004f8a;                   /* strong on light */
 }
 
-.token.comment {
-  color: #006400 !important;
-  font-weight: 600 !important;
+[data-theme='dark'] {
+  --wcag-border: rgba(245, 245, 245, 0.22); /* visible on dark */
+  --wcag-surface-hover: rgba(255, 255, 255, 0.08);
+  --wcag-focus: #7edcff;                    /* strong on dark */
 }
 
-.token.number {
-  color: #006400 !important; 
-  font-weight: 600 !important;
+hr,
+.table-of-contents,
+.tab-toc {
+  border-color: var(--wcag-border);
+}
+
+/* Collapsible/details: ensure text + borders readable in both modes */
+details {
+  color: var(--ifm-font-color-base);
+  border-top: 1px solid var(--ifm-color-primary);
+  border-bottom: 1px solid var(--ifm-color-primary);
+}
+
+details summary {
+  color: inherit;
+}
+
+/* E) Buttons: ensure label contrast + boundary contrast (>= 3:1) */
+button,
+.button,
+a.button {
+  color: var(--ifm-font-color-base);
+  background-color: transparent;
+  border: 1px solid var(--ifm-color-primary);
+}
+
+button:hover,
+.button:hover,
+a.button:hover {
+  background-color: var(--wcag-surface-hover);
+}
+
+/* Optional dark button surface (keeps your earlier visual style) */
+[data-theme='dark'] button,
+[data-theme='dark'] .button,
+[data-theme='dark'] a.button {
+  background-color: #123548;
+  color: var(--ifm-font-color-base);
+}
+
+/* F) Focus visibility (keyboard): critical for WCAG non-text contrast */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--wcag-focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Make focus visible on links too */
+a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
 }
