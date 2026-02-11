@@ -77,7 +77,7 @@ const config: Config = {
             from: ['/integration-cds/views'],
           },
           {
-            to: '/twig/introduction', 
+            to: '/twig/overview/', 
             from: ['/integration-cds/twig'],
           },
           {
