@@ -163,7 +163,7 @@ After the site migration, ensure you re-register the site in Dataverse. Multiple
 
 ## Create a form
 
-The plugin provides a Gutenberg block, "Dataverse Plain". To create your first form, you can use the [custom form syntax](/datapress/Forms/custom-forms.md).
+The plugin provides a Gutenberg block, "Dataverse Plain". To create your first form, you can use the [custom form syntax](/forms/custom-forms-example).
 
 ## Install Premium Features
 

@@ -1,5 +1,5 @@
 ---
-title: Custom Forms examples
+title: Custom Forms Examples
 sidebar_position: 3
 slug: /forms/custom-forms-example
 tags:

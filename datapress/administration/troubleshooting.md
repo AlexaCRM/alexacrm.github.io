@@ -76,7 +76,7 @@ Here are some of the key flags:
 
 [More details for view](/datapress/views.md)
 
-[More details for custom forms](/datapress/Forms/custom-forms.md)
+[More details for custom forms](/datapress/custom-forms-notes/#datetime-fields-in-custom-forms)
 
 [More details for Elementor](/addons/elementor/#how-to-create-a-field-for-a-date-time-column)
 

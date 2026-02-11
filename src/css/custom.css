@@ -1,45 +1,69 @@
-:root {
-  --ifm-color-primary: #0077c2 !important;
-  --ifm-color-primary-dark: #006bb0;
-  --ifm-color-primary-darker: #004080; 
-  --ifm-color-primary-darkest: #004f8a;
-  --ifm-color-primary-light: #48D0FF !important;
-  --ifm-color-primary-lighter: #48D0FF;
-  --ifm-color-primary-lightest: #7EDCFF !important;
+/* =====================================================
+   Base theme variables
+   ===================================================== */
 
+:root {
+  /* Brand colors */
+  --ifm-color-primary: #0077c2;
+  --ifm-color-primary-dark: #006bb0;
+  --ifm-color-primary-darker: #004f8a;
+  --ifm-color-primary-darkest: #004080;
+  --ifm-color-primary-light: #48d0ff;
+  --ifm-color-primary-lighter: #7edcff;
+  --ifm-color-primary-lightest: #a3e9ff;
+
+  /* Base colors */
   --ifm-background-color: #ffffff;
   --ifm-font-color-base: #212121;
+
+  /* Code */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 119, 194, 0.1);
+
+  /* Layout */
+  --doc-content-max-width: 780px;
 }
 
+/* =====================================================
+   Dark mode variables
+   ===================================================== */
+
 [data-theme='dark'] {
-  --ifm-color-primary: #48D0FF;
+  --ifm-background-color: #0a1e2a;
+  --ifm-font-color-base: #f5f5f5;
+
+  --ifm-color-primary: #48d0ff;
   --ifm-color-primary-dark: #3bbbe6;
   --ifm-color-primary-darker: #32a8cf;
   --ifm-color-primary-darkest: #278fb3;
-  --ifm-color-primary-light: #7EDCFF;
+  --ifm-color-primary-light: #7edcff;
   --ifm-color-primary-lighter: #a3e9ff;
   --ifm-color-primary-lightest: #c2f2ff;
 
-  --ifm-background-color: #0a1e2a;
-  --ifm-font-color-base: #f5f5f5;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
 }
 
-/* Pane backgrounds */
-.left-pane {
-  background-color: #e5e5e5;
-  color: #212121;
-}
-.right-pane {
-  background-color: #d5d5d5;
-  color: #212121;
+/* =====================================================
+   Global layout
+   ===================================================== */
+
+body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
-/* Navbar */
+.theme-doc-markdown,
+.markdown {
+  max-width: var(--doc-content-max-width);
+  color: var(--ifm-font-color-base);
+}
+
+/* =====================================================
+   Navbar
+   ===================================================== */
+
 .navbar {
-  background: linear-gradient(135deg, #0077c2 0%, #48D0FF 100%) !important;
+  background: linear-gradient(135deg, #0077c2 0%, #48d0ff 100%);
   color: #ffffff;
   box-shadow: none;
 }
@@ -53,56 +77,42 @@
 .navbar__link,
 .navbar__title {
   color: #ffffff;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .navbar__link:hover {
-  color: #e0f7ff !important;
+  color: #e0f7ff;
 }
 
-/* Hero section */
+/* =====================================================
+   Hero
+   ===================================================== */
+
 .hero--primary {
-  background-color: var(--ifm-color-primary) !important;
+  background-color: var(--ifm-color-primary);
   color: #ffffff;
 }
 
-/* Content links only */
-article a:not(.menu__link):not(.navbar__link):not(.breadcrumbs__link):not(.menu__link--sublist),
-p a[target="_blank"],
-details summary,
-span[itemprop="name"] {
-  color: #004080; 
-  font-weight: 700;
+/* =====================================================
+   Content typography
+   ===================================================== */
+
+.markdown p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
-article a:hover {
-  color: #003f70;
+.markdown ul,
+.markdown ol {
+  margin: 0.5rem 0 1.2rem;
 }
 
-/* External links in paragraphs */
-p a[target="_blank"] {
-  color: #004080 !important; 
-  font-weight: 700;
-  text-decoration: underline;
+.markdown li {
+  margin-bottom: 0.3rem;
 }
 
-/* External link icon */
-article a[href^="http"]:not([href*="docs.alexacrm.com"]):after {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-left: 6px;
-  vertical-align: middle;
-}
+/* Headers */
 
-/* Limit content width for better readability on long pages */
-.markdown,
-.theme-doc-markdown {
-  max-width: 780px;
-}
-
-/* Section headers (H2) */
 .markdown h2 {
   margin-top: 3.5rem;
   margin-bottom: 1.2rem;
@@ -110,60 +120,62 @@ article a[href^="http"]:not([href*="docs.alexacrm.com"]):after {
   border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
-/* Subsection headers (H3) */
 .markdown h3 {
   margin-top: 2.2rem;
   margin-bottom: 0.6rem;
 }
 
-/* Minor headers (H4) */
 .markdown h4 {
   margin-top: 1.6rem;
   font-weight: 600;
 }
 
-/* Paragraph readability */
-.markdown p {
-  line-height: 1.7;
-  margin-bottom: 1rem;
+/* =====================================================
+   Links
+   ===================================================== */
+
+.markdown a {
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 600;
 }
 
-
-/* Lists spacing */
-.markdown ul,
-.markdown ol {
-  margin-top: 0.5rem;
-  margin-bottom: 1.2rem;
+.markdown a:hover {
+  color: var(--ifm-color-primary-dark);
 }
 
-.markdown li {
-  margin-bottom: 0.3rem;
+[data-theme='dark'] .markdown a {
+  color: var(--ifm-color-primary-light);
 }
 
+[data-theme='dark'] .markdown a:hover {
+  color: var(--ifm-color-primary-lighter);
+}
 
-/* Admonitions as visual anchors */
+/* =====================================================
+   Admonitions
+   ===================================================== */
+
 .theme-admonition {
   margin: 2rem 0;
 }
 
-/* Add breathing space between sections */
-.markdown > h2 + p {
-  margin-top: 1.2rem;
+/* =====================================================
+   Details / Collapsible
+   ===================================================== */
+
+details {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--ifm-color-primary);
+  border-bottom: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-font-color-base);
 }
 
-/* Collapsible block */
 details summary {
-  list-style: none;
   cursor: pointer;
   font-weight: 600;
-  position: relative;
   padding-left: 24px;
-  margin-bottom: 0.5rem;
-  color: #004080; 
-}
-
-details summary:hover {
-  color: #003f70;
+  position: relative;
 }
 
 details summary::before {
@@ -172,295 +184,248 @@ details summary::before {
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 16px;
 }
 
 details[open] summary::before {
   content: "\f0d7";
 }
 
-details {
-  margin: 1rem 0;
-  padding: 0.5rem 0;
-  border-top: 1px solid #0077c2;
-  border-bottom: 1px solid #0077c2;
+/* =====================================================
+   Menu / TOC / Breadcrumbs
+   ===================================================== */
+
+.menu__link,
+.menu__link--active,
+.pagination-nav__label,
+.breadcrumbs__link,
+.table-of-contents a {
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+}
+
+.menu__link:hover,
+.pagination-nav__label:hover,
+.breadcrumbs__link:hover,
+.table-of-contents a:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* =====================================================
+   Buttons
+   ===================================================== */
+
+button {
+  background-color: transparent;
+  color: var(--ifm-color-primary-darkest);
+  border: 1px solid var(--ifm-color-primary);
+  font-weight: 600;
+  padding: 0.4em 0.8em;
+}
+
+button:hover {
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+/* Dark buttons */
+[data-theme='dark'] button {
+  background-color: #123548;
+  color: var(--ifm-font-color-base);
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] button:hover {
+  background-color: #1a4a63;
+}
+
+/* =====================================================
+   Side panes
+   ===================================================== */
+
+.left-pane,
+.right-pane {
+  background-color: #e5e5e5;
   color: #212121;
 }
 
-/* Menu and pagination links */
+[data-theme='dark'] .left-pane,
+[data-theme='dark'] .right-pane {
+  background-color: #102a3a;
+  color: var(--ifm-font-color-base);
+}
+/* =========================================================
+   WCAG AA Contrast Pack (Docusaurus)
+   Targets:
+   - Text contrast >= 4.5:1 (SC 1.4.3 AA)
+   - UI/non-text contrast >= 3:1 (SC 1.4.11 AA)
+   ========================================================= */
+
+/* A) Ensure background/text always follow Docusaurus variables */
+html, body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+/* B) Remove hardcoded low-contrast UI text colors (menu/breadcrumbs/toc/search placeholder) */
 .menu__link,
 .menu__link--active,
 .menu__link--sublist,
 .menu__list-item-collapsible > a,
 .pagination-nav__label,
 .breadcrumbs__link,
-span[itemprop="name"],
-.DocSearch-Button-Placeholder {
-  color: #003366 !important;
-  font-weight: 600;
-  text-decoration: none !important;
-}
-
-.menu__link:hover,
-.menu__link--active:hover,
-.menu__link--sublist:hover,
-.menu__list-item-collapsible > a:hover,
-.pagination-nav__label:hover,
-.breadcrumbs__link:hover,
-.DocSearch-Button-Placeholder:hover {
-  color: #003f70 !important;
-}
-
-/* Buttons */
-button {
-  color: #004080; 
-  background-color: #ffffff;
-  font-weight: 700;
-  border: 1px solid #004f8a;
-  padding: 0.4em 0.8em;
-}
-
-button:hover {
-  background-color: #f0f8ff;
-  color: #003f70 !important;
-}
-
-/* Fix for DocSearch placeholder contrast */
-.DocSearch-Button-Placeholder {
-  color: #003366 !important;
-  font-weight: 600;
-}
-
-/* Fix for breadcrumbs span */
+.table-of-contents a,
+.DocSearch-Button-Placeholder,
 span[itemprop="name"] {
-  color: #004080 !important; 
-  font-weight: 600;
+  color: var(--ifm-font-color-base) !important;
+  text-decoration-color: currentColor;
 }
 
-.token.class-name {
-  color: #004080 !important; 
-  font-weight: 600 !important;
+/* C) Links in content: keep them clearly distinguishable + readable */
+.theme-doc-markdown a,
+.markdown a {
+  color: var(--ifm-color-primary-darkest);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
 }
 
-.token.attr-name.tag {
-  color: #b00000 !important;
-  font-weight: 600;
+.theme-doc-markdown a:hover,
+.markdown a:hover {
+  color: var(--ifm-color-primary-dark);
 }
 
-.token.operator {
-  color: #004080; 
-  font-weight: 600;
-}
-
-.token.attr-value {
-  color: #005a73; 
-  font-weight: 600;
-}
-
-.table-of-contents__link--active {
-  color: #004080 !important;
-  font-weight: 600;
-}
-
-.token.comment {
-  color: #006400 !important;
-  font-weight: 600 !important;
-}
-
-.token.number {
-  color: #006400 !important; 
-  font-weight: 600 !important;
-}
-
-/* Section headers (H2) */
-.markdown h2 {
-  margin-top: 3.5rem;
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--ifm-toc-border-color);
-}
-
-/* Subsection headers (H3) */
-.markdown h3 {
-  margin-top: 2.2rem;
-  margin-bottom: 0.6rem;
-}
-
-/* Minor headers (H4) */
-.markdown h4 {
-  margin-top: 1.6rem;
-  font-weight: 600;
-}
-
-/* Paragraph readability */
-.markdown p {
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-
-/* Lists spacing */
-.markdown ul,
-.markdown ol {
-  margin-top: 0.5rem;
-  margin-bottom: 1.2rem;
-}
-
-.markdown li {
-  margin-bottom: 0.3rem;
-}
-
-
-/* Admonitions as visual anchors */
-.theme-admonition {
-  margin: 2rem 0;
-}
-
-/* Add breathing space between sections */
-.markdown > h2 + p {
-  margin-top: 1.2rem;
-}
-
-/* ================================
- Centering content and preventing it from sticking to the right
-   ================================ */
-
-:root {
-  --doc-content-max-width: 780px; 
-}
-
-.theme-doc-markdown,
-.markdown {
-  max-width: var(--doc-content-max-width);
-}
-
-
-/* Desktop TOC */
-.theme-doc-toc-desktop,
-.table-of-contents {
-  font-size: 0.95rem;  
-  font-weight: 500;      
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-}
-
-.table-of-contents a {
-  font-weight: 500;
-}
-
-.markdown > h2 + p {
-  margin-top: 1.2rem;
-}
-
-.tab-toc {
-  position: sticky;
-  top: var(--ifm-navbar-height);
-  max-height: calc(100vh - var(--ifm-navbar-height));
-  overflow: auto;
-  padding: 0.5rem 0 0.5rem 0.25rem;
-  margin-bottom: 1rem;
-  border-left: 2px solid var(--ifm-toc-border-color, #eaecef);
-}
-
-.tab-toc strong {
-  display: block;
-  font-size: 0.9rem;
-  margin: 0 0 0.5rem 0.5rem;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.tab-toc-list {
-  list-style: none;
-  padding-left: 0.5rem;
-  margin: 0;
-}
-
-.tab-toc-list li {
-  margin: 0.2rem 0;
-}
-
-.tab-toc-list li.level-2 { margin-left: 0.25rem; }
-.tab-toc-list li.level-3 { margin-left: 1rem;   font-size: 0.95em; }
-.tab-toc-list li.level-4 { margin-left: 1.75rem; font-size: 0.9em;  }
-
-.theme-doc-toc-desktop {
-  width: var(--doc-toc-width);
-  flex: 0 0 var(--doc-toc-width);
-  max-width: var(--doc-toc-width);
-}
-
-
-.tabs-container {
-  width: 100%;
-}
-
-.tab-item,
-.tabs__content {
-  width: 100%;
-}
-
-.tabs__content > * {
-  max-width: var(--doc-content-max-width);
-}
-
-/* =====================================
-   DARK MODE – contrast & readability fix
-   ===================================== */
-
-[data-theme='dark'] {
-
-  /* Base text */
-  color: var(--ifm-font-color-base);
-}
-
-/* Content */
-[data-theme='dark'] .theme-doc-markdown,
-[data-theme='dark'] .markdown {
-  background-color: transparent;
-  color: var(--ifm-font-color-base);
-}
-
-/* Links inside content */
-[data-theme='dark'] article a,
+/* Dark-mode link colors */
+[data-theme='dark'] .theme-doc-markdown a,
 [data-theme='dark'] .markdown a {
   color: var(--ifm-color-primary-light);
 }
 
-[data-theme='dark'] article a:hover {
+[data-theme='dark'] .theme-doc-markdown a:hover,
+[data-theme='dark'] .markdown a:hover {
   color: var(--ifm-color-primary-lighter);
 }
 
-/* details / collapsible */
-[data-theme='dark'] details,
-[data-theme='dark'] details summary {
+/* D) Non-text contrast: borders & separators for UI areas (>= 3:1 goal) */
+:root {
+  --wcag-border: rgba(33, 33, 33, 0.30);   /* visible on white */
+  --wcag-surface-hover: rgba(0, 0, 0, 0.06);
+  --wcag-focus: #004f8a;                   /* strong on light */
+}
+
+[data-theme='dark'] {
+  --wcag-border: rgba(245, 245, 245, 0.22); /* visible on dark */
+  --wcag-surface-hover: rgba(255, 255, 255, 0.08);
+  --wcag-focus: #7edcff;                    /* strong on dark */
+}
+
+hr,
+.table-of-contents,
+.tab-toc {
+  border-color: var(--wcag-border);
+}
+
+/* Collapsible/details: ensure text + borders readable in both modes */
+details {
   color: var(--ifm-font-color-base);
-  border-color: var(--ifm-color-primary);
+  border-top: 1px solid var(--ifm-color-primary);
+  border-bottom: 1px solid var(--ifm-color-primary);
 }
 
-/* Menu, breadcrumbs, TOC */
-[data-theme='dark'] .menu__link,
-[data-theme='dark'] .menu__link--active,
-[data-theme='dark'] .pagination-nav__label,
-[data-theme='dark'] .breadcrumbs__link,
-[data-theme='dark'] .DocSearch-Button-Placeholder,
-[data-theme='dark'] .table-of-contents a {
-  color: var(--ifm-font-color-base) !important;
+details summary {
+  color: inherit;
 }
 
-/* Buttons */
-[data-theme='dark'] button {
-  background-color: #123548 !important;
-  color: var(--ifm-font-color-base) !important;
-  border-color: var(--ifm-color-primary);
-}
-
-[data-theme='dark'] button:hover {
-  background-color: #1a4a63 !important;
-}
-
-/* Panes */
-[data-theme='dark'] .left-pane,
-[data-theme='dark'] .right-pane {
-  background-color: #102a3a;
+/* E) Buttons: ensure label contrast + boundary contrast (>= 3:1) */
+button,
+.button,
+a.button {
   color: var(--ifm-font-color-base);
+  background-color: transparent;
+  border: 1px solid var(--ifm-color-primary);
+}
+
+button:hover,
+.button:hover,
+a.button:hover {
+  background-color: var(--wcag-surface-hover);
+}
+
+/* Optional dark button surface (keeps your earlier visual style) */
+[data-theme='dark'] button,
+[data-theme='dark'] .button,
+[data-theme='dark'] a.button {
+  background-color: #123548;
+  color: var(--ifm-font-color-base);
+}
+
+/* F) Focus visibility (keyboard): critical for WCAG non-text contrast */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--wcag-focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Make focus visible on links too */
+a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+/* Limit content width for better readability on long pages */
+.markdown,
+.theme-doc-markdown {
+max-width: 780px;
+}
+
+
+/* Section headers (H2) */
+.markdown h2 {
+margin-top: 3.5rem;
+margin-bottom: 1.2rem;
+padding-bottom: 0.4rem;
+border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+
+/* Subsection headers (H3) */
+.markdown h3 {
+margin-top: 2.2rem;
+margin-bottom: 0.6rem;
+}
+
+
+/* Minor headers (H4) */
+.markdown h4 {
+margin-top: 1.6rem;
+font-weight: 600;
+}
+
+/* Paragraph readability */
+.markdown p {
+line-height: 1.7;
+margin-bottom: 1rem;
+}
+
+/* Lists spacing */
+.markdown ul,
+.markdown ol {
+margin-top: 0.5rem;
+margin-bottom: 1.2rem;
+}
+
+.markdown li {
+margin-bottom: 0.3rem;
+}
+
+/* Admonitions as visual anchors */
+.theme-admonition {
+margin: 2rem 0;
+}
+
+
+/* Add breathing space between sections */
+.markdown > h2 + p {
+margin-top: 1.2rem;
 }

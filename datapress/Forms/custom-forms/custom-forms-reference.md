@@ -1,7 +1,7 @@
 ---
 title: Custom Forms Notes
 sidebar_position: 2
-slug: /forms/custom-forms-reference
+slug: /forms/custom-forms-notes
 tags:
   - Form
   - DataPress
@@ -74,9 +74,9 @@ Read more: [reCAPTCHA support](/forms/recaptcha/)
 When you fill date fields manually in a custom form, use these formats:
 
 - **Date Only**: `yyyy-mm-dd` or `yyyy/mm/dd`  
-  Example: `2023-01-20` or `2023/01/20` [1](https://docs.alexacrm.com/forms/custom-forms/)  
+  Example: `2023-01-20` or `2023/01/20` [1](https://docs.alexacrm.com/forms/custom-forms-notes/#datetime-fields-in-custom-forms)  
 - **Date Time**: `yyyy-mm-ddThh:mm`  
-  Example: `2023-01-20T12:30` [1](https://docs.alexacrm.com/forms/custom-forms/)  
+  Example: `2023-01-20T12:30` [1](https://docs.alexacrm.com/forms/custom-forms-notes/#datetime-fields-in-custom-forms)  
 
 ### Time zone behavior
 

@@ -1,5 +1,5 @@
 ---
-title: Custom Forms - Overview
+title: Custom Forms Overview
 sidebar_position: 1
 slug: /forms/custom-forms-overview
 tags:

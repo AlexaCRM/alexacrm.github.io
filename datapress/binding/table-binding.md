@@ -146,6 +146,6 @@ Sample FetchXML query that grants access only to users which are bound to contac
 
 You can manage page binding in WordPress Admin Area by navigating to Bindings -> Page Binding. Here, you can choose any page for any table. However, by default, only the contact table is visible. To add more tables, you need to create a page and click ‘Configure Binding’ to select the table to bind. After doing this, the table dropdown will appear in the Page Binding section.
 
-Information retrieved via table binding is used to update a certain record(row) with a form. See [Forms documentation](/datapress/Forms/forms.md).
+Information retrieved via table binding is used to update a certain record(row) with a form. See [Forms documentation](/forms/forms-configuration/#update-or-create-a-record).
 
-In Twig, the current row on a page is exposed via the global object `binding.record`. It contains an Table object of the current row, and you can access any column, e.g. `{{ binding.record["fullname"] }}`. For more information see [Twig documentation](/datapress/using-twig/twig_introduction.md)
+In Twig, the current row on a page is exposed via the global object `binding.record`. It contains an Table object of the current row, and you can access any column, e.g. `{{ binding.record["fullname"] }}`. For more information see [Twig documentation](/twig/overview)
