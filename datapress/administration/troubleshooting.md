@@ -80,4 +80,4 @@ Here are some of the key flags:
 
 [More details for Elementor](/addons/elementor/#how-to-create-a-field-for-a-date-time-column)
 
-[More details for Gravity forms](/addons/gravity-forms/#date-and-time-columns)
+[More details for Gravity forms](/forms/gravity-forms/#date-and-time-columns)
