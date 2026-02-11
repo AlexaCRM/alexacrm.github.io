@@ -60,4 +60,4 @@ An example of how to retrieve a record by reference:
 </li> 
 ```     
 
-For more information about function see [Filters and function](/datapress/using-twig/filters_and_function.md)
+For more information about function see [Filters and function](/twig/filters_and_function)

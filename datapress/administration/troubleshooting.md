@@ -72,11 +72,11 @@ Here are some of the key flags:
 
 [Usage Scenarios](/date-and-time/#usage-scenarios)
 
-[More details for twig](/datapress/using-twig/separate_columns_in_twig.md)
+[More details for twig](/twig/examples/#using-twig-to-display-the-value-of-separate-columns)
 
 [More details for view](/datapress/views.md)
 
-[More details for custom forms](/datapress/custom-forms-notes/#datetime-fields-in-custom-forms)
+[More details for custom forms](/custom-forms-notes/#datetime-fields-in-custom-forms)
 
 [More details for Elementor](/addons/elementor/#how-to-create-a-field-for-a-date-time-column)
 
