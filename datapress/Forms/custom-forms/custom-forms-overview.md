@@ -1,7 +1,7 @@
 ---
 title: Custom Forms Overview
 sidebar_position: 1
-slug: /forms/custom-forms-overview
+slug: /forms/custom-forms
 tags:
   - Form
   - DataPress
