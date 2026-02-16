@@ -7,6 +7,7 @@ tags:
   - Table binding
   - DataPress
 keywords: [DataPress Table binding, Table Binding]
+description: Link WordPress pages to Dataverse tables to provide direct access to your organization data.
 ---
 
 :::note

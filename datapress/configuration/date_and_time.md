@@ -90,7 +90,7 @@ A user’s birthday is an event that doesn’t depend on a specific time zone—
 
 [More details for twig](/twig/examples/#working-with-date-columns)
 
-[More details for view](/views/#how-to-display-date-or-date-time-column)
+[More details for view](/views/#how-to-display-date-or-date-time-columns)
 
 [More details for custom forms](/forms/custom-forms-notes/#datetime-fields-in-custom-forms)
 
