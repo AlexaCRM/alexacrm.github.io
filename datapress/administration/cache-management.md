@@ -24,7 +24,7 @@ On this page you can:
 - Temporarily **disable** caching for debugging
 - Choose **cache storage**
 - **Clear** cache globally or by type
-- Configure **per-entity (table)** cache rules
+- Configure **per-table (entity)** cache rules
 - Override cache for **forms**, **views**, and **fetchXML** inline
 
 **How it works (at a glance):**
@@ -58,10 +58,11 @@ Use **only** for short-term debugging and avoid leaving it enabled in production
 2. Set **`ICDS_CACHE_STORAGE`** to **`Files`**
 
 **Why “Files”?**  
-- Required for the **cache clearing** feature to function reliably  
-- Recommended for consistent behavior across environments
+- It is the default and the most universally supported caching backend across WordPress deployments
+- Ensures stable cache behavior across environments
+- Requires no extra configuration
 
-> Other storage backends may be available in your build, but **Files** is the recommended and supported choice for stable cache clearing.
+> Other cache storage backends may be available in your build, but Files remains the recommended and fully supported choice for consistent behavior.
 
 ---
 
