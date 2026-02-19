@@ -45,8 +45,6 @@ Here are some of the key flags:
 
 - `ICDS_ADVANCED_USER_BINDING` - If set to true, the legacy advanced editor will be used to configure user binding. You can see changes in `Bindings` -> `User Binding`;
 
-- `ICDS_DISABLE_CACHE` - Use this flag to prevent the caching of any Dataverse-related data.;
-
 - `ICDS_AUTH_KEY`, `ICDS_FORM_AUTH_KEY` - Before connecting the plugin, make sure to set these keys. You can generate suitable keys using the online generator provided by WordPress at https://api.wordpress.org/secret-key/1.0/;
 
 - `ICDS_DISABLE_MONACO` - When editing page content, `Dataverse Twig` block uses the Monaco editor that provides syntax highlighting and intellisense. If `ICDS_DISABLE_MONACO` flag is set to true, the Monaco editor will be disabled and the plain text editor will be used instead. 
