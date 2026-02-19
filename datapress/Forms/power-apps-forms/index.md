@@ -11,8 +11,7 @@ description: Power Apps Forms allow you to display Dataverse forms on your WordP
 ---
 
 :::note
-The plugin previously known as **Dataverse Integration** has been renamed to **DataPress**.
-All references in the documentation and user interface will be gradually updated.
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
 :::
 
 <p class="lead">

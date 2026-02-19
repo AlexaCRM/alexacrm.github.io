@@ -1,7 +1,8 @@
 {
-  "label": "Extensions",
+  "label": "Premium Edition",
   "position": 8,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "addons/index"
   }
 }
