@@ -11,6 +11,10 @@ description: Link WordPress pages to Dataverse tables to provide direct access t
 ---
 
 :::note
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+:::
+
+:::note
 The plugin previously known as Dataverse Integration has been renamed to **DataPress**.  
 All references to “Dataverse Integration” in the documentation and user interface are being updated to DataPress.
 :::

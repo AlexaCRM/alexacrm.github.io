@@ -11,6 +11,10 @@ description: How to display views on your WordPress site using DataPress, includ
 ---
 
 :::note
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+:::
+
+:::note
 The plugin previously known as **Dataverse Integration** has been renamed to **DataPress**. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision. All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
 :::
 

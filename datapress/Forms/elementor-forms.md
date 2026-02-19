@@ -10,6 +10,10 @@ keywords: [create DataPress form with Elementor]
 description: Details of supporting Elementor.
 ---
 
+:::note
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+:::
+
 # Elementor Forms
 
 Use Elementor to build forms that submit data to Dataverse.  

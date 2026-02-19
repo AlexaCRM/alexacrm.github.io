@@ -14,6 +14,10 @@ description: A short guide explaining how to link WordPress users to Dataverse c
 import ExpandableSection from '@site/src/components/ExpandableSection';
 
 :::note
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+:::
+
+:::note
 The plugin previously known as Dataverse Integration has been renamed to **DataPress**.  
 All references to “Dataverse Integration” in documentation and UI are being updated to DataPress.
 :::

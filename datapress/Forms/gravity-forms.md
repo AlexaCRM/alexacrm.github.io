@@ -12,6 +12,10 @@ description: Details of supporting Gravity Forms.
 
 <p class="lead">Use gravity forms to manage your organization data</p>
 
+:::note
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+:::
+
 ## Introduction
 
 Our plugin supports Gravity Forms. So you can use it instead of our Custom or Power Apps forms
