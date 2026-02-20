@@ -29,7 +29,6 @@ Supported control types include:
 
 ### Lookup selection
 - Lookup dialogs do **not** support selecting multiple records
-- Multi‑select picklists are **not supported**
 
 ### Unsupported composite controls
 The following controls are not currently supported:
