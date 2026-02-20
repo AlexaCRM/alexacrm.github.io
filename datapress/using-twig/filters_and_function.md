@@ -1,11 +1,12 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
 title: Filters and function
 slug: /twig/filters_and_function
 tags:
     - Twig
     - DataPress
 keywords: [DataPress twig]  
+description: Reference guide to DataPress Twig filters and functions, including formatted values, entity references, file/image URLs, Web API queries, and utility helpers.
 ---
 
 ## Filters

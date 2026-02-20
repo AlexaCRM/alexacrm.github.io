@@ -1,56 +1,86 @@
 ---
 title: Views
-sidebar_position: 5
+sidebar_position: 7
 premium: true
 slug: /views
 tags:
-    - Views
-    - DataPress
-keywords: [DataPress views]  
+  - Views
+  - DataPress
+keywords: [DataPress views]
+description: How to display views on your WordPress site using DataPress, including view configuration, filtering, lookup substitution, and custom templates.
 ---
 
 :::note
-The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
-All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
 :::
 
-<p class="lead">Add views to your WordPress pages to display tabular data from Dataverse and Dynamics 365.</p>
-
-## Introduction
-
-:::info
-
-This feature is exclusive to the premium extension.
-
-Licensing Requirement
-
-If the premium plugin is not properly licensed, syntax errors may occur. Ensure the plugin is correctly licensed to maintain view functionality.
-
+:::note
+The plugin previously known as **Dataverse Integration** has been renamed to **DataPress**. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision. All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
 :::
 
-Views are a concept in PowerApps and Dynamics 365 that allows listing table records in tables. A view defines what data to show and in which order. **Dataverse Integration** allows to surface personal, system and public views on your WordPress website.
+<p class="lead">Display Dataverse and Dynamics 365 views (tabular lists of records) on your WordPress pages using DataPress.</p>
 
-See [PowerApps documentation on views](https://docs.microsoft.com/en-us/powerapps/maker/model-driven-apps/create-edit-views).
+---
 
-## Use Twig to add a view table to a page
+## Overview
 
-To add a view to the WordPress page, use the `view` tag in a Twig template. The two required parameters are `entity` for the logical name of the table, e.g. `contact` or `account`, and `name` for the name of the view, e.g. `Active Contacts`. The plugin looks up both personal and system views. `vew` tag requires a closing tag, `endview`.
+*In this section, you'll learn what Views are and how DataPress uses them.*
 
-*Note:* you need to share personal views with the Application User that is used to connect WordPress to your Dataverse / Dynamics 365 organization.
+**What are Views?**  
+Views in Power Apps / Dynamics 365 are saved lists of records with predefined columns, filters, and sorting.
 
-```php
+**What does DataPress do?**  
+DataPress lets you embed these Dataverse views directly into WordPress pages using a Twig tag or Gutenberg block. You can:
+- Show personal, system, or public views  
+- Add pagination, caching, language selection  
+- Filter views dynamically  
+- Render custom layouts with Twig templates  
+
+See also: [Power Apps documentation on views](https://docs.microsoft.com/en-us/powerappssive to the **premium extension** and requires a valid license.  
+- If the premium plugin is not properly licensed, **syntax errors may occur**. Ensure the plugin is correctly licensed to maintain view functionality.  
+- If you use **personal views**, share them with the **Application User** that connects WordPress to your Dataverse / Dynamics 365 organization.
+
+### Prerequisites
+
+- This feature requires the **premium extension** and an active license.
+- Incorrect or missing license may cause syntax errors.
+- Personal views must be **shared** with the Application User used by DataPress.
+
+---
+
+## Quick Start: Add a View with Twig
+
+*In this section, you'll learn to display a Dataverse view using the Twig `view` tag.*
+
+**Basic usage**
+
+```twig
 {% view entity="contact" name="Active Contacts" %}{% endview %}
 ```
 
-### Add pagination to your view
+## Parameters
 
-By default, all available records below the system-imposed 5000 records are displayed. To enable pagination, specify the number of records per page in the `count` parameter.
+**entity** — logical table name (e.g. `contact`)  
+**name** — view display name (must match exactly)
 
-```php
+```twig
+{% view entity="contact" name="Active Contacts" %}{% endview %}
+```
+
+## Configuration
+
+In this section, you'll learn to control pagination, language, caching, hyperlink formatting, and date/time behavior.
+
+### Pagination
+
+In this subsection, you'll learn to limit records per page and enable navigation.
+By default, all available records below the system-imposed 5,000 limit are displayed. To enable pagination, specify the number of records per page with count:
+
+```twig
 {% view entity="contact" name="Active Contacts" count=10 %}{% endview %}
 ```
 
-### Change the language of column titles
+### Language
 
 If you have several languages installed in your organization, you can choose the language of column titles. Specify the LCID in the `language` attribute ([see the link to choose language](https://docs.microsoft.com/en-us/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a)). 
 
@@ -58,148 +88,179 @@ If you have several languages installed in your organization, you can choose the
 {% view entity="contact" name="Active Contacts" language=1043 %}{% endview %}
 ```
 
-### Enable data caching
+### Caching
 
 DataPress (Dataverse Integration) plugin always caches the view definition. That includes the underlying FetchXML query and the list of columns. To further boost performance, you can enable caching for the rows displayed in the view.
 
 To cache the data in the view, specify the cache duration in the `cache` parameter. ISO 8601 duration format is accepted as a valid duration value.
 
-*Note:* the plugin caches view data based on the resulting FetchXML on-demand. Two pages of the otherwise identical FetchXML query may be cached at different moments of time and get out of sync if data in the view is changed, e.g. rows added or removed. Choose the cache duration value based on how frequently the data in Dataverse is updated. This behavior is subject to change in future versions.
-
 ```php
 {% view entity="contact" name="Active Contacts" cache="P1DT12H" %}{% endview %}
 ```
 
-## Parameterize your views
+### How to display email and URL as active links
 
-PowerApps and Dynamics 365 views are essentially FetchXML queries. You can parameterize the filter conditions contained in the view to decide which rows to include.
-
-To create filter you should go to Templates -> FetchXML Templates in DataPress (Dataverse Integration) plugin menu. Then you click `create new` button. Save the template name to use it when you create page.
-
-We will assume a PowerApps view for an Invoice entity with two filter conditions: for Status Reason and for Customer. The `<filter/>` portion of the FetchXML is as follow:
+In this subsection, you'll learn to render email addresses and URLs as clickable links.
 
 ```
-<filter type="and" >
+{% view entity="contact" name="Active Contacts" formatHyperlinks=true count=100 %}{% endview %}
+```
+
+### How to display date or date-time columns
+
+When using the User Local behavior, columns will display date/time converted to the specified time zone in case of the Local option in **ICDS_DATETIME_VALUE**.
+
+**Examples**
+
+```
+{# Convert date/time to the user's time zone #}
+{% view entity="account" name="All Accounts" datetime='local' %}{% endview %}
+```
+
+```
+{# Keep UTC values #}
+{% view entity="account" name="All Accounts" datetime='utc' %}{% endview %}
+```
+
+| View Configuration              | Legacy                           | UTC                             | Local                                          |
+|---------------------------------|----------------------------------|----------------------------------|------------------------------------------------|
+| **view**                        | UTC                              | UTC                              | Converts the date and time to the user's timezone |
+| **view with `datetime='utc'`**  | UTC                              | UTC                              | UTC                                            |
+| **view with `datetime='local'`**| Converts date/time to user timezone | Converts date/time to user timezone | Converts date/time to user timezone |
+
+[Usage Scenarios](/date-and-time/#usage-scenarios)
+
+## Parameterize your views
+
+*In this section, you'll learn to filter views dynamically using FetchXML templates and placeholders.*
+
+**Concept**  
+Power Apps / Dynamics 365 views are **FetchXML** queries. You can parameterize filter conditions and supply values at render time.
+
+### 1 — Create a FetchXML template
+
+- Go to **Templates → FetchXML Templates** in the DataPress (Dataverse Integration) plugin menu.  
+- Click **Create new**.  
+- Save the template **name** — you will use it when creating a page.
+
+**Example (two conditions)**
+
+```xml
+<filter type="and">
   <condition attribute="customerid" operator="eq" value="a83ec8e5-9e5e-47cd-b5a9-c2ee4eae42c5" />
   <condition attribute="name" operator="like" value="%Value%" />
 </filter>
 ```
 
-If you want to filter using only one condition you can type text like this one:
+**Example (single condition)**
+
 ```
 <condition attribute="fullname" operator="like" value="%TestData%" />
 ```
 
-Then Go to Pages -> Add New and type:
+### 2 — Use the template on a page
 
-```php
+Go to **Pages → Add New** and insert:
+
+```twig
 {% view entity="contact" name="All Contacts" filter='templateName' %}{% endview %}
 ```
 
-Note: It's important for the name to match including whitespaces. If you add an extra space, for example `filter=' templateName'`, your filter won't work and you will get all records instead.
+:::note
+The template name must match exactly, including whitespaces.
+If you add an extra space (for example, filter=' templateName'), the filter will not work and you will get all records instead.
+:::
 
-### Prepare the view for use
+### 3 — Prepare the view for parameter substitution
 
-Before you substitute parameters, you need to change the existing condition values to [format items](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting).
-For example, you go to your crm admin, choose an entity(in this example - account) and a view (in this example - Inactive Accounts) and set filters: `Account Name` should be equal to `{0}` parameter, `Address 1: City` begins with `{1}` parameter. 
+Before substituting parameters, change the existing condition values to **format items**  
+(Composite formatting).
 
-Then Go to WordPress, click Pages -> Add New and type:
+**Example**  
+In Power Apps, choose the **account** entity and the **Inactive Accounts** view and set filters:
+- `Account Name` should be equal to `{0}`
+- `Address 1: City` begins with `{1}`
 
-```php
-{% view entity="account" name="Inactive Accounts" parameters={ "0": "Voomm", "1": "Manyana" } %}{% endview %}
+You can also use string labels instead of integers, for example `{status}`.
+
+### 4 — Substitute parameter values
+
+Use the `parameters` attribute to substitute condition values in the view FetchXML. It accepts:
+- an **array** for positional values (`{0}`, `{1}`, …)
+- a **map** for named placeholders (`{city}`, `{status}`, …)
+
+**Positional placeholders**
+
+```twig
+{# {0} → "Topiclounge", {1} → "Sydn" #}
+{% view entity="account" name="Inactive Accounts" parameters=[ "Topiclounge", "Sydn" ] %}{% endview %}
 ```
 
-When you click `Preview` you will see only records with `Voomm` Account name and the city, which begins with `Manyana` letters.
-Instead of integers, you can use labels, e.g. `{status}`.
+**Named placeholders**
 
-### Substitute parameter condition values
+```
+{# {accountName} → "param1", {city} → "param2" #}
+{% view entity="account" name="Inactive Accounts" parameters={ "accountName": "param1", "city": "param2" } %}{% endview %}
+```
 
-Use the `parameters` attribute to substitute condition values in the view FetchXML. It accepts an array of values. `{0}` is replaced with the 1st value, `{1}` is replaced with the 2nd value, and so on. If you used string labels, use a map instead: `{ "nameparam": 1 }`.
+**Dynamic examples**
 
-```php
+```
 {# Integer placeholders #}
 {% view entity="invoice" name="Customer Invoices" parameters=[ params.name ] %}{% endview %}
+```
 
+```
 {# String placeholders #}
 {% view entity="invoice" name="Customer Invoices" parameters={ "nameparam": params.name } %}{% endview %}
 ```
 
-This is an example from previous situation:
+## Substitute lookup condition values
 
-```php
-{# Integer placeholders #}
-{% view entity="account" name="Inactive Accounts" parameters=[ "Topiclounge", "Sydn" ] %}{% endview %}
+You need to substitute lookup and optionset conditions separately because you cannot specify format items in Advanced Find. Substitution is performed by attribute name using the `lookups` parameter.
+
+### Steps to Perform Lookup Substitution for a View
+
+1. Go to Power Apps, find the necessary table, and create a new view.  
+2. Add a filter for a lookup field.  
+   For example, in the **account** table, filter the **Primary Contact** by the value “Mateo Passman”.  
+3. If you want to substitute this value (e.g., to show accounts with “Amelita Ensten”), insert the view on a WordPress page and pass the target record GUID.
+
+**Static GUID example**
+
+```twig
+{% view entity="account" name="account with lookup substitution"
+   lookups={ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" } %}
+{% endview %}
 ```
 
-If we change `{0}` parameter to `accountName`, `{1}` to `city`, our example will contain next text:
+## Dataverse view block
 
-```php
-{# String placeholders #}
-{% view entity="account" name="Inactive Accounts" parameters={ "accountName": "param1", "city": "param2" } %}{% endview %}
+To simplify work with views, you can use the **Dataverse view** block in the WordPress editor.  
+This block allows you to:
+
+- Select the **table** and **view name** from dropdown menus  
+- Set **cache duration** (seconds)  
+- Change the **language** (LCID)  
+- Define the **page size** (must be an odd number)  
+- Choose a **FetchXML template** for additional filtering  
+- Provide **lookup substitutions**  
+- Provide **parameter substitutions**
+
+**Lookup substitution example**
+
+```json
+{ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }
 ```
 
-### Substitute lookup condition values
+**Parameter substitution example**
 
-You need to substitute lookup and optionset conditions separately because you cannot specify format items in Advanced Find. Substitution is performed by attribute name using the lookups parameter.
-
-**Steps to Perform Lookup Substitution for a View:**
-
-1. Go to Power Apps, find the necessary table, and create a new view.
-2. Add a filter for a lookup field. For example, in the account table, you can filter the Primary Contact by the value “Mateo Passman”. This will display only accounts with Mateo Passman as the primary contact. If you want to substitute this value to display accounts with “Amelita Ensten” as the primary contact, follow the next step:
-- Create a page with the Dataverse view block and set the Amelita Ensten record GUID as shown in the example:
-
-```php
-{ "primarycontactid": "97737487-742e-ed11-9db1-00224893bd2f" }
 ```
- 
-Alternatively, use the **view** tag in a Twig template:
-
-```php
-{% view entity="account" name="account with lookup substitution" lookups={ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }%}{% endview %}
- ```
-
-Example Using **user.id**:
-
-```php
-{% view entity="contact" name="Active Contacts" lookups={ "customerid": user.id } %}{% endview %}
- ```
-
-## How to display email and url as active links
-
-To display email addresses and URLs as active links, set the formatHyperlinks option to true. Otherwise, they will appear as plain text.
-
-```php
-{% view entity="contact" name="Active Contacts" formatHyperlinks=true  count=100 %}{% endview %}
-```
-## How to display date or date-time column
-
-When using the **User Local** behavior, all columns will display date or date-time columns converted to the specified time zone in case of the **Local** option in `ICDS_DATETIME_VALUE`. [More details](/datapress/administration/troubleshooting.md) 
-
-**Examples:**
-
-To get the value of a date column and convert it to the user's time zone, use:
-
-```php
-{% view entity="account" name="All Accounts" datetime = 'local' %} {% endview %}
+{ "accountName": "param1Value", "city": "param2Value" }
 ```
 
-To get the value of a date column in UTC, use:
+### Display data using a custom template
 
-```php
-{% view entity="account" name="All Accounts" datetime = 'utc' %} {% endview %}
-```
-
-**Comparison Table**
-
-|                 | Legacy     |  UTC              | Local  |
-|-----------------|------------|-------------------|--------|
-|view | UTC  | UTC | convert the date and time to the user's timezone |
-|view with datetime = 'utc' | UTC  | UTC | UTC |
-|view with datetime = 'local' | convert the date and time to the user's timezone  | convert the date and time to the user's timezone | convert the date and time to the user's timezone |
-
-[Usage Scenarios](/date-and-time/#usage-scenarios)
-
-## Display data using a custom template
 
 By default, DataPress (Dataverse Integration) uses `view.twig` as a template. (See `/integration-cds/templates/twig/view.twig`.) You can define your own template inside between `{% view %}` and `{% endview %}`.
 
@@ -226,25 +287,35 @@ You can access the base view via ssh or ftp by navigating to `{your_wordpress_si
 - `page_size` -- number of rows per page.
 - `total_pages` -- total number of pages.
 
+**Custom template example**
 
-## Dataverse view block
+```
+{% view entity="account" name="Active Accounts" %}
+  <table>
+    <thead>
+      <tr>
+        {% for col_name, col in entityview.columns %}
+          <th>{{ col.name }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for id, record in entityview.records %}
+        <tr>
+          {% for col_name, col in entityview.columns %}
+            <td>{{ record[col_name] }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endview %}
+```
 
-To simplify your work with views, you can utilize the Dataverse view block while editing a page. In this block, you have the option to select the table and view name from dropdown menus.
+## Troubleshooting & Tips
 
-Additionally, you can adjust the cache time in seconds or change the language for the view.
-
-The page size determines the number of records displayed on each page. The number of pages is displayed digitally at the bottom of the screen. Please note that when entering a value in the text field, it must be an odd number.
-
-To further filter the view, you can choose a fetchXML template from the dropdown menu.
-
-If you want to filter the view based on a lookup, enter a similar value in the lookups substitution textbox. Ensure you have a filter set in the view settings in Power Apps:
-
-```php
-{ "parentcustomerid": "97737487-742e-ed11-9db1-00224893bd2f" }
- ```
-
-In the case of variables in a view, you can input values in the parameters substitution textbox:
-
-```php
-{ "accountName": "param1Value", "city": "param2Value" }
- ```
+- If the premium license is not properly activated, syntax errors may appear.
+- The view name must match exactly, including spaces.
+- Personal views must be shared with the Application User.
+- Reduce or clear cache if the data is outdated.
+- Ensure that the LCID used for the language parameter is installed in your Dataverse environment.

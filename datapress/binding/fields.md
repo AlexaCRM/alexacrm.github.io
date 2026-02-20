@@ -14,6 +14,10 @@ The plugin previously known as Dataverse Integration has been renamed to DataPre
 All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
 :::
 
+:::note
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+:::
+
 <p class="lead">Display column value using Dataverse Integration Fields Binding!</p>
 
 ## Introduction

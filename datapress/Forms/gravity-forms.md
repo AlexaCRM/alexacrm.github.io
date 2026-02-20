@@ -1,15 +1,20 @@
 ---
 title: Gravity Forms
-sidebar_position: 1
+sidebar_position: 3
 premium: true
-slug: /addons/gravity-forms
+slug: /forms/gravity-forms
 tags:
     - Gravity Forms
     - DataPress
 keywords: [DataPress Gravity Forms addon, create DataPress form with Gravity Forms]    
+description: Details of supporting Gravity Forms.
 ---
 
 <p class="lead">Use gravity forms to manage your organization data</p>
+
+:::note
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+:::
 
 ## Introduction
 

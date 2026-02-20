@@ -4,139 +4,216 @@ sidebar_position: 2
 premium: true
 slug: /binding/user-binding
 tags:
-    - Binding
-    - User binding
-    - DataPress
-keywords: [DataPress User binding, User Binding]  
+  - Binding
+  - User binding
+  - DataPress
+keywords: [DataPress User binding, User Binding]
+description: A short guide explaining how to link WordPress users to Dataverse contacts using DataPress, including binding modes, configuration, synchronization, and practical usage.
 ---
 
+import ExpandableSection from '@site/src/components/ExpandableSection';
+
 :::note
-The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
-All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
 :::
 
-<p class="lead">Link your WordPress users to Dataverse contact records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>
+:::note
+The plugin previously known as Dataverse Integration has been renamed to **DataPress**.  
+All references to “Dataverse Integration” in documentation and UI are being updated to DataPress.
+:::
+
+<p class="lead">Link WordPress users to Dataverse contact records to enable personalized experiences, secure sign‑in authorization, and optional user data synchronization.</p>
 
 ## Introduction
 
-:::info
+**What is User Binding?**
+- A mechanism to associate a WordPress user with a Dataverse **contact** record.
+- When a bound user signs in, DataPress loads the associated contact data for use in **Twig**, **FetchXML**, **views**, and **forms**.
 
-Premium feature! This feature is available in the premium extension.
+**Why bind users?**
+- Personalize content and limit visibility using current user data.
+- Parameterize FetchXML queries and [views](/dat-fill or lock form fields with default values.)
+- Implement custom table binding.
 
-:::
+**Practical examples**
+- Show only “My Opportunities”: filter a view by the current user’s contact.
+- Auto-fill a support form with the signed-in contact’s name and email.
+- Hide premium content unless the user’s contact has a “Login Enabled” flag set.
 
-DataPress (Dataverse Integration) provides capability to associate WordPress users with Dataverse contact records to provide more opportunities to build self-service customer portals.
-
-When a bound user successfully signs in, your website receives data from the bound contact record. You can use current user data to parameterize [FetchXML queries](/datapress/fetchxml.md) and [views](/datapress/views.md#prepare-the-view-for-use), [specify default values](/datapress/Forms/forms.md#default-values) in forms or even [implement custom table binding](/datapress/binding/table-binding.md#implement-custom-binding) using current user data.
-
-You can add additional authorization step to disable sign-in for selected users in Dataverse / Dynamics 365.
-
+---
 
 ## Understand user binding modes
 
-DataPress (Dataverse Integration) can bind a user to a Dataverse record in several different ways which are referred to as "binding modes".
+DataPress can bind a user to a Dataverse record using several **binding modes**.
 
-By default, a WordPress user is **not bound** to a Dataverse record. That means, whatever the global options are, the current user object is not populated, no authorization against Dataverse is performed.
+### Quick comparison
 
-In **Lookup mode** a user is bound to a Dataverse contact that is specified  explicitly. Contact can be selected using either WordPress or Dataverse user interface. This mode was previously known as Manual.
+| Mode     | How it works                                                                 | When to use                                                                 | Setup path (high level)                            |
+|----------|------------------------------------------------------------------------------|------------------------------------------------------------------------------|---------------------------------------------------|
+| Lookup   | Admin **selects** the exact Dataverse contact for the WP user                | Small/managed portals; precise control; onboarding specific users            | Users → Configure binding → Pick contact          |
+| Username | Auto-binds using **matching value** in `alexacrm_wordpress_username` column  | Larger portals; migrate existing users; reduce admin work                    | Populate column on contacts; enable Username mode |
+| Custom   | Developer logic via `integration-cds/user-binding/bind-custom` **filter**    | Complex enterprises; multi-tenant; external IDP / SSO mapping                | Implement filter; return an EntityReference       |
+| —        | **Not bound** (default)                                                      | Anonymous access; admins; when binding is not required                       | Do nothing                                        |
 
-In **Username mode** DataPress (Dataverse Integration) binds the user to a contact record with a matching value in `alexacrm_wordpress_username` column (added to contact by AlexaCRM solution). This mode was previously known as Default or Auto. 
+> **Notes**
+> - “Lookup mode” was previously known as **Manual**.  
+> - “Username mode” was previously known as **Default** or **Auto**.  
+> - **Disabled mode** is **deprecated** and no longer available in new deployments.
 
-In **Custom mode** you must implement the `integration-cds/user-binding/bind-custom` filter to return an [EntityReference](https://github.com/AlexaCRM/dynamics-webapi-toolkit/blob/master/src/Xrm/EntityReference.php) for the given user. 
+### Mode details
 
-**Disabled mode** has been **deprecated.** This feature is not available in new deployment.
+**Lookup mode**
+- **What happens:** You pick a contact in WP Admin; the user binds to that specific contact.
+- **Why use it:** Precise, auditable control; ideal for curated memberships or partner portals.
+- **Requirements:** Admin access; the target contact must exist.
+- **Good to know:** Easy to review and change per-user.
 
+**Username mode**
+- **What happens:** DataPress finds a contact whose `alexacrm_wordpress_username` matches the WP username.
+- **Why use it:** Reduces manual work when onboarding many users.
+- **Requirements:** The AlexaCRM solution adds `alexacrm_wordpress_username` to contact; ensure values are populated.
+- **Good to know:** Works well with migrations and automated provisioning.
+
+**Custom mode**
+- **What happens:** Your code returns an `EntityReference` for the current WP user.
+- **Why use it:** Complex identity strategies, multi-environment logic, or lookups by external identity keys.
+- **Requirements:** Implement the `integration-cds/user-binding/bind-custom` filter.
+- **Good to know:** Gives full control to developers.
+
+---
 
 ## Configure global binding settings
 
-Select **Bindings > User Binding** in plugin admin interface to configure global user binding settings.
+Go to **Bindings → User Binding** in the plugin admin.
 
-### Configure sign-in authorization for bound users
+**Sign-in authorization for bound users**
+- Toggle **Authorize users against Dataverse during sign‑in** to add a Dataverse check to WP authentication.
+- The system validates whether **login is enabled** for the bound contact.
+- Plays well with existing WP auth; Dataverse acts as an additional gate for bound users.
 
-Enable "Authorize users against Dataverse during sign-in" to incorporate a Dataverse authorization step into the standard WordPress authentication flow.
+**Tips**
+- If a user is **not bound**, Dataverse checks do **not** apply.
+- If you change binding modes globally, existing per-user binding may still apply per the configured mode.
 
-This setting ensures that user authentication is validated against Dataverse. The system will only check whether login is enabled for the user, allowing seamless integration with existing WordPress authentication mechanisms.
+---
 
 ## Use user binding UI to bind users to Dataverse
 
-User binding for individual users is set up in the **WordPress Admin > Users**. Hover over the user row and click **Configure binding** to reveal the configuration panel.
+In **WordPress Admin → Users**:
+1. Hover the target user and click **Configure binding**.
+2. Choose the **binding mode** (Lookup / Username / Custom).
+3. For **Lookup**, search and select the contact in the dialog.
+4. Save.
 
-You can change the binding mode of the selected user. In *Lookup mode* you can select the user using lookup dialog.
+> If you manage bindings primarily in Dataverse (Power Apps), see **Methods** below.
+
+---
 
 ## Enable field synchronization for bound users
 
-When a WordPress user is bound to a Dataverse record, you may want to synchronize some of their data between the systems. That data may include Email *(user_email)*, First Name *(first_name)*, Last Name *(last_name)* and Display Name *(display_name).* You can map these WordPress user and usermeta fields to Dataverse table columns. Leave the mapping field empty if you don't want to synchronize that particular WordPress user field.
+You can map WordPress **user / usermeta** fields to **Dataverse** columns:
+- Email — `user_email`
+- First Name — `first_name`
+- Last Name — `last_name`
+- Display Name — `display_name`
 
-:::tip
-**Information for developers**
-[How to bind a user using WP API](/knowledge-base/bind-user-via-api) 
+**How to use**
+- Open the mapping UI and set column names for the fields you want synchronized.
+- Leave any mapping **blank** to skip syncing that field.
 
+:::tip 
+Developers
+Need to manage bindings programmatically?  
+See: [**How to bind a user using WP API**.](/knowledge-base/bind-user-via-api) 
 :::
 
-## Deprecated functionality
-<details>
-  <summary>Click to expand</summary>
-
-The following functionality has been **deprecated** and removed from plugin interface. If this functionality is required please contact technical support.
-
-Recommended way to auto-create user bindings and synchronize data between WordPress users and Dataverse contacts is to use Microsoft Power Automate.
-
-### Enable username binding for new WordPress users
-
-You can provide WordPress user/usermeta field to Dataverse Contact field for initial matching. DataPress (Dataverse Integration) will locate the contact record using this mapping and set `alexacrm_wordpress_username` to the user's username.
-  
-</details>
+---
 
 ## Important to remember
 
-When using the User Binding functionality, it is essential to leave at least one user without binding. Therefore, it is recommended that you create a new user as soon as possible and without any binding. This will help ensure that you can continue to manage and administer the system should any issues arise with the users who have binding.
+:::warning
+Always keep **at least one WordPress administrator account _without_ binding**.  
+This ensures you can still access and administer the site even if bound users cannot sign in or their bindings become invalid.
+:::
 
-In summary, always have at least one user without binding to guarantee the smooth running and administration of the system.
+---
 
-## How to bind a user in WordPress Power App
+## How to bind a user in WordPress Power App (maker portal)
 
-Here are the revised instructions for binding a user from the maker portal in two different ways:
+You can create bindings directly from Dataverse using one of two methods:
 
-1. Bind Contact Record to WordPress User:
+### Method 1 — Bind **Contact → WordPress User**
+- Open the **Contact** (or WordPress **User**, see method 2 accordingly).
+- Focus on the **WordPress** section of the contact form.
+- In **User (default site)**, type and select the WordPress user.
+- Verify the **Username (default site)** value.
+- Ensure **Login Enabled** is set to **Yes**.
 
-- Open the WordPress user.
-- Pay attention to the Binding section.
-- In the “Contact” field, type the first or last name of the contact and select it.
-- Simultaneously, the contact option will be chosen in the binding field.
+<div class="text--center">
+  <img src="/images/user-to-contact.png" alt="Bind user to contact" width="700" />
+</div> 
+
+### Method 2 — Bind **WordPress User → Contact**
+- Open the **WordPress user**.
+- Focus on the **Binding** section.
+- In **Contact**, search by first/last name and select the contact.
+- The binding will be populated automatically.
 
 <div class="text--center"> 
-<img src="/images/contact-to-user.png" width="700" />
-</div>
+ <img src="/images/contact-to-user.png" alt="Contact to user" width="700" />
+</div> 
 
-2. Bind WordPress User to Contact Record:
+**When to use which?**
+- **Method 1**: You mainly work from Dataverse/Power Apps and manage contacts first.
+- **Method 2**: You mainly work from WordPress and manage users first.
 
-- Open the contact record.
-- Pay attention to the WordPress section.
-- In the “User (default site)” field, type the first and last name of your WordPress user and select it.
-- Check the username in the “Username (default site)” field.
-- Ensure that the “Login Enabled” field is set to “yes.”
+---
 
-<div class="text--center"> 
-<img src="/images/user-to-contact.png" width="700" />
-</div>
+## Use binding information in Twig
 
-**How to use binding information in twig** 
+The `user` object provides binding context on the page.
 
-The user object allows you to check whether the current user is bound and access their associated Dataverse record values.
-
-**Example Usage**
+### Example 1 — Greet bound user and show contact ID
 
 ```twig
-{{ user.record.fullname }} 
+{% if user.reference %}
+  Hello, {{ user.record.fullname }}!
+  <small>Contact ID: {{ user.reference.Id }}</small>
+{% else %}
+  Hello, Guest!
+{% endif %}
 ```
+
+### Example 2 — Filter a FetchXML list by the current contact
 
 ```twig
-{{ user.reference.Id }}
-```
-Example Output
+{% fetchxml collection="mycases" %}
+<fetch mapping="logical">
+  <entity name="incident">
+    <attribute name="title" />
+    <filter>
+      <condition attribute="customerid" operator="eq" value="{{ user.reference.Id }}" />
+    </filter>
+  </entity>
+</fetch>
+{% endfetchxml %}
 
-```
-Jsandye Stanbra
+{% for c in mycases.results.entities %}
+  <li>{{ c["title"] }}</li>
+{% endfor %}
 ```
 
- [Read more](/twig/introduction/#access-the-current-user-record)
+You can also parameterize views and forms using the current user’s contact data (e.g., default values, conditional visibility).
+
+## Deprecated functionality
+
+<ExpandableSection >
+
+The following functionality has been deprecated and removed from the plugin interface.
+If you still require it, please contact technical support.
+Recommended modern approach: Use Microsoft Power Automate to auto-create user bindings and to synchronize data between WordPress users and Dataverse contacts.
+
+Enable username binding for new WordPress users.
+
+You could map a WordPress `user/usermeta` field to a Dataverse Contact field for initial matching. DataPress would locate the contact using this mapping and set `alexacrm_wordpress_username` to the WP username.
+</ExpandableSection>

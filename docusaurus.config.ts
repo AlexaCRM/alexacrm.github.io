@@ -77,7 +77,7 @@ const config: Config = {
             from: ['/integration-cds/views'],
           },
           {
-            to: '/twig/introduction', 
+            to: '/twig/overview/', 
             from: ['/integration-cds/twig'],
           },
           {
@@ -89,7 +89,7 @@ const config: Config = {
             from: ['/integration-cds/forms'],
           },
           {
-            to: '/addons/gravity-forms', 
+            to: '/forms/gravity-forms', 
             from: ['/integration-cds/gravity-forms'],
           },
           {

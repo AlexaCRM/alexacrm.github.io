@@ -10,10 +10,8 @@ keywords: [DataPress premium]
 
 ## Premium features
 
-:::info
-
-Premium feature! This feature is available in the premium extension.
-
+:::note
+This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
 :::
 
 **Our Premium Plugin Features.**

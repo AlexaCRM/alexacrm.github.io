@@ -88,12 +88,12 @@ A user’s birthday is an event that doesn’t depend on a specific time zone—
 - If **only the date is important**, use **Date Only** or **Time Zone Independent (Date Only)**.
 - Avoid **User Local (Date Only)** unless you want time zone conversions to affect the stored date.
 
-[More details for twig](/twig/display-separate-column-value/#get-date-column-from-crm)
+[More details for twig](/twig/examples/#working-with-date-columns)
 
-[More details for view](/views/#how-to-display-date-or-date-time-column)
+[More details for view](/views/#how-to-display-date-or-date-time-columns)
 
-[More details for custom forms](/forms/custom-forms/#date-time-and-date-only-fields-in-custom-forms)
+[More details for custom forms](/forms/custom-forms-notes/#datetime-fields-in-custom-forms)
 
 [More details for Elementor](/addons/elementor/#how-to-create-a-field-for-a-date-time-column)
 
-[More details for Gravity forms](/addons/gravity-forms/#date-and-time-columns)
+[More details for Gravity forms](/forms/gravity-forms/#date-and-time-columns)

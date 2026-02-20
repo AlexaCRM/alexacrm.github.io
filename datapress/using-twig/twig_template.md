@@ -6,6 +6,7 @@ tags:
     - Twig
     - DataPress
 keywords: [DataPress twig]  
+description: A practical guide to creating, using, and overriding reusable Twig templates in DataPress.
 ---
 
 :::info
