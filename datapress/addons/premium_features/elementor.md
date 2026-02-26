@@ -1,6 +1,6 @@
 ---
 title: Elementor
-sidebar_position: 2
+sidebar_position: 4
 premium: true
 slug: /addons/elementor
 tags:
@@ -13,7 +13,7 @@ keywords: [DataPress Elementor addon, create DataPress form with Elementor]
 ## Introduction
 
 :::note
-This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+This is a premium feature. For more details see [Premium Edition](/premium-edition/).
 :::
 
 Our plugin supports Elementor. We offer several widgets that are compatible with Elementor (including Elementor Pro). To edit a form using Elementor, you need to install and activate the DataPress Integration Premium plugin.

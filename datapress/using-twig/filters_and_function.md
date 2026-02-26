@@ -1,6 +1,6 @@
 ---
-sidebar_position: 7
-title: Filters and function
+sidebar_position: 5
+title: Filters and functions
 slug: /twig/filters_and_function
 tags:
     - Twig
@@ -61,7 +61,7 @@ DataPress (Dataverse Integration) provides several Dataverse-specific and genera
 
 ### entity_url
 
-- `entity_url( record, postId = null )` -- returns URL to the website page with the given entity record bound to it. Uses [Table Binding](/datapress/binding/table-binding.md) feature. If more than one WordPress post is bound to the table, you can pass post ID to link to a different page instead. 
+- `entity_url( record, postId = null )` -- returns URL to the website page with the given entity record bound to it. Uses [Table Binding](/binding/table-binding) feature. If more than one WordPress post is bound to the table, you can pass post ID to link to a different page instead. 
 
 ### retrieve_multiple
 

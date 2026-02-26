@@ -1,5 +1,5 @@
 ---
-title: Notes (capabilities & limitations)
+title: Details (capabilities & limitations)
 sidebar_position: 3
 premium: true
 slug: /forms/forms-reference

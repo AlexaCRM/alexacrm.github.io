@@ -21,6 +21,6 @@ add_action( 'wordpresscrm_after_twig_ready', function( $twigEnv ) {
 
 After that you should be able to use wpuser object
 
-```
+```html
 <p>Hello, <strong>{{wpuser.first_name}}</strong></p>
 ```

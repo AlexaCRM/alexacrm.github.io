@@ -10,7 +10,7 @@ tags:
 
 After submitting a form, a site visitor can be redirected to any page using redirect attribute of the `{% form %}` tag
 
-```
+```twig
 {% form ... redirect="https://wordpress.org" ... %}
 ```
 
@@ -19,7 +19,7 @@ In some instances this redirect may not work as expected. We are investigating t
 1. Locate `core.php` file in the plugin directory
 2. Add the following code at the line 287
 
-```
+```php
 wp_ob_end_flush_all();
 ```
 

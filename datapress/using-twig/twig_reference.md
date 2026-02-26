@@ -1,6 +1,6 @@
 ---
-sidebar_position: 3
-title: Twig Notes. Capabilities & Limitations
+sidebar_position: 2
+title: Details. Capabilities & Limitations
 slug: /twig/notes
 tags: [Twig, DataPress]
 keywords: [DataPress twig reference]

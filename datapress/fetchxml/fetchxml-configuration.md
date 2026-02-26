@@ -64,7 +64,7 @@ Alias the linked entity to access attributes:
 
 Or alias individual attributes:
 
-```
+```twig
 {{ record["cityname"] }}
 ```
 
@@ -83,7 +83,7 @@ Templates can be assigned to:
 
 Basic template example:
 
-```
+```twig
 <fetch mapping="logical">
   /
 </fetch>
@@ -122,7 +122,7 @@ Global lookup filter:
 
 Use FormattedValues to display user-friendly representations of fields such as option sets, dates, currency:
 
-```
+```twig
 {% set record = accounts.results.entities[0] %}
 {{ record.FormattedValues["cont.modifiedon"] }}
 ```

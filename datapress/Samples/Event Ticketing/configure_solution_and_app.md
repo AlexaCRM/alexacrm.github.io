@@ -360,7 +360,7 @@ Follow these steps to add your logo:
 
 3. Open the **Anonymous Event Sign-Up Form** and edit it. In the ribbon, click the icon &lt;/&gt; HTML to open the HTML editor. Under the `<style>` tag, find the code below.
 
-```
+```php
 div[data-cached-form-url] .onFormSubmittedFeedback .onFormSubmittedFeedbackInternalContainer {
             padding: 30px 0px 30px 1px;
             background: url(/wp-content/uploads/2025/01/site-logo.png) no-repeat center calc(100% - 50px);

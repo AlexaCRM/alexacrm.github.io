@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-title: Twig Configuration
+sidebar_position: 1
+title: Configuration
 slug: /twig/configuration
 tags: [Twig, Configuration]
 keywords: [DataPress twig configuration]
@@ -78,7 +78,7 @@ Global object `params` is the alias of `request.params`.
 
 ### Dataverse Connection Status
 
-```
+```php
 {% if crm.connected %}
   Dataverse connection active
 {% endif %}

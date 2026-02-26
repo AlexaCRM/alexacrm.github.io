@@ -1,6 +1,6 @@
 ---
 title: Views
-sidebar_position: 7
+sidebar_position: 1
 premium: true
 slug: /views
 tags:
@@ -11,12 +11,32 @@ description: How to display views on your WordPress site using DataPress, includ
 ---
 
 :::note
-This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+This is a premium feature. For more details see [Premium Edition](/premium-edition/).
 :::
 
-:::note
-The plugin previously known as **Dataverse Integration** has been renamed to **DataPress**. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision. All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
-:::
+<div
+  role="note"
+  aria-label="Product note"
+  style={{
+    borderLeft: '4px solid #2f81f7',
+    background: '#f0f7ff',
+    padding: '12px 16px',
+    borderRadius: '6px',
+    margin: '1em 0',
+    color: '#0b2e59',
+  }}
+>
+  <div style={{ color: '#0b63d1', fontWeight: 600, marginBottom: '6px' }}>Note</div>
+  <p style={{ margin: '0 0 6px 0' }}>
+    The plugin previously known as <em>Dataverse Integration</em> has been renamed to <strong>DataPress</strong>.
+  </p>
+  <p style={{ margin: '0 0 6px 0' }}>
+    This change reflects our commitment to enhancing user experience and aligning with our product vision.
+  </p>
+  <p style={{ margin: 0 }}>
+    All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
+  </p>
+</div>
 
 <p class="lead">Display Dataverse and Dynamics 365 views (tabular lists of records) on your WordPress pages using DataPress.</p>
 
@@ -102,7 +122,7 @@ To cache the data in the view, specify the cache duration in the `cache` paramet
 
 In this subsection, you'll learn to render email addresses and URLs as clickable links.
 
-```
+```php
 {% view entity="contact" name="Active Contacts" formatHyperlinks=true count=100 %}{% endview %}
 ```
 
@@ -112,12 +132,12 @@ When using the User Local behavior, columns will display date/time converted to 
 
 **Examples**
 
-```
+```twig
 {# Convert date/time to the user's time zone #}
 {% view entity="account" name="All Accounts" datetime='local' %}{% endview %}
 ```
 
-```
+```twig
 {# Keep UTC values #}
 {% view entity="account" name="All Accounts" datetime='utc' %}{% endview %}
 ```
@@ -154,7 +174,7 @@ Power Apps / Dynamics 365 views are **FetchXML** queries. You can parameterize f
 
 **Example (single condition)**
 
-```
+```twig
 <condition attribute="fullname" operator="like" value="%TestData%" />
 ```
 
@@ -198,19 +218,19 @@ Use the `parameters` attribute to substitute condition values in the view FetchX
 
 **Named placeholders**
 
-```
+```twig
 {# {accountName} → "param1", {city} → "param2" #}
 {% view entity="account" name="Inactive Accounts" parameters={ "accountName": "param1", "city": "param2" } %}{% endview %}
 ```
 
 **Dynamic examples**
 
-```
+```twig
 {# Integer placeholders #}
 {% view entity="invoice" name="Customer Invoices" parameters=[ params.name ] %}{% endview %}
 ```
 
-```
+```twig
 {# String placeholders #}
 {% view entity="invoice" name="Customer Invoices" parameters={ "nameparam": params.name } %}{% endview %}
 ```
@@ -255,7 +275,7 @@ This block allows you to:
 
 **Parameter substitution example**
 
-```
+```json
 { "accountName": "param1Value", "city": "param2Value" }
 ```
 
@@ -289,7 +309,7 @@ You can access the base view via ssh or ftp by navigating to `{your_wordpress_si
 
 **Custom template example**
 
-```
+```twig
 {% view entity="account" name="Active Accounts" %}
   <table>
     <thead>

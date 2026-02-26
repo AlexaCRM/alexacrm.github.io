@@ -9,13 +9,32 @@ tags:
     - DataPress
 keywords: [DataPress Fields Binding, Fields Binding addon]    
 ---
-:::note
-The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
-All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
-:::
+<div
+  role="note"
+  aria-label="Product note"
+  style={{
+    borderLeft: '4px solid #2f81f7',
+    background: '#f0f7ff',
+    padding: '12px 16px',
+    borderRadius: '6px',
+    margin: '1em 0',
+    color: '#0b2e59',
+  }}
+>
+  <div style={{ color: '#0b63d1', fontWeight: 600, marginBottom: '6px' }}>Note</div>
+  <p style={{ margin: '0 0 6px 0' }}>
+    The plugin previously known as <em>Dataverse Integration</em> has been renamed to <strong>DataPress</strong>.
+  </p>
+  <p style={{ margin: '0 0 6px 0' }}>
+    This change reflects our commitment to enhancing user experience and aligning with our product vision.
+  </p>
+  <p style={{ margin: 0 }}>
+    All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
+  </p>
+</div>
 
 :::note
-This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+This is a premium feature. For more details see [Premium Edition](/premium-edition/).
 :::
 
 <p class="lead">Display column value using Dataverse Integration Fields Binding!</p>
@@ -56,7 +75,7 @@ To use this plugin, follow the steps below:
 
 At the bottom of the page, select the custom field(s) created in the Dataverse Admin Area and click **Add Custom Field**. Use the following example to display the field on the page:
 
-```
+```twig
 {{ getMeta("custom_field_name")}}<br>
 ```
 
@@ -64,7 +83,7 @@ At the bottom of the page, select the custom field(s) created in the Dataverse A
 
 9. **Add the output of the meta field to your template:**
 
-```
+```twig
 add_filter('integration-cds/twig/functions', function ($functionsArray) {    
     $functionsArray['getMeta'] = new Twig\TwigFunction('getMeta', function ($metaName) { 
         return get_post_meta(get_the_ID(), $metaName);    });    

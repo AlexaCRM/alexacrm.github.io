@@ -96,7 +96,7 @@ In this example, we're retrieving ten *Contact* records, fetching only fields `c
 
 Add the results node into the `[msdyncrm_view]` shortcode. `<results />` may contain HTML tags. Please note that its contents must be valid XML.
 
-```
+```xml
 <results>
     <h2>Contacts list</h2>
     <p>List of active contacts</p>

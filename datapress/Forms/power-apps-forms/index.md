@@ -11,7 +11,7 @@ description: Power Apps Forms allow you to display Dataverse forms on your WordP
 ---
 
 :::note
-This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+This is a premium feature. For more details see [Premium Edition](/premium-edition).
 :::
 
 <p class="lead">

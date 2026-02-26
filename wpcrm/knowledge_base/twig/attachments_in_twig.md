@@ -11,20 +11,20 @@ tags:
 
 The attachments stored in annotation entity are accessible using a special purpose-built URL:
 
-```
+```http
 https://www.yoursite.com/wp-admin/admin-ajax.php?action=msdyncrm_attachment&id=annotationid​​​​
 ```
 
 where `annotationid` contains the record id of the record containing the attachment. For example
 
-```
+```http
 https://www.yoursite.com/wp-admin/admin-ajax.php?action=msdyncrm_attachment
 &id=92e12768-1077-495b-9116-f6095f567ba4
 ```
 
 The following twig fragment displays a list of attachments for the current record (defined via entity binding):
 
-```
+```twig
 {​​​​​% fetchxml collection="files" cache="PT30M" %}​​​​​
 <fetch mapping="logical">
   <entity name="annotation" >

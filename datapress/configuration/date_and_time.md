@@ -92,7 +92,7 @@ A user’s birthday is an event that doesn’t depend on a specific time zone—
 
 [More details for view](/views/#how-to-display-date-or-date-time-columns)
 
-[More details for custom forms](/forms/custom-forms-notes/#datetime-fields-in-custom-forms)
+[More details for custom forms](/forms/custom-forms-details/#datetime-fields-in-custom-forms)
 
 [More details for Elementor](/addons/elementor/#how-to-create-a-field-for-a-date-time-column)
 

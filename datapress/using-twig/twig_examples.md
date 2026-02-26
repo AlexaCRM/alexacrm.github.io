@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Twig Examples
+sidebar_position: 3
+title: Examples
 slug: /twig/examples
 tags: [Twig, DataPress]
 keywords: [DataPress twig examples]

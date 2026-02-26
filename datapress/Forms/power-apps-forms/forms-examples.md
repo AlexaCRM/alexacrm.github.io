@@ -28,7 +28,7 @@ Render a form using its **form registration ID**:
 ##  Render a form with default field values
 Use the defaults attribute to pre-populate fields:
 
-```
+```twig
 {% form id=42 defaults={
   "leadsourcecode": 8,
   "donotfax": true,
@@ -47,7 +47,7 @@ Use the defaults attribute to pre-populate fields:
 For choice fields, pass the integer value of the option.
 **Example:** set gendercode to “Male” where “Male” has value 1:
 
-```
+```twig
 {% form id=4 defaults={"gendercode": 1} %}
 ```
 
@@ -57,14 +57,13 @@ You can find label/value mapping in Dataverse column settings or metadata.
 
 Multi-select values are passed as a comma-separated string:
 
-```
-
+```twig
 {% form id=2 defaults={"multipleChoiceColumnName": "3,4"} %}
 ```
 
 ### Pre-select lead source
 
-```
+```twig
 {% form id=42 defaults={"leadsourcecode": 8} %}
 ```
 
@@ -99,7 +98,7 @@ If your form registration enables **Allow deleting the record**, you should guar
 
 Add to functions.php:
 
-```
+```php
 add_filter( 'integration-cds/forms/authorize-delete', function( $isAuthorized, $reg, $target ) {
     // Reject if no record was resolved
     if ( $target === null ) {
@@ -127,7 +126,7 @@ The snippet below restricts lookups to **authenticated users only**.
 
 Add it to the active theme’s functions.php:
 
-```
+```php
 add_filter( 'integration-cds/lookup/authorize-access', function( $isAllowed, $entityName, $view ) {
     if ( ! is_user_logged_in() ) {
         return false;

@@ -9,15 +9,35 @@ keywords: [DataPress custom form]
 description: How to create custom forms
 ---
 
-:::note
-The plugin previously known as **Dataverse Integration** has been renamed to **DataPress**. All references in documentation and UI are being updated accordingly. [1](https://docs.alexacrm.com/forms/custom-forms/)
-:::
+<div
+  role="note"
+  aria-label="Product note"
+  style={{
+    borderLeft: '4px solid #2f81f7',
+    background: '#f0f7ff',
+    padding: '12px 16px',
+    borderRadius: '6px',
+    margin: '1em 0',
+    color: '#0b2e59',
+  }}
+>
+  <div style={{ color: '#0b63d1', fontWeight: 600, marginBottom: '6px' }}>Note</div>
+  <p style={{ margin: '0 0 6px 0' }}>
+    The plugin previously known as <em>Dataverse Integration</em> has been renamed to <strong>DataPress</strong>.
+  </p>
+  <p style={{ margin: '0 0 6px 0' }}>
+    This change reflects our commitment to enhancing user experience and aligning with our product vision.
+  </p>
+  <p style={{ margin: 0 }}>
+    All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
+  </p>
+</div>
 
 ## Custom form examples
 
 ### 1. Update a Contact
 
-```
+```twig
 {% form entity="contact" mode="update" record=record|to_entity_reference %}
 <form>
   <div class="form-group">
@@ -51,7 +71,7 @@ The plugin previously known as **Dataverse Integration** has been renamed to **D
 
 ### 2. Contact Us Form (Create) + reCAPTCHA
 
-```
+```twig
 {% form entity="lead" mode="create" recaptcha=true %}
 <form>
   <div class="form-group">
@@ -83,7 +103,7 @@ The plugin previously known as **Dataverse Integration** has been renamed to **D
 
 ### 3. Date Only & Date Time fields
 
-```
+```twig
 {% form entity="contact" mode="create" %}
 <form>
   <div class="form-group">
@@ -111,7 +131,7 @@ The plugin previously known as **Dataverse Integration** has been renamed to **D
 
 ### 4. Display extracted date/time values
 
-```
+```twig
 <div class="form-group">
   <label>UTC Date:
     <input class="form-control" name="cr1d1_datetime_utc_date" value="{{ currentRecord['cr1d1_datetime_utc_date'] }}">

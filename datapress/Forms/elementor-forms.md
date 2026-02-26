@@ -11,7 +11,7 @@ description: Details of supporting Elementor.
 ---
 
 :::note
-This is a premium feature. For more details see [Premium Edition](/extensions/gravity-forms).
+This is a premium feature. For more details see [Premium Edition](/premium-edition).
 :::
 
 # Elementor Forms
