@@ -209,7 +209,7 @@ If you already have a registration, you can skip this step.
 
 <ExpandableSection title="How to configure DataPress Solution">
 
-### Create Application Password
+**Create Application Password**
 
 1. Sign in into your WordPress site.
 2. Select a user with admin privileges (user with the role System Administrator) or create a new one to connect back to the site.
@@ -220,7 +220,7 @@ If you already have a registration, you can skip this step.
 <img src="/images/password.png" alt="Password" width="700" />
 </div>
 
-### Configure DataPress Solution
+**Configure DataPress Solution**
 
 1. Download latest [DataPress by AlexaCRM solution](https://wpab.alexacrm.com/release/WordPressIntegration_managed.zip). 
 2. Sign in into https://make.powerapps.com.
