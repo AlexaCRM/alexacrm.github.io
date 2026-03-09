@@ -1,5 +1,5 @@
 ---
-title: Dataverse Integration Fields Binding
+title: Fields Binding
 sidebar_position: 3
 slug: /binding/fields
 premium: true
@@ -7,7 +7,8 @@ tags:
     - Binding
     - Fields binding
     - DataPress
-keywords: [DataPress Fields Binding, Fields Binding addon]    
+keywords: [DataPress Fields Binding, Fields Binding addon]
+description: Guide to using the Fields Binding feature in DataPress, allowing you to display and format Dataverse column values with custom Twig code and templates.
 ---
 <div
   role="note"
