@@ -164,7 +164,7 @@ The FetchXML query is contained between the `fetchxml` and `endfetchxml` tags.
 {% fetchxml collection="contacts" cache="PT30M" %}
 ```
 
-```
+```twig
 <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
   <entity name="contact">
     <attribute name="fullname" />

@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 slug: /legal/privacy
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Privacy Policy

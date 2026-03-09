@@ -1,11 +1,12 @@
 ---
 sidebar_position: 4
-title: Twig template
+title: Twig templates
 slug: /twig/twig_template
 tags:
     - Twig
     - DataPress
 keywords: [DataPress twig]  
+description: A practical guide to creating, using, and overriding reusable Twig templates in DataPress.
 ---
 
 :::info
@@ -58,7 +59,7 @@ If you want to create a template for updating record you can look at this exampl
 {% endform %}
 ```
 
-Then at the moment of page creation you need to use the `include` statement with the template name(previous example). And you need to configure binding for this page to have opportunity to update necessary record. [See how to configure binding.](/datapress/binding/table-binding.md) 
+Then at the moment of page creation you need to use the `include` statement with the template name(previous example). And you need to configure binding for this page to have opportunity to update necessary record. [See how to configure binding.](/binding/table-binding) 
 
 You can also use templates to replace the form template or individual form fields in form registration editor. For this purpose click `Render form based on twig template` on the creation form page. Then choose your template name from the form template dropdown. If you want to replace just some fields you should leave default value for the form template dropdown, but set value for `fields templates`.
 
@@ -105,7 +106,7 @@ wp-content/uploads/templates/
 
 Place your Twig files in this folder, such as:
 
-```
+```plaintext
 wp-content/uploads/templates/t1.twig
 ```
 

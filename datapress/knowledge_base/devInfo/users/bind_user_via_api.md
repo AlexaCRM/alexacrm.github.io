@@ -17,13 +17,13 @@ There are multiple ways to bind a user using the WordPress API.
 
 **Definition:**
 
-```
+```http
 PUT  /index.php?rest_route=/integration-cds/v1/user_binding/{userId}
 ```
 
 **Example Request**
 
-```text
+```http
 https://{site-url}/index.php?rest_route=/integration-cds/v1/user_binding/10
 ```
 
@@ -59,13 +59,13 @@ To remove an existing binding, use the following request body:
 
 **Definition:**
 
-```
+```http
 POST  /wp-json/wp/v2/users/{id}
 ```
 
 **Example Request**
 
-```text
+```http
 https://{site-url}/wp-json/wp/v2/users/10
 ```
 

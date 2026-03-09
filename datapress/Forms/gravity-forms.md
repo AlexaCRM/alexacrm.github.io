@@ -1,15 +1,20 @@
 ---
 title: Gravity Forms
-sidebar_position: 1
+sidebar_position: 3
 premium: true
-slug: /addons/gravity-forms
+slug: /forms/gravity-forms
 tags:
     - Gravity Forms
     - DataPress
 keywords: [DataPress Gravity Forms addon, create DataPress form with Gravity Forms]    
+description: Details of supporting Gravity Forms.
 ---
 
 <p class="lead">Use gravity forms to manage your organization data</p>
+
+:::note
+This is a premium feature. For more details see [Premium Edition](/premium-edition).
+:::
 
 ## Introduction
 
@@ -82,7 +87,7 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
 
 1. Fixed value:
 
-  ```
+  ```php
      field_values="companyid=account:f5aaed4c-654c-4730-bd4f-38bc19a330bd"
   ```
 

@@ -1,6 +1,6 @@
 ---
-title: Premium plugin
-sidebar_position: 2
+title: Installation & Configuration
+sidebar_position: 1
 slug: /premium-features
 tags:
     - Premium
@@ -10,10 +10,8 @@ keywords: [DataPress premium]
 
 ## Premium features
 
-:::info
-
-Premium feature! This feature is available in the premium extension.
-
+:::note
+This is a premium feature. For more details see [Premium Edition](/premium-edition/).
 :::
 
 **Our Premium Plugin Features.**

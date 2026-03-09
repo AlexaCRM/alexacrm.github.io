@@ -19,13 +19,13 @@ All API requests below require Basic Authentication.
 
 **Definition:**
 
-```
+```http
 GET  /wp-json/wp/v2/users/{id}
 ```
 
 **Example Request**
 
-```text
+```http
 https://{url}/wp-json/wp/v2/users/{id}
 ```
 
@@ -76,13 +76,13 @@ The icds_last_login field shows the last login date. It can be empty if the user
 
 **Definition:**
 
-```
+```http
 GET  /wp-json/wp/v2/users/context=edit&icds_filter={conditions}
 ```
 
 **Example**
 
-```
+```http
 https://{{baseUrl}}/wp-json/wp/v2/users?context=edit&icds_filter=[{"Field": "icds_binding","Operator": "eq","Value": "1"}]
 ```
 
@@ -139,11 +139,11 @@ You can add as many elements as you want. Operators can be: `eq, ne, gt, lt, ge,
 
 **Definition:**
 
-```
+```http
 GET  /wp-json/wp/v2/users?context=edit&query={conditions}
 ```
 
-```
+```http
 https://{baseUrl}/wp-json/wp/v2/users?context=edit&query={"Filter": {"Type": "and", "Conditions": [{"Field": "user_name", "Operator": "eq", "Value": "adil"}]}, "Order": [{"Field": "id", "Dir": "asc"}], "Select": ["id", "email", "first_name"]}
 ```
 
@@ -214,13 +214,13 @@ https://{baseUrl}/wp-json/wp/v2/users?context=edit&query={"Filter": {"Type": "an
 
 **Definition:**
 
-```
+```http
 GET  /wp-json/wp/v2/users/context=edit&icds_filter_header=1
 ```
 
 **Example**
 
-```
+```http
 https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_filter_header=1
 ```
 
@@ -249,19 +249,19 @@ https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_filter_heade
 
 **Definition**
 
-```
+```http
 POST /wp-json/integration-cds/v1/users
 ```
 
 **Example Request:**
 
-```
+```http
 https://{baseUrl}/wp-json/integration-cds/v1/users
 ```
 
 **Request Body:**
 
-```
+```json
 {
   "Filter": {
     "Type": "and",
@@ -285,13 +285,13 @@ https://{baseUrl}/wp-json/integration-cds/v1/users
 
 **Definition**
 
-```
+```http
 GET /wp-json/wp/v2/users?context=edit&icds_select_header=1
 ```
 
 **Example**
 
-```
+```http
 https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_select_header=1
 ```
 **Parameter**: `icds_select_header=1 `.
@@ -304,13 +304,13 @@ In this example, you will see only the id, email, description, and url fields fo
 
 **Definition**
 
-```
+```http
 GET  /wp-json/wp/v2/users?context=edit&icds_order_header=1
 ```
 
 **Example**
 
-```
+```http
 https://{your-wordpress-site}/wp-json/wp/v2/users?context=edit&icds_order_header=1
 ```
 
@@ -326,13 +326,13 @@ To send a password reset message to a user, you can use one of the following:
 
 **Definition**
 
-```
+```http
 POST /wp-json/integration-cds/v1/reset_password?email={userEmail}&id={userId}&login={userLogin}
 ```
 
 **Example**
 
-```
+```http
 https://{your-wordpress-site}/wp-json/integration-cds/v1/reset_password?email={userEmail}&id={userId}&login={userLogin}
 ```
 
@@ -358,13 +358,13 @@ This request will send a password reset link to the user and return an empty bod
 
 **Definition**
 
-```
+```http
 GET  /wp-json/integration-cds/v1/reset_password_link?email={userEmail}
 ```
 
 **Example**
 
-```
+```http
 https://{your-wordpress-site}/wp-json/integration-cds/v1/reset_password_link?email=user@example.com
 ```
 

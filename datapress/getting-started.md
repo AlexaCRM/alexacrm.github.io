@@ -9,10 +9,29 @@ tags:
 keywords: [DataPress how to start]  
 ---
 
-:::note
-The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
-All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
-:::
+<div
+  role="note"
+  aria-label="Product note"
+  style={{
+    borderLeft: '4px solid #2f81f7',
+    background: '#f0f7ff',
+    padding: '12px 16px',
+    borderRadius: '6px',
+    margin: '1em 0',
+    color: '#0b2e59',
+  }}
+>
+  <div style={{ color: '#0b63d1', fontWeight: 600, marginBottom: '6px' }}>Note</div>
+  <p style={{ margin: '0 0 6px 0' }}>
+    The plugin previously known as <em>Dataverse Integration</em> has been renamed to <strong>DataPress</strong>.
+  </p>
+  <p style={{ margin: '0 0 6px 0' }}>
+    This change reflects our commitment to enhancing user experience and aligning with our product vision.
+  </p>
+  <p style={{ margin: 0 }}>
+    All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
+  </p>
+</div>
 
 import ExpandableSection from '@site/src/components/ExpandableSection';
 
@@ -163,7 +182,7 @@ After the site migration, ensure you re-register the site in Dataverse. Multiple
 
 ## Create a form
 
-The plugin provides a Gutenberg block, "Dataverse Plain". To create your first form, you can use the [custom form syntax](/datapress/Forms/custom-forms.md).
+The plugin provides a Gutenberg block, "Dataverse Plain". To create your first form, you can use the [custom form syntax](/forms/custom-forms-example).
 
 ## Install Premium Features
 
@@ -209,7 +228,7 @@ If you already have a registration, you can skip this step.
 
 <ExpandableSection title="How to configure DataPress Solution">
 
-### Create Application Password
+**Create Application Password**
 
 1. Sign in into your WordPress site.
 2. Select a user with admin privileges (user with the role System Administrator) or create a new one to connect back to the site.
@@ -220,7 +239,7 @@ If you already have a registration, you can skip this step.
 <img src="/images/password.png" alt="Password" width="700" />
 </div>
 
-### Configure DataPress Solution
+**Configure DataPress Solution**
 
 1. Download latest [DataPress by AlexaCRM solution](https://wpab.alexacrm.com/release/WordPressIntegration_managed.zip). 
 2. Sign in into https://make.powerapps.com.

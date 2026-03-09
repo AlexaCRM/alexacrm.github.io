@@ -32,7 +32,7 @@ add_filter('integration-cds/twig/functions', function (array $fns) {
     return $fns;
 }, 10, 1);
 ```
-```
+
 
 This registers a new Twig function `wp_email_exists` that:
 

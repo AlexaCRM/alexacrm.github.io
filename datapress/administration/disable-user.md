@@ -8,10 +8,30 @@ tags:
     - DataPress
 keywords: [DataPress user, WordPress user]    
 ---
-:::note
-The plugin previously known as Dataverse Integration has been renamed to DataPress. This change reflects our commitment to enhancing user experience and aligning with our evolving product vision.
-All references to Dataverse Integration in the documentation, user interface will be updated to DataPress.
-:::
+
+<div
+  role="note"
+  aria-label="Product note"
+  style={{
+    borderLeft: '4px solid #2f81f7',
+    background: '#f0f7ff',
+    padding: '12px 16px',
+    borderRadius: '6px',
+    margin: '1em 0',
+    color: '#0b2e59',
+  }}
+>
+  <div style={{ color: '#0b63d1', fontWeight: 600, marginBottom: '6px' }}>Note</div>
+  <p style={{ margin: '0 0 6px 0' }}>
+    The plugin previously known as <em>Dataverse Integration</em> has been renamed to <strong>DataPress</strong>.
+  </p>
+  <p style={{ margin: '0 0 6px 0' }}>
+    This change reflects our commitment to enhancing user experience and aligning with our product vision.
+  </p>
+  <p style={{ margin: 0 }}>
+    All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
+  </p>
+</div>
 
 <p class="lead">Link your WordPress users to Dataverse records to provide customized experiences, user data synchronization and extra sign-in authorization.</p>
 

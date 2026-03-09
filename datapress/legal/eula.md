@@ -1,7 +1,7 @@
 ---
 title: End User License Agreement (EULA)
 slug: /legal/eula
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # End User License Agreement (EULA)

@@ -1,12 +1,40 @@
 ---
-sidebar_position: 3
-title: Filters and function
-slug: /twig/filters_and_function
-tags:
-    - Twig
-    - DataPress
-keywords: [DataPress twig]  
+sidebar_position: 2
+title: Reference
+slug: /twig/reference
+tags: [Twig, DataPress]
+keywords: [DataPress twig reference]
+description: Reference guide to DataPress Twig global objects, filters and functions, including formatted values, entity references, file/image URLs, Web API queries, and utility helpers.
 ---
+
+## Global Objects
+
+### `binding` — Current Page-Bound Record  
+
+- `is_bound`
+- `reference` — lightweight entity reference
+- `record` — full entity data (slower)
+- `currentrecord` — legacy alias (use only for backward compatibility)
+
+### `user` — Current User Information
+
+- `is_bound`
+- `reference`
+- `record`
+- `wp_user`
+- `timezone`
+- `locale`
+
+**Performance tip:** prefer `.reference` unless the full record is needed.
+
+### `entities` — Any Record by Table & GUID
+
+Example:
+
+```twig
+{{ entities.contact["GUID"]["fullname"] }}
+```
+
 
 ## Filters
 
@@ -60,7 +88,7 @@ DataPress (Dataverse Integration) provides several Dataverse-specific and genera
 
 ### entity_url
 
-- `entity_url( record, postId = null )` -- returns URL to the website page with the given entity record bound to it. Uses [Table Binding](/datapress/binding/table-binding.md) feature. If more than one WordPress post is bound to the table, you can pass post ID to link to a different page instead. 
+- `entity_url( record, postId = null )` -- returns URL to the website page with the given entity record bound to it. Uses [Table Binding](/binding/table-binding) feature. If more than one WordPress post is bound to the table, you can pass post ID to link to a different page instead.
 
 ### retrieve_multiple
 
@@ -72,12 +100,13 @@ DataPress (Dataverse Integration) provides several Dataverse-specific and genera
 
 **select**: A list of the fields to be returned for each record. Here, the columns specified are fullname and ownerid.
 
-**filter**: This parameter is used to filter the records based on specified value. 
+**filter**: This parameter is used to filter the records based on specified value.
 
-**order**: Specifies the ordering of the returned records. The key is the column logical name and the value is the sort direction. 
+**order**: Specifies the ordering of the returned records. The key is the column logical name and the value is the sort direction.
 
 **expand**: Used to include related entities or additional data from related entities in the results. This parameter can help fetch detailed information from linked entities. Other examples:
-- parentcustomerid_account($select=name,telephone1,accountid) 
+
+- parentcustomerid_account($select=name,telephone1,accountid)
 - transactioncurrencyid($select=isocurrencycode).
 
 **top**: Limits the number of records returned. Here, it is set to 2, meaning only the top 2 records will be returned.

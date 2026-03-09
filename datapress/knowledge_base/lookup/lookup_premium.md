@@ -19,5 +19,5 @@ Use next steps to manage lookup fields in your forms:
 
 Focus on the Lookup Fields section. Here, you can configure how lookup fields behave:
 - *Display Mode*: Choose from options like select, dialog, or dropdown to determine how lookup fields appear to users.
-- *Filtering Lookup Values*: To filter lookup values based on specific criteria, select a fetchXML template from the dropdown list. This template defines the conditions for filtering the lookup values. For more details on fetchXML, you can refer to the [FetchXML documentation](/datapress/fetchxml.md)
+- *Filtering Lookup Values*: To filter lookup values based on specific criteria, select a fetchXML template from the dropdown list. This template defines the conditions for filtering the lookup values. For more details on fetchXML, you can refer to the [FetchXML documentation](/fetchxml)
  
