@@ -56,7 +56,7 @@ DataPress lets you embed these Dataverse views directly into WordPress pages usi
 - Filter views dynamically  
 - Render custom layouts with Twig templates  
 
-See also: [Power Apps documentation on views](https://docs.microsoft.com/en-us/powerappssive to the **premium extension** and requires a valid license.  
+See also: [Power Apps documentation on views](https://learn.microsoft.com/power-apps/maker/model-driven-apps/create-edit-views). Please note that this feature belongs to the premium extension and requires a valid license.  
 - If the premium plugin is not properly licensed, **syntax errors may occur**. Ensure the plugin is correctly licensed to maintain view functionality.  
 - If you use **personal views**, share them with the **Application User** that connects WordPress to your Dataverse / Dynamics 365 organization.
 
