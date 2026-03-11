@@ -1,5 +1,5 @@
 ---
-title: User administration
+title: User Administration
 sidebar_position: 2
 slug: /administration/disable-user
 premium: true
@@ -64,24 +64,29 @@ Without a valid registration:
 You can control user access through the WordPress Admin Area, the Power Apps Maker Portal, or via manual binding.
 
 ### A. WordPress Admin Area
+
 To disable a user directly in WordPress:
 1. Navigate to **Users > All Users**.
 2. Select the checkbox next to the target user.
 3. Select **Disable** from the bulk actions dropdown and click **Apply**.
-*Once disabled, the user will be blocked from logging into the WordPress environment.*
 
-### B. Maker Portal (Dataverse)
+> Now this user can’t login in the WordPress Admin Area.
+To enable this user you need to find this user again, tick this username, choose **Enable** action in the left upper corner dropdown and click **Apply**. And again this user can login and work in WordPress Admin Area.
+
+### B. Manual Dataverse Binding
+To manually link a user:
+1. Go to **Users > All Users** in the WordPress Admin Area.
+2. Hover over the username and click **Dataverse Binding**.
+3. Choose **Manual** mode, select the required record from the **Contact** table, and click **Add & Apply**.
+
+[Read more about user binding](/binding/user-binding/)
+
+### C. Maker Portal (Dataverse)
 If a user is bound to a Contact record, you can manage their status directly from the CRM:
 1. Locate the **Contact** record bound to the WordPress user.
 2. Navigate to the **WordPress** section (ensure *Username on Default Site* is populated).
 3. Click **Deactivate** to block access, or **Activate** to restore it.
 4. Alternatively, toggle the **Login Enabled** column: set to **Yes** for access or **No** to disable the account.
-
-### C. Manual Dataverse Binding
-To manually link a user:
-1. Go to **Users > All Users** in the WordPress Admin Area.
-2. Hover over the username and click **Dataverse Binding**.
-3. Choose **Manual** mode, select the required record from the **Contact** table, and click **Add & Apply**.
 
 ---
 
@@ -90,6 +95,7 @@ To manually link a user:
 :::tip Documentation Links
 *   [How to bind a user using WP API](/knowledge-base/bind-user-via-api)
 *   [Users API Reference](/knowledge-base/manage-users)
+*   [Accessing bound user contact details](/knowledge-base/bound-user-details/)
 :::
 
 :::info Security Configuration: ICDS_TWIG_USE_PRIVILEGES

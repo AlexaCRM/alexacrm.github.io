@@ -7,6 +7,7 @@ tags:
     - PowerApps
     - DataPress
 keywords: [User Management]  
+description: Learn how to automate WordPress user lifecycle events (Create, Update, Delete) using Power Automate flows to synchronize data across Dataverse, SharePoint, and Teams.
 ---
 
 ### **Introduction**
