@@ -57,6 +57,7 @@ Without a valid registration:
 2. The virtual table will remain inaccessible for automated workflows.
 :::
 
+[Read more about automation](/datapress_solution/user_management_automate)
 ---
 
 ## 2. Managing User Access
