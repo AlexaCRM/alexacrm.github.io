@@ -7,7 +7,7 @@ tags:
     - DataPress
     - Retrieve
     - User Binding
-description: Master user binding retrieval in DataPress: Use PHP UserService to access current user information and linked CRM account details.
+description: Master user binding retrieval in DataPress. Use PHP UserService to access current user information and linked CRM account details.
 ---
 
 If you need to access information about the currently logged-in user in PHP. It can be easily done by using **UserService** class that has methods to return the current user information including the linked CRM record (if available).
