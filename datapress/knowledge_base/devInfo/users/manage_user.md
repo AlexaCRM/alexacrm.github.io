@@ -5,6 +5,8 @@ slug: /knowledge-base/manage-users
 tags:
     - Knowledge base
     - DataPress
+description: How to manage WordPress users via REST API. This guide covers retrieving user metadata (like last login), advanced filtering with multiple conditions, sorting, and field selection using GET and POST methods.
+    
 ---
 
 **Overview**

@@ -7,6 +7,7 @@ tags:
     - Configuration
     - Monaco Editor
     - DataPress
+description: Troubleshooting syntax highlighting issues in DataPress.
 ---
 
 We use [Monaco Editor](https://microsoft.github.io/monaco-editor/) for syntax highlighting. 

@@ -4,6 +4,7 @@ sidebar_position: 1
 slug: /knowledge-base/webhooks
 tags:
     - DataPress
+description: Comprehensive guide to configuring webhooks in DataPress (automate workflows for forms (Gravity, Elementor, Premium) and user events, including API parameters for creating, updating, and managing webhook subscriptions).    
 ---
 
 Webhooks play a crucial role in **automating workflows** and **enabling seamless communication** between systems. Within WordPress, webhooks allow you to **trigger events** and **share information** with external services whenever specific actions occur.

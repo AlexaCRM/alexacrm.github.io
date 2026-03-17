@@ -6,6 +6,7 @@ tags:
     - Knowledge base
     - DataPress
     - WordPess Users
+description: Learn how to use the WordPress Users virtual table in Dataverse for real-time synchronization. This guide covers CRUD operations, Power Automate triggers, and best practices for avoiding circular references.    
 ---
 
 ### Introduction
