@@ -24,57 +24,44 @@ Use this tool when you want to:
 
 ---
 
-## Accessing Dataverse Tables
+## Configuring Dataverse Tables
 
-1. Open the **DataPress** menu in WordPress.  
-2. Navigate to **Tables**.  
-3. All available tables will be displayed. Select the tables you want to work with.  
-4. Switch to the **Records** tab.  
-5. Choose a table from the dropdown and click **Filter** to load its records.
+Before displaying data, you must enable the desired tables within the DataPress settings:
 
-This gives you a preview of the data that will later be displayed on pages.
+1.  Navigate to **DataPress → Manage Tables** in your WordPress admin dashboard.
+2.  Locate the tables you wish to use and select them.
+3.  Choose a specific **View** for each selected table and **save configurations**.
+4.  Once saved, these tables will appear as sub-menus under the **DataPress** section.
+5.  Switch to the specific records tab (e.g., **Contact (contact) records**) to preview the data synchronized from Dataverse.
 
----
-
-## Creating a Page Using Query Loop
-
-### Step 1 — Create a new page
-
-1. Go to **Pages → Add New** in WordPress.  
-2. Add the **Query Loop** block.
-
-You can choose any of the predefined Query Loop patterns as a starting layout.
-
-### Step 2 — Configure the Query Loop
-
-Open the right‑side **Block Settings** panel and configure:
-
-#### 1. **Query Type**
-- Set **Query Type** → **Custom**
-- Set **Post Type** → **Dataverse records**
-
-#### 2. **Filters**
-1. Expand the **Filters** section.  
-2. Click the **Taxonomies** menu in the top-right corner of the Filters panel.  
-3. Select:
-   - **Table** you want to display  
-   - **View** (optional) to limit which records appear  
-
-#### 3. **Pagination**
-- Adjust **Items per page** if you want to limit how many records appear at once.
+:::info
+**URL Limitation:** The combination of the Table Logical Name + `icds_r` should not exceed **20 characters** to comply with system URL length restrictions.
+:::
 
 ---
 
-## Example: Displaying Contacts from Dataverse
+## Building a Page with the Query Loop
 
-1. Create a new page  
-2. Insert a **Query Loop** → choose a simple list layout  
-3. In Settings:
-   - **Custom Query**  
-   - **Post Type: Dataverse records**  
-4. Set Filters:
-   - **Table: Contacts**  
-   - **View: Active Contacts**  
-5. Set **Items per page: 20**
+### Step 1: Create a New Page
+1.  Go to **Pages → Add New**.
+2.  Insert the **Query Loop** block into the editor.
+3.  Select a predefined pattern or start with a blank layout.
 
-Publish the page → it now shows Dataverse records directly on the site.
+### Step 2: Configure the Data Source
+With the **Query Loop** block selected, open the **Block Settings** panel on the right:
+
+1.  **Query Type**: Enable the **Custom Query** toggle.
+2.  **Post Type**: Select the corresponding Dataverse table (e.g., **`Table Name` records**).
+3.  **Pagination**: Adjust **Items per page** to control how many records are loaded at once.
+
+---
+
+## Quick Example: Listing Contacts
+
+To display a list of contacts from Dataverse:
+
+1.  Create a new page and add a **Query Loop** block.
+2.  In the block settings, set the **Post Type** to `Contact (contact) records`.
+3.  Set **Items per page** to `20`.
+4.  Customize the inner blocks (Title, Excerpt, etc.) to map to your Dataverse fields.
+5.  **Publish** the page to view your live Dataverse records on the frontend.
