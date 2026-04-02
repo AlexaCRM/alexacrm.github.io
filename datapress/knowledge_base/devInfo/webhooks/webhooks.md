@@ -55,7 +55,7 @@ Follow these steps:
 Once configured, you can manage webhooks, including options to **update**, **remove** or **disable** them.
 
 <div class="text--center"> 
-<img src="/images/manage-webhooks.png" alt="Manage webhooks" width="750" />
+<img src="/images/manage-webhooks.png" alt="Manage webhooks"/>
 </div>
 
 :::note

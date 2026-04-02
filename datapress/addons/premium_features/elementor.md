@@ -32,8 +32,8 @@ Widget Name - `Form`
  Drag the **Form** widget into the content area, create the necessary fields, and save their IDs.
 
 <div class="text--center"> 
-<img src="/images/elementor-form.jpg" alt="Elementor form" width="400" alt="Elementor form"/>
-<img src="/images/elementor-id.jpg" alt="Save id" width="550" alt="Elementor id"/>
+<img src="/images/elementor-form.png" alt="Elementor form" width="400" alt="Elementor form"/>
+<img src="/images/elementor-id.png" alt="Save id" width="400" alt="Elementor id"/>
 </div>
 
 2. **Configure Actions After Submit**
@@ -42,7 +42,7 @@ Navigate to Actions After Submit.
 Click `+` and add the **Send to Dataverse** action.
 
 <div class="text--center"> 
-<img src="/images/send-to-dataverse.jpg" alt="Send to Dataverse action" width="400" />
+<img src="/images/send-to-dataverse.png" alt="Send to Dataverse action" width="400" />
 </div>
 
 3. **Set Up Binding**
@@ -237,7 +237,7 @@ You can see several options for Date Time and Date Only fields. For example, if 
 You can enter a record GUID to be used as the default record in the page editing context. Simply find the page, click `Configure Binding`, select a table and enter an id in the `Default record` textbox.
 
 <div class="text--center"> 
-<img src="/images/elementor-default.png" alt="Elementor default" width="400" />
+<img src="/images/elementor-default.png" alt="Elementor default" width="600" />
 </div>
 
 ## Troubleshooting: Updated Records Not Reflected in Forms
