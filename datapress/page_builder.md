@@ -34,10 +34,6 @@ Before displaying data, you must enable the desired tables within the DataPress 
 4.  Once saved, these tables will appear as sub-menus under the **DataPress** section.
 5.  Switch to the specific records tab (e.g., **Contact (contact) records**) to preview the data synchronized from Dataverse.
 
-:::info
-**URL Limitation:** The combination of the Table Logical Name + `icds_r` should not exceed **20 characters** to comply with system URL length restrictions.
-:::
-
 ---
 
 ## Building a Page with the Query Loop
