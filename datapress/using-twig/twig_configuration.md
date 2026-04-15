@@ -83,3 +83,7 @@ Global object `params` is the alias of `request.params`.
   Dataverse connection active
 {% endif %}
 ```
+
+## Twig Page Rendering
+
+DataPress supports rendering entire pages as unified Twig templates instead of disconnected blocks, enabling seamless conditional logic and visual editing. Learn about the different rendering modes (No Twig, Page Content and Title, Entire HTML), their advantages, and best practices to avoid issues with third-party plugins that may break Twig syntax. [Read more](/knowledge-base/twig-page-rendering/)
