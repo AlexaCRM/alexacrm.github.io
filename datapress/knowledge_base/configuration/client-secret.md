@@ -7,6 +7,7 @@ tags:
     - Configuration
     - DataPress
     - Registration
+description: Step-by-step guide on updating an expired client secret in DataPress.
 ---
 
 Your client secret can expire. In that case, you need to create a new client secret [See more details](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate#add-credentials)

@@ -6,6 +6,7 @@ tags:
   - Power Automate
   - Webhooks
   - Integration
+description: Configure Power Automate HTTP Webhook triggers for real-time integrations.   
 ---
 
 # Using Power Automate HTTP Webhook Trigger
