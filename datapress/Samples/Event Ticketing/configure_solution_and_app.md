@@ -167,7 +167,7 @@ function processHiddenParams(event) {
 }          
 </script>
 ```
-You can also find tips on styling the form in the [Modifying the Look and Feel: Registration Form](//overview_and_supported_features/#registration-form-1) section.
+You can also find tips on styling the form in the [Modifying the Look and Feel: Registration Form](/Samples/Event Ticketing/overview_and_supported_features/#registration-form-1) section.
 
 ### Event Registration Settings
 
