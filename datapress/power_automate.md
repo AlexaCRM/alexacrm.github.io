@@ -1,6 +1,6 @@
 ---
 title: Power Automate Integration Examples
-sidebar_position: 17
+sidebar_position: 9
 slug: /power-automate
 tags:
     - Power Automate
