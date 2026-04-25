@@ -34,44 +34,47 @@ Before displaying data, you must enable the desired tables within the DataPress 
 4. Once saved, these tables will appear as sub-menus under the **DataPress** section.
 5. Switch to the specific records tab (e.g., **Contact records**) to preview the data synchronized from Dataverse. Here you can switch between configured views and display records.
 
+You can configure fields which you want to display for an individual record. For example, if you go to **Contact records** and choose **Active contacts**:
+* Click any record to open the post editing page.
+* Add a Paragraph, Heading, or Image block.
+* In the right-hand menu, go to the **Block** tab and click the **Settings** button.
+* Click **Dataverse**.
+* In the **BIND TO COLUMN** dropdown, choose the column you wish to display.
+* Save changes.
+
+This allows you to control the display of field values for an individual record.
+
 ---
 
 ## Building a Page with the Query Loop
 
 ### Step 1: Create a New Page
-
-1. Go to **Pages → Add New**.
+1. Go to **Pages** → **Add New**.
 2. Insert the **Query Loop** block into the editor.
 3. Select a predefined pattern or start with a blank layout.
 
 ### Step 2: Configure the Data Source
+With the Query Loop block selected, open the **Block Settings** panel on the right:
 
-With the **Query Loop** block selected, open the **Block Settings** panel on the right:
+* **Query Type**: Enable the **Custom Query** toggle.
+* **Post Type**: Select the corresponding Dataverse table (e.g., *Table Name records*).
+* **Items per page**: Adjust this to control how many records are loaded at once.
+* **Filters**: Click **+** and select **Taxonomies**. In the **Table Name views** field, type the name of your chosen view.
+* **Pagination**: If the selected view contains many records, add a **Pagination** block inside or below the Query Loop so all records are accessible.
 
-1. **Query Type**: Enable the **Custom Query** toggle.
-2. **Post Type**: Select the corresponding Dataverse table (e.g., **`Table Name` records**).
-3. **Pagination**: Adjust **Items per page** to control how many records are loaded at once.
-4. **Filters**: Click **+** and select **Taxonomies**. In the **`Table Name` views** field, type the chosen view name.
-5. **Pagination**: If the selected view contains many records, add a **Pagination** block to the page so all records are accessible.
+When you preview the page, all records will be visible. You can click any record to see its field values. 
 
-When you preview the page, all records will be visible. You can click any record to see its field values.
+The link for an individual record follows this pattern:
+`https://your-site.com/{table name}/{guid}`
 
-The link for an individual record will follow this pattern:
-
-```
-https://wordpress-972485-3401954.cloudwaysapps.com/{table name}/{guid}
-```
-
-Example:
-
-```
-https://wordpress-972485-3401954.cloudwaysapps.com/contact/1a1111df-0de4-ed11-8847-1122489804cd
-```
+**Example:**
+`https://your-site.com/contact/1a1111df-0de4-ed11-8847-1122489804cd`
 
 :::info
 If the individual record links do not match this pattern, go to **Settings → Permalinks** in the WordPress Admin Area and scroll to **Dataverse records base slug**. Enter `/%table%/%guid%`.
 :::
 
+If you make settings for an individual record according to previous instruction you will see only selected fields values.
 ---
 
 ## Quick Example: Listing Contacts
