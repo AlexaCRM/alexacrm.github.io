@@ -177,7 +177,7 @@ To select a view, you need to click the `Add Fields` tab and choose `Dataverse L
 <img src="/images/gf-lookup.png" width="400" alt="GF lookup"/>
 </div>
 
-If you select the dropdown, you must also select the table and view to lookup. The dialog view does not require any additional settings.
+When using the Dropdown or Dialog options, configuration of the Table and View settings is mandatory.
 
 <div class="text--center"> 
 <img src="/images/gf-lookup2.png" width="400" alt="GF lookup 2"/>
