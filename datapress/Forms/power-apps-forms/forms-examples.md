@@ -88,7 +88,7 @@ Use this to forward users to a “Thank you” page, a confirmation screen, or a
 * **Result after submission:** `/contact-details/?contactid=1a1111df-0de4-ed11-8847-1122489804cd`
 
 **Fixed Redirect (No ID):**
-* **Setting:** `https://www.google.com`
+* **Setting:** `https://docs.alexacrm.com/`
 * **Result after submission:** Redirects the user directly to the external URL.
 
 
