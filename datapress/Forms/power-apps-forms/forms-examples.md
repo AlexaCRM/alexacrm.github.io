@@ -77,6 +77,21 @@ Example:
 
 Use this to forward users to a “Thank you” page, a confirmation screen, or a details page.
 
+### Examples
+
+**Redirect with ID injection:**
+* **Setting:** `/?id=%s`
+* **Result after submission:** `/?id=00000000-0000-0000-0000-000000000000`
+
+**Redirect to a specific details page:**
+* **Setting:** `/contact-details/?contactid=%s`
+* **Result after submission:** `/contact-details/?contactid=1a1111df-0de4-ed11-8847-1122489804cd`
+
+**Fixed Redirect (No ID):**
+* **Setting:** `https://www.google.com`
+* **Result after submission:** Redirects the user directly to the external URL.
+
+
 ##  Set default values via Admin UI (no Twig changes)
 
 You can define default values inside the Dataverse Admin Area:

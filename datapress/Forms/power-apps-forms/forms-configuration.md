@@ -94,6 +94,40 @@ To change requiredness:
 
 ---
 
+## Redirect after submit and capture the created record GUID
+
+When a record is successfully created, you can automatically redirect the user to another page and inject the new record's GUID into the URL using the `%s` placeholder. 
+
+Use this to forward users to a “Thank you” page, a confirmation screen, or a details page where they can see the record they just created.
+
+### How to Configure Redirection
+
+You can set up the redirect in two ways:
+
+**1. Via DataPress Admin Area (Global Settings)**
+Use this method to set a default redirect for a specific form across your entire site:
+* Navigate to **DataPress** Admi Area → **Forms** in your WordPress dashboard.
+* Find the necessary form and click to edit it.
+* Locate the **Global settings overrides** section.
+* In the **Redirect after successful submission** text box, enter your desired URL pattern.
+  * *Example:* `/contact-details-page/?id=%s` (where `contact-details-page` is the slug of your existing WordPress page).
+
+**2. During Page Creation (Shortcode)**
+You can define a specific redirect at the moment you add the form to a page. This will override any global settings for that specific instance:
+```twig
+{% form id=707 redirect='/contact-details-page/?id=%s' %}
+```
+
+#### Redirection Priority and Global Settings
+
+**Important Note on Overrides:**
+The system follows a specific priority for redirects:
+1. **Shortcode Setting:** A redirect defined via the `redirect` attribute in a shortcode (e.g., `{% form id=707 redirect='...' %}`) has the highest priority and will **override** any settings in the DataPress Admin Area.
+2. **Forms Global Settings:** You can also set a default redirect for **all forms** on your site. To do this, go to **DataPress** → **Forms Global Settings** and find the **Forms** tab. Any URL specified here will apply to all forms unless overridden by the methods mentioned above.
+
+[Redirection examples](/forms/forms-examples/#redirect-after-submit-and-capture-the-created-record-guid)
+---
+
 ## Global settings overrides
 
 Each form registration can override global form behavior, including:
