@@ -106,11 +106,15 @@ const config: Config = {
           },
           {
             to: '/knowledge-base/webhooks', 
-            from: ['/integration-cds/webhooks'],
+            from: ['/webhooks'],
           },
           {
             to: '/binding/fields', 
             from: ['/integration-cds/fields-binding'],
+          },
+          {
+            to: '/twig/twig_template', 
+            from: ['/twig'],
           },
         ],
       }
