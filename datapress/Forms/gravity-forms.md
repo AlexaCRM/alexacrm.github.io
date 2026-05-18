@@ -177,7 +177,12 @@ To select a view, you need to click the `Add Fields` tab and choose `Dataverse L
 <img src="/images/gf-lookup.png" width="400" alt="GF lookup"/>
 </div>
 
-If you select the dropdown, you must also select the table and view to lookup. The dialog view does not require any additional settings.
+**Field Lookup Configuration**
+
+When configuring lookup fields in your form, keep in mind the following behavior:
+
+*   **Dropdown Lookup:** If you select the **Dropdown** display type, you must explicitly select the **Table** and a specific **View** to be used for the lookup. This limits the user to records available in that pre-defined view.
+*   **Dialog Lookup:** Choosing a **Dialog** lookup requires only the **Table Name**. Unlike the dropdown, the dialog lookup allows the user to choose which view to use to find the desired record while they are filling out the form on the frontend.
 
 <div class="text--center"> 
 <img src="/images/gf-lookup2.png" width="400" alt="GF lookup 2"/>
