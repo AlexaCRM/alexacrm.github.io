@@ -162,6 +162,16 @@ Go to your WordPress Admin  Area and access the *DataPress* menu. Switch to the 
 <img src="/images/connection.png" alt="Connection" width="700" />
 </div>
 
+:::important 
+**Required Steps After Connection:**
+To enable all features, you must follow this specific order:
+1. **Connection:** Verify and Save settings.
+2. **Registration:** Go to the **Status** tab (or click **Add registration** in the Connection tab). Fill in your Company Name, First Name, Last Name, and Email, then click **Register**.
+3. **Licensing:** Only *after* the registration is complete, you can provide and activate your license key.
+
+You can monitor your current connection, registration, and license status at any time on the **Status** tab in the DataPress admin panel.
+:::
+
 `For OAuth 2.0 / Certificate authentication method`
 1. Enter the *Organization URL* -- for example, `https://contoso.crm.dynamics.com`
 2. Select the *Authentication Method* -- **OAuth 2.0 / Certificate**

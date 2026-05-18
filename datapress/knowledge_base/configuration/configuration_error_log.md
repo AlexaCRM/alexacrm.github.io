@@ -6,6 +6,7 @@ tags:
     - Knowledge base
     - Configuration
     - DataPress
+description: Comprehensive guide to troubleshooting DataPress forms by enabling detailed error logs.
 ---
 
 When working with premium or custom forms in DataPress, rendering issues may occur due to misconfigurations or JavaScript errors. To assist with debugging, you can enable more detailed error output in your browser’s developer console.

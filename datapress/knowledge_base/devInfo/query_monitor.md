@@ -6,6 +6,7 @@ tags:
   - performance
   - diagnostics
   - QueryMonitor
+desciption: how to diagnose slow form performance by using Query Monitor to analyze page execution times and browser developer tools for tracking AJAX submissions.   
 ---
 
 # Troubleshooting Form Performance Using Query Monitor

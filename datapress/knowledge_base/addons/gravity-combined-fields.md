@@ -6,6 +6,7 @@ tags:
     - Knowledge base
     - DataPress
     - Gravity Forms
+description: how to combine multiple Gravity Forms field values into a single Dataverse column. 
 ---
 
 If you need to combine values from multiple Gravity Forms fields into one other column, follow these steps:

@@ -6,6 +6,7 @@ tags:
     - Knowledge base
     - Configuration
     - DataPress
+description: Troubleshooting 403 errors when adding registrations in DataPress.
 ---
 
 When adding a registration, you may encounter a 403 error. This typically occurs if your app user hasn’t been added to the security profile.

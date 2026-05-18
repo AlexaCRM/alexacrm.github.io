@@ -6,6 +6,7 @@ tags:
     - API
     - DataPress
 keywords: [DataPress API]  
+description: Explore the comprehensive list of WordPress actions and filters provided by DataPress.
 ---
 
 <div

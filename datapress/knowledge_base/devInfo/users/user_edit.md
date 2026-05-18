@@ -7,6 +7,7 @@ tags:
     - DataPress
     - Binding
     - User
+description: Guide on enabling user profile editing in DataPress. Link WordPress users to Dataverse records using PHP filters for secure CRM data updates.    
 ---
 
 If a page is bound to a contact table then passing contact identifier in the query string will set the `binding` object and allow record editing using, for example, a Gravity form that relies on the record binding.

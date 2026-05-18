@@ -5,6 +5,7 @@ slug: /knowledge-base/clear-cache
 tags:
     - Knowledge base
     - DataPress
+description: How to clear the DataPress cache via the admin interface or REST API. 
 ---
 
 #### Cache Tab

@@ -5,6 +5,7 @@ slug: /knowledge-base/bound-users
 tags:
     - Knowledge base
     - DataPress
+description: PHP code example to query and display WordPress users with non-null 'icds_binding_ref' metadata, including details like last login, timezone, and locale. 
 ---
 
 Here is a description of our metadata for a WordPress user record.

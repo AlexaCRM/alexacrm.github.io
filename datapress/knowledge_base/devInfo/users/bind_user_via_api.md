@@ -5,6 +5,7 @@ slug: /knowledge-base/bind-user-via-api
 tags:
     - Knowledge base
     - DataPress
+description: Technical guide on user binding via WP API includes PUT/POST method definitions, request body structures for binding modes, and removal steps.    
 ---
 
 :::note 

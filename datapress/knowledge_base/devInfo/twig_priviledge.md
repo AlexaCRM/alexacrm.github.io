@@ -8,6 +8,7 @@ tags:
     - Twig
     - security
     - permissions
+description: How to enhance security for Dataverse integrations using the ICDS_TWIG_USE_PRIVILEGES flag. 
 ---
 
 # Controlling Twig Access Using `ICDS_TWIG_USE_PRIVILEGES`
