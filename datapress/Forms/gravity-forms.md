@@ -45,7 +45,7 @@ Premium feature! This feature is available in the premium extension.
 - Follow the necessary configuration steps to map form fields to table columns.
 
 <div class="text--center"> 
-<img src="/images/gf-dataverse.png" width="400" alt="GF dataverse"/>
+<img src="/images/gf-dataverse.png" width="600" alt="GF dataverse"/>
 </div>
 
 Then click `Add New`, select the CRM table, choose the action type (create, update, or upsert - which performs create or update depending on the situation), and map the form columns to the CRM columns by setting a correspondence between the CRM column name (key) and the Gravity Form field name (value).
@@ -106,7 +106,7 @@ To bind a record on a page created with the help of Gravity Forms, follow these 
 - Configure the form to perform an update action in your DataPress feed.
 
 <div class="text--center"> 
-<img src="/images/feed-to-update.png" width="400" alt="GF feed"/>
+<img src="/images/feed-to-update.png" width="600" alt="GF feed"/>
 </div>
 
 - Remember the name of this Gravity Form.
@@ -115,7 +115,7 @@ To bind a record on a page created with the help of Gravity Forms, follow these 
 - Create a new page. Use the Gravity Form block to build your page. Save the page.
 
 <div class="text--center"> 
-<img src="/images/gravity-form.png" width="400" alt="GF"/>
+<img src="/images/gravity-form.png" width="600" alt="GF"/>
 </div>
 
 3. Configure Binding for the Page:
@@ -124,7 +124,7 @@ To bind a record on a page created with the help of Gravity Forms, follow these 
 - Choose the appropriate table name and select the `Via GUID in query string` option 
 
 <div class="text--center"> 
-<img src="/images/gf-configuration.png" width="400" alt="GF configuration"/>
+<img src="/images/gf-configuration.png" width="600" alt="GF configuration"/>
 </div>
 
 4. Add the Record GUID to the Page URL:
@@ -306,10 +306,6 @@ Examples for the **DateOnlyUserLocal** column which has User Local behavior:
 |----------------------|--------------|----------------|-----------|
 |`DateOnlyUserLocal (UTC Date) (Date Only)` | UTC | UTC | UTC |
 |`DateOnlyUserLocal (Local Date)` |  convert the date to the user's timezone | convert the date to the user's timezone | convert the date to the user's timezone |
-
-<div class="text--center"> 
-<img src="/images/gravity-date-options.png" width="400" alt="Gravity date"/>
-</div>
 
 In case, when you set only time value, the date represents the date zero (January 1, 1900).
 

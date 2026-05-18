@@ -111,7 +111,7 @@ Use of deprecated addons is at your own risk.
 You can manage all extensions directly in the Extensions tab. From the Registered extensions section, you can enable or disable individual addons as needed.
 
 <div class="text--center"> 
-<img src="/images/extensions-list.png" width="700" />
+<img src="/images/extensions-list.png" width="600" />
 </div>
 :::
 
