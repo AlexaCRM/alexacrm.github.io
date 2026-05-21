@@ -168,3 +168,32 @@ Use the Twig tag and the form registration ID:
 ```
 
 This renders the form and starts accepting submissions.
+
+### Usage Requirements
+
+To ensure the form renders correctly on your page, the `{% form %}` tag must be wrapped in a Twig-capable environment. It will not work if pasted as plain text into the editor.
+
+You have two options to implement this:
+
+1. **Using the Twig Shortcode (Recommended for Page Editors):**
+
+   Wrap the tag inside the `[icds_twig]` shortcode:
+   ```twig
+   [icds_twig]
+   {% form id=707 %}
+   [/icds_twig]
+   ```
+
+2. **Inside a Twig Block**
+
+If you are working within a custom theme template or a Twig-enabled block (such as in an Elementor Twig widget), you can use the tag directly:   
+
+```twig
+{% block content %}
+    {% form id=707 %}
+{% endblock %}
+```
+
+:::warning
+ If you paste `{% form id=707 %}` directly into the editor without the [icds_twig] wrapper, the form will not render, and the raw code will be visible to your site visitors.
+:::
