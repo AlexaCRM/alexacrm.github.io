@@ -173,27 +173,34 @@ Open **Settings UI → Binding** to configure global options.
 - Bind a post to a table **at least once** before it appears in the dropdown.
 
 :::note
-**Configure Binding Settings for a page**
+## Set page as default for a table
 
-The first time you configure binding, the page selector may be disabled.  
-In that case:
+You can set a page as the default binding page for a Dataverse table using one of two methods:
 
-1) Go to WordPress and open the page you want to bind.  
-2) Click **Configure binding** and choose the table to take data from.  
-3) Return to the Dataverse Admin Area → **Binding → Page Binding** and select the page name.
-:::
+### Option 1: From the page configuration
 
----
-
-## Configure post binding
-
-1. Open the list for the post type you need (e.g., **All Posts**, **All Pages**, or a custom post type).
-2. Hover a post and click **Configure Binding** → **Setup binding**.
-3. Choose the **table** from the dropdown.
-4. Choose **how** to select the record (see “Types of table binding” above) and set the options.
+1. Find the page you want to set as default in your WordPress pages list.
+2. Hover the page and click **Configure Binding**.
+3. In the binding configuration dialog, locate the checkbox labeled **Use as default page for `{table display name}` table**.
+4. Check the checkbox. This will update the default page for the bound table.
 5. Click **Save**.
 
-All bound posts display a small Dynamics 365 logo beside the post title.
+**Best for:** Quick setup when you're already configuring page binding. Saves navigation steps by setting the default directly from the page.
+
+### Option 2: From the DataPress Admin Area
+
+1. Go to **DataPress Admin Area → Binding → Page Binding**.
+2. Find the table you want to configure in the list.
+3. From the **`{Table display name}`** dropdown for that table, select the page you want to set as default.
+4. Click **Save**.
+
+**Best for:** Managing multiple table defaults from a centralized location. Useful when you need to review or update defaults for several tables.
+
+**About default pages:**
+- Only one page can be set as default per table.
+- Views and other features use the default page to link table records to your WordPress site.
+- Both methods update the same setting, so the result is identical regardless of which approach you use.
+:::
 
 ---
 
