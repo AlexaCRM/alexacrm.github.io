@@ -51,6 +51,30 @@ This section walks you through:
 3. **Installing the DataPress Solution** (required)
 :::
 
+### Licensing
+
+To unlock all the features of the Premium version of the plugin, you must activate your license in the DataPress Admin Area.
+
+#### How to Activate Your License
+
+1.  Navigate to **DataPress** → **Status** in your WordPress admin dashboard.
+2.  Locate the **Licensing** status. You will see two options:
+
+**Option A: If you are registering for the first time**
+If you don't have a license key yet and need to register your organization:
+*   Select the **Register** option.
+*   Fill in the required fields: **Company Name**, **First Name**, **Last Name**, and **Email**.
+*   Click the **Register** button.
+
+**Option B: If you already have a license key**
+If your organization is already registered and you have a key:
+*   Select the **License key** option.
+*   Enter your existing key into the text box.
+*   Click **Submit** (or the submission button).
+
+#### Verification
+Once the license is successfully applied, the section will display **License status: Licensed**. You will then see all relevant license details, including your plan type and expiration date.
+
 ### Create Application Password
 
 1. Sign in into your WordPress site.
