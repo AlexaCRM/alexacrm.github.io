@@ -40,6 +40,17 @@ This is a premium feature. For more details see [Premium Edition](/premium-editi
 
 ## Install Premium Features
 
+:::note
+**Solution Installation Required**
+
+All premium functionality requires the **DataPress Solution** to be installed in your Dataverse environment. Without the solution, premium features will not function, even if you have an active license.
+
+This section walks you through:
+1. Activating your license
+2. Installing the premium plugin
+3. **Installing the DataPress Solution** (required)
+:::
+
 ### Create Application Password
 
 1. Sign in into your WordPress site.
@@ -48,6 +59,8 @@ This is a premium feature. For more details see [Premium Edition](/premium-editi
 4. Type password name in New Application Password Name text box and click the Add New Application Password button. It will be *application password*.
 
 ### Configure DataPress Solution
+
+The DataPress Solution must be installed in Dataverse before any premium features can work. This is a mandatory step.
 
 When the plugin is connected to CRM, and you can start building the integration.
 Then you will see that you have been connected to your environment.
