@@ -36,6 +36,6 @@ Reusable automation actions provide common operations needed for WordPress-Datav
 
 ### 4. Baseline Security Role for WordPress Connection
 
-A dedicated security role follows a least-privilege access model, granting only the minimum permissions necessary for WordPress to function. It defines table-level and column-level access restrictions while automatically assigned to the WordPress application user during installation.
+A dedicated security role follows a least-privilege access model, granting only the minimum permissions necessary for WordPress to communicate with Dataverse instance. It defines access permissions required by the WordPress application user to connect to Dataverse.
 
 ---
