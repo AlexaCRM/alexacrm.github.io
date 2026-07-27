@@ -26,7 +26,7 @@ keywords: [DataPress how to start]
     The plugin previously known as <em>Dataverse Integration</em> has been renamed to <strong>DataPress</strong>.
   </p>
   <p style={{ margin: '0 0 6px 0' }}>
-This change reflects our commitment to enhancing user experience and aligning with our product vision!
+This change reflects our commitment to enhancing user experience and aligning with our product vision.
   </p>
   <p style={{ margin: 0 }}>
 All references to Dataverse Integration in the documentation and UI will be updated to DataPress.
