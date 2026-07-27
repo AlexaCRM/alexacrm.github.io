@@ -114,18 +114,18 @@ const config: Config = {
           },
         ],
       }
+    ],
+    [
+      require.resolve("docusaurus-plugin-search-local"),
+      {
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: true,
+        hashed: true,
+        docsRouteBasePath: ['/', '/wpcrm'],
+        docsDir: ['datapress', 'wpcrm'],
+      },
     ]
-],
-themes: [
-  [
-    require.resolve("docusaurus-plugin-search-local"),
-    {
-      indexDocs: true,
-      indexPages: true,
-      hashed: true,
-      docsRouteBasePath: '/'
-    },
-  ]
 ],
   themeConfig: {
     image: 'img/dataverse.png',
