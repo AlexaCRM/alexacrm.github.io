@@ -96,7 +96,13 @@ You can skip this paragraph if you click the `Add registration` button at the mo
 
 :::tip
 
-When adding a registration, you may encounter a 403 error. Follow [these steps](/knowledge-base/add-registration) to resolve the permissions issue.
+When adding a registration, you may encounter a **403 Forbidden** error. This typically indicates a **permissions issue** with your app user.
+
+**Quick diagnosis:**
+- If the error mentions the **Password field** → your app user needs access to the "WordPress Site Password" column security profile
+- If error details are unclear → check the **toolkit error output** first (often contains the exact field causing the issue)
+
+**Solution:** Follow [these steps](/knowledge-base/add-registration) to resolve the permissions issue and add your app user to the required security profiles.
 
 :::
 
