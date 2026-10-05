@@ -16,6 +16,8 @@ keywords: [Page Builder]
 The Page Builder allows you to display **records from any Dataverse table** directly on your WordPress site.
 You can create fully customized pages using the built-in **Query Loop** block and filter which Dataverse records appear.
 
+With the Page Builder, you can also **insert field values from individual records** using Twig templates. Field values are dynamically inserted at the time the page is rendered, allowing you to create personalized record pages.
+
 Use this tool when you want to:
 
 - Publish Dataverse table data on a public page
@@ -34,15 +36,62 @@ Before displaying data, you must enable the desired tables within the DataPress 
 4. Once saved, these tables will appear as sub-menus under the **DataPress** section.
 5. Switch to the specific records tab (e.g., **Contact records**) to preview the data synchronized from Dataverse. Here you can switch between configured views and display records.
 
-You can configure fields which you want to display for an individual record. For example, if you go to **Contact records** and choose **Active contacts**:
-* Click any record to open the post editing page.
-* Add a Paragraph, Heading, or Image block.
-* In the right-hand menu, go to the **Block** tab and click the **Settings** button.
-* Click **Dataverse**.
-* In the **BIND TO COLUMN** dropdown, choose the column you wish to display.
-* Save changes.
+---
 
-This allows you to control the display of field values for an individual record.
+## Customize Fields for Individual Records
+
+You can customize which columns display for records in your page builder. This allows you to control the appearance of individual record pages using Twig templates and field bindings.
+
+### Using the Twig Block
+
+To display specific fields from a record:
+
+1. Navigate to **DataPress → [Table Name] records** (e.g., **Contact records**).
+2. Select a record and click **Edit template**.
+3. Add or select a **Twig block** in the editor.
+4. Reference fields using the record's logical name with Twig syntax:
+
+```twig
+{{ record.firstname }}
+{{ record.emailaddress1 }}
+```
+
+:::note
+**Important:** The template you create applies to **all records** in the table. Any fields you add via Twig will display the same way for every record across the entire table.
+:::
+
+### Configuring Twig Processing
+
+When using Twig in your template, you must choose the appropriate **Twig Processing** option:
+
+**Available options:**
+
+- **Page Content and Title** — Recommended. Processes Twig expressions in page content and titles.
+- **Do not process** — Twig code displays as plain text without processing.
+- **Entire HTML** — Not recommended. Processes Twig in HTML buffers which may cause unexpected behavior.
+
+:::warning
+We do not recommend using **Entire HTML** because it works with buffers and can produce unpredictable results. Use **Page Content and Title** or **Do not process** instead.
+:::
+
+### Example: Displaying Contact Information
+
+Here's a practical example of customizing a Contact record template:
+
+1. Go to **DataPress → Contact records**.
+2. Select any contact record and click **Edit template**.
+3. Add a **Twig block** and enter the following template:
+
+```twig
+<h2>{{ record.fullname }}</h2>
+<p><strong>Email:</strong> {{ record.emailaddress1 }}</p>
+<p><strong>Phone:</strong> {{ record.telephone1 }}</p>
+```
+
+4. Set **Twig Processing** to **Page Content and Title**.
+5. Save your changes.
+
+Now all contact record pages will display this template with the same fields for every record.
 
 ---
 
@@ -74,7 +123,6 @@ The link for an individual record follows this pattern:
 If the individual record links do not match this pattern, go to **Settings → Permalinks** in the WordPress Admin Area and scroll to **Dataverse records base slug**. Enter `/%table%/%guid%`.
 :::
 
-If you make settings for an individual record according to previous instruction you will see only selected fields values.
 ---
 
 ## Quick Example: Listing Contacts
