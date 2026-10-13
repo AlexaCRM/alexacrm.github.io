@@ -207,27 +207,55 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 
   headTags: [
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://docs.alexacrm.com',
-      },
+  {
+    tagName: 'link',
+    attributes: {
+      rel: 'preconnect',
+      href: 'https://docs.alexacrm.com',
     },
-    {
-      tagName: 'script',
-      attributes: {
-        type: 'application/ld+json',
-      },
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org/',
-        '@type': 'Organization',
-        name: 'AlexaCRM',
-        url: 'https://docs.alexacrm.com/',
-        logo: 'https://docs.alexacrm.com/img/logos/dataverse-icon.svg',
-      }),
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      type: 'application/ld+json',
     },
-  ],
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org/',
+      '@type': 'Organization',
+      name: 'AlexaCRM',
+      url: 'https://docs.alexacrm.com/',
+      logo: 'https://docs.alexacrm.com/img/logos/dataverse-icon.svg',
+    }),
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js',
+      async: true,
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js',
+      async: true,
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js',
+      async: true,
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-twig.min.js',
+      async: true,
+    },
+  },
+],
 
   stylesheets: [
     {
