@@ -7,28 +7,20 @@ const config: Config = {
   tagline: '',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://docs.alexacrm.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'AlexaCRM', // Usually your GitHub org/user name.
-  projectName: 'alexacrm.github.io', // Usually your repo name.
+  organizationName: 'AlexaCRM',
+  projectName: 'alexacrm.github.io',
   trailingSlash: true,
 
   onBrokenLinks: 'warn',
- markdown: {
+  markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },
   },
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -44,8 +36,6 @@ const config: Config = {
           sidebarPath: require.resolve('./sidebars.ts'),
           lastVersion: 'current',
           onlyIncludeVersions: ['current'],
-          //sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
         },
         blog: false, 
         theme: {
@@ -69,8 +59,8 @@ const config: Config = {
       {
         redirects: [
           {
-            to: '/getting-started', // string
-            from: ['/integration-cds', '/integration-cds/getting-started'], // string | string[]
+            to: '/getting-started',
+            from: ['/integration-cds', '/integration-cds/getting-started'],
           },
           {
             to: '/views', 
@@ -126,7 +116,8 @@ const config: Config = {
         docsDir: ['datapress', 'wpcrm'],
       },
     ]
-],
+  ],
+
   themeConfig: {
     image: 'img/dataverse.png',
     docs: {
@@ -214,34 +205,64 @@ const config: Config = {
       additionalLanguages: ['php', 'csharp', 'twig']
     },
   } satisfies Preset.ThemeConfig,
+
   headTags: [
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://docs.alexacrm.com',
-      },
-    },
-     {
-      tagName: 'script',
-      attributes: {
-        type: 'application/ld+json',
-      },
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org/',
-        '@type': 'Organization',
-        name: 'AlexaCRM',
-        url: 'https://docs.alexacrm.com/',
-        logo: 'https://docs.alexacrm.com/img/logos/dataverse-icon.svg',
-      }),
-    },
-  ],
-stylesheets: [
   {
-    href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-    type: 'text/css',
+    tagName: 'link',
+    attributes: {
+      rel: 'preconnect',
+      href: 'https://docs.alexacrm.com',
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      type: 'application/ld+json',
+    },
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org/',
+      '@type': 'Organization',
+      name: 'AlexaCRM',
+      url: 'https://docs.alexacrm.com/',
+      logo: 'https://docs.alexacrm.com/img/logos/dataverse-icon.svg',
+    }),
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js',
+      async: true,
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js',
+      async: true,
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js',
+      async: true,
+    },
+  },
+  {
+    tagName: 'script',
+    attributes: {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-twig.min.js',
+      async: true,
+    },
   },
 ],
+
+  stylesheets: [
+    {
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+      type: 'text/css',
+    },
+  ],
 };
 
 export default config;
