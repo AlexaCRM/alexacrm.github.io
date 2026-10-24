@@ -1,32 +1,28 @@
 ---
-title: Custom Forms Details
+title: HTML Forms Details
 sidebar_position: 2
 slug: /forms/custom-forms-details
 tags:
   - Form
   - DataPress
-keywords: [DataPress custom form]
+keywords: [DataPress HTML form]
 description: Features of working with different types of fields.
 ---
 
 # Notes (Capabilities & Limitations)
 
-## What Custom Forms can do
+## What HTML Forms can do
 
 - **Create** new Dataverse records (rows) from a WordPress page. 
 - **Update** existing Dataverse records when `mode="update"` and `record` is provided.
 - Map HTML inputs to Dataverse columns using the input `name` attribute (Dataverse logical column name).
-- Optionally enable **reCAPTCHA** [protection for custom forms](https://docs.alexacrm.com/forms/recaptcha/)  
+- Optionally enable **reCAPTCHA** [protection for HTML forms](https://docs.alexacrm.com/forms/recaptcha/)  
 
 ## How submission works (important note)
 
 DataPress processes submissions using the HTML form **submit** event (standard browser behavior). [1](https://docs.alexacrm.com/forms/custom-forms/)[3](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event)  
 
-Make sure your markup contains a real `<form>...</form>` element, because [submission is tied to the form itself](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event)  
-
----
-
-## `{% form %}` parameters
+Make sure your markup contains a real `<form>...</form>` element, because [submission is tied to the form itself](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event)
 
 Use these parameters in the opening Twig tag:
 
@@ -53,7 +49,7 @@ If the premium add‑on is installed and an `id` parameter is used, the `{% form
 
 ---
 
-## reCAPTCHA requirements (Custom Forms)
+## reCAPTCHA requirements (HTML Forms)
 
 If you enable reCAPTCHA with `recaptcha=true`, you must do **both**:
 
@@ -67,11 +63,11 @@ Read more: [reCAPTCHA support](/forms/recaptcha/)
 
 ---
 
-## Date/Time fields in Custom Forms
+## Date/Time fields in HTML Forms
 
 ### Expected input formats
 
-When you fill date fields manually in a custom form, use these formats:
+When you fill date fields manually in an HTML form, use these formats:
 
 - **Date Only**: `yyyy-mm-dd` or `yyyy/mm/dd`  
   Example: `2023-01-20` or `2023/01/20` [1](https://docs.alexacrm.com/forms/custom-forms-details/#datetime-fields-in-custom-forms)  

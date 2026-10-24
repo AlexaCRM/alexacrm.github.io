@@ -47,9 +47,9 @@ Follow these steps:
 5. For **form-related actions**, select the form type:
 
 - **Gravity Forms**
-- **Elementor**
-- **Premium Forms**
-- **Custom Forms**
+- **Elementor Forms**
+- **Dataverse Forms**
+- **HTML Forms**
 
 6. Choose the specific **form name** from the dropdown menu.
 
@@ -83,7 +83,7 @@ Once configured, you can manage webhooks, including options to **update**, **rem
 
 `topic`: Choose the event type: "form/created", "form/updated".
 
-`form_type`: Define the form type: 'gravity', 'premium', 'elementor', 'custom', 'all'.
+`form_type`: Define the form type: 'gravity', 'dataverse', 'elementor', 'html', 'all'. (Legacy values: 'premium' → 'dataverse', 'custom' → 'html')
 
 **Request Body Example**:
 
@@ -111,7 +111,7 @@ Upon successful creation, the response includes a **webhookId**, which can be us
 
 `topic`: Choose the event type: "form/created", "form/updated".
 
-`form_type`: Define the form type: 'gravity', 'premium', 'elementor', 'custom', 'all'.
+`form_type`: Define the form type: 'gravity', 'dataverse', 'elementor', 'html', 'all'. (Legacy values: 'premium' → 'dataverse', 'custom' → 'html')
 
 **Request Body Example**:
 
