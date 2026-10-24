@@ -145,6 +145,6 @@ Upon successful creation, the response includes a **webhookId**, which can be us
 **Request Type**: GET <br></br>
 **Endpoint**: `/wp-json/integration-cds/v1/elementor_forms` <br></br>
 
-**Premium Form List** <br></br>
+**Dataverse Form List** <br></br>
 **Request Type**: GET <br></br>
 **Endpoint**: `/wp-json/integration-cds/v1/form_registrations` <br></br>

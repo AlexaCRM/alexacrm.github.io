@@ -19,10 +19,10 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Custom Forms and Data Mapping',
+    title: 'HTML Forms and Data Mapping',
     description: (
       <>
-        You can create custom forms directly within WordPress.
+        You can create HTML forms directly within WordPress.
         These forms can be mapped to Dataverse tables and columns for create or update operations.
         This flexibility allows you to seamlessly capture form submissions and interact with Dataverse data on your website.
       </>
