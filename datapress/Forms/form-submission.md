@@ -64,3 +64,147 @@ Choose which form types should have their submissions captured:
 - **Gravity Forms** - Forms created with Gravity Forms plugin
 
 Each form type can be independently enabled or disabled for submission capture.
+
+## Form Submission Data Structure
+
+Each form submission record contains the following information:
+
+```json
+{
+  "source": {
+    "name": "integration-cds-premium/integration-cds-premium.php",
+    "version": "2.97-dev"
+  },
+  "form": {
+    "id": 4,
+    "name": "Contact Quick"
+  },
+  "fields": [
+    {
+      "id": "1",
+      "name": "fullname",
+      "type": "text",
+      "value": {
+        "type": "string",
+        "data": "John Doe"
+      },
+      "label": "Full Name",
+      "input": "text",
+      "required": false,
+      "format": "",
+      "options": [],
+      "defaultValue": "",
+      "formattedValue": "John Doe"
+    },
+    {
+      "id": "2",
+      "name": "emailaddress1",
+      "type": "email",
+      "value": {
+        "type": "string",
+        "data": "john@example.com"
+      },
+      "label": "Email",
+      "input": "email",
+      "required": true,
+      "format": "email",
+      "options": [],
+      "defaultValue": "",
+      "formattedValue": "john@example.com"
+    }
+  ],
+  "user": {
+    "id": 1,
+    "login": "admin",
+    "name": "admin",
+    "locale": "",
+    "timezone": "",
+    "language": "en-US,en;q=0.9",
+    "binding": {
+      "Name": "Contact",
+      "Id": "f0b9d570-0f71-ef11-a670-000d3acc37f2",
+      "LogicalName": "contact",
+      "KeyAttributes": null,
+      "RowVersion": null
+    },
+    "isRegistered": true
+  },
+  "context": {
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:155.0)",
+    "submittedOn": "2026-09-15T12:47:03+00:00",
+    "submissionId": "4",
+    "pageUrl": "/wp-json/integration-cds/v1/form_submissions/4",
+    "referer": "http://example.local/premium-form-contact/?id=f0b9d570-0f71-ef11-a670-000d3acc37f2"
+  }
+}
+```
+
+### Submission Record Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| **source.name** | string | Plugin filename and path |
+| **source.version** | string | Plugin version number |
+| **form.id** | integer | Unique identifier for the form |
+| **form.name** | string | Human-readable form name |
+| **fields** | array | Array of submitted form fields |
+| **fields[].id** | string | Field ID within the form |
+| **fields[].name** | string | Field name/identifier |
+| **fields[].type** | string | Field type (text, email, file, date, etc.) |
+| **fields[].value** | object | Field value wrapper with type and data |
+| **fields[].value.type** | string | Value type: "string" or "file" |
+| **fields[].value.data** | string/object | Actual submitted value or file object |
+| **fields[].value.data.name** | string | File name (when type is "file") |
+| **fields[].value.data.content** | string | File content in base64 (when type is "file") |
+| **fields[].label** | string | Human-readable field label |
+| **fields[].input** | string | HTML input type |
+| **fields[].required** | boolean | Whether field is required |
+| **fields[].format** | string | Data format (e.g., "email", "date") |
+| **fields[].options** | array/object | Available options for choice/multiselect fields* |
+| **fields[].defaultValue** | string | Default field value |
+| **fields[].formattedValue** | string | Formatted display value |
+| **user.id** | integer | WordPress user ID |
+| **user.login** | string | WordPress username |
+| **user.name** | string | User display name |
+| **user.locale** | string | User locale setting |
+| **user.timezone** | string | User timezone setting |
+| **user.language** | string | Browser language preference |
+| **user.binding** | object | CRM record binding information |
+| **user.binding.Name** | string | CRM table/entity name |
+| **user.binding.Id** | string | CRM record GUID |
+| **user.binding.LogicalName** | string | CRM entity logical name |
+| **user.binding.KeyAttributes** | object/null | CRM key attributes (if any) |
+| **user.binding.RowVersion** | string/null | CRM row version |
+| **user.isRegistered** | boolean | Whether user is logged in |
+| **context.ip** | string | Submitter's IP address |
+| **context.userAgent** | string | Browser user agent string |
+| **context.submittedOn** | string (ISO 8601) | Submission timestamp |
+| **context.submissionId** | string | Unique submission identifier |
+| **context.pageUrl** | string | Page URL where form was submitted |
+| **context.referer** | string | HTTP referrer URL |
+
+Option values are currently available only for form builders that support this feature. For other form types, this field may be empty.
+
+### Field Value Structure
+
+Form submission field values are wrapped in an object structure to support different data types:
+
+#### String Value
+```json
+{
+  "type": "string",
+  "data": "value content"
+}
+```
+
+#### File Value
+```json
+{
+  "type": "file",
+  "data": {
+    "name": "document.pdf",
+    "content": "base64encodedfilecontent=="
+  }
+}
+```

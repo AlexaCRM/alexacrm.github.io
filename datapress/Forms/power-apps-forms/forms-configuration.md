@@ -7,7 +7,7 @@ tags:
   - Form
   - DataPress
 keywords: [DataPress forms configuration]
-description: How to configure Power Apps Forms
+description: How to configure Dataverse Forms
 ---
 
 ## Before you begin
@@ -25,7 +25,7 @@ Make sure that:
 To start collecting data, you must create a form registration.
 
 1. Open the plugin dashboard
-2. Go to **Forms**
+2. Go to **Forms** -> **Dataverse Forms Editor**
 3. Click **Create new**
 
 Fill in the following fields:

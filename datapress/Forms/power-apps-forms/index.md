@@ -7,7 +7,7 @@ tags:
   - Form
   - DataPress
 keywords: [DataPress forms]
-description: Power Apps Forms allow you to display Dataverse forms on your WordPress website and submit user input directly back to Dataverse.
+description: Dataverse Forms allow you to display Dataverse forms on your WordPress website and submit user input directly back to Dataverse.
 ---
 
 :::note
@@ -18,9 +18,9 @@ This is a premium feature. For more details see [Premium Edition](/premium-editi
 Capture leads, feedback, and other data from your website using forms designed in Power Apps and Dynamics 365.
 </p>
 
-## What are Power Apps Forms in DataPress?
+## What are Dataverse Forms in DataPress?
 
-**Power Apps Forms** allow you to display Dataverse (Dynamics 365) forms on your WordPress website and submit user input directly back to Dataverse.
+**Dataverse Forms** allow you to display Dataverse (Dynamics 365) forms on your WordPress website and submit user input directly back to Dataverse.
 
 With DataPress, you can:
 
