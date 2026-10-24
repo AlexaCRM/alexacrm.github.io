@@ -18,7 +18,7 @@ This is a premium feature. For more details see [Premium Edition](/premium-editi
 
 ## Introduction
 
-Our plugin supports Gravity Forms. So you can use it instead of our Custom or Power Apps forms
+Our plugin supports Gravity Forms. So you can use it instead of our HTML Forms or Power Apps forms
 
 :::info
 Premium feature! This feature is available in the premium extension.

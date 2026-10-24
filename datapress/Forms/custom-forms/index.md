@@ -1,12 +1,12 @@
 ---
-title: Custom Forms Overview
+title: HTML Forms Overview
 sidebar_position: 1
 slug: /forms/custom-forms
 tags:
   - Form
   - DataPress
-keywords: [DataPress custom form]
-description: Custom Forms let you capture data from your WordPress site without using Power Apps or Dynamics 365 forms.
+keywords: [DataPress HTML form, custom form]
+description: HTML Forms let you capture data from your WordPress site without using Power Apps or Dynamics 365 forms.
 ---
 
 <div
@@ -33,11 +33,11 @@ description: Custom Forms let you capture data from your WordPress site without 
   </p>
 </div>
 
-<p class="lead">Use Twig + HTML to build custom forms and send submissions directly into Dataverse.</p>
+<p class="lead">Use Twig + HTML to build HTML forms and send submissions directly into Dataverse.</p>
 
 # Overview
 
-Custom Forms let you capture data from your WordPress site **without** using Power Apps or Dynamics 365 forms.  
+HTML Forms let you capture data from your WordPress site **without** using Power Apps or Dynamics 365 forms.  
 Instead, you build the layout yourself using regular HTML form markup and wrap it inside Twig tags. 
 
 Key capabilities:
@@ -46,7 +46,7 @@ Key capabilities:
 - Submit data directly into Dataverse (create or update records).
 - Optionally add reCAPTCHA protection. 
 
-Custom Forms are included in the **free** DataPress plugin on WordPress.org.
+HTML Forms are included in the **free** DataPress plugin on WordPress.org.
 
 ---
 
