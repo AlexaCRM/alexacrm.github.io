@@ -26,6 +26,8 @@ Premium feature! This feature is available in the premium extension.
 
 ## Form configuration
 
+### Send To Dataverse Action
+
 1. **Create a Gravity Form**
 
 - To begin, navigate to **Forms** → **Add New** in Gravity Forms.
@@ -54,6 +56,21 @@ Then click `Add New`, select the CRM table, choose the action type (create, upda
 <img src="/images/gf-mapping.png" width="600" alt="GF fields mapping"/>
 </div>
 
+### Universal Capture Action
+
+To use **Universal Capture** for asynchronous form submission:
+
+1. Open your Gravity Form for editing
+2. Go to **Settings** → **Dataverse Universal Capture**
+3. Enable Universal Capture for this form
+4. Save your settings
+
+That's it! No field mapping is required — Universal Capture automatically collects all form field data and stores it asynchronously in a dedicated Dataverse table.
+
+For more details on Universal Capture features and configuration, see [Universal Capture](/forms/universal-capture/).
+
+---
+
 ### Access to a table
 
 Be attentive with the access to tables from Maker portal. Pages, based on Gravity forms do not show any error when you try to fill in and submit the form even if you don't have an access to this table. You click Submit and then you will see success message even when you don't have privilege to create a new record. In that case the administrator will get an email with the details.
@@ -78,7 +95,6 @@ Example for setting dynamic value:
 ```php
 [gravityforms id="1" field_values="parameter_name=Dynamic Value"]
 ```
-
 **Note:** The parameter name in the `field_values` attribute must be the same as specified in the `2nd` point.
 
 **Note:** When populate a lookup parameter, use the following syntax: parameter_name=`entity_name`:`record_id`. 
@@ -91,7 +107,7 @@ Example for `companyid` parameter name (actual column name is `parentcustomerid`
      field_values="companyid=account:f5aaed4c-654c-4730-bd4f-38bc19a330bd"
   ```
 
-1. Using twig expressions to get dynamic value:
+2. Using twig expressions to get dynamic value:
 
   ```php
      field_values="companyid=account:{{account.accountid}}"
@@ -153,7 +169,7 @@ When you duplicate a form through the Gravity Forms admin interface:
 - The form structure and all fields are copied.
 - The associated DataPress feed is duplicated automatically—retaining table mappings, action types (create or update), and field relationships.
 
-This eliminates the need to manually reconfigure DataPress integration for each new form. It’s particularly useful for scenarios like:
+This eliminates the need to manually reconfigure DataPress integration for each new form. It's particularly useful for scenarios like:
 - Building multiple forms for similar entities (e.g. contacts, leads, events)
 - Creating multilingual or region-specific versions of forms
 - Iterating new versions for testing, staging, or conditional logic workflows.
@@ -163,6 +179,7 @@ This eliminates the need to manually reconfigure DataPress integration for each 
 <div class="text--center"> 
 <img src="/images/gravity-duplicate.png" width="400" alt="GF duplicate feed"/>
 </div>
+
 :::
 
 ## Handling Various Data Types
@@ -181,8 +198,8 @@ To select a view, you need to click the `Add Fields` tab and choose `Dataverse L
 
 When configuring lookup fields in your form, keep in mind the following behavior:
 
-*   **Dropdown Lookup:** If you select the **Dropdown** display type, you must explicitly select the **Table** and a specific **View** to be used for the lookup. This limits the user to records available in that pre-defined view.
-*   **Dialog Lookup:** Choosing a **Dialog** lookup requires only the **Table Name**. Unlike the dropdown, the dialog lookup allows the user to choose which view to use to find the desired record while they are filling out the form on the frontend.
+- **Dropdown Lookup:** If you select the **Dropdown** display type, you must explicitly select the **Table** and a specific **View** to be used for the lookup. This limits the user to records available in that pre-defined view.
+- **Dialog Lookup:** Choosing a **Dialog** lookup requires only the **Table Name**. Unlike the dropdown, the dialog lookup allows the user to choose which view to use to find the desired record while they are filling out the form on the frontend.
 
 <div class="text--center"> 
 <img src="/images/gf-lookup2.png" width="400" alt="GF lookup 2"/>
@@ -191,7 +208,7 @@ When configuring lookup fields in your form, keep in mind the following behavior
 To set a default value for a Dataverse Lookup field, use the following format:
 
 ```php
-   table:98837486-742e-ed22-9db1-00224893bd2f
+table:98837486-742e-ed22-9db1-00224893bd2f
 ```
 
 <div class="text--center"> 

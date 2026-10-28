@@ -1,5 +1,5 @@
 ---
-title: Power Apps Forms Overview
+title: Dataverse Forms Overview
 sidebar_position: 1
 premium: true
 slug: /forms/forms

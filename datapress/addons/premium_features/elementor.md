@@ -39,11 +39,16 @@ Widget Name - `Form`
 2. **Configure Actions After Submit**
 
 Navigate to Actions After Submit.
-Click `+` and add the **Send to Dataverse** action.
+Click `+` and add one of the available actions:
+
+- **Send to Dataverse** — for synchronous form submission
+- **Universal Capture** — for asynchronous form submission (see [Universal Capture](/forms/universal-capture/) for details)
 
 <div class="text--center"> 
 <img src="/images/send-to-dataverse.png" alt="Send to Dataverse action" width="400" />
 </div>
+
+### Send to Dataverse Action
 
 3. **Set Up Binding**
  There are two binding configuration options available:
@@ -94,6 +99,19 @@ To ensure updated field values are displayed after submission, set the **Do not 
 </div>
 
 :::
+
+### Universal Capture Action
+
+To use **Universal Capture** for asynchronous form submission:
+
+1. In the **Actions After Submit** section, click `+` and select **Universal Capture**
+2. Save your form
+
+That's it! No field mapping is required — Universal Capture automatically collects all form field data and stores it asynchronously in a dedicated Dataverse table.
+
+For more details on Universal Capture features and configuration, see [Universal Capture](/forms/universal-capture/).
+
+---
 
 ### How to create a field for a lookup column
 
@@ -228,9 +246,9 @@ One of the simplest methods to display a field value for any record is by using 
 You can see several options for Date Time and Date Only fields. For example, if we have a Date Time value of **2025-10-01T21:00:00Z**, the field will display the following values for a user in the UTC -4h timezone:
 
 - Column Name Only: **2025-10-01T21:00:00Z** (No timezone conversion)
-- Column Name + Local DateTime: **2025-10-01T17:00:00** -04:00 (Timezone conversion according to the user’s timezone)
-- Column Name + Local Date: **2025-10-01** (Date part only, converted to the user’s timezone)
-- Column Name + Local Time: **17:00:00** (Time part only, converted to the user’s timezone)
+- Column Name + Local DateTime: **2025-10-01T17:00:00** -04:00 (Timezone conversion according to the user's timezone)
+- Column Name + Local Date: **2025-10-01** (Date part only, converted to the user's timezone)
+- Column Name + Local Time: **17:00:00** (Time part only, converted to the user's timezone)
 
 ## Default record in editing mode
 
@@ -244,7 +262,7 @@ You can enter a record GUID to be used as the default record in the page editing
 
 In some cases, you can successfully update a record, but the updated values do not appear in the Elementor form afterward.  As one of the possible solutions, you can disable Elementor's internal caching (it may contain outdated form data).
 
-You may also need to manually clear Elementor’s cache:
+You may also need to manually clear Elementor's cache:
 - Go to Elementor → Tools
 - Click Regenerate CSS and Clear Cache
 
