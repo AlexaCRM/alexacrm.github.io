@@ -7,7 +7,7 @@ tags:
   - Form
   - DataPress
 keywords: [DataPress forms configuration]
-description: How to configure Power Apps Forms
+description: How to configure Dataverse Forms
 ---
 
 ## Before you begin
@@ -25,7 +25,7 @@ Make sure that:
 To start collecting data, you must create a form registration.
 
 1. Open the plugin dashboard
-2. Go to **Forms**
+2. Go to **Forms** → **Dataverse Forms Editor**
 3. Click **Create new**
 
 Fill in the following fields:
@@ -94,26 +94,44 @@ To change requiredness:
 
 ---
 
+## Enable Universal Capture
+
+To enable **Universal Capture** (asynchronous form submission) for this form:
+
+1. In the form configuration, find the **Enable Universal Capture** option
+2. Enable it to capture all form submissions asynchronously in a dedicated Dataverse table
+3. Save your changes
+
+No field mapping is required — Universal Capture automatically collects all form submission data.
+
+For more details on Universal Capture features and configuration, see [Universal Capture](/forms/universal-capture/).
+
+---
+
 ## Redirect after submit and capture the created record GUID
 
 When a record is successfully created, you can automatically redirect the user to another page and inject the new record's GUID into the URL using the `%s` placeholder. 
 
-Use this to forward users to a “Thank you” page, a confirmation screen, or a details page where they can see the record they just created.
+Use this to forward users to a "Thank you" page, a confirmation screen, or a details page where they can see the record they just created.
 
 ### How to Configure Redirection
 
 You can set up the redirect in two ways:
 
 **1. Via DataPress Admin Area (Global Settings)**
+
 Use this method to set a default redirect for a specific form across your entire site:
-* Navigate to **DataPress** Admi Area → **Forms** in your WordPress dashboard.
-* Find the necessary form and click to edit it.
-* Locate the **Global settings overrides** section.
-* In the **Redirect after successful submission** text box, enter your desired URL pattern.
-  * *Example:* `/contact-details-page/?id=%s` (where `contact-details-page` is the slug of your existing WordPress page).
+
+- Navigate to **DataPress Admin Area** → **Forms** in your WordPress dashboard.
+- Find the necessary form and click to edit it.
+- Locate the **Global settings overrides** section.
+- In the **Redirect after successful submission** text box, enter your desired URL pattern.
+  - *Example:* `/contact-details-page/?id=%s` (where `contact-details-page` is the slug of your existing WordPress page).
 
 **2. During Page Creation (Shortcode)**
+
 You can define a specific redirect at the moment you add the form to a page. This will override any global settings for that specific instance:
+
 ```twig
 {% form id=707 redirect='/contact-details-page/?id=%s' %}
 ```
