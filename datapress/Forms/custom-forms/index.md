@@ -1,12 +1,12 @@
 ---
-title: Custom Forms Overview
+title: HTML Forms Overview
 sidebar_position: 1
 slug: /forms/custom-forms
 tags:
   - Form
   - DataPress
-keywords: [DataPress custom form]
-description: Custom Forms let you capture data from your WordPress site without using Power Apps or Dynamics 365 forms.
+keywords: [DataPress HTML form, custom form]
+description: HTML Forms let you capture data from your WordPress site without using Power Apps or Dynamics 365 forms.
 ---
 
 <div
@@ -33,20 +33,21 @@ description: Custom Forms let you capture data from your WordPress site without 
   </p>
 </div>
 
-<p class="lead">Use Twig + HTML to build custom forms and send submissions directly into Dataverse.</p>
+<p class="lead">Use Twig + HTML to build HTML forms and send submissions directly into Dataverse.</p>
 
 # Overview
 
-Custom Forms let you capture data from your WordPress site **without** using Power Apps or Dynamics 365 forms.  
+HTML Forms let you capture data from your WordPress site **without** using Power Apps or Dynamics 365 forms.  
 Instead, you build the layout yourself using regular HTML form markup and wrap it inside Twig tags. 
 
 Key capabilities:
 - Build any HTML layout using your own design.
 - Map form fields to Dataverse table columns via input `name` attributes. 
 - Submit data directly into Dataverse (create or update records).
+- Choose submission method: **Send To Dataverse** (default, free) or **Universal Capture** (premium, asynchronous).
 - Optionally add reCAPTCHA protection. 
 
-Custom Forms are included in the **free** DataPress plugin on WordPress.org.
+HTML Forms are included in the **free** DataPress plugin on WordPress.org.
 
 ---
 
@@ -80,6 +81,46 @@ To protect from spam:
 - Add the placeholder `<recaptcha>` inside your `<form>`.
 - Configure reCAPTCHA keys in plugin settings — otherwise the form may not load or submit. 
 
-## 4. Place the form on a WordPress page
+## 4. Choose submission method (premium feature)
+
+:::info
+**Universal Capture** is a premium feature. For more details see [Premium Edition](/premium-edition).
+:::
+
+By default, forms use the **Send To Dataverse** method (synchronous submission). With a premium license, you can enable **Universal Capture** (asynchronous submission) by adding the `capture=true` attribute:
+
+```html
+{% form entity="contact" mode="create" capture=true %}
+  <form>
+    <div class="form-group">
+      <label>
+        First Name:
+        <input class="form-control" name="firstname">
+      </label>
+    </div>
+    <div class="form-group">
+      <label>
+        Last Name:
+        <input class="form-control" name="lastname">
+      </label>
+    </div>
+    <div class="form-group">
+      <label>
+        Email:
+        <input class="form-control" name="emailaddress1">
+      </label>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+{% endform %}
+```
+
+**Submission methods:**
+- **Send To Dataverse** (default) — synchronous submission, records are written directly to Dataverse tables
+- **Universal Capture** (`capture=true`, premium) — asynchronous submission, records are sent to a dedicated capture table for processing
+
+For more details, see [Form Submission Methods](/forms/forms-overview).
+
+## 5. Place the form on a WordPress page
 
 Use the Gutenberg block **Dataverse Plain**, which accepts Twig and renders it as HTML on the frontend.

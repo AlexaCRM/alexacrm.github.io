@@ -1,12 +1,12 @@
 ---
-title: Custom Forms Examples
+title: HTML Forms Examples
 sidebar_position: 3
 slug: /forms/custom-forms-example
 tags:
   - Form
   - DataPress
-keywords: [DataPress custom form]
-description: How to create custom forms
+keywords: [DataPress HTML form]
+description: How to create HTML forms
 ---
 
 <div
@@ -33,7 +33,7 @@ description: How to create custom forms
   </p>
 </div>
 
-## Custom form examples
+## HTML form examples
 
 ### 1. Update a Contact
 
