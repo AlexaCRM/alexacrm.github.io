@@ -38,4 +38,6 @@ Reusable automation actions provide common operations needed for WordPress-Datav
 
 A dedicated security role follows a least-privilege access model, granting only the minimum permissions necessary for WordPress to communicate with Dataverse instance. It defines access permissions required by the WordPress application user to connect to Dataverse.
 
+[More details](/knowledge-base/roles)
+
 ---
