@@ -119,7 +119,7 @@ By default, forms use the **Send To Dataverse** method (synchronous submission).
 - **Send To Dataverse** (default) — synchronous submission, records are written directly to Dataverse tables
 - **Universal Capture** (`capture=true`, premium) — asynchronous submission, records are sent to a dedicated capture table for processing
 
-For more details, see [Form Submission Methods](/forms/forms-overview).
+For more details, see [Form Submission Methods](/forms/forms-general).
 
 ## 5. Place the form on a WordPress page
 
