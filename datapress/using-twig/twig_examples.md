@@ -9,7 +9,7 @@ description: A collection of practical Twig examples for DataPress, covering rec
 
 # Twig Examples
 
-This page provides practical Twig snippets for displaying data, formatting values, and building custom forms in DataPress.
+This page provides practical Twig snippets for displaying data, formatting values, and building HTML forms in DataPress.
 
 ---
 

@@ -55,9 +55,9 @@ To activate reCAPTCHA for **individual forms**:
 <img src="/images/premium-recaptcha.png" alt="Add recaptcha form settings" width="700" />
 </div>
 
-### Protect custom form submissions with reCAPTCHA
+### Protect HTML form submissions with reCAPTCHA
 
-For custom forms, you must explicitly configure reCAPTCHA before implementation. Below is an example setup:
+For HTML forms, you must explicitly configure reCAPTCHA before implementation. Below is an example setup:
 
 :::note
 If you enable `recaptcha=true` in the `{% form %}` tag, you must include the `<recaptcha>` placeholder inside your form markup. This placeholder will be replaced with the actual reCAPTCHA widget at runtime.

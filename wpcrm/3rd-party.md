@@ -144,7 +144,7 @@ Example: `fields_map: {your-name:firstname1}{your-email:emailaddress1}`
 
 ## Gravity Forms
 
-[Gravity Forms](https://www.gravityforms.com/) plugin provides custom forms with a robust UI. **Dynamics 365 Integration Premium** enables Gravity Forms to create new records in CRM easily.
+[Gravity Forms](https://www.gravityforms.com/) plugin provides HTML forms with a robust UI. **Dynamics 365 Integration Premium** enables Gravity Forms to create new records in CRM easily.
 
 ### Usage
 

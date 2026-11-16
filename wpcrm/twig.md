@@ -21,7 +21,7 @@ Twig syntax is explained in [Twig documentation](https://twig.symfony.com/doc/2.
 - *user binding* -- access record data of the the current [CRM identity](./authentication.md)
 - *views* -- render CRM views in WordPress, with customizable templates
 - *inline FetchXML queries* -- query CRM data and render it in WordPress
-- *forms* -- render CRM forms or custom HTML forms in WordPress, capture submissions and send data back to CRM
+- *forms* -- render CRM forms or HTML forms in WordPress, capture submissions and send data back to CRM
 - *access any record by ID*
 - *access entity metadata*
 - *extensibility* -- add new tags, functions and filters to the engine with WordPress actions and filters
@@ -198,7 +198,7 @@ Variable `contacts` would contain an object with the following fields:
 
 ### Forms
 
-`form` tag allows you to display CRM forms and custom forms on your WordPress site.
+`form` tag allows you to display CRM forms and HTML forms on your WordPress site.
 
 This tag supports the following attributes:
 
@@ -255,11 +255,11 @@ If the `name` attribute is specified, the plugin will render a CRM form, and exp
 
 The default form template is located in `templates/twig/form.twig`. If you need to create a new form template, please refer to it.
 
-#### Displaying custom forms
+#### Displaying HTML forms
 
 You don't need a form defined in CRM to capture data from WordPress. You can design your own form, and data received from it will be sent to Dynamics 365 the same way if you had a CRM form.
 
-To capture data this way, you need to define a custom template inside the `{% form %}{% endform %}` tags. You need to specify the entity name, and you must not include the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your custom form with the `required` attribute.
+To capture data this way, you need to define a custom template inside the `{% form %}{% endform %}` tags. You need to specify the entity name, and you must not include the `name` attribute. In the template, a POST form must be present, and input names (`name` attribute) must correspond to respective CRM entity attribute names. You can enforce required fields on your HTML form with the `required` attribute.
 
 If you have more than one Twig form on the page, you need to add the hidden `_key` input and specify `form.key` as its value. This will help to distinguish submissions from different forms. If you omit the key, every form present on the page will try to process the submission which is likely undesired.
 

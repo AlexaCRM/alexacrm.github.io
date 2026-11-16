@@ -5,7 +5,7 @@ slug: /forms/custom-forms
 tags:
   - Form
   - DataPress
-keywords: [DataPress HTML form, custom form]
+keywords: [DataPress HTML form, HTML form]
 description: HTML Forms let you capture data from your WordPress site without using Power Apps or Dynamics 365 forms.
 ---
 
@@ -55,7 +55,7 @@ HTML Forms are included in the **free** DataPress plugin on WordPress.org.
 
 ## 1. Wrap your HTML form with `{% form %} ... {% endform %}`
 
-A custom form begins with a pair of Twig tags:  
+HTML form begins with a pair of Twig tags:  
 `{% form ... %}` → configuration  
 `{% endform %}` → closing tag 
 
