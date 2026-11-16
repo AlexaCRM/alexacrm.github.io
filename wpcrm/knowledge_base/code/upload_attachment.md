@@ -49,7 +49,7 @@ Or like the following for the plugin version 1.3.3 or higher:
 [/msdyncrm_twig]
 ```
 
-Alternatively, create your HTML form layout (works great for small forms). In either case don’t forget to add enctype=`"multipart/form-data"` to `<form>` tag so that it works with the file uploads:
+Alternatively, create your custom form layout (works great for small forms). In either case don’t forget to add enctype=`"multipart/form-data"` to `<form>` tag so that it works with the file uploads:
 
 ```php
 <form method="post" id="form-{{ form.id }}" enctype="multipart/form-data">
