@@ -60,14 +60,19 @@ To activate reCAPTCHA for **individual forms**:
 For HTML forms, you must explicitly configure reCAPTCHA before implementation. Below is an example setup:
 
 :::note
-If you enable `recaptcha=true` in the `{% form %}` tag, you must include the `<recaptcha>` placeholder inside your form markup. This placeholder will be replaced with the actual reCAPTCHA widget at runtime.
+If you enable `recaptcha=true` in the `{% form %}` tag, you can optionally include the `<recaptcha>` placeholder inside your form markup to control where the reCAPTCHA widget appears. 
+
+**Important:** The `<recaptcha>` placeholder is **not required**. If you don't include it in your form:
+- The reCAPTCHA widget will be automatically inserted after the closing `</form>` tag
+- The visible reCAPTCHA will display at that automatically-inserted location
+
+If you do include the `<recaptcha>` placeholder, the widget will render at that specific location instead.
 
 Before using reCAPTCHA, make sure it is properly configured in the plugin settings. Without configuration, the form will fail to render or submit.
 :::
 
 ```php
-{% set useRecaptcha = true %}
-{% form entity="lead" mode="create" recaptcha=useRecaptcha %}  {# Recaptcha #}
+{% form entity="lead" mode="create" recaptcha=true %}  {# Recaptcha #}
 <form>
     <div class="form-group">
         <label>
