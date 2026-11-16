@@ -52,7 +52,7 @@ Let's surface a form from your Dynamics 365 organization using the Dynamics 365 
 
 ### Creating a form in Dynamics 365
 
-You can create a new HTML form in Dynamics 365 or use an existing one. If you want to use an existing form you can skip this section.
+You can create a new custom form in Dynamics 365 or use an existing one. If you want to use an existing form you can skip this section.
 
 To create a new form first open the Solution Explorer window with you desired solution or the default solution.
 For more information about solutions please refer to [Dynamics 365 Solutions documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/solutions-overview).
@@ -67,7 +67,7 @@ For more information about form types please see [Create and design forms](https
 Now you can create and save the new form using the form editor.
 For more information about the form editor please see [Form editor documentation](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/customize/form-editor-user-interface-legacy).
 
-Please don't forget to specify the name of your HTML form and publish it.
+Please don't forget to specify the name of your custom form and publish it.
 
 ### Adding a form to a page
 

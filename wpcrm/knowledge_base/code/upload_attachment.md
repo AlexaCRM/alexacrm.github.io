@@ -9,7 +9,7 @@ tags:
     - Dynamics 365 Integration
 ---
 
-To add attachment uploads to Twig forms, you need to build a HTML form layout with an input file control and an upload handler.
+To add attachment uploads to Twig forms, you need to build a custom form layout with an input file control and an upload handler.
 
 **Template**
 
