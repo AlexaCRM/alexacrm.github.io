@@ -67,7 +67,7 @@ Before using reCAPTCHA, make sure it is properly configured in the plugin settin
 
 ```php
 {% set useRecaptcha = true %}
-{% form entity="lead" mode="create" recaptcha=useRecaptcha %}
+{% form entity="lead" mode="create" recaptcha=useRecaptcha %}  {# Recaptcha #}
 <form>
     <div class="form-group">
         <label>
@@ -75,21 +75,9 @@ Before using reCAPTCHA, make sure it is properly configured in the plugin settin
             <input class="form-control" name="firstname">
         </label>
     </div>
-    <div class="form-group">
-        <label>
-            Last Name:
-            <input class="form-control" name="lastname">
-        </label>
-    </div>
-    <div class="form-group">
-        <label>
-            Email:
-            <input class="form-control" name="emailaddress1">
-        </label>
-    </div>
-    <div class="form-group">
-        <recaptcha>
-    </div>
+
+...
+
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Send</button>
     </div>
