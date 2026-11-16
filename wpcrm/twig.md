@@ -21,7 +21,7 @@ Twig syntax is explained in [Twig documentation](https://twig.symfony.com/doc/2.
 - *user binding* -- access record data of the the current [CRM identity](./authentication.md)
 - *views* -- render CRM views in WordPress, with customizable templates
 - *inline FetchXML queries* -- query CRM data and render it in WordPress
-- *forms* -- render CRM forms or custom HTML forms in WordPress, capture submissions and send data back to CRM
+- *forms* -- render CRM forms or custom forms in WordPress, capture submissions and send data back to CRM
 - *access any record by ID*
 - *access entity metadata*
 - *extensibility* -- add new tags, functions and filters to the engine with WordPress actions and filters

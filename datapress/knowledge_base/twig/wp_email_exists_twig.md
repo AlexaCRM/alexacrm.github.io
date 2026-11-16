@@ -11,7 +11,7 @@ tags:
 
 ## Overview
 
-When building custom forms or integrations in DataPress, you may need to quickly check whether a specific email address already belongs to a registered WordPress user. This is especially useful for conditional rendering, validation, or preventing duplicate registrations.
+When building HTML forms or integrations in DataPress, you may need to quickly check whether a specific email address already belongs to a registered WordPress user. This is especially useful for conditional rendering, validation, or preventing duplicate registrations.
 
 This guide shows how to expose a custom Twig function called `wp_email_exists` that performs this check using WordPress internals.
 

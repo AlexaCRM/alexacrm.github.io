@@ -9,7 +9,7 @@ tags:
 description: Comprehensive guide to troubleshooting DataPress forms by enabling detailed error logs.
 ---
 
-When working with premium or custom forms in DataPress, rendering issues may occur due to misconfigurations or JavaScript errors. To assist with debugging, you can enable more detailed error output in your browser’s developer console.
+When working with premium or HTML forms in DataPress, rendering issues may occur due to misconfigurations or JavaScript errors. To assist with debugging, you can enable more detailed error output in your browser’s developer console.
 
 1. **Enable WordPress Debug Mode**
 
@@ -65,7 +65,7 @@ Source maps are enabled by default in Safari’s DevTools
 Once debugging is enabled:
 
 - Open the Console tab in your browser’s DevTools
-- Reload the page with the premium or custom form
+- Reload the page with the premium or HTML form
 - Look for errors related to:
 Missing form fields
 Invalid configuration
