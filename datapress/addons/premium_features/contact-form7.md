@@ -2,6 +2,7 @@
 title: Contact Form 7
 sidebar_position: 3
 premium: true
+slug: /addons/contact-form-7
 tags:
     - Contact Form 7
     - DataPress
