@@ -23,7 +23,7 @@ export const Highlight = ({children, color}) => (
   </span>
 );
 
-<Highlight color="#25c2a0">Premium feature! This feature is available in the addon to the premium extension.</Highlight>
+<Highlight color="#258bc2">Premium feature! This feature is available in the addon to the premium extension.</Highlight>
 
 Our plugin supports Contact Form 7.
 
