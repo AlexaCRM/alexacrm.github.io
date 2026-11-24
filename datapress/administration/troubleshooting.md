@@ -84,7 +84,7 @@ Here are some of the key flags:
 |-----------------|--------------|----------------|-----------|
 | twig            | UTC | UTC | convert the date and time to the user's timezone |
 |views            | UTC | UTC | convert the date and time to the user's timezone |
-|custom forms |  UTC | UTC | convert the date and time to the user's timezone |
+|HTML forms |  UTC | UTC | convert the date and time to the user's timezone |
 |premium forms | convert the date and time to the user's timezone | UTC | convert the date and time to the user's timezone |
 
 [Usage Scenarios](/date-and-time/#usage-scenarios)
@@ -93,7 +93,7 @@ Here are some of the key flags:
 
 [More details for view](/views)
 
-[More details for custom forms](/forms/custom-forms-details/#datetime-fields-in-custom-forms)
+[More details for HTML forms](/forms/custom-forms-details/#datetime-fields-in-custom-forms)
 
 [More details for Elementor](/addons/elementor/#how-to-create-a-field-for-a-date-time-column)
 

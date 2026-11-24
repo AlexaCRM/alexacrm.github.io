@@ -39,7 +39,7 @@ description: Explore the comprehensive list of WordPress actions and filters pro
 
 `integration-cds/forms/submit-error`
 
-Fires if error occurs while submitting custom form.
+Fires if error occurs while submitting HTML form.
 
 `$this` (CustomFormModel) \
 `$record` (Table) \
@@ -49,7 +49,7 @@ Fires if error occurs while submitting custom form.
 
 `integration-cds/forms/submit-success`
 
-Fires after custom form was successfully submitted.
+Fires after HTML form was successfully submitted.
 
 `$this` (CustomFormModel) \
 `$record` (Table)

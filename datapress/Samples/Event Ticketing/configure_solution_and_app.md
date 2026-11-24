@@ -69,7 +69,7 @@ When you create a new event, a **Default registration form** is bound to it.
 </div>
 <br></br>
 
-To create a new custom form go to Real-time Journeys area → Forms, Click shevron and choose Registration Forms. Click '+ New' to create a new form.
+To create a new HTML form go to Real-time Journeys area → Forms, Click shevron and choose Registration Forms. Click '+ New' to create a new form.
 
 <div class="text--center">
 <img src="/images/cij-register-new-form.jpg" alt="Create a new Registration Form" width="800" />

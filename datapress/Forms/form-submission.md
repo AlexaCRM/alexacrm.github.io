@@ -80,7 +80,7 @@ Choose which form types should have their submissions captured and configure the
 
 ### Supported Form Types
 
-- **HTML Forms** — Custom forms built with HTML and Twig
+- **HTML Forms** — HTML forms built with HTML and Twig
 - **Dataverse Forms** — Power Apps model-driven forms
 - **Elementor Forms** — Forms created with Elementor
 - **Gravity Forms** — Forms created with Gravity Forms plugin
